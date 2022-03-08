@@ -106,6 +106,14 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+
+
+  /*
+    Takes in the alarm management logic as serial input and appropriately 
+    switches the state of the buzzer, LED and the display.
+
+    Keeps the buzzer, LED and text monitor at the highest level when the serial port reads 'H'.
+  */
     if (Serial.available()){
         while (Serial.available()) {
     /*

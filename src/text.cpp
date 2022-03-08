@@ -81,6 +81,15 @@ namespace TEXTAlarm
 {
     void TEXTAl::play_TEXT_Alarm(Alarmlev allev, Adafruit_ST7789 tft, DisplayCheck text, int freq)
     {
+        /*
+          Checks alarm state and prints text as 
+          'ALARMMM
+           ALARMMMM
+           ALARMMMM' 
+           in three subsequent lines. The text message can be modified appropriately.
+           Depending on the alarm level, the text monitor also prints 
+           LEVEL 1, LEVEL 2 according to the alarm level input. 
+        */
         if (text == Check::WORKING)
         {
             Serial.println("We are getting some text on the monitor");
@@ -110,7 +119,8 @@ namespace TEXTAlarm
     }
     void TEXTAl::flicker(Adafruit_ST7789 tft, int freq)
     {
-        //tft.invertDisplay(true);
+        //Blinks the text monitor for a set frequency depending on the alarm level.
+
         delay(freq/100);
         tft.invertDisplay(false);
         delay(freq/100);
@@ -118,6 +128,11 @@ namespace TEXTAlarm
 
     void TEXTAl::tftPrintTest(Adafruit_ST7789 tft)
     {
+        /*
+          Prints the text on the monitor in different colors 
+          to make it appealing as an alarm device.
+        */
+
         tft.setTextWrap(false);
         tft.fillScreen(ST77XX_BLACK);
         tft.setCursor(0, 30);

@@ -11,9 +11,14 @@ namespace LEDAlarm
 {
     void AlLev::play_LEDalarm(Alarmlev al, DisplayCheck disp, int blink, Adafruit_LEDBackpack matrix1)
     {
+        /*
+            Displays the LED brightness level according to the alarm level and 
+            working condition of the LED.
+        */
         if (disp == DisplayCheck::BLINK){
             Serial.println("LEDS are going to turn on");    
             // draw a diagonal row of pixels
+
             matrix1.displaybuffer[1] = _BV(7) | _BV(0) | _BV(1) | _BV(2) | _BV(3) | _BV(4) | _BV(5) | _BV(6) ;
             matrix1.displaybuffer[0] = _BV(7) | _BV(0) | _BV(5) | _BV(6) ;
             matrix1.displaybuffer[2] =  _BV(0) | _BV(1) | _BV(2) | _BV(3) | _BV(4) | _BV(5);

@@ -19,6 +19,15 @@ namespace BuzzerAlarm
   {
     if (buz == Check::WORKING)
     {
+      /*
+        Plays the buzzer for a few seconds according to every note. 
+        For each alarm level the notes are higher. 
+
+        Every note is played for around 1/4th of a second. 
+
+        If the buzzer is working, the buzzer plays the notes according to the alarm level
+        and the duration of the note. 
+      */
       Serial.println("Buzzer is going on");
       Alarmlev lev = j;
       int c;
