@@ -7,6 +7,9 @@ using namespace AlarmWork;
 
 namespace TEXTAlarm
 {
+    /*
+        The header file containing the text display and flicker function depending on the alarm level. 
+    */
     class TEXTAl: public AlarmSystem{
         
         public:    

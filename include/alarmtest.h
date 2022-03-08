@@ -9,7 +9,11 @@
 #include <SPI.h>
 
 using namespace std;
+/*
+    Displays the alarm levels, alarm management logics, alarm checks, 
+    and alarm text monitor display checks.
 
+*/
 namespace AlarmWork{
     enum Alarmlev {
         LEVEL1, 

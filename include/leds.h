@@ -7,6 +7,9 @@ using namespace AlarmWork;
 
 namespace LEDAlarm
 {
+    /*
+        The LED file containing the light display frequency function. 
+    */
     class AlLev: public AlarmSystem{
         
         public:    

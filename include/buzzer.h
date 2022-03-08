@@ -6,7 +6,9 @@
 
 using namespace AlarmWork;
 namespace BuzzerAlarm{
-    
+    /*
+    The header file containing the buzzer function. 
+    */
     class BuzAlm: public AlarmSystem{
         public:
             void play_buzzeralarm(Alarmlev al, Check buzz, int dur);
