@@ -133,6 +133,15 @@ However, this decision need not be permanent. For example, at first a 5V audio b
 Eventually, a 12V loudspeaker/buzzer/siren of some kind might be needed. A 12V system requires a slighly
 more complicated electronic circuit and powering capability.
 
+# Thoughts On An Initial Enclosure
+
+An initial device about the size of a bar of soap that could be easily mounted with zip ties onto some other device of external frame would 
+be very useful.
+The utility of additional miniaturization would be marginal.
+The Arduino UNO is about this size to begin with. I normally begin projects with an UNO. A soldered UNO Shield would be a quick way to get an 
+initial prototype working.
+A mechanical enclosure that project LEDS slighly and let a buzzer or loudspeaker operate loudly (through a grate or grid) would probably be adequate.
+
 
 
 
