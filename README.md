@@ -115,5 +115,22 @@ Potential uses as a product (by hobbiest) include:
 Public Invention does not wish to become a manufacturer; but we will impartially support anyone who wants to take these designs and manufacture them 
 so long as they abide by the licenses.
 
+# The Simplest API
+
+The simplest API could just be:
+> enum AlarmLevel { silent, informational, problem, warning, critical, panic };
+> Alarm(level: AlarmLevel)
+
+The simplest binding for this, which could be used of SPI or a serial port, would simply be the character A followed by the character 0, 1, 2, 3, 4, or 5.
+To test the alarm system of the serial port, you could simply type "A3" into the Arduino IDE serial monitor and send this to the GPAD, at which would expect a moderate noise and flashing light to sound and flash.
+
+# On Making Hardware Decisions and the voltage decision.
+
+At the beginning of a project like this, significant effort goes into selecting hardware components.
+However, this decision need not be permanent. For example, at first a 5V audio buzzer might be acceptable.
+Eventually, a 12V loudspeaker/buzzer/siren of some kind might be needed. A 12V system requires a slighly
+more complicated electronic circuit and powering capability.
+
+
 
 
