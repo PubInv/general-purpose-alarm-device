@@ -118,8 +118,10 @@ so long as they abide by the licenses.
 # The Simplest API
 
 The simplest API could just be:
-> enum AlarmLevel { silent, informational, problem, warning, critical, panic };
-> Alarm(level: AlarmLevel)
+```
+enum AlarmLevel { silent, informational, problem, warning, critical, panic };
+int Alarm(AlarmLevel al);
+```
 
 The simplest binding for this, which could be used of SPI or a serial port, would simply be the character A followed by the character 0, 1, 2, 3, 4, or 5.
 To test the alarm system of the serial port, you could simply type "A3" into the Arduino IDE serial monitor and send this to the GPAD, at which would expect a moderate noise and flashing light to sound and flash.
