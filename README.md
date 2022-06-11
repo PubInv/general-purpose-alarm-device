@@ -72,7 +72,7 @@ In Phase II, we can imagine a large number of improvements:
 2. A Printed-circuit board that integrates the simple electronics with an Arduino Nano or Micro-sized solution on a single board.
 3. Improvements in the API.
 4. A display screen which allows a short message to be displayed.
-5. One of more buttons of controls which allows the GPAD to be silenced to avoid "alarm fatigue".
+5. One or more buttons of controls which allows the GPAD to be silenced to avoid "alarm fatigue".
 6. A simple JST connector to suport an SPI interface.
 
 ## Phase III
