@@ -108,7 +108,7 @@ it could have enough market so support a production run of a few hundred.
 Potential uses as a product (by hobbiest) include:
 1. Alarming a cat door
 2. Alarming when a visual signal, such as an animal moving in a game camera is detected
-3. Detection of life-threatening conditions in medical devices
+3. Annunciation of life-threatening conditions in medical devices
 4. Overheating conditions in almost any device
 ...but the reader can probably imagine a great many more.
 
