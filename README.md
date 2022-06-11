@@ -1,6 +1,6 @@
 # General Purpose Alarm Device
 This General-Purpose- Alarm-Device repository defines a 'general purpose alarm device' GPAD module.
-We seek a highly repurposable device that can make lound noises and flash bright lights in order to get the attention of someone, 
+We seek a highly repurposable device that can make loud noises and flash bright lights in order to get the attention of someone, 
 especially health-care workers, in response to some condition that requires attention.
 The GPAD does not detect the conditions that need to be alarmed.
 Presumably, those are sensed by a different device, such as a medical ventilator.
@@ -31,7 +31,7 @@ circuit board of other systems. We therefore seek design flexibility that suppor
 
 # The Arduino Platform Is Sufficient
 
-The on-board functionality of this device should not exceed the power of the simplest, slowest micropocessors in the Arduino family.
+The on-board functionality of this device should not exceed the power of the simplest, slowest microprocessors in the Arduino family.
 It therefore seems reasonable to confine our efforts to the most "plain vanilla" solutions possible, which at present means
 the Arduino platform.
 
@@ -43,7 +43,7 @@ There are many potential ways to communicate an API command to the GPAD. The obv
 3. WiFi
 4. Bluetooth
 
-A wireless interface is probably most valuable for hobbyist and makers; and SPI-based protocol is probably most valuable for integration with a\
+A wireless interface is probably most valuable for hobbyist and makers; and SPI-based protocol is probably most valuable for integration with a
 medical devices, such as [PolyVent Open Source Ventilator](https://www.pubinv.org/project/polyvent/). In general, we favor the use of JSON for a
 serial or wireless interface binding to the API, and a byte-level binding for an SPI connection.
 
@@ -60,7 +60,7 @@ We imagine these hardware choices will evolve over time. We want the API to insu
 from specific details of how the noise is made.
 
 Nonetheless, we can make a few comments.
-1. It is now possible to get very bright LEDs which are efficent. The initial version might simply use a single very bright LED, or some combination of LEDS supporting 5 levels of alarm color or brightness.
+1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDS supporting 5 levels of alarm color or brightness.
 2. Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying "She canna' take the strain, Captain!" in a Scottish accent.
 
 The physical implementation at this level might be a breadboard solution or a soldered Arduino UNO shield.
@@ -77,7 +77,7 @@ In Phase II, we can imagine a large number of improvements:
 
 ## Phase III
 
-In Phase III, we could expland the usability of the device by allowing it to be made physically versatile, which feature such as:
+In Phase III, we could expand the usability of the device by allowing it to be made physically versatile, which feature such as:
 1. A backup battery on board.
 2. Sturdiness to the level of being a "throwie" that can be deployed by tossing it across the room.
 3. WiFi, Bluetooth, or LoRa enablement.
@@ -96,13 +96,13 @@ We need:
 4. Software enginers who can design an effective, evolving API and the transport bindings that they require.
 5. GUI experts who can address issues such as how to effective alarm and silence.
 6. Marketers who can promote and evangelize the project.
-7. Possible a project manager who can organizae volunteers and keep them enthused and motivated to move forward.
+7. Possible a project manager who can organize volunteers and keep them enthused and motivated to move forward.
 
 # The Potential for a Product
 
 Like everything done by Public Invention, this is a fully open project that will be released under fully open hardware and software licenses.
 However, unlike many of our projects which are very "researchy" this project could become a salable product pretty easily.
-One can imagine it being sold at Sparkfun, Adarfuit, or DigiKey if we do a good job.
+One can imagine it being sold at Sparkfun, Adafruit, or DigiKey if we do a good job.
 Because it could be used for a wide variety of purposes by makers and could be sold at a price of perhaps $15USD or $25USD,
 it could have enough market so support a production run of a few hundred.
 Potential uses as a product (by hobbiest) include:
