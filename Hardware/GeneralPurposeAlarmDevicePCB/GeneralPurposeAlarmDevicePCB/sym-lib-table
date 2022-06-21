@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name GPAD_SCH_LIB)(type Legacy)(uri ${KIPRJMOD}/GPAD_SCH_LIB.lib)(options "")(descr ""))
+  (lib (name GeneralPurposeAlarmDevicePCB-rescue)(type Legacy)(uri ${KIPRJMOD}/GeneralPurposeAlarmDevicePCB-rescue.lib)(options "")(descr ""))
+)

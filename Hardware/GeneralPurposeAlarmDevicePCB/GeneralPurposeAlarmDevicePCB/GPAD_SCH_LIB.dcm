@@ -1,0 +1,39 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CNP
+D Unpolarized capacitor
+K cap capacitor
+F ~
+$ENDCMP
+#
+$CMP CP
+D Polarized capacitor
+K cap capacitor
+F ~
+$ENDCMP
+#
+$CMP CP_47uF16V
+D Polarized capacitor
+K cap capacitor
+F ~
+$ENDCMP
+#
+$CMP PI_ATMEGA328P-AU
+D IC MCU 8BIT 32KB FLASH 32TQFP
+K ATMEGA328P-AU-ND AVR® ATmega
+F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326
+$ENDCMP
+#
+$CMP PI_LCD_20x4_Character
+D LCD 20x4 Alphanumeric 16pin Blue/White/Green Backlight, 8bit parallel, 3.3V VDD
+K display LCD 20x4
+F http://www.newhavendisplay.com/specs/NHD-0420H1Z-FSW-GBW-33V3.pdf
+$ENDCMP
+#
+$CMP PJ-202A
+D CONN PWR JACK 2X5.5MM KINKED PIN
+K CP-202A-ND
+F https://www.cui.com/product/resource/digikeypdf/pj-202a.pdf
+$ENDCMP
+#
+#End Doc Library
