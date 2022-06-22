@@ -1,5 +1,17 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 10K
+D Potentiometer
+K resistor variable
+F https://www.bourns.com/docs/Product-Datasheets/TC33.pdf
+$ENDCMP
+#
+$CMP Barrel_Jack_Switch_SMT
+D DC Barrel Jack with an internal switch and a mounting pin
+K DC power barrel jack connector
+F https://tensility.s3.amazonaws.com/uploads/pdffiles/54-00164.pdf
+$ENDCMP
+#
 $CMP CNP
 D Unpolarized capacitor
 K cap capacitor
@@ -24,6 +36,12 @@ K ATMEGA328P-AU-ND AVR® ATmega
 F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326
 $ENDCMP
 #
+$CMP PI_ATMEGA328P-AU-InOrder
+D IC MCU 8BIT 32KB FLASH 32TQFP
+K ATMEGA328P-AU-ND AVR® ATmega
+F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326
+$ENDCMP
+#
 $CMP PI_LCD_20x4_Character
 D LCD 20x4 Alphanumeric 16pin Blue/White/Green Backlight, 8bit parallel, 3.3V VDD
 K display LCD 20x4
@@ -36,10 +54,28 @@ K CP-202A-ND
 F https://www.cui.com/product/resource/digikeypdf/pj-202a.pdf
 $ENDCMP
 #
-$CMP R_POT
-D Potentiometer
-K resistor variable
-F https://www.bourns.com/docs/Product-Datasheets/TC33.pdf
+$CMP RJ12
+D RJ connector, 6P6C (6 positions 6 connected)
+K 6P6C RJ female connector
+F ~
+$ENDCMP
+#
+$CMP RJ12_6P6C_HORZ
+D RJ connector, 6P6C (6 positions 6 connected), RJ12/RJ18/RJ25
+K 6P6C RJ female connector
+F https://datasheet.lcsc.com/lcsc/1811141146_TE-Connectivity-5555165-1_C305981.pdf
+$ENDCMP
+#
+$CMP RJ18
+D RJ connector, 6P6C (6 positions 6 connected)
+K 6P6C RJ female connector
+F ~
+$ENDCMP
+#
+$CMP RJ25
+D RJ connector, 6P6C (6 positions 6 connected)
+K 6P6C RJ female connector
+F ~
 $ENDCMP
 #
 #End Doc Library
