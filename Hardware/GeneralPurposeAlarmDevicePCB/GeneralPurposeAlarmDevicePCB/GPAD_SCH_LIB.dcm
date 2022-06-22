@@ -36,4 +36,10 @@ K CP-202A-ND
 F https://www.cui.com/product/resource/digikeypdf/pj-202a.pdf
 $ENDCMP
 #
+$CMP R_POT
+D Potentiometer
+K resistor variable
+F https://www.bourns.com/docs/Product-Datasheets/TC33.pdf
+$ENDCMP
+#
 #End Doc Library

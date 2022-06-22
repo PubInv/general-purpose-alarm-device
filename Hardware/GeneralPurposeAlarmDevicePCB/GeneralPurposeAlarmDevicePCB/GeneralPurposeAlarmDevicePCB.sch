@@ -16,83 +16,83 @@ $EndDescr
 $Comp
 L GeneralPurposeAlarmDevicePCB-rescue:LCD_20x4_Character-GPAD_SCH_LIB U?
 U 1 1 62B14E53
-P 8650 2000
-F 0 "U?" H 8300 3150 50  0000 C CNN
-F 1 "LCD_20x4_Character" H 8650 3050 50  0000 C CNN
-F 2 "Display:NHD-0420H1Z" H 8650 1100 50  0001 C CNN
-F 3 "http://www.newhavendisplay.com/specs/NHD-0420H1Z-FSW-GBW-33V3.pdf" H 8750 1900 50  0001 C CNN
-F 4 "Aliexpress" H 7570 1310 50  0001 C CNN "Distributor 1"
-F 5 "https://www.aliexpress.com/item/3256803213374992.html" H 8550 1210 50  0001 C CNN "Distributor 1 PN"
-F 6 "Amazon" H 7530 1090 50  0001 C CNN "Distributor 2"
-F 7 "https://www.amazon.com/GeeekPi-Interface-Adapter-Backlight-Raspberry/dp/B07QLRD3TM/ref=sr_1_2" H 9440 1000 50  0001 C CNN "Distributor 2 PN"
-	1    8650 2000
+P 9300 2150
+F 0 "U?" H 8950 3300 50  0000 C CNN
+F 1 "LCD_20x4_Character" H 9300 3200 50  0000 C CNN
+F 2 "Display:NHD-0420H1Z" H 9300 1250 50  0001 C CNN
+F 3 "http://www.newhavendisplay.com/specs/NHD-0420H1Z-FSW-GBW-33V3.pdf" H 9400 2050 50  0001 C CNN
+F 4 "Aliexpress" H 8220 1460 50  0001 C CNN "Distributor 1"
+F 5 "https://www.aliexpress.com/item/3256803213374992.html" H 9200 1360 50  0001 C CNN "Distributor 1 PN"
+F 6 "Amazon" H 8180 1240 50  0001 C CNN "Distributor 2"
+F 7 "https://www.amazon.com/GeeekPi-Interface-Adapter-Backlight-Raspberry/dp/B07QLRD3TM/ref=sr_1_2" H 10090 1150 50  0001 C CNN "Distributor 2 PN"
+	1    9300 2150
 	1    0    0    -1  
 $EndComp
 $Comp
 L GPAD_SCH_LIB:PI_ATMEGA328P-AU U?
 U 1 1 62B38BF8
-P 3750 4850
-F 0 "U?" H 3350 6850 60  0000 C CNN
-F 1 "PI_ATMEGA328P-AU" H 3750 6750 60  0000 C CNN
-F 2 "digikey-footprints:TQFP-32_7x7mm" H 4040 5350 60  0001 L CNN
-F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326" H 4040 5450 60  0001 L CNN
-F 4 "DigiKey" H 3750 3149 50  0001 C CNN "Distributor 1"
-F 5 "ATMEGA328P-AU-ND" H 3750 3050 60  0001 C CNN "Distributor 1 PN"
-F 6 "ATMEGA328P-AU" H 4040 5650 60  0001 L CNN "MPN"
-F 7 "Integrated Circuits (ICs)" H 4040 5750 60  0001 L CNN "Category"
-F 8 "Embedded - Microcontrollers" H 4040 5850 60  0001 L CNN "Family"
-F 9 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326" H 4040 5950 60  0001 L CNN "DK_Datasheet_Link"
-F 10 "/product-detail/en/microchip-technology/ATMEGA328P-AU/ATMEGA328P-AU-ND/1832260" H -2360 5770 60  0001 L CNN "DK_Detail_Page"
-F 11 "IC MCU 8BIT 32KB FLASH 32TQFP" H 4040 6150 60  0001 L CNN "Description"
-F 12 "Microchip Technology" H 4040 6250 60  0001 L CNN "Manufacturer"
-F 13 "Active" H 4040 6350 60  0001 L CNN "Status"
-	1    3750 4850
+P 3950 6100
+F 0 "U?" H 3550 8100 60  0000 C CNN
+F 1 "PI_ATMEGA328P-AU" H 3950 8000 60  0000 C CNN
+F 2 "digikey-footprints:TQFP-32_7x7mm" H 4240 6600 60  0001 L CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326" H 4240 6700 60  0001 L CNN
+F 4 "DigiKey" H 3950 4399 50  0001 C CNN "Distributor 1"
+F 5 "ATMEGA328P-AU-ND" H 3950 4300 60  0001 C CNN "Distributor 1 PN"
+F 6 "ATMEGA328P-AU" H 4240 6900 60  0001 L CNN "MPN"
+F 7 "Integrated Circuits (ICs)" H 4240 7000 60  0001 L CNN "Category"
+F 8 "Embedded - Microcontrollers" H 4240 7100 60  0001 L CNN "Family"
+F 9 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326" H 4240 7200 60  0001 L CNN "DK_Datasheet_Link"
+F 10 "/product-detail/en/microchip-technology/ATMEGA328P-AU/ATMEGA328P-AU-ND/1832260" H -2160 7020 60  0001 L CNN "DK_Detail_Page"
+F 11 "IC MCU 8BIT 32KB FLASH 32TQFP" H 4240 7400 60  0001 L CNN "Description"
+F 12 "Microchip Technology" H 4240 7500 60  0001 L CNN "Manufacturer"
+F 13 "Active" H 4240 7600 60  0001 L CNN "Status"
+	1    3950 6100
 	1    0    0    -1  
 $EndComp
 $Comp
 L dk_Crystals:NX3225GD-8MHZ-STD-CRA-3 XTAL?
 U 1 1 62B3A927
-P 1450 4300
-F 0 "XTAL?" H 1450 4540 50  0000 C CNN
-F 1 "16MHZ 20PF HC-49S/SMD" H 1450 4449 50  0000 C CNN
-F 2 "" H 1650 4500 60  0001 L CNN
-F 3 "1811061718_TAE-Zhejiang-Abel-Elec-TAXM16M2GLFBET2T_C111377.pdf" H 1650 4600 60  0001 L CNN
-F 4 "JLCPCB" H 1450 4300 50  0001 C CNN "Distributor 1"
-F 5 "TAXM16M2GLFBET2T" H 1650 4700 60  0001 L CNN "Distributor1 PN"
-F 6 "TAXM16M2GLFBET2T" H 1650 4800 60  0001 L CNN "MPN"
-F 7 "Crystals, Oscillators, Resonators" H 1650 4900 60  0001 L CNN "Category"
-F 8 "Crystals" H 1650 5000 60  0001 L CNN "Family"
-F 9 "" H 1650 5100 60  0001 L CNN "DK_Datasheet_Link"
-F 10 "" H 1650 5200 60  0001 L CNN "DK_Detail_Page"
-F 11 "CRYSTAL 16.0000MHZ 20PF HC49SSMD" H 1650 5300 60  0001 L CNN "Description"
-F 12 "TAE" H 1650 5400 60  0001 L CNN "Manufacturer"
-F 13 "Active" H 1650 5500 60  0001 L CNN "Status"
-	1    1450 4300
+P 1650 5550
+F 0 "XTAL?" H 1650 5790 50  0000 C CNN
+F 1 "16MHZ 20PF HC-49S/SMD" H 1650 5699 50  0000 C CNN
+F 2 "" H 1850 5750 60  0001 L CNN
+F 3 "1811061718_TAE-Zhejiang-Abel-Elec-TAXM16M2GLFBET2T_C111377.pdf" H 1850 5850 60  0001 L CNN
+F 4 "JLCPCB" H 1650 5550 50  0001 C CNN "Distributor 1"
+F 5 "TAXM16M2GLFBET2T" H 1850 5950 60  0001 L CNN "Distributor1 PN"
+F 6 "TAXM16M2GLFBET2T" H 1850 6050 60  0001 L CNN "MPN"
+F 7 "Crystals, Oscillators, Resonators" H 1850 6150 60  0001 L CNN "Category"
+F 8 "Crystals" H 1850 6250 60  0001 L CNN "Family"
+F 9 "" H 1850 6350 60  0001 L CNN "DK_Datasheet_Link"
+F 10 "" H 1850 6450 60  0001 L CNN "DK_Detail_Page"
+F 11 "CRYSTAL 16.0000MHZ 20PF HC49SSMD" H 1850 6550 60  0001 L CNN "Description"
+F 12 "TAE" H 1850 6650 60  0001 L CNN "Manufacturer"
+F 13 "Active" H 1850 6750 60  0001 L CNN "Status"
+	1    1650 5550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 62B45335
-P 950 4650
-F 0 "C?" H 1065 4696 50  0000 L CNN
-F 1 "39pF" H 1065 4605 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 988 4500 50  0001 C CNN
-F 3 "~" H 950 4650 50  0001 C CNN
-	1    950  4650
+P 1150 5900
+F 0 "C?" H 1265 5946 50  0000 L CNN
+F 1 "39pF" H 1265 5855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 1188 5750 50  0001 C CNN
+F 3 "~" H 1150 5900 50  0001 C CNN
+	1    1150 5900
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 62B46140
-P 1800 4650
-F 0 "C?" H 1915 4696 50  0000 L CNN
-F 1 "39pF" H 1915 4605 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 1838 4500 50  0001 C CNN
-F 3 "~" H 1800 4650 50  0001 C CNN
-	1    1800 4650
+P 2000 5900
+F 0 "C?" H 2115 5946 50  0000 L CNN
+F 1 "39pF" H 2115 5855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2038 5750 50  0001 C CNN
+F 3 "~" H 2000 5900 50  0001 C CNN
+	1    2000 5900
 	1    0    0    -1  
 $EndComp
-Text Notes 600  4700 0    50   ~ 0
+Text Notes 800  5950 0    50   ~ 0
 Note: Check pad sized for 0603 and 0603HandSolder
 $Comp
 L GPAD_SCH_LIB:PJ-202A J?
@@ -141,10 +141,10 @@ F 3 "~" H 1300 1450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0101
 U 1 1 62B4D791
 P 1300 1700
-F 0 "#PWR?" H 1300 1450 50  0001 C CNN
+F 0 "#PWR0101" H 1300 1450 50  0001 C CNN
 F 1 "GND" H 1305 1527 50  0000 C CNN
 F 2 "" H 1300 1700 50  0001 C CNN
 F 3 "" H 1300 1700 50  0001 C CNN
@@ -152,92 +152,77 @@ F 3 "" H 1300 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0102
 U 1 1 62B4DABB
-P 950 4900
-F 0 "#PWR?" H 950 4650 50  0001 C CNN
-F 1 "GND" H 955 4727 50  0000 C CNN
-F 2 "" H 950 4900 50  0001 C CNN
-F 3 "" H 950 4900 50  0001 C CNN
-	1    950  4900
+P 1150 6150
+F 0 "#PWR0102" H 1150 5900 50  0001 C CNN
+F 1 "GND" H 1155 5977 50  0000 C CNN
+F 2 "" H 1150 6150 50  0001 C CNN
+F 3 "" H 1150 6150 50  0001 C CNN
+	1    1150 6150
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0103
 U 1 1 62B4E34C
-P 1800 4950
-F 0 "#PWR?" H 1800 4700 50  0001 C CNN
-F 1 "GND" H 1805 4777 50  0000 C CNN
-F 2 "" H 1800 4950 50  0001 C CNN
-F 3 "" H 1800 4950 50  0001 C CNN
-	1    1800 4950
+P 2000 6200
+F 0 "#PWR0103" H 2000 5950 50  0001 C CNN
+F 1 "GND" H 2005 6027 50  0000 C CNN
+F 2 "" H 2000 6200 50  0001 C CNN
+F 3 "" H 2000 6200 50  0001 C CNN
+	1    2000 6200
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0104
 U 1 1 62B4F12F
-P 3750 6300
-F 0 "#PWR?" H 3750 6050 50  0001 C CNN
-F 1 "GND" H 3755 6127 50  0000 C CNN
-F 2 "" H 3750 6300 50  0001 C CNN
-F 3 "" H 3750 6300 50  0001 C CNN
-	1    3750 6300
+P 3950 7550
+F 0 "#PWR0104" H 3950 7300 50  0001 C CNN
+F 1 "GND" H 3955 7377 50  0000 C CNN
+F 2 "" H 3950 7550 50  0001 C CNN
+F 3 "" H 3950 7550 50  0001 C CNN
+	1    3950 7550
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0105
 U 1 1 62B5068A
-P 8650 2900
-F 0 "#PWR?" H 8650 2650 50  0001 C CNN
-F 1 "GND" H 8655 2727 50  0000 C CNN
-F 2 "" H 8650 2900 50  0001 C CNN
-F 3 "" H 8650 2900 50  0001 C CNN
-	1    8650 2900
+P 9300 3050
+F 0 "#PWR0105" H 9300 2800 50  0001 C CNN
+F 1 "GND" H 9305 2877 50  0000 C CNN
+F 2 "" H 9300 3050 50  0001 C CNN
+F 3 "" H 9300 3050 50  0001 C CNN
+	1    9300 3050
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B51224
-P 5450 4050
-F 0 "R?" V 5243 4050 50  0000 C CNN
-F 1 "330R" V 5334 4050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5380 4050 50  0001 C CNN
-F 3 "~" H 5450 4050 50  0001 C CNN
-F 4 "JLCPCB" V 5450 4050 50  0001 C CNN "Distributor 1"
-F 5 "C325611" V 5450 4050 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 5450 4050 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033001%N" V 5450 4050 50  0001 C CNN "MPN"
-	1    5450 4050
-	0    1    1    0   
 $EndComp
 $Comp
 L dk_LED-Indication-Discrete:LTST-C171KRKT D?
 U 1 1 62B52665
-P 6150 4050
-F 0 "D?" H 6100 4387 60  0000 C CNN
-F 1 "RED 0603" H 6100 4281 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 6350 4250 60  0001 L CNN
-F 3 "" H 6350 4350 60  0001 L CNN
-F 4 "JLCPCB" H 6150 4050 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 6350 4450 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 6350 4550 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 6350 4650 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 6350 4750 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 6350 5050 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 6350 5150 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 6350 5250 60  0001 L CNN "Status"
-	1    6150 4050
+P 5800 5300
+F 0 "D?" H 5750 5637 60  0000 C CNN
+F 1 "RED 0603" H 5750 5531 60  0000 C CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 6000 5500 60  0001 L CNN
+F 3 "" H 6000 5600 60  0001 L CNN
+F 4 "JLCPCB" H 5800 5300 50  0001 C CNN "Distributor 1"
+F 5 "C2286" H 6000 5700 60  0001 L CNN "Distributor 1 PN"
+F 6 "KT-0603R" H 6000 5800 60  0001 L CNN "MPN"
+F 7 "Optoelectronics" H 6000 5900 60  0001 L CNN "Category"
+F 8 "LED Indication - Discrete" H 6000 6000 60  0001 L CNN "Family"
+F 9 "LED RED CLEAR SMD" H 6000 6300 60  0001 L CNN "Description"
+F 10 "Hubei KENTO Elec" H 6000 6400 60  0001 L CNN "Manufacturer"
+F 11 "Active" H 6000 6500 60  0001 L CNN "Status"
+	1    5800 5300
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0106
 U 1 1 62B53159
-P 6500 4050
-F 0 "#PWR?" H 6500 3800 50  0001 C CNN
-F 1 "GND" H 6505 3877 50  0000 C CNN
-F 2 "" H 6500 4050 50  0001 C CNN
-F 3 "" H 6500 4050 50  0001 C CNN
-	1    6500 4050
+P 6150 5300
+F 0 "#PWR0106" H 6150 5050 50  0001 C CNN
+F 1 "GND" H 6155 5127 50  0000 C CNN
+F 2 "" H 6150 5300 50  0001 C CNN
+F 3 "" H 6150 5300 50  0001 C CNN
+	1    6150 5300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -310,21 +295,10 @@ F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GPAD_SCH_LIB:CP C?
-U 1 1 62B6399A
-P 9350 1400
-F 0 "C?" H 9468 1446 50  0000 L CNN
-F 1 "CP" H 9468 1355 50  0000 L CNN
-F 2 "" H 9388 1250 50  0001 C CNN
-F 3 "~" H 9350 1400 50  0001 C CNN
-	1    9350 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
+L power:GND #PWR0107
 U 1 1 62B1C88A
 P 2300 1550
-F 0 "#PWR?" H 2300 1300 50  0001 C CNN
+F 0 "#PWR0107" H 2300 1300 50  0001 C CNN
 F 1 "GND" H 2305 1377 50  0000 C CNN
 F 2 "" H 2300 1550 50  0001 C CNN
 F 3 "" H 2300 1550 50  0001 C CNN
@@ -332,10 +306,10 @@ F 3 "" H 2300 1550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0108
 U 1 1 62B1CDA3
 P 3900 1450
-F 0 "#PWR?" H 3900 1200 50  0001 C CNN
+F 0 "#PWR0108" H 3900 1200 50  0001 C CNN
 F 1 "GND" H 3905 1277 50  0000 C CNN
 F 2 "" H 3900 1450 50  0001 C CNN
 F 3 "" H 3900 1450 50  0001 C CNN
@@ -343,14 +317,389 @@ F 3 "" H 3900 1450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0109
 U 1 1 62B1D284
 P 4450 1400
-F 0 "#PWR?" H 4450 1150 50  0001 C CNN
+F 0 "#PWR0109" H 4450 1150 50  0001 C CNN
 F 1 "GND" H 4455 1227 50  0000 C CNN
 F 2 "" H 4450 1400 50  0001 C CNN
 F 3 "" H 4450 1400 50  0001 C CNN
 	1    4450 1400
 	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_Expansion:PCF8574A U?
+U 1 1 62B32C2C
+P 8150 2450
+F 0 "U?" H 8150 3331 50  0000 C CNN
+F 1 "PCF8574AT" H 8150 3240 50  0000 C CNN
+F 2 "Package_SO:SOIC-16W_5.3x10.2mm_P1.27mm" H 8150 2450 50  0001 C CNN
+F 3 "http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf" H 8150 2450 50  0001 C CNN
+F 4 "JLCPCB" H 8150 2450 50  0001 C CNN "Distributor 1"
+F 5 "C83193" H 8150 2450 50  0001 C CNN "Distributor 1 PN"
+F 6 "NXP Semicon" H 8150 2450 50  0001 C CNN "Manufacturier"
+F 7 "Remote 8-bit I/O expander for I2C-bus with interrupt" H 8150 2450 50  0001 C CNN "Descirption"
+F 8 "PCF8574AT/3,512" H 8150 2450 50  0001 C CNN "MPN"
+	1    8150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B3DB14
+P 6250 1600
+F 0 "R?" H 6150 1550 50  0000 C CNN
+F 1 "4K7" H 6100 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6180 1600 50  0001 C CNN
+F 3 "~" H 6250 1600 50  0001 C CNN
+F 4 "JLCPCB" V 6250 1600 50  0001 C CNN "Distributor 1"
+F 5 "C269713" V 6250 1600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 6250 1600 50  0001 C CNN "Manufacturer"
+F 7 "RMC 0603 4K7 F N" V 6250 1600 50  0001 C CNN "MPN"
+F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6250 1600 50  0001 C CNN "Description"
+	1    6250 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B3DB22
+P 6600 1600
+F 0 "R?" H 6500 1550 50  0000 C CNN
+F 1 "1K" H 6450 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6530 1600 50  0001 C CNN
+F 3 "~" H 6600 1600 50  0001 C CNN
+F 4 "JLCPCB" V 6600 1600 50  0001 C CNN "Distributor 1"
+F 5 "C269704" V 6600 1600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 6600 1600 50  0001 C CNN "Manufacturer"
+F 7 "RMC06031K1%N" V 6600 1600 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6600 1600 50  0001 C CNN "Description"
+	1    6600 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B40799
+P 6600 2850
+F 0 "R?" H 6500 2800 50  0000 C CNN
+F 1 "330R" H 6450 2900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6530 2850 50  0001 C CNN
+F 3 "~" H 6600 2850 50  0001 C CNN
+F 4 "JLCPCB" V 6600 2850 50  0001 C CNN "Distributor 1"
+F 5 "C269711" V 6600 2850 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 6600 2850 50  0001 C CNN "Manufacturer"
+F 7 "RMC06033301%N" V 6600 2850 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 6600 2850 50  0001 C CNN "Description"
+	1    6600 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B41B50
+P 6950 2850
+F 0 "R?" H 6850 2800 50  0000 C CNN
+F 1 "330R" H 6800 2900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6880 2850 50  0001 C CNN
+F 3 "~" H 6950 2850 50  0001 C CNN
+F 4 "JLCPCB" V 6950 2850 50  0001 C CNN "Distributor 1"
+F 5 "C269711" V 6950 2850 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 6950 2850 50  0001 C CNN "Manufacturer"
+F 7 "RMC06033301%N" V 6950 2850 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 6950 2850 50  0001 C CNN "Description"
+	1    6950 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B41F13
+P 7250 2850
+F 0 "R?" H 7150 2800 50  0000 C CNN
+F 1 "330R" H 7100 2900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7180 2850 50  0001 C CNN
+F 3 "~" H 7250 2850 50  0001 C CNN
+F 4 "JLCPCB" V 7250 2850 50  0001 C CNN "Distributor 1"
+F 5 "C269711" V 7250 2850 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 7250 2850 50  0001 C CNN "Manufacturer"
+F 7 "RMC06033301%N" V 7250 2850 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 7250 2850 50  0001 C CNN "Description"
+	1    7250 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B42216
+P 5300 5300
+F 0 "R?" V 5100 5250 50  0000 C CNN
+F 1 "330R" V 5200 5300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5230 5300 50  0001 C CNN
+F 3 "~" H 5300 5300 50  0001 C CNN
+F 4 "JLCPCB" V 5300 5300 50  0001 C CNN "Distributor 1"
+F 5 "C269711" V 5300 5300 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 5300 5300 50  0001 C CNN "Manufacturer"
+F 7 "RMC06033301%N" V 5300 5300 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 5300 5300 50  0001 C CNN "Description"
+	1    5300 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B45055
+P 6950 1600
+F 0 "R?" H 6850 1550 50  0000 C CNN
+F 1 "1K" H 6800 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 6880 1600 50  0001 C CNN
+F 3 "~" H 6950 1600 50  0001 C CNN
+F 4 "JLCPCB" V 6950 1600 50  0001 C CNN "Distributor 1"
+F 5 "C269704" V 6950 1600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 6950 1600 50  0001 C CNN "Manufacturer"
+F 7 "RMC06031K1%N" V 6950 1600 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6950 1600 50  0001 C CNN "Description"
+	1    6950 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B4567A
+P 7250 1600
+F 0 "R?" H 7150 1550 50  0000 C CNN
+F 1 "1K" H 7100 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7180 1600 50  0001 C CNN
+F 3 "~" H 7250 1600 50  0001 C CNN
+F 4 "JLCPCB" V 7250 1600 50  0001 C CNN "Distributor 1"
+F 5 "C269704" V 7250 1600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 7250 1600 50  0001 C CNN "Manufacturer"
+F 7 "RMC06031K1%N" V 7250 1600 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 7250 1600 50  0001 C CNN "Description"
+	1    7250 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B45B16
+P 5850 1600
+F 0 "R?" H 5750 1550 50  0000 C CNN
+F 1 "4K7" H 5700 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5780 1600 50  0001 C CNN
+F 3 "~" H 5850 1600 50  0001 C CNN
+F 4 "JLCPCB" V 5850 1600 50  0001 C CNN "Distributor 1"
+F 5 "C269713" V 5850 1600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 5850 1600 50  0001 C CNN "Manufacturer"
+F 7 "RMC 0603 4K7 F N" V 5850 1600 50  0001 C CNN "MPN"
+F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 5850 1600 50  0001 C CNN "Description"
+	1    5850 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B508AC
+P 5500 1600
+F 0 "R?" H 5400 1550 50  0000 C CNN
+F 1 "4K7" H 5350 1650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5430 1600 50  0001 C CNN
+F 3 "~" H 5500 1600 50  0001 C CNN
+F 4 "JLCPCB" V 5500 1600 50  0001 C CNN "Distributor 1"
+F 5 "C269713" V 5500 1600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 5500 1600 50  0001 C CNN "Manufacturer"
+F 7 "RMC 0603 4K7 F N" V 5500 1600 50  0001 C CNN "MPN"
+F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 5500 1600 50  0001 C CNN "Description"
+	1    5500 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62B5329C
+P 8150 3350
+F 0 "#PWR?" H 8150 3100 50  0001 C CNN
+F 1 "GND" H 8155 3177 50  0000 C CNN
+F 2 "" H 8150 3350 50  0001 C CNN
+F 3 "" H 8150 3350 50  0001 C CNN
+	1    8150 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62B5385B
+P 10000 1800
+F 0 "#PWR?" H 10000 1550 50  0001 C CNN
+F 1 "GND" H 10005 1627 50  0000 C CNN
+F 2 "" H 10000 1800 50  0001 C CNN
+F 3 "" H 10000 1800 50  0001 C CNN
+	1    10000 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B53C42
+P 9400 850
+F 0 "R?" V 9200 800 50  0000 C CNN
+F 1 "1R0" V 9300 850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 9330 850 50  0001 C CNN
+F 3 "~" H 9400 850 50  0001 C CNN
+F 4 "JLCPCB" V 9400 850 50  0001 C CNN "Distributor 1"
+F 5 "C269434" V 9400 850 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 9400 850 50  0001 C CNN "Manufacturer"
+F 7 "RMC060315%N" V 9400 850 50  0001 C CNN "MPN"
+F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 9400 850 50  0001 C CNN "Description"
+	1    9400 850 
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 62B551FA
+P 10000 1550
+F 0 "C?" H 10118 1596 50  0000 L CNN
+F 1 "47uF 16V" H 10118 1505 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 10038 1400 50  0001 C CNN
+F 3 "~" H 10000 1550 50  0001 C CNN
+F 4 "JLCPCB" H 10000 1550 50  0001 C CNN "Distributor 1"
+F 5 "C2895272" H 10000 1550 50  0001 C CNN "Distributor 1 PN"
+F 6 "KNSCHA" H 10000 1550 50  0001 C CNN "Manufacturer"
+F 7 "RVT47UF16V67RV0019" H 10000 1550 50  0001 C CNN "MPN"
+	1    10000 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 62B56969
+P 10000 850
+F 0 "C?" H 10115 896 50  0000 L CNN
+F 1 "100nF" H 10115 805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 10038 700 50  0001 C CNN
+F 3 "~" H 10000 850 50  0001 C CNN
+F 4 "JLCPCB" H 10000 850 50  0001 C CNN "Distributor 1"
+F 5 "C14663" H 10000 850 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 10000 850 50  0001 C CNN "Manufacturier"
+F 7 "CC0603KRX7R9BB104" H 10000 850 50  0001 C CNN "MPN"
+F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 10000 850 50  0001 C CNN "Description"
+	1    10000 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62B60CF9
+P 10000 1050
+F 0 "#PWR?" H 10000 800 50  0001 C CNN
+F 1 "GND" H 10005 877 50  0000 C CNN
+F 2 "" H 10000 1050 50  0001 C CNN
+F 3 "" H 10000 1050 50  0001 C CNN
+	1    10000 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62B63CDC
+P 9550 4100
+F 0 "#PWR?" H 9550 3850 50  0001 C CNN
+F 1 "GND" H 9555 3927 50  0000 C CNN
+F 2 "" H 9550 4100 50  0001 C CNN
+F 3 "" H 9550 4100 50  0001 C CNN
+	1    9550 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62B640B6
+P 8850 3650
+F 0 "R?" H 8750 3600 50  0000 C CNN
+F 1 "4K7" H 8700 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8780 3650 50  0001 C CNN
+F 3 "~" H 8850 3650 50  0001 C CNN
+F 4 "JLCPCB" V 8850 3650 50  0001 C CNN "Distributor 1"
+F 5 "C269713" V 8850 3650 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 8850 3650 50  0001 C CNN "Manufacturer"
+F 7 "RMC 0603 4K7 F N" V 8850 3650 50  0001 C CNN "MPN"
+F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 8850 3650 50  0001 C CNN "Description"
+	1    8850 3650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:BSS138 Q?
+U 1 1 62B651C8
+P 9450 3800
+F 0 "Q?" H 9654 3846 50  0000 L CNN
+F 1 "BSS138" H 9654 3755 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 9650 3725 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 9450 3800 50  0001 L CNN
+F 4 "N-Channel Enhancement Mode Field Effect Transistor" H 9450 3800 50  0001 C CNN "Description"
+F 5 "Yangzhou Yangjie Electronic Technology Co., Ltd" H 9450 3800 50  0001 C CNN "Distirbutor 1"
+F 6 "BSS138" H 9450 3800 50  0001 C CNN "Distributor 1 PN"
+F 7 "" H 9450 3800 50  0001 C CNN "Field7"
+	1    9450 3800
+	1    0    0    -1  
+$EndComp
+Text Notes 8100 4600 0    50   ~ 0
+Backlight transistor gate(base) to PCF8547 pin 7 P3.\nIf add base resistor can use MMBT2222 for transistor.
+$Comp
+L power:+5V #PWR?
+U 1 1 62B6EBBC
+P 8650 850
+F 0 "#PWR?" H 8650 700 50  0001 C CNN
+F 1 "+5V" H 8665 1023 50  0000 C CNN
+F 2 "" H 8650 850 50  0001 C CNN
+F 3 "" H 8650 850 50  0001 C CNN
+	1    8650 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 62B6F384
+P 4600 900
+F 0 "#PWR?" H 4600 750 50  0001 C CNN
+F 1 "+5V" H 4615 1073 50  0000 C CNN
+F 2 "" H 4600 900 50  0001 C CNN
+F 3 "" H 4600 900 50  0001 C CNN
+	1    4600 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 62B6FFE4
+P 4850 4250
+F 0 "#PWR?" H 4850 4100 50  0001 C CNN
+F 1 "+5V" H 4865 4423 50  0000 C CNN
+F 2 "" H 4850 4250 50  0001 C CNN
+F 3 "" H 4850 4250 50  0001 C CNN
+	1    4850 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT RV?
+U 1 1 62B70C05
+P 7950 4150
+F 0 "RV?" H 7880 4196 50  0000 R CNN
+F 1 "10K" H 7880 4105 50  0000 R CNN
+F 2 "digikey-footprints:Trimpot_3.8mmx3.6mm_TC33X-2-103E" H 7950 4150 50  0001 C CNN
+F 3 "~" H 7950 4150 50  0001 C CNN
+F 4 "JLCPCB" H 7950 4150 50  0001 C CNN "Distributor 1 "
+F 5 "C58159" H 7950 4150 50  0001 C CNN "Distributor 1 PN"
+F 6 "BOURNS" H 7950 4150 50  0001 C CNN "Manufacturier"
+F 7 "3362P-1-103LF" H 7950 4150 50  0001 C CNN "MPN"
+F 8 "10K  kOhms 0.5W, 1/2W PC Pins Through Hole Trimmer Potentiometer Cermet 1.0 Turn Top Adjustment" H 7950 4150 50  0001 C CNN "Description"
+	1    7950 4150
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62B745EC
+P 10100 2700
+F 0 "#PWR?" H 10100 2450 50  0001 C CNN
+F 1 "GND" H 10105 2527 50  0000 C CNN
+F 2 "" H 10100 2700 50  0001 C CNN
+F 3 "" H 10100 2700 50  0001 C CNN
+	1    10100 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:R_POT RV?
+U 1 1 62B81878
+P 10100 2450
+F 0 "RV?" H 10030 2404 50  0000 R CNN
+F 1 "10K" H 10030 2495 50  0000 R CNN
+F 2 "digikey-footprints:Trimpot_3.8mmx3.6mm_TC33X-2-103E" H 10100 2450 50  0001 C CNN
+F 3 "https://www.bourns.com/docs/Product-Datasheets/TC33.pdf" H 10100 2450 50  0001 C CNN
+F 4 "JLCPCB" H 10030 2496 50  0001 R CNN "Distributor 1"
+F 5 "C58159" H 10030 2405 50  0001 R CNN "Distributor 1 PN"
+F 6 "BOURNS" H 10030 2314 50  0001 R CNN "Manufacturier"
+F 7 "3362P-1-103LF" H 10030 2359 50  0001 R CNN "MPN"
+	1    10100 2450
+	-1   0    0    1   
 $EndComp
 $EndSCHEMATC
