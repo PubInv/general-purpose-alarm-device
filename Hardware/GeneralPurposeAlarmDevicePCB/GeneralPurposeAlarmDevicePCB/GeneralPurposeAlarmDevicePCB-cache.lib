@@ -314,11 +314,11 @@ X ~ 4 200 -100 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# GeneralPurposeAlarmDevicePCB-rescue_LCD_20x4_Character-GPAD_SCH_LIB
+# GeneralPurposeAlarmDevicePCB-rescue_LCD_20x4_Character-GPAD_SCH_LIB-GeneralPurposeAlarmDevicePCB-rescue
 #
-DEF GeneralPurposeAlarmDevicePCB-rescue_LCD_20x4_Character-GPAD_SCH_LIB U 0 20 Y Y 1 F N
+DEF GeneralPurposeAlarmDevicePCB-rescue_LCD_20x4_Character-GPAD_SCH_LIB-GeneralPurposeAlarmDevicePCB-rescue U 0 20 Y Y 1 F N
 F0 "U" -250 750 50 H V C CNN
-F1 "GeneralPurposeAlarmDevicePCB-rescue_LCD_20x4_Character-GPAD_SCH_LIB" 200 750 50 H V L CNN
+F1 "GeneralPurposeAlarmDevicePCB-rescue_LCD_20x4_Character-GPAD_SCH_LIB-GeneralPurposeAlarmDevicePCB-rescue" 200 750 50 H V L CNN
 F2 "Display:NHD-0420H1Z" 0 -900 50 H I C CNN
 F3 "" 100 -100 50 H I C CNN
 F4 "Aliexpress" -1080 -690 50 H I C CNN "Distributor 1"

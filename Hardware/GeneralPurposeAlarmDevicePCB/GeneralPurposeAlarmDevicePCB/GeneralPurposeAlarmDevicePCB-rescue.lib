@@ -1,4 +1,39 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
+# LCD_20x4_Character-GPAD_SCH_LIB-GeneralPurposeAlarmDevicePCB-rescue
+#
+DEF LCD_20x4_Character-GPAD_SCH_LIB-GeneralPurposeAlarmDevicePCB-rescue U 0 20 Y Y 1 F N
+F0 "U" -250 750 50 H V C CNN
+F1 "LCD_20x4_Character-GPAD_SCH_LIB-GeneralPurposeAlarmDevicePCB-rescue" 200 750 50 H V L CNN
+F2 "Display:NHD-0420H1Z" 0 -900 50 H I C CNN
+F3 "" 100 -100 50 H I C CNN
+F4 "Aliexpress" -1080 -690 50 H I C CNN "Distributor 1"
+F5 "https://www.aliexpress.com/item/3256803213374992.html" -100 -790 50 H I C CNN "Distributor 1 PN"
+F6 "Amazon" -1120 -910 50 H I C CNN "Distributor 2"
+F7 "https://www.amazon.com/GeeekPi-Interface-Adapter-Backlight-Raspberry/dp/B07QLRD3TM/ref=sr_1_2" 790 -1000 50 H I C CNN "Distributor 2 PN"
+$FPLIST
+ NHD*0420H1Z*
+$ENDFPLIST
+DRAW
+S -300 700 300 -700 0 1 10 f
+X VSS 1 0 -800 100 U 50 50 1 1 W
+X DB3 10 -400 -200 100 R 50 50 1 1 B
+X DB4 11 -400 -300 100 R 50 50 1 1 B
+X DB5 12 -400 -400 100 R 50 50 1 1 B
+X DB6 13 -400 -500 100 R 50 50 1 1 B
+X DB7 14 -400 -600 100 R 50 50 1 1 B
+X A 15 400 -300 100 L 50 50 1 1 P
+X K 16 400 -200 100 L 50 50 1 1 P
+X VDD 2 0 800 100 D 50 50 1 1 W
+X VO 3 100 800 100 D 50 50 1 1 W
+X RS 4 -400 600 100 R 50 50 1 1 I
+X R/W 5 -400 500 100 R 50 50 1 1 I
+X E 6 -400 400 100 R 50 50 1 1 I
+X DB0 7 -400 100 100 R 50 50 1 1 B
+X DB1 8 -400 0 100 R 50 50 1 1 B
+X DB2 9 -400 -100 100 R 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
 #End Library
