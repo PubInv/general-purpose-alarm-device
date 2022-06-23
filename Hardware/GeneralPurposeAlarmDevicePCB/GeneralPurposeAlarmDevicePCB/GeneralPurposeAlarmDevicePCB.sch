@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title "GeneralPurposeAlarmDevicePCB"
 Date "2022-06-20"
 Rev "0.0"
@@ -408,6 +408,11 @@ S 7700 5200 2250 1250
 U 62B3AC2F
 F0 "AlarmLights5" 50
 F1 "AlarmLights5.sch" 50
+F2 "Light0" I L 7700 5350 50 
+F3 "Light1" I L 7700 5500 50 
+F4 "Light2" I L 7700 5650 50 
+F5 "Light3" I L 7700 5800 50 
+F6 "Light4" I L 7700 5950 50 
 $EndSheet
 $Comp
 L power:GND #PWR0106
@@ -425,6 +430,8 @@ S 7800 800  2100 1250
 U 62B871EE
 F0 "LCD And I2C Interface" 50
 F1 "LCD And I2C Interface.sch" 50
+F2 "SCL" I L 7800 1200 50 
+F3 "SDA" B L 7800 1500 50 
 $EndSheet
 $Comp
 L GPAD_SCH_LIB:SWITCH_TACTILE_SPST-NO_0.05A_24V S?
@@ -504,16 +511,24 @@ F 8 "0.1W ±1% 10kΩ 0603  Chip Resistor - Surface Mount ROHS" H 4500 2100 50  0
 	0    1    1    0   
 $EndComp
 $Sheet
-S 3550 6400 2000 1400
+S 3450 6400 2000 1400
 U 62B93801
 F0 "SPI Peripherial" 50
 F1 "SPI Peripherial.sch" 50
+F2 "COPI" I R 5450 6600 50 
+F3 "CIPO" O R 5450 6850 50 
+F4 "SCK" I R 5450 7100 50 
+F5 "nCS" I R 5450 7350 50 
+F6 "ControllerVcc" U R 5450 7600 50 
 $EndSheet
 $Sheet
 S 700  6400 2000 1400
 U 62BC4E7E
 F0 "USB_UART" 50
 F1 "USB_UART.sch" 50
+F2 "ControllerRX" O R 2700 7350 50 
+F3 "ControllerTX" I R 2700 7100 50 
+F4 "VBUS" U R 2700 6850 50 
 $EndSheet
 Text GLabel 4000 2450 0    50   Input ~ 0
 ControllerTX
@@ -804,4 +819,222 @@ Wire Wire Line
 	5050 4100 5050 3700
 Wire Wire Line
 	5050 3700 4950 3700
+Text GLabel 2850 7100 2    50   Input ~ 0
+ControllerTX
+Text GLabel 2850 7350 2    50   Input ~ 0
+ControllerRX
+Wire Wire Line
+	2850 7100 2700 7100
+Wire Wire Line
+	2850 7350 2700 7350
+$Comp
+L dk_Rectangular-Connectors-Headers-Male-Pins:22-23-2021 J?
+U 1 1 62CD8EE4
+P 4650 850
+F 0 "J?" H 4563 812 50  0000 R CNN
+F 1 "22-23-2021" H 4563 903 50  0000 R CNN
+F 2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" H 4850 1050 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1150 60  0001 L CNN
+F 4 "WM4200-ND" H 4850 1250 60  0001 L CNN "Digi-Key_PN"
+F 5 "22-23-2021" H 4850 1350 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 4850 1450 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 4850 1550 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 4850 1750 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 2POS 2.54MM" H 4850 1850 60  0001 L CNN "Description"
+F 11 "Molex" H 4850 1950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4850 2050 60  0001 L CNN "Status"
+	1    4650 850 
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	3900 1000 4550 1000
+Wire Wire Line
+	4650 1000 4650 950 
+Connection ~ 3900 1000
+Text GLabel 4850 1000 2    50   UnSpc ~ 0
+VBus
+Text GLabel 2900 6850 2    50   Input ~ 0
+VBus
+Wire Wire Line
+	2700 6850 2900 6850
+Text GLabel 7600 1200 0    50   Input ~ 0
+SCL
+Text GLabel 7600 1500 0    50   Input ~ 0
+SDA
+Wire Wire Line
+	7600 1200 7800 1200
+Wire Wire Line
+	7600 1500 7800 1500
+Text GLabel 4600 2350 2    50   Input ~ 0
+SCL
+Text GLabel 4800 2450 2    50   Input ~ 0
+SDA
+Wire Wire Line
+	4400 2550 4400 2450
+Wire Wire Line
+	4400 2450 4800 2450
+Wire Wire Line
+	4300 2550 4300 2350
+Wire Wire Line
+	4300 2350 4600 2350
+Text GLabel 4900 4450 3    50   Output ~ 0
+SPI_SCK
+Text GLabel 5650 7100 2    50   Output ~ 0
+SPI_SCK
+Wire Wire Line
+	5450 7100 5650 7100
+Wire Wire Line
+	5050 4100 4900 4100
+Wire Wire Line
+	4900 4100 4900 4450
+Connection ~ 5050 4100
+Text GLabel 4700 4450 3    50   Input ~ 0
+CIPO
+Text GLabel 4500 4450 3    50   Output ~ 0
+COPI
+Text GLabel 4100 4700 3    50   Output ~ 0
+nCS
+Text GLabel 5650 6850 2    50   Input ~ 0
+CIPO
+Wire Wire Line
+	5650 6850 5450 6850
+Wire Wire Line
+	4600 4150 4600 4300
+Wire Wire Line
+	4600 4300 4700 4300
+Wire Wire Line
+	4700 4300 4700 4450
+Text GLabel 5650 6600 2    50   Output ~ 0
+COPI
+Wire Wire Line
+	5650 6600 5450 6600
+Wire Wire Line
+	4500 4450 4500 4150
+Text GLabel 5650 7350 2    50   Output ~ 0
+nCS
+Wire Wire Line
+	5650 7350 5450 7350
+Wire Wire Line
+	4850 1000 4750 1000
+Wire Wire Line
+	4750 1000 4750 950 
+$Comp
+L dk_Rectangular-Connectors-Headers-Male-Pins:22-23-2021 J?
+U 1 1 62D1C4B1
+P 5600 1200
+F 0 "J?" H 5513 1162 50  0000 R CNN
+F 1 "22-23-2021" H 5513 1253 50  0000 R CNN
+F 2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" H 5800 1400 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 1500 60  0001 L CNN
+F 4 "WM4200-ND" H 5800 1600 60  0001 L CNN "Digi-Key_PN"
+F 5 "22-23-2021" H 5800 1700 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 5800 1800 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 5800 1900 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 2000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 5800 2100 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 2POS 2.54MM" H 5800 2200 60  0001 L CNN "Description"
+F 11 "Molex" H 5800 2300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5800 2400 60  0001 L CNN "Status"
+	1    5600 1200
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5600 1350 5600 1300
+Text GLabel 5800 1350 2    50   UnSpc ~ 0
+ControllerVcc
+Wire Wire Line
+	5800 1350 5700 1350
+Wire Wire Line
+	5700 1350 5700 1300
+Wire Wire Line
+	4550 1350 4550 1000
+Wire Wire Line
+	4550 1350 5600 1350
+Connection ~ 4550 1000
+Wire Wire Line
+	4550 1000 4650 1000
+Text GLabel 5650 7600 2    50   UnSpc ~ 0
+ControllerVcc
+Wire Wire Line
+	5650 7600 5450 7600
+Text GLabel 7400 5350 0    50   Output ~ 0
+Light0
+Text GLabel 7400 5500 0    50   Output ~ 0
+Light1
+Text GLabel 7400 5650 0    50   Output ~ 0
+Light2
+Text GLabel 7400 5800 0    50   Output ~ 0
+Light3
+Text GLabel 7400 5950 0    50   Output ~ 0
+Light4
+Text GLabel 3350 2700 0    50   Output ~ 0
+Light0
+Wire Wire Line
+	3450 3000 3450 2700
+Wire Wire Line
+	3450 2700 3350 2700
+Wire Wire Line
+	3450 3000 3500 3000
+Text GLabel 3750 4750 0    50   Output ~ 0
+Light1
+Text GLabel 3850 5000 0    50   Output ~ 0
+Light2
+Text GLabel 4050 5250 0    50   Output ~ 0
+Light3
+Text GLabel 4300 5450 0    50   Output ~ 0
+Light4
+Wire Wire Line
+	3750 4750 3900 4750
+Wire Wire Line
+	3900 4750 3900 4150
+Wire Wire Line
+	3850 5000 4000 5000
+Wire Wire Line
+	4000 5000 4000 4150
+Wire Wire Line
+	4100 4150 4100 4700
+Wire Wire Line
+	4300 5250 4050 5250
+Wire Wire Line
+	4300 4150 4300 5250
+Wire Wire Line
+	4400 4150 4400 5450
+Wire Wire Line
+	4400 5450 4300 5450
+Wire Wire Line
+	7400 5350 7700 5350
+Wire Wire Line
+	7700 5500 7400 5500
+Wire Wire Line
+	7400 5650 7700 5650
+Wire Wire Line
+	7700 5800 7400 5800
+Wire Wire Line
+	7400 5950 7700 5950
+NoConn ~ 3900 2550
+NoConn ~ 4500 2550
+NoConn ~ 4600 2550
+NoConn ~ 4950 3000
+NoConn ~ 4950 3100
+NoConn ~ 4950 3200
+NoConn ~ 3500 3100
+NoConn ~ 3500 3200
+$Sheet
+S 7750 2950 2150 1350
+U 62DD8E5F
+F0 "AlarmAudio" 50
+F1 "AlarmAudio.sch" 50
+F2 "Tone" I L 7750 3500 50 
+$EndSheet
+Text GLabel 7500 3500 0    50   Output ~ 0
+Tone
+Wire Wire Line
+	7500 3500 7750 3500
+Text GLabel 3350 5150 0    50   Output ~ 0
+Tone
+Wire Wire Line
+	4200 4150 4200 5150
+Wire Wire Line
+	4200 5150 3350 5150
 $EndSCHEMATC

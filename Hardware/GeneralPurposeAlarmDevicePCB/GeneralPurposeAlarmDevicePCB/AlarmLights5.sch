@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 2 5
+Sheet 2 6
 Title "GeneralPurposeAlarmDevicePCB"
 Date "2022-06-20"
 Rev "0.0"
@@ -425,4 +425,116 @@ F 11 "Active" H 8500 4750 60  0001 L CNN "Status"
 $EndComp
 Text Notes 5050 2750 0    50   ~ 0
 Alarm lights, 5 Levels
+Wire Wire Line
+	8300 4200 8300 4150
+Wire Wire Line
+	7100 4200 7100 4150
+Wire Wire Line
+	5900 4150 5900 4200
+Wire Wire Line
+	4700 4200 4700 4150
+Wire Wire Line
+	3500 4200 3500 4150
+Wire Wire Line
+	3000 3850 3000 3950
+Wire Wire Line
+	3000 3950 3200 3950
+Wire Wire Line
+	3500 3750 3500 3650
+Wire Wire Line
+	3500 3400 3500 3350
+Connection ~ 3500 3350
+Wire Wire Line
+	3500 3350 3500 3250
+Wire Wire Line
+	4200 3850 4200 3950
+Wire Wire Line
+	4200 3950 4400 3950
+Wire Wire Line
+	4700 3750 4700 3650
+Wire Wire Line
+	4700 3350 4700 3250
+Wire Wire Line
+	5400 3850 5400 3950
+Wire Wire Line
+	5400 3950 5600 3950
+Wire Wire Line
+	5900 3750 5900 3650
+Wire Wire Line
+	5900 3350 5900 3250
+Wire Wire Line
+	6600 3850 6600 3950
+Wire Wire Line
+	6600 3950 6800 3950
+Wire Wire Line
+	7100 3750 7100 3650
+Wire Wire Line
+	7100 3350 7100 3250
+Wire Wire Line
+	7800 3850 7800 3950
+Wire Wire Line
+	7800 3950 8000 3950
+Wire Wire Line
+	8300 3750 8300 3650
+Wire Wire Line
+	8300 3350 8300 3250
+Wire Wire Line
+	3500 2950 3500 2800
+Wire Wire Line
+	8250 2800 8250 2950
+Wire Wire Line
+	8250 2950 8300 2950
+Wire Wire Line
+	7100 2950 7100 2800
+Connection ~ 7100 2800
+Wire Wire Line
+	7100 2800 8250 2800
+Wire Wire Line
+	5900 2950 5900 2800
+Wire Wire Line
+	3500 2800 4700 2800
+Connection ~ 5900 2800
+Wire Wire Line
+	5900 2800 7100 2800
+Wire Wire Line
+	4700 2950 4700 2800
+Connection ~ 4700 2800
+Wire Wire Line
+	4700 2800 5900 2800
+$Comp
+L power:+5V #PWR?
+U 1 1 62CBF69C
+P 3500 2350
+AR Path="/62CBF69C" Ref="#PWR?"  Part="1" 
+AR Path="/62B3AC2F/62CBF69C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3500 2200 50  0001 C CNN
+F 1 "+5V" H 3515 2523 50  0000 C CNN
+F 2 "" H 3500 2350 50  0001 C CNN
+F 3 "" H 3500 2350 50  0001 C CNN
+	1    3500 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 2800 3500 2350
+Connection ~ 3500 2800
+Text HLabel 3000 3200 0    50   Input ~ 0
+Light0
+Wire Wire Line
+	3000 3200 3000 3550
+Text HLabel 4200 3200 0    50   Input ~ 0
+Light1
+Wire Wire Line
+	4200 3200 4200 3550
+Text HLabel 5400 3200 0    50   Input ~ 0
+Light2
+Wire Wire Line
+	5400 3200 5400 3550
+Text HLabel 6600 3200 0    50   Input ~ 0
+Light3
+Wire Wire Line
+	6600 3200 6600 3550
+Text HLabel 7800 3200 0    50   Input ~ 0
+Light4
+Wire Wire Line
+	7800 3200 7800 3550
 $EndSCHEMATC

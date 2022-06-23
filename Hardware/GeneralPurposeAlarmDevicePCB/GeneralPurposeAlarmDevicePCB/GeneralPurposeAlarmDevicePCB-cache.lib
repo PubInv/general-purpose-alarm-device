@@ -439,6 +439,32 @@ X D 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# dk_Alarms-Buzzers-and-Sirens_PKMCS0909E4000-R1
+#
+DEF dk_Alarms-Buzzers-and-Sirens_PKMCS0909E4000-R1 BZ 0 1 Y Y 1 F N
+F0 "BZ" 0 200 60 H V L CNN
+F1 "dk_Alarms-Buzzers-and-Sirens_PKMCS0909E4000-R1" -100 -100 60 H V L CNN
+F2 "digikey-footprints:Piezo_9x9mm_PKMCS0909E4000-R1" 200 200 60 H I L CNN
+F3 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" 200 300 60 H I L CNN
+F4 "490-9647-1-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "PKMCS0909E4000-R1" 200 500 60 H I L CNN "MPN"
+F6 "Audio Products" 200 600 60 H I L CNN "Category"
+F7 "Alarms, Buzzers, and Sirens" 200 700 60 H I L CNN "Family"
+F8 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/murata-electronics-north-america/PKMCS0909E4000-R1/490-9647-1-ND/4878401" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "AUDIO PIEZO TRANSDUCER 12.5V SMD" 200 1000 60 H I L CNN "Description"
+F11 "Murata Electronics North America" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+A 200 50 71 450 -450 0 1 0 N 250 100 250 0
+A 200 50 112 634 -634 0 1 0 N 250 150 250 -50
+S 0 150 100 -50 0 1 0 f
+P 5 0 1 0 100 100 200 150 200 -50 100 0 100 100 f
+X ~ 1 -100 100 100 R 50 50 1 1 I
+X ~ 2 -100 0 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 # dk_Crystals_NX3225GD-8MHZ-STD-CRA-3
 #
 DEF dk_Crystals_NX3225GD-8MHZ-STD-CRA-3 XTAL 0 40 Y Y 1 F N
@@ -517,6 +543,31 @@ X OUT 4 400 -100 100 L 50 50 1 1 w
 ENDDRAW
 ENDDEF
 #
+# dk_Rectangular-Connectors-Headers-Male-Pins_22-23-2021
+#
+DEF dk_Rectangular-Connectors-Headers-Male-Pins_22-23-2021 J 0 40 Y Y 1 F N
+F0 "J" -100 50 50 H V R CNN
+F1 "dk_Rectangular-Connectors-Headers-Male-Pins_22-23-2021" 50 -150 50 H V C CNN
+F2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" 200 200 60 H I L CNN
+F3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" 200 300 60 H I L CNN
+F4 "WM4200-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "22-23-2021" 200 500 60 H I L CNN "MPN"
+F6 "Connectors, Interconnects" 200 600 60 H I L CNN "Category"
+F7 "Rectangular Connectors - Headers, Male Pins" 200 700 60 H I L CNN "Family"
+F8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "CONN HEADER VERT 2POS 2.54MM" 200 1000 60 H I L CNN "Description"
+F11 "Molex" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+S -50 0 150 -100 1 1 0 f
+S -10 -45 10 -65 1 1 0 F
+S 90 -45 110 -65 1 1 0 F
+X ~ 1 0 100 100 D 50 50 1 1 P
+X ~ 2 100 100 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # dk_Transistors-Bipolar-BJT-Single_MMBT2222A-7-F
 #
 DEF dk_Transistors-Bipolar-BJT-Single_MMBT2222A-7-F Q 0 0 Y Y 1 F N
@@ -544,6 +595,36 @@ P 4 0 1 0 60 -50 80 -90 40 -100 60 -50 F
 X B 1 -200 0 100 R 50 50 1 1 I
 X E 2 100 -200 100 U 50 50 1 1 P
 X C 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# dk_Transistors-Bipolar-BJT-Single_MMBT2907ALT1G
+#
+DEF dk_Transistors-Bipolar-BJT-Single_MMBT2907ALT1G Q 0 0 Y Y 1 F N
+F0 "Q" -94 154 60 H V C CNN
+F1 "dk_Transistors-Bipolar-BJT-Single_MMBT2907ALT1G" 200 0 60 V V C CNN
+F2 "digikey-footprints:SOT-23-3" 200 200 60 H I L CNN
+F3 "http://www.onsemi.com/pub/Collateral/MMBT2907ALT1-D.PDF" 200 300 60 H I L CNN
+F4 "MMBT2907ALT1GOSCT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "MMBT2907ALT1G" 200 500 60 H I L CNN "MPN"
+F6 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
+F7 "Transistors - Bipolar (BJT) - Single" 200 700 60 H I L CNN "Family"
+F8 "http://www.onsemi.com/pub/Collateral/MMBT2907ALT1-D.PDF" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/on-semiconductor/MMBT2907ALT1G/MMBT2907ALT1GOSCT-ND/1139812" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "TRANS PNP 60V 0.6A SOT23" 200 1000 60 H I L CNN "Description"
+F11 "ON Semiconductor" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+C 0 0 118 0 1 0 f
+P 2 0 1 0 -150 0 -100 0 N
+P 2 0 1 0 -140 0 0 0 N
+P 2 0 1 0 0 -50 100 -100 N
+P 2 0 1 0 0 50 100 100 N
+P 2 0 1 0 0 100 0 -100 N
+P 4 0 1 0 40 100 20 60 60 50 40 100 F
+X B 1 -200 0 100 R 50 50 1 1 I
+X E 2 100 200 100 D 50 50 1 1 P
+X C 3 100 -200 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #

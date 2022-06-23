@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 5 5
+Sheet 5 6
 Title "GeneralPurposeAlarmDevicePCB"
 Date "2022-06-20"
 Rev "0.0"
@@ -81,7 +81,7 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 6800 3800 50  00
 	1    6800 3800
 	0    1    1    0   
 $EndComp
-Text Notes 7150 3150 0    50   ~ 0
+Text Notes 6500 3200 0    50   ~ 0
 NULL MODEM
 $Comp
 L power:GND #PWR?
@@ -201,11 +201,7 @@ F 3 "" H 3650 4300 50  0001 C CNN
 	1    3650 4300
 	1    0    0    -1  
 $EndComp
-Text GLabel 7150 3800 2    50   Input ~ 0
-ControllerTX
-Text GLabel 7100 3450 2    50   Input ~ 0
-ControllerRX
-Text Notes 6500 4750 0    50   ~ 0
+Text Notes 7300 4250 0    50   ~ 0
 TX is Output\nRX is Input\n/CTS is Input\n/RTS is Output
 $Comp
 L Device:R R?
@@ -231,8 +227,8 @@ U 1 1 62BE31FB
 P 4750 4250
 AR Path="/62BE31FB" Ref="D?"  Part="1" 
 AR Path="/62BC4E7E/62BE31FB" Ref="D?"  Part="1" 
-F 0 "D?" H 4700 4587 60  0000 C CNN
-F 1 "RED 0603" H 4700 4481 60  0000 C CNN
+F 0 "D?" H 4750 4100 60  0000 C CNN
+F 1 "RED 0603" H 4600 4450 60  0000 C CNN
 F 2 "LED_SMD:LED_0603_1608Metric" H 4950 4450 60  0001 L CNN
 F 3 "" H 4950 4550 60  0001 L CNN
 F 4 "JLCPCB" H 4750 4250 50  0001 C CNN "Distributor 1"
@@ -279,23 +275,13 @@ F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6900 4200 50  000
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6950 3450 7100 3450
-Wire Wire Line
 	6500 3450 6650 3450
 Wire Wire Line
 	6500 3550 6650 3550
 Wire Wire Line
 	6650 3550 6650 3800
 Wire Wire Line
-	6950 3800 7150 3800
-Wire Wire Line
-	6500 4250 6700 4250
-Wire Wire Line
-	6700 4250 6700 4350
-Wire Wire Line
-	6700 4350 6900 4350
-Wire Wire Line
-	6100 4750 6100 4450
+	6100 4750 6100 4600
 Wire Wire Line
 	6000 3250 6000 3100
 Wire Wire Line
@@ -317,15 +303,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 3000 4200 3100
 Connection ~ 4750 3000
-Wire Wire Line
-	6100 3000 7000 3000
-Wire Wire Line
-	7000 3000 7000 4000
-Wire Wire Line
-	7000 4000 6900 4000
-Wire Wire Line
-	6900 4000 6900 4050
-Connection ~ 6100 3000
 Wire Wire Line
 	5700 3950 5550 3950
 Wire Wire Line
@@ -358,4 +335,30 @@ Wire Wire Line
 Wire Wire Line
 	3650 4150 3650 4250
 Connection ~ 3650 4250
+Text HLabel 8400 3450 2    50   Output ~ 0
+ControllerRX
+Text HLabel 8350 3800 2    50   Input ~ 0
+ControllerTX
+Wire Wire Line
+	6950 3800 8350 3800
+Wire Wire Line
+	6950 3450 8400 3450
+Wire Wire Line
+	6500 3750 6550 3750
+Wire Wire Line
+	6900 4050 6550 4050
+Wire Wire Line
+	6550 4050 6550 3750
+Wire Wire Line
+	6100 4600 6900 4600
+Wire Wire Line
+	6900 4600 6900 4350
+Connection ~ 6100 4600
+Wire Wire Line
+	6100 4600 6100 4450
+Text HLabel 8350 3000 2    50   UnSpc ~ 0
+VBUS
+Wire Wire Line
+	6100 3000 8350 3000
+Connection ~ 6100 3000
 $EndSCHEMATC

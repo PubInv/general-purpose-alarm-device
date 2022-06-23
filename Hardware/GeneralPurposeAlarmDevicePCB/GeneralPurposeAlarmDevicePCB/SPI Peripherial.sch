@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 4 5
+Sheet 4 6
 Title "GeneralPurposeAlarmDevicePCB"
 Date "2022-06-20"
 Rev "0.0"
@@ -72,19 +72,19 @@ $EndComp
 $Comp
 L Device:R R?
 U 1 1 62B96D7C
-P 7100 4550
+P 7300 4850
 AR Path="/62B96D7C" Ref="R?"  Part="1" 
 AR Path="/62B93801/62B96D7C" Ref="R?"  Part="1" 
-F 0 "R?" V 6900 4500 50  0000 C CNN
-F 1 "330R" V 7000 4550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7030 4550 50  0001 C CNN
-F 3 "~" H 7100 4550 50  0001 C CNN
-F 4 "JLCPCB" V 7100 4550 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 7100 4550 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 7100 4550 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 7100 4550 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 7100 4550 50  0001 C CNN "Description"
-	1    7100 4550
+F 0 "R?" V 7100 4800 50  0000 C CNN
+F 1 "330R" V 7200 4850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7230 4850 50  0001 C CNN
+F 3 "~" H 7300 4850 50  0001 C CNN
+F 4 "JLCPCB" V 7300 4850 50  0001 C CNN "Distributor 1"
+F 5 "C269711" V 7300 4850 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 7300 4850 50  0001 C CNN "Manufacturer"
+F 7 "RMC06033301%N" V 7300 4850 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 7300 4850 50  0001 C CNN "Description"
+	1    7300 4850
 	0    1    1    0   
 $EndComp
 $Comp
@@ -135,6 +135,38 @@ Wire Wire Line
 	4750 4450 5900 4450
 Wire Wire Line
 	4500 3950 5050 3950
+Text HLabel 7750 4450 2    50   Input ~ 0
+COPI
+Text HLabel 7800 3850 2    50   Output ~ 0
+CIPO
+Text HLabel 7750 4300 2    50   Input ~ 0
+SCK
+Text HLabel 7750 4850 2    50   Input ~ 0
+nCS
 Wire Wire Line
-	4500 4550 6950 4550
+	5750 4200 7500 4200
+Wire Wire Line
+	7500 4200 7500 4300
+Wire Wire Line
+	7500 4300 7750 4300
+Wire Wire Line
+	5350 3950 7500 3950
+Wire Wire Line
+	6200 4450 7750 4450
+Wire Wire Line
+	7000 4550 7000 4850
+Wire Wire Line
+	7000 4850 7150 4850
+Wire Wire Line
+	4500 4550 7000 4550
+Wire Wire Line
+	7450 4850 7750 4850
+Wire Wire Line
+	7500 3950 7500 3850
+Wire Wire Line
+	7500 3850 7800 3850
+Wire Wire Line
+	4500 4050 7800 4050
+Text HLabel 7800 4050 2    50   UnSpc ~ 0
+ControllerVcc
 $EndSCHEMATC

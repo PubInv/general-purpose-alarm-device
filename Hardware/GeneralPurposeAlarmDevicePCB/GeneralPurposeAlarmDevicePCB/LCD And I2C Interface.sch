@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 5
+Sheet 3 6
 Title "GeneralPurposeAlarmDevicePCB"
 Date "2022-06-20"
 Rev "0.0"
@@ -593,8 +593,6 @@ Wire Wire Line
 	5450 3750 5500 3750
 Wire Wire Line
 	4950 3050 3050 3050
-Wire Wire Line
-	3050 3050 3050 3000
 Connection ~ 4950 3050
 Connection ~ 5250 2950
 Wire Wire Line
@@ -651,4 +649,8 @@ Connection ~ 6900 3250
 Connection ~ 7300 3850
 Text Notes 3650 1750 0    50   ~ 0
 Wiring of I2C to LCD from:\nhttps://alselectro.wordpress.com/2016/05/12/serial-lcd-i2c-module-pcf8574/
+Text HLabel 2850 2950 0    50   Input ~ 0
+SCL
+Text HLabel 3050 3050 0    50   BiDi ~ 0
+SDA
 $EndSCHEMATC
