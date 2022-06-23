@@ -665,10 +665,7 @@ Wire Wire Line
 Wire Wire Line
 	5200 3400 5200 3600
 Wire Wire Line
-	5200 3600 4950 3600
-Wire Wire Line
 	5200 3600 5500 3600
-Connection ~ 5200 3600
 Wire Wire Line
 	1150 1100 1250 1100
 Wire Wire Line
@@ -682,7 +679,7 @@ Wire Wire Line
 Wire Wire Line
 	1250 1000 1150 1000
 Wire Wire Line
-	1450 1000 1300 1000
+	1450 1000 1400 1000
 Connection ~ 1250 1000
 Connection ~ 1300 1000
 Wire Wire Line
@@ -704,7 +701,7 @@ Wire Wire Line
 	1850 1150 1850 1000
 Connection ~ 1850 1000
 Wire Wire Line
-	1850 1000 2200 1000
+	1850 1000 2050 1000
 Wire Wire Line
 	1850 1450 1850 1550
 Wire Wire Line
@@ -1037,4 +1034,40 @@ Wire Wire Line
 	4200 4150 4200 5150
 Wire Wire Line
 	4200 5150 3350 5150
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 62E136FF
+P 1400 1000
+F 0 "#FLG0101" H 1400 1075 50  0001 C CNN
+F 1 "PWR_FLAG" H 1400 1173 50  0000 C CNN
+F 2 "" H 1400 1000 50  0001 C CNN
+F 3 "~" H 1400 1000 50  0001 C CNN
+	1    1400 1000
+	1    0    0    -1  
+$EndComp
+Connection ~ 1400 1000
+Wire Wire Line
+	1400 1000 1300 1000
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 62E14B5B
+P 2050 1000
+F 0 "#FLG0102" H 2050 1075 50  0001 C CNN
+F 1 "PWR_FLAG" H 2050 1173 50  0000 C CNN
+F 2 "" H 2050 1000 50  0001 C CNN
+F 3 "~" H 2050 1000 50  0001 C CNN
+	1    2050 1000
+	1    0    0    -1  
+$EndComp
+Connection ~ 2050 1000
+Wire Wire Line
+	2050 1000 2200 1000
+NoConn ~ 4950 3500
+Wire Wire Line
+	4950 3600 5200 3600
+Connection ~ 5200 3600
+Wire Wire Line
+	5500 3600 5950 3600
+Connection ~ 5500 3600
+Connection ~ 5950 3600
 $EndSCHEMATC
