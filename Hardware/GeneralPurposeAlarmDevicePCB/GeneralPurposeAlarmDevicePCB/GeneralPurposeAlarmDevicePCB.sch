@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 1
+Sheet 1 5
 Title "GeneralPurposeAlarmDevicePCB"
 Date "2022-06-20"
 Rev "0.0"
@@ -14,64 +14,49 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L GeneralPurposeAlarmDevicePCB-rescue:LCD_20x4_Character-GPAD_SCH_LIB U?
-U 1 1 62B14E53
-P 9300 2150
-F 0 "U?" H 8950 3300 50  0000 C CNN
-F 1 "LCD_20x4_Character" H 9300 3200 50  0000 C CNN
-F 2 "Display:NHD-0420H1Z" H 9300 1250 50  0001 C CNN
-F 3 "http://www.newhavendisplay.com/specs/NHD-0420H1Z-FSW-GBW-33V3.pdf" H 9400 2050 50  0001 C CNN
-F 4 "Aliexpress" H 8220 1460 50  0001 C CNN "Distributor 1"
-F 5 "https://www.aliexpress.com/item/3256803213374992.html" H 9200 1360 50  0001 C CNN "Distributor 1 PN"
-F 6 "Amazon" H 8180 1240 50  0001 C CNN "Distributor 2"
-F 7 "https://www.amazon.com/GeeekPi-Interface-Adapter-Backlight-Raspberry/dp/B07QLRD3TM/ref=sr_1_2" H 10090 1150 50  0001 C CNN "Distributor 2 PN"
-	1    9300 2150
-	1    0    0    -1  
-$EndComp
-$Comp
 L dk_Crystals:NX3225GD-8MHZ-STD-CRA-3 XTAL?
 U 1 1 62B3A927
-P 2000 4200
-F 0 "XTAL?" H 2000 4440 50  0000 C CNN
-F 1 "16MHZ 20PF HC-49S/SMD" H 2000 4349 50  0000 C CNN
-F 2 "" H 2200 4400 60  0001 L CNN
-F 3 "1811061718_TAE-Zhejiang-Abel-Elec-TAXM16M2GLFBET2T_C111377.pdf" H 2200 4500 60  0001 L CNN
-F 4 "JLCPCB" H 2000 4200 50  0001 C CNN "Distributor 1"
-F 5 "TAXM16M2GLFBET2T" H 2200 4600 60  0001 L CNN "Distributor1 PN"
-F 6 "TAXM16M2GLFBET2T" H 2200 4700 60  0001 L CNN "MPN"
-F 7 "Crystals, Oscillators, Resonators" H 2200 4800 60  0001 L CNN "Category"
-F 8 "Crystals" H 2200 4900 60  0001 L CNN "Family"
-F 9 "" H 2200 5000 60  0001 L CNN "DK_Datasheet_Link"
-F 10 "" H 2200 5100 60  0001 L CNN "DK_Detail_Page"
-F 11 "CRYSTAL 16.0000MHZ 20PF HC49SSMD" H 2200 5200 60  0001 L CNN "Description"
-F 12 "TAE" H 2200 5300 60  0001 L CNN "Manufacturer"
-F 13 "Active" H 2200 5400 60  0001 L CNN "Status"
-	1    2000 4200
+P 2600 4050
+F 0 "XTAL?" H 2600 4290 50  0000 C CNN
+F 1 "16MHZ 20PF HC-49S/SMD" H 2700 4200 50  0000 C CNN
+F 2 "" H 2800 4250 60  0001 L CNN
+F 3 "1811061718_TAE-Zhejiang-Abel-Elec-TAXM16M2GLFBET2T_C111377.pdf" H 2800 4350 60  0001 L CNN
+F 4 "JLCPCB" H 2600 4050 50  0001 C CNN "Distributor 1"
+F 5 "TAXM16M2GLFBET2T" H 2800 4450 60  0001 L CNN "Distributor1 PN"
+F 6 "TAXM16M2GLFBET2T" H 2800 4550 60  0001 L CNN "MPN"
+F 7 "Crystals, Oscillators, Resonators" H 2800 4650 60  0001 L CNN "Category"
+F 8 "Crystals" H 2800 4750 60  0001 L CNN "Family"
+F 9 "" H 2800 4850 60  0001 L CNN "DK_Datasheet_Link"
+F 10 "" H 2800 4950 60  0001 L CNN "DK_Detail_Page"
+F 11 "CRYSTAL 16.0000MHZ 20PF HC49SSMD" H 2800 5050 60  0001 L CNN "Description"
+F 12 "TAE" H 2800 5150 60  0001 L CNN "Manufacturer"
+F 13 "Active" H 2800 5250 60  0001 L CNN "Status"
+	1    2600 4050
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 62B45335
-P 1500 4550
-F 0 "C?" H 1615 4596 50  0000 L CNN
-F 1 "39pF" H 1615 4505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 1538 4400 50  0001 C CNN
-F 3 "~" H 1500 4550 50  0001 C CNN
-	1    1500 4550
+P 2100 4400
+F 0 "C?" H 2215 4446 50  0000 L CNN
+F 1 "39pF" H 2215 4355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2138 4250 50  0001 C CNN
+F 3 "~" H 2100 4400 50  0001 C CNN
+	1    2100 4400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 62B46140
-P 2350 4550
-F 0 "C?" H 2465 4596 50  0000 L CNN
-F 1 "39pF" H 2465 4505 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2388 4400 50  0001 C CNN
-F 3 "~" H 2350 4550 50  0001 C CNN
-	1    2350 4550
+P 2950 4400
+F 0 "C?" H 3065 4446 50  0000 L CNN
+F 1 "39pF" H 3065 4355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2988 4250 50  0001 C CNN
+F 3 "~" H 2950 4400 50  0001 C CNN
+	1    2950 4400
 	1    0    0    -1  
 $EndComp
-Text Notes 1450 4750 0    50   ~ 0
+Text Notes 2050 4600 0    50   ~ 0
 Note: Check pad sized for 0603 and 0603HandSolder
 $Comp
 L Device:D_Schottky D?
@@ -89,47 +74,25 @@ F 7 "MDD（Microdiode Electronics）" H 1600 1000 50  0001 C CNN "Manufacturer"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:C C?
-U 1 1 62B4BD4B
-P 1300 1450
-F 0 "C?" H 1415 1496 50  0000 L CNN
-F 1 "39pF" H 1415 1405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 1338 1300 50  0001 C CNN
-F 3 "~" H 1300 1450 50  0001 C CNN
-	1    1300 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0101
-U 1 1 62B4D791
-P 1300 1700
-F 0 "#PWR0101" H 1300 1450 50  0001 C CNN
-F 1 "GND" H 1305 1527 50  0000 C CNN
-F 2 "" H 1300 1700 50  0001 C CNN
-F 3 "" H 1300 1700 50  0001 C CNN
-	1    1300 1700
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0102
 U 1 1 62B4DABB
-P 1500 4800
-F 0 "#PWR0102" H 1500 4550 50  0001 C CNN
-F 1 "GND" H 1505 4627 50  0000 C CNN
-F 2 "" H 1500 4800 50  0001 C CNN
-F 3 "" H 1500 4800 50  0001 C CNN
-	1    1500 4800
+P 2100 4650
+F 0 "#PWR0102" H 2100 4400 50  0001 C CNN
+F 1 "GND" H 2105 4477 50  0000 C CNN
+F 2 "" H 2100 4650 50  0001 C CNN
+F 3 "" H 2100 4650 50  0001 C CNN
+	1    2100 4650
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0103
 U 1 1 62B4E34C
-P 2350 4850
-F 0 "#PWR0103" H 2350 4600 50  0001 C CNN
-F 1 "GND" H 2355 4677 50  0000 C CNN
-F 2 "" H 2350 4850 50  0001 C CNN
-F 3 "" H 2350 4850 50  0001 C CNN
-	1    2350 4850
+P 2950 4650
+F 0 "#PWR0103" H 2950 4400 50  0001 C CNN
+F 1 "GND" H 2955 4477 50  0000 C CNN
+F 2 "" H 2950 4650 50  0001 C CNN
+F 3 "" H 2950 4650 50  0001 C CNN
+	1    2950 4650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -141,17 +104,6 @@ F 1 "GND" H 3205 3277 50  0000 C CNN
 F 2 "" H 3200 3450 50  0001 C CNN
 F 3 "" H 3200 3450 50  0001 C CNN
 	1    3200 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0105
-U 1 1 62B5068A
-P 9300 3050
-F 0 "#PWR0105" H 9300 2800 50  0001 C CNN
-F 1 "GND" H 9305 2877 50  0000 C CNN
-F 2 "" H 9300 3050 50  0001 C CNN
-F 3 "" H 9300 3050 50  0001 C CNN
-	1    9300 3050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -174,213 +126,106 @@ F 11 "Active" H 5500 5750 60  0001 L CNN "Status"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0106
-U 1 1 62B53159
-P 5250 4800
-F 0 "#PWR0106" H 5250 4550 50  0001 C CNN
-F 1 "GND" H 5255 4627 50  0000 C CNN
-F 2 "" H 5250 4800 50  0001 C CNN
-F 3 "" H 5250 4800 50  0001 C CNN
-	1    5250 4800
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:CP C?
 U 1 1 62B5ACAD
-P 2300 1300
-F 0 "C?" H 2418 1346 50  0000 L CNN
-F 1 "47uF 16V" H 2418 1255 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2338 1150 50  0001 C CNN
-F 3 "~" H 2300 1300 50  0001 C CNN
-F 4 "JLCPCB" H 2300 1300 50  0001 C CNN "Distributor 1"
-F 5 "C2895272" H 2300 1300 50  0001 C CNN "Distributor 1 PN"
-F 6 "KNSCHA" H 2300 1300 50  0001 C CNN "Manufacturer"
-F 7 "RVT47UF16V67RV0019" H 2300 1300 50  0001 C CNN "MPN"
-	1    2300 1300
+P 1850 1300
+F 0 "C?" H 1968 1346 50  0000 L CNN
+F 1 "47uF 16V" H 1968 1255 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 1888 1150 50  0001 C CNN
+F 3 "~" H 1850 1300 50  0001 C CNN
+F 4 "JLCPCB" H 1850 1300 50  0001 C CNN "Distributor 1"
+F 5 "C2895272" H 1850 1300 50  0001 C CNN "Distributor 1 PN"
+F 6 "KNSCHA" H 1850 1300 50  0001 C CNN "Manufacturer"
+F 7 "RVT47UF16V67RV0019" H 1850 1300 50  0001 C CNN "MPN"
+	1    1850 1300
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP C?
 U 1 1 62B5B741
-P 4450 1200
-F 0 "C?" H 4568 1246 50  0000 L CNN
-F 1 "47uF 16V" H 4568 1155 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 4488 1050 50  0001 C CNN
-F 3 "~" H 4450 1200 50  0001 C CNN
-F 4 "JLCPCB" H 4450 1200 50  0001 C CNN "Distributor 1"
-F 5 "C2895272" H 4450 1200 50  0001 C CNN "Distributor 1 PN"
-F 6 "KNSCHA" H 4450 1200 50  0001 C CNN "Manufacturer"
-F 7 "RVT47UF16V67RV0019" H 4450 1200 50  0001 C CNN "MPN"
-	1    4450 1200
+P 3750 1200
+F 0 "C?" H 3868 1246 50  0000 L CNN
+F 1 "47uF 16V" H 3868 1155 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 3788 1050 50  0001 C CNN
+F 3 "~" H 3750 1200 50  0001 C CNN
+F 4 "JLCPCB" H 3750 1200 50  0001 C CNN "Distributor 1"
+F 5 "C2895272" H 3750 1200 50  0001 C CNN "Distributor 1 PN"
+F 6 "KNSCHA" H 3750 1200 50  0001 C CNN "Manufacturer"
+F 7 "RVT47UF16V67RV0019" H 3750 1200 50  0001 C CNN "MPN"
+	1    3750 1200
 	1    0    0    -1  
 $EndComp
 $Comp
 L dk_PMIC-Voltage-Regulators-Linear:NCP1117ST50T3G U?
 U 1 1 62B5C195
-P 3200 1000
-F 0 "U?" H 3250 1287 60  0000 C CNN
-F 1 "NCP1117ST50T3G" H 3250 1181 60  0000 C CNN
-F 2 "digikey-footprints:SOT-223" H 3400 1200 60  0001 L CNN
-F 3 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 3400 1300 60  0001 L CNN
-F 4 "NCP1117ST50T3GOSCT-ND" H 3400 1400 60  0001 L CNN "Digi-Key_PN"
-F 5 "NCP1117ST50T3G" H 3400 1500 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H 3400 1600 60  0001 L CNN "Category"
-F 7 "PMIC - Voltage Regulators - Linear" H 3400 1700 60  0001 L CNN "Family"
-F 8 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 3400 1800 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/NCP1117ST50T3G/NCP1117ST50T3GOSCT-ND/1967217" H 3400 1900 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC REG LINEAR 5V 1A SOT223" H 3400 2000 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 3400 2100 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 3400 2200 60  0001 L CNN "Status"
-F 13 "JLCPCB" H 3200 1000 50  0001 C CNN "Distributor 1"
-F 14 "C17314" H 3200 1000 50  0001 C CNN "Distributor 1 PN"
-F 15 "" H 3200 1000 50  0001 C CNN "Field15"
-	1    3200 1000
+P 2500 1000
+F 0 "U?" H 2550 1287 60  0000 C CNN
+F 1 "NCP1117ST50T3G" H 2550 1181 60  0000 C CNN
+F 2 "digikey-footprints:SOT-223" H 2700 1200 60  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 2700 1300 60  0001 L CNN
+F 4 "NCP1117ST50T3GOSCT-ND" H 2700 1400 60  0001 L CNN "Digi-Key_PN"
+F 5 "NCP1117ST50T3G" H 2700 1500 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 2700 1600 60  0001 L CNN "Category"
+F 7 "PMIC - Voltage Regulators - Linear" H 2700 1700 60  0001 L CNN "Family"
+F 8 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 2700 1800 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/NCP1117ST50T3G/NCP1117ST50T3GOSCT-ND/1967217" H 2700 1900 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC REG LINEAR 5V 1A SOT223" H 2700 2000 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 2700 2100 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2700 2200 60  0001 L CNN "Status"
+F 13 "JLCPCB" H 2500 1000 50  0001 C CNN "Distributor 1"
+F 14 "C17314" H 2500 1000 50  0001 C CNN "Distributor 1 PN"
+F 15 "" H 2500 1000 50  0001 C CNN "Field15"
+	1    2500 1000
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 62B5D253
-P 3900 1200
-F 0 "C?" H 4015 1246 50  0000 L CNN
-F 1 "100nF" H 4015 1155 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3938 1050 50  0001 C CNN
-F 3 "~" H 3900 1200 50  0001 C CNN
-F 4 "JLCPCB" H 3900 1200 50  0001 C CNN "Distributor 1"
-F 5 "C14663" H 3900 1200 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 3900 1200 50  0001 C CNN "Manufacturier"
-F 7 "CC0603KRX7R9BB104" H 3900 1200 50  0001 C CNN "MPN"
-F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 3900 1200 50  0001 C CNN "Description"
-	1    3900 1200
+P 3200 1200
+F 0 "C?" H 3315 1246 50  0000 L CNN
+F 1 "100nF" H 3315 1155 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3238 1050 50  0001 C CNN
+F 3 "~" H 3200 1200 50  0001 C CNN
+F 4 "JLCPCB" H 3200 1200 50  0001 C CNN "Distributor 1"
+F 5 "C14663" H 3200 1200 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 3200 1200 50  0001 C CNN "Manufacturier"
+F 7 "CC0603KRX7R9BB104" H 3200 1200 50  0001 C CNN "MPN"
+F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 3200 1200 50  0001 C CNN "Description"
+	1    3200 1200
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0107
 U 1 1 62B1C88A
-P 2300 1550
-F 0 "#PWR0107" H 2300 1300 50  0001 C CNN
-F 1 "GND" H 2305 1377 50  0000 C CNN
-F 2 "" H 2300 1550 50  0001 C CNN
-F 3 "" H 2300 1550 50  0001 C CNN
-	1    2300 1550
+P 1850 1550
+F 0 "#PWR0107" H 1850 1300 50  0001 C CNN
+F 1 "GND" H 1855 1377 50  0000 C CNN
+F 2 "" H 1850 1550 50  0001 C CNN
+F 3 "" H 1850 1550 50  0001 C CNN
+	1    1850 1550
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0108
 U 1 1 62B1CDA3
-P 3900 1450
-F 0 "#PWR0108" H 3900 1200 50  0001 C CNN
-F 1 "GND" H 3905 1277 50  0000 C CNN
-F 2 "" H 3900 1450 50  0001 C CNN
-F 3 "" H 3900 1450 50  0001 C CNN
-	1    3900 1450
+P 3200 1450
+F 0 "#PWR0108" H 3200 1200 50  0001 C CNN
+F 1 "GND" H 3205 1277 50  0000 C CNN
+F 2 "" H 3200 1450 50  0001 C CNN
+F 3 "" H 3200 1450 50  0001 C CNN
+	1    3200 1450
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0109
 U 1 1 62B1D284
-P 4450 1400
-F 0 "#PWR0109" H 4450 1150 50  0001 C CNN
-F 1 "GND" H 4455 1227 50  0000 C CNN
-F 2 "" H 4450 1400 50  0001 C CNN
-F 3 "" H 4450 1400 50  0001 C CNN
-	1    4450 1400
+P 3750 1400
+F 0 "#PWR0109" H 3750 1150 50  0001 C CNN
+F 1 "GND" H 3755 1227 50  0000 C CNN
+F 2 "" H 3750 1400 50  0001 C CNN
+F 3 "" H 3750 1400 50  0001 C CNN
+	1    3750 1400
 	1    0    0    -1  
-$EndComp
-$Comp
-L Interface_Expansion:PCF8574A U?
-U 1 1 62B32C2C
-P 8150 2450
-F 0 "U?" H 8150 3331 50  0000 C CNN
-F 1 "PCF8574AT" H 8150 3240 50  0000 C CNN
-F 2 "Package_SO:SOIC-16W_5.3x10.2mm_P1.27mm" H 8150 2450 50  0001 C CNN
-F 3 "http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf" H 8150 2450 50  0001 C CNN
-F 4 "JLCPCB" H 8150 2450 50  0001 C CNN "Distributor 1"
-F 5 "C83193" H 8150 2450 50  0001 C CNN "Distributor 1 PN"
-F 6 "NXP Semicon" H 8150 2450 50  0001 C CNN "Manufacturier"
-F 7 "Remote 8-bit I/O expander for I2C-bus with interrupt" H 8150 2450 50  0001 C CNN "Descirption"
-F 8 "PCF8574AT/3,512" H 8150 2450 50  0001 C CNN "MPN"
-	1    8150 2450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B3DB14
-P 6250 1600
-F 0 "R?" H 6150 1550 50  0000 C CNN
-F 1 "4K7" H 6100 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6180 1600 50  0001 C CNN
-F 3 "~" H 6250 1600 50  0001 C CNN
-F 4 "JLCPCB" V 6250 1600 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 6250 1600 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 6250 1600 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 6250 1600 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6250 1600 50  0001 C CNN "Description"
-	1    6250 1600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B3DB22
-P 6600 1600
-F 0 "R?" H 6500 1550 50  0000 C CNN
-F 1 "1K" H 6450 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6530 1600 50  0001 C CNN
-F 3 "~" H 6600 1600 50  0001 C CNN
-F 4 "JLCPCB" V 6600 1600 50  0001 C CNN "Distributor 1"
-F 5 "C269704" V 6600 1600 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 6600 1600 50  0001 C CNN "Manufacturer"
-F 7 "RMC06031K1%N" V 6600 1600 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6600 1600 50  0001 C CNN "Description"
-	1    6600 1600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B40799
-P 6600 2850
-F 0 "R?" H 6500 2800 50  0000 C CNN
-F 1 "330R" H 6450 2900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6530 2850 50  0001 C CNN
-F 3 "~" H 6600 2850 50  0001 C CNN
-F 4 "JLCPCB" V 6600 2850 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 6600 2850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 6600 2850 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 6600 2850 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 6600 2850 50  0001 C CNN "Description"
-	1    6600 2850
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B41B50
-P 6950 2850
-F 0 "R?" H 6850 2800 50  0000 C CNN
-F 1 "330R" H 6800 2900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6880 2850 50  0001 C CNN
-F 3 "~" H 6950 2850 50  0001 C CNN
-F 4 "JLCPCB" V 6950 2850 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 6950 2850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 6950 2850 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 6950 2850 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 6950 2850 50  0001 C CNN "Description"
-	1    6950 2850
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B41F13
-P 7250 2850
-F 0 "R?" H 7150 2800 50  0000 C CNN
-F 1 "330R" H 7100 2900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7180 2850 50  0001 C CNN
-F 3 "~" H 7250 2850 50  0001 C CNN
-F 4 "JLCPCB" V 7250 2850 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 7250 2850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 7250 2850 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 7250 2850 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 7250 2850 50  0001 C CNN "Description"
-	1    7250 2850
-	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R R?
@@ -399,319 +244,14 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 5200 4100 50  00
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R R?
-U 1 1 62B45055
-P 6950 1600
-F 0 "R?" H 6850 1550 50  0000 C CNN
-F 1 "1K" H 6800 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6880 1600 50  0001 C CNN
-F 3 "~" H 6950 1600 50  0001 C CNN
-F 4 "JLCPCB" V 6950 1600 50  0001 C CNN "Distributor 1"
-F 5 "C269704" V 6950 1600 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 6950 1600 50  0001 C CNN "Manufacturer"
-F 7 "RMC06031K1%N" V 6950 1600 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6950 1600 50  0001 C CNN "Description"
-	1    6950 1600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B4567A
-P 7250 1600
-F 0 "R?" H 7150 1550 50  0000 C CNN
-F 1 "1K" H 7100 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7180 1600 50  0001 C CNN
-F 3 "~" H 7250 1600 50  0001 C CNN
-F 4 "JLCPCB" V 7250 1600 50  0001 C CNN "Distributor 1"
-F 5 "C269704" V 7250 1600 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 7250 1600 50  0001 C CNN "Manufacturer"
-F 7 "RMC06031K1%N" V 7250 1600 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 7250 1600 50  0001 C CNN "Description"
-	1    7250 1600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B45B16
-P 5850 1600
-F 0 "R?" H 5750 1550 50  0000 C CNN
-F 1 "4K7" H 5700 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5780 1600 50  0001 C CNN
-F 3 "~" H 5850 1600 50  0001 C CNN
-F 4 "JLCPCB" V 5850 1600 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 5850 1600 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 5850 1600 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 5850 1600 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 5850 1600 50  0001 C CNN "Description"
-	1    5850 1600
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B508AC
-P 5500 1600
-F 0 "R?" H 5400 1550 50  0000 C CNN
-F 1 "4K7" H 5350 1650 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5430 1600 50  0001 C CNN
-F 3 "~" H 5500 1600 50  0001 C CNN
-F 4 "JLCPCB" V 5500 1600 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 5500 1600 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 5500 1600 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 5500 1600 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 5500 1600 50  0001 C CNN "Description"
-	1    5500 1600
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B5329C
-P 8150 3350
-F 0 "#PWR?" H 8150 3100 50  0001 C CNN
-F 1 "GND" H 8155 3177 50  0000 C CNN
-F 2 "" H 8150 3350 50  0001 C CNN
-F 3 "" H 8150 3350 50  0001 C CNN
-	1    8150 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B5385B
-P 10000 1800
-F 0 "#PWR?" H 10000 1550 50  0001 C CNN
-F 1 "GND" H 10005 1627 50  0000 C CNN
-F 2 "" H 10000 1800 50  0001 C CNN
-F 3 "" H 10000 1800 50  0001 C CNN
-	1    10000 1800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B53C42
-P 9400 850
-F 0 "R?" V 9200 800 50  0000 C CNN
-F 1 "1R0" V 9300 850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 9330 850 50  0001 C CNN
-F 3 "~" H 9400 850 50  0001 C CNN
-F 4 "JLCPCB" V 9400 850 50  0001 C CNN "Distributor 1"
-F 5 "C269434" V 9400 850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 9400 850 50  0001 C CNN "Manufacturer"
-F 7 "RMC060315%N" V 9400 850 50  0001 C CNN "MPN"
-F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 9400 850 50  0001 C CNN "Description"
-	1    9400 850 
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:CP C?
-U 1 1 62B551FA
-P 10000 1550
-F 0 "C?" H 10118 1596 50  0000 L CNN
-F 1 "47uF 16V" H 10118 1505 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 10038 1400 50  0001 C CNN
-F 3 "~" H 10000 1550 50  0001 C CNN
-F 4 "JLCPCB" H 10000 1550 50  0001 C CNN "Distributor 1"
-F 5 "C2895272" H 10000 1550 50  0001 C CNN "Distributor 1 PN"
-F 6 "KNSCHA" H 10000 1550 50  0001 C CNN "Manufacturer"
-F 7 "RVT47UF16V67RV0019" H 10000 1550 50  0001 C CNN "MPN"
-	1    10000 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C?
-U 1 1 62B56969
-P 10000 850
-F 0 "C?" H 10115 896 50  0000 L CNN
-F 1 "100nF" H 10115 805 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 10038 700 50  0001 C CNN
-F 3 "~" H 10000 850 50  0001 C CNN
-F 4 "JLCPCB" H 10000 850 50  0001 C CNN "Distributor 1"
-F 5 "C14663" H 10000 850 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 10000 850 50  0001 C CNN "Manufacturier"
-F 7 "CC0603KRX7R9BB104" H 10000 850 50  0001 C CNN "MPN"
-F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 10000 850 50  0001 C CNN "Description"
-	1    10000 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B60CF9
-P 10000 1050
-F 0 "#PWR?" H 10000 800 50  0001 C CNN
-F 1 "GND" H 10005 877 50  0000 C CNN
-F 2 "" H 10000 1050 50  0001 C CNN
-F 3 "" H 10000 1050 50  0001 C CNN
-	1    10000 1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B63CDC
-P 9550 4100
-F 0 "#PWR?" H 9550 3850 50  0001 C CNN
-F 1 "GND" H 9555 3927 50  0000 C CNN
-F 2 "" H 9550 4100 50  0001 C CNN
-F 3 "" H 9550 4100 50  0001 C CNN
-	1    9550 4100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B640B6
-P 8850 3650
-F 0 "R?" H 8750 3600 50  0000 C CNN
-F 1 "4K7" H 8700 3700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 8780 3650 50  0001 C CNN
-F 3 "~" H 8850 3650 50  0001 C CNN
-F 4 "JLCPCB" V 8850 3650 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 8850 3650 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 8850 3650 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 8850 3650 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 8850 3650 50  0001 C CNN "Description"
-	1    8850 3650
-	-1   0    0    1   
-$EndComp
-$Comp
-L Transistor_FET:BSS138 Q?
-U 1 1 62B651C8
-P 9450 3800
-F 0 "Q?" H 9654 3846 50  0000 L CNN
-F 1 "BSS138" H 9654 3755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 9650 3725 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 9450 3800 50  0001 L CNN
-F 4 "N-Channel Enhancement Mode Field Effect Transistor" H 9450 3800 50  0001 C CNN "Description"
-F 5 "JLCPCB" H 9450 3800 50  0001 C CNN "Distirbutor 1"
-F 6 "C400505" H 9450 3800 50  0001 C CNN "Distributor 1 PN"
-F 7 "" H 9450 3800 50  0001 C CNN "Field7"
-F 8 "Yangzhou Yangjie Electronic Technology Co., Ltd" H 9450 3800 50  0001 C CNN "Manufacturier"
-F 9 "BSS138" H 9450 3800 50  0001 C CNN "MPN"
-	1    9450 3800
-	1    0    0    -1  
-$EndComp
-Text Notes 8100 4600 0    50   ~ 0
-Backlight transistor gate(base) to PCF8547 pin 7 P3.\nIf add base resistor can use MMBT2222 for transistor.
-$Comp
-L power:+5V #PWR?
-U 1 1 62B6EBBC
-P 8650 850
-F 0 "#PWR?" H 8650 700 50  0001 C CNN
-F 1 "+5V" H 8665 1023 50  0000 C CNN
-F 2 "" H 8650 850 50  0001 C CNN
-F 3 "" H 8650 850 50  0001 C CNN
-	1    8650 850 
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+5V #PWR?
 U 1 1 62B6F384
-P 4600 900
-F 0 "#PWR?" H 4600 750 50  0001 C CNN
-F 1 "+5V" H 4615 1073 50  0000 C CNN
-F 2 "" H 4600 900 50  0001 C CNN
-F 3 "" H 4600 900 50  0001 C CNN
-	1    4600 900 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B745EC
-P 10100 2700
-F 0 "#PWR?" H 10100 2450 50  0001 C CNN
-F 1 "GND" H 10105 2527 50  0000 C CNN
-F 2 "" H 10100 2700 50  0001 C CNN
-F 3 "" H 10100 2700 50  0001 C CNN
-	1    10100 2700
-	1    0    0    -1  
-$EndComp
-Text Notes 600  7850 0    50   ~ 0
-Note: Check that pin 1 is on the left when viewing the connector on layout.
-$Comp
-L Device:R R?
-U 1 1 62B91869
-P 2250 7200
-F 0 "R?" V 2050 7150 50  0000 C CNN
-F 1 "330R" V 2150 7200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2180 7200 50  0001 C CNN
-F 3 "~" H 2250 7200 50  0001 C CNN
-F 4 "JLCPCB" V 2250 7200 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 2250 7200 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 2250 7200 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 2250 7200 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 2250 7200 50  0001 C CNN "Description"
-	1    2250 7200
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B921FC
-P 2650 7400
-F 0 "R?" V 2450 7350 50  0000 C CNN
-F 1 "330R" V 2550 7400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2580 7400 50  0001 C CNN
-F 3 "~" H 2650 7400 50  0001 C CNN
-F 4 "JLCPCB" V 2650 7400 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 2650 7400 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 2650 7400 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 2650 7400 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 2650 7400 50  0001 C CNN "Description"
-	1    2650 7400
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B92585
-P 3100 7600
-F 0 "R?" V 2900 7550 50  0000 C CNN
-F 1 "330R" V 3000 7600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3030 7600 50  0001 C CNN
-F 3 "~" H 3100 7600 50  0001 C CNN
-F 4 "JLCPCB" V 3100 7600 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 3100 7600 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 3100 7600 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 3100 7600 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 3100 7600 50  0001 C CNN "Description"
-	1    3100 7600
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B927D8
-P 3550 7750
-F 0 "R?" V 3350 7700 50  0000 C CNN
-F 1 "330R" V 3450 7750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3480 7750 50  0001 C CNN
-F 3 "~" H 3550 7750 50  0001 C CNN
-F 4 "JLCPCB" V 3550 7750 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 3550 7750 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 3550 7750 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 3550 7750 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 3550 7750 50  0001 C CNN "Description"
-	1    3550 7750
-	0    1    1    0   
-$EndComp
-$Comp
-L GPAD_SCH_LIB:10K RV?
-U 1 1 62B9652F
-P 10050 2300
-F 0 "RV?" H 9980 2391 50  0000 R CNN
-F 1 "10K" H 9980 2300 50  0000 R CNN
-F 2 "digikey-footprints:Trimpot_3.8mmx3.6mm_TC33X-2-103E" H 10050 2300 50  0001 C CNN
-F 3 "https://www.bourns.com/docs/Product-Datasheets/TC33.pdf" H 10050 2300 50  0001 C CNN
-F 4 "JLCPCB" H 10050 2300 50  0001 C CNN "Distributor 1"
-F 5 "C58159" H 10050 2300 50  0001 C CNN "Distributor 1 PN"
-F 6 "BOURNS" H 10050 2300 50  0001 C CNN "Manufacturier"
-F 7 "3362P-1-103LF" H 10050 2300 50  0001 C CNN "MPN"
-F 8 "HAND" H 9980 2209 50  0000 R CNN "Assembly Type"
-	1    10050 2300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:RJ12 J?
-U 1 1 62BB05B1
-P 1150 7450
-F 0 "J?" H 1207 8017 50  0000 C CNN
-F 1 "RJ12" H 1207 7926 50  0000 C CNN
-F 2 "" V 1150 7475 50  0001 C CNN
-F 3 "~" V 1150 7475 50  0001 C CNN
-	1    1150 7450
+P 3900 900
+F 0 "#PWR?" H 3900 750 50  0001 C CNN
+F 1 "+5V" H 3915 1073 50  0000 C CNN
+F 2 "" H 3900 900 50  0001 C CNN
+F 3 "" H 3900 900 50  0001 C CNN
+	1    3900 900 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -732,8 +272,6 @@ F 10 "839-54-00164CT-ND" H 850 1100 50  0001 C CNN "Distributor 2 PN"
 	1    850  1100
 	1    0    0    -1  
 $EndComp
-Text Notes 850  6800 0    50   ~ 0
-/* Hardware Notes Peripheral\n   SPI Line Pin in Arduino, IO setup\n  MOSI 11 or ICSP-4  Input,  ATmegaPin BP3, 17\n  MISO 12 or ICSP-1 Output, ATmegaPin BP4, 18\n  SCK 13 or ICSP-3  Input, ATmegaPin BP5, 19\n  SS 10 Input, ATmegaPin BP2, 16\n*/
 $Comp
 L GPAD_SCH_LIB:PI_ATMEGA328P-AU-InOrder U?
 U 1 1 62B3A84B
@@ -753,17 +291,6 @@ F 11 "IC MCU 8BIT 32KB FLASH 32TQFP" H 2740 3600 60  0001 L CNN "Description"
 F 12 "Microchip Technology" H 2740 3700 60  0001 L CNN "Manufacturer"
 F 13 "Active" H 4200 3250 60  0001 L CNN "Status"
 	1    4250 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 62B4EB32
-P 2700 3000
-F 0 "#PWR?" H 2700 2850 50  0001 C CNN
-F 1 "+5V" H 2715 3173 50  0000 C CNN
-F 2 "" H 2700 3000 50  0001 C CNN
-F 3 "" H 2700 3000 50  0001 C CNN
-	1    2700 3000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -861,436 +388,9 @@ F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 	1    5500 3750
 	1    0    0    -1  
 $EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D?
-U 1 1 62B74838
-P 9550 5700
-F 0 "D?" V 9500 5950 60  0000 C CNN
-F 1 "RED 0603" V 9650 6000 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 9750 5900 60  0001 L CNN
-F 3 "" H 9750 6000 60  0001 L CNN
-F 4 "JLCPCB" H 9550 5700 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 9750 6100 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 9750 6200 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 9750 6300 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 9750 6400 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 9750 6700 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 9750 6800 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 9750 6900 60  0001 L CNN "Status"
-	1    9550 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q?
-U 1 1 62B79B0E
-P 9450 6100
-F 0 "Q?" H 9638 6153 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 9638 6047 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 9650 6300 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 9650 6400 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 9650 6500 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 9650 6600 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 9650 6700 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 9650 6800 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 9650 6900 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 9650 7000 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 9650 7100 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 9650 7200 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 9650 7300 60  0001 L CNN "Status"
-	1    9450 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B7B445
-P 9550 5250
-F 0 "R?" H 9450 5200 50  0000 C CNN
-F 1 "330R" H 9400 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 9480 5250 50  0001 C CNN
-F 3 "~" H 9550 5250 50  0001 C CNN
-F 4 "JLCPCB" V 9550 5250 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 9550 5250 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 9550 5250 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 9550 5250 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 9550 5250 50  0001 C CNN "Description"
-	1    9550 5250
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B7E0FA
-P 9550 6350
-F 0 "#PWR?" H 9550 6100 50  0001 C CNN
-F 1 "GND" H 9555 6177 50  0000 C CNN
-F 2 "" H 9550 6350 50  0001 C CNN
-F 3 "" H 9550 6350 50  0001 C CNN
-	1    9550 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B7ECA6
-P 9050 5850
-F 0 "R?" H 8950 5800 50  0000 C CNN
-F 1 "4K7" H 8900 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 8980 5850 50  0001 C CNN
-F 3 "~" H 9050 5850 50  0001 C CNN
-F 4 "JLCPCB" V 9050 5850 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 9050 5850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 9050 5850 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 9050 5850 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 9050 5850 50  0001 C CNN "Description"
-	1    9050 5850
-	-1   0    0    1   
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D?
-U 1 1 62B86A78
-P 8350 5700
-F 0 "D?" V 8300 5950 60  0000 C CNN
-F 1 "RED 0603" V 8450 6000 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 8550 5900 60  0001 L CNN
-F 3 "" H 8550 6000 60  0001 L CNN
-F 4 "JLCPCB" H 8350 5700 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 8550 6100 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 8550 6200 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 8550 6300 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 8550 6400 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 8550 6700 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 8550 6800 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 8550 6900 60  0001 L CNN "Status"
-	1    8350 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q?
-U 1 1 62B86A87
-P 8250 6100
-F 0 "Q?" H 8438 6153 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 8438 6047 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 8450 6300 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8450 6400 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 8450 6500 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 8450 6600 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 8450 6700 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 8450 6800 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8450 6900 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 8450 7000 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 8450 7100 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 8450 7200 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 8450 7300 60  0001 L CNN "Status"
-	1    8250 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B86A92
-P 8350 5250
-F 0 "R?" H 8250 5200 50  0000 C CNN
-F 1 "330R" H 8200 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 8280 5250 50  0001 C CNN
-F 3 "~" H 8350 5250 50  0001 C CNN
-F 4 "JLCPCB" V 8350 5250 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 8350 5250 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 8350 5250 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 8350 5250 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 8350 5250 50  0001 C CNN "Description"
-	1    8350 5250
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B86A98
-P 8350 6350
-F 0 "#PWR?" H 8350 6100 50  0001 C CNN
-F 1 "GND" H 8355 6177 50  0000 C CNN
-F 2 "" H 8350 6350 50  0001 C CNN
-F 3 "" H 8350 6350 50  0001 C CNN
-	1    8350 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B86AA3
-P 7850 5850
-F 0 "R?" H 7750 5800 50  0000 C CNN
-F 1 "4K7" H 7700 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7780 5850 50  0001 C CNN
-F 3 "~" H 7850 5850 50  0001 C CNN
-F 4 "JLCPCB" V 7850 5850 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 7850 5850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 7850 5850 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 7850 5850 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 7850 5850 50  0001 C CNN "Description"
-	1    7850 5850
-	-1   0    0    1   
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D?
-U 1 1 62B9193B
-P 7150 5700
-F 0 "D?" V 7100 5950 60  0000 C CNN
-F 1 "RED 0603" V 7250 6000 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 7350 5900 60  0001 L CNN
-F 3 "" H 7350 6000 60  0001 L CNN
-F 4 "JLCPCB" H 7150 5700 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 7350 6100 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 7350 6200 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 7350 6300 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 7350 6400 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 7350 6700 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 7350 6800 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 7350 6900 60  0001 L CNN "Status"
-	1    7150 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q?
-U 1 1 62B9194A
-P 7050 6100
-F 0 "Q?" H 7238 6153 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 7238 6047 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 7250 6300 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7250 6400 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 7250 6500 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 7250 6600 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 7250 6700 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 7250 6800 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7250 6900 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 7250 7000 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 7250 7100 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 7250 7200 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7250 7300 60  0001 L CNN "Status"
-	1    7050 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B91955
-P 7150 5250
-F 0 "R?" H 7050 5200 50  0000 C CNN
-F 1 "330R" H 7000 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7080 5250 50  0001 C CNN
-F 3 "~" H 7150 5250 50  0001 C CNN
-F 4 "JLCPCB" V 7150 5250 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 7150 5250 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 7150 5250 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 7150 5250 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 7150 5250 50  0001 C CNN "Description"
-	1    7150 5250
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B9195B
-P 7150 6350
-F 0 "#PWR?" H 7150 6100 50  0001 C CNN
-F 1 "GND" H 7155 6177 50  0000 C CNN
-F 2 "" H 7150 6350 50  0001 C CNN
-F 3 "" H 7150 6350 50  0001 C CNN
-	1    7150 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B91966
-P 6650 5850
-F 0 "R?" H 6550 5800 50  0000 C CNN
-F 1 "4K7" H 6500 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6580 5850 50  0001 C CNN
-F 3 "~" H 6650 5850 50  0001 C CNN
-F 4 "JLCPCB" V 6650 5850 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 6650 5850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 6650 5850 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 6650 5850 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6650 5850 50  0001 C CNN "Description"
-	1    6650 5850
-	-1   0    0    1   
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D?
-U 1 1 62B91974
-P 5950 5700
-F 0 "D?" V 5900 5950 60  0000 C CNN
-F 1 "RED 0603" V 6050 6000 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 6150 5900 60  0001 L CNN
-F 3 "" H 6150 6000 60  0001 L CNN
-F 4 "JLCPCB" H 5950 5700 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 6150 6100 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 6150 6200 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 6150 6300 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 6150 6400 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 6150 6700 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 6150 6800 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 6150 6900 60  0001 L CNN "Status"
-	1    5950 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q?
-U 1 1 62B91983
-P 5850 6100
-F 0 "Q?" H 6038 6153 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 6038 6047 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 6050 6300 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6050 6400 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 6050 6500 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 6050 6600 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 6050 6700 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 6050 6800 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6050 6900 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 6050 7000 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 6050 7100 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 6050 7200 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 6050 7300 60  0001 L CNN "Status"
-	1    5850 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B9198E
-P 5950 5250
-F 0 "R?" H 5850 5200 50  0000 C CNN
-F 1 "330R" H 5800 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5880 5250 50  0001 C CNN
-F 3 "~" H 5950 5250 50  0001 C CNN
-F 4 "JLCPCB" V 5950 5250 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 5950 5250 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 5950 5250 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 5950 5250 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 5950 5250 50  0001 C CNN "Description"
-	1    5950 5250
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62B91994
-P 5950 6350
-F 0 "#PWR?" H 5950 6100 50  0001 C CNN
-F 1 "GND" H 5955 6177 50  0000 C CNN
-F 2 "" H 5950 6350 50  0001 C CNN
-F 3 "" H 5950 6350 50  0001 C CNN
-	1    5950 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B9199F
-P 5450 5850
-F 0 "R?" H 5350 5800 50  0000 C CNN
-F 1 "4K7" H 5300 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5380 5850 50  0001 C CNN
-F 3 "~" H 5450 5850 50  0001 C CNN
-F 4 "JLCPCB" V 5450 5850 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 5450 5850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 5450 5850 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 5450 5850 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 5450 5850 50  0001 C CNN "Description"
-	1    5450 5850
-	-1   0    0    1   
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D?
-U 1 1 62BA54B5
-P 4750 5700
-F 0 "D?" V 4700 5950 60  0000 C CNN
-F 1 "RED 0603" V 4850 6000 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 4950 5900 60  0001 L CNN
-F 3 "" H 4950 6000 60  0001 L CNN
-F 4 "JLCPCB" H 4750 5700 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 4950 6100 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 4950 6200 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 4950 6300 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 4950 6400 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 4950 6700 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 4950 6800 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 4950 6900 60  0001 L CNN "Status"
-	1    4750 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q?
-U 1 1 62BA54C4
-P 4650 6100
-F 0 "Q?" H 4838 6153 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 4838 6047 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 4850 6300 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4850 6400 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 4850 6500 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 4850 6600 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 4850 6700 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 4850 6800 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4850 6900 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 4850 7000 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 4850 7100 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 4850 7200 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4850 7300 60  0001 L CNN "Status"
-	1    4650 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62BA54CF
-P 4750 5250
-F 0 "R?" H 4650 5200 50  0000 C CNN
-F 1 "330R" H 4600 5300 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4680 5250 50  0001 C CNN
-F 3 "~" H 4750 5250 50  0001 C CNN
-F 4 "JLCPCB" V 4750 5250 50  0001 C CNN "Distributor 1"
-F 5 "C269711" V 4750 5250 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 4750 5250 50  0001 C CNN "Manufacturer"
-F 7 "RMC06033301%N" V 4750 5250 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 4750 5250 50  0001 C CNN "Description"
-	1    4750 5250
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62BA54D5
-P 4750 6350
-F 0 "#PWR?" H 4750 6100 50  0001 C CNN
-F 1 "GND" H 4755 6177 50  0000 C CNN
-F 2 "" H 4750 6350 50  0001 C CNN
-F 3 "" H 4750 6350 50  0001 C CNN
-	1    4750 6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62BA54E0
-P 4250 5850
-F 0 "R?" H 4150 5800 50  0000 C CNN
-F 1 "4K7" H 4100 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4180 5850 50  0001 C CNN
-F 3 "~" H 4250 5850 50  0001 C CNN
-F 4 "JLCPCB" V 4250 5850 50  0001 C CNN "Distributor 1"
-F 5 "C269713" V 4250 5850 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 4250 5850 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 4K7 F N" V 4250 5850 50  0001 C CNN "MPN"
-F 8 "1W ±1% 4.7kΩ 0603 Chip Resistor - Surface Mount ROHS" H 4250 5850 50  0001 C CNN "Description"
-	1    4250 5850
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62BA6BA3
-P 1900 7450
-F 0 "#PWR?" H 1900 7200 50  0001 C CNN
-F 1 "GND" H 1905 7277 50  0000 C CNN
-F 2 "" H 1900 7450 50  0001 C CNN
-F 3 "" H 1900 7450 50  0001 C CNN
-	1    1900 7450
-	1    0    0    -1  
-$EndComp
-Text Notes 7050 1250 0    50   ~ 0
-LCD compnents including I2C interface.
-Text Notes 6750 4950 0    50   ~ 0
-Alarm lights, 5 Levels
-Text Notes 850  5850 0    50   ~ 0
-SPI Peripherial Interface
 Text Notes 850  650  0    50   ~ 0
 Power Input, Reverse protected.
-Text Notes 600  3950 0    50   ~ 0
+Text Notes 850  4000 0    50   ~ 0
 Notes:\nArduino Pin to ATmega328\nA0 PC0\nA1 PC1\nA2 PC2\nA3 PC3\nA4 PC4\nA5 PC5\nD0 PD0\nD1 PD1\nD2 PD2\n'D3 PD3\nD4 PD4\n`D5 PD5\n`D6 PD6\nD7 PD7\nD8 PB0\n`D9 PB1\n`D10 PB2\n`D11 PB3\nD12 PB4\nD13 PB5
 $Comp
 L power:GND #PWR?
@@ -1303,4 +403,405 @@ F 3 "" H 5500 4000 50  0001 C CNN
 	1    5500 4000
 	1    0    0    -1  
 $EndComp
+$Sheet
+S 7700 5200 2250 1250
+U 62B3AC2F
+F0 "AlarmLights5" 50
+F1 "AlarmLights5.sch" 50
+$EndSheet
+$Comp
+L power:GND #PWR0106
+U 1 1 62B53159
+P 5250 4800
+F 0 "#PWR0106" H 5250 4550 50  0001 C CNN
+F 1 "GND" H 5255 4627 50  0000 C CNN
+F 2 "" H 5250 4800 50  0001 C CNN
+F 3 "" H 5250 4800 50  0001 C CNN
+	1    5250 4800
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 7800 800  2100 1250
+U 62B871EE
+F0 "LCD And I2C Interface" 50
+F1 "LCD And I2C Interface.sch" 50
+$EndSheet
+$Comp
+L GPAD_SCH_LIB:SWITCH_TACTILE_SPST-NO_0.05A_24V S?
+U 1 1 62BA946B
+P 5550 2200
+F 0 "S?" H 5550 2547 60  0000 C CNN
+F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 5550 2441 60  0000 C CNN
+F 2 "digikey-footprints:Switch_Tactile_THT_6x6mm" H 5750 2400 60  0001 L CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 5750 2500 60  0001 L CNN
+F 4 "JLCPCB" H 5550 2200 50  0001 C CNN "Distributor 1"
+F 5 "C592982" H 5550 2200 50  0001 C CNN "Distributor 1 PN"
+F 6 "Digikey" H 5550 2200 50  0001 C CNN "Distributor 2"
+F 7 "450-1804-ND" H 5750 2600 60  0001 L CNN "Distributor 2 PN"
+F 8 "TE Connectivity ALCOSWITCH Switches" H 5750 3300 60  0001 L CNN "Manufacturer"
+F 9 "1825910-7" H 5750 2700 60  0001 L CNN "MPN"
+F 10 "Switches" H 5750 2800 60  0001 L CNN "Category"
+F 11 "Tactile Switches" H 5750 2900 60  0001 L CNN "Family"
+F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 5750 3000 60  0001 L CNN "DK_Datasheet_Link"
+F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 5750 3100 60  0001 L CNN "DK_Detail_Page"
+F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 5750 3200 60  0001 L CNN "Description"
+F 15 "Active" H 5750 3400 60  0001 L CNN "Status"
+	1    5550 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62BAA497
+P 6050 2100
+F 0 "#PWR?" H 6050 1850 50  0001 C CNN
+F 1 "GND" H 6055 1927 50  0000 C CNN
+F 2 "" H 6050 2100 50  0001 C CNN
+F 3 "" H 6050 2100 50  0001 C CNN
+	1    6050 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 62BAB737
+P 5050 2300
+F 0 "C?" H 5165 2346 50  0000 L CNN
+F 1 "100nF" H 5165 2255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5088 2150 50  0001 C CNN
+F 3 "~" H 5050 2300 50  0001 C CNN
+F 4 "JLCPCB" H 5050 2300 50  0001 C CNN "Distributor 1"
+F 5 "C14663" H 5050 2300 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 5050 2300 50  0001 C CNN "Manufacturier"
+F 7 "CC0603KRX7R9BB104" H 5050 2300 50  0001 C CNN "MPN"
+F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 5050 2300 50  0001 C CNN "Description"
+	1    5050 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62BAC0E9
+P 5050 2550
+F 0 "#PWR?" H 5050 2300 50  0001 C CNN
+F 1 "GND" H 5055 2377 50  0000 C CNN
+F 2 "" H 5050 2550 50  0001 C CNN
+F 3 "" H 5050 2550 50  0001 C CNN
+	1    5050 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 62BAC86D
+P 4500 2100
+F 0 "R?" V 4300 2050 50  0000 C CNN
+F 1 "10K" V 4400 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4430 2100 50  0001 C CNN
+F 3 "~" H 4500 2100 50  0001 C CNN
+F 4 "JLCPCB" V 4500 2100 50  0001 C CNN "Distributor 1"
+F 5 "C269701" V 4500 2100 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 4500 2100 50  0001 C CNN "Manufacturer"
+F 7 "RMC 0603 10K F N" V 4500 2100 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 10kΩ 0603  Chip Resistor - Surface Mount ROHS" H 4500 2100 50  0001 C CNN "Description"
+	1    4500 2100
+	0    1    1    0   
+$EndComp
+$Sheet
+S 3550 6400 2000 1400
+U 62B93801
+F0 "SPI Peripherial" 50
+F1 "SPI Peripherial.sch" 50
+$EndSheet
+$Sheet
+S 700  6400 2000 1400
+U 62BC4E7E
+F0 "USB_UART" 50
+F1 "USB_UART.sch" 50
+$EndSheet
+Text GLabel 4000 2450 0    50   Input ~ 0
+ControllerTX
+Text GLabel 4000 2300 0    50   Input ~ 0
+ControllerRX
+Wire Wire Line
+	4000 2550 4000 2450
+Wire Wire Line
+	4000 2300 4100 2300
+Wire Wire Line
+	4100 2300 4100 2550
+Wire Wire Line
+	4200 2550 4200 2250
+Wire Wire Line
+	4650 2100 4750 2100
+Wire Wire Line
+	5050 2150 5050 2100
+Connection ~ 5050 2100
+Wire Wire Line
+	5050 2100 5250 2100
+Wire Wire Line
+	5050 2450 5050 2550
+Wire Wire Line
+	5350 2300 5250 2300
+Wire Wire Line
+	5250 2300 5250 2100
+Connection ~ 5250 2100
+Wire Wire Line
+	5250 2100 5350 2100
+Wire Wire Line
+	5750 2100 5850 2100
+Wire Wire Line
+	5750 2300 5850 2300
+Wire Wire Line
+	5850 2300 5850 2100
+Connection ~ 5850 2100
+Wire Wire Line
+	5850 2100 6050 2100
+Wire Wire Line
+	4200 2250 4750 2250
+Wire Wire Line
+	4750 2250 4750 2100
+Connection ~ 4750 2100
+Wire Wire Line
+	4750 2100 5050 2100
+$Comp
+L Device:R R?
+U 1 1 62BF3016
+P 2600 2950
+AR Path="/62BF3016" Ref="R?"  Part="1" 
+AR Path="/62B871EE/62BF3016" Ref="R?"  Part="1" 
+F 0 "R?" V 2400 2900 50  0000 C CNN
+F 1 "1R0" V 2500 2950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2530 2950 50  0001 C CNN
+F 3 "~" H 2600 2950 50  0001 C CNN
+F 4 "JLCPCB" V 2600 2950 50  0001 C CNN "Distributor 1"
+F 5 "C269434" V 2600 2950 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 2600 2950 50  0001 C CNN "Manufacturer"
+F 7 "RMC060315%N" V 2600 2950 50  0001 C CNN "MPN"
+F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 2600 2950 50  0001 C CNN "Description"
+	1    2600 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 62BF301C
+P 1850 2950
+AR Path="/62BF301C" Ref="#PWR?"  Part="1" 
+AR Path="/62B871EE/62BF301C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1850 2800 50  0001 C CNN
+F 1 "+5V" H 1865 3123 50  0000 C CNN
+F 2 "" H 1850 2950 50  0001 C CNN
+F 3 "" H 1850 2950 50  0001 C CNN
+	1    1850 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 3500 2550 3450
+Wire Wire Line
+	2000 3550 2000 3450
+Wire Wire Line
+	1850 2950 2450 2950
+Wire Wire Line
+	2000 3150 2000 3100
+Wire Wire Line
+	2000 3100 2550 3100
+Wire Wire Line
+	2750 3100 2750 2950
+Wire Wire Line
+	2550 3150 2550 3100
+Connection ~ 2550 3100
+Wire Wire Line
+	2550 3100 2750 3100
+Wire Wire Line
+	3500 3300 3350 3300
+Wire Wire Line
+	3100 3300 3100 3100
+Wire Wire Line
+	3100 3100 2950 3100
+Connection ~ 2750 3100
+Wire Wire Line
+	3500 3400 3200 3400
+Wire Wire Line
+	3200 3400 3200 3450
+Wire Wire Line
+	3500 3500 3350 3500
+Wire Wire Line
+	3350 3500 3350 3300
+Connection ~ 3350 3300
+Wire Wire Line
+	3350 3300 3100 3300
+Wire Wire Line
+	4350 2100 4250 2100
+Wire Wire Line
+	2950 2100 2950 3100
+Connection ~ 2950 3100
+Wire Wire Line
+	2950 3100 2750 3100
+Wire Wire Line
+	4950 3300 5500 3300
+Text Label 2950 2300 2    50   ~ 0
+VccControler
+Wire Wire Line
+	5500 3900 5500 3950
+Wire Wire Line
+	5950 3900 5950 3950
+Wire Wire Line
+	5950 3950 5500 3950
+Connection ~ 5500 3950
+Wire Wire Line
+	5500 3950 5500 4000
+Wire Wire Line
+	4950 3400 5200 3400
+Wire Wire Line
+	5200 3400 5200 3600
+Wire Wire Line
+	5200 3600 4950 3600
+Wire Wire Line
+	5200 3600 5500 3600
+Connection ~ 5200 3600
+Wire Wire Line
+	1150 1100 1250 1100
+Wire Wire Line
+	1250 1100 1250 1200
+Wire Wire Line
+	1250 1200 1150 1200
+Wire Wire Line
+	1150 900  1250 900 
+Wire Wire Line
+	1250 900  1250 1000
+Wire Wire Line
+	1250 1000 1150 1000
+Wire Wire Line
+	1450 1000 1300 1000
+Connection ~ 1250 1000
+Connection ~ 1300 1000
+Wire Wire Line
+	1300 1000 1250 1000
+$Comp
+L power:GND #PWR?
+U 1 1 62C08ABB
+P 2500 1500
+F 0 "#PWR?" H 2500 1250 50  0001 C CNN
+F 1 "GND" H 2505 1327 50  0000 C CNN
+F 2 "" H 2500 1500 50  0001 C CNN
+F 3 "" H 2500 1500 50  0001 C CNN
+	1    2500 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 1000 1850 1000
+Wire Wire Line
+	1850 1150 1850 1000
+Connection ~ 1850 1000
+Wire Wire Line
+	1850 1000 2200 1000
+Wire Wire Line
+	1850 1450 1850 1550
+Wire Wire Line
+	2500 1500 2500 1400
+Wire Wire Line
+	2900 1000 3000 1000
+Wire Wire Line
+	3900 1000 3900 900 
+Wire Wire Line
+	3750 1050 3750 1000
+Connection ~ 3750 1000
+Wire Wire Line
+	3750 1000 3900 1000
+Wire Wire Line
+	3200 1050 3200 1000
+Connection ~ 3200 1000
+Wire Wire Line
+	3200 1000 3750 1000
+Wire Wire Line
+	2900 1100 3000 1100
+Wire Wire Line
+	3000 1100 3000 1000
+Connection ~ 3000 1000
+Wire Wire Line
+	3000 1000 3200 1000
+Wire Wire Line
+	3200 1350 3200 1450
+Wire Wire Line
+	3750 1350 3750 1400
+Wire Wire Line
+	1300 1300 1300 1000
+Wire Wire Line
+	1300 1600 1300 1700
+$Comp
+L power:GND #PWR0101
+U 1 1 62B4D791
+P 1300 1700
+F 0 "#PWR0101" H 1300 1450 50  0001 C CNN
+F 1 "GND" H 1305 1527 50  0000 C CNN
+F 2 "" H 1300 1700 50  0001 C CNN
+F 3 "" H 1300 1700 50  0001 C CNN
+	1    1300 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 62B4BD4B
+P 1300 1450
+F 0 "C?" H 1415 1496 50  0000 L CNN
+F 1 "39pF" H 1415 1405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 1338 1300 50  0001 C CNN
+F 3 "~" H 1300 1450 50  0001 C CNN
+	1    1300 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 2100 4250 1800
+Wire Wire Line
+	4250 1800 6500 1800
+Wire Wire Line
+	6500 1800 6500 3500
+Wire Wire Line
+	6500 3500 5950 3500
+Wire Wire Line
+	5950 3500 5950 3600
+Connection ~ 4250 2100
+Wire Wire Line
+	4250 2100 2950 2100
+Wire Wire Line
+	2950 4550 2950 4650
+Wire Wire Line
+	2100 4550 2100 4650
+Wire Wire Line
+	2450 4050 2100 4050
+Wire Wire Line
+	2100 4050 2100 4250
+Wire Wire Line
+	2750 4050 2950 4050
+Wire Wire Line
+	2950 4050 2950 4250
+Wire Wire Line
+	3500 3700 3400 3700
+Wire Wire Line
+	3400 3700 3400 4050
+Wire Wire Line
+	3400 4050 2950 4050
+Connection ~ 2950 4050
+Wire Wire Line
+	3500 3600 3300 3600
+Wire Wire Line
+	3300 3600 3300 3750
+Wire Wire Line
+	3300 3750 2100 3750
+Wire Wire Line
+	2100 3750 2100 4050
+Connection ~ 2100 4050
+Wire Wire Line
+	5250 4800 5250 4700
+Wire Wire Line
+	5250 4700 5400 4700
+Wire Wire Line
+	5400 4700 5400 4550
+Wire Wire Line
+	5100 4550 5100 4400
+Wire Wire Line
+	5100 4400 5400 4400
+Wire Wire Line
+	5400 4400 5400 4100
+Wire Wire Line
+	5400 4100 5350 4100
+Wire Wire Line
+	5050 4100 5050 3700
+Wire Wire Line
+	5050 3700 4950 3700
 $EndSCHEMATC

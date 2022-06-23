@@ -120,6 +120,41 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# LCD_20x4_Character-GPAD_SCH_LIB
+#
+DEF LCD_20x4_Character-GPAD_SCH_LIB U 0 20 Y Y 1 F N
+F0 "U" -250 750 50 H V C CNN
+F1 "LCD_20x4_Character-GPAD_SCH_LIB" 200 750 50 H V L CNN
+F2 "Display:NHD-0420H1Z" 0 -900 50 H I C CNN
+F3 "" 100 -100 50 H I C CNN
+F4 "Aliexpress" -1080 -690 50 H I C CNN "Distributor 1"
+F5 "https://www.aliexpress.com/item/3256803213374992.html" -100 -790 50 H I C CNN "Distributor 1 PN"
+F6 "Amazon" -1120 -910 50 H I C CNN "Distributor 2"
+F7 "https://www.amazon.com/GeeekPi-Interface-Adapter-Backlight-Raspberry/dp/B07QLRD3TM/ref=sr_1_2" 790 -1000 50 H I C CNN "Distributor 2 PN"
+$FPLIST
+ NHD*0420H1Z*
+$ENDFPLIST
+DRAW
+S -300 700 300 -700 0 1 10 f
+X VSS 1 0 -800 100 U 50 50 1 1 W
+X DB3 10 -400 -200 100 R 50 50 1 1 B
+X DB4 11 -400 -300 100 R 50 50 1 1 B
+X DB5 12 -400 -400 100 R 50 50 1 1 B
+X DB6 13 -400 -500 100 R 50 50 1 1 B
+X DB7 14 -400 -600 100 R 50 50 1 1 B
+X A 15 400 -300 100 L 50 50 1 1 P
+X K 16 400 -200 100 L 50 50 1 1 P
+X VDD 2 0 800 100 D 50 50 1 1 W
+X VO 3 100 800 100 D 50 50 1 1 W
+X RS 4 -400 600 100 R 50 50 1 1 I
+X R/W 5 -400 500 100 R 50 50 1 1 I
+X E 6 -400 400 100 R 50 50 1 1 I
+X DB0 7 -400 100 100 R 50 50 1 1 B
+X DB1 8 -400 0 100 R 50 50 1 1 B
+X DB2 9 -400 -100 100 R 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
 # PI_ATMEGA328P-AU
 #
 DEF PI_ATMEGA328P-AU U 0 40 Y Y 1 F N
@@ -331,6 +366,42 @@ X ~ 3 400 0 100 L 50 50 1 1 P
 X ~ 4 400 100 100 L 50 50 1 1 P
 X ~ 5 400 200 100 L 50 50 1 1 P
 X ~ 6 400 300 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# SWITCH_TACTILE_SPST-NO_0.05A_24V
+#
+DEF SWITCH_TACTILE_SPST-NO_0.05A_24V S 0 40 Y Y 1 F N
+F0 "S" 0 180 60 H V C CNN
+F1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" 0 -225 60 H V C CNN
+F2 "digikey-footprints:Switch_Tactile_THT_6x6mm" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
+F5 "C592982" 0 0 50 H I C CNN "Distributor 1 PN"
+F6 "Digikey" 0 0 50 H I C CNN "Distributor 2"
+F7 "450-1804-ND" 200 400 60 H I L CNN "Distributor 2 PN"
+F8 "TE Connectivity ALCOSWITCH Switches" 200 1100 60 H I L CNN "Manufacturer"
+F9 "1825910-7" 200 500 60 H I L CNN "MPN"
+F10 "Switches" 200 600 60 H I L CNN "Category"
+F11 "Tactile Switches" 200 700 60 H I L CNN "Family"
+F12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" 200 900 60 H I L CNN "DK_Detail_Page"
+F14 "SWITCH TACTILE SPST-NO 0.05A 24V" 200 1000 60 H I L CNN "Description"
+F15 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+C -60 0 10 0 1 0 N
+C 60 0 10 0 1 0 N
+P 2 0 1 0 -100 100 -100 -100 N
+P 2 0 1 0 -70 0 -100 0 N
+P 2 0 1 0 -70 50 70 50 N
+P 2 0 1 0 100 -100 100 100 N
+P 2 0 1 0 100 0 70 0 N
+P 2 1 1 0 -40 110 35 110 N
+P 2 1 1 0 0 110 0 50 N
+X ~ 1 -200 100 100 R 50 50 1 1 P
+X ~ 2 -200 -100 100 R 50 50 1 1 P
+X ~ 3 200 100 100 L 50 50 1 1 P
+X ~ 4 200 -100 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #

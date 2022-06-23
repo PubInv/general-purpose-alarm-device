@@ -78,4 +78,10 @@ K 6P6C RJ female connector
 F ~
 $ENDCMP
 #
+$CMP SWITCH_TACTILE_SPST-NO_0.05A_24V
+D SWITCH TACTILE SPST-NO 0.05A 24V
+K 450-1804-ND FSMJ
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English
+$ENDCMP
+#
 #End Doc Library
