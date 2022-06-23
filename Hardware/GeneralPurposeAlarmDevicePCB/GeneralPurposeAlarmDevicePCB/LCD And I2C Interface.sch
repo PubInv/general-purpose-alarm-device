@@ -21,7 +21,7 @@ AR Path="/62B90F17" Ref="U?"  Part="1"
 AR Path="/62B871EE/62B90F17" Ref="U302"  Part="1" 
 F 0 "U302" H 6550 3950 50  0000 C CNN
 F 1 "LCD_20x4_Character" H 6850 3850 50  0000 C CNN
-F 2 "Display:NHD-0420H1Z" H 7300 2150 50  0001 C CNN
+F 2 "Display:LM16255" H 7300 2150 50  0001 C CNN
 F 3 "http://www.newhavendisplay.com/specs/NHD-0420H1Z-FSW-GBW-33V3.pdf" H 7400 2950 50  0001 C CNN
 F 4 "Aliexpress" H 6220 2360 50  0001 C CNN "Distributor 1"
 F 5 "https://www.aliexpress.com/item/3256803213374992.html" H 7200 2260 50  0001 C CNN "Distributor 1 PN"
@@ -384,7 +384,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 2200 7800 2200
 Wire Wire Line
-	7800 2200 7800 2700
+	7800 2200 7800 2350
 Wire Wire Line
 	7800 2700 8100 2700
 Wire Wire Line
@@ -603,7 +603,7 @@ U 1 1 62C8B28F
 P 5500 4200
 F 0 "TP301" H 5300 4250 50  0000 L CNN
 F 1 "TestPoint" H 5100 4350 50  0000 L CNN
-F 2 "" H 5700 4200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" H 5700 4200 50  0001 C CNN
 F 3 "~" H 5700 4200 50  0001 C CNN
 	1    5500 4200
 	-1   0    0    1   
@@ -671,13 +671,27 @@ Wire Wire Line
 	6850 2950 6900 2950
 Connection ~ 6850 3250
 Wire Wire Line
-	6900 3050 6850 3050
-Connection ~ 6850 3050
-Wire Wire Line
-	6850 3050 6850 2950
-Wire Wire Line
 	6900 3150 6850 3150
 Connection ~ 6850 3150
+$Comp
+L power:PWR_FLAG #FLG0106
+U 1 1 62E7D140
+P 7800 2350
+F 0 "#FLG0106" H 7800 2425 50  0001 C CNN
+F 1 "PWR_FLAG" V 7800 2478 50  0000 L CNN
+F 2 "" H 7800 2350 50  0001 C CNN
+F 3 "~" H 7800 2350 50  0001 C CNN
+	1    7800 2350
+	0    1    1    0   
+$EndComp
+Connection ~ 7800 2350
+Wire Wire Line
+	7800 2350 7800 2700
 Wire Wire Line
 	6850 3150 6850 3050
+Wire Wire Line
+	6850 3050 6850 2950
+Connection ~ 6850 3050
+Wire Wire Line
+	6900 3050 6850 3050
 $EndSCHEMATC

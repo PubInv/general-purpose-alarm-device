@@ -95,8 +95,12 @@ AR Path="/62B96D82" Ref="J?"  Part="1"
 AR Path="/62B93801/62B96D82" Ref="J401"  Part="1" 
 F 0 "J401" H 4157 4817 50  0000 C CNN
 F 1 "RJ12" H 4157 4726 50  0000 C CNN
-F 2 "" V 4100 4275 50  0001 C CNN
-F 3 "~" V 4100 4275 50  0001 C CNN
+F 2 "Connector_RJ:RJ12_Amphenol_54601" V 4100 4275 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1811141146_TE-Connectivity-5555165-1_C305981.pdf" V 4100 4275 50  0001 C CNN
+F 4 "TE Connectivity" H 4100 4250 50  0001 C CNN "Manufacturer"
+F 5 "JLCPCB" H 4100 4250 50  0001 C CNN "Distributor 1"
+F 6 "C305981" H 4100 4250 50  0001 C CNN "Distributor 1 PN"
+F 7 "5555165-1" H 4100 4250 50  0001 C CNN "MPN"
 	1    4100 4250
 	1    0    0    -1  
 $EndComp

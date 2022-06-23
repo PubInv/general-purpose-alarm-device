@@ -40,8 +40,12 @@ AR Path="/62BE318A" Ref="J?"  Part="1"
 AR Path="/62BC4E7E/62BE318A" Ref="J501"  Part="1" 
 F 0 "J501" H 3707 4217 50  0000 C CNN
 F 1 "USB_B_Micro" H 3707 4126 50  0000 C CNN
-F 2 "" H 3800 3700 50  0001 C CNN
+F 2 "Connector_USB:USB_Micro-B_Amphenol_10118194_Horizontal" H 3800 3700 50  0001 C CNN
 F 3 "~" H 3800 3700 50  0001 C CNN
+F 4 "JLCPCB" H 3650 3750 50  0001 C CNN "Distributor 1"
+F 5 "C132563" H 3650 3750 50  0001 C CNN "Distributor 1 PN"
+F 6 "Amphenol ICC" H 3650 3750 50  0001 C CNN "Manufacturer"
+F 7 "10118194-0001LF" H 3650 3750 50  0001 C CNN "MPN"
 	1    3650 3750
 	1    0    0    -1  
 $EndComp
@@ -188,19 +192,6 @@ F 3 "" H 4750 3450 50  0001 C CNN
 	1    4750 3450
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 62BE31DF
-P 3650 4300
-AR Path="/62BE31DF" Ref="#PWR?"  Part="1" 
-AR Path="/62BC4E7E/62BE31DF" Ref="#PWR0501"  Part="1" 
-F 0 "#PWR0501" H 3650 4050 50  0001 C CNN
-F 1 "GND" H 3655 4127 50  0000 C CNN
-F 2 "" H 3650 4300 50  0001 C CNN
-F 3 "" H 3650 4300 50  0001 C CNN
-	1    3650 4300
-	1    0    0    -1  
-$EndComp
 Text Notes 7300 4250 0    50   ~ 0
 TX is Output\nRX is Input\n/CTS is Input\n/RTS is Output
 $Comp
@@ -326,15 +317,6 @@ Wire Wire Line
 Wire Wire Line
 	4050 3000 4200 3000
 Connection ~ 4200 3000
-Wire Wire Line
-	3550 4150 3550 4250
-Wire Wire Line
-	3550 4250 3650 4250
-Wire Wire Line
-	3650 4250 3650 4300
-Wire Wire Line
-	3650 4150 3650 4250
-Connection ~ 3650 4250
 Text HLabel 8400 3450 2    50   Output ~ 0
 ControllerRX
 Text HLabel 8350 3800 2    50   Input ~ 0
@@ -363,4 +345,38 @@ Wire Wire Line
 Connection ~ 6100 3000
 NoConn ~ 6500 4250
 NoConn ~ 3950 3950
+$Comp
+L power:GND #PWR?
+U 1 1 62E80326
+P 3550 4450
+AR Path="/62E80326" Ref="#PWR?"  Part="1" 
+AR Path="/62BC4E7E/62E80326" Ref="#PWR0118"  Part="1" 
+F 0 "#PWR0118" H 3550 4200 50  0001 C CNN
+F 1 "GND" H 3555 4277 50  0000 C CNN
+F 2 "" H 3550 4450 50  0001 C CNN
+F 3 "" H 3550 4450 50  0001 C CNN
+	1    3550 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 4450 3550 4150
+$Comp
+L power:GND #PWR?
+U 1 1 62E80FD9
+P 3700 4450
+AR Path="/62E80FD9" Ref="#PWR?"  Part="1" 
+AR Path="/62BC4E7E/62E80FD9" Ref="#PWR0119"  Part="1" 
+F 0 "#PWR0119" H 3700 4200 50  0001 C CNN
+F 1 "GND" H 3705 4277 50  0000 C CNN
+F 2 "" H 3700 4450 50  0001 C CNN
+F 3 "" H 3700 4450 50  0001 C CNN
+	1    3700 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 4150 3650 4300
+Wire Wire Line
+	3650 4300 3700 4300
+Wire Wire Line
+	3700 4300 3700 4450
 $EndSCHEMATC
