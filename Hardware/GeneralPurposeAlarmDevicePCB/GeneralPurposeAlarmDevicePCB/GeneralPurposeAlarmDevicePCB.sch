@@ -436,35 +436,35 @@ $EndSheet
 $Comp
 L GPAD_SCH_LIB:SWITCH_TACTILE_SPST-NO_0.05A_24V S101
 U 1 1 62BA946B
-P 5550 2200
-F 0 "S101" H 5550 2547 60  0000 C CNN
-F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 5550 2441 60  0000 C CNN
-F 2 "digikey-footprints:Switch_Tactile_THT_6x6mm" H 5750 2400 60  0001 L CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 5750 2500 60  0001 L CNN
-F 4 "JLCPCB" H 5550 2200 50  0001 C CNN "Distributor 1"
-F 5 "C592982" H 5550 2200 50  0001 C CNN "Distributor 1 PN"
-F 6 "Digikey" H 5550 2200 50  0001 C CNN "Distributor 2"
-F 7 "450-1804-ND" H 5750 2600 60  0001 L CNN "Distributor 2 PN"
-F 8 "TE Connectivity ALCOSWITCH Switches" H 5750 3300 60  0001 L CNN "Manufacturer"
-F 9 "1825910-7" H 5750 2700 60  0001 L CNN "MPN"
-F 10 "Switches" H 5750 2800 60  0001 L CNN "Category"
-F 11 "Tactile Switches" H 5750 2900 60  0001 L CNN "Family"
-F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 5750 3000 60  0001 L CNN "DK_Datasheet_Link"
-F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 5750 3100 60  0001 L CNN "DK_Detail_Page"
-F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 5750 3200 60  0001 L CNN "Description"
-F 15 "Active" H 5750 3400 60  0001 L CNN "Status"
-	1    5550 2200
+P 5800 2200
+F 0 "S101" H 5800 2547 60  0000 C CNN
+F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 5800 2441 60  0000 C CNN
+F 2 "digikey-footprints:Switch_Tactile_THT_6x6mm" H 6000 2400 60  0001 L CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6000 2500 60  0001 L CNN
+F 4 "JLCPCB" H 5800 2200 50  0001 C CNN "Distributor 1"
+F 5 "C592982" H 5800 2200 50  0001 C CNN "Distributor 1 PN"
+F 6 "Digikey" H 5800 2200 50  0001 C CNN "Distributor 2"
+F 7 "450-1804-ND" H 6000 2600 60  0001 L CNN "Distributor 2 PN"
+F 8 "TE Connectivity ALCOSWITCH Switches" H 6000 3300 60  0001 L CNN "Manufacturer"
+F 9 "1825910-7" H 6000 2700 60  0001 L CNN "MPN"
+F 10 "Switches" H 6000 2800 60  0001 L CNN "Category"
+F 11 "Tactile Switches" H 6000 2900 60  0001 L CNN "Family"
+F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6000 3000 60  0001 L CNN "DK_Datasheet_Link"
+F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 6000 3100 60  0001 L CNN "DK_Detail_Page"
+F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 6000 3200 60  0001 L CNN "Description"
+F 15 "Active" H 6000 3400 60  0001 L CNN "Status"
+	1    5800 2200
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0117
 U 1 1 62BAA497
-P 6050 2100
-F 0 "#PWR0117" H 6050 1850 50  0001 C CNN
-F 1 "GND" H 6055 1927 50  0000 C CNN
-F 2 "" H 6050 2100 50  0001 C CNN
-F 3 "" H 6050 2100 50  0001 C CNN
-	1    6050 2100
+P 6300 2100
+F 0 "#PWR0117" H 6300 1850 50  0001 C CNN
+F 1 "GND" H 6305 1927 50  0000 C CNN
+F 2 "" H 6300 2100 50  0001 C CNN
+F 3 "" H 6300 2100 50  0001 C CNN
+	1    6300 2100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -548,25 +548,16 @@ Wire Wire Line
 	5050 2150 5050 2100
 Connection ~ 5050 2100
 Wire Wire Line
-	5050 2100 5250 2100
-Wire Wire Line
 	5050 2450 5050 2550
 Wire Wire Line
-	5350 2300 5250 2300
+	6000 2100 6100 2100
 Wire Wire Line
-	5250 2300 5250 2100
-Connection ~ 5250 2100
+	6000 2300 6100 2300
 Wire Wire Line
-	5250 2100 5350 2100
+	6100 2300 6100 2100
+Connection ~ 6100 2100
 Wire Wire Line
-	5750 2100 5850 2100
-Wire Wire Line
-	5750 2300 5850 2300
-Wire Wire Line
-	5850 2300 5850 2100
-Connection ~ 5850 2100
-Wire Wire Line
-	5850 2100 6050 2100
+	6100 2100 6300 2100
 Wire Wire Line
 	4200 2250 4750 2250
 Wire Wire Line
@@ -718,8 +709,6 @@ Wire Wire Line
 Wire Wire Line
 	3200 1050 3200 1000
 Connection ~ 3200 1000
-Wire Wire Line
-	3200 1000 3750 1000
 Wire Wire Line
 	2900 1100 3000 1100
 Wire Wire Line
@@ -1070,4 +1059,17 @@ Wire Wire Line
 	5500 3600 5950 3600
 Connection ~ 5500 3600
 Connection ~ 5950 3600
+Wire Wire Line
+	5550 2300 5550 2100
+Wire Wire Line
+	5550 2300 5600 2300
+Connection ~ 5550 2100
+Wire Wire Line
+	5550 2100 5600 2100
+Wire Wire Line
+	5050 2100 5550 2100
+Wire Wire Line
+	3200 1000 3750 1000
+Text Label 3450 1000 0    50   ~ 0
++5V
 $EndSCHEMATC

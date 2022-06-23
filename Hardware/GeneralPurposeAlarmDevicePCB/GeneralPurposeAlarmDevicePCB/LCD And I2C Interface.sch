@@ -632,20 +632,11 @@ Wire Wire Line
 Wire Wire Line
 	6700 2950 6650 2950
 Wire Wire Line
-	6900 3250 6900 3150
-Wire Wire Line
-	6900 3050 6900 3150
-Connection ~ 6900 3150
-Wire Wire Line
-	6900 3050 6900 2950
-Connection ~ 6900 3050
-Wire Wire Line
 	6900 3250 6850 3250
 Wire Wire Line
 	6850 3250 6850 3850
 Wire Wire Line
 	6850 3850 7300 3850
-Connection ~ 6900 3250
 Connection ~ 7300 3850
 Text Notes 3650 1750 0    50   ~ 0
 Wiring of I2C to LCD from:\nhttps://alselectro.wordpress.com/2016/05/12/serial-lcd-i2c-module-pcf8574/
@@ -657,5 +648,36 @@ Wire Wire Line
 	6150 2650 6150 2050
 Connection ~ 6150 2050
 Wire Wire Line
-	6150 2050 7300 2050
+	6150 2050 6600 2050
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 62E5EA08
+P 6600 1950
+F 0 "#FLG0103" H 6600 2025 50  0001 C CNN
+F 1 "PWR_FLAG" H 6600 2123 50  0000 C CNN
+F 2 "" H 6600 1950 50  0001 C CNN
+F 3 "~" H 6600 1950 50  0001 C CNN
+	1    6600 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 1950 6600 2050
+Connection ~ 6600 2050
+Wire Wire Line
+	6600 2050 7300 2050
+Wire Wire Line
+	6850 3250 6850 3150
+Wire Wire Line
+	6850 2950 6900 2950
+Connection ~ 6850 3250
+Wire Wire Line
+	6900 3050 6850 3050
+Connection ~ 6850 3050
+Wire Wire Line
+	6850 3050 6850 2950
+Wire Wire Line
+	6900 3150 6850 3150
+Connection ~ 6850 3150
+Wire Wire Line
+	6850 3150 6850 3050
 $EndSCHEMATC
