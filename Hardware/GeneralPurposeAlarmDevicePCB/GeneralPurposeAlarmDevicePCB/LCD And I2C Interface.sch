@@ -21,7 +21,7 @@ AR Path="/62B90F17" Ref="U?"  Part="1"
 AR Path="/62B871EE/62B90F17" Ref="U302"  Part="1" 
 F 0 "U302" H 6550 3950 50  0000 C CNN
 F 1 "LCD_20x4_Character" H 6850 3850 50  0000 C CNN
-F 2 "Display:LM16255" H 7300 2150 50  0001 C CNN
+F 2 "GeneralPurposeAlarmDevicePCB:LCD_2004A" H 7300 2150 50  0001 C CNN
 F 3 "http://www.newhavendisplay.com/specs/NHD-0420H1Z-FSW-GBW-33V3.pdf" H 7400 2950 50  0001 C CNN
 F 4 "Aliexpress" H 6220 2360 50  0001 C CNN "Distributor 1"
 F 5 "https://www.aliexpress.com/item/3256803213374992.html" H 7200 2260 50  0001 C CNN "Distributor 1 PN"
