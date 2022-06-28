@@ -155,6 +155,15 @@ There will be three external ports:
 2. Serial debugging USB port
 3. RJ12 jack for SPI interface
 
+## Display
+
+The message API will be 120 characters, with a shorter summaries of 32 and 16 characters also provided.
+
+The hardware display must provide 16 characters, and may provide more.
+
+The current plan is a 20 x 4 dislay.
+
+
 
 
 
