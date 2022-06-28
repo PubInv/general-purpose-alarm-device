@@ -126,6 +126,21 @@ int Alarm(AlarmLevel al);
 The simplest binding for this, which could be used of SPI or a serial port, would simply be the character A followed by the character 0, 1, 2, 3, 4, or 5.
 To test the alarm system of the serial port, you could simply type "A3" into the Arduino IDE serial monitor and send this to the GPAD, at which would expect a moderate noise and flashing light to sound and flash.
 
+A slight improvement on this is to specify a message. We have decided that messages should have 80 character, 32 character, and 16 character
+versions, and the hardware device will do the best job rendering them in can with available hardware:
+```
+enum AlarmLevel { silent, informational, problem, warning, critical, panic };
+int Alarm(AlarmLevel al);
+int Alarm80(AlarmLevel al,char* msg);
+int Alarm32(AlarmLevel al,char* msg);
+int Alarm16(AlarmLevel al,char* msg);
+```
+Additionally, it would be nice to have a way to interrogate the current alarm level:
+```
+AlarmLevel getAlarm(AlarmLevel al);
+boolean isMuted();
+```
+
 # On Making Hardware Decisions and the voltage decision.
 
 At the beginning of a project like this, significant effort goes into selecting hardware components.
