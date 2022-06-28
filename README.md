@@ -142,5 +142,20 @@ The Arduino UNO is about this size to begin with. I normally begin projects with
 initial prototype working.
 A mechanical enclosure that project LEDS slighly and let a buzzer or loudspeaker operate loudly (through a grate or grid) would probably be adequate.
 
+# Product Description
+
+## White LEDs 
+
+We're going to use white-light LEDs to avoid color-blindness issues for the visual alarm.
+
+## External Ports
+
+There will be three external ports:
+1. 12 Volt power
+2. Serial debugging USB port
+3. RJ12 jack for SPI interface
+
+
+
 
 
