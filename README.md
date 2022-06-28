@@ -157,7 +157,7 @@ There will be three external ports:
 
 ## Display
 
-The message API will be 120 characters, with a shorter summaries of 32 and 16 characters also provided.
+The message API will be 80 characters, with a shorter summaries of 32 and 16 characters also provided.
 
 The hardware display must provide 16 characters, and may provide more.
 
