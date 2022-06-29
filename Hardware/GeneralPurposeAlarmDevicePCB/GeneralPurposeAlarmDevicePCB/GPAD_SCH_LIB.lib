@@ -33,7 +33,7 @@ ENDDEF
 DEF Barrel_Jack_Switch_SMT J 0 20 Y N 1 F N
 F0 "J" 0 210 50 H V C CNN
 F1 "Barrel_Jack_Switch_SMT" 50 -250 50 H V L CNN
-F2 "" 50 -40 50 H I C CNN
+F2 "GeneralPurposeAlarmDevicePCB:BarrelJack_CLIFF_FC681465S_SMT_Horizontal" 50 -40 50 H I C CNN
 F3 "" 50 -40 50 H I C CNN
 F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
 F5 "C319134" 0 0 50 H I C CNN "Distributor 1 PN"
@@ -152,6 +152,128 @@ X E 6 -400 400 100 R 50 50 1 1 I
 X DB0 7 -400 100 100 R 50 50 1 1 B
 X DB1 8 -400 0 100 R 50 50 1 1 B
 X DB2 9 -400 -100 100 R 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+# LED_T1.75_CLEAR_WHITE
+#
+DEF LED_T1.75_CLEAR_WHITE D 0 0 Y Y 1 F N
+F0 "D" -150 100 60 H V C CNN
+F1 "LED_T1.75_CLEAR_WHITE" -50 -150 60 H V C CNN
+F2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "160-1772-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "LTW-2R3D7" 200 500 60 H I L CNN "MPN"
+F6 "Optoelectronics" 200 600 60 H I L CNN "Category"
+F7 "LED Indication - Discrete" 200 700 60 H I L CNN "Family"
+F8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "LED WHITE CLEAR T-1 3/4 T/H" 200 1000 60 H I L CNN "Description"
+F11 "Lite-On Inc." 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+P 2 0 1 0 0 50 0 -50 N
+P 2 0 1 0 0 150 -50 100 N
+P 2 0 1 0 50 125 0 75 N
+P 3 0 1 0 -25 150 0 150 0 125 N
+P 3 0 1 0 25 125 50 125 50 100 N
+P 4 0 1 0 -100 50 -100 -50 0 0 -100 50 F
+X ~ 1 -200 0 100 R 50 50 1 1 P
+X ~ 2 100 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# LTW-2R3D7
+#
+DEF LTW-2R3D7 D 0 0 Y Y 1 F N
+F0 "D" -150 100 60 H V C CNN
+F1 "LTW-2R3D7" -50 -150 60 H V C CNN
+F2 "digikey-footprints:LED_5mm_Radial" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "160-1772-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "LTW-2R3D7" 200 500 60 H I L CNN "MPN"
+F6 "Optoelectronics" 200 600 60 H I L CNN "Category"
+F7 "LED Indication - Discrete" 200 700 60 H I L CNN "Family"
+F8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "LED WHITE CLEAR T-1 3/4 T/H" 200 1000 60 H I L CNN "Description"
+F11 "Lite-On Inc." 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+P 2 0 1 0 0 50 0 -50 N
+P 2 0 1 0 0 150 -50 100 N
+P 2 0 1 0 50 125 0 75 N
+P 3 0 1 0 -25 150 0 150 0 125 N
+P 3 0 1 0 25 125 50 125 50 100 N
+P 4 0 1 0 -100 50 -100 -50 0 0 -100 50 F
+X ~ 1 -200 0 100 R 50 50 1 1 P
+X ~ 2 100 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# MountingHole_Pad_3.5mm
+#
+DEF MountingHole_Pad_3.5mm H 0 40 N N 1 F N
+F0 "H" 0 250 50 H V C CNN
+F1 "MountingHole_Pad_3.5mm" 0 175 50 H V C CNN
+F2 "GeneralPurposeAlarmDevicePCB:MountingHole_3.5mm_Pad_Via" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ MountingHole*Pad*
+$ENDFPLIST
+DRAW
+C 0 50 50 0 1 50 N
+X 1 1 0 -100 100 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# NCP1117ST50T3G
+#
+DEF NCP1117ST50T3G U 0 20 Y Y 1 F N
+F0 "U" 0 150 60 H V C CNN
+F1 "NCP1117ST50T3G" 0 250 60 H V C CNN
+F2 "digikey-footprints:SOT-223" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "NCP1117ST50T3GOSCT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "NCP1117ST50T3G" 200 500 60 H I L CNN "MPN"
+F6 "Integrated Circuits (ICs)" 200 600 60 H I L CNN "Category"
+F7 "PMIC - Voltage Regulators - Linear" 200 700 60 H I L CNN "Family"
+F8 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/on-semiconductor/NCP1117ST50T3G/NCP1117ST50T3GOSCT-ND/1967217" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "IC REG LINEAR 5V 1A SOT223" 200 1000 60 H I L CNN "Description"
+F11 "ON Semiconductor" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+S -200 100 300 -300 0 1 0 f
+X ADJ/GND 1 0 -400 100 U 50 50 1 1 W
+X OUT 2 400 0 100 L 50 50 1 1 P
+X IN 3 -300 0 100 R 50 50 1 1 W
+X OUT 4 400 -100 100 L 50 50 1 1 w
+ENDDRAW
+ENDDEF
+#
+# NX3225GD-8MHZ-STD-CRA-3
+#
+DEF NX3225GD-8MHZ-STD-CRA-3 XTAL 0 40 Y Y 1 F N
+F0 "XTAL" 0 150 50 H V C CNN
+F1 "NX3225GD-8MHZ-STD-CRA-3" 0 -150 50 H V C CNN
+F2 "GeneralPurposeAlarmDevicePCB:SMD-2_3.2x2.5mm" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "644-1178-1-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "NX3225GD-8MHZ-STD-CRA-3" 200 500 60 H I L CNN "MPN"
+F6 "Crystals, Oscillators, Resonators" 200 600 60 H I L CNN "Category"
+F7 "Crystals" 200 700 60 H I L CNN "Family"
+F8 "http://www.ndk.com/images/products/catalog/c_NX3225GD-STD-CRA-3_e.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/ndk-america-inc/NX3225GD-8MHZ-STD-CRA-3/644-1178-1-ND/3125567" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "CRYSTAL 8.0000MHZ 8PF SMD" 200 1000 60 H I L CNN "Description"
+F11 "NDK America, Inc." 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+S -25 75 25 -75 1 1 0 F
+P 2 1 1 0 -50 75 -50 -75 N
+P 2 1 1 0 50 75 50 -75 N
+X ~ 1 -150 0 100 R 50 50 1 1 B
+X ~ 2 150 0 100 L 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
@@ -334,7 +456,7 @@ ENDDEF
 DEF RJ12_6P6C_HORZ J 0 40 Y Y 1 F N
 F0 "J" -200 450 50 H V R CNN
 F1 "RJ12_6P6C_HORZ" 100 450 50 H V L CNN
-F2 "Connector_RJ:RJ12_Amphenol_54601" 0 25 50 V I C CNN
+F2 "GeneralPurposeAlarmDevicePCB:RJ12_Amphenol_54601" 0 25 50 V I C CNN
 F3 "" 0 25 50 V I C CNN
 F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
 F5 "C305981" 0 0 50 H I C CNN "Distributor 1 PN"
@@ -374,14 +496,14 @@ ENDDEF
 DEF SWITCH_TACTILE_SPST-NO_0.05A_24V S 0 40 Y Y 1 F N
 F0 "S" 0 180 60 H V C CNN
 F1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" 0 -225 60 H V C CNN
-F2 "digikey-footprints:Switch_Tactile_THT_6x6mm" 200 200 60 H I L CNN
+F2 "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm" 200 200 60 H I L CNN
 F3 "" 200 300 60 H I L CNN
 F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
-F5 "C592982" 0 0 50 H I C CNN "Distributor 1 PN"
+F5 "C13828" 0 0 50 H I C CNN "Distributor 1 PN"
 F6 "Digikey" 0 0 50 H I C CNN "Distributor 2"
 F7 "450-1804-ND" 200 400 60 H I L CNN "Distributor 2 PN"
 F8 "TE Connectivity ALCOSWITCH Switches" 200 1100 60 H I L CNN "Manufacturer"
-F9 "1825910-7" 200 500 60 H I L CNN "MPN"
+F9 "TE Connectivity 1825910-7,   Dongguan Guangzhu Industrial C13828" 200 500 60 H I L CNN "MPN"
 F10 "Switches" 200 600 60 H I L CNN "Category"
 F11 "Tactile Switches" 200 700 60 H I L CNN "Family"
 F12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" 200 800 60 H I L CNN "DK_Datasheet_Link"

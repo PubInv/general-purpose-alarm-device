@@ -30,6 +30,36 @@ K cap capacitor
 F ~
 $ENDCMP
 #
+$CMP LED_T1.75_CLEAR_WHITE
+D LED WHITE CLEAR T-1 3/4 T/H
+K 160-1772-ND
+F http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf
+$ENDCMP
+#
+$CMP LTW-2R3D7
+D LED WHITE CLEAR T-1 3/4 T/H
+K 160-1772-ND
+F http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf
+$ENDCMP
+#
+$CMP MountingHole_Pad_3.5mm
+D Mounting Hole with connection
+K mounting hole
+F ~
+$ENDCMP
+#
+$CMP NCP1117ST50T3G
+D IC REG LINEAR 5V 1A SOT223
+K NCP1117ST50T3GOSCT-ND
+F https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF
+$ENDCMP
+#
+$CMP NX3225GD-8MHZ-STD-CRA-3
+D CRYSTAL 8.0000MHZ 8PF SMD
+K 644-1178-1-ND NX3225GD
+F http://www.ndk.com/images/products/catalog/c_NX3225GD-STD-CRA-3_e.pdf
+$ENDCMP
+#
 $CMP PI_ATMEGA328P-AU
 D IC MCU 8BIT 32KB FLASH 32TQFP
 K ATMEGA328P-AU-ND AVR® ATmega
