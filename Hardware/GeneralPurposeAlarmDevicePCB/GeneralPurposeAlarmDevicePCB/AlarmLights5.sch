@@ -100,26 +100,6 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 4700 3100 50  00
 	-1   0    0    1   
 $EndComp
 $Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q202
-U 1 1 62B5A307
-P 4600 3950
-F 0 "Q202" H 4788 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 4788 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 4800 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 4800 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 4800 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 4800 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 4800 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 4800 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 4800 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 4800 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4800 5150 60  0001 L CNN "Status"
-	1    4600 3950
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R205
 U 1 1 62B5A320
 P 5400 3700
@@ -161,26 +141,6 @@ F 7 "RMC06033301%N" V 5900 3100 50  0001 C CNN "MPN"
 F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 5900 3100 50  0001 C CNN "Description"
 	1    5900 3100
 	-1   0    0    1   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q203
-U 1 1 62B5A340
-P 5800 3950
-F 0 "Q203" H 5988 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 5988 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 6000 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 6000 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 6000 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 6000 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 6000 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 6000 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 6000 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 6000 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 6000 5150 60  0001 L CNN "Status"
-	1    5800 3950
-	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R207
@@ -226,26 +186,6 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 7100 3100 50  00
 	-1   0    0    1   
 $EndComp
 $Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q204
-U 1 1 62B5A379
-P 7000 3950
-F 0 "Q204" H 7188 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 7188 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 7200 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 7200 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 7200 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 7200 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 7200 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 7200 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 7200 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 7200 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7200 5150 60  0001 L CNN "Status"
-	1    7000 3950
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R209
 U 1 1 62B5A392
 P 7800 3700
@@ -287,26 +227,6 @@ F 7 "RMC06033301%N" V 8300 3100 50  0001 C CNN "MPN"
 F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 8300 3100 50  0001 C CNN "Description"
 	1    8300 3100
 	-1   0    0    1   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q205
-U 1 1 62B5A3B2
-P 8200 3950
-F 0 "Q205" H 8388 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 8388 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 8400 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 8400 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 8400 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 8400 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 8400 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 8400 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 8400 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 8400 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 8400 5150 60  0001 L CNN "Status"
-	1    8200 3950
-	1    0    0    -1  
 $EndComp
 Text Notes 5050 2750 0    50   ~ 0
 Alarm lights, 5 Levels
@@ -415,26 +335,6 @@ Text HLabel 7800 3200 0    50   Input ~ 0
 Light4
 Wire Wire Line
 	7800 3200 7800 3550
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q201
-U 1 1 62B5A2CE
-P 3400 3950
-F 0 "Q201" H 3588 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 3588 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 3600 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 3600 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 3600 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 3600 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 3600 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 3600 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 3600 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 3600 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 3600 5150 60  0001 L CNN "Status"
-	1    3400 3950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3500 3250 3500 3350
 Wire Wire Line
@@ -538,5 +438,105 @@ F 11 "Lite-On Inc." H 3700 4650 60  0001 L CNN "Manufacturer"
 F 12 "Active" H 3700 4750 60  0001 L CNN "Status"
 	1    3500 3550
 	0    1    1    0   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q201
+U 1 1 62D15BD1
+P 3400 3950
+F 0 "Q201" H 3588 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 3588 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3600 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 3600 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 3600 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 3600 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 3600 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 3600 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 3600 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 3600 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3600 5150 60  0001 L CNN "Status"
+	1    3400 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q205
+U 1 1 62D16689
+P 8200 3950
+F 0 "Q205" H 8388 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 8388 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8400 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 8400 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 8400 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 8400 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 8400 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 8400 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 8400 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 8400 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 8400 5150 60  0001 L CNN "Status"
+	1    8200 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q204
+U 1 1 62D176AE
+P 7000 3950
+F 0 "Q204" H 7188 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 7188 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7200 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 7200 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 7200 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 7200 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 7200 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 7200 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 7200 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 7200 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7200 5150 60  0001 L CNN "Status"
+	1    7000 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q203
+U 1 1 62D18339
+P 5800 3950
+F 0 "Q203" H 5988 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 5988 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6000 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 6000 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 6000 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 6000 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 6000 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 6000 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 6000 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 6000 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 6000 5150 60  0001 L CNN "Status"
+	1    5800 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q202
+U 1 1 62D18D24
+P 4600 3950
+F 0 "Q202" H 4788 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 4788 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4800 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 4800 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 4800 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 4800 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 4800 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 4800 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 4800 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 4800 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4800 5150 60  0001 L CNN "Status"
+	1    4600 3950
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

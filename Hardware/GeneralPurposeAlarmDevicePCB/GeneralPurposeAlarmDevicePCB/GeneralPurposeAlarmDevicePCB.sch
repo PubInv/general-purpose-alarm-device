@@ -385,15 +385,15 @@ F 3 "" H 5500 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 7700 5200 2250 1250
+S 7700 5400 2250 1250
 U 62B3AC2F
 F0 "AlarmLights5" 50
 F1 "AlarmLights5.sch" 50
-F2 "Light0" I L 7700 5350 50 
-F3 "Light1" I L 7700 5500 50 
-F4 "Light2" I L 7700 5650 50 
-F5 "Light3" I L 7700 5800 50 
-F6 "Light4" I L 7700 5950 50 
+F2 "Light0" I L 7700 5550 50 
+F3 "Light1" I L 7700 5700 50 
+F4 "Light2" I L 7700 5850 50 
+F5 "Light3" I L 7700 6000 50 
+F6 "Light4" I L 7700 6150 50 
 $EndSheet
 $Comp
 L power:GND #PWR0115
@@ -775,26 +775,6 @@ Wire Wire Line
 	2850 7100 2700 7100
 Wire Wire Line
 	2850 7350 2700 7350
-$Comp
-L dk_Rectangular-Connectors-Headers-Male-Pins:22-23-2021 J102
-U 1 1 62CD8EE4
-P 4650 850
-F 0 "J102" H 4563 812 50  0000 R CNN
-F 1 "22-23-2021" H 4563 903 50  0000 R CNN
-F 2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" H 4850 1050 60  0001 L CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1150 60  0001 L CNN
-F 4 "WM4200-ND" H 4850 1250 60  0001 L CNN "Digi-Key_PN"
-F 5 "22-23-2021" H 4850 1350 60  0001 L CNN "MPN"
-F 6 "Connectors, Interconnects" H 4850 1450 60  0001 L CNN "Category"
-F 7 "Rectangular Connectors - Headers, Male Pins" H 4850 1550 60  0001 L CNN "Family"
-F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1650 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 4850 1750 60  0001 L CNN "DK_Detail_Page"
-F 10 "CONN HEADER VERT 2POS 2.54MM" H 4850 1850 60  0001 L CNN "Description"
-F 11 "Molex" H 4850 1950 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4850 2050 60  0001 L CNN "Status"
-	1    4650 850 
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	3900 1000 4550 1000
 Wire Wire Line
@@ -806,14 +786,12 @@ Text GLabel 2900 6850 2    50   Input ~ 0
 VBus
 Wire Wire Line
 	2700 6850 2900 6850
-Text GLabel 7600 1200 0    50   Input ~ 0
+Text GLabel 6700 1200 0    50   Input ~ 0
 SCL
-Text GLabel 7600 1500 0    50   Input ~ 0
+Text GLabel 6700 1500 0    50   Input ~ 0
 SDA
 Wire Wire Line
-	7600 1200 7800 1200
-Wire Wire Line
-	7600 1500 7800 1500
+	6700 1500 6900 1500
 Text GLabel 4600 2350 2    50   Input ~ 0
 SCL
 Text GLabel 4800 2450 2    50   Input ~ 0
@@ -867,26 +845,6 @@ Wire Wire Line
 	4850 1000 4750 1000
 Wire Wire Line
 	4750 1000 4750 950 
-$Comp
-L dk_Rectangular-Connectors-Headers-Male-Pins:22-23-2021 J103
-U 1 1 62D1C4B1
-P 5600 1200
-F 0 "J103" H 5513 1162 50  0000 R CNN
-F 1 "22-23-2021" H 5513 1253 50  0000 R CNN
-F 2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" H 5800 1400 60  0001 L CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 1500 60  0001 L CNN
-F 4 "WM4200-ND" H 5800 1600 60  0001 L CNN "Digi-Key_PN"
-F 5 "22-23-2021" H 5800 1700 60  0001 L CNN "MPN"
-F 6 "Connectors, Interconnects" H 5800 1800 60  0001 L CNN "Category"
-F 7 "Rectangular Connectors - Headers, Male Pins" H 5800 1900 60  0001 L CNN "Family"
-F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 2000 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 5800 2100 60  0001 L CNN "DK_Detail_Page"
-F 10 "CONN HEADER VERT 2POS 2.54MM" H 5800 2200 60  0001 L CNN "Description"
-F 11 "Molex" H 5800 2300 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 5800 2400 60  0001 L CNN "Status"
-	1    5600 1200
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	5600 1350 5600 1300
 Text GLabel 5800 1350 2    50   UnSpc ~ 0
@@ -906,15 +864,15 @@ Text GLabel 5650 7600 2    50   UnSpc ~ 0
 ControllerVcc
 Wire Wire Line
 	5650 7600 5450 7600
-Text GLabel 7400 5350 0    50   Output ~ 0
+Text GLabel 7400 5550 0    50   Output ~ 0
 Light0
-Text GLabel 7400 5500 0    50   Output ~ 0
+Text GLabel 7400 5700 0    50   Output ~ 0
 Light1
-Text GLabel 7400 5650 0    50   Output ~ 0
+Text GLabel 7400 5850 0    50   Output ~ 0
 Light2
-Text GLabel 7400 5800 0    50   Output ~ 0
+Text GLabel 7400 6000 0    50   Output ~ 0
 Light3
-Text GLabel 7400 5950 0    50   Output ~ 0
+Text GLabel 7400 6150 0    50   Output ~ 0
 Light4
 Text GLabel 3350 2700 0    50   Output ~ 0
 Light0
@@ -951,15 +909,15 @@ Wire Wire Line
 Wire Wire Line
 	4400 5450 4300 5450
 Wire Wire Line
-	7400 5350 7700 5350
+	7400 5550 7700 5550
 Wire Wire Line
-	7700 5500 7400 5500
+	7700 5700 7400 5700
 Wire Wire Line
-	7400 5650 7700 5650
+	7400 5850 7700 5850
 Wire Wire Line
-	7700 5800 7400 5800
+	7700 6000 7400 6000
 Wire Wire Line
-	7400 5950 7700 5950
+	7400 6150 7700 6150
 NoConn ~ 4500 2550
 NoConn ~ 4600 2550
 NoConn ~ 4950 3000
@@ -968,17 +926,17 @@ NoConn ~ 4950 3200
 NoConn ~ 3500 3100
 NoConn ~ 3500 3200
 $Sheet
-S 7750 2950 2150 1350
+S 7700 3750 2150 1350
 U 62DD8E5F
 F0 "AlarmAudio" 50
 F1 "AlarmAudio.sch" 50
-F2 "Tone" I L 7750 3500 50 
-F3 "Switch_Mute" I L 7750 3950 50 
+F2 "Tone" I L 7700 4300 50 
+F3 "Switch_Mute" I L 7700 4750 50 
 $EndSheet
-Text GLabel 7500 3500 0    50   Output ~ 0
+Text GLabel 7450 4300 0    50   Output ~ 0
 Tone
 Wire Wire Line
-	7500 3500 7750 3500
+	7450 4300 7700 4300
 Text GLabel 3350 5150 0    50   Output ~ 0
 Tone
 Wire Wire Line
@@ -1127,10 +1085,10 @@ Wire Wire Line
 	1850 1000 1850 1650
 Wire Wire Line
 	2150 1550 2150 1600
-Text GLabel 7550 3950 0    50   BiDi ~ 0
+Text GLabel 7500 4750 0    50   BiDi ~ 0
 Switch_Mute
 Wire Wire Line
-	7550 3950 7750 3950
+	7500 4750 7700 4750
 Text GLabel 2700 2450 0    50   BiDi ~ 0
 Switch_Mute
 Wire Wire Line
@@ -1217,4 +1175,216 @@ F 3 "~" H 1100 5000 50  0001 C CNN
 	1    1100 5000
 	1    0    0    -1  
 $EndComp
+$Comp
+L GPAD_SCH_LIB:22-23-2021 J102
+U 1 1 62D30624
+P 4650 850
+F 0 "J102" H 4563 812 50  0000 R CNN
+F 1 "22-23-2021" H 4563 903 50  0000 R CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 4850 1050 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1150 60  0001 L CNN
+F 4 "WM4200-ND" H 4850 1250 60  0001 L CNN "Digi-Key_PN"
+F 5 "22-23-2021" H 4850 1350 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 4850 1450 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 4850 1550 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 4850 1750 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 2POS 2.54MM" H 4850 1850 60  0001 L CNN "Description"
+F 11 "Molex" H 4850 1950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4850 2050 60  0001 L CNN "Status"
+	1    4650 850 
+	1    0    0    1   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:22-23-2021 J103
+U 1 1 62D31EA3
+P 5600 1200
+F 0 "J103" H 5513 1162 50  0000 R CNN
+F 1 "22-23-2021" H 5513 1253 50  0000 R CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 5800 1400 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 1500 60  0001 L CNN
+F 4 "WM4200-ND" H 5800 1600 60  0001 L CNN "Digi-Key_PN"
+F 5 "22-23-2021" H 5800 1700 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 5800 1800 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 5800 1900 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 2000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 5800 2100 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 2POS 2.54MM" H 5800 2200 60  0001 L CNN "Description"
+F 11 "Molex" H 5800 2300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5800 2400 60  0001 L CNN "Status"
+	1    5600 1200
+	1    0    0    1   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:S04B-XASK-1(LF)(SN) J105
+U 1 1 62D4A7FC
+P 9050 2300
+F 0 "J105" V 9104 2172 50  0000 R CNN
+F 1 "S04B-XASK-1(LF)(SN)" V 9195 2172 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" H 9250 2500 60  0001 L CNN
+F 3 "https://www.jst-mfg.com/product/pdf/eng/eXA1.pdf" H 9250 2600 60  0001 L CNN
+F 4 "455-4090-ND" H 9250 2700 60  0001 L CNN "Digi-Key_PN"
+F 5 "S04B-XASK-1(LF)(SN)" H 9250 2800 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 9250 2900 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins, Side Entery" H 9250 3000 60  0001 L CNN "Family"
+F 8 "CONN HEADER R/A 4POS 2.5MM" H 9250 3300 60  0001 L CNN "Description"
+F 9 "JST" H 9250 3400 60  0001 L CNN "Manufacturer"
+F 10 "Active" H 9250 3500 60  0001 L CNN "Status"
+F 11 "JLCPCB" H 9050 2300 50  0001 C CNN "Distributor 1"
+F 12 "C265097" H 9050 2300 50  0001 C CNN "Distributor 1 PN"
+F 13 "DigiKey  " H 9050 2300 50  0001 C CNN "Distributor 2"
+F 14 "455-4090-ND" V 9286 2172 50  0000 R CNN "Distributor 2 PN"
+	1    9050 2300
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 62D4C42A
+P 7500 2700
+F 0 "#PWR0121" H 7500 2450 50  0001 C CNN
+F 1 "GND" H 7505 2527 50  0000 C CNN
+F 2 "" H 7500 2700 50  0001 C CNN
+F 3 "" H 7500 2700 50  0001 C CNN
+	1    7500 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R104
+U 1 1 62D57AA0
+P 7200 2400
+F 0 "R104" V 7000 2400 50  0000 C CNN
+F 1 "39R" V 7100 2400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7130 2400 50  0001 C CNN
+F 3 "~" H 7200 2400 50  0001 C CNN
+F 4 "JLCPCB" V 7200 2400 50  0001 C CNN "Distributor 1"
+F 5 "C325713" V 7200 2400 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 7200 2400 50  0001 C CNN "Manufacturer"
+F 7 "RMC0603391%N" V 7200 2400 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 39Ω 0603 Chip Resistor - Surface Mount ROHS" H 7200 2400 50  0001 C CNN "Description"
+	1    7200 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R105
+U 1 1 62D59129
+P 7200 2600
+F 0 "R105" V 7300 2600 50  0000 C CNN
+F 1 "39R" V 7400 2600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7130 2600 50  0001 C CNN
+F 3 "~" H 7200 2600 50  0001 C CNN
+F 4 "JLCPCB" V 7200 2600 50  0001 C CNN "Distributor 1"
+F 5 "C325713" V 7200 2600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 7200 2600 50  0001 C CNN "Manufacturer"
+F 7 "RMC0603391%N" V 7200 2600 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 39Ω 0603 Chip Resistor - Surface Mount ROHS" H 7200 2600 50  0001 C CNN "Description"
+	1    7200 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7500 2500 7500 2700
+Wire Wire Line
+	7050 2400 7000 2400
+Wire Wire Line
+	7000 2400 7000 1200
+Wire Wire Line
+	6700 1200 7000 1200
+Wire Wire Line
+	7800 1200 7000 1200
+Connection ~ 7000 1200
+Wire Wire Line
+	7050 2600 6900 2600
+Wire Wire Line
+	6900 2600 6900 1500
+Wire Wire Line
+	7800 1500 6900 1500
+Connection ~ 6900 1500
+$Comp
+L power:+5V #PWR0120
+U 1 1 62DB43C7
+P 7500 2100
+F 0 "#PWR0120" H 7500 1950 50  0001 C CNN
+F 1 "+5V" H 7515 2273 50  0000 C CNN
+F 2 "" H 7500 2100 50  0001 C CNN
+F 3 "" H 7500 2100 50  0001 C CNN
+	1    7500 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 2300 7500 2100
+$Comp
+L Device:C C113
+U 1 1 62DBEF5F
+P 8050 2900
+F 0 "C113" H 8165 2946 50  0000 L CNN
+F 1 "33pF" H 8165 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8088 2750 50  0001 C CNN
+F 3 "~" H 8050 2900 50  0001 C CNN
+F 4 "JLCPCB" H 8050 2900 50  0001 C CNN "Distributor 1"
+F 5 "C107047" H 8050 2900 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 8050 2900 50  0001 C CNN "Manufacturier"
+F 7 "CC0603JRNPO9BN330" H 8050 2900 50  0001 C CNN "MPN"
+F 8 "50V 33pF NP0 ±5% 0603  Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 8050 2900 50  0001 C CNN "Description"
+	1    8050 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C114
+U 1 1 62DC0757
+P 8500 2900
+F 0 "C114" H 8615 2946 50  0000 L CNN
+F 1 "33pF" H 8615 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8538 2750 50  0001 C CNN
+F 3 "~" H 8500 2900 50  0001 C CNN
+F 4 "JLCPCB" H 8500 2900 50  0001 C CNN "Distributor 1"
+F 5 "C107047" H 8500 2900 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 8500 2900 50  0001 C CNN "Manufacturier"
+F 7 "CC0603JRNPO9BN330" H 8500 2900 50  0001 C CNN "MPN"
+F 8 "50V 33pF NP0 ±5% 0603  Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 8500 2900 50  0001 C CNN "Description"
+	1    8500 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 62DE82A1
+P 8050 3100
+F 0 "#PWR0122" H 8050 2850 50  0001 C CNN
+F 1 "GND" H 8055 2927 50  0000 C CNN
+F 2 "" H 8050 3100 50  0001 C CNN
+F 3 "" H 8050 3100 50  0001 C CNN
+	1    8050 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 62DE85F8
+P 8500 3100
+F 0 "#PWR0123" H 8500 2850 50  0001 C CNN
+F 1 "GND" H 8505 2927 50  0000 C CNN
+F 2 "" H 8500 3100 50  0001 C CNN
+F 3 "" H 8500 3100 50  0001 C CNN
+	1    8500 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 3050 8050 3100
+Wire Wire Line
+	8500 3050 8500 3100
+Wire Wire Line
+	7500 2300 8950 2300
+Wire Wire Line
+	7350 2400 8050 2400
+Wire Wire Line
+	7500 2500 8950 2500
+Wire Wire Line
+	7350 2600 8500 2600
+Wire Wire Line
+	8050 2750 8050 2400
+Connection ~ 8050 2400
+Wire Wire Line
+	8050 2400 8950 2400
+Wire Wire Line
+	8500 2750 8500 2600
+Connection ~ 8500 2600
+Wire Wire Line
+	8500 2600 8950 2600
 $EndSCHEMATC
