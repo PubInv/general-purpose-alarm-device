@@ -6,6 +6,12 @@ K resistor variable
 F https://www.bourns.com/docs/Product-Datasheets/TC33.pdf
 $ENDCMP
 #
+$CMP 1N5819WS
+D Schottky Barrier Diodes 40V 600mV@1A 1A SOD-323
+K 1N5819WS
+F https://www.diodes.com/assets/Datasheets/ds30217.pdf
+$ENDCMP
+#
 $CMP 22-23-2021
 D CONN HEADER VERT 2POS 2.54MM
 K WM4200-ND KK 6373
@@ -130,6 +136,17 @@ $CMP SWITCH_TACTILE_SPST-NO_0.05A_24V
 D SWITCH TACTILE SPST-NO 0.05A 24V
 K 450-1804-ND FSMJ
 F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English
+$ENDCMP
+#
+$CMP USB_B_Micro
+D USB Micro Type B connector
+K connector USB micro
+$ENDCMP
+#
+$CMP USB_B_Mini
+D USB Mini Type B connector
+K connector USB mini
+F ~
 $ENDCMP
 #
 #End Doc Library

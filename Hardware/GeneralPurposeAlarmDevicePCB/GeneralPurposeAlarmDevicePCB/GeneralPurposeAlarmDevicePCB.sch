@@ -259,7 +259,7 @@ U 1 1 62B3A84B
 P 4250 3350
 F 0 "U102" H 3150 4100 60  0000 L CNN
 F 1 "PI_ATMEGA328P-AU-InOrder" H 3600 2900 60  0000 L CNN
-F 2 "digikey-footprints:TQFP-32_7x7mm" H 3400 3400 60  0001 L CNN
+F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 3400 3400 60  0001 L CNN
 F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326" V 4900 2240 60  0001 L CNN
 F 4 "DigiKey" H 3100 3050 50  0001 C CNN "Distributor 1"
 F 5 "ATMEGA328P-AU-ND" H 2800 4150 60  0001 L CNN "Distributor 1 PN"
@@ -539,7 +539,7 @@ Wire Wire Line
 	4750 2250 4750 2100
 Connection ~ 4750 2100
 Wire Wire Line
-	4750 2100 5050 2100
+	4750 2100 4900 2100
 $Comp
 L Device:R R101
 U 1 1 62BF3016
@@ -1387,4 +1387,35 @@ Wire Wire Line
 Connection ~ 8500 2600
 Wire Wire Line
 	8500 2600 8950 2600
+Wire Wire Line
+	4900 1650 4900 2100
+Connection ~ 4900 2100
+Wire Wire Line
+	4900 2100 5050 2100
+Wire Wire Line
+	4400 1650 4250 1650
+Wire Wire Line
+	4250 1650 4250 1800
+Connection ~ 4250 1800
+Wire Wire Line
+	4700 1650 4900 1650
+$Comp
+L GPAD_SCH_LIB:1N5819WS D103
+U 1 1 62EB37D5
+P 4500 1650
+F 0 "D103" H 4550 1875 50  0000 C CNN
+F 1 "1N5819WS" H 4550 1784 50  0000 C CNN
+F 2 "GeneralPurposeAlarmDevicePCB:D_SOD-323" H 4700 1850 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30217.pdf" H 4700 1950 60  0001 L CNN
+F 4 "1N5819WS" H 4700 2150 60  0001 L CNN "MPN"
+F 5 "Discrete Semiconductor Products" H 4700 2250 60  0001 L CNN "Category"
+F 6 "Diodes - Rectifiers - Single" H 4700 2350 60  0001 L CNN "Family"
+F 7 "40V 600mV@1A 1A SOD-323  Schottky Barrier Diodes (SBD) ROHS" H 4700 2650 60  0001 L CNN "Description"
+F 8 "Guangdong Hottech" H 4700 2750 60  0001 L CNN "Manufacturer"
+F 9 "Active" H 4700 2850 60  0001 L CNN "Status"
+F 10 "JLCPCB" H 4500 1650 50  0001 C CNN "Distributor 1"
+F 11 "C191023" H 4500 1650 50  0001 C CNN "Distributor 1 PN"
+	1    4500 1650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
