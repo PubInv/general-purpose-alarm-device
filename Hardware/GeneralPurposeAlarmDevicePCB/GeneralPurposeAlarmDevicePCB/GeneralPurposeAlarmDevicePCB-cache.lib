@@ -1,38 +1,6 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Connector_RJ12
-#
-DEF Connector_RJ12 J 0 40 Y Y 1 F N
-F0 "J" -200 450 50 H V R CNN
-F1 "Connector_RJ12" 100 450 50 H V L CNN
-F2 "" 0 25 50 V I C CNN
-F3 "" 0 25 50 V I C CNN
-ALIAS RJ12 RJ18 RJ25
-$FPLIST
- 6P6C*
- RJ12*
- RJ18*
- RJ25*
-$ENDFPLIST
-DRAW
-S 300 400 -300 -300 0 1 10 f
-P 3 0 1 0 -250 -75 -200 -75 -200 -75 N
-P 3 0 1 0 -250 -25 -200 -25 -200 -25 N
-P 3 0 1 0 -250 25 -200 25 -200 25 N
-P 3 0 1 0 -250 75 -200 75 -200 75 N
-P 3 0 1 0 -250 125 -200 125 -200 125 N
-P 3 0 1 0 -200 175 -250 175 -250 175 N
-P 14 0 1 0 -250 -175 -250 275 150 275 150 175 200 175 200 125 250 125 250 -25 200 -25 200 -75 150 -75 150 -175 -250 -175 -250 -175 N
-X ~ 1 400 -200 100 L 50 50 1 1 P
-X ~ 2 400 -100 100 L 50 50 1 1 P
-X ~ 3 400 0 100 L 50 50 1 1 P
-X ~ 4 400 100 100 L 50 50 1 1 P
-X ~ 5 400 200 100 L 50 50 1 1 P
-X ~ 6 400 300 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # Connector_TestPoint
 #
 DEF Connector_TestPoint TP 0 30 N N 1 F N
@@ -47,42 +15,6 @@ $ENDFPLIST
 DRAW
 C 0 130 30 0 1 0 N
 X 1 1 0 0 100 U 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Connector_USB_B_Micro
-#
-DEF Connector_USB_B_Micro J 0 40 Y Y 1 F N
-F0 "J" -200 450 50 H V L CNN
-F1 "Connector_USB_B_Micro" -200 350 50 H V L CNN
-F2 "" 150 -50 50 H I C CNN
-F3 "" 150 -50 50 H I C CNN
-ALIAS USB_B_Mini
-$FPLIST
- USB*
-$ENDFPLIST
-DRAW
-C -150 85 25 0 1 10 F
-C -25 135 15 0 1 10 F
-S -200 -300 200 300 0 1 10 f
-S -5 -300 5 -270 0 1 0 N
-S 10 50 -20 20 0 1 10 F
-S 200 -205 170 -195 0 1 0 N
-S 200 -105 170 -95 0 1 0 N
-S 200 -5 170 5 0 1 0 N
-S 200 195 170 205 0 1 0 N
-P 2 0 1 10 -75 85 25 85 N
-P 4 0 1 10 -125 85 -100 85 -50 135 -25 135 N
-P 4 0 1 10 -100 85 -75 85 -50 35 0 35 N
-P 4 0 1 10 25 110 25 60 75 85 25 110 F
-P 5 0 1 0 -170 220 -70 220 -80 190 -160 190 -170 220 F
-P 9 0 1 0 -185 230 -185 220 -175 190 -175 180 -65 180 -65 190 -55 220 -55 230 -185 230 N
-X VBUS 1 300 200 100 L 50 50 1 1 w
-X D- 2 300 -100 100 L 50 50 1 1 B
-X D+ 3 300 0 100 L 50 50 1 1 B
-X ID 4 300 -200 100 L 50 50 1 1 P
-X GND 5 0 -400 100 U 50 50 1 1 w
-X Shield 6 -100 -400 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
@@ -168,7 +100,7 @@ ENDDEF
 DEF GPAD_SCH_LIB_10K RV 0 40 Y N 1 F N
 F0 "RV" -175 0 50 V V C CNN
 F1 "GPAD_SCH_LIB_10K" -100 0 50 V V C CNN
-F2 "digikey-footprints:Trimpot_3.8mmx3.6mm_TC33X-2-103E" 0 0 50 H I C CNN
+F2 "GeneralPurposeAlarmDevicePCB:Potentiometer_Bourns_3386P_Vertical" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
 F5 "C58159" 0 0 50 H I C CNN "Distributor 1 PN"
@@ -190,12 +122,61 @@ X 3 3 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# GPAD_SCH_LIB_1N5819WS
+#
+DEF GPAD_SCH_LIB_1N5819WS D 0 40 Y Y 1 F N
+F0 "D" 0 150 50 H V C CNN
+F1 "GPAD_SCH_LIB_1N5819WS" 50 -100 50 H V C CNN
+F2 "GeneralPurposeAlarmDevicePCB:D_SOD-323" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "1N5819WS" 200 500 60 H I L CNN "MPN"
+F5 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
+F6 "Diodes - Rectifiers - Single" 200 700 60 H I L CNN "Family"
+F7 "40V 600mV@1A 1A SOD-323  Schottky Barrier Diodes (SBD) ROHS" 200 1000 60 H I L CNN "Description"
+F8 "Guangdong Hottech" 200 1100 60 H I L CNN "Manufacturer"
+F9 "Active" 200 1200 60 H I L CNN "Status"
+F10 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
+F11 "C191023" 0 0 50 H I C CNN "Distributor 1 PN"
+DRAW
+P 2 0 1 0 0 0 100 0 N
+P 2 0 1 0 0 50 0 -50 N
+P 4 0 1 0 100 50 100 -50 0 0 100 50 F
+X ~ A 200 0 100 L 50 50 1 1 P
+X ~ K -100 0 100 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# GPAD_SCH_LIB_22-23-2021
+#
+DEF GPAD_SCH_LIB_22-23-2021 J 0 40 Y Y 1 F N
+F0 "J" -100 50 50 H V R CNN
+F1 "GPAD_SCH_LIB_22-23-2021" 50 -150 50 H V C CNN
+F2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "WM4200-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "22-23-2021" 200 500 60 H I L CNN "MPN"
+F6 "Connectors, Interconnects" 200 600 60 H I L CNN "Category"
+F7 "Rectangular Connectors - Headers, Male Pins" 200 700 60 H I L CNN "Family"
+F8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "CONN HEADER VERT 2POS 2.54MM" 200 1000 60 H I L CNN "Description"
+F11 "Molex" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+S -50 0 150 -100 1 1 0 f
+S -10 -45 10 -65 1 1 0 F
+S 90 -45 110 -65 1 1 0 F
+X ~ 1 0 100 100 D 50 50 1 1 P
+X ~ 2 100 100 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # GPAD_SCH_LIB_Barrel_Jack_Switch_SMT
 #
 DEF GPAD_SCH_LIB_Barrel_Jack_Switch_SMT J 0 20 Y N 1 F N
 F0 "J" 0 210 50 H V C CNN
 F1 "GPAD_SCH_LIB_Barrel_Jack_Switch_SMT" 50 -250 50 H V L CNN
-F2 "" 50 -40 50 H I C CNN
+F2 "GeneralPurposeAlarmDevicePCB:BarrelJack_CLIFF_FC681465S_SMT_Horizontal" 50 -40 50 H I C CNN
 F3 "" 50 -40 50 H I C CNN
 F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
 F5 "C319134" 0 0 50 H I C CNN "Distributor 1 PN"
@@ -224,12 +205,111 @@ X ~ 4 300 200 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# GPAD_SCH_LIB_LED_T1.75_CLEAR_WHITE
+#
+DEF GPAD_SCH_LIB_LED_T1.75_CLEAR_WHITE D 0 0 Y Y 1 F N
+F0 "D" -150 100 60 H V C CNN
+F1 "GPAD_SCH_LIB_LED_T1.75_CLEAR_WHITE" -50 -150 60 H V C CNN
+F2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "160-1772-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "LTW-2R3D7" 200 500 60 H I L CNN "MPN"
+F6 "Optoelectronics" 200 600 60 H I L CNN "Category"
+F7 "LED Indication - Discrete" 200 700 60 H I L CNN "Family"
+F8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "LED WHITE CLEAR T-1 3/4 T/H" 200 1000 60 H I L CNN "Description"
+F11 "Lite-On Inc." 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+P 2 0 1 0 0 50 0 -50 N
+P 2 0 1 0 0 150 -50 100 N
+P 2 0 1 0 50 125 0 75 N
+P 3 0 1 0 -25 150 0 150 0 125 N
+P 3 0 1 0 25 125 50 125 50 100 N
+P 4 0 1 0 -100 50 -100 -50 0 0 -100 50 F
+X ~ 1 -200 0 100 R 50 50 1 1 P
+X ~ 2 100 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# GPAD_SCH_LIB_MMBT2222A-7-F
+#
+DEF GPAD_SCH_LIB_MMBT2222A-7-F Q 0 0 Y Y 1 F N
+F0 "Q" -126 166 60 H V L CNN
+F1 "GPAD_SCH_LIB_MMBT2222A-7-F" 206 0 60 V V C CNN
+F2 "Package_TO_SOT_SMD:SOT-23" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "MMBT2222A-FDICT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "MMBT2222A-7-F" 200 500 60 H I L CNN "MPN"
+F6 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
+F7 "Transistors - Bipolar (BJT) - Single" 200 700 60 H I L CNN "Family"
+F8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "TRANS NPN 40V 0.6A SMD SOT23-3" 200 1000 60 H I L CNN "Description"
+F11 "Diodes Incorporated" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+C 0 0 128 0 1 0 f
+P 2 0 1 0 -150 0 -100 0 N
+P 2 0 1 0 -140 0 0 0 N
+P 2 0 1 0 0 -50 100 -100 N
+P 2 0 1 0 0 50 100 100 N
+P 2 0 1 0 0 100 0 -100 N
+P 4 0 1 0 60 -50 80 -90 40 -100 60 -50 F
+X B 1 -200 0 100 R 50 50 1 1 I
+X E 2 100 -200 100 U 50 50 1 1 P
+X C 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# GPAD_SCH_LIB_MountingHole_Pad_3.5mm
+#
+DEF GPAD_SCH_LIB_MountingHole_Pad_3.5mm H 0 40 N N 1 F N
+F0 "H" 0 250 50 H V C CNN
+F1 "GPAD_SCH_LIB_MountingHole_Pad_3.5mm" 0 175 50 H V C CNN
+F2 "GeneralPurposeAlarmDevicePCB:MountingHole_3.5mm_Pad_Via" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ MountingHole*Pad*
+$ENDFPLIST
+DRAW
+C 0 50 50 0 1 50 N
+X 1 1 0 -100 100 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# GPAD_SCH_LIB_NCP1117ST50T3G
+#
+DEF GPAD_SCH_LIB_NCP1117ST50T3G U 0 20 Y Y 1 F N
+F0 "U" 0 150 60 H V C CNN
+F1 "GPAD_SCH_LIB_NCP1117ST50T3G" 0 250 60 H V C CNN
+F2 "digikey-footprints:SOT-223" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "NCP1117ST50T3GOSCT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "NCP1117ST50T3G" 200 500 60 H I L CNN "MPN"
+F6 "Integrated Circuits (ICs)" 200 600 60 H I L CNN "Category"
+F7 "PMIC - Voltage Regulators - Linear" 200 700 60 H I L CNN "Family"
+F8 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/on-semiconductor/NCP1117ST50T3G/NCP1117ST50T3GOSCT-ND/1967217" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "IC REG LINEAR 5V 1A SOT223" 200 1000 60 H I L CNN "Description"
+F11 "ON Semiconductor" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+S -200 100 300 -300 0 1 0 f
+X ADJ/GND 1 0 -400 100 U 50 50 1 1 W
+X OUT 2 400 0 100 L 50 50 1 1 P
+X IN 3 -300 0 100 R 50 50 1 1 W
+X OUT 4 400 -100 100 L 50 50 1 1 w
+ENDDRAW
+ENDDEF
+#
 # GPAD_SCH_LIB_PI_ATMEGA328P-AU-InOrder
 #
 DEF GPAD_SCH_LIB_PI_ATMEGA328P-AU-InOrder U 0 40 Y Y 1 F N
 F0 "U" -1050 1000 60 H V L CNN
 F1 "GPAD_SCH_LIB_PI_ATMEGA328P-AU-InOrder" -1100 800 60 H V C CNN
-F2 "digikey-footprints:TQFP-32_7x7mm" -850 50 60 H I L CNN
+F2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" -850 50 60 H I L CNN
 F3 "" 650 -1110 60 V I L CNN
 F4 "DigiKey" -1150 -300 50 H I C CNN "Distributor 1"
 F5 "ATMEGA328P-AU-ND" -1450 800 60 H I L CNN "Distributor 1 PN"
@@ -278,19 +358,90 @@ X PD5 9 -350 -800 100 U 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
+# GPAD_SCH_LIB_RJ12_6P6C_HORZ
+#
+DEF GPAD_SCH_LIB_RJ12_6P6C_HORZ J 0 40 Y Y 1 F N
+F0 "J" -200 450 50 H V R CNN
+F1 "GPAD_SCH_LIB_RJ12_6P6C_HORZ" 100 450 50 H V L CNN
+F2 "GeneralPurposeAlarmDevicePCB:RJ12_Amphenol_54601" 0 25 50 V I C CNN
+F3 "" 0 25 50 V I C CNN
+F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
+F5 "C305981" 0 0 50 H I C CNN "Distributor 1 PN"
+F6 "Digikey" 0 0 50 H I C CNN "Distributor 2"
+F7 "A31422-ND" 0 0 50 H I C CNN "Distributor 2 PN"
+F8 "TE Connectivity" 0 0 50 H I C CNN "Manufacturer"
+F9 "Jack Modular Connector 6p6c (RJ11, RJ12, RJ14, RJ25) 90° Angle (Right) Unshielded Cat3" 0 0 50 H I C CNN "Description"
+F10 "HAND" 0 0 50 H V C CNN "AssemblyType"
+F11 "5555165-1" 0 0 50 H I C CNN "MPN"
+ALIAS RJ12 RJ18 RJ25
+$FPLIST
+ 6P6C*
+ RJ12*
+ RJ18*
+ RJ25*
+$ENDFPLIST
+DRAW
+S 300 400 -300 -300 0 1 10 f
+P 3 0 1 0 -250 -75 -200 -75 -200 -75 N
+P 3 0 1 0 -250 -25 -200 -25 -200 -25 N
+P 3 0 1 0 -250 25 -200 25 -200 25 N
+P 3 0 1 0 -250 75 -200 75 -200 75 N
+P 3 0 1 0 -250 125 -200 125 -200 125 N
+P 3 0 1 0 -200 175 -250 175 -250 175 N
+P 14 0 1 0 -250 -175 -250 275 150 275 150 175 200 175 200 125 250 125 250 -25 200 -25 200 -75 150 -75 150 -175 -250 -175 -250 -175 N
+X ~ 1 400 -200 100 L 50 50 1 1 P
+X ~ 2 400 -100 100 L 50 50 1 1 P
+X ~ 3 400 0 100 L 50 50 1 1 P
+X ~ 4 400 100 100 L 50 50 1 1 P
+X ~ 5 400 200 100 L 50 50 1 1 P
+X ~ 6 400 300 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# GPAD_SCH_LIB_S04B-XASK-1(LF)(SN)
+#
+DEF GPAD_SCH_LIB_S04B-XASK-1(LF)(SN) J 0 40 Y Y 1 F N
+F0 "J" -100 50 50 H V R CNN
+F1 "GPAD_SCH_LIB_S04B-XASK-1(LF)(SN)" 150 -150 50 H V C CNN
+F2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "455-4090-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "S04B-XASK-1(LF)(SN)" 200 500 60 H I L CNN "MPN"
+F6 "Connectors, Interconnects" 200 600 60 H I L CNN "Category"
+F7 "Rectangular Connectors - Headers, Male Pins, Side Entery" 200 700 60 H I L CNN "Family"
+F8 "CONN HEADER R/A 4POS 2.5MM" 200 1000 60 H I L CNN "Description"
+F9 "JST" 200 1100 60 H I L CNN "Manufacturer"
+F10 "Active" 200 1200 60 H I L CNN "Status"
+F11 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
+F12 "C265097" 0 0 50 H I C CNN "Distributor 1 PN"
+F13 "DigiKey  " 0 0 50 H I C CNN "Distributor 2"
+F14 "455-4090-ND" 0 0 50 H V C CNN "Distributor 2 PN"
+DRAW
+S -50 0 350 -100 1 1 0 f
+S -10 -45 10 -65 1 1 0 F
+S 90 -45 110 -65 1 1 0 F
+S 190 -45 210 -65 1 1 0 F
+S 290 -45 310 -65 1 1 0 F
+X ~ 1 0 100 100 D 50 50 1 1 P
+X ~ 2 100 100 100 D 50 50 1 1 P
+X ~ 3 200 100 100 D 50 50 1 1 P
+X ~ 4 300 100 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # GPAD_SCH_LIB_SWITCH_TACTILE_SPST-NO_0.05A_24V
 #
 DEF GPAD_SCH_LIB_SWITCH_TACTILE_SPST-NO_0.05A_24V S 0 40 Y Y 1 F N
 F0 "S" 0 180 60 H V C CNN
 F1 "GPAD_SCH_LIB_SWITCH_TACTILE_SPST-NO_0.05A_24V" 0 -225 60 H V C CNN
-F2 "digikey-footprints:Switch_Tactile_THT_6x6mm" 200 200 60 H I L CNN
+F2 "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm" 200 200 60 H I L CNN
 F3 "" 200 300 60 H I L CNN
 F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
-F5 "C592982" 0 0 50 H I C CNN "Distributor 1 PN"
+F5 "C13828" 0 0 50 H I C CNN "Distributor 1 PN"
 F6 "Digikey" 0 0 50 H I C CNN "Distributor 2"
 F7 "450-1804-ND" 200 400 60 H I L CNN "Distributor 2 PN"
 F8 "TE Connectivity ALCOSWITCH Switches" 200 1100 60 H I L CNN "Manufacturer"
-F9 "1825910-7" 200 500 60 H I L CNN "MPN"
+F9 "TE Connectivity 1825910-7,   Dongguan Guangzhu Industrial C13828" 200 500 60 H I L CNN "MPN"
 F10 "Switches" 200 600 60 H I L CNN "Category"
 F11 "Tactile Switches" 200 700 60 H I L CNN "Family"
 F12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" 200 800 60 H I L CNN "DK_Datasheet_Link"
@@ -311,6 +462,46 @@ X ~ 1 -200 100 100 R 50 50 1 1 P
 X ~ 2 -200 -100 100 R 50 50 1 1 P
 X ~ 3 200 100 100 L 50 50 1 1 P
 X ~ 4 200 -100 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# GPAD_SCH_LIB_USB_B_Micro
+#
+DEF GPAD_SCH_LIB_USB_B_Micro J 0 40 Y Y 1 F N
+F0 "J" -200 450 50 H V L CNN
+F1 "GPAD_SCH_LIB_USB_B_Micro" -200 350 50 H V L CNN
+F2 "GeneralPurposeAlarmDevicePCB:USB_Micro-B_Amphenol_10118194_Horizontal" 150 -50 50 H I C CNN
+F3 "" 150 -50 50 H I C CNN
+F4 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
+F5 "C132563" 0 0 50 H I C CNN "Distributor 1 PN"
+F6 "Amphenol ICC" 0 0 50 H I C CNN "Manufacturer "
+F7 "10118194-0001LF" 0 0 50 H I C CNN "MPN "
+ALIAS USB_B_Mini
+$FPLIST
+ USB*
+$ENDFPLIST
+DRAW
+C -150 85 25 0 1 10 F
+C -25 135 15 0 1 10 F
+S -200 -300 200 300 0 1 10 f
+S -5 -300 5 -270 0 1 0 N
+S 10 50 -20 20 0 1 10 F
+S 200 -205 170 -195 0 1 0 N
+S 200 -105 170 -95 0 1 0 N
+S 200 -5 170 5 0 1 0 N
+S 200 195 170 205 0 1 0 N
+P 2 0 1 10 -75 85 25 85 N
+P 4 0 1 10 -125 85 -100 85 -50 135 -25 135 N
+P 4 0 1 10 -100 85 -75 85 -50 35 0 35 N
+P 4 0 1 10 25 110 25 60 75 85 25 110 F
+P 5 0 1 0 -170 220 -70 220 -80 190 -160 190 -170 220 F
+P 9 0 1 0 -185 230 -185 220 -175 190 -175 180 -65 180 -65 190 -55 220 -55 230 -185 230 N
+X VBUS 1 300 200 100 L 50 50 1 1 w
+X D- 2 300 -100 100 L 50 50 1 1 B
+X D+ 3 300 0 100 L 50 50 1 1 B
+X ID 4 300 -200 100 L 50 50 1 1 P
+X GND 5 0 -400 100 U 50 50 1 1 w
+X Shield 6 -100 -400 100 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
@@ -515,86 +706,6 @@ P 3 0 1 0 0 125 25 125 25 100 N
 P 4 0 1 0 -100 50 -100 -50 0 0 -100 50 F
 X ~ 1 -200 0 100 R 50 50 1 1 P
 X ~ 2 100 0 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# dk_PMIC-Voltage-Regulators-Linear_NCP1117ST50T3G
-#
-DEF dk_PMIC-Voltage-Regulators-Linear_NCP1117ST50T3G U 0 20 Y Y 1 F N
-F0 "U" 0 150 60 H V C CNN
-F1 "dk_PMIC-Voltage-Regulators-Linear_NCP1117ST50T3G" 0 250 60 H V C CNN
-F2 "digikey-footprints:SOT-223" 200 200 60 H I L CNN
-F3 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" 200 300 60 H I L CNN
-F4 "NCP1117ST50T3GOSCT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
-F5 "NCP1117ST50T3G" 200 500 60 H I L CNN "MPN"
-F6 "Integrated Circuits (ICs)" 200 600 60 H I L CNN "Category"
-F7 "PMIC - Voltage Regulators - Linear" 200 700 60 H I L CNN "Family"
-F8 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" 200 800 60 H I L CNN "DK_Datasheet_Link"
-F9 "/product-detail/en/on-semiconductor/NCP1117ST50T3G/NCP1117ST50T3GOSCT-ND/1967217" 200 900 60 H I L CNN "DK_Detail_Page"
-F10 "IC REG LINEAR 5V 1A SOT223" 200 1000 60 H I L CNN "Description"
-F11 "ON Semiconductor" 200 1100 60 H I L CNN "Manufacturer"
-F12 "Active" 200 1200 60 H I L CNN "Status"
-DRAW
-S -200 100 300 -300 0 1 0 f
-X ADJ/GND 1 0 -400 100 U 50 50 1 1 W
-X OUT 2 400 0 100 L 50 50 1 1 w
-X IN 3 -300 0 100 R 50 50 1 1 W
-X OUT 4 400 -100 100 L 50 50 1 1 w
-ENDDRAW
-ENDDEF
-#
-# dk_Rectangular-Connectors-Headers-Male-Pins_22-23-2021
-#
-DEF dk_Rectangular-Connectors-Headers-Male-Pins_22-23-2021 J 0 40 Y Y 1 F N
-F0 "J" -100 50 50 H V R CNN
-F1 "dk_Rectangular-Connectors-Headers-Male-Pins_22-23-2021" 50 -150 50 H V C CNN
-F2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" 200 200 60 H I L CNN
-F3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" 200 300 60 H I L CNN
-F4 "WM4200-ND" 200 400 60 H I L CNN "Digi-Key_PN"
-F5 "22-23-2021" 200 500 60 H I L CNN "MPN"
-F6 "Connectors, Interconnects" 200 600 60 H I L CNN "Category"
-F7 "Rectangular Connectors - Headers, Male Pins" 200 700 60 H I L CNN "Family"
-F8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
-F9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" 200 900 60 H I L CNN "DK_Detail_Page"
-F10 "CONN HEADER VERT 2POS 2.54MM" 200 1000 60 H I L CNN "Description"
-F11 "Molex" 200 1100 60 H I L CNN "Manufacturer"
-F12 "Active" 200 1200 60 H I L CNN "Status"
-DRAW
-S -50 0 150 -100 1 1 0 f
-S -10 -45 10 -65 1 1 0 F
-S 90 -45 110 -65 1 1 0 F
-X ~ 1 0 100 100 D 50 50 1 1 P
-X ~ 2 100 100 100 D 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# dk_Transistors-Bipolar-BJT-Single_MMBT2222A-7-F
-#
-DEF dk_Transistors-Bipolar-BJT-Single_MMBT2222A-7-F Q 0 0 Y Y 1 F N
-F0 "Q" -126 166 60 H V L CNN
-F1 "dk_Transistors-Bipolar-BJT-Single_MMBT2222A-7-F" 206 0 60 V V C CNN
-F2 "digikey-footprints:SOT-23-3" 200 200 60 H I L CNN
-F3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" 200 300 60 H I L CNN
-F4 "MMBT2222A-FDICT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
-F5 "MMBT2222A-7-F" 200 500 60 H I L CNN "MPN"
-F6 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
-F7 "Transistors - Bipolar (BJT) - Single" 200 700 60 H I L CNN "Family"
-F8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
-F9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" 200 900 60 H I L CNN "DK_Detail_Page"
-F10 "TRANS NPN 40V 0.6A SMD SOT23-3" 200 1000 60 H I L CNN "Description"
-F11 "Diodes Incorporated" 200 1100 60 H I L CNN "Manufacturer"
-F12 "Active" 200 1200 60 H I L CNN "Status"
-DRAW
-C 0 0 128 0 1 0 f
-P 2 0 1 0 -150 0 -100 0 N
-P 2 0 1 0 -140 0 0 0 N
-P 2 0 1 0 0 -50 100 -100 N
-P 2 0 1 0 0 50 100 100 N
-P 2 0 1 0 0 100 0 -100 N
-P 4 0 1 0 60 -50 80 -90 40 -100 60 -50 F
-X B 1 -200 0 100 R 50 50 1 1 I
-X E 2 100 -200 100 U 50 50 1 1 P
-X C 3 100 200 100 D 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #

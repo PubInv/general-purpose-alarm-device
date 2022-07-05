@@ -57,45 +57,6 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 3500 3100 50  00
 	-1   0    0    1   
 $EndComp
 $Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q201
-U 1 1 62B5A2CE
-P 3400 3950
-F 0 "Q201" H 3588 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 3588 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 3600 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 3600 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 3600 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 3600 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 3600 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 3600 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 3600 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 3600 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 3600 5150 60  0001 L CNN "Status"
-	1    3400 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D201
-U 1 1 62B5A2DC
-P 3500 3550
-F 0 "D201" V 3450 3800 60  0000 C CNN
-F 1 "RED 0603" V 3600 3850 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 3700 3750 60  0001 L CNN
-F 3 "" H 3700 3850 60  0001 L CNN
-F 4 "JLCPCB" H 3500 3550 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 3700 3950 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 3700 4050 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 3700 4150 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 3700 4250 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 3700 4550 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 3700 4650 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 3700 4750 60  0001 L CNN "Status"
-	1    3500 3550
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:R R203
 U 1 1 62B5A2E7
 P 4200 3700
@@ -137,45 +98,6 @@ F 7 "RMC06033301%N" V 4700 3100 50  0001 C CNN "MPN"
 F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 4700 3100 50  0001 C CNN "Description"
 	1    4700 3100
 	-1   0    0    1   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q202
-U 1 1 62B5A307
-P 4600 3950
-F 0 "Q202" H 4788 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 4788 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 4800 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 4800 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 4800 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 4800 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 4800 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 4800 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 4800 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 4800 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4800 5150 60  0001 L CNN "Status"
-	1    4600 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D202
-U 1 1 62B5A315
-P 4700 3550
-F 0 "D202" V 4650 3800 60  0000 C CNN
-F 1 "RED 0603" V 4800 3850 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 4900 3750 60  0001 L CNN
-F 3 "" H 4900 3850 60  0001 L CNN
-F 4 "JLCPCB" H 4700 3550 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 4900 3950 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 4900 4050 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 4900 4150 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 4900 4250 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 4900 4550 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 4900 4650 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 4900 4750 60  0001 L CNN "Status"
-	1    4700 3550
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R205
@@ -221,45 +143,6 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 5900 3100 50  00
 	-1   0    0    1   
 $EndComp
 $Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q203
-U 1 1 62B5A340
-P 5800 3950
-F 0 "Q203" H 5988 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 5988 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 6000 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 6000 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 6000 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 6000 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 6000 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 6000 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 6000 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 6000 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 6000 5150 60  0001 L CNN "Status"
-	1    5800 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D203
-U 1 1 62B5A34E
-P 5900 3550
-F 0 "D203" V 5850 3800 60  0000 C CNN
-F 1 "RED 0603" V 6000 3850 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 6100 3750 60  0001 L CNN
-F 3 "" H 6100 3850 60  0001 L CNN
-F 4 "JLCPCB" H 5900 3550 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 6100 3950 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 6100 4050 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 6100 4150 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 6100 4250 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 6100 4550 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 6100 4650 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 6100 4750 60  0001 L CNN "Status"
-	1    5900 3550
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:R R207
 U 1 1 62B5A359
 P 6600 3700
@@ -301,45 +184,6 @@ F 7 "RMC06033301%N" V 7100 3100 50  0001 C CNN "MPN"
 F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 7100 3100 50  0001 C CNN "Description"
 	1    7100 3100
 	-1   0    0    1   
-$EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q204
-U 1 1 62B5A379
-P 7000 3950
-F 0 "Q204" H 7188 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 7188 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 7200 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 7200 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 7200 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 7200 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 7200 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 7200 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 7200 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 7200 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7200 5150 60  0001 L CNN "Status"
-	1    7000 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D204
-U 1 1 62B5A387
-P 7100 3550
-F 0 "D204" V 7050 3800 60  0000 C CNN
-F 1 "RED 0603" V 7200 3850 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 7300 3750 60  0001 L CNN
-F 3 "" H 7300 3850 60  0001 L CNN
-F 4 "JLCPCB" H 7100 3550 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 7300 3950 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 7300 4050 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 7300 4150 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 7300 4250 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 7300 4550 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 7300 4650 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 7300 4750 60  0001 L CNN "Status"
-	1    7100 3550
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R209
@@ -384,45 +228,6 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 8300 3100 50  00
 	1    8300 3100
 	-1   0    0    1   
 $EndComp
-$Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q205
-U 1 1 62B5A3B2
-P 8200 3950
-F 0 "Q205" H 8388 4003 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 8388 3897 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 8400 4150 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4250 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 8400 4350 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 8400 4450 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 8400 4550 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 8400 4650 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4750 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 8400 4850 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 8400 4950 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 8400 5050 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 8400 5150 60  0001 L CNN "Status"
-	1    8200 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L dk_LED-Indication-Discrete:LTST-C171KRKT D205
-U 1 1 62B5A3C0
-P 8300 3550
-F 0 "D205" V 8250 3800 60  0000 C CNN
-F 1 "RED 0603" V 8400 3850 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 8500 3750 60  0001 L CNN
-F 3 "" H 8500 3850 60  0001 L CNN
-F 4 "JLCPCB" H 8300 3550 50  0001 C CNN "Distributor 1"
-F 5 "C2286" H 8500 3950 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 8500 4050 60  0001 L CNN "MPN"
-F 7 "Optoelectronics" H 8500 4150 60  0001 L CNN "Category"
-F 8 "LED Indication - Discrete" H 8500 4250 60  0001 L CNN "Family"
-F 9 "LED RED CLEAR SMD" H 8500 4550 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 8500 4650 60  0001 L CNN "Manufacturer"
-F 11 "Active" H 8500 4750 60  0001 L CNN "Status"
-	1    8300 3550
-	0    1    1    0   
-$EndComp
 Text Notes 5050 2750 0    50   ~ 0
 Alarm lights, 5 Levels
 Wire Wire Line
@@ -439,13 +244,6 @@ Wire Wire Line
 	3000 3850 3000 3950
 Wire Wire Line
 	3000 3950 3200 3950
-Wire Wire Line
-	3500 3750 3500 3650
-Wire Wire Line
-	3500 3400 3500 3350
-Connection ~ 3500 3350
-Wire Wire Line
-	3500 3350 3500 3250
 Wire Wire Line
 	4200 3850 4200 3950
 Wire Wire Line
@@ -537,4 +335,208 @@ Text HLabel 7800 3200 0    50   Input ~ 0
 Light4
 Wire Wire Line
 	7800 3200 7800 3550
+Wire Wire Line
+	3500 3250 3500 3350
+Wire Wire Line
+	3500 3650 3500 3750
+$Comp
+L GPAD_SCH_LIB:LED_T1.75_CLEAR_WHITE D202
+U 1 1 62C2D664
+P 4700 3550
+F 0 "D202" V 4597 3728 60  0000 L CNN
+F 1 "LED_T1.75_CLEAR_WHITE" V 4703 3728 60  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" H 4900 3750 60  0001 L CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 4900 3850 60  0001 L CNN
+F 4 "160-1772-ND" H 4900 3950 60  0001 L CNN "Digi-Key_PN"
+F 5 "LTW-2R3D7" H 4900 4050 60  0001 L CNN "MPN"
+F 6 "Optoelectronics" H 4900 4150 60  0001 L CNN "Category"
+F 7 "LED Indication - Discrete" H 4900 4250 60  0001 L CNN "Family"
+F 8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 4900 4350 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" H 4900 4450 60  0001 L CNN "DK_Detail_Page"
+F 10 "LED WHITE CLEAR T-1 3/4 T/H" H 4900 4550 60  0001 L CNN "Description"
+F 11 "Lite-On Inc." H 4900 4650 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4900 4750 60  0001 L CNN "Status"
+	1    4700 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:LED_T1.75_CLEAR_WHITE D203
+U 1 1 62C2DD8B
+P 5900 3550
+F 0 "D203" V 5797 3728 60  0000 L CNN
+F 1 "LED_T1.75_CLEAR_WHITE" V 5903 3728 60  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" H 6100 3750 60  0001 L CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 6100 3850 60  0001 L CNN
+F 4 "160-1772-ND" H 6100 3950 60  0001 L CNN "Digi-Key_PN"
+F 5 "LTW-2R3D7" H 6100 4050 60  0001 L CNN "MPN"
+F 6 "Optoelectronics" H 6100 4150 60  0001 L CNN "Category"
+F 7 "LED Indication - Discrete" H 6100 4250 60  0001 L CNN "Family"
+F 8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 6100 4350 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" H 6100 4450 60  0001 L CNN "DK_Detail_Page"
+F 10 "LED WHITE CLEAR T-1 3/4 T/H" H 6100 4550 60  0001 L CNN "Description"
+F 11 "Lite-On Inc." H 6100 4650 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 6100 4750 60  0001 L CNN "Status"
+	1    5900 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:LED_T1.75_CLEAR_WHITE D204
+U 1 1 62C2E7DA
+P 7100 3550
+F 0 "D204" V 6997 3728 60  0000 L CNN
+F 1 "LED_T1.75_CLEAR_WHITE" V 7103 3728 60  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" H 7300 3750 60  0001 L CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 7300 3850 60  0001 L CNN
+F 4 "160-1772-ND" H 7300 3950 60  0001 L CNN "Digi-Key_PN"
+F 5 "LTW-2R3D7" H 7300 4050 60  0001 L CNN "MPN"
+F 6 "Optoelectronics" H 7300 4150 60  0001 L CNN "Category"
+F 7 "LED Indication - Discrete" H 7300 4250 60  0001 L CNN "Family"
+F 8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 7300 4350 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" H 7300 4450 60  0001 L CNN "DK_Detail_Page"
+F 10 "LED WHITE CLEAR T-1 3/4 T/H" H 7300 4550 60  0001 L CNN "Description"
+F 11 "Lite-On Inc." H 7300 4650 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7300 4750 60  0001 L CNN "Status"
+	1    7100 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:LED_T1.75_CLEAR_WHITE D205
+U 1 1 62C2F233
+P 8300 3550
+F 0 "D205" V 8197 3728 60  0000 L CNN
+F 1 "LED_T1.75_CLEAR_WHITE" V 8303 3728 60  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" H 8500 3750 60  0001 L CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 8500 3850 60  0001 L CNN
+F 4 "160-1772-ND" H 8500 3950 60  0001 L CNN "Digi-Key_PN"
+F 5 "LTW-2R3D7" H 8500 4050 60  0001 L CNN "MPN"
+F 6 "Optoelectronics" H 8500 4150 60  0001 L CNN "Category"
+F 7 "LED Indication - Discrete" H 8500 4250 60  0001 L CNN "Family"
+F 8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 8500 4350 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" H 8500 4450 60  0001 L CNN "DK_Detail_Page"
+F 10 "LED WHITE CLEAR T-1 3/4 T/H" H 8500 4550 60  0001 L CNN "Description"
+F 11 "Lite-On Inc." H 8500 4650 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 8500 4750 60  0001 L CNN "Status"
+	1    8300 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:LED_T1.75_CLEAR_WHITE D201
+U 1 1 62C472DA
+P 3500 3550
+F 0 "D201" V 3397 3728 60  0000 L CNN
+F 1 "LED_T1.75_CLEAR_WHITE" V 3503 3728 60  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" H 3700 3750 60  0001 L CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 3700 3850 60  0001 L CNN
+F 4 "160-1772-ND" H 3700 3950 60  0001 L CNN "Digi-Key_PN"
+F 5 "LTW-2R3D7" H 3700 4050 60  0001 L CNN "MPN"
+F 6 "Optoelectronics" H 3700 4150 60  0001 L CNN "Category"
+F 7 "LED Indication - Discrete" H 3700 4250 60  0001 L CNN "Family"
+F 8 "http://optoelectronics.liteon.com/upload/download/DS20-2005-253/LTW-2R3D7.pdf" H 3700 4350 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/lite-on-inc/LTW-2R3D7/160-1772-ND/1277121" H 3700 4450 60  0001 L CNN "DK_Detail_Page"
+F 10 "LED WHITE CLEAR T-1 3/4 T/H" H 3700 4550 60  0001 L CNN "Description"
+F 11 "Lite-On Inc." H 3700 4650 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3700 4750 60  0001 L CNN "Status"
+	1    3500 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q201
+U 1 1 62D15BD1
+P 3400 3950
+F 0 "Q201" H 3588 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 3588 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3600 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 3600 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 3600 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 3600 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 3600 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 3600 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 3600 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 3600 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 3600 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3600 5150 60  0001 L CNN "Status"
+	1    3400 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q205
+U 1 1 62D16689
+P 8200 3950
+F 0 "Q205" H 8388 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 8388 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8400 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 8400 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 8400 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 8400 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 8400 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 8400 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 8400 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 8400 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 8400 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 8400 5150 60  0001 L CNN "Status"
+	1    8200 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q204
+U 1 1 62D176AE
+P 7000 3950
+F 0 "Q204" H 7188 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 7188 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7200 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 7200 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 7200 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 7200 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 7200 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 7200 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 7200 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 7200 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 7200 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7200 5150 60  0001 L CNN "Status"
+	1    7000 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q203
+U 1 1 62D18339
+P 5800 3950
+F 0 "Q203" H 5988 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 5988 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 6000 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 6000 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 6000 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 6000 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 6000 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 6000 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 6000 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 6000 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 6000 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 6000 5150 60  0001 L CNN "Status"
+	1    5800 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q202
+U 1 1 62D18D24
+P 4600 3950
+F 0 "Q202" H 4788 4003 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 4788 3897 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4800 4150 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4250 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 4800 4350 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 4800 4450 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 4800 4550 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 4800 4650 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 4800 4750 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 4800 4850 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 4800 4950 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 4800 5050 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4800 5150 60  0001 L CNN "Status"
+	1    4600 3950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

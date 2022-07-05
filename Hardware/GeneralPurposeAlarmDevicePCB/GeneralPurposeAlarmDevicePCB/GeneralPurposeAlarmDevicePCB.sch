@@ -19,18 +19,19 @@ U 1 1 62B3A927
 P 2600 4050
 F 0 "XTAL101" H 2600 4290 50  0000 C CNN
 F 1 "16MHZ 20PF HC-49S/SMD" H 2700 4200 50  0000 C CNN
-F 2 "Crystal:Crystal_SMD_HC49-SD" H 2800 4250 60  0001 L CNN
-F 3 "1811061718_TAE-Zhejiang-Abel-Elec-TAXM16M2GLFBET2T_C111377.pdf" H 2800 4350 60  0001 L CNN
+F 2 "digikey-footprints:SMD-2_3.2x2.5mm" H 2800 4250 60  0001 L CNN
+F 3 "http://www.ndk.com/images/products/catalog/c_NX3225GD-STD-CRA-3_e.pdf" H 2800 4350 60  0001 L CNN
 F 4 "JLCPCB" H 2600 4050 50  0001 C CNN "Distributor 1"
 F 5 "TAXM16M2GLFBET2T" H 2800 4450 60  0001 L CNN "Distributor1 PN"
-F 6 "TAXM16M2GLFBET2T" H 2800 4550 60  0001 L CNN "MPN"
+F 6 "NX3225GD-8MHZ-STD-CRA-3" H 2800 4550 60  0001 L CNN "MPN"
 F 7 "Crystals, Oscillators, Resonators" H 2800 4650 60  0001 L CNN "Category"
 F 8 "Crystals" H 2800 4750 60  0001 L CNN "Family"
-F 9 "" H 2800 4850 60  0001 L CNN "DK_Datasheet_Link"
-F 10 "" H 2800 4950 60  0001 L CNN "DK_Detail_Page"
-F 11 "CRYSTAL 16.0000MHZ 20PF HC49SSMD" H 2800 5050 60  0001 L CNN "Description"
-F 12 "TAE" H 2800 5150 60  0001 L CNN "Manufacturer"
+F 9 "http://www.ndk.com/images/products/catalog/c_NX3225GD-STD-CRA-3_e.pdf" H 2800 4850 60  0001 L CNN "DK_Datasheet_Link"
+F 10 "/product-detail/en/ndk-america-inc/NX3225GD-8MHZ-STD-CRA-3/644-1178-1-ND/3125567" H 2800 4950 60  0001 L CNN "DK_Detail_Page"
+F 11 "CRYSTAL 8.0000MHZ 8PF SMD" H 2800 5050 60  0001 L CNN "Description"
+F 12 "NDK America, Inc." H 2800 5150 60  0001 L CNN "Manufacturer"
 F 13 "Active" H 2800 5250 60  0001 L CNN "Status"
+F 14 "644-1178-1-ND" H 0   0   50  0001 C CNN "Digi-Key_PN"
 	1    2600 4050
 	1    0    0    -1  
 $EndComp
@@ -46,10 +47,10 @@ F 3 "~" H 2100 4400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C106
+L Device:C C107
 U 1 1 62B46140
 P 2950 4400
-F 0 "C106" H 3065 4446 50  0000 L CNN
+F 0 "C107" H 3065 4446 50  0000 L CNN
 F 1 "39pF" H 3065 4355 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2988 4250 50  0001 C CNN
 F 3 "~" H 2950 4400 50  0001 C CNN
@@ -74,10 +75,10 @@ F 7 "MDD（Microdiode Electronics）" H 1600 1000 50  0001 C CNN "Manufacturer"
 	-1   0    0    1   
 $EndComp
 $Comp
-L power:GND #PWR0102
+L power:GND #PWR0105
 U 1 1 62B4DABB
 P 2100 4650
-F 0 "#PWR0102" H 2100 4400 50  0001 C CNN
+F 0 "#PWR0105" H 2100 4400 50  0001 C CNN
 F 1 "GND" H 2105 4477 50  0000 C CNN
 F 2 "" H 2100 4650 50  0001 C CNN
 F 3 "" H 2100 4650 50  0001 C CNN
@@ -85,10 +86,10 @@ F 3 "" H 2100 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0103
+L power:GND #PWR0109
 U 1 1 62B4E34C
 P 2950 4650
-F 0 "#PWR0103" H 2950 4400 50  0001 C CNN
+F 0 "#PWR0109" H 2950 4400 50  0001 C CNN
 F 1 "GND" H 2955 4477 50  0000 C CNN
 F 2 "" H 2950 4650 50  0001 C CNN
 F 3 "" H 2950 4650 50  0001 C CNN
@@ -96,10 +97,10 @@ F 3 "" H 2950 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0104
+L power:GND #PWR0111
 U 1 1 62B4F12F
 P 3200 3450
-F 0 "#PWR0104" H 3200 3200 50  0001 C CNN
+F 0 "#PWR0111" H 3200 3200 50  0001 C CNN
 F 1 "GND" H 3205 3277 50  0000 C CNN
 F 2 "" H 3200 3450 50  0001 C CNN
 F 3 "" H 3200 3450 50  0001 C CNN
@@ -112,39 +113,42 @@ U 1 1 62B52665
 P 5300 4550
 F 0 "D102" H 5250 4887 60  0000 C CNN
 F 1 "RED 0603" H 5250 4781 60  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric" H 5500 4750 60  0001 L CNN
-F 3 "" H 5500 4850 60  0001 L CNN
+F 2 "digikey-footprints:0805" H 5500 4750 60  0001 L CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS22-2000-109/LTST-C171KRKT.pdf" H 5500 4850 60  0001 L CNN
 F 4 "JLCPCB" H 5300 4550 50  0001 C CNN "Distributor 1"
 F 5 "C2286" H 5500 4950 60  0001 L CNN "Distributor 1 PN"
-F 6 "KT-0603R" H 5500 5050 60  0001 L CNN "MPN"
+F 6 "LTST-C171KRKT" H 5500 5050 60  0001 L CNN "MPN"
 F 7 "Optoelectronics" H 5500 5150 60  0001 L CNN "Category"
 F 8 "LED Indication - Discrete" H 5500 5250 60  0001 L CNN "Family"
 F 9 "LED RED CLEAR SMD" H 5500 5550 60  0001 L CNN "Description"
-F 10 "Hubei KENTO Elec" H 5500 5650 60  0001 L CNN "Manufacturer"
+F 10 "Lite-On Inc." H 5500 5650 60  0001 L CNN "Manufacturer"
 F 11 "Active" H 5500 5750 60  0001 L CNN "Status"
+F 12 "http://optoelectronics.liteon.com/upload/download/DS22-2000-109/LTST-C171KRKT.pdf" H 0   0   50  0001 C CNN "DK_Datasheet_Link"
+F 13 "/product-detail/en/lite-on-inc/LTST-C171KRKT/160-1427-1-ND/386800" H 0   0   50  0001 C CNN "DK_Detail_Page"
+F 14 "160-1427-1-ND" H 0   0   50  0001 C CNN "Digi-Key_PN"
 	1    5300 4550
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP C102
 U 1 1 62B5ACAD
-P 1850 1300
-F 0 "C102" H 1968 1346 50  0000 L CNN
-F 1 "47uF 16V" H 1968 1255 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 1888 1150 50  0001 C CNN
-F 3 "~" H 1850 1300 50  0001 C CNN
-F 4 "JLCPCB" H 1850 1300 50  0001 C CNN "Distributor 1"
-F 5 "C2895272" H 1850 1300 50  0001 C CNN "Distributor 1 PN"
-F 6 "KNSCHA" H 1850 1300 50  0001 C CNN "Manufacturer"
-F 7 "RVT47UF16V67RV0019" H 1850 1300 50  0001 C CNN "MPN"
-	1    1850 1300
+P 1850 1800
+F 0 "C102" H 1968 1846 50  0000 L CNN
+F 1 "47uF 16V" H 1968 1755 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 1888 1650 50  0001 C CNN
+F 3 "~" H 1850 1800 50  0001 C CNN
+F 4 "JLCPCB" H 1850 1800 50  0001 C CNN "Distributor 1"
+F 5 "C2895272" H 1850 1800 50  0001 C CNN "Distributor 1 PN"
+F 6 "KNSCHA" H 1850 1800 50  0001 C CNN "Manufacturer"
+F 7 "RVT47UF16V67RV0019" H 1850 1800 50  0001 C CNN "MPN"
+	1    1850 1800
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP C108
+L Device:CP C109
 U 1 1 62B5B741
 P 3750 1200
-F 0 "C108" H 3868 1246 50  0000 L CNN
+F 0 "C109" H 3868 1246 50  0000 L CNN
 F 1 "47uF 16V" H 3868 1155 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 3788 1050 50  0001 C CNN
 F 3 "~" H 3750 1200 50  0001 C CNN
@@ -156,33 +160,10 @@ F 7 "RVT47UF16V67RV0019" H 3750 1200 50  0001 C CNN "MPN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L dk_PMIC-Voltage-Regulators-Linear:NCP1117ST50T3G U101
-U 1 1 62B5C195
-P 2500 1000
-F 0 "U101" H 2550 1287 60  0000 C CNN
-F 1 "NCP1117ST50T3G" H 2550 1181 60  0000 C CNN
-F 2 "digikey-footprints:SOT-223" H 2700 1200 60  0001 L CNN
-F 3 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 2700 1300 60  0001 L CNN
-F 4 "NCP1117ST50T3GOSCT-ND" H 2700 1400 60  0001 L CNN "Digi-Key_PN"
-F 5 "NCP1117ST50T3G" H 2700 1500 60  0001 L CNN "MPN"
-F 6 "Integrated Circuits (ICs)" H 2700 1600 60  0001 L CNN "Category"
-F 7 "PMIC - Voltage Regulators - Linear" H 2700 1700 60  0001 L CNN "Family"
-F 8 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 2700 1800 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/on-semiconductor/NCP1117ST50T3G/NCP1117ST50T3GOSCT-ND/1967217" H 2700 1900 60  0001 L CNN "DK_Detail_Page"
-F 10 "IC REG LINEAR 5V 1A SOT223" H 2700 2000 60  0001 L CNN "Description"
-F 11 "ON Semiconductor" H 2700 2100 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 2700 2200 60  0001 L CNN "Status"
-F 13 "JLCPCB" H 2500 1000 50  0001 C CNN "Distributor 1"
-F 14 "C17314" H 2500 1000 50  0001 C CNN "Distributor 1 PN"
-F 15 "" H 2500 1000 50  0001 C CNN "Field15"
-	1    2500 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C107
+L Device:C C108
 U 1 1 62B5D253
 P 3200 1200
-F 0 "C107" H 3315 1246 50  0000 L CNN
+F 0 "C108" H 3315 1246 50  0000 L CNN
 F 1 "100nF" H 3315 1155 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3238 1050 50  0001 C CNN
 F 3 "~" H 3200 1200 50  0001 C CNN
@@ -195,21 +176,21 @@ F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0107
+L power:GND #PWR0102
 U 1 1 62B1C88A
-P 1850 1550
-F 0 "#PWR0107" H 1850 1300 50  0001 C CNN
-F 1 "GND" H 1855 1377 50  0000 C CNN
-F 2 "" H 1850 1550 50  0001 C CNN
-F 3 "" H 1850 1550 50  0001 C CNN
-	1    1850 1550
+P 1850 2050
+F 0 "#PWR0102" H 1850 1800 50  0001 C CNN
+F 1 "GND" H 1855 1877 50  0000 C CNN
+F 2 "" H 1850 2050 50  0001 C CNN
+F 3 "" H 1850 2050 50  0001 C CNN
+	1    1850 2050
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0108
+L power:GND #PWR0110
 U 1 1 62B1CDA3
 P 3200 1450
-F 0 "#PWR0108" H 3200 1200 50  0001 C CNN
+F 0 "#PWR0110" H 3200 1200 50  0001 C CNN
 F 1 "GND" H 3205 1277 50  0000 C CNN
 F 2 "" H 3200 1450 50  0001 C CNN
 F 3 "" H 3200 1450 50  0001 C CNN
@@ -217,10 +198,10 @@ F 3 "" H 3200 1450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0109
+L power:GND #PWR0112
 U 1 1 62B1D284
 P 3750 1400
-F 0 "#PWR0109" H 3750 1150 50  0001 C CNN
+F 0 "#PWR0112" H 3750 1150 50  0001 C CNN
 F 1 "GND" H 3755 1227 50  0000 C CNN
 F 2 "" H 3750 1400 50  0001 C CNN
 F 3 "" H 3750 1400 50  0001 C CNN
@@ -260,7 +241,7 @@ U 1 1 62BBF172
 P 850 1100
 F 0 "J101" H 907 1491 50  0000 C CNN
 F 1 "Barrel_Jack_Switch_SMT" H 907 1400 50  0000 C CNN
-F 2 "Connector_BarrelJack:BarrelJack_CLIFF_FC681465S_SMT_Horizontal" H 900 1060 50  0001 C CNN
+F 2 "GeneralPurposeAlarmDevicePCB:BarrelJack_CLIFF_FC681465S_SMT_Horizontal" H 900 1060 50  0001 C CNN
 F 3 "https://tensility.s3.amazonaws.com/uploads/pdffiles/54-00164.pdf" H 900 1060 50  0001 C CNN
 F 4 "JLCPCB" H 850 1100 50  0001 C CNN "Distributor 1"
 F 5 "C319134" H 850 1100 50  0001 C CNN "Distributor 1 PN"
@@ -276,9 +257,9 @@ $Comp
 L GPAD_SCH_LIB:PI_ATMEGA328P-AU-InOrder U102
 U 1 1 62B3A84B
 P 4250 3350
-F 0 "U102" H 3250 4250 60  0000 L CNN
+F 0 "U102" H 3150 4100 60  0000 L CNN
 F 1 "PI_ATMEGA328P-AU-InOrder" H 3600 2900 60  0000 L CNN
-F 2 "digikey-footprints:TQFP-32_7x7mm" H 3400 3400 60  0001 L CNN
+F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 3400 3400 60  0001 L CNN
 F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en608326" V 4900 2240 60  0001 L CNN
 F 4 "DigiKey" H 3100 3050 50  0001 C CNN "Distributor 1"
 F 5 "ATMEGA328P-AU-ND" H 2800 4150 60  0001 L CNN "Distributor 1 PN"
@@ -294,10 +275,10 @@ F 13 "Active" H 4200 3250 60  0001 L CNN "Status"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0112
+L power:GND #PWR0108
 U 1 1 62B4EB2C
 P 2550 3500
-F 0 "#PWR0112" H 2550 3250 50  0001 C CNN
+F 0 "#PWR0108" H 2550 3250 50  0001 C CNN
 F 1 "GND" H 2555 3327 50  0000 C CNN
 F 2 "" H 2550 3500 50  0001 C CNN
 F 3 "" H 2550 3500 50  0001 C CNN
@@ -305,10 +286,10 @@ F 3 "" H 2550 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0110
+L power:GND #PWR0104
 U 1 1 62B4EB26
 P 2000 3550
-F 0 "#PWR0110" H 2000 3300 50  0001 C CNN
+F 0 "#PWR0104" H 2000 3300 50  0001 C CNN
 F 1 "GND" H 2005 3377 50  0000 C CNN
 F 2 "" H 2000 3550 50  0001 C CNN
 F 3 "" H 2000 3550 50  0001 C CNN
@@ -332,10 +313,10 @@ F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP C105
+L Device:CP C106
 U 1 1 62B4EB15
 P 2550 3300
-F 0 "C105" H 2668 3346 50  0000 L CNN
+F 0 "C106" H 2668 3346 50  0000 L CNN
 F 1 "47uF 16V" H 2668 3255 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2588 3150 50  0001 C CNN
 F 3 "~" H 2550 3300 50  0001 C CNN
@@ -347,10 +328,10 @@ F 7 "RVT47UF16V67RV0019" H 2550 3300 50  0001 C CNN "MPN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0115
+L power:GND #PWR0116
 U 1 1 62B56993
 P 5500 3300
-F 0 "#PWR0115" H 5500 3050 50  0001 C CNN
+F 0 "#PWR0116" H 5500 3050 50  0001 C CNN
 F 1 "GND" H 5505 3127 50  0000 C CNN
 F 2 "" H 5500 3300 50  0001 C CNN
 F 3 "" H 5500 3300 50  0001 C CNN
@@ -358,10 +339,10 @@ F 3 "" H 5500 3300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:CP C111
+L Device:CP C112
 U 1 1 62B56FAA
 P 5950 3750
-F 0 "C111" H 6068 3796 50  0000 L CNN
+F 0 "C112" H 6068 3796 50  0000 L CNN
 F 1 "47uF 16V" H 6068 3705 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 5988 3600 50  0001 C CNN
 F 3 "~" H 5950 3750 50  0001 C CNN
@@ -373,10 +354,10 @@ F 7 "RVT47UF16V67RV0019" H 5950 3750 50  0001 C CNN "MPN"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C110
+L Device:C C111
 U 1 1 62B57F1E
 P 5500 3750
-F 0 "C110" H 5615 3796 50  0000 L CNN
+F 0 "C111" H 5615 3796 50  0000 L CNN
 F 1 "100nF" H 5615 3705 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5538 3600 50  0001 C CNN
 F 3 "~" H 5500 3750 50  0001 C CNN
@@ -393,10 +374,10 @@ Power Input, Reverse protected.
 Text Notes 850  4000 0    50   ~ 0
 Notes:\nArduino Pin to ATmega328\nA0 PC0\nA1 PC1\nA2 PC2\nA3 PC3\nA4 PC4\nA5 PC5\nD0 PD0\nD1 PD1\nD2 PD2\n'D3 PD3\nD4 PD4\n`D5 PD5\n`D6 PD6\nD7 PD7\nD8 PB0\n`D9 PB1\n`D10 PB2\n`D11 PB3\nD12 PB4\nD13 PB5
 $Comp
-L power:GND #PWR0116
+L power:GND #PWR0117
 U 1 1 62BAF22E
 P 5500 4000
-F 0 "#PWR0116" H 5500 3750 50  0001 C CNN
+F 0 "#PWR0117" H 5500 3750 50  0001 C CNN
 F 1 "GND" H 5505 3827 50  0000 C CNN
 F 2 "" H 5500 4000 50  0001 C CNN
 F 3 "" H 5500 4000 50  0001 C CNN
@@ -404,21 +385,21 @@ F 3 "" H 5500 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Sheet
-S 7700 5200 2250 1250
+S 7700 5400 2250 1250
 U 62B3AC2F
 F0 "AlarmLights5" 50
 F1 "AlarmLights5.sch" 50
-F2 "Light0" I L 7700 5350 50 
-F3 "Light1" I L 7700 5500 50 
-F4 "Light2" I L 7700 5650 50 
-F5 "Light3" I L 7700 5800 50 
-F6 "Light4" I L 7700 5950 50 
+F2 "Light0" I L 7700 5550 50 
+F3 "Light1" I L 7700 5700 50 
+F4 "Light2" I L 7700 5850 50 
+F5 "Light3" I L 7700 6000 50 
+F6 "Light4" I L 7700 6150 50 
 $EndSheet
 $Comp
-L power:GND #PWR0106
+L power:GND #PWR0115
 U 1 1 62B53159
 P 5250 4800
-F 0 "#PWR0106" H 5250 4550 50  0001 C CNN
+F 0 "#PWR0115" H 5250 4550 50  0001 C CNN
 F 1 "GND" H 5255 4627 50  0000 C CNN
 F 2 "" H 5250 4800 50  0001 C CNN
 F 3 "" H 5250 4800 50  0001 C CNN
@@ -439,14 +420,14 @@ U 1 1 62BA946B
 P 5800 2200
 F 0 "S101" H 5800 2547 60  0000 C CNN
 F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 5800 2441 60  0000 C CNN
-F 2 "digikey-footprints:Switch_Tactile_THT_6x6mm" H 6000 2400 60  0001 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm" H 6000 2400 60  0001 L CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6000 2500 60  0001 L CNN
 F 4 "JLCPCB" H 5800 2200 50  0001 C CNN "Distributor 1"
-F 5 "C592982" H 5800 2200 50  0001 C CNN "Distributor 1 PN"
+F 5 "C13828" H 5800 2200 50  0001 C CNN "Distributor 1 PN"
 F 6 "Digikey" H 5800 2200 50  0001 C CNN "Distributor 2"
 F 7 "450-1804-ND" H 6000 2600 60  0001 L CNN "Distributor 2 PN"
 F 8 "TE Connectivity ALCOSWITCH Switches" H 6000 3300 60  0001 L CNN "Manufacturer"
-F 9 "1825910-7" H 6000 2700 60  0001 L CNN "MPN"
+F 9 "TE Connectivity 1825910-7,   Dongguan Guangzhu Industrial C13828" H 6000 2700 60  0001 L CNN "MPN"
 F 10 "Switches" H 6000 2800 60  0001 L CNN "Category"
 F 11 "Tactile Switches" H 6000 2900 60  0001 L CNN "Family"
 F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6000 3000 60  0001 L CNN "DK_Datasheet_Link"
@@ -457,10 +438,10 @@ F 15 "Active" H 6000 3400 60  0001 L CNN "Status"
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0117
+L power:GND #PWR0118
 U 1 1 62BAA497
 P 6300 2100
-F 0 "#PWR0117" H 6300 1850 50  0001 C CNN
+F 0 "#PWR0118" H 6300 1850 50  0001 C CNN
 F 1 "GND" H 6305 1927 50  0000 C CNN
 F 2 "" H 6300 2100 50  0001 C CNN
 F 3 "" H 6300 2100 50  0001 C CNN
@@ -468,10 +449,10 @@ F 3 "" H 6300 2100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C109
+L Device:C C110
 U 1 1 62BAB737
 P 5050 2300
-F 0 "C109" H 5165 2346 50  0000 L CNN
+F 0 "C110" H 5165 2346 50  0000 L CNN
 F 1 "100nF" H 5165 2255 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5088 2150 50  0001 C CNN
 F 3 "~" H 5050 2300 50  0001 C CNN
@@ -530,16 +511,10 @@ F2 "ControllerRX" O R 2700 7350 50
 F3 "ControllerTX" I R 2700 7100 50 
 F4 "VBUS" U R 2700 6850 50 
 $EndSheet
-Text GLabel 4000 2450 0    50   Input ~ 0
+Text GLabel 4000 2350 0    50   Input ~ 0
 ControllerTX
-Text GLabel 4000 2300 0    50   Input ~ 0
+Text GLabel 4000 2200 0    50   Input ~ 0
 ControllerRX
-Wire Wire Line
-	4000 2550 4000 2450
-Wire Wire Line
-	4000 2300 4100 2300
-Wire Wire Line
-	4100 2300 4100 2550
 Wire Wire Line
 	4200 2550 4200 2250
 Wire Wire Line
@@ -564,7 +539,7 @@ Wire Wire Line
 	4750 2250 4750 2100
 Connection ~ 4750 2100
 Wire Wire Line
-	4750 2100 5050 2100
+	4750 2100 4900 2100
 $Comp
 L Device:R R101
 U 1 1 62BF3016
@@ -584,12 +559,12 @@ F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 2600 2950 50  0001
 	0    1    1    0   
 $EndComp
 $Comp
-L power:+5V #PWR0105
+L power:+5V #PWR0103
 U 1 1 62BF301C
 P 1850 2950
-AR Path="/62BF301C" Ref="#PWR0105"  Part="1" 
+AR Path="/62BF301C" Ref="#PWR0103"  Part="1" 
 AR Path="/62B871EE/62BF301C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0105" H 1850 2800 50  0001 C CNN
+F 0 "#PWR0103" H 1850 2800 50  0001 C CNN
 F 1 "+5V" H 1865 3123 50  0000 C CNN
 F 2 "" H 1850 2950 50  0001 C CNN
 F 3 "" H 1850 2950 50  0001 C CNN
@@ -676,10 +651,10 @@ Connection ~ 1300 1000
 Wire Wire Line
 	1300 1000 1250 1000
 $Comp
-L power:GND #PWR0111
+L power:GND #PWR0107
 U 1 1 62C08ABB
 P 2500 1500
-F 0 "#PWR0111" H 2500 1250 50  0001 C CNN
+F 0 "#PWR0107" H 2500 1250 50  0001 C CNN
 F 1 "GND" H 2505 1327 50  0000 C CNN
 F 2 "" H 2500 1500 50  0001 C CNN
 F 3 "" H 2500 1500 50  0001 C CNN
@@ -688,13 +663,11 @@ F 3 "" H 2500 1500 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1750 1000 1850 1000
-Wire Wire Line
-	1850 1150 1850 1000
 Connection ~ 1850 1000
 Wire Wire Line
 	1850 1000 2050 1000
 Wire Wire Line
-	1850 1450 1850 1550
+	1850 1950 1850 2050
 Wire Wire Line
 	2500 1500 2500 1400
 Wire Wire Line
@@ -802,26 +775,6 @@ Wire Wire Line
 	2850 7100 2700 7100
 Wire Wire Line
 	2850 7350 2700 7350
-$Comp
-L dk_Rectangular-Connectors-Headers-Male-Pins:22-23-2021 J102
-U 1 1 62CD8EE4
-P 4650 850
-F 0 "J102" H 4563 812 50  0000 R CNN
-F 1 "22-23-2021" H 4563 903 50  0000 R CNN
-F 2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" H 4850 1050 60  0001 L CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1150 60  0001 L CNN
-F 4 "WM4200-ND" H 4850 1250 60  0001 L CNN "Digi-Key_PN"
-F 5 "22-23-2021" H 4850 1350 60  0001 L CNN "MPN"
-F 6 "Connectors, Interconnects" H 4850 1450 60  0001 L CNN "Category"
-F 7 "Rectangular Connectors - Headers, Male Pins" H 4850 1550 60  0001 L CNN "Family"
-F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1650 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 4850 1750 60  0001 L CNN "DK_Detail_Page"
-F 10 "CONN HEADER VERT 2POS 2.54MM" H 4850 1850 60  0001 L CNN "Description"
-F 11 "Molex" H 4850 1950 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 4850 2050 60  0001 L CNN "Status"
-	1    4650 850 
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	3900 1000 4550 1000
 Wire Wire Line
@@ -833,14 +786,12 @@ Text GLabel 2900 6850 2    50   Input ~ 0
 VBus
 Wire Wire Line
 	2700 6850 2900 6850
-Text GLabel 7600 1200 0    50   Input ~ 0
+Text GLabel 6700 1200 0    50   Input ~ 0
 SCL
-Text GLabel 7600 1500 0    50   Input ~ 0
+Text GLabel 6700 1500 0    50   Input ~ 0
 SDA
 Wire Wire Line
-	7600 1200 7800 1200
-Wire Wire Line
-	7600 1500 7800 1500
+	6700 1500 6900 1500
 Text GLabel 4600 2350 2    50   Input ~ 0
 SCL
 Text GLabel 4800 2450 2    50   Input ~ 0
@@ -894,26 +845,6 @@ Wire Wire Line
 	4850 1000 4750 1000
 Wire Wire Line
 	4750 1000 4750 950 
-$Comp
-L dk_Rectangular-Connectors-Headers-Male-Pins:22-23-2021 J103
-U 1 1 62D1C4B1
-P 5600 1200
-F 0 "J103" H 5513 1162 50  0000 R CNN
-F 1 "22-23-2021" H 5513 1253 50  0000 R CNN
-F 2 "digikey-footprints:PinHeader_1x2_P2.54mm_Drill1.02mm" H 5800 1400 60  0001 L CNN
-F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 1500 60  0001 L CNN
-F 4 "WM4200-ND" H 5800 1600 60  0001 L CNN "Digi-Key_PN"
-F 5 "22-23-2021" H 5800 1700 60  0001 L CNN "MPN"
-F 6 "Connectors, Interconnects" H 5800 1800 60  0001 L CNN "Category"
-F 7 "Rectangular Connectors - Headers, Male Pins" H 5800 1900 60  0001 L CNN "Family"
-F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 2000 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 5800 2100 60  0001 L CNN "DK_Detail_Page"
-F 10 "CONN HEADER VERT 2POS 2.54MM" H 5800 2200 60  0001 L CNN "Description"
-F 11 "Molex" H 5800 2300 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 5800 2400 60  0001 L CNN "Status"
-	1    5600 1200
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	5600 1350 5600 1300
 Text GLabel 5800 1350 2    50   UnSpc ~ 0
@@ -933,15 +864,15 @@ Text GLabel 5650 7600 2    50   UnSpc ~ 0
 ControllerVcc
 Wire Wire Line
 	5650 7600 5450 7600
-Text GLabel 7400 5350 0    50   Output ~ 0
+Text GLabel 7400 5550 0    50   Output ~ 0
 Light0
-Text GLabel 7400 5500 0    50   Output ~ 0
+Text GLabel 7400 5700 0    50   Output ~ 0
 Light1
-Text GLabel 7400 5650 0    50   Output ~ 0
+Text GLabel 7400 5850 0    50   Output ~ 0
 Light2
-Text GLabel 7400 5800 0    50   Output ~ 0
+Text GLabel 7400 6000 0    50   Output ~ 0
 Light3
-Text GLabel 7400 5950 0    50   Output ~ 0
+Text GLabel 7400 6150 0    50   Output ~ 0
 Light4
 Text GLabel 3350 2700 0    50   Output ~ 0
 Light0
@@ -978,16 +909,15 @@ Wire Wire Line
 Wire Wire Line
 	4400 5450 4300 5450
 Wire Wire Line
-	7400 5350 7700 5350
+	7400 5550 7700 5550
 Wire Wire Line
-	7700 5500 7400 5500
+	7700 5700 7400 5700
 Wire Wire Line
-	7400 5650 7700 5650
+	7400 5850 7700 5850
 Wire Wire Line
-	7700 5800 7400 5800
+	7700 6000 7400 6000
 Wire Wire Line
-	7400 5950 7700 5950
-NoConn ~ 3900 2550
+	7400 6150 7700 6150
 NoConn ~ 4500 2550
 NoConn ~ 4600 2550
 NoConn ~ 4950 3000
@@ -996,16 +926,17 @@ NoConn ~ 4950 3200
 NoConn ~ 3500 3100
 NoConn ~ 3500 3200
 $Sheet
-S 7750 2950 2150 1350
+S 7700 3750 2150 1350
 U 62DD8E5F
 F0 "AlarmAudio" 50
 F1 "AlarmAudio.sch" 50
-F2 "Tone" I L 7750 3500 50 
+F2 "Tone" I L 7700 4300 50 
+F3 "Switch_Mute" I L 7700 4750 50 
 $EndSheet
-Text GLabel 7500 3500 0    50   Output ~ 0
+Text GLabel 7450 4300 0    50   Output ~ 0
 Tone
 Wire Wire Line
-	7500 3500 7750 3500
+	7450 4300 7700 4300
 Text GLabel 3350 5150 0    50   Output ~ 0
 Tone
 Wire Wire Line
@@ -1039,7 +970,7 @@ F 3 "~" H 2050 1000 50  0001 C CNN
 $EndComp
 Connection ~ 2050 1000
 Wire Wire Line
-	2050 1000 2200 1000
+	2050 1000 2150 1000
 NoConn ~ 4950 3500
 Wire Wire Line
 	4950 3600 5200 3600
@@ -1062,10 +993,10 @@ Wire Wire Line
 Text Label 3450 1000 0    50   ~ 0
 +5V
 $Comp
-L power:PWR_FLAG #FLG0105
+L power:PWR_FLAG #FLG0103
 U 1 1 62E7BE21
 P 3050 2100
-F 0 "#FLG0105" H 3050 2175 50  0001 C CNN
+F 0 "#FLG0103" H 3050 2175 50  0001 C CNN
 F 1 "PWR_FLAG" H 3050 2273 50  0000 C CNN
 F 2 "" H 3050 2100 50  0001 C CNN
 F 3 "~" H 3050 2100 50  0001 C CNN
@@ -1078,39 +1009,6 @@ Wire Wire Line
 Wire Wire Line
 	1300 1600 1300 1650
 Wire Wire Line
-	2900 1000 3050 1000
-$Comp
-L Device:R R104
-U 1 1 62E95591
-P 3050 1350
-AR Path="/62E95591" Ref="R104"  Part="1" 
-AR Path="/62B871EE/62E95591" Ref="R?"  Part="1" 
-F 0 "R104" V 2850 1300 50  0000 C CNN
-F 1 "1R0" V 2950 1350 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2980 1350 50  0001 C CNN
-F 3 "~" H 3050 1350 50  0001 C CNN
-F 4 "JLCPCB" V 3050 1350 50  0001 C CNN "Distributor 1"
-F 5 "C269434" V 3050 1350 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 3050 1350 50  0001 C CNN "Manufacturer"
-F 7 "RMC060315%N" V 3050 1350 50  0001 C CNN "MPN"
-F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 3050 1350 50  0001 C CNN "Description"
-	1    3050 1350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3050 1200 3050 1000
-Connection ~ 3050 1000
-Wire Wire Line
-	3050 1000 3200 1000
-Wire Wire Line
-	2900 1100 2900 1700
-Wire Wire Line
-	2900 1700 3050 1700
-Wire Wire Line
-	3050 1700 3050 1500
-Text Notes 2300 1450 0    50   ~ 10
-To do: Remove resistor from U101 pin 2 to 4.
-Wire Wire Line
 	1250 1200 1250 1350
 Wire Wire Line
 	1250 1350 1000 1350
@@ -1122,4 +1020,402 @@ Connection ~ 1250 1200
 Connection ~ 1300 1650
 Wire Wire Line
 	1300 1650 1300 1700
+$Comp
+L GPAD_SCH_LIB:NCP1117ST50T3G U101
+U 1 1 62B7BE56
+P 2500 1000
+F 0 "U101" H 2550 1287 60  0000 C CNN
+F 1 "NCP1117ST50T3G" H 2550 1181 60  0000 C CNN
+F 2 "digikey-footprints:SOT-223" H 2700 1200 60  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 2700 1300 60  0001 L CNN
+F 4 "NCP1117ST50T3GOSCT-ND" H 2700 1400 60  0001 L CNN "Digi-Key_PN"
+F 5 "NCP1117ST50T3G" H 2700 1500 60  0001 L CNN "MPN"
+F 6 "Integrated Circuits (ICs)" H 2700 1600 60  0001 L CNN "Category"
+F 7 "PMIC - Voltage Regulators - Linear" H 2700 1700 60  0001 L CNN "Family"
+F 8 "https://www.onsemi.com/pub/Collateral/NCP1117-D.PDF" H 2700 1800 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/NCP1117ST50T3G/NCP1117ST50T3GOSCT-ND/1967217" H 2700 1900 60  0001 L CNN "DK_Detail_Page"
+F 10 "IC REG LINEAR 5V 1A SOT223" H 2700 2000 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 2700 2100 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2700 2200 60  0001 L CNN "Status"
+	1    2500 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 1000 3050 1000
+Wire Wire Line
+	3050 1100 3050 1000
+Wire Wire Line
+	2900 1100 3050 1100
+Connection ~ 3050 1000
+Wire Wire Line
+	3050 1000 3200 1000
+$Comp
+L Device:C C105
+U 1 1 62BD2DE4
+P 2150 1400
+F 0 "C105" H 2265 1446 50  0000 L CNN
+F 1 "100nF" H 2265 1355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2188 1250 50  0001 C CNN
+F 3 "~" H 2150 1400 50  0001 C CNN
+F 4 "JLCPCB" H 2150 1400 50  0001 C CNN "Distributor 1"
+F 5 "C14663" H 2150 1400 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 2150 1400 50  0001 C CNN "Manufacturier"
+F 7 "CC0603KRX7R9BB104" H 2150 1400 50  0001 C CNN "MPN"
+F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 2150 1400 50  0001 C CNN "Description"
+	1    2150 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 62BD396A
+P 2150 1600
+F 0 "#PWR0106" H 2150 1350 50  0001 C CNN
+F 1 "GND" H 2250 1600 50  0000 C CNN
+F 2 "" H 2150 1600 50  0001 C CNN
+F 3 "" H 2150 1600 50  0001 C CNN
+	1    2150 1600
+	1    0    0    -1  
+$EndComp
+Connection ~ 2150 1000
+Wire Wire Line
+	2150 1000 2200 1000
+Wire Wire Line
+	2150 1250 2150 1000
+Wire Wire Line
+	1850 1000 1850 1650
+Wire Wire Line
+	2150 1550 2150 1600
+Text GLabel 7500 4750 0    50   BiDi ~ 0
+Switch_Mute
+Wire Wire Line
+	7500 4750 7700 4750
+Text GLabel 2700 2450 0    50   BiDi ~ 0
+Switch_Mute
+Wire Wire Line
+	4000 2350 4000 2550
+Wire Wire Line
+	4000 2200 4100 2200
+Wire Wire Line
+	4100 2200 4100 2550
+Wire Wire Line
+	2700 2450 3900 2450
+Wire Wire Line
+	3900 2450 3900 2550
+$Comp
+L power:GND #PWR0119
+U 1 1 62CBE01C
+P 800 6050
+F 0 "#PWR0119" H 800 5800 50  0001 C CNN
+F 1 "GND" H 805 5877 50  0000 C CNN
+F 2 "" H 800 6050 50  0001 C CNN
+F 3 "" H 800 6050 50  0001 C CNN
+	1    800  6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 6000 800  6000
+Wire Wire Line
+	800  6000 800  6050
+Wire Wire Line
+	1100 5100 800  5100
+Wire Wire Line
+	800  5100 800  5400
+Connection ~ 800  6000
+Wire Wire Line
+	1100 5400 800  5400
+Connection ~ 800  5400
+Wire Wire Line
+	800  5400 800  5700
+Wire Wire Line
+	1100 5700 800  5700
+Connection ~ 800  5700
+Wire Wire Line
+	800  5700 800  6000
+$Comp
+L GPAD_SCH_LIB:MountingHole_Pad_3.5mm H104
+U 1 1 62CE9822
+P 1100 5900
+F 0 "H104" H 1200 5949 50  0000 L CNN
+F 1 "MountingHole_Pad_3.5mm" H 1200 5858 50  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:MountingHole_3.5mm_Pad_Via" H 1100 5900 50  0001 C CNN
+F 3 "~" H 1100 5900 50  0001 C CNN
+	1    1100 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MountingHole_Pad_3.5mm H103
+U 1 1 62CEA64D
+P 1100 5600
+F 0 "H103" H 1200 5649 50  0000 L CNN
+F 1 "MountingHole_Pad_3.5mm" H 1200 5558 50  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:MountingHole_3.5mm_Pad_Via" H 1100 5600 50  0001 C CNN
+F 3 "~" H 1100 5600 50  0001 C CNN
+	1    1100 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MountingHole_Pad_3.5mm H102
+U 1 1 62CEAA1A
+P 1100 5300
+F 0 "H102" H 1200 5349 50  0000 L CNN
+F 1 "MountingHole_Pad_3.5mm" H 1200 5258 50  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:MountingHole_3.5mm_Pad_Via" H 1100 5300 50  0001 C CNN
+F 3 "~" H 1100 5300 50  0001 C CNN
+	1    1100 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:MountingHole_Pad_3.5mm H101
+U 1 1 62CEADBE
+P 1100 5000
+F 0 "H101" H 1200 5049 50  0000 L CNN
+F 1 "MountingHole_Pad_3.5mm" H 1200 4958 50  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:MountingHole_3.5mm_Pad_Via" H 1100 5000 50  0001 C CNN
+F 3 "~" H 1100 5000 50  0001 C CNN
+	1    1100 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L GPAD_SCH_LIB:22-23-2021 J102
+U 1 1 62D30624
+P 4650 850
+F 0 "J102" H 4563 812 50  0000 R CNN
+F 1 "22-23-2021" H 4563 903 50  0000 R CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 4850 1050 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1150 60  0001 L CNN
+F 4 "WM4200-ND" H 4850 1250 60  0001 L CNN "Digi-Key_PN"
+F 5 "22-23-2021" H 4850 1350 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 4850 1450 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 4850 1550 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 4850 1650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 4850 1750 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 2POS 2.54MM" H 4850 1850 60  0001 L CNN "Description"
+F 11 "Molex" H 4850 1950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 4850 2050 60  0001 L CNN "Status"
+	1    4650 850 
+	1    0    0    1   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:22-23-2021 J103
+U 1 1 62D31EA3
+P 5600 1200
+F 0 "J103" H 5513 1162 50  0000 R CNN
+F 1 "22-23-2021" H 5513 1253 50  0000 R CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 5800 1400 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 1500 60  0001 L CNN
+F 4 "WM4200-ND" H 5800 1600 60  0001 L CNN "Digi-Key_PN"
+F 5 "22-23-2021" H 5800 1700 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 5800 1800 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 5800 1900 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 5800 2000 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 5800 2100 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 2POS 2.54MM" H 5800 2200 60  0001 L CNN "Description"
+F 11 "Molex" H 5800 2300 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5800 2400 60  0001 L CNN "Status"
+	1    5600 1200
+	1    0    0    1   
+$EndComp
+$Comp
+L GPAD_SCH_LIB:S04B-XASK-1(LF)(SN) J105
+U 1 1 62D4A7FC
+P 9050 2300
+F 0 "J105" V 9104 2172 50  0000 R CNN
+F 1 "S04B-XASK-1(LF)(SN)" V 9195 2172 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" H 9250 2500 60  0001 L CNN
+F 3 "https://www.jst-mfg.com/product/pdf/eng/eXA1.pdf" H 9250 2600 60  0001 L CNN
+F 4 "455-4090-ND" H 9250 2700 60  0001 L CNN "Digi-Key_PN"
+F 5 "S04B-XASK-1(LF)(SN)" H 9250 2800 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 9250 2900 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins, Side Entery" H 9250 3000 60  0001 L CNN "Family"
+F 8 "CONN HEADER R/A 4POS 2.5MM" H 9250 3300 60  0001 L CNN "Description"
+F 9 "JST" H 9250 3400 60  0001 L CNN "Manufacturer"
+F 10 "Active" H 9250 3500 60  0001 L CNN "Status"
+F 11 "JLCPCB" H 9050 2300 50  0001 C CNN "Distributor 1"
+F 12 "C265097" H 9050 2300 50  0001 C CNN "Distributor 1 PN"
+F 13 "DigiKey  " H 9050 2300 50  0001 C CNN "Distributor 2"
+F 14 "455-4090-ND" V 9286 2172 50  0000 R CNN "Distributor 2 PN"
+	1    9050 2300
+	0    -1   1    0   
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 62D4C42A
+P 7500 2700
+F 0 "#PWR0121" H 7500 2450 50  0001 C CNN
+F 1 "GND" H 7505 2527 50  0000 C CNN
+F 2 "" H 7500 2700 50  0001 C CNN
+F 3 "" H 7500 2700 50  0001 C CNN
+	1    7500 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R104
+U 1 1 62D57AA0
+P 7200 2400
+F 0 "R104" V 7000 2400 50  0000 C CNN
+F 1 "39R" V 7100 2400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7130 2400 50  0001 C CNN
+F 3 "~" H 7200 2400 50  0001 C CNN
+F 4 "JLCPCB" V 7200 2400 50  0001 C CNN "Distributor 1"
+F 5 "C325713" V 7200 2400 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 7200 2400 50  0001 C CNN "Manufacturer"
+F 7 "RMC0603391%N" V 7200 2400 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 39Ω 0603 Chip Resistor - Surface Mount ROHS" H 7200 2400 50  0001 C CNN "Description"
+	1    7200 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R105
+U 1 1 62D59129
+P 7200 2600
+F 0 "R105" V 7300 2600 50  0000 C CNN
+F 1 "39R" V 7400 2600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 7130 2600 50  0001 C CNN
+F 3 "~" H 7200 2600 50  0001 C CNN
+F 4 "JLCPCB" V 7200 2600 50  0001 C CNN "Distributor 1"
+F 5 "C325713" V 7200 2600 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 7200 2600 50  0001 C CNN "Manufacturer"
+F 7 "RMC0603391%N" V 7200 2600 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 39Ω 0603 Chip Resistor - Surface Mount ROHS" H 7200 2600 50  0001 C CNN "Description"
+	1    7200 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7500 2500 7500 2700
+Wire Wire Line
+	7050 2400 7000 2400
+Wire Wire Line
+	7000 2400 7000 1200
+Wire Wire Line
+	6700 1200 7000 1200
+Wire Wire Line
+	7800 1200 7000 1200
+Connection ~ 7000 1200
+Wire Wire Line
+	7050 2600 6900 2600
+Wire Wire Line
+	6900 2600 6900 1500
+Wire Wire Line
+	7800 1500 6900 1500
+Connection ~ 6900 1500
+$Comp
+L power:+5V #PWR0120
+U 1 1 62DB43C7
+P 7500 2100
+F 0 "#PWR0120" H 7500 1950 50  0001 C CNN
+F 1 "+5V" H 7515 2273 50  0000 C CNN
+F 2 "" H 7500 2100 50  0001 C CNN
+F 3 "" H 7500 2100 50  0001 C CNN
+	1    7500 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 2300 7500 2100
+$Comp
+L Device:C C113
+U 1 1 62DBEF5F
+P 8050 2900
+F 0 "C113" H 8165 2946 50  0000 L CNN
+F 1 "33pF" H 8165 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8088 2750 50  0001 C CNN
+F 3 "~" H 8050 2900 50  0001 C CNN
+F 4 "JLCPCB" H 8050 2900 50  0001 C CNN "Distributor 1"
+F 5 "C107047" H 8050 2900 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 8050 2900 50  0001 C CNN "Manufacturier"
+F 7 "CC0603JRNPO9BN330" H 8050 2900 50  0001 C CNN "MPN"
+F 8 "50V 33pF NP0 ±5% 0603  Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 8050 2900 50  0001 C CNN "Description"
+	1    8050 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C114
+U 1 1 62DC0757
+P 8500 2900
+F 0 "C114" H 8615 2946 50  0000 L CNN
+F 1 "33pF" H 8615 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8538 2750 50  0001 C CNN
+F 3 "~" H 8500 2900 50  0001 C CNN
+F 4 "JLCPCB" H 8500 2900 50  0001 C CNN "Distributor 1"
+F 5 "C107047" H 8500 2900 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 8500 2900 50  0001 C CNN "Manufacturier"
+F 7 "CC0603JRNPO9BN330" H 8500 2900 50  0001 C CNN "MPN"
+F 8 "50V 33pF NP0 ±5% 0603  Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 8500 2900 50  0001 C CNN "Description"
+	1    8500 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 62DE82A1
+P 8050 3100
+F 0 "#PWR0122" H 8050 2850 50  0001 C CNN
+F 1 "GND" H 8055 2927 50  0000 C CNN
+F 2 "" H 8050 3100 50  0001 C CNN
+F 3 "" H 8050 3100 50  0001 C CNN
+	1    8050 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 62DE85F8
+P 8500 3100
+F 0 "#PWR0123" H 8500 2850 50  0001 C CNN
+F 1 "GND" H 8505 2927 50  0000 C CNN
+F 2 "" H 8500 3100 50  0001 C CNN
+F 3 "" H 8500 3100 50  0001 C CNN
+	1    8500 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 3050 8050 3100
+Wire Wire Line
+	8500 3050 8500 3100
+Wire Wire Line
+	7500 2300 8950 2300
+Wire Wire Line
+	7350 2400 8050 2400
+Wire Wire Line
+	7500 2500 8950 2500
+Wire Wire Line
+	7350 2600 8500 2600
+Wire Wire Line
+	8050 2750 8050 2400
+Connection ~ 8050 2400
+Wire Wire Line
+	8050 2400 8950 2400
+Wire Wire Line
+	8500 2750 8500 2600
+Connection ~ 8500 2600
+Wire Wire Line
+	8500 2600 8950 2600
+Wire Wire Line
+	4900 1650 4900 2100
+Connection ~ 4900 2100
+Wire Wire Line
+	4900 2100 5050 2100
+Wire Wire Line
+	4400 1650 4250 1650
+Wire Wire Line
+	4250 1650 4250 1800
+Connection ~ 4250 1800
+Wire Wire Line
+	4700 1650 4900 1650
+$Comp
+L GPAD_SCH_LIB:1N5819WS D103
+U 1 1 62EB37D5
+P 4500 1650
+F 0 "D103" H 4550 1875 50  0000 C CNN
+F 1 "1N5819WS" H 4550 1784 50  0000 C CNN
+F 2 "GeneralPurposeAlarmDevicePCB:D_SOD-323" H 4700 1850 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30217.pdf" H 4700 1950 60  0001 L CNN
+F 4 "1N5819WS" H 4700 2150 60  0001 L CNN "MPN"
+F 5 "Discrete Semiconductor Products" H 4700 2250 60  0001 L CNN "Category"
+F 6 "Diodes - Rectifiers - Single" H 4700 2350 60  0001 L CNN "Family"
+F 7 "40V 600mV@1A 1A SOD-323  Schottky Barrier Diodes (SBD) ROHS" H 4700 2650 60  0001 L CNN "Description"
+F 8 "Guangdong Hottech" H 4700 2750 60  0001 L CNN "Manufacturer"
+F 9 "Active" H 4700 2850 60  0001 L CNN "Status"
+F 10 "JLCPCB" H 4500 1650 50  0001 C CNN "Distributor 1"
+F 11 "C191023" H 4500 1650 50  0001 C CNN "Distributor 1 PN"
+	1    4500 1650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

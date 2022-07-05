@@ -339,24 +339,6 @@ F 3 "" H 8250 2950 50  0001 C CNN
 	1    8250 2950
 	1    0    0    -1  
 $EndComp
-$Comp
-L GPAD_SCH_LIB:10K RV?
-U 1 1 62B9100B
-P 8250 2700
-AR Path="/62B9100B" Ref="RV?"  Part="1" 
-AR Path="/62B871EE/62B9100B" Ref="RV301"  Part="1" 
-F 0 "RV301" H 8180 2791 50  0000 R CNN
-F 1 "10K" H 8180 2700 50  0000 R CNN
-F 2 "digikey-footprints:Trimpot_3.8mmx3.6mm_TC33X-2-103E" H 8250 2700 50  0001 C CNN
-F 3 "https://www.bourns.com/docs/Product-Datasheets/TC33.pdf" H 8250 2700 50  0001 C CNN
-F 4 "JLCPCB" H 8250 2700 50  0001 C CNN "Distributor 1"
-F 5 "C58159" H 8250 2700 50  0001 C CNN "Distributor 1 PN"
-F 6 "BOURNS" H 8250 2700 50  0001 C CNN "Manufacturier"
-F 7 "3362P-1-103LF" H 8250 2700 50  0001 C CNN "MPN"
-F 8 "HAND" H 8180 2609 50  0000 R CNN "Assembly Type"
-	1    8250 2700
-	-1   0    0    -1  
-$EndComp
 Text Notes 3650 1350 0    50   ~ 0
 LCD compnents including I2C interface.
 Wire Wire Line
@@ -650,10 +632,10 @@ Connection ~ 6150 2050
 Wire Wire Line
 	6150 2050 6600 2050
 $Comp
-L power:PWR_FLAG #FLG0103
+L power:PWR_FLAG #FLG0301
 U 1 1 62E5EA08
 P 6600 1950
-F 0 "#FLG0103" H 6600 2025 50  0001 C CNN
+F 0 "#FLG0301" H 6600 2025 50  0001 C CNN
 F 1 "PWR_FLAG" H 6600 2123 50  0000 C CNN
 F 2 "" H 6600 1950 50  0001 C CNN
 F 3 "~" H 6600 1950 50  0001 C CNN
@@ -674,10 +656,10 @@ Wire Wire Line
 	6900 3150 6850 3150
 Connection ~ 6850 3150
 $Comp
-L power:PWR_FLAG #FLG0106
+L power:PWR_FLAG #FLG0302
 U 1 1 62E7D140
 P 7800 2350
-F 0 "#FLG0106" H 7800 2425 50  0001 C CNN
+F 0 "#FLG0302" H 7800 2425 50  0001 C CNN
 F 1 "PWR_FLAG" V 7800 2478 50  0000 L CNN
 F 2 "" H 7800 2350 50  0001 C CNN
 F 3 "~" H 7800 2350 50  0001 C CNN
@@ -694,4 +676,22 @@ Wire Wire Line
 Connection ~ 6850 3050
 Wire Wire Line
 	6900 3050 6850 3050
+Text Label 9150 1600 0    50   ~ 0
+Vcc_LCD
+$Comp
+L GPAD_SCH_LIB:10K RV301
+U 1 1 62D26FDE
+P 8250 2700
+F 0 "RV301" H 8180 2609 50  0000 R CNN
+F 1 "10K" H 8180 2700 50  0000 R CNN
+F 2 "GeneralPurposeAlarmDevicePCB:Potentiometer_Bourns_3386P_Vertical" H 8250 2700 50  0001 C CNN
+F 3 "https://www.bourns.com/docs/Product-Datasheets/TC33.pdf" H 8250 2700 50  0001 C CNN
+F 4 "JLCPCB" H 8250 2700 50  0001 C CNN "Distributor 1"
+F 5 "C58159" H 8250 2700 50  0001 C CNN "Distributor 1 PN"
+F 6 "BOURNS" H 8250 2700 50  0001 C CNN "Manufacturier"
+F 7 "3362P-1-103LF" H 8250 2700 50  0001 C CNN "MPN"
+F 8 "HAND" H 8180 2791 50  0000 R CNN "Assembly Type"
+	1    8250 2700
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

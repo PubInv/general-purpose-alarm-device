@@ -52,34 +52,12 @@ F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 4550 2800 50  00
 	0    -1   -1   0   
 $EndComp
 $Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222A-7-F Q?
-U 1 1 62DE2407
-P 5300 2400
-AR Path="/62B3AC2F/62DE2407" Ref="Q?"  Part="1" 
-AR Path="/62DD8E5F/62DE2407" Ref="Q601"  Part="1" 
-F 0 "Q601" H 5488 2453 60  0000 L CNN
-F 1 "MMBT2222A-7-F" H 5488 2347 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 5500 2600 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 5500 2700 60  0001 L CNN
-F 4 "MMBT2222A-FDICT-ND" H 5500 2800 60  0001 L CNN "Digi-Key_PN"
-F 5 "MMBT2222A-7-F" H 5500 2900 60  0001 L CNN "MPN"
-F 6 "Discrete Semiconductor Products" H 5500 3000 60  0001 L CNN "Category"
-F 7 "Transistors - Bipolar (BJT) - Single" H 5500 3100 60  0001 L CNN "Family"
-F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 5500 3200 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 5500 3300 60  0001 L CNN "DK_Detail_Page"
-F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 5500 3400 60  0001 L CNN "Description"
-F 11 "Diodes Incorporated" H 5500 3500 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 5500 3600 60  0001 L CNN "Status"
-	1    5300 2400
-	1    0    0    -1  
-$EndComp
-$Comp
 L dk_Transistors-Bipolar-BJT-Single:MMBT2907ALT1G Q602
 U 1 1 62DE3E9B
 P 5300 3050
 F 0 "Q602" H 5488 3103 60  0000 L CNN
 F 1 "MMBT2907ALT1G" H 5488 2997 60  0000 L CNN
-F 2 "digikey-footprints:SOT-23-3" H 5500 3250 60  0001 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5500 3250 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT2907ALT1-D.PDF" H 5500 3350 60  0001 L CNN
 F 4 "MMBT2907ALT1GOSCT-ND" H 5500 3450 60  0001 L CNN "Digi-Key_PN"
 F 5 "MMBT2907ALT1G" H 5500 3550 60  0001 L CNN "MPN"
@@ -165,15 +143,15 @@ $EndComp
 $Comp
 L power:+5V #PWR?
 U 1 1 62DEA4D9
-P 1400 1900
+P 1400 1800
 AR Path="/62DEA4D9" Ref="#PWR?"  Part="1" 
 AR Path="/62B871EE/62DEA4D9" Ref="#PWR?"  Part="1" 
 AR Path="/62DD8E5F/62DEA4D9" Ref="#PWR0601"  Part="1" 
-F 0 "#PWR0601" H 1400 1750 50  0001 C CNN
-F 1 "+5V" H 1415 2073 50  0000 C CNN
-F 2 "" H 1400 1900 50  0001 C CNN
-F 3 "" H 1400 1900 50  0001 C CNN
-	1    1400 1900
+F 0 "#PWR0601" H 1400 1650 50  0001 C CNN
+F 1 "+5V" H 1415 1973 50  0000 C CNN
+F 2 "" H 1400 1800 50  0001 C CNN
+F 3 "" H 1400 1800 50  0001 C CNN
+	1    1400 1800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -227,4 +205,122 @@ Text HLabel 3400 2800 0    50   Input ~ 0
 Tone
 Wire Wire Line
 	3400 2800 4400 2800
+Wire Wire Line
+	1400 1900 1400 1800
+Text Label 2600 1900 0    50   ~ 0
+VccBuzzer
+$Comp
+L GPAD_SCH_LIB:SWITCH_TACTILE_SPST-NO_0.05A_24V S?
+U 1 1 62C80308
+P 3500 4750
+AR Path="/62C80308" Ref="S?"  Part="1" 
+AR Path="/62DD8E5F/62C80308" Ref="S601"  Part="1" 
+F 0 "S601" H 3500 5097 60  0000 C CNN
+F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 3500 4991 60  0000 C CNN
+F 2 "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm" H 3700 4950 60  0001 L CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 3700 5050 60  0001 L CNN
+F 4 "JLCPCB" H 3500 4750 50  0001 C CNN "Distributor 1"
+F 5 "C592982" H 3500 4750 50  0001 C CNN "Distributor 1 PN"
+F 6 "Digikey" H 3500 4750 50  0001 C CNN "Distributor 2"
+F 7 "450-1804-ND" H 3700 5150 60  0001 L CNN "Distributor 2 PN"
+F 8 "TE Connectivity ALCOSWITCH Switches" H 3700 5850 60  0001 L CNN "Manufacturer"
+F 9 "1825910-7" H 3700 5250 60  0001 L CNN "MPN"
+F 10 "Switches" H 3700 5350 60  0001 L CNN "Category"
+F 11 "Tactile Switches" H 3700 5450 60  0001 L CNN "Family"
+F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 3700 5550 60  0001 L CNN "DK_Datasheet_Link"
+F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 3700 5650 60  0001 L CNN "DK_Detail_Page"
+F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 3700 5750 60  0001 L CNN "Description"
+F 15 "Active" H 3700 5950 60  0001 L CNN "Status"
+	1    3500 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62C8131C
+P 3750 5050
+AR Path="/62C8131C" Ref="#PWR?"  Part="1" 
+AR Path="/62DD8E5F/62C8131C" Ref="#PWR0606"  Part="1" 
+F 0 "#PWR0606" H 3750 4800 50  0001 C CNN
+F 1 "GND" H 3755 4877 50  0000 C CNN
+F 2 "" H 3750 5050 50  0001 C CNN
+F 3 "" H 3750 5050 50  0001 C CNN
+	1    3750 5050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 4650 3750 4650
+Wire Wire Line
+	3750 4650 3750 4850
+Wire Wire Line
+	3700 4850 3750 4850
+Connection ~ 3750 4850
+Wire Wire Line
+	3750 4850 3750 5050
+Wire Wire Line
+	3300 4850 2450 4850
+Wire Wire Line
+	2450 4850 2450 4650
+Wire Wire Line
+	2450 4650 3300 4650
+$Comp
+L Device:R R?
+U 1 1 62C8BE9A
+P 2150 4650
+AR Path="/62C8BE9A" Ref="R?"  Part="1" 
+AR Path="/62DD8E5F/62C8BE9A" Ref="R603"  Part="1" 
+F 0 "R603" V 1950 4600 50  0000 C CNN
+F 1 "10K" V 2050 4650 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2080 4650 50  0001 C CNN
+F 3 "~" H 2150 4650 50  0001 C CNN
+F 4 "JLCPCB" V 2150 4650 50  0001 C CNN "Distributor 1"
+F 5 "C269701" V 2150 4650 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 2150 4650 50  0001 C CNN "Manufacturer"
+F 7 "RMC 0603 10K F N" V 2150 4650 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 10kΩ 0603  Chip Resistor - Surface Mount ROHS" H 2150 4650 50  0001 C CNN "Description"
+	1    2150 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 62C8CF60
+P 1600 4500
+AR Path="/62C8CF60" Ref="#PWR?"  Part="1" 
+AR Path="/62B871EE/62C8CF60" Ref="#PWR?"  Part="1" 
+AR Path="/62DD8E5F/62C8CF60" Ref="#PWR0605"  Part="1" 
+F 0 "#PWR0605" H 1600 4350 50  0001 C CNN
+F 1 "+5V" H 1615 4673 50  0000 C CNN
+F 2 "" H 1600 4500 50  0001 C CNN
+F 3 "" H 1600 4500 50  0001 C CNN
+	1    1600 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 4650 2300 4650
+Connection ~ 2450 4650
+Wire Wire Line
+	2000 4650 1600 4650
+Wire Wire Line
+	1600 4650 1600 4500
+Text HLabel 2450 4850 0    50   Input ~ 0
+Switch_Mute
+$Comp
+L GPAD_SCH_LIB:MMBT2222A-7-F Q601
+U 1 1 62D2B660
+P 5300 2400
+F 0 "Q601" H 5488 2453 60  0000 L CNN
+F 1 "MMBT2222A-7-F" H 5488 2347 60  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5500 2600 60  0001 L CNN
+F 3 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 5500 2700 60  0001 L CNN
+F 4 "MMBT2222A-FDICT-ND" H 5500 2800 60  0001 L CNN "Digi-Key_PN"
+F 5 "MMBT2222A-7-F" H 5500 2900 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 5500 3000 60  0001 L CNN "Category"
+F 7 "Transistors - Bipolar (BJT) - Single" H 5500 3100 60  0001 L CNN "Family"
+F 8 "https://www.diodes.com/assets/Datasheets/ds30041.pdf" H 5500 3200 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723" H 5500 3300 60  0001 L CNN "DK_Detail_Page"
+F 10 "TRANS NPN 40V 0.6A SMD SOT23-3" H 5500 3400 60  0001 L CNN "Description"
+F 11 "Diodes Incorporated" H 5500 3500 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5500 3600 60  0001 L CNN "Status"
+	1    5300 2400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
