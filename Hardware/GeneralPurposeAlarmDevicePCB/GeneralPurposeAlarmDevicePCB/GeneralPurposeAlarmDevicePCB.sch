@@ -132,16 +132,16 @@ $EndComp
 $Comp
 L Device:CP C102
 U 1 1 62B5ACAD
-P 2300 1750
-F 0 "C102" H 2418 1796 50  0000 L CNN
-F 1 "47uF 16V" H 2418 1705 50  0000 L CNN
-F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2338 1600 50  0001 C CNN
-F 3 "~" H 2300 1750 50  0001 C CNN
-F 4 "JLCPCB" H 2300 1750 50  0001 C CNN "Distributor 1"
-F 5 "C2895272" H 2300 1750 50  0001 C CNN "Distributor 1 PN"
-F 6 "KNSCHA" H 2300 1750 50  0001 C CNN "Manufacturer"
-F 7 "RVT47UF16V67RV0019" H 2300 1750 50  0001 C CNN "MPN"
-	1    2300 1750
+P 2050 1300
+F 0 "C102" H 2168 1346 50  0000 L CNN
+F 1 "47uF 16V" H 2168 1255 50  0000 L CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2088 1150 50  0001 C CNN
+F 3 "~" H 2050 1300 50  0001 C CNN
+F 4 "JLCPCB" H 2050 1300 50  0001 C CNN "Distributor 1"
+F 5 "C2895272" H 2050 1300 50  0001 C CNN "Distributor 1 PN"
+F 6 "KNSCHA" H 2050 1300 50  0001 C CNN "Manufacturer"
+F 7 "RVT47UF16V67RV0019" H 2050 1300 50  0001 C CNN "MPN"
+	1    2050 1300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -178,12 +178,12 @@ $EndComp
 $Comp
 L power:GND #PWR0102
 U 1 1 62B1C88A
-P 2300 2000
-F 0 "#PWR0102" H 2300 1750 50  0001 C CNN
-F 1 "GND" H 2305 1827 50  0000 C CNN
-F 2 "" H 2300 2000 50  0001 C CNN
-F 3 "" H 2300 2000 50  0001 C CNN
-	1    2300 2000
+P 2050 1550
+F 0 "#PWR0102" H 2050 1300 50  0001 C CNN
+F 1 "GND" H 2055 1377 50  0000 C CNN
+F 2 "" H 2050 1550 50  0001 C CNN
+F 3 "" H 2050 1550 50  0001 C CNN
+	1    2050 1550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -371,8 +371,6 @@ F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 $EndComp
 Text Notes 700  600  0    50   ~ 0
 Power Input, Reverse protected.
-Text Notes 650  4100 0    50   ~ 0
-Notes:\nArduino Pin to ATmega328\nA0 PC0\nA1 PC1\nA2 PC2\nA3 PC3\nA4 PC4\nA5 PC5\nD0 PD0\nD1 PD1\nD2 PD2\n'D3 PD3\nD4 PD4\n`D5 PD5\n`D6 PD6\nD7 PD7\nD8 PB0\n`D9 PB1\n`D10 PB2\n`D11 PB3\nD12 PB4\nD13 PB5\n\nRemark:\nPC4 as SDA and PC5 as SCL \nis conventional UNO pinout.\nSame for Rx and Tx.
 $Comp
 L power:GND #PWR0117
 U 1 1 62BAF22E
@@ -417,62 +415,51 @@ $EndSheet
 $Comp
 L GPAD_SCH_LIB:SWITCH_TACTILE_SPST-NO_0.05A_24V S101
 U 1 1 62BA946B
-P 5800 2200
-F 0 "S101" H 5800 2547 60  0000 C CNN
-F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 5800 2441 60  0000 C CNN
-F 2 "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm" H 6000 2400 60  0001 L CNN
-F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6000 2500 60  0001 L CNN
-F 4 "JLCPCB" H 5800 2200 50  0001 C CNN "Distributor 1"
-F 5 "C13828" H 5800 2200 50  0001 C CNN "Distributor 1 PN"
-F 6 "Digikey" H 5800 2200 50  0001 C CNN "Distributor 2"
-F 7 "450-1804-ND" H 6000 2600 60  0001 L CNN "Distributor 2 PN"
-F 8 "TE Connectivity ALCOSWITCH Switches" H 6000 3300 60  0001 L CNN "Manufacturer"
-F 9 "TE Connectivity 1825910-7,   Dongguan Guangzhu Industrial C13828" H 6000 2700 60  0001 L CNN "MPN"
-F 10 "Switches" H 6000 2800 60  0001 L CNN "Category"
-F 11 "Tactile Switches" H 6000 2900 60  0001 L CNN "Family"
-F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6000 3000 60  0001 L CNN "DK_Datasheet_Link"
-F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 6000 3100 60  0001 L CNN "DK_Detail_Page"
-F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 6000 3200 60  0001 L CNN "Description"
-F 15 "Active" H 6000 3400 60  0001 L CNN "Status"
-	1    5800 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0118
-U 1 1 62BAA497
-P 6300 2100
-F 0 "#PWR0118" H 6300 1850 50  0001 C CNN
-F 1 "GND" H 6305 1927 50  0000 C CNN
-F 2 "" H 6300 2100 50  0001 C CNN
-F 3 "" H 6300 2100 50  0001 C CNN
-	1    6300 2100
+P 6150 2200
+F 0 "S101" H 6150 2547 60  0000 C CNN
+F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 5950 2450 60  0000 C CNN
+F 2 "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm" H 6350 2400 60  0001 L CNN
+F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6350 2500 60  0001 L CNN
+F 4 "JLCPCB" H 6150 2200 50  0001 C CNN "Distributor 1"
+F 5 "C13828" H 6150 2200 50  0001 C CNN "Distributor 1 PN"
+F 6 "Digikey" H 6150 2200 50  0001 C CNN "Distributor 2"
+F 7 "450-1804-ND" H 6350 2600 60  0001 L CNN "Distributor 2 PN"
+F 8 "TE Connectivity ALCOSWITCH Switches" H 6350 3300 60  0001 L CNN "Manufacturer"
+F 9 "TE Connectivity 1825910-7,   Dongguan Guangzhu Industrial C13828" H 6350 2700 60  0001 L CNN "MPN"
+F 10 "Switches" H 6350 2800 60  0001 L CNN "Category"
+F 11 "Tactile Switches" H 6350 2900 60  0001 L CNN "Family"
+F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 6350 3000 60  0001 L CNN "DK_Datasheet_Link"
+F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 6350 3100 60  0001 L CNN "DK_Detail_Page"
+F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 6350 3200 60  0001 L CNN "Description"
+F 15 "Active" H 6350 3400 60  0001 L CNN "Status"
+	1    6150 2200
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C110
 U 1 1 62BAB737
-P 5050 2300
-F 0 "C110" H 5165 2346 50  0000 L CNN
-F 1 "100nF" H 5165 2255 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5088 2150 50  0001 C CNN
-F 3 "~" H 5050 2300 50  0001 C CNN
-F 4 "JLCPCB" H 5050 2300 50  0001 C CNN "Distributor 1"
-F 5 "C14663" H 5050 2300 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 5050 2300 50  0001 C CNN "Manufacturier"
-F 7 "CC0603KRX7R9BB104" H 5050 2300 50  0001 C CNN "MPN"
-F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 5050 2300 50  0001 C CNN "Description"
-	1    5050 2300
+P 5550 2300
+F 0 "C110" H 5665 2346 50  0000 L CNN
+F 1 "100nF" H 5665 2255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5588 2150 50  0001 C CNN
+F 3 "~" H 5550 2300 50  0001 C CNN
+F 4 "JLCPCB" H 5550 2300 50  0001 C CNN "Distributor 1"
+F 5 "C14663" H 5550 2300 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 5550 2300 50  0001 C CNN "Manufacturier"
+F 7 "CC0603KRX7R9BB104" H 5550 2300 50  0001 C CNN "MPN"
+F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 5550 2300 50  0001 C CNN "Description"
+	1    5550 2300
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0114
 U 1 1 62BAC0E9
-P 5050 2550
-F 0 "#PWR0114" H 5050 2300 50  0001 C CNN
-F 1 "GND" H 5055 2377 50  0000 C CNN
-F 2 "" H 5050 2550 50  0001 C CNN
-F 3 "" H 5050 2550 50  0001 C CNN
-	1    5050 2550
+P 6400 2400
+F 0 "#PWR0114" H 6400 2150 50  0001 C CNN
+F 1 "GND" H 6405 2227 50  0000 C CNN
+F 2 "" H 6400 2400 50  0001 C CNN
+F 3 "" H 6400 2400 50  0001 C CNN
+	1    6400 2400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -511,28 +498,22 @@ F2 "ControllerRX" O R 1850 7500 50
 F3 "ControllerTX" I R 1850 7250 50 
 F4 "VBUS" U R 1850 7000 50 
 $EndSheet
-Text GLabel 4000 2350 0    50   Input ~ 0
+Text GLabel 2700 2350 0    50   Input ~ 0
 ControllerTX
-Text GLabel 4000 2200 0    50   Input ~ 0
+Text GLabel 2700 2200 0    50   Input ~ 0
 ControllerRX
 Wire Wire Line
 	4200 2550 4200 2250
 Wire Wire Line
 	4650 2100 4750 2100
 Wire Wire Line
-	5050 2150 5050 2100
-Connection ~ 5050 2100
+	5550 2150 5550 2100
 Wire Wire Line
-	5050 2450 5050 2550
+	6350 2100 6450 2100
 Wire Wire Line
-	6000 2100 6100 2100
+	6350 2300 6400 2300
 Wire Wire Line
-	6000 2300 6100 2300
-Wire Wire Line
-	6100 2300 6100 2100
-Connection ~ 6100 2100
-Wire Wire Line
-	6100 2100 6300 2100
+	6450 2300 6450 2100
 Wire Wire Line
 	4200 2250 4750 2250
 Wire Wire Line
@@ -543,19 +524,19 @@ Wire Wire Line
 $Comp
 L Device:R R101
 U 1 1 62BF3016
-P 2600 2950
+P 2300 2950
 AR Path="/62BF3016" Ref="R101"  Part="1" 
 AR Path="/62B871EE/62BF3016" Ref="R?"  Part="1" 
-F 0 "R101" V 2400 2900 50  0000 C CNN
-F 1 "1R0" V 2500 2950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 2530 2950 50  0001 C CNN
-F 3 "~" H 2600 2950 50  0001 C CNN
-F 4 "JLCPCB" V 2600 2950 50  0001 C CNN "Distributor 1"
-F 5 "C269434" V 2600 2950 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 2600 2950 50  0001 C CNN "Manufacturer"
-F 7 "RMC060315%N" V 2600 2950 50  0001 C CNN "MPN"
-F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 2600 2950 50  0001 C CNN "Description"
-	1    2600 2950
+F 0 "R101" V 2100 2900 50  0000 C CNN
+F 1 "1R0" V 2200 2950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2230 2950 50  0001 C CNN
+F 3 "~" H 2300 2950 50  0001 C CNN
+F 4 "JLCPCB" V 2300 2950 50  0001 C CNN "Distributor 1"
+F 5 "C269434" V 2300 2950 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 2300 2950 50  0001 C CNN "Manufacturer"
+F 7 "RMC060315%N" V 2300 2950 50  0001 C CNN "MPN"
+F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 2300 2950 50  0001 C CNN "Description"
+	1    2300 2950
 	0    1    1    0   
 $EndComp
 $Comp
@@ -575,8 +556,6 @@ Wire Wire Line
 	2550 3500 2550 3450
 Wire Wire Line
 	2000 3550 2000 3450
-Wire Wire Line
-	1850 2950 2450 2950
 Wire Wire Line
 	2000 3150 2000 3100
 Wire Wire Line
@@ -658,7 +637,7 @@ F 3 "" H 2950 1450 50  0001 C CNN
 $EndComp
 Connection ~ 2300 950 
 Wire Wire Line
-	2300 1900 2300 2000
+	2050 1450 2050 1550
 Wire Wire Line
 	2950 1450 2950 1350
 Wire Wire Line
@@ -706,12 +685,10 @@ Wire Wire Line
 Wire Wire Line
 	6500 1800 6500 3500
 Wire Wire Line
-	6500 3500 5950 3500
+	6500 3500 6050 3500
 Wire Wire Line
 	5950 3500 5950 3600
 Connection ~ 4250 2100
-Wire Wire Line
-	4250 2100 3050 2100
 Wire Wire Line
 	2950 4550 2950 4650
 Wire Wire Line
@@ -781,18 +758,14 @@ Text GLabel 7150 1600 0    50   Input ~ 0
 SDA
 Wire Wire Line
 	7150 1600 7350 1600
-Text GLabel 4600 2350 2    50   Input ~ 0
+Text GLabel 6150 2700 2    50   Input ~ 0
 SCL
-Text GLabel 4800 2450 2    50   Input ~ 0
+Text GLabel 6150 2850 2    50   Input ~ 0
 SDA
 Wire Wire Line
 	4400 2550 4400 2450
 Wire Wire Line
-	4400 2450 4800 2450
-Wire Wire Line
 	4300 2550 4300 2350
-Wire Wire Line
-	4300 2350 4600 2350
 Text GLabel 4900 4450 3    50   Output ~ 0
 SPI_SCK
 Text GLabel 4100 7200 2    50   Output ~ 0
@@ -951,34 +924,19 @@ Wire Wire Line
 	4950 3600 5200 3600
 Connection ~ 5200 3600
 Wire Wire Line
-	5500 3600 5950 3600
+	5500 3600 5700 3600
 Connection ~ 5500 3600
 Connection ~ 5950 3600
 Wire Wire Line
-	5550 2300 5550 2100
+	5900 2300 5900 2100
 Wire Wire Line
-	5550 2300 5600 2300
-Connection ~ 5550 2100
+	5900 2300 5950 2300
 Wire Wire Line
-	5550 2100 5600 2100
-Wire Wire Line
-	5050 2100 5550 2100
+	5900 2100 5950 2100
 Wire Wire Line
 	3650 950  4200 950 
 Text Label 3900 950  0    50   ~ 0
 +5V
-$Comp
-L power:PWR_FLAG #FLG0103
-U 1 1 62E7BE21
-P 3050 2100
-F 0 "#FLG0103" H 3050 2175 50  0001 C CNN
-F 1 "PWR_FLAG" H 3050 2273 50  0000 C CNN
-F 2 "" H 3050 2100 50  0001 C CNN
-F 3 "~" H 3050 2100 50  0001 C CNN
-	1    3050 2100
-	1    0    0    -1  
-$EndComp
-Connection ~ 3050 2100
 Wire Wire Line
 	1300 1550 1300 1600
 Wire Wire Line
@@ -1055,7 +1013,7 @@ Wire Wire Line
 Wire Wire Line
 	2600 1200 2600 950 
 Wire Wire Line
-	2300 950  2300 1600
+	2300 950  2300 1150
 Wire Wire Line
 	2600 1500 2600 1550
 Text GLabel 9000 4700 0    50   BiDi ~ 0
@@ -1066,8 +1024,6 @@ Text GLabel 2700 2450 0    50   BiDi ~ 0
 Switch_Mute
 Wire Wire Line
 	4000 2350 4000 2550
-Wire Wire Line
-	4000 2200 4100 2200
 Wire Wire Line
 	4100 2200 4100 2550
 Wire Wire Line
@@ -1364,33 +1320,12 @@ Wire Wire Line
 	4900 1650 4900 2100
 Connection ~ 4900 2100
 Wire Wire Line
-	4900 2100 5050 2100
-Wire Wire Line
 	4400 1650 4250 1650
 Wire Wire Line
 	4250 1650 4250 1800
 Connection ~ 4250 1800
 Wire Wire Line
 	4700 1650 4900 1650
-$Comp
-L GPAD_SCH_LIB:1N5819WS D103
-U 1 1 62EB37D5
-P 4500 1650
-F 0 "D103" H 4550 1875 50  0000 C CNN
-F 1 "1N5819WS" H 4550 1784 50  0000 C CNN
-F 2 "GeneralPurposeAlarmDevicePCB:D_SOD-323" H 4700 1850 60  0001 L CNN
-F 3 "https://www.diodes.com/assets/Datasheets/ds30217.pdf" H 4700 1950 60  0001 L CNN
-F 4 "1N5819WS" H 4700 2150 60  0001 L CNN "MPN"
-F 5 "Discrete Semiconductor Products" H 4700 2250 60  0001 L CNN "Category"
-F 6 "Diodes - Rectifiers - Single" H 4700 2350 60  0001 L CNN "Family"
-F 7 "40V 600mV@1A 1A SOD-323  Schottky Barrier Diodes (SBD) ROHS" H 4700 2650 60  0001 L CNN "Description"
-F 8 "Guangdong Hottech" H 4700 2750 60  0001 L CNN "Manufacturer"
-F 9 "Active" H 4700 2850 60  0001 L CNN "Status"
-F 10 "JLCPCB" H 4500 1650 50  0001 C CNN "Distributor 1"
-F 11 "C191023" H 4500 1650 50  0001 C CNN "Distributor 1 PN"
-	1    4500 1650
-	1    0    0    -1  
-$EndComp
 $Bitmap
 Pos 9600 7100
 Scale 0.750000
@@ -2095,21 +2030,21 @@ Wire Wire Line
 Wire Wire Line
 	2900 3100 3100 3100
 Wire Wire Line
-	2900 2100 3050 2100
-Wire Wire Line
 	3400 2950 3350 2950
 Text GLabel 8950 4000 0    50   Output ~ 0
 Attenuate
 Wire Wire Line
 	8950 4000 9250 4000
 $Comp
-L Device:Polyfuse_Small F?
+L Device:Polyfuse_Small F101
 U 1 1 62D8DF8E
 P 1550 950
-F 0 "F?" V 1345 950 50  0000 C CNN
+F 0 "F101" V 1345 950 50  0000 C CNN
 F 1 "Polyfuse_Small" V 1650 1000 50  0000 C CNN
-F 2 "" H 1600 750 50  0001 L CNN
-F 3 "~" H 1550 950 50  0001 C CNN
+F 2 "Fuse:Fuse_0603_1608Metric" H 1600 750 50  0001 L CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1806131741_Littelfuse-0603L075SLYR_C207016.pdf" H 1550 950 50  0001 C CNN
+F 4 "Littelfuse" V 1550 950 50  0001 C CNN "Manufacturier"
+F 5 "0603L100SLYR" V 1550 950 50  0001 C CNN "MPN"
 	1    1550 950 
 	0    1    1    0   
 $EndComp
@@ -2127,10 +2062,10 @@ Wire Wire Line
 Wire Wire Line
 	4350 950  4900 950 
 $Comp
-L Device:D_Schottky D?
+L Device:D_Schottky D104
 U 1 1 62E0564A
 P 6250 1100
-F 0 "D?" H 6250 883 50  0000 C CNN
+F 0 "D104" H 6250 883 50  0000 C CNN
 F 1 "Schottky 2A" H 6250 974 50  0000 C CNN
 F 2 "Diode_SMD:D_SMB" H 6250 1100 50  0001 C CNN
 F 3 "~" H 6250 1100 50  0001 C CNN
@@ -2157,10 +2092,10 @@ Connection ~ 2500 950
 Wire Wire Line
 	2500 950  2600 950 
 $Comp
-L Device:R R?
+L Device:R R106
 U 1 1 62E2029A
 P 5150 1250
-F 0 "R?" V 4950 1200 50  0000 C CNN
+F 0 "R106" V 4950 1200 50  0000 C CNN
 F 1 "DNI" V 5050 1250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 5080 1250 50  0001 C CNN
 F 3 "~" H 5150 1250 50  0001 C CNN
@@ -2189,10 +2124,10 @@ Connection ~ 4900 950
 Wire Wire Line
 	4900 950  5100 950 
 $Comp
-L Device:R R?
+L Device:R R107
 U 1 1 62E47436
 P 6600 1350
-F 0 "R?" V 6400 1300 50  0000 C CNN
+F 0 "R107" V 6400 1300 50  0000 C CNN
 F 1 "DNI" V 6500 1350 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 6530 1350 50  0001 C CNN
 F 3 "~" H 6600 1350 50  0001 C CNN
@@ -2218,4 +2153,139 @@ Wire Wire Line
 Wire Wire Line
 	6400 1350 6400 1100
 Connection ~ 6400 1100
+$Comp
+L Device:R R108
+U 1 1 62E8B3FF
+P 5700 3150
+AR Path="/62E8B3FF" Ref="R108"  Part="1" 
+AR Path="/62B871EE/62E8B3FF" Ref="R?"  Part="1" 
+F 0 "R108" H 5550 3100 50  0000 C CNN
+F 1 "1K" H 5550 3200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5630 3150 50  0001 C CNN
+F 3 "~" H 5700 3150 50  0001 C CNN
+F 4 "JLCPCB" V 5700 3150 50  0001 C CNN "Distributor 1"
+F 5 "C269704" V 5700 3150 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 5700 3150 50  0001 C CNN "Manufacturer"
+F 7 "RMC06031K1%N" V 5700 3150 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 5700 3150 50  0001 C CNN "Description"
+	1    5700 3150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R109
+U 1 1 62E8B40A
+P 6050 3150
+AR Path="/62E8B40A" Ref="R109"  Part="1" 
+AR Path="/62B871EE/62E8B40A" Ref="R?"  Part="1" 
+F 0 "R109" H 5900 3100 50  0000 C CNN
+F 1 "1K" H 5900 3200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 5980 3150 50  0001 C CNN
+F 3 "~" H 6050 3150 50  0001 C CNN
+F 4 "JLCPCB" V 6050 3150 50  0001 C CNN "Distributor 1"
+F 5 "C269704" V 6050 3150 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 6050 3150 50  0001 C CNN "Manufacturer"
+F 7 "RMC06031K1%N" V 6050 3150 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 6050 3150 50  0001 C CNN "Description"
+	1    6050 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5200 2450 5200 2850
+Wire Wire Line
+	5200 2850 5700 2850
+Wire Wire Line
+	4400 2450 5200 2450
+Wire Wire Line
+	5700 2850 5700 3000
+Wire Wire Line
+	5250 2350 5250 2700
+Wire Wire Line
+	5250 2700 6050 2700
+Wire Wire Line
+	4300 2350 5250 2350
+Wire Wire Line
+	6050 3000 6050 2700
+Connection ~ 6050 2700
+Wire Wire Line
+	6050 2700 6150 2700
+Wire Wire Line
+	6050 3300 6050 3500
+Connection ~ 6050 3500
+Wire Wire Line
+	6050 3500 5950 3500
+Wire Wire Line
+	5700 3300 5700 3600
+Wire Wire Line
+	6400 2400 6400 2300
+Connection ~ 6400 2300
+Wire Wire Line
+	6400 2300 6450 2300
+Wire Wire Line
+	5900 2100 5550 2100
+Connection ~ 5900 2100
+Wire Wire Line
+	4900 2100 5550 2100
+Connection ~ 5550 2100
+$Comp
+L power:GND #PWR0118
+U 1 1 62F990FB
+P 5550 2450
+F 0 "#PWR0118" H 5550 2200 50  0001 C CNN
+F 1 "GND" H 5555 2277 50  0000 C CNN
+F 2 "" H 5550 2450 50  0001 C CNN
+F 3 "" H 5550 2450 50  0001 C CNN
+	1    5550 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2050 1150 2300 1150
+Wire Wire Line
+	2700 2200 4100 2200
+Wire Wire Line
+	4000 2350 2700 2350
+$Comp
+L Device:D_Schottky D103
+U 1 1 6301690D
+P 4550 1650
+F 0 "D103" H 4550 1433 50  0000 C CNN
+F 1 "Schottky 2A" H 4550 1524 50  0000 C CNN
+F 2 "Diode_SMD:D_SMB" H 4550 1650 50  0001 C CNN
+F 3 "~" H 4550 1650 50  0001 C CNN
+F 4 "JLCPCB" H 4550 1650 50  0001 C CNN "Distributor 1"
+F 5 "C14996" H 4550 1650 50  0001 C CNN "Distirbutor 1 PN"
+F 6 "SS210" H 4550 1650 50  0001 C CNN "MPN"
+F 7 "MDD（Microdiode Electronics）" H 4550 1650 50  0001 C CNN "Manufacturer"
+	1    4550 1650
+	1    0    0    1   
+$EndComp
+Connection ~ 5700 3600
+Wire Wire Line
+	5700 3600 5950 3600
+Connection ~ 5700 2850
+Wire Wire Line
+	5700 2850 6150 2850
+Wire Wire Line
+	1850 2950 2150 2950
+Wire Wire Line
+	2450 2950 2600 2950
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 63055F70
+P 2600 2900
+F 0 "#FLG0103" H 2600 2975 50  0001 C CNN
+F 1 "PWR_FLAG" H 2600 3073 50  0000 C CNN
+F 2 "" H 2600 2900 50  0001 C CNN
+F 3 "~" H 2600 2900 50  0001 C CNN
+	1    2600 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 2100 4250 2100
+Wire Wire Line
+	2600 2900 2600 2950
+Connection ~ 2600 2950
+Wire Wire Line
+	2600 2950 2750 2950
+Text Notes 650  4100 0    50   ~ 0
+Notes:\nArduino Pin to ATmega328\nA0 PC0\nA1 PC1\nA2 PC2\nA3 PC3\nA4 PC4\nA5 PC5\nD0 PD0\nD1 PD1\nD2 PD2\n'D3 PD3\nD4 PD4\n`D5 PD5\n`D6 PD6\nD7 PD7\nD8 PB0\n`D9 PB1\n`D10 PB2\n`D11 PB3\nD12 PB4\nD13 PB5\n\nRemark:\nPC4 as SDA and PC5 as SCL \nis conventional UNO pinout.\nSame for Rx and Tx.
 $EndSCHEMATC

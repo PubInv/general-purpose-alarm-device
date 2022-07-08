@@ -142,30 +142,6 @@ X 3 3 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# GPAD_SCH_LIB_1N5819WS
-#
-DEF GPAD_SCH_LIB_1N5819WS D 0 40 Y Y 1 F N
-F0 "D" 0 150 50 H V C CNN
-F1 "GPAD_SCH_LIB_1N5819WS" 50 -100 50 H V C CNN
-F2 "GeneralPurposeAlarmDevicePCB:D_SOD-323" 200 200 60 H I L CNN
-F3 "" 200 300 60 H I L CNN
-F4 "1N5819WS" 200 500 60 H I L CNN "MPN"
-F5 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
-F6 "Diodes - Rectifiers - Single" 200 700 60 H I L CNN "Family"
-F7 "40V 600mV@1A 1A SOD-323  Schottky Barrier Diodes (SBD) ROHS" 200 1000 60 H I L CNN "Description"
-F8 "Guangdong Hottech" 200 1100 60 H I L CNN "Manufacturer"
-F9 "Active" 200 1200 60 H I L CNN "Status"
-F10 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
-F11 "C191023" 0 0 50 H I C CNN "Distributor 1 PN"
-DRAW
-P 2 0 1 0 0 0 100 0 N
-P 2 0 1 0 0 50 0 -50 N
-P 4 0 1 0 100 50 100 -50 0 0 100 50 F
-X ~ A 200 0 100 L 50 50 1 1 P
-X ~ K -100 0 100 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # GPAD_SCH_LIB_22-23-2021
 #
 DEF GPAD_SCH_LIB_22-23-2021 J 0 40 Y Y 1 F N

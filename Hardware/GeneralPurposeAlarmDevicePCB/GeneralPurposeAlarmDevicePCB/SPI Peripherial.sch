@@ -152,8 +152,6 @@ Wire Wire Line
 	7500 3950 7500 3850
 Wire Wire Line
 	7500 3850 7800 3850
-Wire Wire Line
-	4500 4050 7800 4050
 Text HLabel 7800 4050 2    50   UnSpc ~ 0
 ControllerVcc
 $Comp
@@ -821,4 +819,23 @@ E9 B2 8D 10 95 CE D0 6E 64 AD FB CE 44 6A A4 9E C1 67 5C AB 06 A1 D6 7C 57 22 35
 82 
 EndData
 $EndBitmap
+Wire Wire Line
+	7450 4050 7800 4050
+Wire Wire Line
+	7250 4050 4500 4050
+$Comp
+L Device:Polyfuse_Small F?
+U 1 1 630AB448
+P 7350 4050
+AR Path="/630AB448" Ref="F?"  Part="1" 
+AR Path="/62B93801/630AB448" Ref="F401"  Part="1" 
+F 0 "F401" V 7145 4050 50  0000 C CNN
+F 1 "Polyfuse_Small" V 7450 4100 50  0000 C CNN
+F 2 "Fuse:Fuse_0603_1608Metric" H 7400 3850 50  0001 L CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1806131741_Littelfuse-0603L075SLYR_C207016.pdf" H 7350 4050 50  0001 C CNN
+F 4 "Littelfuse" V 7350 4050 50  0001 C CNN "Manufacturier"
+F 5 "0603L100SLYR" V 7350 4050 50  0001 C CNN "MPN"
+	1    7350 4050
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

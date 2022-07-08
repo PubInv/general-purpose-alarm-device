@@ -169,7 +169,7 @@ Wire Wire Line
 Wire Wire Line
 	6900 2700 6900 3450
 Wire Wire Line
-	6900 3450 7400 3450
+	6900 3450 7100 3450
 Connection ~ 5400 2700
 Wire Wire Line
 	5400 2700 5400 2850
@@ -255,11 +255,9 @@ Connection ~ 3750 4850
 Wire Wire Line
 	3750 4850 3750 5050
 Wire Wire Line
-	3300 4850 2450 4850
+	3300 4850 3200 4850
 Wire Wire Line
-	2450 4850 2450 4650
-Wire Wire Line
-	2450 4650 3300 4650
+	2450 4650 2550 4650
 $Comp
 L Device:R R?
 U 1 1 62C8BE9A
@@ -299,7 +297,7 @@ Wire Wire Line
 	2000 4650 1600 4650
 Wire Wire Line
 	1600 4650 1600 4500
-Text HLabel 2450 4850 0    50   Input ~ 0
+Text HLabel 2450 4050 0    50   Input ~ 0
 Switch_Mute
 $Comp
 L GPAD_SCH_LIB:MMBT2222A-7-F Q601
@@ -1019,4 +1017,99 @@ Text HLabel 3400 3550 0    50   Input ~ 0
 Attenuate
 Wire Wire Line
 	3450 3550 3750 3550
+Wire Wire Line
+	2450 4050 2550 4050
+Wire Wire Line
+	2550 4050 2550 4650
+Connection ~ 2550 4650
+Wire Wire Line
+	2550 4650 3200 4650
+$Comp
+L Device:C C?
+U 1 1 62FF8897
+P 2450 5150
+AR Path="/62FF8897" Ref="C?"  Part="1" 
+AR Path="/62DD8E5F/62FF8897" Ref="C602"  Part="1" 
+F 0 "C602" H 2565 5196 50  0000 L CNN
+F 1 "100nF" H 2565 5105 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2488 5000 50  0001 C CNN
+F 3 "~" H 2450 5150 50  0001 C CNN
+F 4 "JLCPCB" H 2450 5150 50  0001 C CNN "Distributor 1"
+F 5 "C14663" H 2450 5150 50  0001 C CNN "Distributor 1 PN"
+F 6 "YAGEO" H 2450 5150 50  0001 C CNN "Manufacturier"
+F 7 "CC0603KRX7R9BB104" H 2450 5150 50  0001 C CNN "MPN"
+F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 2450 5150 50  0001 C CNN "Description"
+	1    2450 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62FF8F7F
+P 2450 5400
+AR Path="/62FF8F7F" Ref="#PWR?"  Part="1" 
+AR Path="/62DD8E5F/62FF8F7F" Ref="#PWR0607"  Part="1" 
+F 0 "#PWR0607" H 2450 5150 50  0001 C CNN
+F 1 "GND" H 2455 5227 50  0000 C CNN
+F 2 "" H 2450 5400 50  0001 C CNN
+F 3 "" H 2450 5400 50  0001 C CNN
+	1    2450 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5300 2450 5400
+Wire Wire Line
+	3200 4650 3200 4850
+Connection ~ 3200 4650
+Wire Wire Line
+	3200 4650 3300 4650
+Wire Wire Line
+	2450 4650 2450 5000
+$Comp
+L GPAD_SCH_LIB:22-23-2021 J?
+U 1 1 6301024B
+P 7650 4400
+AR Path="/6301024B" Ref="J?"  Part="1" 
+AR Path="/62DD8E5F/6301024B" Ref="J601"  Part="1" 
+F 0 "J601" V 7550 4250 50  0000 R CNN
+F 1 "22-23-2021" V 7900 4550 50  0000 R CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 7850 4600 60  0001 L CNN
+F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 7850 4700 60  0001 L CNN
+F 4 "WM4200-ND" H 7850 4800 60  0001 L CNN "Digi-Key_PN"
+F 5 "22-23-2021" H 7850 4900 60  0001 L CNN "MPN"
+F 6 "Connectors, Interconnects" H 7850 5000 60  0001 L CNN "Category"
+F 7 "Rectangular Connectors - Headers, Male Pins" H 7850 5100 60  0001 L CNN "Family"
+F 8 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 7850 5200 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 7850 5300 60  0001 L CNN "DK_Detail_Page"
+F 10 "CONN HEADER VERT 2POS 2.54MM" H 7850 5400 60  0001 L CNN "Description"
+F 11 "Molex" H 7850 5500 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7850 5600 60  0001 L CNN "Status"
+	1    7650 4400
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	7100 3450 7100 4400
+Wire Wire Line
+	7100 4400 7550 4400
+Connection ~ 7100 3450
+Wire Wire Line
+	7100 3450 7400 3450
+$Comp
+L power:GND #PWR?
+U 1 1 6301310E
+P 7250 4550
+AR Path="/6301310E" Ref="#PWR?"  Part="1" 
+AR Path="/62DD8E5F/6301310E" Ref="#PWR0608"  Part="1" 
+F 0 "#PWR0608" H 7250 4300 50  0001 C CNN
+F 1 "GND" H 7255 4377 50  0000 C CNN
+F 2 "" H 7250 4550 50  0001 C CNN
+F 3 "" H 7250 4550 50  0001 C CNN
+	1    7250 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 4550 7250 4500
+Wire Wire Line
+	7250 4500 7550 4500
+Text Notes 7600 4200 0    50   ~ 0
+For external "speaker".
 $EndSCHEMATC

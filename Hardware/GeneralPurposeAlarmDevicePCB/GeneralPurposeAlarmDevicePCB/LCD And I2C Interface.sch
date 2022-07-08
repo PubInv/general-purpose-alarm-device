@@ -99,42 +99,6 @@ F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 4600 2500 50  000
 $EndComp
 $Comp
 L Device:R R?
-U 1 1 62B90F83
-P 4950 2500
-AR Path="/62B90F83" Ref="R?"  Part="1" 
-AR Path="/62B871EE/62B90F83" Ref="R306"  Part="1" 
-F 0 "R306" H 4850 2450 50  0000 C CNN
-F 1 "1K" H 4800 2550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4880 2500 50  0001 C CNN
-F 3 "~" H 4950 2500 50  0001 C CNN
-F 4 "JLCPCB" V 4950 2500 50  0001 C CNN "Distributor 1"
-F 5 "C269704" V 4950 2500 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 4950 2500 50  0001 C CNN "Manufacturer"
-F 7 "RMC06031K1%N" V 4950 2500 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 4950 2500 50  0001 C CNN "Description"
-	1    4950 2500
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 62B90F8E
-P 5250 2500
-AR Path="/62B90F8E" Ref="R?"  Part="1" 
-AR Path="/62B871EE/62B90F8E" Ref="R308"  Part="1" 
-F 0 "R308" H 5150 2450 50  0000 C CNN
-F 1 "1K" H 5100 2550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 5180 2500 50  0001 C CNN
-F 3 "~" H 5250 2500 50  0001 C CNN
-F 4 "JLCPCB" V 5250 2500 50  0001 C CNN "Distributor 1"
-F 5 "C269704" V 5250 2500 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 5250 2500 50  0001 C CNN "Manufacturer"
-F 7 "RMC06031K1%N" V 5250 2500 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 5250 2500 50  0001 C CNN "Description"
-	1    5250 2500
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R?
 U 1 1 62B90F99
 P 3850 2500
 AR Path="/62B90F99" Ref="R?"  Part="1" 
@@ -372,7 +336,7 @@ Wire Wire Line
 Wire Wire Line
 	8500 1600 9150 1600
 Wire Wire Line
-	9150 1600 9150 3350
+	9150 1600 9150 2000
 Wire Wire Line
 	9150 3350 8000 3350
 Connection ~ 8500 1600
@@ -408,14 +372,6 @@ Wire Wire Line
 Connection ~ 8000 4100
 Wire Wire Line
 	6150 4150 6150 4050
-Wire Wire Line
-	5650 2950 5250 2950
-Wire Wire Line
-	5250 2950 5250 2650
-Wire Wire Line
-	5650 3050 4950 3050
-Wire Wire Line
-	4950 3050 4950 2650
 Wire Wire Line
 	5450 3750 5450 3150
 Wire Wire Line
@@ -485,21 +441,9 @@ Wire Wire Line
 Connection ~ 7700 1600
 Wire Wire Line
 	7700 1600 8000 1600
-Wire Wire Line
-	5250 2350 5250 2050
-Wire Wire Line
-	5250 2050 6150 2050
 Connection ~ 7300 2050
 Wire Wire Line
-	4950 2350 4950 2050
-Wire Wire Line
-	4950 2050 5250 2050
-Connection ~ 5250 2050
-Wire Wire Line
 	4600 2350 4600 2050
-Wire Wire Line
-	4600 2050 4950 2050
-Connection ~ 4950 2050
 Wire Wire Line
 	4250 2350 4250 2050
 Wire Wire Line
@@ -573,12 +517,6 @@ Wire Wire Line
 	4600 2650 4600 3150
 Wire Wire Line
 	5450 3750 5500 3750
-Wire Wire Line
-	4950 3050 3050 3050
-Connection ~ 4950 3050
-Connection ~ 5250 2950
-Wire Wire Line
-	2850 2950 5250 2950
 $Comp
 L Connector:TestPoint TP301
 U 1 1 62C8B28F
@@ -620,7 +558,7 @@ Wire Wire Line
 Wire Wire Line
 	6850 3850 7300 3850
 Connection ~ 7300 3850
-Text Notes 3650 1750 0    50   ~ 0
+Text Notes 3650 1600 0    50   ~ 0
 Wiring of I2C to LCD from:\nhttps://alselectro.wordpress.com/2016/05/12/serial-lcd-i2c-module-pcf8574/
 Text HLabel 2850 2950 0    50   Input ~ 0
 SCL
@@ -668,7 +606,7 @@ F 3 "~" H 7800 2350 50  0001 C CNN
 $EndComp
 Connection ~ 7800 2350
 Wire Wire Line
-	7800 2350 7800 2700
+	7800 2350 7800 2450
 Wire Wire Line
 	6850 3150 6850 3050
 Wire Wire Line
@@ -1340,4 +1278,82 @@ E9 B2 8D 10 95 CE D0 6E 64 AD FB CE 44 6A A4 9E C1 67 5C AB 06 A1 D6 7C 57 22 35
 82 
 EndData
 $EndBitmap
+$Comp
+L Device:R R?
+U 1 1 62E746DD
+P 8900 2350
+AR Path="/62E746DD" Ref="R?"  Part="1" 
+AR Path="/62B871EE/62E746DD" Ref="R306"  Part="1" 
+F 0 "R306" H 8800 2300 50  0000 C CNN
+F 1 "DNI" H 8750 2400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8830 2350 50  0001 C CNN
+F 3 "~" H 8900 2350 50  0001 C CNN
+F 4 "JLCPCB" V 8900 2350 50  0001 C CNN "Distributor 1"
+F 5 "DNI" V 8900 2350 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 8900 2350 50  0001 C CNN "Manufacturer"
+F 7 "DNI" V 8900 2350 50  0001 C CNN "MPN"
+F 8 "DNI" H 8900 2350 50  0001 C CNN "Description"
+	1    8900 2350
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 62E7558E
+P 8900 3050
+AR Path="/62E7558E" Ref="#PWR?"  Part="1" 
+AR Path="/62B871EE/62E7558E" Ref="#PWR0309"  Part="1" 
+F 0 "#PWR0309" H 8900 2800 50  0001 C CNN
+F 1 "GND" H 8905 2877 50  0000 C CNN
+F 2 "" H 8900 3050 50  0001 C CNN
+F 3 "" H 8900 3050 50  0001 C CNN
+	1    8900 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 3050 8900 3000
+Wire Wire Line
+	8900 2700 8900 2550
+Wire Wire Line
+	8900 2200 8900 2000
+Wire Wire Line
+	8900 2000 9150 2000
+Connection ~ 9150 2000
+Wire Wire Line
+	9150 2000 9150 3350
+Wire Wire Line
+	7800 2450 8700 2450
+Wire Wire Line
+	8700 2450 8700 2550
+Wire Wire Line
+	8700 2550 8900 2550
+Connection ~ 7800 2450
+Wire Wire Line
+	7800 2450 7800 2700
+Connection ~ 8900 2550
+Wire Wire Line
+	8900 2550 8900 2500
+$Comp
+L Device:R R?
+U 1 1 62E82D99
+P 8900 2850
+AR Path="/62E82D99" Ref="R?"  Part="1" 
+AR Path="/62B871EE/62E82D99" Ref="R308"  Part="1" 
+F 0 "R308" H 8800 2800 50  0000 C CNN
+F 1 "DNI" H 8750 2900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 8830 2850 50  0001 C CNN
+F 3 "~" H 8900 2850 50  0001 C CNN
+F 4 "JLCPCB" V 8900 2850 50  0001 C CNN "Distributor 1"
+F 5 "DNI" V 8900 2850 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 8900 2850 50  0001 C CNN "Manufacturer"
+F 7 "DNI" V 8900 2850 50  0001 C CNN "MPN"
+F 8 "DNI" H 8900 2850 50  0001 C CNN "Description"
+	1    8900 2850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2850 2950 5650 2950
+Wire Wire Line
+	3050 3050 5650 3050
+Wire Wire Line
+	4600 2050 6150 2050
 $EndSCHEMATC
