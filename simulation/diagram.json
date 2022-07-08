@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "author": "upir",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 20, "left": 20, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": 274.4,
+      "left": 40.77,
+      "attrs": { "pins": "i2c", "background": "blue", "color": "white" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer1",
+      "top": 190.17,
+      "left": 466.82,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "pushbutton1",
+      "top": 110,
+      "left": 300,
+      "attrs": { "label": "Hours", "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "pushbutton2",
+      "top": 110,
+      "left": 380,
+      "attrs": { "label": "Minutes", "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "pushbutton3",
+      "top": 110,
+      "left": 460,
+      "attrs": { "label": "Alarm" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -46.48,
+      "left": 166.67,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": -135.77,
+      "left": 124.06,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-37.32", "v-49.83", "h191.47", "v-0.56" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-45.11", "v-64.89", "h190.91", "v-1.11" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-21.74", "v-56.58", "h252.69", "v-6.68" ] ],
+    [ "lcd1:SCL", "uno:A5", "blue", [ "h-15.06", "v-72.2", "h256.03", "v-4.45" ] ],
+    [ "uno:GND.1", "led:C", "black", [] ],
+    [ "r1:1", "led:A", "blue", [] ],
+    [ "uno:13", "r1:2", "blue", [] ]
+  ]
+}
