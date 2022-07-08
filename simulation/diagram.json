@@ -14,46 +14,107 @@
     {
       "type": "wokwi-buzzer",
       "id": "buzzer1",
-      "top": 190.17,
-      "left": 466.82,
+      "top": 23.49,
+      "left": 349.17,
       "rotate": 90,
       "attrs": {}
     },
     {
       "type": "wokwi-pushbutton",
-      "id": "pushbutton1",
-      "top": 110,
-      "left": 300,
-      "attrs": { "label": "Hours", "color": "green" }
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "pushbutton2",
-      "top": 110,
-      "left": 380,
-      "attrs": { "label": "Minutes", "color": "green" }
-    },
-    {
-      "type": "wokwi-pushbutton",
-      "id": "pushbutton3",
-      "top": 110,
-      "left": 460,
+      "id": "Switch_Mute",
+      "top": 115.45,
+      "left": 408.8,
       "attrs": { "label": "Alarm" }
     },
     {
       "type": "wokwi-resistor",
+      "id": "r0",
+      "top": -26.79,
+      "left": -48.75,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
       "id": "r1",
-      "top": -46.48,
-      "left": 166.67,
+      "top": -106.61,
+      "left": 21.26,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -105.88,
+      "left": 65.07,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -108.31,
+      "left": 109.06,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": -108.61,
+      "left": 154.51,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": -102.8,
+      "left": 204.11,
       "rotate": 90,
       "attrs": { "value": "220" }
     },
     {
       "type": "wokwi-led",
-      "id": "led",
-      "top": -135.77,
-      "left": 124.06,
+      "id": "SPI_SCK_led",
+      "top": -121.2,
+      "left": -60.06,
       "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "Light0",
+      "top": -225.19,
+      "left": 8.6,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "Light1",
+      "top": -219.78,
+      "left": 52,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "Light2",
+      "top": -220.12,
+      "left": 100.88,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "Light3",
+      "top": -219.29,
+      "left": 145.64,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "Light4",
+      "top": -220.31,
+      "left": 189.55,
+      "attrs": { "color": "white" }
     }
   ],
   "connections": [
@@ -61,8 +122,27 @@
     [ "lcd1:VCC", "uno:5V", "red", [ "h-45.11", "v-64.89", "h190.91", "v-1.11" ] ],
     [ "lcd1:SDA", "uno:A4", "green", [ "h-21.74", "v-56.58", "h252.69", "v-6.68" ] ],
     [ "lcd1:SCL", "uno:A5", "blue", [ "h-15.06", "v-72.2", "h256.03", "v-4.45" ] ],
-    [ "uno:GND.1", "led:C", "black", [] ],
-    [ "r1:1", "led:A", "blue", [] ],
-    [ "uno:13", "r1:2", "blue", [] ]
+    [ "uno:GND.1", "SPI_SCK_led:C", "black", [] ],
+    [ "uno:GND.1", "Light0:C", "black", [] ],
+    [ "uno:GND.1", "Light1:C", "black", [] ],
+    [ "uno:GND.1", "Light2:C", "black", [] ],
+    [ "uno:GND.1", "Light3:C", "black", [] ],
+    [ "uno:GND.1", "Light4:C", "black", [] ],
+    [ "r0:1", "SPI_SCK_led:A", "blue", [] ],
+    [ "r1:1", "Light0:A", "blue", [] ],
+    [ "r2:1", "Light1:A", "blue", [] ],
+    [ "r3:1", "Light2:A", "blue", [] ],
+    [ "r4:1", "Light3:A", "blue", [] ],
+    [ "r5:1", "Light4:A", "blue", [] ],
+    [ "uno:13", "r0:2", "orange", [] ],
+    [ "uno:A3", "r1:2", "orange", [] ],
+    [ "uno:5", "r2:2", "orange", [] ],
+    [ "uno:6", "r3:2", "orange", [] ],
+    [ "uno:9", "r4:2", "orange", [] ],
+    [ "uno:10", "r5:2", "orange", [] ],
+    [ "buzzer1:1", "uno:GND.2", "black", [] ],
+    [ "buzzer1:2", "uno:8", "orange", [] ],
+    [ "Switch_Mute:1.l", "uno:A0", "green", [ "h-4", "v0", "*", "v20" ] ],
+    [ "Switch_Mute:2.l", "uno:GND.2", "black", [ "*", "v34" ] ]
   ]
 }
