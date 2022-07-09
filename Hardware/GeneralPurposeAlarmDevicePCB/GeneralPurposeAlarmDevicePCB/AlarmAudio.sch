@@ -1016,8 +1016,6 @@ Wire Wire Line
 Text HLabel 3400 3550 0    50   Input ~ 0
 Attenuate
 Wire Wire Line
-	3450 3550 3750 3550
-Wire Wire Line
 	2450 4050 2550 4050
 Wire Wire Line
 	2550 4050 2550 4650
@@ -1112,4 +1110,6 @@ Wire Wire Line
 	7250 4500 7550 4500
 Text Notes 7600 4200 0    50   ~ 0
 For external "speaker".
+Wire Wire Line
+	3400 3550 3750 3550
 $EndSCHEMATC
