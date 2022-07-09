@@ -22,7 +22,7 @@ F 1 "16MHZ 20PF HC-49S/SMD" H 2200 4950 50  0000 C CNN
 F 2 "digikey-footprints:SMD-2_3.2x2.5mm" H 2300 5000 60  0001 L CNN
 F 3 "http://www.ndk.com/images/products/catalog/c_NX3225GD-STD-CRA-3_e.pdf" H 2300 5100 60  0001 L CNN
 F 4 "JLCPCB" H 2100 4800 50  0001 C CNN "Distributor 1"
-F 5 "TAXM16M2GLFBET2T" H 2300 5200 60  0001 L CNN "Distributor1 PN"
+F 5 "TAXM16M2GLFBET2T" H 2300 5200 60  0001 L CNN "Distributor 1 PN"
 F 6 "NX3225GD-8MHZ-STD-CRA-3" H 2300 5300 60  0001 L CNN "MPN"
 F 7 "Crystals, Oscillators, Resonators" H 2300 5400 60  0001 L CNN "Category"
 F 8 "Crystals" H 2300 5500 60  0001 L CNN "Family"
@@ -68,7 +68,7 @@ F 1 "Schottky 2A" H 1950 824 50  0000 C CNN
 F 2 "Diode_SMD:D_SMB" H 1950 950 50  0001 C CNN
 F 3 "~" H 1950 950 50  0001 C CNN
 F 4 "JLCPCB" H 1950 950 50  0001 C CNN "Distributor 1"
-F 5 "C14996" H 1950 950 50  0001 C CNN "Distirbutor 1 PN"
+F 5 "C14996" H 1950 950 50  0001 C CNN "Distributor 1 PN"
 F 6 "SS210" H 1950 950 50  0001 C CNN "MPN"
 F 7 "MDD（Microdiode Electronics）" H 1950 950 50  0001 C CNN "Manufacturer"
 	1    1950 950 
@@ -169,7 +169,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 3688 1000 50  
 F 3 "~" H 3650 1150 50  0001 C CNN
 F 4 "JLCPCB" H 3650 1150 50  0001 C CNN "Distributor 1"
 F 5 "C14663" H 3650 1150 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 3650 1150 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 3650 1150 50  0001 C CNN "Manufacturer"
 F 7 "CC0603KRX7R9BB104" H 3650 1150 50  0001 C CNN "MPN"
 F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 3650 1150 50  0001 C CNN "Description"
 	1    3650 1150
@@ -245,7 +245,7 @@ F 2 "GeneralPurposeAlarmDevicePCB:BarrelJack_CLIFF_FC681465S_SMT_Horizontal" H 9
 F 3 "https://tensility.s3.amazonaws.com/uploads/pdffiles/54-00164.pdf" H 900 1010 50  0001 C CNN
 F 4 "JLCPCB" H 850 1050 50  0001 C CNN "Distributor 1"
 F 5 "C319134" H 850 1050 50  0001 C CNN "Distributor 1 PN"
-F 6 "XKB Connectivity / Tensility International Corp" H 850 1050 50  0001 C CNN "Manufacturier"
+F 6 "XKB Connectivity / Tensility International Corp" H 850 1050 50  0001 C CNN "Manufacturer"
 F 7 "DC-005-5A-2.0-SMT / 54-00164" H 850 1050 50  0001 C CNN "MPN"
 F 8 "Power Barrel Connector Jack 2.10mm ID (0.083\"), 5.50mm OD (0.217\") Surface Mount, Right Angle" H 850 1050 50  0001 C CNN "Description"
 F 9 "Digikey" H 850 1050 50  0001 C CNN "Distributor 2"
@@ -285,7 +285,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 1538 3900 50  
 F 3 "~" H 1500 4050 50  0001 C CNN
 F 4 "JLCPCB" H 1500 4050 50  0001 C CNN "Distributor 1"
 F 5 "C14663" H 1500 4050 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 1500 4050 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 1500 4050 50  0001 C CNN "Manufacturer"
 F 7 "CC0603KRX7R9BB104" H 1500 4050 50  0001 C CNN "MPN"
 F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 1500 4050 50  0001 C CNN "Description"
 	1    1500 4050
@@ -342,7 +342,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 5038 4350 50  
 F 3 "~" H 5000 4500 50  0001 C CNN
 F 4 "JLCPCB" H 5000 4500 50  0001 C CNN "Distributor 1"
 F 5 "C14663" H 5000 4500 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 5000 4500 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 5000 4500 50  0001 C CNN "Manufacturer"
 F 7 "CC0603KRX7R9BB104" H 5000 4500 50  0001 C CNN "MPN"
 F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 5000 4500 50  0001 C CNN "Description"
 	1    5000 4500
@@ -411,6 +411,7 @@ F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv
 F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 5700 3600 60  0001 L CNN "DK_Detail_Page"
 F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 5700 3700 60  0001 L CNN "Description"
 F 15 "Active" H 5700 3900 60  0001 L CNN "Status"
+F 16 "HAND" H 0   0   50  0001 C CNN "Assembly Type"
 	1    5500 2700
 	1    0    0    -1  
 $EndComp
@@ -424,7 +425,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 4938 2650 50  
 F 3 "~" H 4900 2800 50  0001 C CNN
 F 4 "JLCPCB" H 4900 2800 50  0001 C CNN "Distributor 1"
 F 5 "C14663" H 4900 2800 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 4900 2800 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 4900 2800 50  0001 C CNN "Manufacturer"
 F 7 "CC0603KRX7R9BB104" H 4900 2800 50  0001 C CNN "MPN"
 F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 4900 2800 50  0001 C CNN "Description"
 	1    4900 2800
@@ -939,7 +940,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2638 1200 50  
 F 3 "~" H 2600 1350 50  0001 C CNN
 F 4 "JLCPCB" H 2600 1350 50  0001 C CNN "Distributor 1"
 F 5 "C14663" H 2600 1350 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 2600 1350 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 2600 1350 50  0001 C CNN "Manufacturer"
 F 7 "CC0603KRX7R9BB104" H 2600 1350 50  0001 C CNN "MPN"
 F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 2600 1350 50  0001 C CNN "Description"
 	1    2600 1350
@@ -1064,6 +1065,7 @@ F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 5300 1700 60  0001 L
 F 10 "CONN HEADER VERT 2POS 2.54MM" H 5300 1800 60  0001 L CNN "Description"
 F 11 "Molex" H 5300 1900 60  0001 L CNN "Manufacturer"
 F 12 "Active" H 5300 2000 60  0001 L CNN "Status"
+F 13 "HAND" H 0   0   50  0001 C CNN "Assembly Type"
 	1    5100 800 
 	1    0    0    1   
 $EndComp
@@ -1071,8 +1073,8 @@ $Comp
 L GPAD_SCH_LIB:22-23-2021 J103
 U 1 1 62D31EA3
 P 6550 800
-F 0 "J103" H 6463 762 50  0000 R CNN
-F 1 "22-23-2021" H 6463 853 50  0000 R CNN
+F 0 "J103" H 6450 650 50  0000 R CNN
+F 1 "22-23-2021" H 6450 750 50  0000 R CNN
 F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 6750 1000 60  0001 L CNN
 F 3 "https://media.digikey.com/pdf/Data%20Sheets/Molex%20PDFs/A-6373-N_Series_Dwg_2010-12-03.pdf" H 6750 1100 60  0001 L CNN
 F 4 "WM4200-ND" H 6750 1200 60  0001 L CNN "Digi-Key_PN"
@@ -1084,6 +1086,7 @@ F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 6750 1700 60  0001 L
 F 10 "CONN HEADER VERT 2POS 2.54MM" H 6750 1800 60  0001 L CNN "Description"
 F 11 "Molex" H 6750 1900 60  0001 L CNN "Manufacturer"
 F 12 "Active" H 6750 2000 60  0001 L CNN "Status"
+F 13 "HAND" H 0   0   50  0001 C CNN "Assembly Type"
 	1    6550 800 
 	1    0    0    1   
 $EndComp
@@ -1105,7 +1108,8 @@ F 10 "Active" H 10000 3550 60  0001 L CNN "Status"
 F 11 "JLCPCB" H 9800 2350 50  0001 C CNN "Distributor 1"
 F 12 "C265097" H 9800 2350 50  0001 C CNN "Distributor 1 PN"
 F 13 "DigiKey  " H 9800 2350 50  0001 C CNN "Distributor 2"
-F 14 "455-4090-ND" V 10036 2222 50  0000 R CNN "Distributor 2 PN"
+F 14 "455-4090-ND" V 10036 2222 50  0001 R CNN "Distributor 2 PN"
+F 15 "HAND" H 0   0   50  0001 C CNN "Assembly Type"
 	1    9800 2350
 	0    -1   1    0   
 $EndComp
@@ -1193,7 +1197,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9038 2800 50  
 F 3 "~" H 9000 2950 50  0001 C CNN
 F 4 "JLCPCB" H 9000 2950 50  0001 C CNN "Distributor 1"
 F 5 "C107047" H 9000 2950 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 9000 2950 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 9000 2950 50  0001 C CNN "Manufacturer"
 F 7 "CC0603JRNPO9BN330" H 9000 2950 50  0001 C CNN "MPN"
 F 8 "50V 33pF NP0 ±5% 0603  Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 9000 2950 50  0001 C CNN "Description"
 	1    9000 2950
@@ -1209,7 +1213,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 9488 2800 50  
 F 3 "~" H 9450 2950 50  0001 C CNN
 F 4 "JLCPCB" H 9450 2950 50  0001 C CNN "Distributor 1"
 F 5 "C107047" H 9450 2950 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 9450 2950 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 9450 2950 50  0001 C CNN "Manufacturer"
 F 7 "CC0603JRNPO9BN330" H 9450 2950 50  0001 C CNN "MPN"
 F 8 "50V 33pF NP0 ±5% 0603  Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 9450 2950 50  0001 C CNN "Description"
 	1    9450 2950
@@ -1919,7 +1923,7 @@ F 0 "F101" V 1345 950 50  0000 C CNN
 F 1 "Polyfuse_Small" V 1650 1000 50  0000 C CNN
 F 2 "Fuse:Fuse_0603_1608Metric" H 1600 750 50  0001 L CNN
 F 3 "https://datasheet.lcsc.com/lcsc/1806131741_Littelfuse-0603L075SLYR_C207016.pdf" H 1550 950 50  0001 C CNN
-F 4 "Littelfuse" V 1550 950 50  0001 C CNN "Manufacturier"
+F 4 "Littelfuse" V 1550 950 50  0001 C CNN "Manufacturer"
 F 5 "0603L100SLYR" V 1550 950 50  0001 C CNN "MPN"
 	1    1550 950 
 	0    1    1    0   
@@ -1941,12 +1945,12 @@ $Comp
 L Device:D_Schottky D104
 U 1 1 62E0564A
 P 6250 1100
-F 0 "D104" H 6250 883 50  0000 C CNN
-F 1 "Schottky 2A" H 6250 974 50  0000 C CNN
+F 0 "D104" H 6100 1200 50  0000 C CNN
+F 1 "Schottky 2A" H 6050 1300 50  0000 C CNN
 F 2 "Diode_SMD:D_SMB" H 6250 1100 50  0001 C CNN
 F 3 "~" H 6250 1100 50  0001 C CNN
 F 4 "JLCPCB" H 6250 1100 50  0001 C CNN "Distributor 1"
-F 5 "C14996" H 6250 1100 50  0001 C CNN "Distirbutor 1 PN"
+F 5 "C14996" H 6250 1100 50  0001 C CNN "Distributor 1 PN"
 F 6 "SS210" H 6250 1100 50  0001 C CNN "MPN"
 F 7 "MDD（Microdiode Electronics）" H 6250 1100 50  0001 C CNN "Manufacturer"
 	1    6250 1100
@@ -2122,7 +2126,7 @@ F 1 "Schottky 2A" H 3350 2024 50  0000 C CNN
 F 2 "Diode_SMD:D_SMB" H 3350 2150 50  0001 C CNN
 F 3 "~" H 3350 2150 50  0001 C CNN
 F 4 "JLCPCB" H 3350 2150 50  0001 C CNN "Distributor 1"
-F 5 "C14996" H 3350 2150 50  0001 C CNN "Distirbutor 1 PN"
+F 5 "C14996" H 3350 2150 50  0001 C CNN "Distributor 1 PN"
 F 6 "SS210" H 3350 2150 50  0001 C CNN "MPN"
 F 7 "MDD（Microdiode Electronics）" H 3350 2150 50  0001 C CNN "Manufacturer"
 	1    3350 2150

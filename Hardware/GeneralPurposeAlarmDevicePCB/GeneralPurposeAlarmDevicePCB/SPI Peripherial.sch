@@ -168,7 +168,7 @@ F 6 "Digikey" H 4100 4250 50  0001 C CNN "Distributor 2"
 F 7 "A31422-ND" H 4100 4250 50  0001 C CNN "Distributor 2 PN"
 F 8 "TE Connectivity" H 4100 4250 50  0001 C CNN "Manufacturer"
 F 9 "Jack Modular Connector 6p6c (RJ11, RJ12, RJ14, RJ25) 90° Angle (Right) Unshielded Cat3" H 4100 4250 50  0001 C CNN "Description"
-F 10 "HAND" H 4157 4725 50  0000 C CNN "AssemblyType"
+F 10 "HAND" H 4157 4725 50  0000 C CNN "Assembly Type"
 F 11 "5555165-1" H 4100 4250 50  0001 C CNN "MPN"
 	1    4100 4250
 	1    0    0    -1  
@@ -833,7 +833,7 @@ F 0 "F401" V 7145 4050 50  0000 C CNN
 F 1 "Polyfuse_Small" V 7450 4100 50  0000 C CNN
 F 2 "Fuse:Fuse_0603_1608Metric" H 7400 3850 50  0001 L CNN
 F 3 "https://datasheet.lcsc.com/lcsc/1806131741_Littelfuse-0603L075SLYR_C207016.pdf" H 7350 4050 50  0001 C CNN
-F 4 "Littelfuse" V 7350 4050 50  0001 C CNN "Manufacturier"
+F 4 "Littelfuse" V 7350 4050 50  0001 C CNN "Manufacturer"
 F 5 "0603L100SLYR" V 7350 4050 50  0001 C CNN "MPN"
 	1    7350 4050
 	0    1    1    0   

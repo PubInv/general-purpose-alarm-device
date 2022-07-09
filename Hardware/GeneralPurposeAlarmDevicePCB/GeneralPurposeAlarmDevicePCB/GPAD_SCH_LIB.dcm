@@ -120,6 +120,12 @@ K CP-202A-ND
 F https://www.cui.com/product/resource/digikeypdf/pj-202a.pdf
 $ENDCMP
 #
+$CMP QMB-09B-03
+D AUDIO Buzzers 9mm p=4mm
+K JLCPCB C96256
+F 2104011834_Jiangsu-Huaneng-Elec-QMB-09B-03_C96256.pdf
+$ENDCMP
+#
 $CMP RJ12
 D RJ connector, 6P6C (6 positions 6 connected)
 K 6P6C RJ female connector

@@ -55,8 +55,8 @@ F 2 "Package_SO:SOIC-16W_5.3x10.2mm_P1.27mm" H 6150 3350 50  0001 C CNN
 F 3 "http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf" H 6150 3350 50  0001 C CNN
 F 4 "JLCPCB" H 6150 3350 50  0001 C CNN "Distributor 1"
 F 5 "C83193" H 6150 3350 50  0001 C CNN "Distributor 1 PN"
-F 6 "NXP Semicon" H 6150 3350 50  0001 C CNN "Manufacturier"
-F 7 "Remote 8-bit I/O expander for I2C-bus with interrupt" H 6150 3350 50  0001 C CNN "Descirption"
+F 6 "NXP Semicon" H 6150 3350 50  0001 C CNN "Manufacturer"
+F 7 "Remote 8-bit I/O expander for I2C-bus with interrupt" H 6150 3350 50  0001 C CNN "Description"
 F 8 "PCF8574AT/3,512" H 6150 3350 50  0001 C CNN "MPN"
 	1    6150 3350
 	1    0    0    -1  
@@ -206,7 +206,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 8038 1600 50  
 F 3 "~" H 8000 1750 50  0001 C CNN
 F 4 "JLCPCB" H 8000 1750 50  0001 C CNN "Distributor 1"
 F 5 "C14663" H 8000 1750 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 8000 1750 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 8000 1750 50  0001 C CNN "Manufacturer"
 F 7 "CC0603KRX7R9BB104" H 8000 1750 50  0001 C CNN "MPN"
 F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 8000 1750 50  0001 C CNN "Description"
 	1    8000 1750
@@ -267,10 +267,10 @@ F 1 "BSS138" H 8804 4055 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 8800 4025 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/BSS138-D.PDF" H 8600 4100 50  0001 L CNN
 F 4 "N-Channel Enhancement Mode Field Effect Transistor" H 8600 4100 50  0001 C CNN "Description"
-F 5 "JLCPCB" H 8600 4100 50  0001 C CNN "Distirbutor 1"
+F 5 "JLCPCB" H 8600 4100 50  0001 C CNN "Distributor 1"
 F 6 "C400505" H 8600 4100 50  0001 C CNN "Distributor 1 PN"
 F 7 "" H 8600 4100 50  0001 C CNN "Field7"
-F 8 "Yangzhou Yangjie Electronic Technology Co., Ltd" H 8600 4100 50  0001 C CNN "Manufacturier"
+F 8 "Yangzhou Yangjie Electronic Technology Co., Ltd" H 8600 4100 50  0001 C CNN "Manufacturer"
 F 9 "BSS138" H 8600 4100 50  0001 C CNN "MPN"
 	1    8600 4100
 	1    0    0    -1  
@@ -626,7 +626,7 @@ F 2 "GeneralPurposeAlarmDevicePCB:Potentiometer_Bourns_3386P_Vertical" H 8250 27
 F 3 "https://www.bourns.com/docs/Product-Datasheets/TC33.pdf" H 8250 2700 50  0001 C CNN
 F 4 "JLCPCB" H 8250 2700 50  0001 C CNN "Distributor 1"
 F 5 "C58159" H 8250 2700 50  0001 C CNN "Distributor 1 PN"
-F 6 "BOURNS" H 8250 2700 50  0001 C CNN "Manufacturier"
+F 6 "BOURNS" H 8250 2700 50  0001 C CNN "Manufacturer"
 F 7 "3362P-1-103LF" H 8250 2700 50  0001 C CNN "MPN"
 F 8 "HAND" H 8180 2791 50  0000 R CNN "Assembly Type"
 	1    8250 2700

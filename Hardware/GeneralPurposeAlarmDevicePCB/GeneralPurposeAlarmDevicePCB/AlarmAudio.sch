@@ -14,33 +14,13 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L dk_Alarms-Buzzers-and-Sirens:PKMCS0909E4000-R1 BZ601
-U 1 1 62DD9B52
-P 7500 3550
-F 0 "BZ601" H 7840 3658 60  0000 L CNN
-F 1 "PKMCS0909E4000-R1" H 7840 3552 60  0000 L CNN
-F 2 "digikey-footprints:Piezo_9x9mm_PKMCS0909E4000-R1" H 7700 3750 60  0001 L CNN
-F 3 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" H 7700 3850 60  0001 L CNN
-F 4 "490-9647-1-ND" H 7700 3950 60  0001 L CNN "Digi-Key_PN"
-F 5 "PKMCS0909E4000-R1" H 7700 4050 60  0001 L CNN "MPN"
-F 6 "Audio Products" H 7700 4150 60  0001 L CNN "Category"
-F 7 "Alarms, Buzzers, and Sirens" H 7700 4250 60  0001 L CNN "Family"
-F 8 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" H 7700 4350 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/murata-electronics-north-america/PKMCS0909E4000-R1/490-9647-1-ND/4878401" H 7700 4450 60  0001 L CNN "DK_Detail_Page"
-F 10 "AUDIO PIEZO TRANSDUCER 12.5V SMD" H 7700 4550 60  0001 L CNN "Description"
-F 11 "Murata Electronics North America" H 7700 4650 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7700 4750 60  0001 L CNN "Status"
-	1    7500 3550
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 62DE23F8
 P 3900 3550
 AR Path="/62B3AC2F/62DE23F8" Ref="R?"  Part="1" 
 AR Path="/62DD8E5F/62DE23F8" Ref="R605"  Part="1" 
 F 0 "R605" V 4000 3600 50  0000 C CNN
-F 1 "330R" V 3750 3550 50  0000 C CNN
+F 1 "330" V 3750 3550 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 3830 3550 50  0001 C CNN
 F 3 "~" H 3900 3550 50  0001 C CNN
 F 4 "JLCPCB" V 3900 3550 50  0001 C CNN "Distributor 1"
@@ -57,7 +37,7 @@ U 1 1 62DE3E9B
 P 5300 3050
 F 0 "Q602" H 5488 3103 60  0000 L CNN
 F 1 "MMBT2907ALT1G" H 5488 2997 60  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 5500 3250 60  0001 L CNN
+F 2 "digikey-footprints:SOT-23-3" H 5500 3250 60  0001 L CNN
 F 3 "http://www.onsemi.com/pub/Collateral/MMBT2907ALT1-D.PDF" H 5500 3350 60  0001 L CNN
 F 4 "MMBT2907ALT1GOSCT-ND" H 5500 3450 60  0001 L CNN "Digi-Key_PN"
 F 5 "MMBT2907ALT1G" H 5500 3550 60  0001 L CNN "MPN"
@@ -78,7 +58,7 @@ P 2850 2100
 AR Path="/62DE752C" Ref="C?"  Part="1" 
 AR Path="/62DD8E5F/62DE752C" Ref="C601"  Part="1" 
 F 0 "C601" H 2968 2146 50  0000 L CNN
-F 1 "47uF 16V" H 2968 2055 50  0000 L CNN
+F 1 "47uF" H 2968 2055 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 2888 1950 50  0001 C CNN
 F 3 "~" H 2850 2100 50  0001 C CNN
 F 4 "JLCPCB" H 2850 2100 50  0001 C CNN "Distributor 1"
@@ -129,7 +109,7 @@ AR Path="/62DEA4D3" Ref="R?"  Part="1"
 AR Path="/62B871EE/62DEA4D3" Ref="R?"  Part="1" 
 AR Path="/62DD8E5F/62DEA4D3" Ref="R601"  Part="1" 
 F 0 "R601" V 1950 1850 50  0000 C CNN
-F 1 "1R0" V 2050 1900 50  0000 C CNN
+F 1 "1R" V 2050 1900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 2080 1900 50  0001 C CNN
 F 3 "~" H 2150 1900 50  0001 C CNN
 F 4 "JLCPCB" V 2150 1900 50  0001 C CNN "Distributor 1"
@@ -218,17 +198,18 @@ F 1 "SWITCH_TACTILE_SPST-NO_0.05A_24V" H 3500 4991 60  0000 C CNN
 F 2 "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm" H 3700 4950 60  0001 L CNN
 F 3 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 3700 5050 60  0001 L CNN
 F 4 "JLCPCB" H 3500 4750 50  0001 C CNN "Distributor 1"
-F 5 "C592982" H 3500 4750 50  0001 C CNN "Distributor 1 PN"
+F 5 "C13828" H 3500 4750 50  0001 C CNN "Distributor 1 PN"
 F 6 "Digikey" H 3500 4750 50  0001 C CNN "Distributor 2"
 F 7 "450-1804-ND" H 3700 5150 60  0001 L CNN "Distributor 2 PN"
 F 8 "TE Connectivity ALCOSWITCH Switches" H 3700 5850 60  0001 L CNN "Manufacturer"
-F 9 "1825910-7" H 3700 5250 60  0001 L CNN "MPN"
+F 9 "TE Connectivity 1825910-7,   Dongguan Guangzhu Industrial C13828" H 3700 5250 60  0001 L CNN "MPN"
 F 10 "Switches" H 3700 5350 60  0001 L CNN "Category"
 F 11 "Tactile Switches" H 3700 5450 60  0001 L CNN "Family"
 F 12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 3700 5550 60  0001 L CNN "DK_Datasheet_Link"
 F 13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" H 3700 5650 60  0001 L CNN "DK_Detail_Page"
 F 14 "SWITCH TACTILE SPST-NO 0.05A 24V" H 3700 5750 60  0001 L CNN "Description"
 F 15 "Active" H 3700 5950 60  0001 L CNN "Status"
+F 16 "HAND" H 0   0   50  0001 C CNN "Assembly Type"
 	1    3500 4750
 	1    0    0    -1  
 $EndComp
@@ -975,7 +956,7 @@ AR Path="/62C9323E" Ref="R?"  Part="1"
 AR Path="/62B871EE/62C9323E" Ref="R?"  Part="1" 
 AR Path="/62DD8E5F/62C9323E" Ref="R604"  Part="1" 
 F 0 "R604" V 6300 2650 50  0000 C CNN
-F 1 "1R0" V 6400 2700 50  0000 C CNN
+F 1 "1R" V 6400 2700 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" V 6430 2700 50  0001 C CNN
 F 3 "~" H 6500 2700 50  0001 C CNN
 F 4 "JLCPCB" V 6500 2700 50  0001 C CNN "Distributor 1"
@@ -988,24 +969,6 @@ F 8 "0.1W ±5% 1Ω 0603 Chip Resistor - Surface Mount ROHS" H 6500 2700 50  0001
 $EndComp
 Wire Wire Line
 	4050 2800 4350 2800
-$Comp
-L Device:R R?
-U 1 1 62C9ABF4
-P 3900 2800
-AR Path="/62C9ABF4" Ref="R?"  Part="1" 
-AR Path="/62DD8E5F/62C9ABF4" Ref="R602"  Part="1" 
-F 0 "R602" V 3700 2750 50  0000 C CNN
-F 1 "10K" V 3800 2800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 3830 2800 50  0001 C CNN
-F 3 "~" H 3900 2800 50  0001 C CNN
-F 4 "JLCPCB" V 3900 2800 50  0001 C CNN "Distributor 1"
-F 5 "C269701" V 3900 2800 50  0001 C CNN "Distributor 1 PN"
-F 6 "TyoHM" V 3900 2800 50  0001 C CNN "Manufacturer"
-F 7 "RMC 0603 10K F N" V 3900 2800 50  0001 C CNN "MPN"
-F 8 "0.1W ±1% 10kΩ 0603  Chip Resistor - Surface Mount ROHS" H 3900 2800 50  0001 C CNN "Description"
-	1    3900 2800
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4050 3550 4350 3550
 Wire Wire Line
@@ -1034,7 +997,7 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" H 2488 5000 50  
 F 3 "~" H 2450 5150 50  0001 C CNN
 F 4 "JLCPCB" H 2450 5150 50  0001 C CNN "Distributor 1"
 F 5 "C14663" H 2450 5150 50  0001 C CNN "Distributor 1 PN"
-F 6 "YAGEO" H 2450 5150 50  0001 C CNN "Manufacturier"
+F 6 "YAGEO" H 2450 5150 50  0001 C CNN "Manufacturer"
 F 7 "CC0603KRX7R9BB104" H 2450 5150 50  0001 C CNN "MPN"
 F 8 "50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS" H 2450 5150 50  0001 C CNN "Description"
 	1    2450 5150
@@ -1081,6 +1044,7 @@ F 9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" H 7850 5300 60  0001 L
 F 10 "CONN HEADER VERT 2POS 2.54MM" H 7850 5400 60  0001 L CNN "Description"
 F 11 "Molex" H 7850 5500 60  0001 L CNN "Manufacturer"
 F 12 "Active" H 7850 5600 60  0001 L CNN "Status"
+F 13 "HAND" H 0   0   50  0001 C CNN "Assembly Type"
 	1    7650 4400
 	0    -1   1    0   
 $EndComp
@@ -1112,4 +1076,45 @@ Text Notes 7600 4200 0    50   ~ 0
 For external "speaker".
 Wire Wire Line
 	3400 3550 3750 3550
+$Comp
+L GPAD_SCH_LIB:QMB-09B-03 BZ601
+U 1 1 63A1E0DF
+P 7500 3550
+F 0 "BZ601" H 7840 3658 60  0000 L CNN
+F 1 "QMB-09B-03" H 7840 3552 60  0000 L CNN
+F 2 "GeneralPurposeAlarmDevicePCB:MagneticBuzzer_9mmx5.8mmP=4mm" H 7700 3750 60  0001 L CNN
+F 3 "2104011834_Jiangsu-Huaneng-Elec-QMB-09B-03_C96256.pdf" H 7700 3850 60  0001 L CNN
+F 4 "" H 7700 3950 60  0001 L CNN "Digi-Key_PN"
+F 5 "QMB-09B-03" H 7700 4050 60  0001 L CNN "MPN"
+F 6 "Audio Products" H 7700 4150 60  0001 L CNN "Category"
+F 7 "Alarms, Buzzers, and Sirens" H 7700 4250 60  0001 L CNN "Family"
+F 8 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" H 7700 4350 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/murata-electronics-north-america/PKMCS0909E4000-R1/490-9647-1-ND/4878401" H 7700 4450 60  0001 L CNN "DK_Detail_Page"
+F 10 "5.7mm 9mm Externally Driven 85dB@3V,10cm 2V~5V Magnetic 3V 2700Hz Plugin,P=4mm Buzzers ROHS" H 7700 4550 60  0001 L CNN "Description"
+F 11 "Jiangsu Huaneng Elec" H 7700 4650 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 7700 4750 60  0001 L CNN "Status"
+F 13 "JLCPCB" H 7500 3550 50  0001 C CNN "Distirbutor 1"
+F 14 "C96256" H 7500 3550 50  0001 C CNN "Distirbutor 1 PN"
+	1    7500 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 63A4299B
+P 3900 2800
+AR Path="/63A4299B" Ref="R?"  Part="1" 
+AR Path="/62B871EE/63A4299B" Ref="R?"  Part="1" 
+AR Path="/62DD8E5F/63A4299B" Ref="R602"  Part="1" 
+F 0 "R602" V 3700 2750 50  0000 C CNN
+F 1 "1K" V 3800 2750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3830 2800 50  0001 C CNN
+F 3 "~" H 3900 2800 50  0001 C CNN
+F 4 "JLCPCB" V 3900 2800 50  0001 C CNN "Distributor 1"
+F 5 "C269704" V 3900 2800 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 3900 2800 50  0001 C CNN "Manufacturer"
+F 7 "RMC06031K1%N" V 3900 2800 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 3900 2800 50  0001 C CNN "Description"
+	1    3900 2800
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

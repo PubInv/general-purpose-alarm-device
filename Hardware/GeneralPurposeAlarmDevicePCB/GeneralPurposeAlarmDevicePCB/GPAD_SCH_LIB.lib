@@ -68,6 +68,7 @@ F9 "/product-detail/en/molex/22-23-2021/WM4200-ND/26667" 200 900 60 H I L CNN "D
 F10 "CONN HEADER VERT 2POS 2.54MM" 200 1000 60 H I L CNN "Description"
 F11 "Molex" 200 1100 60 H I L CNN "Manufacturer"
 F12 "Active" 200 1200 60 H I L CNN "Status"
+F13 "HAND" 0 0 50 H I C CNN "Assembly Type"
 DRAW
 S -50 0 150 -100 1 1 0 f
 S -10 -45 10 -65 1 1 0 F
@@ -623,6 +624,33 @@ X ~ 3 100 -100 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# QMB-09B-03
+#
+DEF QMB-09B-03 BZ 0 1 Y Y 1 F N
+F0 "BZ" 0 200 60 H V L CNN
+F1 "QMB-09B-03" -100 -100 60 H V L CNN
+F2 "GeneralPurposeAlarmDevicePCB:MagneticBuzzer_9mmx5.8mmP=4mm" 200 200 60 H I L CNN
+F3 "" 200 300 60 H I L CNN
+F4 "QMB-09B-03" 200 500 60 H I L CNN "MPN"
+F5 "Audio Products" 200 600 60 H I L CNN "Category"
+F6 "Alarms, Buzzers, and Sirens" 200 700 60 H I L CNN "Family"
+F7 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F8 "/product-detail/en/murata-electronics-north-america/PKMCS0909E4000-R1/490-9647-1-ND/4878401" 200 900 60 H I L CNN "DK_Detail_Page"
+F9 "5.7mm 9mm Externally Driven 85dB@3V,10cm 2V~5V Magnetic 3V 2700Hz Plugin,P=4mm Buzzers ROHS" 200 1000 60 H I L CNN "Description"
+F10 "Jiangsu Huaneng Elec" 200 1100 60 H I L CNN "Manufacturer"
+F11 "Active" 200 1200 60 H I L CNN "Status"
+F12 "JLCPCB" 0 0 50 H I C CNN "Distirbutor 1"
+F13 "C96256" 0 0 50 H I C CNN "Distirbutor 1 PN"
+DRAW
+A 200 50 71 450 -450 0 1 0 N 250 100 250 0
+A 200 50 112 634 -634 0 1 0 N 250 150 250 -50
+S 0 150 100 -50 0 1 0 f
+P 5 0 1 0 100 100 200 150 200 -50 100 0 100 100 f
+X ~ 1 -100 100 100 R 50 50 1 1 I
+X ~ 2 -100 0 100 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 # RJ12_6P6C_HORZ
 #
 DEF RJ12_6P6C_HORZ J 0 40 Y Y 1 F N
@@ -680,7 +708,8 @@ F10 "Active" 200 1200 60 H I L CNN "Status"
 F11 "JLCPCB" 0 0 50 H I C CNN "Distributor 1"
 F12 "C265097" 0 0 50 H I C CNN "Distributor 1 PN"
 F13 "DigiKey  " 0 0 50 H I C CNN "Distributor 2"
-F14 "455-4090-ND" 0 0 50 H V C CNN "Distributor 2 PN"
+F14 "455-4090-ND" 0 0 50 H I C CNN "Distributor 2 PN"
+F15 "HAND" 0 0 50 H I C CNN "Assembly Type"
 DRAW
 S -50 0 350 -100 1 1 0 f
 S -10 -45 10 -65 1 1 0 F
@@ -713,6 +742,7 @@ F12 "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&
 F13 "/product-detail/en/te-connectivity-alcoswitch-switches/1825910-7/450-1804-ND/1731414" 200 900 60 H I L CNN "DK_Detail_Page"
 F14 "SWITCH TACTILE SPST-NO 0.05A 24V" 200 1000 60 H I L CNN "Description"
 F15 "Active" 200 1200 60 H I L CNN "Status"
+F16 "HAND" 0 0 50 H I C CNN "Assembly Type"
 DRAW
 C -60 0 10 0 1 0 N
 C 60 0 10 0 1 0 N
