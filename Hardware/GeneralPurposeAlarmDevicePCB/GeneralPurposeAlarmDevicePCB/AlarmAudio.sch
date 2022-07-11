@@ -167,8 +167,6 @@ F 3 "" H 6900 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7400 3550 6900 3550
-Wire Wire Line
 	6900 3550 6900 3750
 Wire Wire Line
 	4850 2800 4850 2400
@@ -1077,28 +1075,6 @@ For external "speaker".
 Wire Wire Line
 	3400 3550 3750 3550
 $Comp
-L GPAD_SCH_LIB:QMB-09B-03 BZ601
-U 1 1 63A1E0DF
-P 7500 3550
-F 0 "BZ601" H 7840 3658 60  0000 L CNN
-F 1 "QMB-09B-03" H 7840 3552 60  0000 L CNN
-F 2 "GeneralPurposeAlarmDevicePCB:MagneticBuzzer_9mmx5.8mmP=4mm" H 7700 3750 60  0001 L CNN
-F 3 "2104011834_Jiangsu-Huaneng-Elec-QMB-09B-03_C96256.pdf" H 7700 3850 60  0001 L CNN
-F 4 "" H 7700 3950 60  0001 L CNN "Digi-Key_PN"
-F 5 "QMB-09B-03" H 7700 4050 60  0001 L CNN "MPN"
-F 6 "Audio Products" H 7700 4150 60  0001 L CNN "Category"
-F 7 "Alarms, Buzzers, and Sirens" H 7700 4250 60  0001 L CNN "Family"
-F 8 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" H 7700 4350 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/murata-electronics-north-america/PKMCS0909E4000-R1/490-9647-1-ND/4878401" H 7700 4450 60  0001 L CNN "DK_Detail_Page"
-F 10 "5.7mm 9mm Externally Driven 85dB@3V,10cm 2V~5V Magnetic 3V 2700Hz Plugin,P=4mm Buzzers ROHS" H 7700 4550 60  0001 L CNN "Description"
-F 11 "Jiangsu Huaneng Elec" H 7700 4650 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7700 4750 60  0001 L CNN "Status"
-F 13 "JLCPCB" H 7500 3550 50  0001 C CNN "Distirbutor 1"
-F 14 "C96256" H 7500 3550 50  0001 C CNN "Distirbutor 1 PN"
-	1    7500 3550
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 63A4299B
 P 3900 2800
@@ -1116,5 +1092,23 @@ F 7 "RMC06031K1%N" V 3900 2800 50  0001 C CNN "MPN"
 F 8 "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" H 3900 2800 50  0001 C CNN "Description"
 	1    3900 2800
 	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7400 3550 6900 3550
+$Comp
+L QMB-09B-03:QMB-09B-03 BZ601
+U 1 1 62CCB6C9
+P 7400 3550
+F 0 "BZ601" H 7692 3185 50  0000 C CNN
+F 1 "QMB-09B-03" H 7692 3276 50  0000 C CNN
+F 2 "QMB-09B-03:QMB09B03" H 8050 3650 50  0001 L CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Jiangsu-Huaneng-Elec-QMB-09B-03_C96256.pdf" H 8050 3550 50  0001 L CNN
+F 4 "Magnetic NO 2700Hz 3V 2 ~ 5V 9mm 9*5.5mm Buzzers" H 8050 3450 50  0001 L CNN "Description"
+F 5 "Jiangsu Huaneng Elec" H 8050 3250 50  0001 L CNN "Manufacturer"
+F 6 "QMB-09B-03" H 8050 3150 50  0001 L CNN "MPN"
+F 7 "JLCPCB" H 7400 3550 50  0001 C CNN "Distributor 1"
+F 8 "C96256" H 7400 3550 50  0001 C CNN "Distributor 1 PN"
+	1    7400 3550
+	1    0    0    1   
 $EndComp
 $EndSCHEMATC

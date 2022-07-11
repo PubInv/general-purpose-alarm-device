@@ -448,33 +448,6 @@ X PD5 9 -350 -800 100 U 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# GPAD_SCH_LIB_QMB-09B-03
-#
-DEF GPAD_SCH_LIB_QMB-09B-03 BZ 0 1 Y Y 1 F N
-F0 "BZ" 0 200 60 H V L CNN
-F1 "GPAD_SCH_LIB_QMB-09B-03" -100 -100 60 H V L CNN
-F2 "GeneralPurposeAlarmDevicePCB:MagneticBuzzer_9mmx5.8mmP=4mm" 200 200 60 H I L CNN
-F3 "" 200 300 60 H I L CNN
-F4 "QMB-09B-03" 200 500 60 H I L CNN "MPN"
-F5 "Audio Products" 200 600 60 H I L CNN "Category"
-F6 "Alarms, Buzzers, and Sirens" 200 700 60 H I L CNN "Family"
-F7 "https://www.murata.com/~/media/webrenewal/products/sound/sounder/vppt-buzj083-d.ashx" 200 800 60 H I L CNN "DK_Datasheet_Link"
-F8 "/product-detail/en/murata-electronics-north-america/PKMCS0909E4000-R1/490-9647-1-ND/4878401" 200 900 60 H I L CNN "DK_Detail_Page"
-F9 "5.7mm 9mm Externally Driven 85dB@3V,10cm 2V~5V Magnetic 3V 2700Hz Plugin,P=4mm Buzzers ROHS" 200 1000 60 H I L CNN "Description"
-F10 "Jiangsu Huaneng Elec" 200 1100 60 H I L CNN "Manufacturer"
-F11 "Active" 200 1200 60 H I L CNN "Status"
-F12 "JLCPCB" 0 0 50 H I C CNN "Distirbutor 1"
-F13 "C96256" 0 0 50 H I C CNN "Distirbutor 1 PN"
-DRAW
-A 200 50 71 450 -450 0 1 0 N 250 100 250 0
-A 200 50 112 634 -634 0 1 0 N 250 150 250 -50
-S 0 150 100 -50 0 1 0 f
-P 5 0 1 0 100 100 200 150 200 -50 100 0 100 100 f
-X ~ 1 -100 100 100 R 50 50 1 1 I
-X ~ 2 -100 0 100 R 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
 # GPAD_SCH_LIB_RJ12_6P6C_HORZ
 #
 DEF GPAD_SCH_LIB_RJ12_6P6C_HORZ J 0 40 Y Y 1 F N
@@ -714,6 +687,24 @@ X TNOW 6 -400 -100 100 R 50 50 1 1 O
 X VCC 7 0 600 100 D 50 50 1 1 W
 X TXD 8 400 400 100 L 50 50 1 1 O
 X RXD 9 400 300 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# QMB-09B-03_QMB-09B-03
+#
+DEF QMB-09B-03_QMB-09B-03 LS 0 30 Y Y 1 F N
+F0 "LS" 650 300 50 H V L CNN
+F1 "QMB-09B-03_QMB-09B-03" 650 200 50 H V L CNN
+F2 "QMB09B03" 650 100 50 H I L CNN
+F3 "" 650 0 50 H I L CNN
+F4 "Magnetic NO 2700Hz 3V 2 ~ 5V 9mm 9*5.5mm Buzzers" 650 -100 50 H I L CNN "Description"
+F5 "5.7" 650 -200 50 H I L CNN "Height"
+F6 "Jiangsu Huaneng Elec" 650 -300 50 H I L CNN "Manufacturer_Name"
+F7 "QMB-09B-03" 650 -400 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+P 5 0 1 6 200 100 600 100 600 -200 200 -200 200 100 N
+X 1 1 0 -100 200 R 50 50 0 0 P
+X 2 2 0 0 200 R 50 50 0 0 P
 ENDDRAW
 ENDDEF
 #
