@@ -1940,7 +1940,7 @@ Connection ~ 2400 950
 Wire Wire Line
 	2400 950  2500 950 
 Wire Wire Line
-	4350 950  4900 950 
+	4350 950  4750 950 
 $Comp
 L Device:D_Schottky D104
 U 1 1 62E0564A
@@ -2615,4 +2615,64 @@ F 3 "https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf" H 11900 535
 	1    11900 5350
 	1    0    0    -1  
 $EndComp
+$Comp
+L dk_LED-Indication-Discrete:LTL2R3KEK D105
+U 1 1 62D73675
+P 5700 1700
+F 0 "D105" H 5650 2037 60  0000 C CNN
+F 1 "LTL2R3KEK" H 5800 1950 60  0000 C CNN
+F 2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" H 5900 1900 60  0001 L CNN
+F 3 "http://optoelectronics.liteon.com/upload/download/DS-20-98-0286/LTL2R3KEK.pdf" H 5900 2000 60  0001 L CNN
+F 4 "160-1682-ND" H 5900 2100 60  0001 L CNN "Digi-Key_PN"
+F 5 "LTL2R3KEK" H 5900 2200 60  0001 L CNN "MPN"
+F 6 "Optoelectronics" H 5900 2300 60  0001 L CNN "Category"
+F 7 "LED Indication - Discrete" H 5900 2400 60  0001 L CNN "Family"
+F 8 "http://optoelectronics.liteon.com/upload/download/DS-20-98-0286/LTL2R3KEK.pdf" H 5900 2500 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/lite-on-inc/LTL2R3KEK/160-1682-ND/573572" H 5900 2600 60  0001 L CNN "DK_Detail_Page"
+F 10 "LED RED CLEAR T-1 3/4 T/H" H 5900 2700 60  0001 L CNN "Description"
+F 11 "Lite-On Inc." H 5900 2800 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5900 2900 60  0001 L CNN "Status"
+	1    5700 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R110
+U 1 1 62D74668
+P 5000 1700
+F 0 "R110" V 4800 1650 50  0000 C CNN
+F 1 "330R" V 4900 1700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4930 1700 50  0001 C CNN
+F 3 "~" H 5000 1700 50  0001 C CNN
+F 4 "JLCPCB" V 5000 1700 50  0001 C CNN "Distributor 1"
+F 5 "C269711" V 5000 1700 50  0001 C CNN "Distributor 1 PN"
+F 6 "TyoHM" V 5000 1700 50  0001 C CNN "Manufacturer"
+F 7 "RMC06033301%N" V 5000 1700 50  0001 C CNN "MPN"
+F 8 "0.1W ±1% 330Ω 0603 Chip Resistor - Surface Mount ROHS" H 5000 1700 50  0001 C CNN "Description"
+	1    5000 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR0128
+U 1 1 62D74F16
+P 6050 1700
+F 0 "#PWR0128" H 6050 1450 50  0001 C CNN
+F 1 "GND" H 6055 1527 50  0000 C CNN
+F 2 "" H 6050 1700 50  0001 C CNN
+F 3 "" H 6050 1700 50  0001 C CNN
+	1    6050 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 1700 5800 1700
+Wire Wire Line
+	4850 1700 4750 1700
+Wire Wire Line
+	4750 1700 4750 950 
+Connection ~ 4750 950 
+Wire Wire Line
+	4750 950  4900 950 
+Text Notes 4750 1900 0    50   ~ 0
+Power Indicator
+Wire Wire Line
+	5500 1700 5150 1700
 $EndSCHEMATC

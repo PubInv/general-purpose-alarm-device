@@ -765,6 +765,34 @@ X ~ 2 150 0 100 L 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
+# dk_LED-Indication-Discrete_LTL2R3KEK
+#
+DEF dk_LED-Indication-Discrete_LTL2R3KEK D 0 0 Y Y 1 F N
+F0 "D" -150 100 60 H V C CNN
+F1 "dk_LED-Indication-Discrete_LTL2R3KEK" -50 -150 60 H V C CNN
+F2 "digikey-footprints:LED_5mm_Radial" 200 200 60 H I L CNN
+F3 "http://optoelectronics.liteon.com/upload/download/DS-20-98-0286/LTL2R3KEK.pdf" 200 300 60 H I L CNN
+F4 "160-1682-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "LTL2R3KEK" 200 500 60 H I L CNN "MPN"
+F6 "Optoelectronics" 200 600 60 H I L CNN "Category"
+F7 "LED Indication - Discrete" 200 700 60 H I L CNN "Family"
+F8 "http://optoelectronics.liteon.com/upload/download/DS-20-98-0286/LTL2R3KEK.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/lite-on-inc/LTL2R3KEK/160-1682-ND/573572" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "LED RED CLEAR T-1 3/4 T/H" 200 1000 60 H I L CNN "Description"
+F11 "Lite-On Inc." 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+P 2 0 1 0 -25 150 -75 100 N
+P 2 0 1 0 0 50 0 -50 N
+P 2 0 1 0 25 125 -25 75 N
+P 3 0 1 0 -50 150 -25 150 -25 125 N
+P 3 0 1 0 0 125 25 125 25 100 N
+P 4 0 1 0 -100 50 -100 -50 0 0 -100 50 F
+X ~ 1 -200 0 100 R 50 50 1 1 P
+X ~ 2 100 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # dk_LED-Indication-Discrete_LTST-C171KRKT
 #
 DEF dk_LED-Indication-Discrete_LTST-C171KRKT D 0 0 Y Y 1 F N
