@@ -111,8 +111,8 @@ $Comp
 L dk_LED-Indication-Discrete:LTST-C171KRKT D102
 U 1 1 62B52665
 P 4800 5300
-F 0 "D102" H 4750 5637 60  0000 C CNN
-F 1 "RED 0603" H 4750 5531 60  0000 C CNN
+F 0 "D102" H 5050 5350 60  0000 C CNN
+F 1 "RED 0603" H 5150 5250 60  0000 C CNN
 F 2 "digikey-footprints:0805" H 5000 5500 60  0001 L CNN
 F 3 "http://optoelectronics.liteon.com/upload/download/DS22-2000-109/LTST-C171KRKT.pdf" H 5000 5600 60  0001 L CNN
 F 4 "JLCPCB" H 4800 5300 50  0001 C CNN "Distributor 1"
@@ -2268,7 +2268,6 @@ F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 7550 5250 50  0001 C CNN
 	1    7550 5250
 	1    0    0    -1  
 $EndComp
-NoConn ~ 7650 4250
 Wire Wire Line
 	7750 4150 7750 4050
 Connection ~ 7750 4150
@@ -2289,7 +2288,7 @@ L power:+5V #PWR0125
 U 1 1 633B9DE5
 P 7750 4050
 F 0 "#PWR0125" H 7750 3900 50  0001 C CNN
-F 1 "+5V" H 7600 4100 50  0000 C CNN
+F 1 "+5V" H 7850 4150 50  0000 C CNN
 F 2 "" H 7750 4050 50  0001 C CNN
 F 3 "" H 7750 4050 50  0001 C CNN
 	1    7750 4050
@@ -2449,178 +2448,12 @@ Wire Wire Line
 	8600 2650 9450 2650
 Text Notes 7300 3800 0    50   ~ 0
 UNO Headers
-Wire Wire Line
-	11400 6050 11200 6050
-Wire Wire Line
-	11200 5950 11400 5950
-Wire Wire Line
-	11400 5850 11200 5850
-Wire Wire Line
-	11200 5750 11400 5750
-Text GLabel 11200 6050 0    50   Output ~ 0
-SPI_SCK
-Text GLabel 11200 5950 0    50   Input ~ 0
-CIPO
-Text GLabel 11200 5850 0    50   Output ~ 0
-COPI
-Text GLabel 11200 5750 0    50   Output ~ 0
-Light4
-Wire Wire Line
-	11200 5650 11400 5650
-Text GLabel 11200 5550 0    50   Output ~ 0
-Tone
-Wire Wire Line
-	11200 5550 11400 5550
-Wire Wire Line
-	11400 5450 11200 5450
-Wire Wire Line
-	11200 5350 11400 5350
-Wire Wire Line
-	11400 5250 11200 5250
-Text GLabel 11200 5650 0    50   Output ~ 0
-Light3
-Text GLabel 11200 5450 0    50   Output ~ 0
-nCS
-Text GLabel 11200 5350 0    50   Output ~ 0
-Light2
-Text GLabel 11200 5250 0    50   Output ~ 0
-Light1
-Wire Wire Line
-	11400 5150 11200 5150
-Wire Wire Line
-	11200 5050 11400 5050
-Text GLabel 11200 5150 0    50   Output ~ 0
-Attenuate
-Text GLabel 11200 5050 0    50   Output ~ 0
-Light0
-Wire Wire Line
-	11250 4950 11400 4950
-Text GLabel 11250 4950 0    50   BiDi ~ 0
-Switch_Mute
-Wire Wire Line
-	11400 4850 11250 4850
-Wire Wire Line
-	11250 4750 11400 4750
-Text GLabel 11250 4850 0    50   Input ~ 0
-ControllerTX
-Text GLabel 11250 4750 0    50   Input ~ 0
-ControllerRX
-$Comp
-L power:+5V #PWR0126
-U 1 1 637A1AEA
-P 12100 4150
-F 0 "#PWR0126" H 12100 4000 50  0001 C CNN
-F 1 "+5V" H 11950 4200 50  0000 C CNN
-F 2 "" H 12100 4150 50  0001 C CNN
-F 3 "" H 12100 4150 50  0001 C CNN
-	1    12100 4150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	11800 4350 11800 4200
-Text GLabel 11550 4200 0    50   UnSpc ~ 0
-Vin
-Wire Wire Line
-	11550 4200 11800 4200
-Text Notes 11550 3950 0    50   ~ 0
-NANO Headers
-Wire Wire Line
-	12100 4150 12100 4350
-Wire Wire Line
-	12700 4750 12500 4750
-Text GLabel 12700 4750 2    50   UnSpc ~ 0
-nRESET
-Wire Wire Line
-	12500 4750 12500 4850
-Wire Wire Line
-	12500 4850 12400 4850
-Wire Wire Line
-	12500 4750 12400 4750
-Connection ~ 12500 4750
-Wire Wire Line
-	12400 5650 12550 5650
-Wire Wire Line
-	12550 5550 12400 5550
-Text GLabel 12550 5650 2    50   BiDi ~ 0
-PC3
-Text GLabel 12550 5550 2    50   BiDi ~ 0
-PC2
-Wire Wire Line
-	12550 5450 12400 5450
-Text GLabel 12550 5450 2    50   BiDi ~ 0
-PC1
-Wire Wire Line
-	12550 5350 12400 5350
-Text GLabel 12550 5350 2    50   BiDi ~ 0
-PC0
-Text GLabel 12700 5750 2    50   Input ~ 0
-SDA
-Text GLabel 12700 5850 2    50   Input ~ 0
-SCL
-Wire Wire Line
-	12400 5850 12700 5850
-Wire Wire Line
-	12400 5750 12700 5750
-Wire Wire Line
-	12600 5150 12400 5150
-Text GLabel 12600 5150 2    50   UnSpc ~ 0
-Aref
-Text GLabel 4650 3950 2    50   BiDi ~ 0
-ADC7
-Text GLabel 4600 4450 2    50   BiDi ~ 0
-ADC6
-Wire Wire Line
-	4450 3950 4650 3950
-Wire Wire Line
-	4450 4250 4600 4250
-Wire Wire Line
-	4600 4250 4600 4450
-Text GLabel 12650 6050 2    50   BiDi ~ 0
-ADC7
-Text GLabel 12650 5950 2    50   BiDi ~ 0
-ADC6
-Wire Wire Line
-	12400 5950 12650 5950
-Wire Wire Line
-	12650 6050 12400 6050
-$Comp
-L power:GND #PWR0127
-U 1 1 638C596A
-P 12300 6400
-F 0 "#PWR0127" H 12300 6150 50  0001 C CNN
-F 1 "GND" H 12400 6400 50  0000 C CNN
-F 2 "" H 12300 6400 50  0001 C CNN
-F 3 "" H 12300 6400 50  0001 C CNN
-	1    12300 6400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	11900 6350 11900 6400
-Wire Wire Line
-	11900 6400 12000 6400
-Wire Wire Line
-	12000 6350 12000 6400
-Connection ~ 12000 6400
-Wire Wire Line
-	12000 6400 12300 6400
-NoConn ~ 12000 4350
-$Comp
-L GPAD_SCH_LIB:Arduino_Nano_v2.x_Header A102
-U 1 1 6392FD4D
-P 11900 5350
-F 0 "A102" H 11900 4261 50  0000 C CNN
-F 1 "Arduino_Nano_v2.x_Header" H 11900 4170 50  0000 C CNN
-F 2 "Module:Arduino_Nano" H 11900 5350 50  0001 C CIN
-F 3 "https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf" H 11900 5350 50  0001 C CNN
-	1    11900 5350
-	1    0    0    -1  
-$EndComp
 $Comp
 L dk_LED-Indication-Discrete:LTL2R3KEK D105
 U 1 1 62D73675
 P 5700 1700
-F 0 "D105" H 5650 2037 60  0000 C CNN
-F 1 "LTL2R3KEK" H 5800 1950 60  0000 C CNN
+F 0 "D105" H 5850 1900 60  0000 C CNN
+F 1 "LTL2R3KEK" H 6000 1800 60  0000 C CNN
 F 2 "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" H 5900 1900 60  0001 L CNN
 F 3 "http://optoelectronics.liteon.com/upload/download/DS-20-98-0286/LTL2R3KEK.pdf" H 5900 2000 60  0001 L CNN
 F 4 "160-1682-ND" H 5900 2100 60  0001 L CNN "Digi-Key_PN"
@@ -2675,4 +2508,25 @@ Text Notes 4750 1900 0    50   ~ 0
 Power Indicator
 Wire Wire Line
 	5500 1700 5150 1700
+NoConn ~ 4450 4250
+NoConn ~ 4450 3950
+$Comp
+L Connector:TestPoint TP?
+U 1 1 62DDD6FE
+P 7100 3850
+AR Path="/62B871EE/62DDD6FE" Ref="TP?"  Part="1" 
+AR Path="/62DDD6FE" Ref="TP_3v3"  Part="1" 
+F 0 "TP_3v3" H 6700 4150 50  0000 L CNN
+F 1 "TestPoint 3.3V" H 6700 4050 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" H 7300 3850 50  0001 C CNN
+F 3 "~" H 7300 3850 50  0001 C CNN
+	1    7100 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 4250 7650 3900
+Wire Wire Line
+	7650 3900 7100 3900
+Wire Wire Line
+	7100 3900 7100 3850
 $EndSCHEMATC
