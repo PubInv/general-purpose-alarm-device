@@ -5974,7 +5974,7 @@
       (reference "A101") (unit 1) (value "Arduino_UNO_R3_Shield") (footprint "Module:Arduino_UNO_R3")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062ccb6c9"
-      (reference "BZ601") (unit 1) (value "QMB-09B-03") (footprint "QMB-09B-03:QMB09B03")
+      (reference "BZ601") (unit 1) (value "QMB-09B-03") (footprint "Buzzer_Beeper:MagneticBuzzer_PUI_AT-0927-TT-6-R")
     )
     (path "/00000000-0000-0000-0000-000062b4bd4b"
       (reference "C101") (unit 1) (value "39pF") (footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder")

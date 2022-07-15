@@ -1,5 +1,4 @@
 (fp_lib_table
-  (lib (name GeneralPurposeAlarmDevicePCB)(type KiCad)(uri ${KIPRJMOD}/GeneralPurposeAlarmDevicePCB.pretty)(options "")(descr ""))
-  (lib (name KiCad)(type KiCad)(uri ${BUZZER}/LIB_QMB-09B-03/QMB-09B-03/KiCad.pretty)(options "")(descr ""))
-  (lib (name QMB-09B-03)(type Legacy)(uri ${BUZZER}/LIB_QMB-09B-03/QMB-09B-03/KiCad/QMB-09B-03.mod)(options "")(descr ""))
+  (lib (name "GeneralPurposeAlarmDevicePCB")(type "KiCad")(uri "${KIPRJMOD}/GeneralPurposeAlarmDevicePCB.pretty")(options "")(descr ""))
+  (lib (name "KiCad")(type "KiCad")(uri "${BUZZER}/LIB_QMB-09B-03/QMB-09B-03/KiCad.pretty")(options "")(descr ""))
 )

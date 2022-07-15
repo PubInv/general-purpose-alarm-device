@@ -1,7 +1,4 @@
 (sym_lib_table
-  (lib (name GPAD_SCH_LIB)(type Legacy)(uri ${KIPRJMOD}/GPAD_SCH_LIB.lib)(options "")(descr ""))
-  (lib (name GeneralPurposeAlarmDevicePCB-rescue)(type Legacy)(uri ${KIPRJMOD}/GeneralPurposeAlarmDevicePCB-rescue.lib)(options "")(descr ""))
-  (lib (name QMB-09B-03)(type Legacy)(uri ${BUZZER}/LIB_QMB-09B-03/QMB-09B-03/KiCad/QMB-09B-03.lib)(options "")(descr ""))
-  (lib (name 2022-07-10_17-59-26)(type Legacy)(uri ${BUZZER}/ul_S04B-XASK-1-LF-SN-/KiCAD/2022-07-10_17-59-26/2022-07-10_17-59-26.lib)(options "")(descr ""))
-  (lib (name 2022-06-29_01-00-16)(type Legacy)(uri ${BUZZER}/ul_NX3225GD-8MHZ-STD-CRA-3/KiCAD/2022-06-29_01-00-16/2022-06-29_01-00-16.lib)(options "")(descr ""))
+  (lib (name "GPAD_SCH_LIB")(type "Legacy")(uri "${KIPRJMOD}/GPAD_SCH_LIB.lib")(options "")(descr ""))
+  (lib (name "GeneralPurposeAlarmDevicePCB-rescue")(type "Legacy")(uri "${KIPRJMOD}/GeneralPurposeAlarmDevicePCB-rescue.lib")(options "")(descr ""))
 )

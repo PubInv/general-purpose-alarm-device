@@ -1491,7 +1491,7 @@
     (uuid 00000000-0000-0000-0000-000062ccb6c9)
     (property "Reference" "BZ601" (id 0) (at 197.9168 99.441 0))
     (property "Value" "QMB-09B-03" (id 1) (at 197.9168 97.1296 0))
-    (property "Footprint" "QMB-09B-03:QMB09B03" (id 2) (at 189.865 87.63 90)
+    (property "Footprint" "Buzzer_Beeper:MagneticBuzzer_PUI_AT-0927-TT-6-R" (id 2) (at 189.865 87.63 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 189.865 87.63 90)
