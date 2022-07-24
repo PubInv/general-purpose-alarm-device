@@ -6347,7 +6347,7 @@
       (reference "R605") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/7008cf90-b212-49d7-8b1b-23ef20575b82"
-      (reference "RV401") (unit 1) (value "POT 0.375 10K") (footprint "GeneralPurposeAlarmDevicePCB:Potentiometer_Bourns_3386P_Vertical")
+      (reference "RV301") (unit 1) (value "POT 0.375 10K") (footprint "GeneralPurposeAlarmDevicePCB:Potentiometer_Bourns_3386P_Vertical")
     )
     (path "/00000000-0000-0000-0000-000062ba946b"
       (reference "S101") (unit 1) (value "SWITCH_TACTILE_SPST-NO_0.05A_24V") (footprint "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm")
