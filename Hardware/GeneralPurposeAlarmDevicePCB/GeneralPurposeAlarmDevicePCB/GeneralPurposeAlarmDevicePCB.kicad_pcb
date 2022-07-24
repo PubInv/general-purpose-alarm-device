@@ -3279,7 +3279,7 @@
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" (layer "F.Cu")
     (tedit 59FED5CB) (tstamp 00000000-0000-0000-0000-000062bea4ed)
-    (at 140.72 96.67 -90)
+    (at 140.97 96.52 -90)
     (descr "Through hole angled pin header, 1x04, 2.54mm pitch, 6mm pin length, single row")
     (tags "Through hole angled pin header THT 1x04 2.54mm single row")
     (property "Assembly Type" "HAND")
@@ -3395,7 +3395,7 @@
 
   (footprint "Resistor_SMD:R_0603_1608Metric" (layer "F.Cu")
     (tedit 5F68FEEE) (tstamp 00000000-0000-0000-0000-000062bea730)
-    (at 137.16 45.72 180)
+    (at 142.875 46.99 180)
     (descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor")
     (property "Description" "0.1W ±1% 39Ω 0603 Chip Resistor - Surface Mount ROHS")
@@ -3442,7 +3442,7 @@
 
   (footprint "Resistor_SMD:R_0603_1608Metric" (layer "F.Cu")
     (tedit 5F68FEEE) (tstamp 00000000-0000-0000-0000-000062bea741)
-    (at 136.715 48.26 180)
+    (at 142.875 51.435 180)
     (descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags "resistor")
     (property "Description" "0.1W ±1% 39Ω 0603 Chip Resistor - Surface Mount ROHS")
