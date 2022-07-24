@@ -924,7 +924,7 @@
 
   (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" (layer "F.Cu")
     (tedit 5A0F774F) (tstamp 00000000-0000-0000-0000-000062b478a0)
-    (at 137.16 34.29)
+    (at 136.525 31.75)
     (descr "wire loop with bead as test point, loop diameter2.548mm, hole diameter 1.5mm")
     (tags "test point wire loop bead")
     (property "Sheetfile" "LCD And I2C Interface.kicad_sch")
@@ -4150,7 +4150,7 @@
 
   (footprint "Module:Arduino_UNO_R3" (layer "F.Cu")
     (tedit 58AB60FC) (tstamp 00000000-0000-0000-0000-000062c9c549)
-    (at -66.04 128.905 90)
+    (at 88.9 73.41 90)
     (descr "Arduino UNO R3, http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf")
     (tags "Arduino UNO R3")
     (property "Sheetfile" "GeneralPurposeAlarmDevicePCB.kicad_sch")
@@ -5446,7 +5446,7 @@
 
   (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" (layer "F.Cu")
     (tedit 5A0F774F) (tstamp 00000000-0000-0000-0000-000062cde2c4)
-    (at -72.39 125.73 90)
+    (at 82.55 70.235 90)
     (descr "wire loop with bead as test point, loop diameter2.548mm, hole diameter 1.5mm")
     (tags "test point wire loop bead")
     (property "Sheetfile" "GeneralPurposeAlarmDevicePCB.kicad_sch")
@@ -5864,7 +5864,7 @@
 
   (footprint "GeneralPurposeAlarmDevicePCB:LED_5mm_Radial" (layer "B.Cu")
     (tedit 62BB92B1) (tstamp 00000000-0000-0000-0000-000062cc9daf)
-    (at 189.23 57.15)
+    (at 189.23 54.61)
     (descr "http://optoelectronics.liteon.com/upload/download/DS20-2000-343/1CHKxKNN.pdf")
     (property "Category" "Optoelectronics")
     (property "DK_Datasheet_Link" "http://optoelectronics.liteon.com/upload/download/DS-20-98-0286/LTL2R3KEK.pdf")
@@ -5910,7 +5910,7 @@
 
   (footprint "GeneralPurposeAlarmDevicePCB:Potentiometer_Bourns_3386P_Vertical" (layer "B.Cu")
     (tedit 62BCE24B) (tstamp 4aa1ac65-31d2-4965-8f2f-c1a6dfc8775b)
-    (at 182.245 45.07 90)
+    (at 182.88 41.275 90)
     (descr "Potentiometer, vertical, Bourns 3386P, https://www.bourns.com/pdfs/3386.pdf")
     (tags "Potentiometer vertical Bourns 3386P")
     (property "Assembly Type" "HAND")
