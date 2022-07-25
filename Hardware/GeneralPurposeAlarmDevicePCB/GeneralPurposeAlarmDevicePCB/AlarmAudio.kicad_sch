@@ -1869,7 +1869,7 @@
     (property "Value" "SWITCH_TACTILE_12mmx12mm_SPST-NO_0.05A_24V" (id 1) (at 88.9 115.57 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "Button_Switch_THT:SW_PUSH-12mm" (id 2) (at 93.98 115.57 0)
+    (property "Footprint" "GeneralPurposeAlarmDevicePCB:SW_PUSH-12mm_WithCap_Green" (id 2) (at 93.98 115.57 0)
       (effects (font (size 1.524 1.524)) (justify left) hide)
     )
     (property "Datasheet" "" (id 3) (at 93.98 113.03 0)

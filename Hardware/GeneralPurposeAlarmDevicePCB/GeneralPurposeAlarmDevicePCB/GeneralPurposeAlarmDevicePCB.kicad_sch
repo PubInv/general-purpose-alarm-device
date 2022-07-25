@@ -6353,7 +6353,7 @@
       (reference "S101") (unit 1) (value "SWITCH_TACTILE_SPST-NO_0.05A_24V") (footprint "GeneralPurposeAlarmDevicePCB:Switch_Tactile_THT_6x6mm")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/9067c4e2-60cf-4adf-b453-c9067dba73e5"
-      (reference "S601") (unit 1) (value "SWITCH_TACTILE_12mmx12mm_SPST-NO_0.05A_24V") (footprint "Button_Switch_THT:SW_PUSH-12mm")
+      (reference "S601") (unit 1) (value "SWITCH_TACTILE_12mmx12mm_SPST-NO_0.05A_24V") (footprint "GeneralPurposeAlarmDevicePCB:SW_PUSH-12mm_WithCap_Green")
     )
     (path "/00000000-0000-0000-0000-000062ddd6fe"
       (reference "TP_3v3") (unit 1) (value "TestPoint 3.3V") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
