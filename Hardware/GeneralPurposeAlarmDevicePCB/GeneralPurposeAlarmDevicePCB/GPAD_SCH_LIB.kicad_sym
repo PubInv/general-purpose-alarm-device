@@ -2902,7 +2902,7 @@
     (property "Distributor 1 PN" "94639A702" (id 5) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Cost" "0.0392" (id 6) (at 0 0 0)
+    (property "Cost" "0.1145" (id 6) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "ki_keywords" "Spacer_0.0182x0.125 inch" (id 7) (at 0 0 0)
