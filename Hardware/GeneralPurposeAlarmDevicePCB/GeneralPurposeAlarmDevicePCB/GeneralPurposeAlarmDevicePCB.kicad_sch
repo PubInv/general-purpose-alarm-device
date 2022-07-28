@@ -6239,6 +6239,21 @@
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-00006301024b"
       (reference "J601") (unit 1) (value "22-23-2021") (footprint "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical")
     )
+    (path "/00000000-0000-0000-0000-000062b871ee/5f619803-b5b9-4c9f-8b28-2286ea24524c"
+      (reference "MF?") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000062b871ee/756a2495-fd18-4be4-9093-457c5824c477"
+      (reference "MF?") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000062b871ee/7b9a9c27-6413-41e9-91d9-b1c74b2c007e"
+      (reference "MF?") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000062b871ee/d94dcdd4-fdb4-429b-b63e-43c138154c92"
+      (reference "MF?") (unit 1) (value "Nut_4-40_Lock,_External-Tooth") (footprint "")
+    )
+    (path "/00000000-0000-0000-0000-000062b871ee/fbcd2f6c-e85f-48ea-bb94-218dde6e448f"
+      (reference "MF?") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-000062b3ac2f/00000000-0000-0000-0000-000062d15bd1"
       (reference "Q201") (unit 1) (value "MMBT2222A-7-F") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
