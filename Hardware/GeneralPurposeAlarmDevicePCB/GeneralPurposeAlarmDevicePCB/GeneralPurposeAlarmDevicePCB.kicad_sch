@@ -5087,7 +5087,7 @@
     (property "Value" "S04B-XASK-1(LF)(SN)" (id 1) (at 243.84 69.85 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" (id 2) (at 243.84 64.77 0)
+    (property "Footprint" "GeneralPurposeAlarmDevicePCB:S04B-XASK-1(LF)(SN)" (id 2) (at 243.84 64.77 0)
       (effects (font (size 1.524 1.524)) (justify left) hide)
     )
     (property "Datasheet" "https://www.jst-mfg.com/product/pdf/eng/eXA1.pdf" (id 3) (at 241.3 64.77 0)
@@ -6373,7 +6373,7 @@
       (reference "J103") (unit 1) (value "22-23-2021") (footprint "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical")
     )
     (path "/00000000-0000-0000-0000-000062d4a7fc"
-      (reference "J105") (unit 1) (value "S04B-XASK-1(LF)(SN)") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal")
+      (reference "J105") (unit 1) (value "S04B-XASK-1(LF)(SN)") (footprint "GeneralPurposeAlarmDevicePCB:S04B-XASK-1(LF)(SN)")
     )
     (path "/00000000-0000-0000-0000-000062b93801/00000000-0000-0000-0000-000062d0d90d"
       (reference "J401") (unit 1) (value "RJ12_6P6C_HORZ") (footprint "GeneralPurposeAlarmDevicePCB:RJ12_Amphenol_54601")
