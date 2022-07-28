@@ -1912,7 +1912,7 @@
     (property "Reference" "TP501" (id 0) (at 102.87 39.37 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "TP_VccBuzzer" (id 1) (at 102.87 41.91 0)
+    (property "Value" "VccBuzzer" (id 1) (at 102.87 41.91 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" (id 2) (at 106.68 43.18 0)

@@ -5206,10 +5206,10 @@
   (symbol (lib_id "Connector:TestPoint") (at 194.31 101.6 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-000062ddd6fe)
-    (property "Reference" "TP_3v3" (id 0) (at 184.15 93.98 0)
+    (property "Reference" "TP105" (id 0) (at 184.15 93.98 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "TestPoint 3.3V" (id 1) (at 184.15 96.52 0)
+    (property "Value" "3.3V" (id 1) (at 184.15 96.52 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" (id 2) (at 199.39 101.6 0)
@@ -5558,7 +5558,7 @@
     (property "Reference" "TP102" (id 0) (at 49.53 13.97 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "TP_Vin" (id 1) (at 49.53 16.51 0)
+    (property "Value" "Vin" (id 1) (at 49.53 16.51 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" (id 2) (at 62.23 20.32 0)
@@ -5594,7 +5594,7 @@
     (property "Reference" "TP104" (id 0) (at 44.45 81.28 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "TP_VccController" (id 1) (at 36.83 83.82 0)
+    (property "Value" "VccController" (id 1) (at 36.83 83.82 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" (id 2) (at 58.42 85.09 0)
@@ -5660,7 +5660,7 @@
     (property "Reference" "TP103" (id 0) (at 105.41 17.78 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "TP_+5V" (id 1) (at 105.41 20.32 0)
+    (property "Value" "+5V" (id 1) (at 105.41 20.32 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded" (id 2) (at 118.11 24.13 0)
@@ -6411,34 +6411,34 @@
       (reference "TP101") (unit 1) (value "TP_GND") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
     )
     (path "/03b31824-c9ec-4eb2-b379-23f077cd8439"
-      (reference "TP102") (unit 1) (value "TP_Vin") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+      (reference "TP102") (unit 1) (value "Vin") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
     )
     (path "/6fcee3b3-4e61-4f69-8b79-bd71e045ce39"
-      (reference "TP103") (unit 1) (value "TP_+5V") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+      (reference "TP103") (unit 1) (value "+5V") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
     )
     (path "/30ce955d-1a78-456a-8adc-fb5342ef2400"
-      (reference "TP104") (unit 1) (value "TP_VccController") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
-    )
-    (path "/00000000-0000-0000-0000-000062bc4e7e/4d49e72a-82c3-4f7f-a0d6-3ebdc8952d81"
-      (reference "TP201") (unit 1) (value "TP_VBus") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
-    )
-    (path "/00000000-0000-0000-0000-000062bc4e7e/5d43196d-d659-4f19-9c48-4fbf1939a3e8"
-      (reference "TP202") (unit 1) (value "TP_V3") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
-    )
-    (path "/00000000-0000-0000-0000-000062b871ee/dab85703-edaf-43d3-9499-41b59d9a43e0"
-      (reference "TP401") (unit 1) (value "TP_Vcc_LCD") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
-    )
-    (path "/00000000-0000-0000-0000-000062dd8e5f/7dcf7fcf-935c-48c9-afab-acdf96e81919"
-      (reference "TP501") (unit 1) (value "TP_VccBuzzer") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+      (reference "TP104") (unit 1) (value "VccController") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
     )
     (path "/00000000-0000-0000-0000-000062ddd6fe"
-      (reference "TP_3v3") (unit 1) (value "TestPoint 3.3V") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+      (reference "TP105") (unit 1) (value "3.3V") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+    )
+    (path "/00000000-0000-0000-0000-000062bc4e7e/4d49e72a-82c3-4f7f-a0d6-3ebdc8952d81"
+      (reference "TP201") (unit 1) (value "VBus") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+    )
+    (path "/00000000-0000-0000-0000-000062bc4e7e/5d43196d-d659-4f19-9c48-4fbf1939a3e8"
+      (reference "TP202") (unit 1) (value "V3") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
     )
     (path "/00000000-0000-0000-0000-000062bc4e7e/addc1ab8-8672-45af-ab9e-760bc1b60a98"
-      (reference "TP_nCTS201") (unit 1) (value "TestPoint_nCTS") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+      (reference "TP203") (unit 1) (value "nCTS") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+    )
+    (path "/00000000-0000-0000-0000-000062b871ee/dab85703-edaf-43d3-9499-41b59d9a43e0"
+      (reference "TP401") (unit 1) (value "Vcc_LCD") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/00000000-0000-0000-0000-000062c8b28f"
-      (reference "TP_nINT301") (unit 1) (value "TestPoint_nINT") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+      (reference "TP402") (unit 1) (value "nINT") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
+    )
+    (path "/00000000-0000-0000-0000-000062dd8e5f/7dcf7fcf-935c-48c9-afab-acdf96e81919"
+      (reference "TP501") (unit 1) (value "VccBuzzer") (footprint "TestPoint:TestPoint_Loop_D2.54mm_Drill1.5mm_Beaded")
     )
     (path "/c7a20d25-3819-4e4f-aecf-c5b601fc3576"
       (reference "U101") (unit 1) (value "LM7805_TO220") (footprint "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown")
