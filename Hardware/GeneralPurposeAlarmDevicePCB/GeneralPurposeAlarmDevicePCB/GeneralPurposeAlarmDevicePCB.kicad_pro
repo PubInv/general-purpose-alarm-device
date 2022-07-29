@@ -56,6 +56,7 @@
         }
       ],
       "drc_exclusions": [
+        "malformed_courtyard|127000000|21800000|ee03c28a-fff0-495d-b649-2df1ff4bd490|00000000-0000-0000-0000-000000000000",
         "malformed_courtyard|128000000|20800000|ee03c28a-fff0-495d-b649-2df1ff4bd490|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
