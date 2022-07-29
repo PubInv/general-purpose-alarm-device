@@ -3982,7 +3982,7 @@
     (uuid 00000000-0000-0000-0000-000062b3a927)
     (property "Reference" "XTAL101" (id 0) (at 53.34 115.824 0))
     (property "Value" "16MHZ 20PF HC-49S/SMD" (id 1) (at 55.88 118.11 0))
-    (property "Footprint" "digikey-footprints:SMD-2_3.2x2.5mm" (id 2) (at 53.34 121.92 0)
+    (property "Footprint" "Crystal:Crystal_SMD_HC49-SD" (id 2) (at 53.34 121.92 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 53.34 121.92 0)
@@ -6646,6 +6646,9 @@
     (path "/00000000-0000-0000-0000-000062bc4e7e/00000000-0000-0000-0000-000062be31a7"
       (reference "#PWR0507") (unit 1) (value "GND") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-000062dd8e5f/fa5ebd36-5f6b-4b8c-867f-a63bd41bbb22"
+      (reference "#PWR0508") (unit 1) (value "GND") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062dea4d9"
       (reference "#PWR0601") (unit 1) (value "+5V") (footprint "")
     )
@@ -7000,6 +7003,9 @@
     (path "/00000000-0000-0000-0000-000062bc4e7e/00000000-0000-0000-0000-000062be320c"
       (reference "R504") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
+    (path "/00000000-0000-0000-0000-000062dd8e5f/10551ca1-d6a7-406a-82bf-3bf09f7bf6ac"
+      (reference "R505") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062dea4d3"
       (reference "R601") (unit 1) (value "1R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
@@ -7073,7 +7079,7 @@
       (reference "U501") (unit 1) (value "CH340E") (footprint "Package_SO:MSOP-10_3x3mm_P0.5mm")
     )
     (path "/00000000-0000-0000-0000-000062b3a927"
-      (reference "XTAL101") (unit 1) (value "16MHZ 20PF HC-49S/SMD") (footprint "digikey-footprints:SMD-2_3.2x2.5mm")
+      (reference "XTAL101") (unit 1) (value "16MHZ 20PF HC-49S/SMD") (footprint "Crystal:Crystal_SMD_HC49-SD")
     )
   )
 )
