@@ -1133,6 +1133,10 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 23269888-a804-4aa1-80f3-b5a8e131503e)
   )
+  (text "Place R503 near uControler TX pin." (at 177.8 93.98 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b57351e4-41ae-45ff-a37e-f2035559407f)
+  )
 
   (hierarchical_label "VBus" (shape passive) (at 212.09 76.2 0)
     (effects (font (size 1.27 1.27)) (justify left))
