@@ -123,14 +123,17 @@ In each of these phases, we imagine the API improving substantially.
 # Volunteer Skills and Skilles Needed
 
 Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
-???  Lawrence Kincheloe of Speccollective	
-???  Joe Torreggiani of Speccollective	
+
+???  Lawrence Kincheloe of Speccollective
+
+???  Joe Torreggiani of Speccollective
+
 Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretents to be electrical engineer and firmware developer and Novel Spelling.
 
 
 We need:
 1. Arduino engineers who can both code and make very simple circuits.
-2. PCB layout designers.  We are using KiCad. 
+2. Sechmeatic capture and PCB layout designers.  We are using KiCad. 
 3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
 4. Embedded firmware enginers who can design an effective, evolving API and the transport bindings that they require.
 5. GUI experts who can address issues such as how to effective alarm and silence.
