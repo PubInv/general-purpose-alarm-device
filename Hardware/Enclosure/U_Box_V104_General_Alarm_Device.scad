@@ -28,11 +28,11 @@
 
 /* [Box dimensions] */
 // - Longueur - Length  
-  Length        = 100;       
+  Length        = 110;       
 // - Largeur - Width
-  Width         = 150;                     
+  Width         = 160;                     
 // - Hauteur - Height  
-  Height        = 100;  
+  Height        = 40;  
 // - Epaisseur - Wall thickness  
   Thick         = 2;//[2:5]  
   
@@ -60,15 +60,15 @@ PCBPosX         = 0;
 // - Coin bas gauche - Low left corner Y position
 PCBPosY         = 0;
 // - Longueur PCB - PCB Length
-PCBLength       = 74;
+PCBLength       = 83.82;
 // - Largeur PCB - PCB Width
-PCBWidth        = 128;
+PCBWidth        = 137.16;
 // - Heuteur pied - Feet height
-FootHeight      = 10;
+FootHeight      = 14;
 // - Diamètre pied - Foot diameter
-FootDia         = 8;
+FootDia         = 7;
 // - Diamètre trou - Hole diameter
-FootHole        = 3;  
+FootHole        = 3.0;  
   
 
 /* [STL element to export] */
@@ -308,10 +308,10 @@ module Panel(Length,Width,Thick,Filet){
 
 //                          <- Circle hole -> 
 // Cx=Cylinder X position | Cy=Cylinder Y position | Cdia= Cylinder dia | Cheight=Cyl height
-module CylinderHole(OnOff,Cx,Cy,Cdia){
+module CylinderHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
     if(OnOff==1)
     translate([Cx,Cy,-1])
-        cylinder(d=Cdia,10, $fn=50);
+        cylinder(d=Cdia,10, $fn=50,center=Ccenter);
 }
 //                          <- Square hole ->  
 // Sx=Square X position | Sy=Square Y position | Sl= Square Length | Sw=Square Width | Filet = Round corner
@@ -359,15 +359,16 @@ module FPanL(){
     rotate([90,0,90]){
         color(Couleur2){
 //                     <- Cutting shapes from here ->  
-        SquareHole  (1,20,20,15,10,1); //(On/Off, Xpos,Ypos,Length,Width,Filet)
-        SquareHole  (1,40,20,15,10,1);
-        SquareHole  (1,60,20,15,10,1); 
-        CylinderHole(1,27,40,8);       //(On/Off, Xpos, Ypos, Diameter)
-        CylinderHole(1,47,40,8);
-        CylinderHole(1,67,40,8);
-        SquareHole  (1,20,50,80,30,3);
-        CylinderHole(1,93,30,10);
-        SquareHole  (1,120,20,30,60,3);
+        SquareHole  (1,54.61,FootHeight,9,5,1); //(On/Off, Xpos,Ypos,Length,Width,Filet)
+        SquareHole  (1,81.28,FootHeight,14,8,3);
+        SquareHole  (1,98.425,FootHeight,15,15,1);
+        SquareHole  (1,119.38,FootHeight,15,15,1); 
+        //CylinderHole(1,27,FootHeight,8);       //(On/Off, Xpos, Ypos, Diameter)
+        //CylinderHole(1,47,FootHeight,8);
+       // CylinderHole(1,67,FootHeight,8);
+        //SquareHole  (1,20,FootHeight,80,30,3);
+       // CylinderHole(1,93,FootHeight,10);
+
 //                            <- To here -> 
            }
        }
@@ -377,10 +378,10 @@ module FPanL(){
         translate ([-.5,0,0])
         rotate([90,0,90]){
 //                      <- Adding text from here ->          
-        LText(1,20,83,"Arial Black",4,"Digital Screen");//(On/Off, Xpos, Ypos, "Font", Size, "Text")
-        LText(1,120,83,"Arial Black",4,"Level");
-        LText(1,20,11,"Arial Black",6,"  1     2      3");
-        CText(1,93,29,"Arial Black",4,10,180,0,"1 . 2 . 3 . 4 . 5 . 6");//(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text")
+       // LText(1,20,83,"Arial Black",4,"Digital Screen");//(On/Off, Xpos, Ypos, "Font", Size, "Text")
+     //   LText(1,120,83,"Arial Black",4,"Level");
+        LText(1,54.61,FootHeight/2,"Arial Black",3,"USB");
+       // CText(1,93,29,"Arial Black",4,10,180,0,"1 . 2 . 3 . 4 . 5 . 6");//(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text")
 //                            <- To here ->
             }
       }
@@ -408,14 +409,17 @@ if(BShell==1)
         Coque();
         }
           color( Couleur1,1){
-             translate ([-.5,0,0]){
-                CylinderHole(1,65,18,8);
-                CylinderHole(1,65,30,8);       //(On/Off, Xpos, Ypos, Diameter)
-                CylinderHole(1,65,41,8);
-                CylinderHole(1,65,52,8);
-                CylinderHole(1,65,63,8);
-                CylinderHole(1,65,74,8);
-                SquareHole(1,28,40,26,77,3);
+             translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
+             //(On/Off, Xpos, Ypos, Diameter)
+                CylinderHole(1,15.24,15.24,13,Ccenter=true); //speaker
+                CylinderHole(1,27.94,15.24,8); //LED1      
+                CylinderHole(1,40.64,15.24,8); //LED2
+                CylinderHole(1,53.34,15.24,8); //LED3
+                CylinderHole(1,66.04,15.24,8); //LED4
+                CylinderHole(1,78.74,15.24,8); //LED5
+             //(On/Off, Xpos,Ypos,Length,Width,Filet)
+                SquareHole(1,71.12,50.8,26,77,3);   //Display
+                 SquareHole(1,0,0,1,1,0);   //Display
             }
         }
     }
