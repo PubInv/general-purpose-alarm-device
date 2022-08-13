@@ -182,7 +182,14 @@ Additionally, it would be nice to have a way to interrogate the current alarm le
 AlarmLevel getAlarm(AlarmLevel al);
 boolean isMuted();
 ```
+# A Simulation with WokWi
 
+We have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them, 
+that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.
+
+The other shows the use of the LCD.
+
+These should be integrated togther to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.
 
 # Thoughts On An Initial Enclosure
 
