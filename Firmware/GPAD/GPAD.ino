@@ -1,5 +1,5 @@
 /* GPAD_Factory_Test.ino
-  This program for factory test of hardware
+  This program for factory test of PGPAD hardware
 
   Copyright (C) 2021 Robert Read, Forrest Erickson.
 
@@ -42,7 +42,8 @@ LiquidCrystal_I2C lcd(0x27, 20, 4); // set the LCD address to 0x27 for a 16 char
 #define LIGHT3 9
 #define LIGHT4 10
 
-
+//int LIGHT[] = {3, 5, 6, 9, 10};
+int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
 
 //Functions
 
@@ -122,20 +123,19 @@ void setup() {
   Serial.println("Set up GPIO pins");
   pinMode(SWITCH_MUTE, INPUT_PULLUP);
   //pinMode(TONE_PIN, OUTPUT); //Not necessary
-  int LIGHT[] = {3,5,6,9,10};
-  for(int i =0; i<5; i++){
-  Serial.println(LIGHT[i]);
-      pinMode(LIGHT[i],OUTPUT);
-  }
-  
 
-//#define TONE_PIN 8
-//#define LIGHT0 3
-//#define LIGHT1 5
-//#define LIGHT2 6
-//#define LIGHT3 9
-//#define LIGHT4 10
-Serial.println("end set up GPIO pins");
+  for (int i = 0; i < 5; i++) {
+    Serial.println(LIGHT[i]);
+    pinMode(LIGHT[i], OUTPUT);
+    //   digitalWrite(LIGHT[i], HIGH);
+  }
+  //#define TONE_PIN 8
+  //#define LIGHT0 3
+  //#define LIGHT1 5
+  //#define LIGHT2 6
+  //#define LIGHT3 9
+  //#define LIGHT4 10
+  Serial.println("end set up GPIO pins");
 
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
@@ -145,5 +145,12 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   updateWink(); //The builtin LED.
+
+  if (digitalRead(SWITCH_MUTE) != HIGH) {
+    tone(TONE_PIN, 130);
+    Serial.println("Mute pressed.");
+  } else {
+    noTone(TONE_PIN);
+  }
 
 }//end loop()
