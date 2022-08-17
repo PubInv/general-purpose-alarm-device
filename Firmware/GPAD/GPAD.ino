@@ -148,9 +148,15 @@ void loop() {
 
   if (digitalRead(SWITCH_MUTE) != HIGH) {
     tone(TONE_PIN, 130);
-    Serial.println("Mute pressed.");
+    Serial.println("Button pressed.");
+    for (int i = 0; i < 5; i++) {
+      digitalWrite(LIGHT[i], HIGH);
+    }
   } else {
     noTone(TONE_PIN);
+    for (int i = 0; i < 5; i++) {
+      digitalWrite(LIGHT[i], LOW);
+    }
   }
 
 }//end loop()
