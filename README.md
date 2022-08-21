@@ -14,15 +14,15 @@ The GPAD does not detect the conditions that need to be alarmed. It is a periphe
 # Prototype GPAD 
 User view of GPAD With Enclosure.  *This image is only a place holder and does not well illistrate the design nor have mounting features.*
 
-<img src="./Hardware/Documentation/U_Box_V104_General_Alarm_Device.png" width="300">
+<img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
 
 User view of GPAD Printed Wiring Assembly with out enclosure  
 
-<img src="./Hardware/GeneralPurposeAlarmDevicePCB/GeneralPurposeAlarmDevicePCB/PCB_Display_Side.jpg" width="300">
+<img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">
 
 View of GPAD Printed Wiring Assembly component side.
 
-<img src="./Hardware/GeneralPurposeAlarmDevicePCB/GeneralPurposeAlarmDevicePCB/PCB_Component_Side.jpg" width="300">
+<img src="./Hardware/Documentation/PICS/PCB_Component_Side.jpg" width="300">
 
 
 # Example Use Case, The Ventilator
