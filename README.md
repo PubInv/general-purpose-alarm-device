@@ -14,7 +14,7 @@ The GPAD does not detect the conditions that need to be alarmed. It is a periphe
 # Prototype GPAD 
 User view of GPAD With Enclosure.  *This image is only a place holder and does not well illistrate the design nor have mounting features.*
 
-<img src="./Hardware/Enclosure/EnclosureIsometericView.jpg" width="300">
+<img src="./Hardware/Documentation/U_Box_V104_General_Alarm_Device.png" width="300">
 
 User view of GPAD Printed Wiring Assembly with out enclosure  
 

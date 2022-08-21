@@ -69,11 +69,15 @@ FootHeight      = 14;
 FootDia         = 7;
 // - Diamètre trou - Hole diameter
 FootHole        = 3.0;  
+// - Coin bas gauche - Low left corner X position
+FootPosX         = 5.08;
+// - Coin bas gauche - Low left corner Y position
+FootPosY         = 5.08;
   
 
 /* [STL element to export] */
 //Coque haut - Top shell
-TShell          = 0;// [0:No, 1:Yes]
+TShell          = 1;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
 BShell          = 1;// [0:No, 1:Yes]
 //Panneau avant - Front panel
@@ -238,13 +242,13 @@ module Coque(){//Coque - Shell
 module foot(FootDia,FootHole,FootHeight){
     Filet=2;
     color(Couleur1)   
-    translate([0,0,Filet-1.5])
+   // translate([3*Thick+2,Thick+5,0]+[-FootPosX,-FootPosY,Filet])
     difference(){
     
     difference(){
-            //translate ([0,0,-Thick]){
-                cylinder(d=FootDia+Filet,FootHeight-Thick, $fn=100);
-                        //}
+            translate ([0,0,Thick]){
+                cylinder(d=FootDia+Filet,FootHeight-Thick, $fn=100,center=true);
+                        }
                     rotate_extrude($fn=100){
                             translate([(FootDia+Filet*2)/2,Filet,0]){
                                     minkowski(){
@@ -260,30 +264,46 @@ module foot(FootDia,FootHole,FootHeight){
   
 module Feet(){     
 //////////////////// - PCB only visible in the preview mode - /////////////////////    
-    translate([3*Thick+2,Thick+5,FootHeight+(Thick/2)-0.5]){
+    translate([3*Thick+2,Thick+5,FootHeight+1.6/2]){
     
-    %square ([PCBLength+10,PCBWidth+10]);
-       translate([PCBLength/2,PCBWidth/2,0.5]){ 
+    %cube ([PCBLength,PCBWidth,1.6]);
+       translate([PCBLength/2,PCBWidth/2,0]){ 
         color("Olive")
         %text("PCB", halign="center", valign="center", font="Arial black");
        }
     } // Fin PCB 
   
     
-////////////////////////////// - 4 Feet - //////////////////////////////////////////     
-    translate([3*Thick+7,Thick+10,Thick/2]){
+////////////////////////////// - 4 Feet - //////////////////////////////////////////   
+//    
+//    translate([3*Thick+7,Thick+10,Thick/2]){
+//        foot(FootDia,FootHole,FootHeight);
+//    }
+//    translate([(3*Thick)+PCBLength+7,Thick+10,Thick/2]){
+//        foot(FootDia,FootHole,FootHeight);
+//        }
+//    translate([(3*Thick)+PCBLength+7,(Thick)+PCBWidth+10,Thick/2]){
+//        foot(FootDia,FootHole,FootHeight);
+//        }        
+//    translate([3*Thick+7,(Thick)+PCBWidth+10,Thick/2]){
+//        foot(FootDia,FootHole,FootHeight);
+//    }   
+
+
+    translate([3*Thick+2,Thick+5,0]){
+    translate([FootPosX,FootPosY,FootHeight/2]){
         foot(FootDia,FootHole,FootHeight);
     }
-    translate([(3*Thick)+PCBLength+7,Thick+10,Thick/2]){
+    translate([(PCBLength-FootPosX),FootPosY,FootHeight/2]){
         foot(FootDia,FootHole,FootHeight);
         }
-    translate([(3*Thick)+PCBLength+7,(Thick)+PCBWidth+10,Thick/2]){
+    translate([(PCBLength-FootPosX),(PCBWidth-FootPosY),FootHeight/2]){
         foot(FootDia,FootHole,FootHeight);
         }        
-    translate([3*Thick+7,(Thick)+PCBWidth+10,Thick/2]){
+    translate([FootPosX,PCBWidth-(FootPosY),FootHeight/2]){
         foot(FootDia,FootHole,FootHeight);
-    }   
-
+    }
+}
 } // Fin du module Feet
  
 
@@ -315,12 +335,12 @@ module CylinderHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
 }
 //                          <- Square hole ->  
 // Sx=Square X position | Sy=Square Y position | Sl= Square Length | Sw=Square Width | Filet = Round corner
-module SquareHole(OnOff,Sx,Sy,Sl,Sw,Filet){
+module SquareHole(OnOff,Sx,Sy,Sl,Sw,Filet,Ccenter=false){
     if(OnOff==1)
      minkowski(){
         translate([Sx+Filet/2,Sy+Filet/2,-1])
-            cube([Sl-Filet,Sw-Filet,10]);
-            cylinder(d=Filet,h=10, $fn=100);
+            cube([Sl-Filet,Sw-Filet,10],center=Ccenter);
+            cylinder(d=Filet,h=10, $fn=100,center=Ccenter);
        }
 }
 
@@ -411,14 +431,14 @@ if(BShell==1)
           color( Couleur1,1){
              translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
              //(On/Off, Xpos, Ypos, Diameter)
-                CylinderHole(1,15.24,15.24,13,Ccenter=true); //speaker
-                CylinderHole(1,27.94,15.24,8); //LED1      
-                CylinderHole(1,40.64,15.24,8); //LED2
-                CylinderHole(1,53.34,15.24,8); //LED3
-                CylinderHole(1,66.04,15.24,8); //LED4
-                CylinderHole(1,78.74,15.24,8); //LED5
+                CylinderHole(1,PCBLength-15.24,15.24,13,Ccenter=true); //speaker
+                CylinderHole(1,PCBLength-27.94,15.24,8); //LED1      
+                CylinderHole(1,PCBLength-40.64,15.24,8); //LED2
+                CylinderHole(1,PCBLength-53.34,15.24,8); //LED3
+                CylinderHole(1,PCBLength-66.04,15.24,8); //LED4
+                CylinderHole(1,PCBLength-78.74,15.24,8); //LED5
              //(On/Off, Xpos,Ypos,Length,Width,Filet)
-                SquareHole(1,71.12,50.8,26,77,3);   //Display
+                SquareHole(1,PCBLength-50.8,71.12,26,77,3,Ccenter=true);   //Display
                  SquareHole(1,0,0,1,1,0);   //Display
             }
         }
