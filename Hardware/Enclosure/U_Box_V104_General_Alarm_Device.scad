@@ -28,9 +28,9 @@
 
 /* [Box dimensions] */
 // - Longueur - Length  
-  Length        = 110;       
+  Length        = 83.82+13;       
 // - Largeur - Width
-  Width         = 160;                     
+  Width         = 138+13;                     
 // - Hauteur - Height  
   Height        = 40;  
 // - Epaisseur - Wall thickness  
@@ -235,6 +235,74 @@ module Coque(){//Coque - Shell
 ////////////////////////////// - Experiment - ///////////////////////////////////////////
 
 
+//Speaker Grill//
+
+module SpeakerHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
+    //difference(){
+     if(OnOff==1)
+    translate([Cx,Cy,-1]){
+        for(j = [1  : 3]){
+            echo(j);
+            rotate(a = 360*j/3,v = [0,0,1])
+        for(i = [0 : Cdia/100 : Cdia/2]){
+            rotate(a = 4*(i/Cdia)*360,v = [0,0,1])
+            translate([i,i,0])
+            
+           cylinder(d=i/6,h = 10, $fn=100,center=Ccenter); 
+            
+        }
+    }
+    }
+}
+
+//Button
+module ButtonSwitch(OnOff,Cx,Cy,Cdia,Ccenter=false){
+    //difference(){
+     if(OnOff==1)
+    translate([Cx,Cy,-1]){
+     //rotate([180,0,0])
+     
+
+
+ThreadThick = 0.20;
+ThreadWidth = 0.40;
+
+Protrusion = 0.1;
+
+HoleWindage = 0.2;
+
+//------
+// Dimensions
+
+Post = [3.8,3.8,3.0];
+
+OD = 0;
+HEIGHT =  FootHeight;
+DOMEHEIGHT = 1;
+
+Button = [12,0+Post[2],6*ThreadThick];
+
+NumSides = 8*4;
+
+//----------------------
+//- Build it
+
+difference() {
+	union() {
+        translate([0,0,3*Thick])
+        cylinder(d=Cdia+Thick,h=Thick,$fn=NumSides);
+		translate([0,0,0])
+			resize([0,0,2*Button[DOMEHEIGHT]])
+				sphere(d=0.9*Cdia/cos(180/NumSides),$fn=NumSides);
+		cylinder(d=0.9*Cdia,h=FootHeight,$fn=NumSides);
+        
+	}
+
+	translate([0,0,Post[2]/2 - Protrusion])
+		cube(Post + [HoleWindage,HoleWindage,Protrusion],center=true);
+}
+    }
+}
 
 
 
@@ -301,6 +369,9 @@ module Feet(){
         foot(FootDia,FootHole,FootHeight);
         }        
     translate([FootPosX,PCBWidth-(FootPosY),FootHeight/2]){
+        foot(FootDia,FootHole,FootHeight);
+    }
+    translate([(PCBLength-FootPosX),(PCBWidth-68.58),FootHeight/2]){
         foot(FootDia,FootHole,FootHeight);
     }
 }
@@ -431,7 +502,7 @@ if(BShell==1)
           color( Couleur1,1){
              translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
              //(On/Off, Xpos, Ypos, Diameter)
-                CylinderHole(1,PCBLength-15.24,15.24,13,Ccenter=true); //speaker
+                SpeakerHole(1,PCBLength-15.24,15.24,11,Ccenter=true); //speaker
                 CylinderHole(1,PCBLength-27.94,15.24,8); //LED1      
                 CylinderHole(1,PCBLength-40.64,15.24,8); //LED2
                 CylinderHole(1,PCBLength-53.34,15.24,8); //LED3
@@ -439,11 +510,16 @@ if(BShell==1)
                 CylinderHole(1,PCBLength-78.74,15.24,8); //LED5
              //(On/Off, Xpos,Ypos,Length,Width,Filet)
                 SquareHole(1,PCBLength-50.8,71.12,26,77,3,Ccenter=true);   //Display
-                 SquareHole(1,0,0,1,1,0);   //Display
+                CylinderHole(1,PCBLength-15.24,68.58,1); //reset hole
+                CylinderHole(1,PCBLength-10,31.75,15); //Mute Button
+                 SquareHole(1,0,0,1,1,0);   //testing
             }
         }
     }
-
+    
+    translate( [3*Thick+2,Thick+5,0])     
+    ButtonSwitch(1,PCBLength-10,31.75,15); //Mute Button
+    
 // Pied support PCB - PCB feet
 if (PCBFeet==1)
 // Feet
