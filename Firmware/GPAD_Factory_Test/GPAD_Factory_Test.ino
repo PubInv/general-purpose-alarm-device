@@ -31,7 +31,7 @@ unsigned long nextLEDchange = 100; //time in ms.
 #include <Wire.h>
 //For LCD
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd(0x27, 20, 4); // set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 16 chars and 2 line display
 
 //Pin definitions
 #define SWITCH_MUTE 2
