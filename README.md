@@ -3,16 +3,16 @@ This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm D
 This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition. 
 * Flash bright lights
 * Make loud tones
-* Button to "mute" or suppess the alarm condition.
+* Button to "mute" or suppress the alarm condition.
 * Text display for messages (20x4 characters)
 * Power from wall supply on barrel jack 2.1mm at 9-12V <= 1000mA (or from host controling device at 5V or 12V)
 * RJ12 Data Cable connection for signal (and optional power) between host and GPAD.
-* An I2C output for controlle of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
+* An I2C output for control of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
-The GPAD does not detect the conditions that need to be alarmed. It is a peripherial to a controling host device which will assert status through the GPAD to an end user.
+The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device which will assert status through the GPAD to an end user.
 
 # Prototype GPAD 
-User view of GPAD With Enclosure.  *This image is only a place holder and does not well illistrate the design nor have mounting features.*
+User view of GPAD With Enclosure.  *This image is only a place holder and does not well illustrate the design nor have mounting features.*
 
 <img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
 
@@ -45,35 +45,35 @@ We hope that by defining a clearly versioned API we can make an evolving device 
 
 # Stand-alone or Sub-assembly
 
-Our design includs a pwrinted wireing assembly and an enclosure.  
-The printed wireing assembly could be designed into a devcie with our our enclosure. Full documentation provided.
+Our design includes a printed wiring assembly and an enclosure.  
+The printed wiring assembly could be designed into a device with our our enclosure. Full documentation provided.
 We believe a loosely-coupled physical device is the most repurposable.  Such a device would have its own independent power supply.
 However, there are clearly use cases when the same module should be integrated into the physical case, power system, and even printed
 circuit board of other systems. We therefore seek design flexibility that supports all of these usage modes.
 
 # The Arduino UNO Like Platform 
 
-The implimenration is Arduno UNO like. A USB inteface to an ATmega328 controler is provided for Arduino IDE compatiability. 
+The implementation is Arduino UNO like. A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility. 
 UNO foot print for shields is provided.
-This allows a typical Arudino serial port interface for development and debugging.
+This allows a typical Arduino serial port interface for development and debugging.
 
 # How is the alarm signal received?
 
-The wired connection from a host is an SPI controller and the GPAD is an SPI Peripherial. 
+The wired connection from a host is an SPI controller and the GPAD is an SPI Peripheral. 
 
-A wireless interface may be added through a UNO shield. (Compatability with existing wirless sheilds has not been checked. A custom shield with a wirless interface to some of the unused controler pins should be possible but may not be trivial.) 
+A wireless interface may be added through a UNO shield. (Compatibility with existing wireless shields has not been checked. A custom shield with a wireless interface to some of the unused controller pins should be possible but may not be trivial.) 
 
 
 # Summer 2022 Project Status
 
 ### Firmware 
-Demonstration of SPI controller and Peripherial for single byte transmission.
+Demonstration of SPI controller and Peripheral for single byte transmission.
 
 ### Hardware
 1. Schematic with distributor part numbers through review. Many parts have two distributor part numbers identified.
 2. PCB design is through review.
 3. Beginning order of long lead parts.
-4. Prepariing BOM to order PCBs and SMT assmbly though JLCPCB.
+4. Preparing BOM to order PCBs and SMT assembly though JLCPCB.
 
 
 
@@ -82,13 +82,13 @@ Demonstration of SPI controller and Peripherial for single byte transmission.
 ## Phase I aka Version 1
 
 * Light alert by five, 5mm white LEDs driven at about 20 mA.
-* Acustic alert by buzzer driven by push pull some what less than 5Vp-p.
+* Acoustic alert by buzzer driven by push pull some what less than 5Vp-p.
 * Text display with back lit, 20x4 character LCD.
 * Single User Button 
 * Recessed reset button.
 * Power on status LED
-* USB port for Firmware development and low power opperation
-* An I2C output for controlle of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
+* USB port for Firmware development and low power operation
+* An I2C output for controller of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
 Still remaining: define a simple API.
 We imagine these hardware choices will evolve over time. We want the API to insulate the user of the GPAD 
@@ -143,7 +143,7 @@ We need:
 # The Potential for a Product
 
 Like everything done by Public Invention, this is a fully open project that will be released under fully open hardware and software licenses.
-However, unlike many of our projects which are very "researchy" this project could become a salable product pretty easily.
+However, unlike many of our projects which are very "researchy" this project could become a scalable product pretty easily.
 One can imagine it being sold at Sparkfun, Adafruit, or DigiKey if we do a good job.
 Because it could be used for a wide variety of purposes by makers and could be sold with an enclosure at a price of perhaps <=$100USD
 As an embeddes sub assembly the printed wiring assembly must be low cost with a material price of < $30USD
