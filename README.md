@@ -16,7 +16,7 @@ User view of GPAD With Enclosure.  *This image is only a place holder and does n
 
 <img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
 
-User view of GPAD Printed Wiring Assembly with out enclosure  
+User view of GPAD Printed Wiring Assembly without enclosure.  
 
 <img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">
 
@@ -38,7 +38,7 @@ Additionally, an alarm condition normally has a short message associated with it
 should potentially be displayed on a small screen.
 
 The initial version of this API can be extraordinarily simple: Alarm at a level between zero and five, where zero means no alarm.
-However, it is clearn this API will have to evolve over time. Issues such as when one alarm level supercedes another, when it is 
+However, it is clear this API will have to evolve over time. Issues such as when one alarm level supersedes another, when it is 
 acceptable to silence an alarm and for how long, etc. actually become rather complicated quickly.
 
 We hope that by defining a clearly versioned API we can make an evolving device of great utility for a wide variety of purposes.
@@ -95,7 +95,7 @@ We imagine these hardware choices will evolve over time. We want the API to insu
 from specific details of how the noise is made.
 
 Nonetheless, we can make a few comments.
-1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDS supporting 5 levels of alarm color or brightness.
+1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDs supporting 5 levels of alarm color or brightness.
 2. Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying "She canna' take the strain, Captain!" in a Scottish accent.
 
 The physical implementation is an customer PCB and custom 3D printable enclosure.
@@ -109,7 +109,7 @@ In Phase II, we can imagine a large number of improvements:
 3. Improvements in the API.
 4. A display screen which allows a short message to be displayed.
 5. One or more buttons of controls which allows the GPAD to be silenced to avoid "alarm fatigue".
-6. A simple JST connector to suport an SPI interface.
+6. A simple JST connector to support an SPI interface.
 
 ## Phase III
 
@@ -128,14 +128,14 @@ Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
 
 ???  Joe Torreggiani of Speccollective
 
-Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretents to be electrical engineer and firmware developer and Novel Spelling.
+Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretends to be electrical engineer and firmware developer and Novel Spelling.
 
 
 We need:
 1. Arduino engineers who can both code and make very simple circuits.
-2. Sechmeatic capture and PCB layout designers.  We are using KiCad. 
+2. Schematic capture and PCB layout designers.  We are using KiCad. 
 3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
-4. Embedded firmware enginers who can design an effective, evolving API and the transport bindings that they require.
+4. Embedded firmware engineers who can design an effective, evolving API and the transport bindings that they require.
 5. GUI experts who can address issues such as how to effective alarm and silence.
 6. Marketers who can promote and evangelize the project.
 7. Possible a project manager who can organize volunteers and keep them enthused and motivated to move forward.
@@ -146,9 +146,9 @@ Like everything done by Public Invention, this is a fully open project that will
 However, unlike many of our projects which are very "researchy" this project could become a scalable product pretty easily.
 One can imagine it being sold at Sparkfun, Adafruit, or DigiKey if we do a good job.
 Because it could be used for a wide variety of purposes by makers and could be sold with an enclosure at a price of perhaps <=$100USD
-As an embeddes sub assembly the printed wiring assembly must be low cost with a material price of < $30USD
+As an embedded sub assembly the printed wiring assembly must be low cost with a material price of < $30USD
 
-Potential uses as a product (by hobbiest) include:
+Potential uses as a product (by hobbyist) include:
 1. Alarming a cat door, bird or squirl at feeder, 
 2. Alarming when a visual signal, such as an animal moving in a game camera is detected
 3. Annunciation of life-threatening conditions in medical devices
@@ -189,7 +189,7 @@ that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https
 
 The other shows the use of the LCD.
 
-These should be integrated togther to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.
+These should be integrated together to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.
 
 # Thoughts On An Initial Enclosure
 
