@@ -77,13 +77,13 @@ FootPosY         = 5.08;
 
 /* [STL element to export] */
 //Coque haut - Top shell
-TShell          = 1;// [0:No, 1:Yes]
+TShell          = 00;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
 BShell          = 1;// [0:No, 1:Yes]
 //Panneau avant - Front panel
-FPanL           = 1;// [0:No, 1:Yes]
+FPanL           = 0;// [0:No, 1:Yes]
 //Panneau arrière - Back panel  
-BPanL           = 1;// [0:No, 1:Yes]
+BPanL           = 0;// [0:No, 1:Yes]
 
 
   
@@ -244,11 +244,11 @@ module SpeakerHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
         for(j = [1  : 3]){
             echo(j);
             rotate(a = 360*j/3,v = [0,0,1])
-        for(i = [0 : Cdia/100 : Cdia/2]){
-            rotate(a = 4*(i/Cdia)*360,v = [0,0,1])
+        for(i = [0 : Cdia/60 : Cdia/2]){
+            rotate(a = 6*(i/Cdia)*360,v = [0,0,1])
             translate([i,i,0])
             
-           cylinder(d=i/6,h = 10, $fn=100,center=Ccenter); 
+           cylinder(d=i/4,h = 10, $fn=100,center=Ccenter); 
             
         }
     }
@@ -332,7 +332,7 @@ module foot(FootDia,FootHole,FootHeight){
   
 module Feet(){     
 //////////////////// - PCB only visible in the preview mode - /////////////////////    
-    translate([3*Thick+2,Thick+5,FootHeight+1.6/2]){
+    translate([3*Thick+2,Thick+5,Thick+FootHeight]){
     
     %cube ([PCBLength,PCBWidth,1.6]);
        translate([PCBLength/2,PCBWidth/2,0]){ 
@@ -358,7 +358,7 @@ module Feet(){
 //    }   
 
 
-    translate([3*Thick+2,Thick+5,0]){
+    translate([3*Thick+2,Thick+5,Thick/2-.01]){
     translate([FootPosX,FootPosY,FootHeight/2]){
         foot(FootDia,FootHole,FootHeight);
     }
@@ -503,16 +503,17 @@ if(BShell==1)
              translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
              //(On/Off, Xpos, Ypos, Diameter)
                 SpeakerHole(1,PCBLength-15.24,15.24,11,Ccenter=true); //speaker
-                CylinderHole(1,PCBLength-27.94,15.24,8); //LED1      
-                CylinderHole(1,PCBLength-40.64,15.24,8); //LED2
-                CylinderHole(1,PCBLength-53.34,15.24,8); //LED3
-                CylinderHole(1,PCBLength-66.04,15.24,8); //LED4
-                CylinderHole(1,PCBLength-78.74,15.24,8); //LED5
+                CylinderHole(1,PCBLength-27.94,15.24,4.5); //LED1      
+                CylinderHole(1,PCBLength-40.64,15.24,4.5); //LED2
+                CylinderHole(1,PCBLength-53.34,15.24,4.5); //LED3
+                CylinderHole(1,PCBLength-66.04,15.24,4.5); //LED4
+                CylinderHole(1,PCBLength-78.74,15.24,4.5); //LED5
+                CylinderHole(1,PCBLength-46.99,PCBWidth-FootPosX,4.5); //LED6 power
              //(On/Off, Xpos,Ypos,Length,Width,Filet)
-                SquareHole(1,PCBLength-50.8,71.12,26,77,3,Ccenter=true);   //Display
+                SquareHole(1,PCBLength-50.8,71.12,26,76,0,Ccenter=true);   //Display
                 CylinderHole(1,PCBLength-15.24,68.58,1); //reset hole
                 CylinderHole(1,PCBLength-10,31.75,15); //Mute Button
-                 SquareHole(1,0,0,1,1,0);   //testing
+                // SquareHole(1,PCBLength-63.87,33.12,1,1,0,Ccenter=true);   //testing
             }
         }
     }
