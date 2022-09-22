@@ -1,11 +1,11 @@
-# Manufacturing and Unit Test Documentation, PCB Version 1 Protptyep#1, 20220726
+# Manufacturing and Unit Test Documentation, PCB Version 1 Prototype#1, 20220726
 Assenbly Notes
 
 Manufacturing test procedure for every unit
 
-Unit (Design) everification tests on some units
+Unit (Design) verification tests on some units
 
-GPAD Theory of Opperation
+GPAD Theory of Operation
 
 Troubleshooting procedures
 
@@ -13,11 +13,11 @@ Troubleshooting procedures
 ## Manufacturing test procedure for every unit
 
 ### Assembly Notes
-Assumed that the assembly has the SMT components placed by the board manufacturier. Only through hole or other non SMT compoonents are then placed by hand.
+Assumed that the assembly has the SMT components placed by the board manufacturer. Only through hole or other non SMT components are then placed by hand.
 
-The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Nylon spacers are placed at the four courners of the LCD sub module. Screws with nuts go through both boards and are torquted to **???4???** Inch-Pounds. 
+The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Nylon spacers are placed at the four corners of the LCD sub module. Screws with nuts go through both boards and are torqued to **???4???** Inch-Pounds. 
 
-**NOTE** on the Version 1 PCB, the cathod flat marking on J105 is backwards. Place the RED LED in so that the flat cathode side is "in board".
+**NOTE** on the Version 1 PCB, the cathode flat marking on J105 is backwards. Place the RED LED in so that the flat cathode side is "in board".
 
 Solder the through hole LEDs at locations D201-D205 and D105 with a **TBD** spacer, holding them up from the PCB by TBD inches. 
 
@@ -39,12 +39,12 @@ Start with no connections to the DUT (Device Under Test).
 **+5V net** Measure resistance to ground at TP103 +5 as greater than **TBD** ohms.
 
 With a current limited supply set for 12V and maximum of **TBD** mA apply power at J101 and note current.
-Unprogramed first time power up current is normaly about **TBD** mA
+Unprogrammed, the first time power up current is normally about **TBD** mA.
 Programmed part that has been powered up, and with display back light on, Hold the reset swithc and measure current as about **61** mA
 
 
 ### Load Firmware
-Use an Arduino UNO as an ISP (Incircuit Serial Programer). 
+Use an Arduino UNO as an ISP (Incircuit Serial Programmer). 
 Load the sketch "ArduinoISP". 
 ![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
 
@@ -56,7 +56,7 @@ Select the board type to "Arduino Duemilanove..." .
 
 Select the Processor type to "ATmega328P" .  
 
-Select the programer type.  
+Select the programmer type.  
 ![ToolsProgramer.gif](ToolsProgramer.gif)
 
 
@@ -103,12 +103,21 @@ Watch the progress bar in the IDE and look for success with the message "Done up
 Connect a USB cable to the DUT. Note the COM port enumerated in Device Manager Ports(COM&LPT) drop down
   ![DeviceManager.gif](DeviceManager.gif)
   
-Open a terminal to the COM port of the DUT and set for appproate BAUD rate. 
+Open a terminal to the COM port of the DUT and set for appropriate BAUD rate. 
 Press the reset switch on the DUT and the LCD display should display a message. The terminal should display a boot message too. This example is of a RealTerminal connected to the DUT.
   
   ![DUT_TerminalBoot.gif](DUT_TerminalBoot.gif)
   
+  Press the Mute Switch S601 and the white LEDs D201-D205 should light. The Buzzer will make a sound.
   
+  Check that the power LED D105 is lit and is RED.
+  
+  
+# TO DO Future tests:  
+ * Connect the DUT to an SPI controller and test SPI interface.  
+ * Connect the DUT to an I2C peripheral device and test the I2C daisy chain output.  
+ * Walking One test of LEDs D201-D205.   
+ * Test for Amplitude Modulation of Buzzer.  
   
 
   
