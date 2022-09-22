@@ -3,20 +3,20 @@ This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm D
 This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition. 
 * Flash bright lights
 * Make loud tones
-* Button to "mute" or suppess the alarm condition.
+* Button to "mute" or suppress the alarm condition.
 * Text display for messages (20x4 characters)
 * Power from wall supply on barrel jack 2.1mm at 9-12V <= 1000mA (or from host controling device at 5V or 12V)
 * RJ12 Data Cable connection for signal (and optional power) between host and GPAD.
-* An I2C output for controlle of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
+* An I2C output for control of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
-The GPAD does not detect the conditions that need to be alarmed. It is a peripherial to a controling host device which will assert status through the GPAD to an end user.
+The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device which will assert status through the GPAD to an end user.
 
 # Prototype GPAD 
-User view of GPAD With Enclosure.  *This image is only a place holder and does not well illistrate the design nor have mounting features.*
+User view of GPAD With Enclosure.  *This image is only a place holder and does not well illustrate the design nor have mounting features.*
 
 <img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
 
-User view of GPAD Printed Wiring Assembly with out enclosure  
+User view of GPAD Printed Wiring Assembly without enclosure.  
 
 <img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">
 
@@ -38,42 +38,42 @@ Additionally, an alarm condition normally has a short message associated with it
 should potentially be displayed on a small screen.
 
 The initial version of this API can be extraordinarily simple: Alarm at a level between zero and five, where zero means no alarm.
-However, it is clearn this API will have to evolve over time. Issues such as when one alarm level supercedes another, when it is 
+However, it is clear this API will have to evolve over time. Issues such as when one alarm level supersedes another, when it is 
 acceptable to silence an alarm and for how long, etc. actually become rather complicated quickly.
 
 We hope that by defining a clearly versioned API we can make an evolving device of great utility for a wide variety of purposes.
 
 # Stand-alone or Sub-assembly
 
-Our design includs a pwrinted wireing assembly and an enclosure.  
-The printed wireing assembly could be designed into a devcie with our our enclosure. Full documentation provided.
+Our design includes a printed wiring assembly and an enclosure.  
+The printed wiring assembly could be designed into a device with our our enclosure. Full documentation provided.
 We believe a loosely-coupled physical device is the most repurposable.  Such a device would have its own independent power supply.
 However, there are clearly use cases when the same module should be integrated into the physical case, power system, and even printed
 circuit board of other systems. We therefore seek design flexibility that supports all of these usage modes.
 
 # The Arduino UNO Like Platform 
 
-The implimenration is Arduno UNO like. A USB inteface to an ATmega328 controler is provided for Arduino IDE compatiability. 
+The implementation is Arduino UNO like. A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility. 
 UNO foot print for shields is provided.
-This allows a typical Arudino serial port interface for development and debugging.
+This allows a typical Arduino serial port interface for development and debugging.
 
 # How is the alarm signal received?
 
-The wired connection from a host is an SPI controller and the GPAD is an SPI Peripherial. 
+The wired connection from a host is an SPI controller and the GPAD is an SPI Peripheral. 
 
-A wireless interface may be added through a UNO shield. (Compatability with existing wirless sheilds has not been checked. A custom shield with a wirless interface to some of the unused controler pins should be possible but may not be trivial.) 
+A wireless interface may be added through a UNO shield. (Compatibility with existing wireless shields has not been checked. A custom shield with a wireless interface to some of the unused controller pins should be possible but may not be trivial.) 
 
 
 # Summer 2022 Project Status
 
 ### Firmware 
-Demonstration of SPI controller and Peripherial for single byte transmission.
+Demonstration of SPI controller and Peripheral for single byte transmission.
 
 ### Hardware
 1. Schematic with distributor part numbers through review. Many parts have two distributor part numbers identified.
 2. PCB design is through review.
 3. Beginning order of long lead parts.
-4. Prepariing BOM to order PCBs and SMT assmbly though JLCPCB.
+4. Preparing BOM to order PCBs and SMT assembly though JLCPCB.
 
 
 
@@ -82,20 +82,20 @@ Demonstration of SPI controller and Peripherial for single byte transmission.
 ## Phase I aka Version 1
 
 * Light alert by five, 5mm white LEDs driven at about 20 mA.
-* Acustic alert by buzzer driven by push pull some what less than 5Vp-p.
+* Acoustic alert by buzzer driven by push pull some what less than 5Vp-p.
 * Text display with back lit, 20x4 character LCD.
 * Single User Button 
 * Recessed reset button.
 * Power on status LED
-* USB port for Firmware development and low power opperation
-* An I2C output for controlle of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
+* USB port for Firmware development and low power operation
+* An I2C output for controller of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
 Still remaining: define a simple API.
 We imagine these hardware choices will evolve over time. We want the API to insulate the user of the GPAD 
 from specific details of how the noise is made.
 
 Nonetheless, we can make a few comments.
-1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDS supporting 5 levels of alarm color or brightness.
+1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDs supporting 5 levels of alarm color or brightness.
 2. Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying "She canna' take the strain, Captain!" in a Scottish accent.
 
 The physical implementation is an customer PCB and custom 3D printable enclosure.
@@ -109,7 +109,7 @@ In Phase II, we can imagine a large number of improvements:
 3. Improvements in the API.
 4. A display screen which allows a short message to be displayed.
 5. One or more buttons of controls which allows the GPAD to be silenced to avoid "alarm fatigue".
-6. A simple JST connector to suport an SPI interface.
+6. A simple JST connector to support an SPI interface.
 
 ## Phase III
 
@@ -128,14 +128,14 @@ Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
 
 ???  Joe Torreggiani of Speccollective
 
-Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretents to be electrical engineer and firmware developer and Novel Spelling.
+Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretends to be electrical engineer and firmware developer and Novel Spelling.
 
 
 We need:
 1. Arduino engineers who can both code and make very simple circuits.
-2. Sechmeatic capture and PCB layout designers.  We are using KiCad. 
+2. Schematic capture and PCB layout designers.  We are using KiCad. 
 3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
-4. Embedded firmware enginers who can design an effective, evolving API and the transport bindings that they require.
+4. Embedded firmware engineers who can design an effective, evolving API and the transport bindings that they require.
 5. GUI experts who can address issues such as how to effective alarm and silence.
 6. Marketers who can promote and evangelize the project.
 7. Possible a project manager who can organize volunteers and keep them enthused and motivated to move forward.
@@ -143,12 +143,12 @@ We need:
 # The Potential for a Product
 
 Like everything done by Public Invention, this is a fully open project that will be released under fully open hardware and software licenses.
-However, unlike many of our projects which are very "researchy" this project could become a salable product pretty easily.
+However, unlike many of our projects which are very "researchy" this project could become a scalable product pretty easily.
 One can imagine it being sold at Sparkfun, Adafruit, or DigiKey if we do a good job.
 Because it could be used for a wide variety of purposes by makers and could be sold with an enclosure at a price of perhaps <=$100USD
-As an embeddes sub assembly the printed wiring assembly must be low cost with a material price of < $30USD
+As an embedded sub assembly the printed wiring assembly must be low cost with a material price of < $30USD
 
-Potential uses as a product (by hobbiest) include:
+Potential uses as a product (by hobbyist) include:
 1. Alarming a cat door, bird or squirl at feeder, 
 2. Alarming when a visual signal, such as an animal moving in a game camera is detected
 3. Annunciation of life-threatening conditions in medical devices
@@ -189,7 +189,7 @@ that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https
 
 The other shows the use of the LCD.
 
-These should be integrated togther to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.
+These should be integrated together to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.
 
 # Thoughts On An Initial Enclosure
 

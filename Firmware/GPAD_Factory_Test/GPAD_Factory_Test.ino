@@ -15,8 +15,15 @@
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+  Change notes:
+  20220922 Add version report on serial output and LCD.
+  Change for BUZZER_TEST_FREQ - 4000 KHz the resonant frequency of the V1 buzzer.
+  Was //tone(TONE_PIN, 130) for approximatly note C3 or middle C.
+  
 */
 
+#define VERSION 1.2             //Version of this software
 #define BAUDRATE 115200
 
 //Set LED for Uno or ESP32 Dev Kit on board blue LED.
@@ -26,12 +33,13 @@ const int HIGH_TIME_LED = 800;
 const int LOW_TIME_LED = 200;
 unsigned long lastLEDtime = 0;
 unsigned long nextLEDchange = 100; //time in ms.
+const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10cm
 
 //For I2C Scan
 #include <Wire.h>
 //For LCD
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
 
 //Pin definitions
 #define SWITCH_MUTE 2
@@ -73,12 +81,11 @@ void splashLCD(void) {
   lcd.setCursor(0, 2);
   lcd.print("by Public Invention");
   lcd.setCursor(0, 3);
-  lcd.print("********************");
-
-}
+  lcd.print("Version: ");
+  lcd.print(VERSION);
+}// end splashLCD
 
 //Scan I2C
-
 void scanI2C(void) {
   Serial.println ();
   Serial.println ("I2C scanner. Scanning ...");
@@ -112,6 +119,9 @@ void setup() {
   delay(100);
   pinMode(LED_BUILTIN, OUTPUT);      // set the LED pin mode
   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  //  Serial.println("FactoryTest V1.2");
+  Serial.print("FactoryTest V");
+  Serial.println(VERSION);
   Serial.println("Start I2C scan");
   scanI2C();
   Serial.println("End I2C scan");
@@ -147,7 +157,7 @@ void loop() {
   updateWink(); //The builtin LED.
 
   if (digitalRead(SWITCH_MUTE) != HIGH) {
-    tone(TONE_PIN, 130);
+    tone(TONE_PIN, BUZZER_TEST_FREQ);
     Serial.println("Button pressed.");
     for (int i = 0; i < 5; i++) {
       digitalWrite(LIGHT[i], HIGH);
