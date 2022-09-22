@@ -44,7 +44,22 @@ Programmed part that has been powered up, and with display back light on, Hold t
 
 
 ### Load Firmware
-Use an Arduino UNO as an ISP (Incircuit Serial Programer). Load the sketch "ArduinoISP". Select the serial port for the ISP, UNO and program with the "ArduinoISP". 
+Use an Arduino UNO as an ISP (Incircuit Serial Programer). 
+Load the sketch "ArduinoISP". 
+![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
+
+Select the serial port for the ISP, UNO and compile and upload with the "ArduinoISP" by pressing **<Ctrl>U**. 
+![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
+
+Select the board type to "Arduino Duemilanove..." .  
+![ToolsBoardManager.gif](ToolsBoardManager.gif)
+
+Select the Processor type to "ATmega328P" .  
+
+Select the programer type.  
+![ToolsProgramer.gif](ToolsProgramer.gif)
+
+
 Connect the ISP UNO to the DUT as follows:
 <table>
   <tr>
@@ -80,3 +95,21 @@ Connect the ISP UNO to the DUT as follows:
   
 </table>
 
+In the Arduino IDE, open the file "GPAD_Factory_Test.ino".  
+  Using the Arduino IDE, instruct the ISP UNO to Upload to the DUT the "GPAD_Factory_Test.ino"
+![UploadUsingProgrammer.gif](UploadUsingProgrammer.gif)
+Watch the progress bar in the IDE and look for success with the message "Done uploading" in the blue status bar.
+  
+Connect a USB cable to the DUT. Note the COM port enumerated in Device Manager Ports(COM&LPT) drop down
+  ![DeviceManager.gif](DeviceManager.gif)
+  
+Open a terminal to the COM port of the DUT and set for appproate BAUD rate. 
+Press the reset switch on the DUT and the LCD display should display a message. The terminal should display a boot message too. This example is of a RealTerminal connected to the DUT.
+  
+  ![DUT_TerminalBoot.gif](DUT_TerminalBoot.gif)
+  
+  
+  
+
+  
+  
