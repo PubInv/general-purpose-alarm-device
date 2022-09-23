@@ -20,10 +20,11 @@
   20220922 Add version report on serial output and LCD.
   Change for BUZZER_TEST_FREQ - 4000 KHz the resonant frequency of the V1 buzzer.
   Was //tone(TONE_PIN, 130) for approximatly note C3 or middle C.
+  20220923 Clear the LCD and turn off back light at start up before writing to it. Other test frequencies for speakers.
   
 */
 
-#define VERSION 1.2             //Version of this software
+#define VERSION 1.21             //Version of this software
 #define BAUDRATE 115200
 
 //Set LED for Uno or ESP32 Dev Kit on board blue LED.
@@ -33,7 +34,9 @@ const int HIGH_TIME_LED = 800;
 const int LOW_TIME_LED = 200;
 unsigned long lastLEDtime = 0;
 unsigned long nextLEDchange = 100; //time in ms.
-const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10cm
+//const int BUZZER_TEST_FREQ = 130; // Middle C. About 67 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
+const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10 cm
+//const int BUZZER_TEST_FREQ = 1000; //About 76 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
 
 //For I2C Scan
 #include <Wire.h>
@@ -68,6 +71,16 @@ void updateWink(void) {
     lastLEDtime = millis();
   }//end of Wink
 }
+
+/*Assumes LCD has been initilized
+ * Turns off Back Light
+ * Clears display
+ * Turns on back light.
+ */
+void clearLCD(void) {  
+  lcd.noBacklight();
+  lcd.clear();
+}// end clearLCD
 
 void splashLCD(void) {
   //LiquidCrystal_I2C lcd(0x27, 20, 4); // set the LCD address to 0x27 for a 16 chars and 2 line display
@@ -125,6 +138,11 @@ void setup() {
   Serial.println("Start I2C scan");
   scanI2C();
   Serial.println("End I2C scan");
+  
+  lcd.init();                      // initialize the lcd
+  Serial.println("Clear LCD");
+  clearLCD();
+  delay(100);
   Serial.println("Start LCD splash");
   splashLCD();
   Serial.println("EndLCD splash");
