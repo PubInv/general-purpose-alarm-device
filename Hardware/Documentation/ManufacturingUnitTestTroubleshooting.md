@@ -15,7 +15,7 @@ Troubleshooting procedures
 ### Assembly Notes
 Assumed that the assembly has the SMT components placed by the board manufacturer. Only through hole or other non SMT components are then placed by hand.
 
-The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Nylon spacers are placed at the four corners of the LCD sub module. Screws with nuts go through both boards and are torqued to **???4???** Inch-Pounds. 
+The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Nylon spacers are placed at the four corners of the LCD sub module. Screws with nuts go through both boards and are torqued to **???4???** Inch-Pounds. Solder the LCD header pins into the GPAD PCB.
 
 **NOTE** on the Version 1 PCB, the cathode flat marking on J105 is backwards. Place the RED LED in so that the flat cathode side is "in board".
 
@@ -49,7 +49,7 @@ Check that the power LED D105 is lit and is RED.
 
 **Electrical Test Results Table**
 <table>
-  <tr><th>DUT Serial Number</th> <th>R@PowerJack</th> <th>R@SPI Interface</th> <th>R@Vin net</th> <th>R@5V net</th> <th>Volt@+5 TP103</th><th>UnProgramCurrent</th><th>FullCurrent</th> <th>Notes</th></tr>
+  <tr><th>DUT Serial Number</th> <th>R@PowerJack</th> <th>R@SPI Interface</th> <th>R@Vin net</th> <th>R@5V net</th> <th>UnProgramCurrent</th> <th>Volt@+5 TP103</th><th>FullCurrent</th> <th>Notes</th></tr>
   <tr><td>01</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
   <tr><td>02</td> <td> >2Meg</td> <td>>2Meg</td> <td>>2Meg</td> <td>>2Meg</td> <td> 61 mA with LCD back light on</td> <td>5.04V</td> <td>119 mA</td> <td>Not measure un programed.</td> </tr>
   <tr><td>03</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
@@ -69,22 +69,8 @@ Check that the power LED D105 is lit and is RED.
 
 
 ### Load Firmware
-Use an Arduino UNO as an ISP (Incircuit Serial Programmer). 
-Load the sketch "ArduinoISP". 
-![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
-
-Select the serial port for the ISP, UNO and compile and upload with the "ArduinoISP" by pressing **<Ctrl>U**. 
-![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
-
-Select the board type to "Arduino Duemilanove..." .  
-![ToolsBoardManager.gif](ToolsBoardManager.gif)
-
-Select the Processor type to "ATmega328P" .  
-
-Select the programmer type.  
-![ToolsProgramer.gif](ToolsProgramer.gif)
-
-
+Use an Arduino UNO as an ISP (Incircuit Serial Programmer).  
+<img src="WireUNOasISP.jpg" alt="WireUNOasISP.jpg" width="250" >  
 Connect the ISP UNO to the DUT as follows:
 <table>
   <tr>
@@ -119,6 +105,21 @@ Connect the ISP UNO to the DUT as follows:
   </tr>
   
 </table>
+
+
+Load the sketch "ArduinoISP".  
+![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
+
+Select the serial port for the ISP, UNO and compile and upload with the "ArduinoISP" by pressing **<Ctrl>U**. 
+![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
+
+Select the board type to "Arduino Duemilanove..." .  
+![ToolsBoardManager.gif](ToolsBoardManager.gif)
+
+Select the Processor type to "ATmega328P" .  
+
+Select the programmer type.  
+![ToolsProgramer.gif](ToolsProgramer.gif)
 
 In the Arduino IDE, open the file "GPAD_Factory_Test.ino".  
   Using the Arduino IDE, instruct the ISP UNO to Upload to the DUT the "GPAD_Factory_Test.ino"
