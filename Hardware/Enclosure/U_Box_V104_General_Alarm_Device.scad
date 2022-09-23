@@ -77,14 +77,17 @@ FootPosY         = 5.08;
 
 /* [STL element to export] */
 //Coque haut - Top shell
-TShell          = 00;// [0:No, 1:Yes]
+TShell          = 0;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
 BShell          = 1;// [0:No, 1:Yes]
 //Panneau avant - Front panel
-FPanL           = 0;// [0:No, 1:Yes]
+FPanL           = 1;// [0:No, 1:Yes]
 //Panneau arrière - Back panel  
 BPanL           = 0;// [0:No, 1:Yes]
-
+//Buttons
+BButton         = 1;
+//show pcb
+PCB_View        = 1;
 
   
 /* [Hidden] */
@@ -242,13 +245,15 @@ module SpeakerHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
      if(OnOff==1)
     translate([Cx,Cy,-1]){
         for(j = [1  : 3]){
-            echo(j);
+            
             rotate(a = 360*j/3,v = [0,0,1])
         for(i = [0 : Cdia/60 : Cdia/2]){
-            rotate(a = 6*(i/Cdia)*360,v = [0,0,1])
+            rotate(a = 1*(i/Cdia)*360,v = [0,0,1])
             translate([i,i,0])
             
-           cylinder(d=i/4,h = 10, $fn=100,center=Ccenter); 
+           cylinder(d=i*.65,h = 10, $fn=100,center=Ccenter);
+           echo(i);
+            
             
         }
     }
@@ -265,7 +270,7 @@ module ButtonSwitch(OnOff,Cx,Cy,Cdia,Ccenter=false){
 
 
 ThreadThick = 0.20;
-ThreadWidth = 0.40;
+//ThreadWidth = 0.40;
 
 Protrusion = 0.1;
 
@@ -287,18 +292,21 @@ NumSides = 8*4;
 //----------------------
 //- Build it
 
-difference() {
-	union() {
+    difference() {
+	    union() {
+        //retension ring
         translate([0,0,3*Thick])
-        cylinder(d=Cdia+Thick,h=Thick,$fn=NumSides);
+            cylinder(d=Cdia+Thick,h=Thick,$fn=NumSides);
+        //dome 
 		translate([0,0,0])
 			resize([0,0,2*Button[DOMEHEIGHT]])
-				sphere(d=0.9*Cdia/cos(180/NumSides),$fn=NumSides);
-		cylinder(d=0.9*Cdia,h=FootHeight,$fn=NumSides);
+				sphere(d=(Cdia-m/2)/cos(180/NumSides),$fn=NumSides);
+        //Post
+		cylinder(d=Cdia-m/2,h=FootHeight,$fn=NumSides);
         
-	}
-
-	translate([0,0,Post[2]/2 - Protrusion])
+	    }
+    //retension hole
+	translate([0,0,FootHeight-Post[2]/2 + Protrusion])
 		cube(Post + [HoleWindage,HoleWindage,Protrusion],center=true);
 }
     }
@@ -331,15 +339,6 @@ module foot(FootDia,FootHole,FootHeight){
 }// Fin module foot
   
 module Feet(){     
-//////////////////// - PCB only visible in the preview mode - /////////////////////    
-    translate([3*Thick+2,Thick+5,Thick+FootHeight]){
-    
-    %cube ([PCBLength,PCBWidth,1.6]);
-       translate([PCBLength/2,PCBWidth/2,0]){ 
-        color("Olive")
-        %text("PCB", halign="center", valign="center", font="Arial black");
-       }
-    } // Fin PCB 
   
     
 ////////////////////////////// - 4 Feet - //////////////////////////////////////////   
@@ -395,6 +394,13 @@ module Panel(Length,Width,Thick,Filet){
       }
 }
 
+//                          <- Circle Spacer -> 
+// Cx=Cylinder X position | Cy=Cylinder Y position | Cdia= Cylinder dia | Cheight=Cyl height
+module CylinderSpacer(OnOff,Cx,Cy,Cdia,Ccenter=false){
+    if(OnOff==1)
+    translate([Cx,Cy,Thick])
+        cylinder(d=Cdia,10, $fn=50,center=Ccenter);
+}
 
 
 //                          <- Circle hole -> 
@@ -418,15 +424,16 @@ module SquareHole(OnOff,Sx,Sy,Sl,Sw,Filet,Ccenter=false){
 
  
 //                      <- Linear text panel -> 
-module LText(OnOff,Tx,Ty,Font,Size,Content){
+module LText(OnOff,Tx,Ty,Font,Size,Content,_valign="baseline",_halign="left"){
+
     if(OnOff==1)
     translate([Tx,Ty,Thick+.5])
     linear_extrude(height = 0.5){
-    text(Content, size=Size, font=Font);
+    text(Content, size=Size, font=Font, halign = _halign,valign=_valign);
     }
 }
 //                     <- Circular text panel->  
-module CText(OnOff,Tx,Ty,Font,Size,TxtRadius,Angl,Turn,Content){ 
+module CText(OnOff,Tx,Ty,Font,Size,TxtRadius,Angl,Turn,Content,_valign="baseline",_halign="center"){ 
       if(OnOff==1) {
       Angle = -Angl / len(Content);
       translate([Tx,Ty,Thick+.5])
@@ -434,7 +441,7 @@ module CText(OnOff,Tx,Ty,Font,Size,TxtRadius,Angl,Turn,Content){
               rotate([0,0,i*Angle+90+Turn])
               translate([0,TxtRadius,0]) {
                 linear_extrude(height = 0.5){
-                text(Content[i], font = Font, size = Size,  valign ="baseline", halign ="center");
+                text(Content[i], font = Font, size = Size,  , halign = _halign,valign=_valign);
                     }
                 }   
              }
@@ -450,10 +457,14 @@ module FPanL(){
     rotate([90,0,90]){
         color(Couleur2){
 //                     <- Cutting shapes from here ->  
-        SquareHole  (1,54.61,FootHeight,9,5,1); //(On/Off, Xpos,Ypos,Length,Width,Filet)
-        SquareHole  (1,81.28,FootHeight,14,8,3);
-        SquareHole  (1,98.425,FootHeight,15,15,1);
-        SquareHole  (1,119.38,FootHeight,15,15,1); 
+            //(On/Off, Xpos,Ypos,Length,Width,Filet)
+        echo((Width - PCBWidth)/2);
+            translate([-((Width - PCBWidth)/2),0,0]){
+        SquareHole  (1,54.61,FootHeight,9,5,1,Ccenter=false); //USB
+        SquareHole  (1,81.28,FootHeight,14,9,3,Ccenter=false); //I2C
+        SquareHole  (1,98.425,FootHeight,14,13,1,Ccenter=false); //SPI
+        SquareHole  (1,119.38,FootHeight,10,12,1,Ccenter=false); //DC barrel
+            }
         //CylinderHole(1,27,FootHeight,8);       //(On/Off, Xpos, Ypos, Diameter)
         //CylinderHole(1,47,FootHeight,8);
        // CylinderHole(1,67,FootHeight,8);
@@ -467,12 +478,14 @@ module FPanL(){
 
     color(Couleur1){
         translate ([-.5,0,0])
-        rotate([90,0,90]){
-//                      <- Adding text from here ->          
-       // LText(1,20,83,"Arial Black",4,"Digital Screen");//(On/Off, Xpos, Ypos, "Font", Size, "Text")
-     //   LText(1,120,83,"Arial Black",4,"Level");
-        LText(1,54.61,FootHeight/2,"Arial Black",3,"USB");
-       // CText(1,93,29,"Arial Black",4,10,180,0,"1 . 2 . 3 . 4 . 5 . 6");//(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text")
+        rotate([90,0,90])        translate([-((Width - PCBWidth)/2),0,0]){
+//                      <- Adding text from here ->    
+      //(On/Off, Xpos, Ypos, "Font", Size, "Text",_halign = "center",_valign="top")      
+        LText(1,54.61+9/2,FootHeight*.9,"Arial Black",3,"USB",_halign = "center",_valign="top");
+        LText(1,81.28+14/2,FootHeight*.9,"Arial Black",3,"I2C",_halign = "center",_valign="top");
+        LText(1,98.425+14/2,FootHeight*.9,"Arial Black",3,"Remote",_halign = "center",_valign="top");
+        LText(1,119.38+10/2,FootHeight*.9,"Arial Black",3,"DC",_halign = "center",_valign="top");    
+     
 //                            <- To here ->
             }
       }
@@ -481,7 +494,7 @@ module FPanL(){
 
 /////////////////////////// <- Main part -> /////////////////////////
 
-if(TShell==1)
+if(TShell==1){
 // Coque haut - Top Shell
         color( Couleur1,1){
             translate([0,Width,Height+0.2]){
@@ -492,13 +505,21 @@ if(TShell==1)
             }
       
     
-
-if(BShell==1)
+        }
+if(BShell==1){
 // Coque bas - Bottom shell
     difference(){
-        color(Couleur1){ 
+        color(Couleur1,1){
+            union(){ 
         Coque();
+        // Pied support PCB - PCB feet
+        if (PCBFeet==1){// Feet
+            // Pieds PCB - PCB feet (x4) 
+            translate([PCBPosX,PCBPosY,0]){ 
+            Feet();
+            }   
         }
+    }}
           color( Couleur1,1){
              translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
              //(On/Off, Xpos, Ypos, Diameter)
@@ -512,30 +533,42 @@ if(BShell==1)
              //(On/Off, Xpos,Ypos,Length,Width,Filet)
                 SquareHole(1,PCBLength-50.8,71.12,26,76,0,Ccenter=true);   //Display
                 CylinderHole(1,PCBLength-15.24,68.58,1); //reset hole
+                 //(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text",_halign = "center",_valign="top") 
+                translate( [0,0,-4/3*Thick-0.1])CText(1,PCBLength-10,31.75,"Arial Black",4,9,-90,320,"MUTE");
                 CylinderHole(1,PCBLength-10,31.75,15); //Mute Button
+                CylinderSpacer(1,PCBLength-10,31.75,15+Thick+m/2); //cutout for mute button
                 // SquareHole(1,PCBLength-63.87,33.12,1,1,0,Ccenter=true);   //testing
             }
         }
     }
-    
+}
+
+if(BButton ==1){
+//button
     translate( [3*Thick+2,Thick+5,0])     
     ButtonSwitch(1,PCBLength-10,31.75,15); //Mute Button
+}
+if(PCB_View==1){
+//////////////////// - PCB only visible in the preview mode - /////////////////////    
+    translate([3*Thick+2,Thick+5,Thick+FootHeight]){
     
-// Pied support PCB - PCB feet
-if (PCBFeet==1)
-// Feet
-        translate([PCBPosX,PCBPosY,0]){ 
-        Feet();
-        }
+    %cube ([PCBLength,PCBWidth,1.6]);
+       translate([PCBLength/2,PCBWidth/2,0]){ 
+        color("Olive")
+        %text("PCB", halign="center", valign="center", font="Arial black");
+       }
+    } // Fin PCB 
+}
 
 // Panneau avant - Front panel  <<<<<< Text and holes only on this one.
 //rotate([0,-90,-90]) 
-if(FPanL==1)
+if(FPanL==1){
         translate([Length-(Thick*2+m/2),Thick+m/2,Thick+m/2])
         FPanL();
-
+}
 //Panneau arrière - Back panel
-if(BPanL==1)
+if(BPanL==1){
         color(Couleur2)
         translate([Thick+m/2,Thick+m/2,Thick+m/2])
         Panel(Length,Width,Thick,Filet);
+}
