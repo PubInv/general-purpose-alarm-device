@@ -17,42 +17,54 @@ Assumed that the assembly has the SMT components placed by the board manufacture
 Write serial number on the PCB assembly. _Management of serial numbers is beyound the scope of this document. Each manufacturier must figure something out._
 
 ### Version 1 PCB nCS Rework Instructions
-On front of PCB, mark and cut trace connecting D7 to nCS as shown.
-![V1CutD7Trace.gif](V1CutD7Trace.gif)
+On front of PCB, mark and cut trace connecting D7 to nCS as shown.  
+<a href="V1CutD7Trace.gif"><img src="V1CutD7Trace.gif" alt="V1CutD7Trace.gif" width="200"> </a>  
+As marked and cut with a small rotary bit.  
+<a href="CutLocationD7Trace.jpg"><img src="CutLocationD7Trace.jpg" alt="CutLocationD7Trace.jpg" width="200"> </a>  
+
+
+On back of PCB, mark and cut trace connecting D10 to LIGHT0 nCS as shown.  
+<a href="V1CutD10Trace.gif"><img src="V1CutD10Trace.gif" alt="V1CutD10Trace.gif" width="200"> Locate cut.</a>  
+
 As marked and cut with a small rotary bit.
-![CutLocationD7Trace.jpg](CutLocationD7Trace.jpg)
-
-
-On back of PCB, mark and cut trace connecting D10 to LIGHT0 nCS as shown.
-![V1CutD10Trace.gif}(V1CutD10Trace.gif)
-As marked and cut with a small rotary bit.
-![CutLocationD7Trace.jpg](CutLocationD7Trace.jpg)
-
+<a href="CutLocationD10Trace.jpg"><img src="CutLocationD10Trace.jpg" alt="CutLocationD10Trace.jpg" width="200"> As cut.</a>  
+  
 Scrape solder resist from traces and solder a jumper wire to connect D7 to the trace connecting to R209 (To drive LIGHT4)
-Scrape solder resist from traces and solder a jumper wire to connect D10 to the trace connecting to R404 (To nCS on J401)
-![ScrapeTraces.jpg](ScrapeTraces.jpg)
+Scrape solder resist from traces and solder a jumper wire to connect D10 to the trace connecting to R404 (To nCS on J401)  
+<a href="ScrapeTraces.jpg"><img src="ScrapeTraces.jpg" alt="ScrapeTraces.jpg" width="200"> Scraped and with wires.</a>
+
 Apply glue (We used hot melt) to mechanicaly secure the rework wires.
 ![GlueWires.jpg](GlueWires.jpg)
 
 We made an assembly assistant / fixture by using a raw PCB with some long #6 screws and nuts to hold at the PCB mounting points. 
 ![Assembly Fixture View 1](AssemblyFixtureView1.jpg)
 
+* LCD Bezel Grounding.  
+On the LCD module locate the J1 and J2 solder pads which if soldered ground the bezel.   
+<a href="LocateJ1J2.jpg"><img src="LocateJ1J2.jpg" alt="LocateJ1J2.jpg" width="200"> View of J1 and J2.</a>  
+Solder them.  
+<a href="SolderJ1J2.jpg"><img src="SolderJ1J2.jpg" alt="SolderJ1J2.jpg" width="200"> Solder on of J1 and J2.</a>  
+As soldered.
+
+
 * The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Nylon spacers are placed at the four corners of the LCD sub module. Screws with nuts go through both boards and are torqued to **???4???** Inch-Pounds. Solder the LCD header pins into the GPAD PCB.
-TIP: Using the assembly fixture the 16 pin header can be held flush to the LCD module to solder a center pin to start the process.
+TIP: Using the assembly fixture the 16 pin header can be held flush to the LCD module to solder a center pin to start the process.  
+<a href="AssemblyFixtureView2.jpg"><img src="AssemblyFixtureView2.jpg" alt="AssemblyFixtureView2.jpg" width="200"> Assembly Fixture View 2</a>  
+
+
+<a href="HeaderToLCD.jpg"><img src="HeaderToLCD.jpg" alt="HeaderToLCD.jpg" width="200"> View of holding header to LCD.</a>  
 
 * Put Reset button, S101 into PCB from display side.
 * Put Mute button, S401 into PCB from display side.
 * Put Buzzer, BZ601 into PCB from display side.  Bending leads may help retain.
 * Put Contrast pot, RV301 into PCB from display side.  Bending leads may help retain.
 
-
-
 **NOTE** on the Version 1 PCB, the cathode flat marking on J105 is backwards. Place the RED LED in so that the flat cathode side is "in board".
 
 Solder the through hole LEDs at locations D201-D205 and D105 with a **TBD** spacer, holding them up from the PCB by TBD inches. 
+<a href="SolderLEDs.jpg"><img src="SolderLEDs.jpg" alt="SolderLEDs.jpg" width="200"> Till an enclosure is finalized, solder LEDs so that the lens is co plainer with the LCD bezel.</a> 
 
 **NOTE** on the Version 1 PCB, the foot print for U301 is incorrect. It is too narrow for the part. See photograph of rework method of mounting.
-
 
 
 ### Electrical Tests
