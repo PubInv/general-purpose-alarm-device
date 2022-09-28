@@ -1,5 +1,5 @@
 # Manufacturing and Unit Test Documentation, PCB Version 1 Prototype#1, 20220726
-Assenbly Notes
+Assenbly Notes and Tips
 
 Manufacturing test procedure for every unit
 
@@ -12,10 +12,40 @@ Troubleshooting procedures
 
 ## Manufacturing test procedure for every unit
 
-### Assembly Notes
+### Assembly Notes and Tips
 Assumed that the assembly has the SMT components placed by the board manufacturer. Only through hole or other non SMT components are then placed by hand.
+Write serial number on the PCB assembly. _Management of serial numbers is beyound the scope of this document. Each manufacturier must figure something out._
 
-The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Nylon spacers are placed at the four corners of the LCD sub module. Screws with nuts go through both boards and are torqued to **???4???** Inch-Pounds. Solder the LCD header pins into the GPAD PCB.
+### Version 1 PCB nCS Rework Instructions
+On front of PCB, mark and cut trace connecting D7 to nCS as shown.
+![V1CutD7Trace.gif](V1CutD7Trace.gif)
+As marked and cut with a small rotary bit.
+![CutLocationD7Trace.jpg](CutLocationD7Trace.jpg)
+
+
+On back of PCB, mark and cut trace connecting D10 to LIGHT0 nCS as shown.
+![V1CutD10Trace.gif}(V1CutD10Trace.gif)
+As marked and cut with a small rotary bit.
+![CutLocationD7Trace.jpg](CutLocationD7Trace.jpg)
+
+Scrape solder resist from traces and solder a jumper wire to connect D7 to the trace connecting to R209 (To drive LIGHT4)
+Scrape solder resist from traces and solder a jumper wire to connect D10 to the trace connecting to R404 (To nCS on J401)
+![ScrapeTraces.jpg](ScrapeTraces.jpg)
+Apply glue (We used hot melt) to mechanicaly secure the rework wires.
+![GlueWires.jpg](GlueWires.jpg)
+
+We made an assembly assistant / fixture by using a raw PCB with some long #6 screws and nuts to hold at the PCB mounting points. 
+![Assembly Fixture View 1](AssemblyFixtureView1.jpg)
+
+* The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Nylon spacers are placed at the four corners of the LCD sub module. Screws with nuts go through both boards and are torqued to **???4???** Inch-Pounds. Solder the LCD header pins into the GPAD PCB.
+TIP: Using the assembly fixture the 16 pin header can be held flush to the LCD module to solder a center pin to start the process.
+
+* Put Reset button, S101 into PCB from display side.
+* Put Mute button, S401 into PCB from display side.
+* Put Buzzer, BZ601 into PCB from display side.  Bending leads may help retain.
+* Put Contrast pot, RV301 into PCB from display side.  Bending leads may help retain.
+
+
 
 **NOTE** on the Version 1 PCB, the cathode flat marking on J105 is backwards. Place the RED LED in so that the flat cathode side is "in board".
 

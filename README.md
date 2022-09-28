@@ -124,7 +124,7 @@ In each of these phases, we imagine the API improving substantially.
 
 Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
 
-???  Lawrence Kincheloe of Speccollective
+Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientest by training, and an electrical engineer as well as a hobby inventor by vocation. 
 
 ???  Joe Torreggiani of Speccollective
 
