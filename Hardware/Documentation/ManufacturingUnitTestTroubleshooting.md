@@ -1,3 +1,4 @@
+
 # Manufacturing and Unit Test Documentation, PCB Version 1 Prototype#1, 20220726
 Setions below
 * Manufacturing test procedure for every unit  
@@ -40,6 +41,9 @@ Scrape solder resist from traces and solder a jumper wire to connect D10 to the 
 
 Apply glue (We used hot melt) to mechanicaly secure the rework wires.  
 <a href="GlueWires.jpg"><img src="GlueWires.jpg" alt="GlueWires.jpg" width="200"> Glued rework wires.</a>  
+**Important, update the configuration table below to reflect this rework to the PCB**  
+Follow the pattern for tracking this update found in Configuration Version 1 Assemblies
+
 
 Install the UNO headers at four locations. After soldering, cut the pins so that they will not intefer with the LCD display to be installed soon.  
 <a href="TrimUNOHeaders.jpg"><img src="TrimUNOHeaders.jpg" alt="TrimUNOHeaders.jpg" width="200"> Trimming header pins.</a>  
@@ -103,14 +107,16 @@ Check that the power LED D105 is lit and is RED.
 (FYI, a programmed DUT that has been powered up, and with display back light on, Hold the reset switch and measure current as about **61** mA)
 
 **Electrical Test Results Table**
-<table>
-  <tr><th>DUT Serial Number</th> <th>R@PowerJack</th> <th>R@SPI Interface</th> <th>R@Vin net</th> <th>R@5V net</th> <th>UnProgramCurrent</th> <th>Volt@+5 TP103</th><th>FullCurrent</th> <th>Notes</th></tr>
+
+
+<table style="background-color:#DDDDEE">
+  <tr><th>DUT Serial Number</th> <th>R@PowerJack</th> <th>R@SPI Interface</th> <th>R@Vin net</th> <th>R@5V net</th> <th>UnProgramCurrent</th> <th>Volt@+5 TP103</th><th>FullCurrent</th> <th>Vo</th> <th>Notes</th></tr>
   <tr><td>01</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>02</td> <td> >2Meg</td> <td>>2Meg</td> <td>>2Meg</td> <td>>2Meg</td> <td> 61 mA with LCD back light on</td> <td>5.04V</td> <td>119 mA</td> <td>Not measure un programed.</td> </tr>
-  <tr><td>03</td> <td>1.5Meg</td> <td>Open</td> <td>490K</td> <td>1.052K</td> <td>68.4 LCD ON</td> <td>5.03</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>04</td> <td>1.5Meg</td> <td>Open</td> <td>320K</td> <td>1.052K</td> <td>68.5 LCD ON</td> <td>5.02</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>05</td> <td>980K</td> <td>Open</td> <td>500K</td> <td>1.052K</td> <td>68.8 LCD ON</td> <td>5.03</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>06</td> <td>1.3Meg</td> <td>Open</td> <td>250K</td> <td>1.052K</td> <td>68.7 LCD ON</td> <td>5.03</td> <td>???</td> <td>???</td> </tr>
+  <tr><td>02</td> <td> >2Meg</td> <td>>2Meg</td> <td>>2Meg</td> <td>>2Meg</td> <td> 61 mA with LCD back light on</td> <td>5.04V</td> <td>119 mA</td> <td>Vo=1.29</td> <td>Not measure un programed.</td> </tr>
+  <tr><td>03</td> <td>1.5Meg</td> <td>Open</td> <td>490K</td> <td>1.052K</td> <td>68.4 LCD ON</td> <td>5.03</td> <td>5.03</td> <td>Vo=1.29</td> <td> </td> </tr>
+  <tr><td>04</td> <td>1.5Meg</td> <td>Open</td> <td>320K</td> <td>1.052K</td> <td>68.5 LCD ON</td> <td>5.02</td> <td>5.02</td> <td>Vo=1.29</td> <td> </td> </tr>
+  <tr><td>05</td> <td>980K</td>   <td>Open</td> <td>500K</td> <td>1.052K</td> <td>68.8 LCD ON</td> <td>5.03</td> <td>5.03</td> <td>Vo=1.29</td> <td> </td> </tr>
+  <tr><td>06</td> <td>1.3Meg</td> <td>Open</td> <td>250K</td> <td>1.052K</td> <td>68.7 LCD ON</td> <td>5.03</td> <td>5.03</td> <td>Vo=1.29</td> <td> </td> </tr>
   <tr><td>07</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
   <tr><td>08</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
   <tr><td>09</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
@@ -124,51 +130,31 @@ Check that the power LED D105 is lit and is RED.
 
 
 ### Load Firmware
-Use an Arduino UNO as an ISP (Incircuit Serial Programmer).  
-<img src="WireUNOasISP.jpg" alt="WireUNOasISP.jpg" width="250" >  
-Connect the ISP UNO to the DUT as follows:
-<table>
-  <tr>
-    <th>SPI UNO</th>
-    <th>to DUT</th>
-    <th>Note</th>
-  </tr>
-  <tr>
-    <td>D13</td>
-    <td>D13</td>
-    <td>???</td>
-  </tr>
-<tr>
-    <td>D12</td>
-    <td>D12</td>
-    <td>???</td>
-  </tr>
-<tr>
-    <td>D11</td>
-    <td>D11</td>
-    <td>???</td>
-  </tr>
-<tr>
-    <td>D10</td>
-    <td>Reset</td>
-    <td>???</td>
-  </tr>
-  <tr>
-    <td>GND</td>
-    <td>GND</td>
-    <td>???</td>
-  </tr>
-  
+#### Load Bootloader
+Use an Arduino UNO as an ISP (Incircuit Serial Programmer) which will load the boot loader into the DUT.
+Cable Connect the ISP UNO to the DUT as follows:
+<table style="background-color:#DDDDEE">
+  <tr>    <th>Signal Name </th> <th>SPI UNO</th> <th>to DUT</th> <th>RJ12 Pin</th>  </tr>
+  <tr>    <th>SPI CLK  </th> <td>D13</td>    <td>D13</td>    <td>4</td> </tr>
+  <tr>    <th>SPI CIPO </th> <td>D12</td>    <td>D12</td>    <td>6</td>  </tr>
+  <tr>    <th>SPI COPI </th> <td>D11</td>    <td>D11</td>    <td>2</td>  </tr>
+  <tr>    <th>nCS      </th> <td>D10</td>    <td>D10</td>    <td>1</td>  </tr>
+  <tr>    <th>GND      </th> <td>GND</td>    <td>GND</td>    <td>3</td>  </tr>
+  <tr>    <th>POWER    </th> <td>+5</td>     <td>+5</td>     <td>5</td>  </tr>
 </table>
 
+<img src="WireUNOasISP.jpg" alt="WireUNOasISP.jpg" width="250" >  Wiring of the UNO to the DUT.
+Place a Jumper on the DUT from D10 to Reset
+<img src="D10toReset.jpg" alt="D10toReset.jpg" width="250" >  Jumper for D10 to Reset.
 
-Load the sketch "ArduinoISP".  
+
+Load into the IDE the sketch "ArduinoISP".  
 ![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
 
-Select the serial port for the ISP, UNO and compile and upload with the "ArduinoISP" by pressing **<Ctrl>U**. 
-![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
+To load into the UNO, Select the serial port for the UNO and compile and upload with the "ArduinoISP" by pressing **<Ctrl>U**. 
 
-Select the board type to "Arduino Duemilanove..." .  
+Setup the UNO to burn the boot loader into the GPAD target.
+Select the board type (Boot loader type) to "Arduino Duemilanove..." .  
 ![ToolsBoardManager.gif](ToolsBoardManager.gif)
 
 Select the Processor type to "ATmega328P" .  
@@ -176,13 +162,20 @@ Select the Processor type to "ATmega328P" .
 Select the programmer type.  
 ![ToolsProgramer.gif](ToolsProgramer.gif)
 
-In the Arduino IDE, open the file "GPAD_Factory_Test.ino".  
-  Using the Arduino IDE, instruct the ISP UNO to Upload to the DUT the "GPAD_Factory_Test.ino"
-![UploadUsingProgrammer.gif](UploadUsingProgrammer.gif)
-Watch the progress bar in the IDE and look for success with the message "Done uploading" in the blue status bar.
-  
+In the Arduino IDE, select TOOLS > Burn Bootloader .  
+
+![BurnBootLoader.gif](BurnBootLoader.gif)  
+Watch the progress bar in the IDE and look for success with the message "????Done ???" in the blue status bar.
+
+#### Load Factory Test Firmware.
 Connect a USB cable to the DUT. Note the COM port enumerated in Device Manager Ports(COM&LPT) drop down
   ![DeviceManager.gif](DeviceManager.gif)
+
+In the Arduino IDE, open the a new file "GPAD_Factory_Test.ino".  
+Set the IDE for the COM port of the DUT.
+  Using the Arduino IDE, compiel and upload to the DUT the "GPAD_Factory_Test.ino"
+![DoneUploadingFactoryTest.gif](DoneUploadingFactoryTest.gif)
+Watch the progress bar in the IDE and look for success with the message "Done uploading" in the blue status bar. 
   
 Open a terminal to the COM port of the DUT and set for appropriate BAUD rate. 
 Press the reset switch on the DUT and the LCD display should display a message. The terminal should display a boot message too. This example is of a RealTerminal connected to the DUT.
@@ -208,25 +201,25 @@ Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibra
   Buzzer test with 3"x4.875" 8 Ohm speaker at 1KHz, and 130 Hz and much louder 76db and 67 dB respectivly.  Maxumum current into DUT was 220mA.
   
   
-  **Configuration Version 1 Assemblies**
+  **Configuration Version 1 Assemblies**  
   Tracking electrical and mechanical configuration of Version 1 GPAD assemblies and their locations
-<table>
+ <table style="background-color:#DDDDEE">
   <tr><th>DUT Serial Number</th> <th>Rework 1</th> <th>Rework 2</th> <th>Rework 3</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location history (Person and contact information)</th></tr>
-  <tr><td>01</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
+  <tr><td>01</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td>  <td>???</td> <td>Lawarence, OK</td> </tr>
   <tr><td>02</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>TBD</td> <td>TBD</td> <td>TBD</td> <td>TBD</td>  <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td></tr>
   <tr><td>03</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>04</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>05</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>06</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
-  <tr><td>07</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>08</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>09</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>10</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>11</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>12</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>13</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>14</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>15</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>  
+  <tr><td>07</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>08</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>09</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>10</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>11</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>12</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>13</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>14</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
+  <tr><td>15</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>  
 </table>
 
 
