@@ -79,7 +79,7 @@ FootPosY         = 5.08;
 
 /* [STL element to export] */
 //Coque haut - Top shell
-TShell          = 0;// [0:No, 1:Yes]
+TShell          = 1;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
 BShell          = 1;// [0:No, 1:Yes]
 //Panneau avant - Front panel
@@ -89,7 +89,7 @@ BPanL           = 1;// [0:No, 1:Yes]
 //Buttons
 BButton         = 1;
 //show pcb
-PCB_View        = 1;
+PCB_View        = 0;
 
   
 /* [Hidden] */
@@ -325,8 +325,8 @@ module foot(FootDia,FootHole,FootHeight){
     difference(){
     
     difference(){
-            translate ([0,0,Thick-0.1]){
-                cylinder(d=FootDia+Filet,FootHeight, $fn=100,center=true);
+            translate ([0,0,0.1]){
+                cylinder(d=FootDia+Filet,FootHeight+Thick, $fn=100,center=true);
                         }
                     rotate_extrude($fn=100){
                             translate([(FootDia+Filet*2)/2,Filet,0]){
@@ -478,14 +478,14 @@ module FPanL(){
 
     color(Couleur1){
         translate ([-.5,0,0])
-        rotate([90,0,90])        translate([((Width - PCBWidth)/2),0,0]){
-//                      <- Adding text from here ->    
-      //(On/Off, Xpos, Ypos, "Font", Size, "Text",_halign = "center",_valign="top")      
-        LText(1,54.61+9/2,FootHeight*.9,"Arial Black",3,"USB",_halign = "center",_valign="top");
-        LText(1,81.28+14/2,FootHeight*.9,"Arial Black",3,"I2C",_halign = "center",_valign="top");
-        LText(1,98.425+14/2,FootHeight*.9,"Arial Black",3,"Remote",_halign = "center",_valign="top");
-        LText(1,119.38+10/2,FootHeight*.9,"Arial Black",3,"DC",_halign = "center",_valign="top");    
-     
+        rotate([90,0,90])        translate([((Width - PCBWidth)/2) ,0,0]+[-2.3,0,0]){
+//                      <- Adding text from here ->   
+      //(On/Off, Xpos, Ypos, "Font", Size, "Text",_halign = "center",_valign="top")  
+        LText(1,54.61,FootHeight*.9,"Arial Black",3,"USB",_halign = "center",_valign="top");
+        LText(1, 81.28   ,FootHeight*.9,"Arial Black",3,"I2C",_halign = "center",_valign="top");
+        LText(1,98.425,FootHeight*.9,"Arial Black",3,"Remote",_halign = "center",_valign="top");
+        LText(1,119.38,FootHeight*.9,"Arial Black",3,"DC",_halign = "center",_valign="top");    
+       // SquareHole(1,0,FootHeight*.9,1,1,0,Ccenter=true); //origin
 //                            <- To here ->
             }
       }
