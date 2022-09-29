@@ -1,18 +1,16 @@
 # Manufacturing and Unit Test Documentation, PCB Version 1 Prototype#1, 20220726
-Assenbly Notes and Tips
-
-Manufacturing test procedure for every unit
-
-Unit (Design) verification tests on some units
-
-GPAD Theory of Operation
-
-Troubleshooting procedures
-
+Setions below
+* Manufacturing test procedure for every unit  
+**Assenbly Notes and Tips  
+** Unit (Design) verification tests on some units  
+** Configuration Version 1 Assemblies 
+* GPAD Theory of Operation  
+* Troubleshooting procedures  
 
 ## Manufacturing test procedure for every unit
 
 ### Assembly Notes and Tips
+
 Assumed that the assembly has the SMT components placed by the board manufacturer. Only through hole or other non SMT components are then placed by hand.
 Write serial number on the PCB assembly. _Management of serial numbers is beyound the scope of this document. Each manufacturier must figure something out._
 
@@ -198,13 +196,13 @@ Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibra
   **Configuration Version 1 Assemblies**
   Tracking electrical and mechanical configuration of Version 1 GPAD assemblies and their locations
 <table>
-  <tr><th>DUT Serial Number</th> <th>Rework 1</th> <th>Rework 2</th> <th>Rework 3</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location (Person and contact information)</th></tr>
+  <tr><th>DUT Serial Number</th> <th>Rework 1</th> <th>Rework 2</th> <th>Rework 3</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location history (Person and contact information)</th></tr>
   <tr><td>01</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
-  <tr><td>02</td> <td> >SPI cCS to D10, LIGHT4 D7</td> <td>TBD</td> <td>TBD</td> <td>TBD</td> <td>TBD</td>  <td>???</td> <td>???</td> <td>Lee, Maryville TN</td></tr>
-  <tr><td>03</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lee, Maryville TN</td> </tr>
-  <tr><td>04</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lee, Maryville TN</td> </tr>
-  <tr><td>05</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lee, Maryville TN</td> </tr>
-  <tr><td>06</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lee, Maryville TN</td> </tr>
+  <tr><td>02</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>TBD</td> <td>TBD</td> <td>TBD</td> <td>TBD</td>  <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td></tr>
+  <tr><td>03</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
+  <tr><td>04</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
+  <tr><td>05</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
+  <tr><td>06</td> <td>SPI cCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>07</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
   <tr><td>08</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
   <tr><td>09</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
@@ -216,3 +214,17 @@ Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibra
   <tr><td>15</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>  
 </table>
 
+
+## GPAD Theory of Operation  
+The GPAD is based on an Arduino UNO design with a CH340 USB to Serial adapter which enumerates on a USB port as a CDC aka Windows COM port (In linux systems a port /dev/ttyUSBn where "n" is a number).
+  
+The GPAD is a SPI Peripherial device and will be controlled by another computer which will be a Controller.  
+
+The GPAD Can be configured to get power from three ways. One is a barrel jack (2.1mm center positive) at 7-12Vdc, A second through the RJ12 connector from the Controller at 7-12Vdc is with a jumper on J103 or resistor at R107, and the third for low current applications only is the USB buss by adding Jumper J102 or zero ohm resistor at R106.  
+
+The GPAD generaly is controlled by an SPI Controller but through the USB port debug information can be watched and some TBD control is also possible.
+
+
+## Troubleshooting procedures  
+Compare and contrast operation with a normal device when ever possible.
+Check **TBD** for history of other faults and their fixes.
