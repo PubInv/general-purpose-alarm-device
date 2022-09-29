@@ -484,7 +484,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "../../Enclosure/GeneralPurposeAlarmDevicePCB.step",
+      "step": "../Enclosure/GeneralPurposeAlarmDevicePCB.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
