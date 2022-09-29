@@ -21,10 +21,10 @@
   Change for BUZZER_TEST_FREQ - 4000 KHz the resonant frequency of the V1 buzzer.
   Was //tone(TONE_PIN, 130) for approximatly note C3 or middle C.
   20220923 Clear the LCD and turn off back light at start up before writing to it. Other test frequencies for speakers.
-  
+  20220927 Rewire SPI nCS to D10, Rewire LIGHT4 to D7.
 */
 
-#define VERSION 1.21             //Version of this software
+#define VERSION 1.22             //Version of this software
 #define BAUDRATE 115200
 
 //Set LED for Uno or ESP32 Dev Kit on board blue LED.
@@ -51,9 +51,8 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define LIGHT1 5
 #define LIGHT2 6
 #define LIGHT3 9
-#define LIGHT4 10
+#define LIGHT4 7
 
-//int LIGHT[] = {3, 5, 6, 9, 10};
 int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
 
 //Functions
