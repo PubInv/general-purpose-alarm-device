@@ -28,3 +28,7 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+
+
+# Some Files from the assembly process not needed.
+AssemblyPICS/
