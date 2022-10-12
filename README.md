@@ -1,5 +1,7 @@
 # General Purpose Alarm Device
-This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
+![IMG-3539](https://user-images.githubusercontent.com/5296671/195462489-233d7f4f-62ae-4d29-930c-db42419f31b2.JPG)
+This General-Purpose- Alarm-Device repos
+itory defines a 'General Purpose Alarm Device' aka, GPAD module.
 This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition. 
 * Flash bright lights
 * Make loud tones
