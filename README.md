@@ -207,6 +207,22 @@ The enclsoure should be designed for easy 3D fabrication. Enclosure material is 
 
 We're going to use white-light LEDs to avoid color-blindness issues for the visual alarm.
 
+# Project Glossary and Ornizational Overview
+
+## Issue Labels used
+|   |   |   |  
+|---|---|---|
+| bug  | Something isn't working  |   |  
+|  documentation | Improvements or additions to documentation |   |
+|  duplicate |  This issue or pull request already exists |   |
+|  enhancement |  New feature or request |   |
+| firmware  |  For issues related to software running on the microcontroller |   |
+| good first  | Good for newcomers | |
+| Hardware | Schematic and PCB and Enclosure | |
+| help wanted | Extra attention is needed | |
+| question | Further information is requested | |
+| research | Research products or ideas | |
+| wontfix | This will not be worked on | |
 
 # License
 
