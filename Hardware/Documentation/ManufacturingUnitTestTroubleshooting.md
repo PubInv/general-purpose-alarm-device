@@ -203,8 +203,7 @@ Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibra
   
   Buzzer test with 3"x4.875" 8 Ohm speaker at 1KHz, and 130 Hz and much louder 76db and 67 dB respectivly.  Maxumum current into DUT was 220mA.
   
-  
-  **Configuration Version 1 Assemblies**  
+  **[Configuration Version 1 Assemblies](#configurations)**  
   Tracking electrical and mechanical configuration of Version 1 GPAD assemblies and their locations
  <table style="background-color:#DDDDEE">
   <tr><th>DUT Serial Number</th> <th>Rework 1</th> <th>Rework 2</th> <th>Rework 3</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location history (Person and contact information)</th></tr>
