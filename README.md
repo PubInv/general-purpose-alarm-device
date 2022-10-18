@@ -210,7 +210,7 @@ We're going to use white-light LEDs to avoid color-blindness issues for the visu
 # Project Glossary and Ornizational Overview
 
 ## Issue Labels used
-|   |   |   |  
+| Label Name  | Short Description  | Detailed Description  |  
 |---|---|---|
 | bug  | Something isn't working  |   |  
 |  documentation | Improvements or additions to documentation |   |
