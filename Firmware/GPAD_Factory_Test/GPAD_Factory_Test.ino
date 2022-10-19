@@ -1,7 +1,7 @@
 /* GPAD_Factory_Test.ino
   This program for factory test of PGPAD hardware
 
-  Copyright (C) 2021 Robert Read, Forrest Erickson.
+  Copyright (C) 2022 Robert Read, Forrest Erickson.
 
   This program includes free software: you can redistribute it and/or modify
   it under the terms of the GNU Affero General Public License as
@@ -22,21 +22,29 @@
   Was //tone(TONE_PIN, 130) for approximatly note C3 or middle C.
   20220923 Clear the LCD and turn off back light at start up before writing to it. Other test frequencies for speakers.
   20220927 Rewire SPI nCS to D10, Rewire LIGHT4 to D7.
+  20221019 Lee and Robert, Code Review changes. 
 */
 
-#define VERSION 1.22             //Version of this software
+/* The purpose of this code is to help test the hardware of the GPAD.
+ * GPAD was created by Public Invention and Sustainable Progress and Equality Collective
+ * See: https://github.com/PubInv/general-alarm-device 
+ * And: https://www.specollective.org/
+*/
+
+#define VERSION 1.23             //Version of this software
 #define BAUDRATE 115200
 
-//Set LED for Uno or ESP32 Dev Kit on board blue LED.
-//const int LED_BUILTIN = 2;    // ESP32 Kit
-//const int LED_BUILTIN = 13;    //Not really needed for Arduino UNO it is defined in library
-const int HIGH_TIME_LED = 800;
-const int LOW_TIME_LED = 200;
-unsigned long lastLEDtime = 0;
-unsigned long nextLEDchange = 100; //time in ms.
-//const int BUZZER_TEST_FREQ = 130; // Middle C. About 67 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
-const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10 cm
+//Set LED wink parameters
+const int HIGH_TIME_LED_MS = 800;    //time in milliseconds
+const int LOW_TIME_LED_MS = 200;
+unsigned long lastLEDtime_ms = 0;
+unsigned long nextLEDchangee_ms = 100; //time in ms.
+
+//Setup for buzzer.
+//const int BUZZER_TEST_FREQ = 130; // One below middle C3. About 67 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
+//const int BUZZER_TEST_FREQ = 260; // Middle C4. About ?? db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
 //const int BUZZER_TEST_FREQ = 1000; //About 76 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
+const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10 cm.  The specified frequencey for the Version 1 buzzer.
 
 //For I2C Scan
 #include <Wire.h>
@@ -44,8 +52,9 @@ const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10 cm
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
 
-//Pin definitions
-#define SWITCH_MUTE 2
+//Pin definitions.  Assign symbolic constant to Arduino pin numbers. 
+//For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
+#define SWITCH_MUTE 2 
 #define TONE_PIN 8
 #define LIGHT0 3
 #define LIGHT1 5
@@ -53,25 +62,28 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define LIGHT3 9
 #define LIGHT4 7
 
+//Allow indexing to LIGHT[] by symbolic name. So LIGHT0 is first and so on.
 int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
+const int NUM_LIGHTS = sizeof(LIGHT)/sizeof(LIGHT[0]);
 
-//Functions
+// Functions
 
 void updateWink(void) {
   //Wink the built in LED
-  if (((millis() - lastLEDtime) > nextLEDchange) || (millis() < lastLEDtime)) {
+  const unsigned long m = millis();
+  if (((m - lastLEDtime_ms) > nextLEDchangee_ms) || (m < lastLEDtime_ms)) {
     if (digitalRead(LED_BUILTIN) == LOW) {
       digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-      nextLEDchange = HIGH_TIME_LED;
+      nextLEDchangee_ms = HIGH_TIME_LED_MS;
     } else {
       digitalWrite(LED_BUILTIN, LOW);   // turn the LED on (HIGH is the voltage level)
-      nextLEDchange = LOW_TIME_LED;
+      nextLEDchangee_ms = LOW_TIME_LED_MS;
     }
-    lastLEDtime = millis();
+    lastLEDtime_ms = m;
   }//end of Wink
 }
 
-/*Assumes LCD has been initilized
+/* Assumes LCD has been initilized
  * Turns off Back Light
  * Clears display
  * Turns on back light.
@@ -79,10 +91,10 @@ void updateWink(void) {
 void clearLCD(void) {  
   lcd.noBacklight();
   lcd.clear();
-}// end clearLCD
+}
 
+//Splash a message so we can tell the LCD is working
 void splashLCD(void) {
-  //LiquidCrystal_I2C lcd(0x27, 20, 4); // set the LCD address to 0x27 for a 16 chars and 2 line display
   lcd.init();                      // initialize the lcd
   // Print a message to the LCD.
   lcd.backlight();
@@ -91,12 +103,13 @@ void splashLCD(void) {
   lcd.setCursor(3, 1);
   lcd.print("GPAD Starting");
   lcd.setCursor(0, 2);
-  lcd.print("by Public Invention");
+  lcd.print("by PubInv & SPEC");
   lcd.setCursor(0, 3);
   lcd.print("Version: ");
   lcd.print(VERSION);
 }// end splashLCD
 
+//Portions of this copied from example i2c_scanner
 //Scan I2C
 void scanI2C(void) {
   Serial.println ();
@@ -125,13 +138,15 @@ void scanI2C(void) {
 }//end scanI2C()
 
 void setup() {
-  // put your setup code here, to run once:
-  delay(100);
-  Serial.begin(BAUDRATE);
-  delay(100);
+  //Lets make the LED high near the start of setup for visual clue
   pinMode(LED_BUILTIN, OUTPUT);      // set the LED pin mode
   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  //  Serial.println("FactoryTest V1.2");
+
+  //Serial setup
+  delay(100);
+  Serial.begin(BAUDRATE);
+  delay(100);                         //Wait before sending the first data to terminal
+
   Serial.print("FactoryTest V");
   Serial.println(VERSION);
   Serial.println("Start I2C scan");
@@ -146,44 +161,30 @@ void setup() {
   splashLCD();
   Serial.println("EndLCD splash");
 
-
   Serial.println("Set up GPIO pins");
   pinMode(SWITCH_MUTE, INPUT_PULLUP);
-  //pinMode(TONE_PIN, OUTPUT); //Not necessary
-
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < NUM_LIGHTS; i++) {
     Serial.println(LIGHT[i]);
     pinMode(LIGHT[i], OUTPUT);
-    //   digitalWrite(LIGHT[i], HIGH);
   }
-  //#define TONE_PIN 8
-  //#define LIGHT0 3
-  //#define LIGHT1 5
-  //#define LIGHT2 6
-  //#define LIGHT3 9
-  //#define LIGHT4 10
   Serial.println("end set up GPIO pins");
-
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 }// end of setup()
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
   updateWink(); //The builtin LED.
 
   if (digitalRead(SWITCH_MUTE) != HIGH) {
     tone(TONE_PIN, BUZZER_TEST_FREQ);
     Serial.println("Button pressed.");
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < NUM_LIGHTS; i++) {
       digitalWrite(LIGHT[i], HIGH);
     }
   } else {
     noTone(TONE_PIN);
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < NUM_LIGHTS; i++) {
       digitalWrite(LIGHT[i], LOW);
     }
   }
-
 }//end loop()
