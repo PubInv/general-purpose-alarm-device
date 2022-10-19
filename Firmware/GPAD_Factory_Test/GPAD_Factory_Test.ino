@@ -1,5 +1,5 @@
 /* GPAD_Factory_Test.ino
-  This program for factory test of PGPAD hardware
+  This program for factory test of GPAD hardware
 
   Copyright (C) 2022 Robert Read, Forrest Erickson.
 
