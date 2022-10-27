@@ -95,7 +95,7 @@ const unsigned long INF_DURATION = 4294967295;
 LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
 // To Debounce our standard button
 #include <DailyStruggleButton.h>
-DailyStruggleButton myButton;
+DailyStruggleButton muteButton;
 
 //Pin definitions.  Assign symbolic constant to Arduino pin numbers. 
 //For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
@@ -158,7 +158,13 @@ void splashLCD(void) {
 void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
   lcd.init(); 
   lcd.clear();
-  lcd.backlight();
+  // Possibly we don't need the backlight if the level is zero!
+  if (level != 0) {
+    lcd.backlight();
+  } else {
+    lcd.noBacklight(); 
+  }
+
   lcd.print("LVL: ");
   lcd.print(level);
   lcd.print(" - ");
@@ -167,11 +173,15 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
 
   lcd.setCursor(0, 1);
 
-  if (strlen(AlarmMessageBuffer) == 0) {
-    lcd.print("No Message.");
+  if (muted) {
+    lcd.print("MUTED! MSG:");
   } else {
-    lcd.print("MSG:");
-    lcd.setCursor(4, 1);
+    lcd.print("MSG:  ");
+  }
+  if (strlen(AlarmMessageBuffer) == 0) {
+    lcd.print("None.");
+  } else {
+
 
     char buffer[21] = {0}; // note space for terminator
 
@@ -189,34 +199,6 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
    }
 }
 
-//Portions of this copied from example i2c_scanner
-//Scan I2C
-void scanI2C(void) {
-  Serial.println ();
-  Serial.println ("I2C scanner. Scanning ...");
-  byte count = 0;
-
-  Wire.begin();
-  for (byte i = 8; i < 120; i++)
-  {
-    Wire.beginTransmission (i);
-    if (Wire.endTransmission () == 0)
-    {
-      Serial.print ("Found address: ");
-      Serial.print (i, DEC);
-      Serial.print (" (0x");
-      Serial.print (i, HEX);
-      Serial.println (")");
-      count++;
-      delay (1);  // maybe unneeded?
-    } // end of good response
-  } // end of for loop
-  Serial.println ("Done.");
-  Serial.print ("Found ");
-  Serial.print (count, DEC);
-  Serial.println (" device(s).");
-}//end scanI2C()
-
 void setup() {
   //Lets make the LED high near the start of setup for visual clue
   pinMode(LED_BUILTIN, OUTPUT);      // set the LED pin mode
@@ -226,13 +208,10 @@ void setup() {
   delay(100);
   Serial.begin(BAUDRATE);
   delay(100);                         //Wait before sending the first data to terminal
-
-  Serial.print("FactoryTest V");
-  Serial.println(VERSION);
-  Serial.println("Start I2C scan");
-  scanI2C();
-  Serial.println("End I2C scan");
   
+  Wire.begin();
+
+ 
   lcd.init();              
   Serial.println("Clear LCD");
   clearLCD();
@@ -248,9 +227,8 @@ void setup() {
     pinMode(LIGHT[i], OUTPUT);
   }
 
-  myButton.set(SWITCH_MUTE, myCallback);
+  muteButton.set(SWITCH_MUTE, myCallback);
   Serial.println("end set up GPIO pins");
-
 
   printInstructions(); 
   AlarmMessageBuffer[0] = '\0';
@@ -279,7 +257,6 @@ int alarm(int level,char *str) {
   currentLevel = level;
   // This makes sure we erase the buffer even if msg is an empty string
   AlarmMessageBuffer[0] = '\0'; 
-  //
   strcpy(AlarmMessageBuffer,str);
   return currentLevel;
 }
@@ -290,6 +267,8 @@ void printInstructions() {
 }
 
 void printAlarmState() {
+  Serial.print("Muted: ");
+  Serial.println(currentlyMuted ? "YES" : "NO");
   Serial.print("LVL: ");
   Serial.println(currentLevel);
   if (strlen(AlarmMessageBuffer) == 0) {
@@ -298,8 +277,6 @@ void printAlarmState() {
     Serial.print("Msg: ");
     Serial.println(AlarmMessageBuffer);
   }
-  
-
 }
 
 void printError() {
@@ -315,7 +292,7 @@ CD\n
 where C is an character, and D is a single digit.
 */
 void interpretBuffer(char *buf,int rlen) {
-  if (rlen < 2) {
+  if (rlen < 1) {
     printError();
     return; // no action
   }
@@ -329,23 +306,28 @@ void interpretBuffer(char *buf,int rlen) {
     return;
   }
   char C = buf[0];
-  char D = buf[1];
-  int N = D - '0';
+
   Serial.print(F("Command: "));
-  Serial.print(C);
-  Serial.println(N);
-  delay(100); // WARNING: this is only for the simulation
-  // Now we do a switch on C to decide what we received,
-  // and convert that into an abstract command..
+  Serial.println(C);
   switch (C) {
+    case 's':
+      Serial.println("Muting Case!");
+      currentlyMuted = true;
+      break;
+    case 'u':
+      Serial.println("UnMuting Case!");
+      currentlyMuted = false;
+      break;
     case 'h': // help
       printInstructions();
       break;
-    case 'a':
+    case 'a': {
     // In the case of an alarm state, the rest of the buffer is a message.
     // we will read up to 60 characters from this buffer for display on our
     // Arguably when we support mulitple states this will become more complicated.
-    // 
+      char D = buf[1];
+      int N = D - '0';
+      Serial.println(N);
       char msg[61];
       msg[0] = '\0';
       strcpy(msg, buf+2);
@@ -353,46 +335,32 @@ void interpretBuffer(char *buf,int rlen) {
       // to be a completely independent and abstract function.
       // it should copy the msg buffer
       alarm(N,msg);
-      
-      printAlarmState();
       break;
-    case 's':
-      mute();
-      break;
-    case 'u':
-      unmute();
-      break;
+    }
     default:
       Serial.println(F("Unknown Command"));
       break;
   }
+  Serial.println("currentlyMuted : ");
+  Serial.println(currentlyMuted);
   Serial.println(F("interpret Done"));
 }
 
 
-void annunciateAlarmLevel(int level) {
-//  digitalWrite(POWER_PIN,HIGH); // this is the silence pin!!!
-  for(int i = 0; i < level; i++) {
+// This operation is idempotent if there is no change in the abstract state.
+void annunciateAlarmLevel() {
+  for(int i = 0; i < currentLevel; i++) {
     digitalWrite(LIGHT[i],HIGH);
   }
-  for(int i = level; i < NUM_LIGHTS; i++) {
+  for(int i = currentLevel; i < NUM_LIGHTS; i++) {
     digitalWrite(LIGHT[i],LOW);
   }
   if (!currentlyMuted) {
-    tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[level],INF_DURATION);
+    tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION);
   } else {
     noTone(TONE_PIN);
   }
-  showStatusLCD(level,currentlyMuted,AlarmMessageBuffer);
-}
-void mute() {
-  Serial.println("Muting!");
-  currentlyMuted = true;
-}
-
-void unmute() {
-  Serial.println("Unmuting!");
-  currentlyMuted = false;
+  showStatusLCD(currentLevel,currentlyMuted,AlarmMessageBuffer);
 }
 
 void myCallback(byte buttonEvent){
@@ -400,11 +368,9 @@ void myCallback(byte buttonEvent){
     case onPress:
       // Do something...
       Serial.println("onPress");
-      if (currentlyMuted) {
-        unmute();
-      } else {
-        mute();
-      }
+      currentlyMuted = !currentlyMuted;
+      annunciateAlarmLevel();
+      printAlarmState();
       break;
   }
 }
@@ -427,18 +393,15 @@ void processSerial() {
       Serial.println();
       interpretBuffer(buf,rlen);
       // Now "light and scream"appropriately...
-      annunciateAlarmLevel(currentLevel);
+      annunciateAlarmLevel();
+      printAlarmState();
      } 
 }
 
 void loop() {
-
+  updateWink(); //The builtin LED 
   
-  updateWink(); //The builtin LED
-
-  myButton.poll();
+  muteButton.poll();
+  
   processSerial();
-
-    
-//  delay(100);
 }
