@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "blank_card-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/blank_card-eagle-import.kicad_sym")(options "")(descr ""))
+)

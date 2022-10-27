@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "PubInv_PCB")(type "KiCad")(uri "${KIPRJMOD}/PubInv_PCB.pretty")(options "")(descr ""))
+)
