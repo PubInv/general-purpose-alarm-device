@@ -7,14 +7,21 @@ This is collaboration of Public Invention with the [Sustainable Progress and Equ
 
 
 ## Schematic and PCB
+<a href="SCH_PolyVent_SPI_Controller.gif" >Link to SCH  <br>
+<img src="SCH_PolyVent_SPI_Controller.gif" width="200"  />
+</a>
 
-Todo:  
-![screen shot PCB](screen shot schematic)  
-Todo: PDF of schematic
+
+<a href="PCB_PolyVent_SPI_Controller.gif" >Link to PCB  <br>
+<img src="PCB_PolyVent_SPI_Controller.gif" width="200"  />
+</a>
 
 
-Todo: 
-![screen shot PCB](screen shot PCB)
+<a href="PCB_3D.gif" >Link to 3D render  <br>
+<img src="PCB_3D.gif" width="200"  />
+</a>
+
+
 
 # Volunteer Skills and Skilles Needed
 
