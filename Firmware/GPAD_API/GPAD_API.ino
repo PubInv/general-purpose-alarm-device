@@ -54,7 +54,7 @@
 
 
 enum AlarmLevel { silent, informational, problem, warning, critical, panic };
-char *AlarmNames[] = { "Silent","Informational","Problem","Warning","Critial","Panic" };
+const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
 const int NUM_LEVELS = 6;
 
 char AlarmMessageBuffer[128];
@@ -86,13 +86,16 @@ const int BUZZER_LVL_FREQ_HZ[]= {0,128,256,512,1024,2048};
 
 // in general, we want tones to last forever, although
 // I may implement blinking later.
-const int INF_DURATION = 4294967295;
+const unsigned long INF_DURATION = 4294967295;
 
 //For I2C Scan
 #include <Wire.h>
 //For LCD
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
+// To Debounce our standard button
+#include <DailyStruggleButton.h>
+DailyStruggleButton myButton;
 
 //Pin definitions.  Assign symbolic constant to Arduino pin numbers. 
 //For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
@@ -156,17 +159,31 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
   lcd.init(); 
   lcd.clear();
   lcd.backlight();
-  lcd.print("ALM LVL: ");
-
-  lcd.print(AlarmNames[level]);
-  lcd.print(" (");
+  lcd.print("LVL: ");
   lcd.print(level);
-  lcd.print(")");
+  lcd.print(" - ");
+  lcd.print(AlarmNames[level]);
+
 
   lcd.setCursor(0, 1);
   lcd.print("MSG:");
   lcd.setCursor(4, 1);
-  lcd.print(msg);
+
+  char buffer[21] = {0}; // note space for terminator
+
+  size_t len = strlen(msg);      // doesn't count terminator
+  size_t blen = sizeof(buffer)-1; // doesn't count terminator
+  size_t i = 0;
+  // the actual loop that enumerates your buffer
+  for (i=0; i<(len/blen + 1) && i < 3; ++i)
+  {
+      memcpy(buffer, msg + (i*blen), blen);
+      Serial.println(buffer);
+      lcd.setCursor(0,i+1);
+      lcd.print(buffer);
+  }
+
+  // lcd.print(msg);
 }
 
 //Portions of this copied from example i2c_scanner
@@ -213,7 +230,7 @@ void setup() {
   scanI2C();
   Serial.println("End I2C scan");
   
-  lcd.init();                      // initialize the lcd
+  lcd.init();              
   Serial.println("Clear LCD");
   clearLCD();
   delay(100);
@@ -227,6 +244,8 @@ void setup() {
     Serial.println(LIGHT[i]);
     pinMode(LIGHT[i], OUTPUT);
   }
+
+  myButton.set(SWITCH_MUTE, myCallback);
   Serial.println("end set up GPIO pins");
 
 
@@ -252,6 +271,7 @@ int alarm(int level) {
     return;
   }
   currentLevel = level;
+  return currentLevel;
 }
 
 
@@ -332,7 +352,7 @@ void annunciateAlarmLevel(int level) {
   } else {
     noTone(TONE_PIN);
   }
-  showStatusLCD(level,currentlyMuted,"no message yet. this is a long message");
+  showStatusLCD(level,currentlyMuted,"01234567890123456789012345678901234567890123456789012345678901234567890123456789");
 }
 void mute() {
   Serial.println("Muting!");
@@ -344,41 +364,22 @@ void unmute() {
   currentlyMuted = false;
 }
 
-void processMuteButton() {
-  int mute_button = analogRead(SWITCH_MUTE);
-  if (mute_button == 0) {
-    if (currentlyMuted) {
-      unmute();
-    } else {
-      mute();
-    }
+void myCallback(byte buttonEvent){
+  switch (buttonEvent){
+    case onPress:
+      // Do something...
+      Serial.println("onPress");
+      if (currentlyMuted) {
+        unmute();
+      } else {
+        mute();
+      }
+      break;
   }
 }
-void loop() {
-  updateWink(); //The builtin LED
-      
-  // Warning---this is not "debounced"!
-  processMuteButton();
-//
-//  if (digitalRead(SWITCH_MUTE) != HIGH) {
-//    tone(TONE_PIN, BUZZER_TEST_FREQ);
-//    Serial.println("Button pressed.");
-//    for (int i = 0; i < NUM_LIGHTS; i++) {
-//      digitalWrite(LIGHT[i], HIGH);
-//    }
-//  } else {
-//    noTone(TONE_PIN);
-//    for (int i = 0; i < NUM_LIGHTS; i++) {
-//      digitalWrite(LIGHT[i], LOW);
-//    }
-//  }
 
-
-
-
-  // Now see if we have a serial command
-    char C;
-    char D;
+void processSerial() {
+   // Now see if we have a serial command
     int rlen;
     // TODO: This code can probably hang; it needs to have 
     // timeouts added!
@@ -394,7 +395,17 @@ void loop() {
       interpretBuffer(buf,rlen);
       // Now "light and scream"appropriately...
       annunciateAlarmLevel(currentLevel);
-     }
+     } 
+}
+
+void loop() {
+
+  
+  updateWink(); //The builtin LED
+
+  myButton.poll();
+  processSerial();
+
     
-  delay(100);
+//  delay(100);
 }

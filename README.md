@@ -4,7 +4,7 @@ This is collaboration with the [Sustainable Progress and Equality Collective (SP
 
 ![IMG-3539](https://user-images.githubusercontent.com/5296671/195462489-233d7f4f-62ae-4d29-930c-db42419f31b2.JPG)
 This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
-This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition. 
+This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition.
 * Flash bright lights
 * Make loud tones
 * Button to "mute" or suppress the alarm condition.
@@ -15,12 +15,12 @@ This module has an enclosure and inside is an embedded microcontroller system wi
 
 The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device which will assert status through the GPAD to an end user.
 
-# Prototype GPAD 
+# Prototype GPAD
 User view of GPAD With Enclosure.  *This image is only a place holder and does not well illustrate the design nor have mounting features.*
 
 <img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
 
-User view of GPAD Printed Wiring Assembly without enclosure.  
+User view of GPAD Printed Wiring Assembly without enclosure.
 
 <img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">
 
@@ -38,39 +38,39 @@ The purpose of the alarm is to get the attention of nurses or doctors who can fi
 
 GPAD offers a simple API, possibly with a JSON or byte-level interface, for commanding it to alarm.
 Abstractly, we can imagine a system that supports five levels of alarm severity.
-Additionally, an alarm condition normally has a short message associated with it, such as "hose disconnect", which 
+Additionally, an alarm condition normally has a short message associated with it, such as "hose disconnect", which
 should potentially be displayed on a small screen.
 
 The initial version of this API can be extraordinarily simple: Alarm at a level between zero and five, where zero means no alarm.
-However, it is clear this API will have to evolve over time. Issues such as when one alarm level supersedes another, when it is 
+However, it is clear this API will have to evolve over time. Issues such as when one alarm level supersedes another, when it is
 acceptable to silence an alarm and for how long, etc. actually become rather complicated quickly.
 
 We hope that by defining a clearly versioned API we can make an evolving device of great utility for a wide variety of purposes.
 
 # Stand-alone or Sub-assembly
 
-Our design includes a printed wiring assembly and an enclosure.  
+Our design includes a printed wiring assembly and an enclosure.
 The printed wiring assembly could be designed into a device with our our enclosure. Full documentation provided.
 We believe a loosely-coupled physical device is the most repurposable.  Such a device would have its own independent power supply.
 However, there are clearly use cases when the same module should be integrated into the physical case, power system, and even printed
 circuit board of other systems. We therefore seek design flexibility that supports all of these usage modes.
 
-# The Arduino UNO Like Platform 
+# The Arduino UNO Like Platform
 
-The implementation is Arduino UNO like. A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility. 
+The implementation is Arduino UNO like. A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility.
 UNO foot print for shields is provided.
 This allows a typical Arduino serial port interface for development and debugging.
 
 # How is the alarm signal received?
 
-The wired connection from a host is an SPI controller and the GPAD is an SPI Peripheral. 
+The wired connection from a host is an SPI controller and the GPAD is an SPI Peripheral.
 
-A wireless interface may be added through a UNO shield. (Compatibility with existing wireless shields has not been checked. A custom shield with a wireless interface to some of the unused controller pins should be possible but may not be trivial.) 
+A wireless interface may be added through a UNO shield. (Compatibility with existing wireless shields has not been checked. A custom shield with a wireless interface to some of the unused controller pins should be possible but may not be trivial.)
 
 
 # Summer 2022 Project Status
 
-### Firmware 
+### Firmware
 Demonstration of SPI controller and Peripheral for single byte transmission.
 
 ### Hardware
@@ -88,14 +88,14 @@ Demonstration of SPI controller and Peripheral for single byte transmission.
 * Light alert by five, 5mm white LEDs driven at about 20 mA.
 * Acoustic alert by buzzer driven by push pull some what less than 5Vp-p.
 * Text display with back lit, 20x4 character LCD.
-* Single User Button 
+* Single User Button
 * Recessed reset button.
 * Power on status LED
 * USB port for Firmware development and low power operation
 * An I2C output for controller of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
 Still remaining: define a simple API.
-We imagine these hardware choices will evolve over time. We want the API to insulate the user of the GPAD 
+We imagine these hardware choices will evolve over time. We want the API to insulate the user of the GPAD
 from specific details of how the noise is made.
 
 Nonetheless, we can make a few comments.
@@ -128,7 +128,7 @@ In each of these phases, we imagine the API improving substantially.
 
 Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
 
-Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientest by training, and an electrical engineer as well as a hobby inventor by vocation. 
+Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientest by training, and an electrical engineer as well as a hobby inventor by vocation.
 
 ???  Joe Torreggiani of Speccollective
 
@@ -137,7 +137,7 @@ Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who preten
 
 We need:
 1. Arduino engineers who can both code and make very simple circuits.
-2. Schematic capture and PCB layout designers.  We are using KiCad. 
+2. Schematic capture and PCB layout designers.  We are using KiCad.
 3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
 4. Embedded firmware engineers who can design an effective, evolving API and the transport bindings that they require.
 5. GUI experts who can address issues such as how to effective alarm and silence.
@@ -153,7 +153,7 @@ Because it could be used for a wide variety of purposes by makers and could be s
 As an embedded sub assembly the printed wiring assembly must be low cost with a material price of < $30USD
 
 Potential uses as a product (by hobbyist) include:
-1. Alarming a cat door, bird or squirl at feeder, 
+1. Alarming a cat door, bird or squirl at feeder,
 2. Alarming when a visual signal, such as an animal moving in a game camera is detected
 3. Annunciation of life-threatening conditions in medical devices
 4. Overheating conditions in almost any device
@@ -188,7 +188,7 @@ boolean isMuted();
 ```
 # A Simulation with WokWi
 
-We have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them, 
+We have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them,
 that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.
 
 The other shows the use of the LCD.
@@ -203,16 +203,16 @@ The enclsoure should be designed for easy 3D fabrication. Enclosure material is 
 
 # Other Product Description
 
-## White LEDs 
+## White LEDs
 
 We're going to use white-light LEDs to avoid color-blindness issues for the visual alarm.
 
 # Project Glossary and Ornizational Overview
 
 ## Issue Labels used
-| Label Name  | Short Description  | Detailed Description  |  
+| Label Name  | Short Description  | Detailed Description  |
 |---|---|---|
-| bug  | Something isn't working  |   |  
+| bug  | Something isn't working  |   |
 |  documentation | Improvements or additions to documentation |   |
 |  duplicate |  This issue or pull request already exists |   |
 |  enhancement |  New feature or request |   |
@@ -224,11 +224,15 @@ We're going to use white-light LEDs to avoid color-blindness issues for the visu
 | research | Research products or ideas | |
 | wontfix | This will not be worked on | |
 
+# Building the Firmware
+
+The firmware can be built with the standard Arduino IDE.
+It requires libraries:
+1. Wire.h
+1. LiquidCrystal_I2C.h
+1. DailyStruggleButton.h
+
 # License
 
 * Firmware: GLP 3
 * Hardware CERN Open Hardware License Version 2 - Strongly Reciprocal
-
-
-
-
