@@ -1,0 +1,4 @@
+(version 1)
+(rule "class 1:1"
+  (condition "A.NetClass == 'POWER' && B.NetClass == 'POWER'")
+  (constraint clearance (min 0.508mm)))
