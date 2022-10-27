@@ -166,24 +166,27 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
 
 
   lcd.setCursor(0, 1);
-  lcd.print("MSG:");
-  lcd.setCursor(4, 1);
 
-  char buffer[21] = {0}; // note space for terminator
+  if (strlen(AlarmMessageBuffer) == 0) {
+    lcd.print("No Message.");
+  } else {
+    lcd.print("MSG:");
+    lcd.setCursor(4, 1);
 
-  size_t len = strlen(msg);      // doesn't count terminator
-  size_t blen = sizeof(buffer)-1; // doesn't count terminator
-  size_t i = 0;
-  // the actual loop that enumerates your buffer
-  for (i=0; i<(len/blen + 1) && i < 3; ++i)
-  {
+    char buffer[21] = {0}; // note space for terminator
+
+    size_t len = strlen(msg);      // doesn't count terminator
+    size_t blen = sizeof(buffer)-1; // doesn't count terminator
+    size_t i = 0;
+    // the actual loop that enumerates your buffer
+    for (i=0; i<(len/blen + 1) && i < 3; ++i)
+    {
       memcpy(buffer, msg + (i*blen), blen);
       Serial.println(buffer);
       lcd.setCursor(0,i+1);
       lcd.print(buffer);
-  }
-
-  // lcd.print(msg);
+    }
+   }
 }
 
 //Portions of this copied from example i2c_scanner
@@ -255,22 +258,29 @@ void setup() {
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 }// end of setup()
 
-
-const int BUFFER_SIZE = 100;
-char buf[BUFFER_SIZE];
+// We accept maessages up to 128 characters, with 2 characters in front,
+// and an end-of-string delimiter makes 131 characters!
+const int COMMAND_BUFFER_SIZE = 131;
+char buf[COMMAND_BUFFER_SIZE];
 
 const int NUM_PREFICES = 4;
 char legal_prefices[NUM_PREFICES] = {'h','s','a','u'};
 
 
-
-int alarm(int level) {
+// This is the abstract alarm function. It CANNOT
+// assume the msg buffer will exist after this call.
+// str must be null-terminated string!
+int alarm(int level,char *str) {
   if (!(level >= 0 && level < NUM_LEVELS)) {
     Serial.println("Bad Level!");
     printError();
     return;
   }
   currentLevel = level;
+  // This makes sure we erase the buffer even if msg is an empty string
+  AlarmMessageBuffer[0] = '\0'; 
+  //
+  strcpy(AlarmMessageBuffer,str);
   return currentLevel;
 }
 
@@ -280,22 +290,32 @@ void printInstructions() {
 }
 
 void printAlarmState() {
+  Serial.print("LVL: ");
   Serial.println(currentLevel);
+  if (strlen(AlarmMessageBuffer) == 0) {
+    Serial.println("No Message.");
+  } else {
+    Serial.print("Msg: ");
+    Serial.println(AlarmMessageBuffer);
+  }
+  
 
 }
-/*
-This is a simple protocol:
-CD\n
-where C is an character, and D is a single digit.
-*/
+
 void printError() {
     Serial.println(F("bad format of command!"));
     printInstructions();
 }
 
-// This is a trivial "parser"
+// This is a trivial "parser". This should probably be moved
+// into a separate .cpp file.
+/*
+This is a simple protocol:
+CD\n
+where C is an character, and D is a single digit.
+*/
 void interpretBuffer(char *buf,int rlen) {
-  if (rlen != 2) {
+  if (rlen < 2) {
     printError();
     return; // no action
   }
@@ -322,7 +342,18 @@ void interpretBuffer(char *buf,int rlen) {
       printInstructions();
       break;
     case 'a':
-      alarm(N);
+    // In the case of an alarm state, the rest of the buffer is a message.
+    // we will read up to 60 characters from this buffer for display on our
+    // Arguably when we support mulitple states this will become more complicated.
+    // 
+      char msg[61];
+      msg[0] = '\0';
+      strcpy(msg, buf+2);
+      // This copy loooks uncessary, but is not...we want "alarm" 
+      // to be a completely independent and abstract function.
+      // it should copy the msg buffer
+      alarm(N,msg);
+      
       printAlarmState();
       break;
     case 's':
@@ -352,7 +383,7 @@ void annunciateAlarmLevel(int level) {
   } else {
     noTone(TONE_PIN);
   }
-  showStatusLCD(level,currentlyMuted,"01234567890123456789012345678901234567890123456789012345678901234567890123456789");
+  showStatusLCD(level,currentlyMuted,AlarmMessageBuffer);
 }
 void mute() {
   Serial.println("Muting!");
@@ -385,7 +416,9 @@ void processSerial() {
     // timeouts added!
     if (Serial.available() > 0) {
       // read the incoming bytes:
-      int rlen = Serial.readBytesUntil('\n', buf, BUFFER_SIZE); 
+      int rlen = Serial.readBytesUntil('\n', buf, COMMAND_BUFFER_SIZE); 
+      // readBytesUntil does not terminate the string!
+      buf[rlen] = '\0';
       // prints the received data
       Serial.print("I received: ");
       Serial.print(rlen);
