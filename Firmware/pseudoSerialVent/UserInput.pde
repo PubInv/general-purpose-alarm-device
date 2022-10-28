@@ -2,73 +2,44 @@
 /* Commands to be sent to target device, the GPAD*/
 
 void keyPressed() {
-  //Proccess keys of UI.
+  if (key!=CODED) { //Ignore ALT, CONTROL, SHIFT, UP, DOWN, LEFT and RIGHT
 
-  if ((key== 'a'|| (key== 'A'))) {
-    //Socket Active Test
-    println("Testing for active server.");
-    if (myServer.active()== true) {
-      println("Server active.");
-    } else {
-      println("Server not active.");
-    }
-  }// A
+    //Proccess keys of UI.
 
-  if ((key== 'd'|| (key== 'D'))) {
-    //Disconnect Client Socket  ???thisClient???   
-    println("Disconnecting Client socket. Server: " + myServer + ", Client: " + myClient);
-    try {
-      //do something that might throw NPE
-      myServer.disconnect(myClient);
-      println("I did it. I got a Non null pointer and disconnected that client.");
-    }
-    catch(NullPointerException npe) {
-      //uh oh, an NPE happened
-      println("Client disconnect exception, I got a null pointer all right.");
-    } //disconnect client();
-  }//D
 
-  if ((key== 'e') || (key== 'E') || (key== 'X') || (key== 'x')) {
-    //Stop Clients, Server and then Exit this program     
-    try {
-      myServer.disconnect(myClient);
-      println("Client disconnect.");
-    } 
-    catch (Exception npe)
-    {
-      println("Clien Disconnect exception with: " + npe);
-    }
-    try {
-      myServer.stop();
-      println("Server Stop");
-    } 
-    catch (Exception npe) 
-    {
-      println("Server Stop exception with: " + npe);
-    }
-    println("Good buy.");
-    //     String endTime = (str(year()) + str(month()) +str(day()) +"_" + str(hour()) + str(minute()) + str(second()) );
-    appendTextToFile(myLogFileName, ("Your log is terminated."));
-    exit();
-  }// E
 
-  if (((key =='S') && (myServerRunning== true)) || ((key =='s') && (myServerRunning== true))) {
-    //stop Socket
-    println("Stoping Server.");
-    myServerRunning = false;
-    myServer.stop();
-    myServer = null;
-    //exit();
-  }//s
+    if ((key== 'c'|| (key== 'C'))) {
+      //foo
+      println("Writing '*CLS\\n' to serial port.");
+      myPort.write("*CLS\n");  //Clear status command
+    }// C
 
-  if (((key =='g') && (myServerRunning== false)) || ((key =='G') && (myServerRunning== false)) ) {
-    println("Go to start new server.");
-    myServer = new Server(this, MY_PORT); // Starts a server   
-    s_messageServer= "New server "; 
-    s_serverStatus = "New server running";
-    myServerRunning = true;
-    myBackground = color(0, 0, 0); //Set to black when server started
-  }//S
+    if ((key== 'e') || (key== 'E') || (key== 'X') || (key== 'x')) {
+      //Exit this program     
+      println("Good buy.");
+      appendTextToFile(myLogFileName, ("Your log is terminated."));
+      exit();
+    }// E
+
+    if ((key== 'h'|| (key== 'H'))) {
+      //Requst the help message
+      println("Writing 'h\\n' to serial port.");
+      myPort.write("h");  //help
+      myPort.write("h\n");  //help
+    }// H
+
+    if ((key== 's'|| (key== 'S'))) {
+      //Set mute case true
+      println("Writing 's' to serial port.");
+      myPort.write("s\n");  //mute
+    }// S
+
+    if ((key== 'u'|| (key== 'U'))) {
+      //Un mute
+      println("Writing 'u' to serial port.");
+      myPort.write("u\n");  //unmute
+    }// U
+  }// end note key coded
 }// User Interface keyPressed() 
 
 

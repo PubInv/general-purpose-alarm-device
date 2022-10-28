@@ -1,4 +1,4 @@
-/*Commands simulating ST365 */
+/* Server Commands simulating ST365 */
 
 void processClientCommands(String whatClientSaid) {
 
