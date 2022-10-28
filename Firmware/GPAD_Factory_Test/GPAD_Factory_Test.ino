@@ -31,7 +31,8 @@
  * And: https://www.specollective.org/
 */
 
-#define VERSION 1.23             //Version of this software
+#define PROG_NAME "****FACTORY TEST****"     //Descriptive name of this software, 20 characters.
+#define VERSION 1.24                         //Version of this software
 #define BAUDRATE 115200
 
 //Set LED wink parameters
@@ -99,7 +100,7 @@ void splashLCD(void) {
   // Print a message to the LCD.
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("********************");
+  lcd.print(PROG_NAME);
   lcd.setCursor(3, 1);
   lcd.print("GPAD Starting");
   lcd.setCursor(0, 2);
