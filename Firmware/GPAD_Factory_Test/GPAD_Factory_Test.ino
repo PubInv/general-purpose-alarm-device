@@ -125,22 +125,22 @@ void scanI2C(void) {
   Serial.println ("I2C scanner. Scanning ...");
 
   const byte scanStart = 8;
-  const byte scanEnd = 100;
+  const byte scanEnd = 120;
   const byte scanRange = scanEnd - scanStart;
   byte endCode[6] = { 0 };    // returns no. of addresses per return code (max 6 codes).
 
   Wire.begin();
   for (byte i = scanStart; i < scanEnd; i++)  // scan fully range of addresses
   {
-    Wire.beginTransmission(i);
+    Wire.beginTransmission (i);
     endCode[Wire.endTransmission()]++;  // tally up return codes
     if (Wire.endTransmission() == SUCCESS) {
-      Serial.print("Found address: ");
-      Serial.print(i, DEC);
-      Serial.print(" (0x");
-      Serial.print(i, HEX);
-      Serial.println(")");
-      delay(1);  // maybe unneeded?
+      Serial.print ("Found address: ");
+      Serial.print (i, DEC);
+      Serial.print (" (0x");
+      Serial.print (i, HEX);
+      Serial.println (")");
+      delay (1);  // maybe unneeded?
     } // end of good response
   } // end of for loop
   Serial.println ("Done.");
