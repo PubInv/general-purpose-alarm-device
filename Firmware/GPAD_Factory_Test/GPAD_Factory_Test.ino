@@ -62,6 +62,15 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define LIGHT3 9
 #define LIGHT4 7
 
+//I2C endTransmission() return values/error codes
+//For more information see: https://www.arduino.cc/reference/en/language/functions/communication/wire/endtransmission/
+#define SUCCESS       0
+#define OVERFLOW      1
+#define NACK_ADDRESS  2
+#define NACK_DATA     3
+#define OTHER_ERROR   4
+#define TIMEOUT       5
+
 //Allow indexing to LIGHT[] by symbolic name. So LIGHT0 is first and so on.
 int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
 const int NUM_LIGHTS = sizeof(LIGHT)/sizeof(LIGHT[0]);
@@ -114,27 +123,67 @@ void splashLCD(void) {
 void scanI2C(void) {
   Serial.println ();
   Serial.println ("I2C scanner. Scanning ...");
-  byte count = 0;
+
+  const byte scanStart = 8;
+  const byte scanEnd = 100;
+  const byte scanRange = scanEnd - scanStart;
+  byte endCode[6] = { 0 };    // returns no. of addresses per return code (max 6 codes).
 
   Wire.begin();
-  for (byte i = 8; i < 120; i++)
+  for (byte i = scanStart; i < scanEnd; i++)  // scan fully range of addresses
   {
-    Wire.beginTransmission (i);
-    if (Wire.endTransmission () == 0)
-    {
-      Serial.print ("Found address: ");
-      Serial.print (i, DEC);
-      Serial.print (" (0x");
-      Serial.print (i, HEX);
-      Serial.println (")");
-      count++;
-      delay (1);  // maybe unneeded?
+    Wire.beginTransmission(i);
+    endCode[Wire.endTransmission()]++;  // tally up return codes
+    if (Wire.endTransmission() == SUCCESS) {
+      Serial.print("Found address: ");
+      Serial.print(i, DEC);
+      Serial.print(" (0x");
+      Serial.print(i, HEX);
+      Serial.println(")");
+      delay(1);  // maybe unneeded?
     } // end of good response
   } // end of for loop
   Serial.println ("Done.");
-  Serial.print ("Found ");
-  Serial.print (count, DEC);
-  Serial.println (" device(s).");
+
+  if (endCode[SUCCESS]) {   // At least 1 found
+    Serial.print("Found ");
+    Serial.print(endCode[SUCCESS], DEC);
+    Serial.println(" device(s).");
+  }
+  else if (!endCode[SUCCESS]) {   // None found
+    Serial.println("NO DEVICE FOUND.");
+    // Print error message(s):
+    if(endCode[OVERFLOW]) {   
+      Serial.print("ERROR: ");
+      Serial.println("Data too long to fit in transmit buffer. [x");
+      Serial.print(endCode[OVERFLOW], DEC);
+      Serial.println(" address(es)]");
+    }
+    if(endCode[NACK_ADDRESS]) {
+      Serial.print("ERROR: ");
+      Serial.print("Received NACK on transmit of address. [x");
+      Serial.print(endCode[NACK_ADDRESS], DEC);
+      Serial.println(" address(es)]"); 
+    }
+    if(endCode[NACK_DATA]) {
+      Serial.print("ERROR: ");
+      Serial.println("Received NACK on transmit of data. [x");
+      Serial.print(endCode[NACK_DATA], DEC);
+      Serial.println(" address(es)]");
+    }
+    if(endCode[OTHER_ERROR]) {
+      Serial.print("ERROR: ");
+      Serial.println("Other error. [x");
+      Serial.print(endCode[OTHER_ERROR], DEC);
+      Serial.println(" address(es)]");
+    }
+    if(endCode[TIMEOUT]) {
+      Serial.print("ERROR: ");
+      Serial.println("Timeout. [x");
+      Serial.print(endCode[TIMEOUT], DEC);
+      Serial.println(" address(es)]");
+    }
+  }//end serial prints
 }//end scanI2C()
 
 void setup() {
