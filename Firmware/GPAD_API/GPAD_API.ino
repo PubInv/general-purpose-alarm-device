@@ -18,6 +18,7 @@
 
   Change notes:
   20221024 Creation by Rob.
+  20221028 Report Program Name in splash screen. Lee Erickson
 */
 
 /* This is a work-in-progress but it has two purposes.
@@ -49,6 +50,7 @@
  * -- rlr, Oct. 24, 2022
  */
 
+#define PROG_NAME "******GPAD_API******"     //Descriptive name of this software, 20 characters.
 #define VERSION 0.1             //Version of this software
 #define BAUDRATE 115200
 
@@ -144,7 +146,7 @@ void splashLCD(void) {
   // Print a message to the LCD.
   lcd.backlight();
   lcd.setCursor(0, 0);
-  lcd.print("********************");
+  lcd.print(PROG_NAME);
   lcd.setCursor(3, 1);
   lcd.print("GPAD Starting");
   lcd.setCursor(0, 2);
