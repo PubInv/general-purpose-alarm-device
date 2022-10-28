@@ -1,7 +1,7 @@
 /*Commands simulating ST365 */
 
 void processClientCommands(String whatClientSaid) {
-  
+
   if (whatClientSaid.startsWith(">03")) {
     String myReply = "#0304\r";
     myServer.write(myReply);
@@ -66,5 +66,4 @@ void processClientCommands(String whatClientSaid) {
     myServer.write(myReply);
     println("Reply with:" + myReply);
   }// Client sent >70.
-        
 }//Not null from client

@@ -4,7 +4,7 @@
  * /date 28 October 2022.
  * /brief A Proccessing program to simulate a PolyVent on a serial interface to the GPAD.
  * 
-
+ 
  * /detail Modified from ServerComeAndGoes at: https://github.com/ForrestErickson/Processing-ServerComeAndGoes
  *
  */
@@ -95,7 +95,7 @@ void serverEvent(Server myServer, Client myClient) {
 
 void setup() 
 {  
-   // List all the available serial ports
+  // List all the available serial ports
   printArray(Serial.list());
   // Open the port you are using at the rate you want:
   myPort = new Serial(this, Serial.list()[COMPORT_INDEX], BAUDRATE);  //Arduino
@@ -104,8 +104,8 @@ void setup()
   // in the middle of a string from the sender.
   myString = myPort.readStringUntil(lf);
   myString = null;
-  
-  
+
+
   frameRate(60);  
   background (myBackground);
   size(400, 400); 
@@ -117,7 +117,7 @@ void setup()
   fBig = createFont("Arial", 18, true);     // Create Font for heading 
   textAlign(RIGHT);                    // Credit will be in lower right corner.
   text("Set up started", 400, 10);
-  
+
   /*Set up server. This coorisponds to sl_Socket which opens a socket, 
    and sl_Bind which is where we set port, 
    and sl_Listen where we start listening.
@@ -129,7 +129,7 @@ void setup()
     myBackground = color(0, 0, 0);
     s_serverStatus = "Start up server is active.";
     myServerRunning = true;
-  }else {
+  } else {
     myServerRunning = false;
   }
 } // setup()
@@ -153,7 +153,7 @@ void draw() {
     text("Client: " + s_messageClient, 400, 40);
     text("Server:" + s_messageServer, 400, 50);    
     printUserInstructions();
-    
+
     thisClient = myServer.available();
     // If the client is not null, and says something, display what it said
     if (thisClient !=null) {
@@ -167,17 +167,16 @@ void draw() {
         processClientCommands(whatClientSaid);
       }
     }//Client available
-    }else { //Server not aactive
-      myBackground = color(255, 0, 0); //Red to indicate no server.
-      background (myBackground);
-      s_messageServer = "Server not active";
-      s_serverStatus = "Server not active";
-      text(s_serverStatus, 400, 10);
-      text("Client Connection: "+s_clientStatus, 400, 20);
-      text("Client: " + s_messageClient, 400, 40);
-      text("Server:" + s_messageServer, 400, 50);   
-      text("Server Keyboard Commands", 10, yInstructionLocation);
-      printUserInstructions();
+  } else { //Server not aactive
+    myBackground = color(255, 0, 0); //Red to indicate no server.
+    background (myBackground);
+    s_messageServer = "Server not active";
+    s_serverStatus = "Server not active";
+    text(s_serverStatus, 400, 10);
+    text("Client Connection: "+s_clientStatus, 400, 20);
+    text("Client: " + s_messageClient, 400, 40);
+    text("Server:" + s_messageServer, 400, 50);   
+    text("Server Keyboard Commands", 10, yInstructionLocation);
+    printUserInstructions();
   }
-
 }//draw()
