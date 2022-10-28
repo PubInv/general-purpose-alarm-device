@@ -1,4 +1,5 @@
 /* User Interface with keyboard*/
+/* Commands to be sent to target device, the GPAD*/
 
 void keyPressed() {
   //Proccess keys of UI.

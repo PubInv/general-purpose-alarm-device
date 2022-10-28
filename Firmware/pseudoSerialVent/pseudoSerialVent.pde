@@ -1,32 +1,32 @@
 /** ServerComeAndGoes //<>//
  *
  * /author F. Lee Erickson.
- * /date 3 June 2019.
- * /brief Modified by, to indicate server status and trafic with client.
+ * /date 28 October 2022.
+ * /brief A Proccessing program to simulate a PolyVent on a serial interface to the GPAD.
  * 
- * Transmongrafied from "Shared Drawing Canvas" (Server) Example by Alexander R. Galloway. 
- * This server has features for connection and disconnection of client and server. Developed to test embedded client connectivity.
- * A Proccessing client is also developed to allow test and development of this server. Client file name: ClientWithReconnect.  
+
+ * /detail Modified from ServerComeAndGoes at: https://github.com/ForrestErickson/Processing-ServerComeAndGoes
+ *
  */
 
-// 6 June 2019
-// First work with Client Example 2 to simulate a ST365 server. 
-// Ultimatly to work as a server to a ST365 which is a client.
-// 7 June 2019 Server opens up on port 23 and once a client connects indicates in draw window. 
-// Client data printed to console.  Mouse sends some data to client.
-// The client must receive at least one character before it can disconnect with out exception.
-// 11 June Connected with CC3220SocketFunction success.
-// Add text into window for status and messages.
-// Server responds to client message ">04" with a string.
-// Server responds to client message ">05" with a string.
-// 26 June 2019 Tested with the client which tries to reconnect if server is lost and is working. 
-// 27 June 2019 rename from ServerLaptop to ServerComeAndGoes
-// 15 July. Remove commented out code for when window was monocrome.  Improve window text and color prompts for more conditions (server not active).
-// 15 July. Move keypress and mouse press to UserInput tab.  
-// 26 August. Add a loging file. 
-// 25 Sep. Add more responses for client commands to simulate an ST365. This works with ST Ultra.
-// 7 October. Move ST365 client command proccessing to a new file.  Make a G command to go with a new server. Add user instructions to draw window.
+String COMPANY = "Public Invention";
+String MODELNAME = "pseudoSerialVent";
+String VERSION = "0.0.1";
 
+
+//final int COMPORT_INDEX = 4;    //Change the port number as necessary
+//final int COMPORT_INDEX = 5;    //Change the port number as necessary
+final int COMPORT_INDEX = 3;    //Change the port number as necessary
+
+import processing.serial.*;
+
+int lf = 10;    // Linefeed in ASCII
+String myString = null;
+Serial myPort;  // The serial port
+int BAUDRATE = 1000000 ;
+
+
+//Old code from socket version
 String mySocket = "None";
 String myOldSocket = "None";
 Boolean Verbose = true; 
@@ -94,7 +94,18 @@ void serverEvent(Server myServer, Client myClient) {
 
 
 void setup() 
-{
+{  
+   // List all the available serial ports
+  printArray(Serial.list());
+  // Open the port you are using at the rate you want:
+  myPort = new Serial(this, Serial.list()[COMPORT_INDEX], BAUDRATE);  //Arduino
+  myPort.clear();
+  // Throw out the first reading, in case we started reading 
+  // in the middle of a string from the sender.
+  myString = myPort.readStringUntil(lf);
+  myString = null;
+  
+  
   frameRate(60);  
   background (myBackground);
   size(400, 400); 
