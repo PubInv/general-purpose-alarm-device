@@ -8,6 +8,18 @@ void keyPressed() {
 
 
 
+     if ((key== 'a'|| (key== 'A'))) {
+      
+      println("Writing 'a0' to serial port.");
+      myPort.write("a0");  //
+    }// A
+    
+    if ((key== 'b'|| (key== 'B'))) {
+      
+      println("Writing 'a1' to serial port.");
+      myPort.write("a1");  //
+    }// A
+
     if ((key== 'c'|| (key== 'C'))) {
       //foo
       println("Writing '*CLS\\n' to serial port.");

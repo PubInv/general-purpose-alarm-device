@@ -14,8 +14,8 @@ String MODELNAME = "pseudoSerialVent";
 String VERSION = "0.0.1";
 
 
-final int COMPORT_INDEX = 3;    //Change the port number as necessary
-//final int COMPORT_INDEX = 4;    //Change the port number as necessary
+//final int COMPORT_INDEX = 3;    //Change the port number as necessary
+final int COMPORT_INDEX = 4;    //Change the port number as necessary
 //final int COMPORT_INDEX = 5;    //Change the port number as necessary
 String inString;  // Input string from serial port
 
@@ -26,7 +26,7 @@ int lf = 10;    // Linefeed in ASCII
 int cr = 13;    // CR in ASCII
 String myString = null;
 Serial myPort;  // The serial port
-int BAUDRATE = 1000000 ;
+int BAUDRATE = 115200 ;
 
 
 //Old code from socket version
@@ -102,10 +102,11 @@ void setup()
   printArray(Serial.list());
   // Open the port you are using at the rate you want:
   myPort = new Serial(this, Serial.list()[COMPORT_INDEX], BAUDRATE);  //Arduino
+  myPort.bufferUntil(lf); 
   myPort.clear();
   // Throw out the first reading, in case we started reading 
   // in the middle of a string from the sender.
-  myString = myPort.readStringUntil(lf);
+ // myString = myPort.readStringUntil(lf);
   myString = null;
 
 
@@ -119,7 +120,7 @@ void setup()
 
   f = createFont("Arial", 12, true);     // Create Font 
   fBig = createFont("Arial", 18, true);     // Create Font for heading 
-  textAlign(RIGHT);                    // Credit will be in lower right corner.
+  textAlign(LEFT);                    // Credit will be in lower right corner.
   text("Set up started", 400, 10);
 
   /*Set up server. This coorisponds to sl_Socket which opens a socket, 
@@ -140,10 +141,10 @@ void setup()
 
 void draw() {
   yInstructionLocation = 100; //Reset location for next instruction line
-  textAlign(RIGHT); 
+  textAlign(LEFT); 
 
   // Process serial port read
-background (myBackground);
+  background (myBackground);
   text("received: " + inString, 100, 150); 
 
   ////Process server IO

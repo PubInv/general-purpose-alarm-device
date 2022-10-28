@@ -1,5 +1,5 @@
 void serialEvent(Serial p) { 
   inString = p.readString(); 
-  print("Serial input: ");
+  print("Serial received: ");
   println(inString);
 } 
