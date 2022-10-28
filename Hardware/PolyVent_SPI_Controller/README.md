@@ -26,8 +26,8 @@ This PCB provides two interface methods for level shifting from the 3.3V ESP32 o
 They are options acheived by populating different components in the schematic. As of 20221027 17:00 the schematic does not detail these stuffing options.
 
 * One method of using FETs as described for example here: https://www.eeweb.com/level-shifting-techniques-in-i2c-bus-design/
-* The second method is to simply connect the signals from the ESP32 output pins (SCL, COPI, nCS) directly to the ATmega328 inputs and rely on the 3.3 Volt logic high to be sufficient for the Atmega328. Analyses is: _TBD_  .
-The output from the ATmega328 is resistivly divided through 1K into 2K to produce 5 * 2/3 = 3.3 Volts on the CPSO signal.
+* The second method is to simply connect the signals from the ESP32 output pins (SCL, COPI, nCS) directly to the ATmega328 inputs and rely on the 3.3 Volt logic high to be sufficient for the Atmega328 CMOS inputs. Full analyses is: _TBD_  .
+The output from the ATmega328 is resistivly divided through 1K into 2K to produce 5 * 2/3 = 3.3 Volts on the CIPO signal.
 
 There is a resistor population choice of five different nCS lines of the PolyVent brought out to become the nCS signal. These are CS11-CS15 on the PolyVent connector.
 
