@@ -15,7 +15,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-String myLogFileName = "ServerComeAndGoes.log.txt";
+String myLogFileName = "pseudoSerialVent.log.txt";
 
 void appendTextToFile(String filename, String text) {
   String myTime = (str(year()) + str(month()) +str(day()) +"_" + str(hour()) + str(minute()) + str(second()) );
