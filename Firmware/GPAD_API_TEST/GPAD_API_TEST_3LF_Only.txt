@@ -1,0 +1,13 @@
+GPAD_API_TEST_2 Start
+h
+a0Uh, everything's under control. Situation normal.
+a1What happened? 
+a2 Uh, we had a slight weapons malfunction, but uh... everything's perfectly all right now. We're fine. We're all fine here now, thank you. How are you?
+a3We're sending a squad up.
+a4Uh, uh... negative, negative. We had a reactor leak here now. Give us a few minutes to lock it down. Large leak, very dangerous.
+a0Uh... Boring conversation anyway.
+a5LUKE, WE'RE GONNA HAVE COMPANY!
+s
+u
+
+GPAD_API_TEST_2 End
