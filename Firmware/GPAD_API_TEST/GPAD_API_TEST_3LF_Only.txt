@@ -1,4 +1,4 @@
-GPAD_API_TEST_2 Start
+GPAD_API_TEST_RR3 Start
 h
 a0Uh, everything's under control. Situation normal.
 a1What happened? 
@@ -10,4 +10,4 @@ a5LUKE, WE'RE GONNA HAVE COMPANY!
 s
 u
 
-GPAD_API_TEST_2 End
+GPAD_API_TEST_RT2 End
