@@ -7,14 +7,46 @@ Confirmation of correct behavior may require a human to examine the DUT. Where t
 
 ## Black Box Testing
 Design Black Box Testing use the product features documentation.
-* Display typical messages
-* Display all characters
-* Check speed of DUT reponse to input. Try to over run the capability
-* Look for pathelogical situations
-Further test as...
+* Display typical messages to the LCD
+* Display all characters to the LCD
+* Test all conditions of the Lights (LEDs) 
+* Check speed of DUT reponse to input. Try to over run the capability both serial and SPI.
+* Look for pathelogical situations like long strings or mal formed commands. Try every non printible character.
+* Other, further test as...
+
 Tests implimented as of 20221102
 Tests using a terminal program on serial port input. Using RealTerminal both with direct user input and by sending files. RealTerm allows for setting intercharacter delay, end of line delay and repeate file delay. 
 Endurance testing with RealTerminal. Capture of the bidirectiontal serial traffice may be possible, and if ont try TeraTerm.
+
+### Black Box Test Results 
+#### RealTerminal Testing  
+Tests labled "RT" are with RealTerminal.  
+DUT Firmware Version: **0.1**
+Version of test tools: NA
+| Test ID            | RT Test 1  | RT Test 2  | RT Test 3  |
+| -----------        | ----------- | ----------- | ----------- |
+| Test Name-->       | **GPAD_API_TEST_1**  | **GPAD_API_TEST_3LF_Only**  | foo |
+| Test notes-->      | Use file GPAD_API_TEST_1.txt  | GPAD_API_TEST_3LF_Only.txt  | bar |
+| Expected Results-->|This file has CR and LF end terminations.     | GPAD_API_TEST_3LF_Only.txt This file has help command and only Alarms with messages and only LF end terminations. | ???       |
+| Actual Results-->  | The CR chracter produced a goofy graphic symbol      | This displays with no goffey characters. | ???       |
+| Pass/ Fail / Other | Fail. goofy charcter should not display       | PASS         | ???       |
+
+<sub>(copy this table above in full for future verions and ammend as approprate)</sub>
+
+#### Proccessing Testing, pseduPolyVent
+Tests labled "sPV" are with the Processing program pseudoPolyVent.  
+DUT Firmware Version: **0.1**
+Version of test tools: TBD
+| Test ID            | sPV Test 1  | sPV Test 2  | sPV Test 3  |
+| -----------        | ----------- | ----------- | ----------- |
+| Test Name-->       | **???**  | **???**  | foo |
+| Test notes-->      | **???**  | **???**  | bar |
+| Expected Results-->|The DUT will... | The DUT will... | ???       |
+| Actual Results-->  | The cow jumpted over the moon. | The dish ran away with the spoon | ???       |
+| Pass/ Fail / Other | Fail. Cows are not space rated | PASS they were a natural match    | ???       |
+
+<sub>(copy this table above in full for future verions and ammend as approprate)</sub>
+
 
 ## White Box Testing
 Design White Box Testing with the additional insight of the source code and help from the designer / coder (s).
