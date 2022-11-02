@@ -27,10 +27,10 @@ Version of test tools: NA
 | -----------        | ----------- | ----------- | ----------- |----------- |
 | Test Name-->       | **GPAD_API_TEST_1**  | **With LF_Only**  |  **Display all alarms** |**All alpha numeric** |
 | Test notes-->      | Use file GPAD_API_TEST_1.txt  | Use file GPAD_API_TEST_3LF_Only.txt  | Use file GPAD_API_TEST_3LF_Only.txt  |Use file GPAD_API_TEST_ALPHANUM1.txt  |
-| Expected Results-->|This file has CR and LF end terminations.     | Test file has help command and only Alarms with messages and only LF end terminations. | Display all alarm messages sequentialy.  | All alphan numeric|
-| Actual Results-->  | The CR chracter produced a goofy graphic symbol      | This displays with no goffey characters. | A2, A4 message missing, DUT resets | TBD    |
+| Expected Results-->|This file has CR and LF end terminations.     | Test file has help command and only Alarms with messages and only LF end terminations. | Display all alarm messages sequentialy.  | All alphan numeric, most punctuation|
+| Actual Results-->  | The CR chracter produced a goofy graphic symbol      | This displays with no goffey characters. | A2, A4 message missing, DUT resets | As good as the LCD can do.   |
 | Pass/ Fail / Other | Fail. Goofy charcter should not display       | Pass        | Fail. DUT Reset        |Pass  |
-| Bug Report         | GPAD With Bad Character #107       | Pass        | GPAD_API ?Reset? During Endurance Testing With Messages #109 | As good as the LCD can do. See video: https://www.youtube.com/watch?v=uIGDPubeWpw There are notes about a few character substitutions at this issue: https://github.com/PubInv/general-alarm-device/issues/120
+| Bug Report         | GPAD With Bad Character #107       | Pass        | GPAD_API ?Reset? During Endurance Testing With Messages #109 |  See video: https://www.youtube.com/watch?v=uIGDPubeWpw There are notes about a few character substitutions at this issue: https://github.com/PubInv/general-alarm-device/issues/120
 |
 <sub>(copy this table above in full for future verions and ammend as approprate)</sub>
 
