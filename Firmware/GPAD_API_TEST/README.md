@@ -16,12 +16,12 @@ Screen shot showing the setup and typical serial traffic.
 * GPAD_API_TEST_3LF_Only.txt This file has help command and only Alarms with messages and only LF end terminations.
 
 ## References
-Note Lee used the very helpful program XVI32 to create the files with the desired line terminations.
+Note Lee used the very helpful program **XVI32** to create the files with the desired line terminations.
 XVI32 can be downloaded from what appears to be the author here: http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm#download
-Example of file in XVI32
+Example of file in **XVI32** in action.
 ![XVI32Example.gif](XVI32Example.gif)
 
-The program RealTerm can be downloded from: https://sourceforge.net/projects/realterm/
+The program **RealTerm** can be downloded from: https://sourceforge.net/projects/realterm/
 
 ## License
 
