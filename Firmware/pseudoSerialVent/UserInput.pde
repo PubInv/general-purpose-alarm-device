@@ -1,71 +1,65 @@
 /* User Interface with keyboard*/
 /* Commands to be sent to target device, the GPAD*/
 
-void keyPressed() {
-  if (key!=CODED) { //Ignore ALT, CONTROL, SHIFT, UP, DOWN, LEFT and RIGHT
+/* 20221103 Simplify the KeyPress structure and move the serial ouput to end and only output on valid keys.
+ * Make alarms more verbose.
+ 
+ */
 
+void keyPressed() {
+  boolean newValidCommand = false;
+  if (key!=CODED) { //Ignore ALT, CONTROL, SHIFT, UP, DOWN, LEFT and RIGHT
     //Proccess keys of UI.
 
-
-
     if ((key== 'a'|| (key== 'A'))) {
-      outString = "a0";
-      println("Writing 'a0' to serial port.");
-      myPort.write(outString);  //
+      newValidCommand = true;
+      outString = "a0 pseudoSerialVent Testing.  All is OK.";
     }// A
 
     if ((key== 'b'|| (key== 'B'))) {
-      outString = "a1";
-      println("Writing 'a1' to serial port.");
-      myPort.write(outString);  //
+      newValidCommand = true;
+      outString = "a1 pseudoSerialVent Testing. For your INFO.";
     }// B
 
     if ((key== 'c'|| (key== 'C'))) {
-      outString = "a2";
-      println("Writing 'a2' to serial port.");
-      myPort.write(outString);  //
+      newValidCommand = true;
+      outString = "a2 pseudoSerialVent Testing. I found a PROB.";
     }// C
 
     if ((key== 'd'|| (key== 'D'))) {
-      outString = "a3";
-      println("Writing 'a3' to serial port.");
-      myPort.write(outString);  //
+      newValidCommand = true;
+      outString = "a3 pseudoSerialVent Testing. This is a first WARN.";
     }// D
 
 
     if ((key== 'e') || (key== 'E')) {
-      outString = "a4";
-      println("Writing 'a4' to serial port.");
-      myPort.write(outString);  //
+      newValidCommand = true;
+      outString = "a4 pseudoSerialVent Testing. This is becoming CRIT.";
     }// E
 
 
     if ((key== 'f') || (key== 'F')) {
-      outString = "a5";
-      println("Writing 'a5' to serial port.");
-      myPort.write(outString);  //
+      newValidCommand = true;
+      outString = "a5 pseudoSerialVent Testing. It is time to PANIC.";
     }// E
 
 
     if ((key== 'h'|| (key== 'H'))) {
+      newValidCommand = true;
       //Requst the help message
-      println("Writing 'h\\n' to serial port.");
-      myPort.write("h");  //help
-      myPort.write("h\n");  //help
+      outString = "h";
     }// H
 
     if ((key== 's'|| (key== 'S'))) {
+      newValidCommand = true;
       //Set mute case true
-      outString = "s";          
-      println("Writing 's' to serial port.");
-      myPort.write(outString);  //     
+      outString = "s";
     }// S
 
     if ((key== 'u'|| (key== 'U'))) {
+      newValidCommand = true;
       //Un mute
       outString = "u";
-      println("Writing 'u' to serial port.");
-      myPort.write(outString);  //
     }// U
 
     if ( (key== 'X') || (key== 'x')) {
@@ -78,6 +72,17 @@ void keyPressed() {
       appendTextToFile(myLogFileName, ("Your log is terminated."));
       exit();
     }// X
+
+    if (newValidCommand == true) {
+      print("To GPAD: ");
+      println(outString);
+      myPort.write(outString);
+
+      myBackground = color(255, 0, 0); //Red indicated command sent.
+      timeSerialSent = millis();
+      timeSerialReceived = timeSerialSent - 1;
+      newValidCommand = false;
+    }
   }// end note key coded
 }// User Interface keyPressed() 
 
@@ -127,10 +132,10 @@ void printUserInstructions() {
   yInstructionLocation += yInstructionNextLine;
   text("F or f:  Sets Alarm A5", 20, yInstructionLocation); 
   yInstructionLocation += yInstructionNextLine;
-  text("S or s: will UN mute buzzer", 20, yInstructionLocation); 
+  text("S or s: will Silence (mute) buzzer", 20, yInstructionLocation); 
   yInstructionLocation += yInstructionNextLine;
-  text("U or u: will mute buzzer", 20, yInstructionLocation); 
+  text("U or u: will Unmute buzzer", 20, yInstructionLocation); 
   yInstructionLocation += yInstructionNextLine;
-  text("X or x: will EXit the program", 20, yInstructionLocation); 
+  text("X or x: will eXit the program", 20, yInstructionLocation); 
   yInstructionLocation += yInstructionNextLine;
 }

@@ -6,12 +6,13 @@
  * 
  
  * /detail Modified from ServerComeAndGoes at: https://github.com/ForrestErickson/Processing-ServerComeAndGoes
+ * 20221103 Version 0.0.2 Fix inverted keyboard mute text. Change background color to indicate command sent to serial port.
  *
  */
 
 String COMPANY = "Public Invention";
 String MODELNAME = "pseudoSerialVent";
-String VERSION = "0.0.1";
+String VERSION = "0.0.2";
 
 
 //final int COMPORT_INDEX = 3;    //Change the port number as necessary
@@ -29,6 +30,10 @@ String myString = null;
 Serial myPort;  // The serial port
 int BAUDRATE = 115200 ;
 
+//Variables to measure DUT response time
+int timeSerialSent = 0;
+int timeSerialReceived = -1;  //Set for negative to start so the message will wait for the first command.
+int timeCommandProccess = 0;
 
 //Old code from socket version
 String mySocket = "None";
@@ -141,6 +146,7 @@ void setup()
 } // setup()
 
 void draw() {
+  String s_ResponseTime = "NULL";
   yInstructionLocation = 100; //Reset location for next instruction line
   textAlign(LEFT); 
 
@@ -148,49 +154,57 @@ void draw() {
   background (myBackground);
   text("Sent to GPAD: " + outString, 10, 430); 
   text("Received from GPAD: " + inString, 10, 450); 
+  timeCommandProccess = timeSerialReceived - timeSerialSent;
+  if(  timeCommandProccess <0 ){
+    s_ResponseTime = "Waiting";    
+  } else {
+     s_ResponseTime = str(timeCommandProccess);
+  }
+   
+  text("Time to process command from GPAD: " + s_ResponseTime, 10, 470); 
 
-  
-    ////Process server IO
-    //if (myServerRunning) {
-    //  background (myBackground);
-    //  mySocket = " IP: " + Server.ip() + ":" + str(MY_PORT);
-    //  if (mySocket.equals(myOldSocket) == false) {
-    //    appendTextToFile(myLogFileName, ("Server socket changed from: " + myOldSocket + " to: " + mySocket ));
-    //    String myTime = (str(year()) + str(month()) +str(day()) +"_" + str(hour()) + str(minute()) + str(second()) );
-    //    println(myTime + " Server socket changed from: " + myOldSocket + " to: " + mySocket );
-    //    myOldSocket = mySocket;
-    //  }
-    //  text(s_serverStatus + mySocket, 400, 10);
-    //  //    text(s_serverStatus + " IP: " + Server.ip() + ":" + str(MY_PORT) ,400, 10);
-    //  text("Client Connection: "+s_clientStatus, 400, 20);
-    //  text("Client: " + s_messageClient, 400, 40);
-    //  text("Server:" + s_messageServer, 400, 50);    
-    //  printUserInstructions();
 
-    //  thisClient = myServer.available();
-    //  // If the client is not null, and says something, display what it said
-    //  if (thisClient !=null) {
-    //    text("Client transmitting", 400, 30);
-    //    myClient = thisClient;  // Save off the client object for the key close event.
-    //    String whatClientSaid = thisClient.readString();
-    //    if (whatClientSaid != null) {
-    //      println(thisClient.ip() + "\t" + whatClientSaid);
-    //      s_messageServer = "";
-    //      s_messageClient = whatClientSaid;
-    //      processClientCommands(whatClientSaid);
-    //    }
-    //  }//Client available
-    //} else { //Server not aactive
-    //  myBackground = color(255, 0, 0); //Red to indicate no server.
-    //  background (myBackground);
-    //  s_messageServer = "Server not active";
-    //  s_serverStatus = "Server not active";
-    //  text(s_serverStatus, 400, 10);
-    //  text("Client Connection: "+s_clientStatus, 400, 20);
-    //  text("Client: " + s_messageClient, 400, 40);
-    //  text("Server:" + s_messageServer, 400, 50);   
-    //  text("Server Keyboard Commands", 10, yInstructionLocation);
-    //  printUserInstructions();
-    //}
-    printUserInstructions();
+  ////Process server IO
+  //if (myServerRunning) {
+  //  background (myBackground);
+  //  mySocket = " IP: " + Server.ip() + ":" + str(MY_PORT);
+  //  if (mySocket.equals(myOldSocket) == false) {
+  //    appendTextToFile(myLogFileName, ("Server socket changed from: " + myOldSocket + " to: " + mySocket ));
+  //    String myTime = (str(year()) + str(month()) +str(day()) +"_" + str(hour()) + str(minute()) + str(second()) );
+  //    println(myTime + " Server socket changed from: " + myOldSocket + " to: " + mySocket );
+  //    myOldSocket = mySocket;
+  //  }
+  //  text(s_serverStatus + mySocket, 400, 10);
+  //  //    text(s_serverStatus + " IP: " + Server.ip() + ":" + str(MY_PORT) ,400, 10);
+  //  text("Client Connection: "+s_clientStatus, 400, 20);
+  //  text("Client: " + s_messageClient, 400, 40);
+  //  text("Server:" + s_messageServer, 400, 50);    
+  //  printUserInstructions();
+
+  //  thisClient = myServer.available();
+  //  // If the client is not null, and says something, display what it said
+  //  if (thisClient !=null) {
+  //    text("Client transmitting", 400, 30);
+  //    myClient = thisClient;  // Save off the client object for the key close event.
+  //    String whatClientSaid = thisClient.readString();
+  //    if (whatClientSaid != null) {
+  //      println(thisClient.ip() + "\t" + whatClientSaid);
+  //      s_messageServer = "";
+  //      s_messageClient = whatClientSaid;
+  //      processClientCommands(whatClientSaid);
+  //    }
+  //  }//Client available
+  //} else { //Server not aactive
+  //  myBackground = color(255, 0, 0); //Red to indicate no server.
+  //  background (myBackground);
+  //  s_messageServer = "Server not active";
+  //  s_serverStatus = "Server not active";
+  //  text(s_serverStatus, 400, 10);
+  //  text("Client Connection: "+s_clientStatus, 400, 20);
+  //  text("Client: " + s_messageClient, 400, 40);
+  //  text("Server:" + s_messageServer, 400, 50);   
+  //  text("Server Keyboard Commands", 10, yInstructionLocation);
+  //  printUserInstructions();
+  //}
+  printUserInstructions();
 }//draw()
