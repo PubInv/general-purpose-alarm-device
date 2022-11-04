@@ -1,4 +1,4 @@
-/** ServerComeAndGoes //<>//
+/** pseudoSerialVent //<>//
  *
  * /author F. Lee Erickson.
  * /date 28 October 2022.
@@ -7,12 +7,13 @@
  
  * /detail Modified from ServerComeAndGoes at: https://github.com/ForrestErickson/Processing-ServerComeAndGoes
  * 20221103 Version 0.0.2 Fix inverted keyboard mute text. Change background color to indicate command sent to serial port.
+ * 20221104 Version 0.0.3 Report button pressed, Read and report status of MUTE.
  *
  */
 
 String COMPANY = "Public Invention";
 String MODELNAME = "pseudoSerialVent";
-String VERSION = "0.0.2";
+String VERSION = "0.0.3";
 
 
 //final int COMPORT_INDEX = 3;    //Change the port number as necessary
@@ -29,6 +30,10 @@ int cr = 13;    // CR in ASCII
 String myString = null;
 Serial myPort;  // The serial port
 int BAUDRATE = 115200 ;
+
+// DUT stat variables received
+
+Boolean dutMuted = false; 
 
 //Variables to measure DUT response time
 int timeSerialSent = 0;
@@ -143,6 +148,10 @@ void setup()
   } else {
     myServerRunning = false;
   }
+  //Request the help string to syncronice with GPAD status.
+  outString = "h";
+  myPort.write(outString);
+  myBackground = color(255, 0, 0); //Red indicated command sent.
 } // setup()
 
 void draw() {
@@ -155,13 +164,29 @@ void draw() {
   text("Sent to GPAD: " + outString, 10, 430); 
   text("Received from GPAD: " + inString, 10, 450); 
   timeCommandProccess = timeSerialReceived - timeSerialSent;
-  if(  timeCommandProccess <0 ){
-    s_ResponseTime = "Waiting";    
+  if (  timeCommandProccess <0 ) {
+    s_ResponseTime = "Waiting";
+    text("Time to process command from GPAD: " + s_ResponseTime, 10, 470); 
+    text("Buzzer is: UNKNOWN", 10, 490);
   } else {
-     s_ResponseTime = str(timeCommandProccess);
+    s_ResponseTime = str(timeCommandProccess);
+    text("Time to process command from GPAD: " + s_ResponseTime, 10, 470); 
+    //Indicate the status of the DUT mute.
+    if (dutMuted == true) {
+      text("Buzzer is: MUTED", 10, 490);
+    } else {
+      text("Buzzer is: NOT MUTED", 10, 490);
+    }
   }
-   
-  text("Time to process command from GPAD: " + s_ResponseTime, 10, 470); 
+
+  //If background red messag to user that command is on process.
+  if (myBackground == color(255, 0, 0)) {
+    textFont(fBig);
+    text("STALE STATE, WAITING FOR RESPONSE FROM DUT", 10, 20);
+    textFont(f);  //Back to regular
+  }
+
+
 
 
   ////Process server IO
