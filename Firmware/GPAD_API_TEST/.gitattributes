@@ -5,4 +5,8 @@
 *.crLF.txt		text eol=crlf
 
 
+*.LF.txt		text eol=lf
+*.CR.txt		text eol=cr
+*.CRLF.txt		text eol=crlf
+
 
