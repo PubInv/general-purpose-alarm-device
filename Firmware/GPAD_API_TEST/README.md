@@ -4,7 +4,7 @@
 This is folder contains files to test the GPAD_API through the serial port using a terminal program.
 Example, the text file, GPAD_API_TEST_1.txt is sent by RealTerm to the device under test, DUT.
 RealTerm is set up for a 4000 mSecond end of line delay.
-RealTerm is set up for to repeat endlesly by setting the number of repeats to zero.
+RealTerm is set up for to repeat endlessly by setting the number of repeats to zero.
 
 Screen shot showing the setup and typical serial traffic.
 ![ScreenShotTest1.gif](ScreenShotTest1.gif)
@@ -21,7 +21,7 @@ XVI32 can be downloaded from what appears to be the author here: http://www.chma
 Example of file in **XVI32** in action.
 ![XVI32Example.gif](XVI32Example.gif)
 
-The program **RealTerm** can be downloded from: https://sourceforge.net/projects/realterm/
+The program **RealTerm** can be downloaded from: https://sourceforge.net/projects/realterm/
 
 ## License
 
