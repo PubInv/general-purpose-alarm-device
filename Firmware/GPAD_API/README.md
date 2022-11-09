@@ -1,9 +1,9 @@
 # GPAD_API
 Description of the GPAD API, the Application Programming Interface.
-Verion 0.1
+Version 0.1
 Updated on Date: 20221104
 
-This is the description of the API from the point of view of the firmware with in the General Purpose Alarm Device aka the GPAD. 
+This is the description of the API from the point of view of the firmware within the General Purpose Alarm Device aka the GPAD. 
 
 As of 20221031, the interface is through the USB serial port only. (The SPI is not yet implemented)
 Serial BAUD rate is fixed at 115200
@@ -22,7 +22,7 @@ Optional arguments are in []
 
 
 ### Alarm Messages
-These have the from of a letter "A" and a digit 0-5 inclusive followed optionaly by text for the message.
+These have the form of a letter "A" and a digit 0-5 inclusive followed optionally by text for the message.
 * A0[message for alarm level 0]
 * A1[message for alarm level 1]
 * A2[message for alarm level 2]
@@ -37,8 +37,8 @@ An example alarm message
 > a0 pseudoSerialVent Testing.  All is OK.
 
 ### Mute Messages
-The GPAD has a buzzer which can be scielenced or Muted by the API. (The user can also press a button to manage the mute state).
-Mute messages are single character messages terminalted by LF. 
+The GPAD has a buzzer which can be silenced or muted by the API. (The user can also press a button to manage the mute state).
+Mute messages are single character messages terminated by LF. 
 * S
 * U  
 
@@ -48,14 +48,14 @@ The U command **Unmutes** the buzzer.
 ### Help
 * H
 
-The **H** message is single character messages terminalted by LF.   
+The **H** message is single character messages terminated by LF.   
 The device will return a message out the serial port with help instructions.
 Screen shot of the help message.  
 ![image](https://user-images.githubusercontent.com/5836181/200066531-264861f6-eaba-42e5-be05-d8b6f6640e94.png)
 
 
 ## Command Response and Status
-After the GPAD receives a command it returns text string with a response indicating status.
+After the GPAD receives a command, it returns text string with a response indicating status.
 Example of response to the command "a0 pseudoSerialVent Testing.  All is OK."  
 ![image](https://user-images.githubusercontent.com/5836181/200065137-465a2ade-5cc2-4c08-925f-df86810f21c1.png)  
 
