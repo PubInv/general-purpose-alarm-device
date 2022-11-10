@@ -9,7 +9,7 @@ This module has an enclosure and inside is an embedded microcontroller system wi
 * Make loud tones
 * Button to "mute" or suppress the alarm condition.
 * Text display for messages (20x4 characters)
-* Power from wall supply on barrel jack 2.1mm at 9-12V <= 1000mA (or from host controling device at 5V or 12V)
+* Power from wall supply on barrel jack 2.1mm at 9-12V <= 1000mA (or from host controlling device at 5V or 12V)
 * RJ12 Data Cable connection for signal (and optional power) between host and GPAD.
 * An I2C output for control of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
@@ -31,7 +31,7 @@ View of GPAD Printed Wiring Assembly component side.
 
 # Example Use Case, The Ventilator
 
-The [Freespireco Project](https://github.com/PubInv/freespireco) is an attempt to build a modular ecosystem of cooperating respiration devices. One need that devices such as ventilators and oxygen concentrators need to have is to be able to alert someone to dangerous conditions. This can be as simple and gentle as "it is time for scheduled maintenance" to a far more dangerous "the hose connected to the patient is disconnected!"
+The [Freespireco Project] (https://github.com/PubInv/freespireco) is an attempt to build a modular ecosystem of cooperating respiration devices. One thing that devices such as ventilators and oxygen concentrators need to have is to be able to alert someone to dangerous conditions. This can be as simple and gentle as, "it is time for scheduled maintenance," to a far more dangerous, "the hose connected to the patient is disconnected!"
 The purpose of the alarm is to get the attention of nurses or doctors who can fix the problem.
 
 # The Abstract Application Programmers Interface
@@ -50,7 +50,7 @@ We hope that by defining a clearly versioned API we can make an evolving device 
 # Stand-alone or Sub-assembly
 
 Our design includes a printed wiring assembly and an enclosure.
-The printed wiring assembly could be designed into a device with our our enclosure. Full documentation provided.
+The printed wiring assembly could be designed into a device with our enclosure. Full documentation provided.
 We believe a loosely-coupled physical device is the most repurposable.  Such a device would have its own independent power supply.
 However, there are clearly use cases when the same module should be integrated into the physical case, power system, and even printed
 circuit board of other systems. We therefore seek design flexibility that supports all of these usage modes.
@@ -58,7 +58,7 @@ circuit board of other systems. We therefore seek design flexibility that suppor
 # The Arduino UNO Like Platform
 
 The implementation is Arduino UNO like. A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility.
-UNO foot print for shields is provided.
+UNO footprint for shields is provided.
 This allows a typical Arduino serial port interface for development and debugging.
 
 # How is the alarm signal received?
@@ -86,7 +86,7 @@ Demonstration of SPI controller and Peripheral for single byte transmission.
 ## Phase I aka Version 1
 
 * Light alert by five, 5mm white LEDs driven at about 20 mA.
-* Acoustic alert by buzzer driven by push pull some what less than 5Vp-p.
+* Acoustic alert by buzzer driven by push-pull somewhat less than 5Vp-p.
 * Text display with back lit, 20x4 character LCD.
 * Single User Button
 * Recessed reset button.
@@ -100,9 +100,9 @@ from specific details of how the noise is made.
 
 Nonetheless, we can make a few comments.
 1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDs supporting 5 levels of alarm color or brightness.
-2. Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying "She canna' take the strain, Captain!" in a Scottish accent.
+2. Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying, "She canna' take the strain, Captain!" in a Scottish accent.
 
-The physical implementation is an customer PCB and custom 3D printable enclosure.
+The physical implementation is a customer PCB and custom 3D printable enclosure.
 
 ## Phase II
 **THESE MAY ALL HAVE BEEN REALIZED IN PHASE I**
@@ -128,7 +128,7 @@ In each of these phases, we imagine the API improving substantially.
 
 Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
 
-Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientest by training, and an electrical engineer as well as a hobby inventor by vocation.
+Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientist by training, and an electrical engineer as well as a hobby inventor by vocation.
 
 ???  Joe Torreggiani of Speccollective
 
@@ -150,7 +150,7 @@ Like everything done by Public Invention, this is a fully open project that will
 However, unlike many of our projects which are very "researchy" this project could become a scalable product pretty easily.
 One can imagine it being sold at Sparkfun, Adafruit, or DigiKey if we do a good job.
 Because it could be used for a wide variety of purposes by makers and could be sold with an enclosure at a price of perhaps <=$100USD
-As an embedded sub assembly the printed wiring assembly must be low cost with a material price of < $30USD
+As an embedded sub assembly, the printed wiring assembly must be low cost with a material price of < $30USD
 
 Potential uses as a product (by hobbyist) include:
 1. Alarming a cat door, bird or squirl at feeder,
@@ -199,7 +199,7 @@ These should be integrated together to create the initial firmware for the proje
 
 The PCB dimensions are 5.4" by 3.2"
 The enclosure will be larger and include tabs to allow mounting or hanging for example by wire ties.
-The enclsoure should be designed for easy 3D fabrication. Enclosure material is TBD.
+The enclosure should be designed for easy 3D fabrication. Enclosure material is TBD.
 
 # Other Product Description
 
@@ -207,7 +207,7 @@ The enclsoure should be designed for easy 3D fabrication. Enclosure material is 
 
 We're going to use white-light LEDs to avoid color-blindness issues for the visual alarm.
 
-# Project Glossary and Ornizational Overview
+# Project Glossary and Organizational Overview
 
 ## Issue Labels used
 | Label Name  | Short Description  | Detailed Description  |

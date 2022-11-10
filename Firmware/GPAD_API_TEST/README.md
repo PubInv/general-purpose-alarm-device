@@ -16,7 +16,7 @@ File names and descriptions.
 
 ## Cases of Using RealTerm and XVII32
 RealTerm is set up for a 4000 mSecond end of line delay.
-RealTerm is set up for to repeat endlesly by setting the number of repeats to zero.  
+RealTerm is set up for to repeat endlessly by setting the number of repeats to zero.  
 
 **Note:** in the RealTerm, Port setup tab you must select with the Open button and press Change button after changes. Using RealTerm on a DUT will conflict with the Arduino IDE on the same DUT. To program with the Arduino IDE, you must un Open the port and press Change to release the port for the Arduino IDE.
 
@@ -34,7 +34,7 @@ Screen shot showing the XVI32 find and replace to replace CRLF with LF only.
 
 XVI32 can be downloaded from what appears to be the author here: http://www.chmaas.handshake.de/delphi/freeware/xvi32/xvi32.htm#download
 
-The program **RealTerm** can be downloded from: https://sourceforge.net/projects/realterm/
+The program **RealTerm** can be downloaded from: https://sourceforge.net/projects/realterm/
 
 ## License
 
