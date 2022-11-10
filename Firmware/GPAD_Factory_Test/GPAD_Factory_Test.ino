@@ -151,36 +151,31 @@ void scanI2C(void) {
     Serial.print(endCode[SUCCESS], DEC);
     Serial.println(" device(s).");
   }
-  else if (!endCode[SUCCESS]){   // None found
+  else {   // None found
     Serial.println("NO DEVICE FOUND.");
     // Print error message(s):
     if(endCode[OVERFLOW]) {   
-      Serial.print("ERROR: ");
-      Serial.println("Data too long to fit in transmit buffer. [x");
+      Serial.println("ERROR: Data too long to fit in transmit buffer. [x");
       Serial.print(endCode[OVERFLOW], DEC);
       Serial.println(" address(es)]");
     }
     if(endCode[NACK_ADDRESS]) {
-      Serial.print("ERROR: ");
-      Serial.print("Received NACK on transmit of address. [x");
+      Serial.print("ERROR: Received NACK on transmit of address. [x");
       Serial.print(endCode[NACK_ADDRESS], DEC);
       Serial.println(" address(es)]"); 
     }
     if(endCode[NACK_DATA]) {
-      Serial.print("ERROR: ");
-      Serial.println("Received NACK on transmit of data. [x");
+      Serial.println("ERROR: Received NACK on transmit of data. [x");
       Serial.print(endCode[NACK_DATA], DEC);
       Serial.println(" address(es)]");
     }
     if(endCode[OTHER_ERROR]) {
-      Serial.print("ERROR: ");
-      Serial.println("Other error. [x");
+      Serial.println("ERROR: Other error. [x");
       Serial.print(endCode[OTHER_ERROR], DEC);
       Serial.println(" address(es)]");
     }
     if(endCode[TIMEOUT]) {
-      Serial.print("ERROR: ");
-      Serial.println("Timeout. [x");
+      Serial.println("ERROR: Timeout. [x");
       Serial.print(endCode[TIMEOUT], DEC);
       Serial.println(" address(es)]");
     }
