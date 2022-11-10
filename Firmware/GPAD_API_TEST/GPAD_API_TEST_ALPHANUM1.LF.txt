@@ -1,8 +1,8 @@
-GPAD_API_TEST_RT4 Start
+GPAD_API_TEST_RT5 Start
 a0ABCDEFGHIGKLMNEPQRSTUVWXYZ0123456789
 a1abcdefghijklmnopqrstuvwxyz0123456789
 a2The quick brown fox jumped over the lazy dog.
 a3THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG.
 a4`~!@#$%^&*()-_=+.[]{}\|;:'",<.>/?
 a5LUKE, WE'RE GONNA HAVE COMPANY!
-GPAD_API_TEST_RT4 End
+GPAD_API_TEST_RT5 End
