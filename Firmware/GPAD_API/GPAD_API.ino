@@ -212,7 +212,6 @@ void setup() {
   delay(100);                         //Wait before sending the first data to terminal
   
   Wire.begin();
-
  
   lcd.init();              
   Serial.println("Clear LCD");

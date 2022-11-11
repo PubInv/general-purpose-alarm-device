@@ -186,6 +186,47 @@ Additionally, it would be nice to have a way to interrogate the current alarm le
 AlarmLevel getAlarm(AlarmLevel al);
 boolean isMuted();
 ```
+
+As of Nov. 11th, we are working significantly on this API, which deserves a
+a separate document, but I will place notes here.
+
+## The Abstract API
+The Abstract API is meant to work independent of specific hardware on
+the GPAD. That is, it should be useful for hardware built by other teams
+making significantly different decisions.
+
+In this API, the message strings support only the most limited
+sort of formating: a linefeed character represents a line break.
+Nonetheless, if linefeed characters are used, the will break lines
+but this will of course limit the number of ACTUAL characters
+that can be rendered, rather than the 60 that we can render if no
+line breaks are used.
+
+## The Hardware API
+
+The Hardware API gives a caller complete access to all of the GPAD
+hardware. For example, they could address each LED separately.
+This is a lower priority. This API is not intended to be used by
+medical devices because it is fragile with respect to improvements in
+the hardware. Nonetheless, its availability makes the GPAD more useful
+for a wider variety of purposes. For example, someone could program a
+simple game with the GPAD.
+
+## Separate tranport protocols
+
+In practice, there need to be three ways of invoking the API:
+1. Through a human-typable string at the serial port,
+1. Through a remote procedure call via the serial port, and
+1. Through the SPI interface.
+
+It is our intention to keep all of these mechanisms distinct from the
+two APIs. There might even be additional transport protocols in the future,
+such as a library that uses I2C ("I-squared C").
+
+
+
+
+
 # A Simulation with WokWi
 
 We have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them,
