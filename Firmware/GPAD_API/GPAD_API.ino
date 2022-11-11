@@ -51,8 +51,12 @@
  */
 
 #define PROG_NAME "******GPAD_API******"     //Descriptive name of this software, 20 characters.
-#define VERSION 0.1             //Version of this software
+#define VERSION 0.02             //Version of this software
 #define BAUDRATE 115200
+// #define BAUDRATE 57600
+// Let's have a 10 minute time out to allow people to compose strings by hand, but not
+// to leave data our there forever
+#define SERIAL_TIMEOUT_MS 600000
 
 
 enum AlarmLevel { silent, informational, problem, warning, critical, panic };
@@ -172,18 +176,20 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
   lcd.print(" - ");
   lcd.print(AlarmNames[level]);
 
-
-  lcd.setCursor(0, 1);
-
-  if (muted) {
-    lcd.print("MUTED! MSG:");
-  } else {
-    lcd.print("MSG:  ");
+  int msgLineStart = 1;
+  lcd.setCursor(0,msgLineStart);
+  int len = strlen(AlarmMessageBuffer);
+  if (len < 9) {
+    if (muted) {
+      lcd.print("MUTED! MSG:");
+    } else {
+      lcd.print("MSG:  ");
+    } 
+    msgLineStart = 2;
   }
-  if (strlen(AlarmMessageBuffer) == 0) {
-    lcd.print("None.");
-  } else {
-
+    if (strlen(AlarmMessageBuffer) == 0) {
+      lcd.print("None.");
+    } else {
 
     char buffer[21] = {0}; // note space for terminator
 
@@ -191,11 +197,11 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
     size_t blen = sizeof(buffer)-1; // doesn't count terminator
     size_t i = 0;
     // the actual loop that enumerates your buffer
-    for (i=0; i<(len/blen + 1) && i < 3; ++i)
+    for (i=0; i<(len/blen + 1) && i + msgLineStart < 4; ++i)
     {
       memcpy(buffer, msg + (i*blen), blen);
       Serial.println(buffer);
-      lcd.setCursor(0,i+1);
+      lcd.setCursor(0,i+msgLineStart);
       lcd.print(buffer);
     }
    }
@@ -210,6 +216,8 @@ void setup() {
   delay(100);
   Serial.begin(BAUDRATE);
   delay(100);                         //Wait before sending the first data to terminal
+  
+  Serial.setTimeout(SERIAL_TIMEOUT_MS);
   
   Wire.begin();
  
