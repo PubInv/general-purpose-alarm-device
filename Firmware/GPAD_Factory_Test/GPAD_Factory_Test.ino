@@ -96,12 +96,16 @@ const int NUM_LIGHTS = sizeof(LIGHT)/sizeof(LIGHT[0]);
 unsigned int longPressTime = 1000;
 unsigned int multiHitTime = 600;
 byte multiHitTarget = 2;
+DailyStruggleButton switchMute;   // create instance of DSB
+
+//Testing
 byte testCount = 0;             // for toggling through each test function with single-press
 byte testGroupCount = 0;        // for toggling through each group of test functions with multi-press
 const byte testGroups = 5;      // number of test groups to cycle through
 byte testGroup = 0;             // current test group
 bool oldStatus = false;         // for printing once during loop()
-DailyStruggleButton switchMute;   // create instance of DSB
+bool autoToggle = false;
+unsigned long lastTestTime_ms = 0;
 
 // Functions
 
@@ -310,9 +314,25 @@ void stopTestLCD(void) {
 
 }
 
+void autoToggleTest(void) {
+  if (!autoToggle){
+    return;
+  }
+
+  const unsigned long ms = millis();
+  int testTime_ms = 3000;
+
+  if (ms - lastTestTime_ms > testTime_ms) {
+    testCount++;
+    oldStatus = false;    // to enable indiviual tests to print to monitor
+    lastTestTime_ms = ms;
+  }
+}
+
 void testGroupFunctions(void) {
   testGroup = testGroupCount % testGroups;
-  
+  autoToggleTest();
+
   if (testGroup == TG_LEDS) {
     testLEDs();
   }
@@ -424,6 +444,10 @@ void switchMuteEvent(byte switchStatus) {
 
     case onLongPress:
       testSwitchMute(switchStatus);
+      autoToggle ^= true;
+      if (autoToggle) { Serial.println("-- Auto-toggle mode enabled. --"); }
+      else { Serial.println("-- Auto-toggle mode disabled. --"); }
+      testCount = 0;  
       break;
 
     case onMultiHit:
