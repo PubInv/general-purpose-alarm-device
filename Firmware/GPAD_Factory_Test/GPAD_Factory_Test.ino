@@ -32,7 +32,7 @@
 */
 
 #define PROG_NAME "****FACTORY TEST****"     //Descriptive name of this software, 20 characters.
-#define VERSION 1.24                         //Version of this software
+#define VERSION 1.30                         //Version of this software
 #define BAUDRATE 115200
 
 //Set LED wink parameters
@@ -52,6 +52,9 @@ const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10 cm.  The s
 //For LCD
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
+//For Switch Debouncing
+#include <DailyStruggleButton.h>
+
 
 //Pin definitions.  Assign symbolic constant to Arduino pin numbers. 
 //For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
@@ -72,9 +75,33 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define OTHER_ERROR   4
 #define TIMEOUT       5
 
+//Test Groups
+#define TG_SWITCH_MUTE 0
+#define TG_LEDS        1
+#define TG_BUZZER      2
+#define TG_I2C         3
+#define TG_LCD         4
+
+//Indiviual Tests
+#define T_LED_BUILTIN   0
+#define T_LIGHTS        1
+#define T_BUZZER_FREQ1  0
+
+
 //Allow indexing to LIGHT[] by symbolic name. So LIGHT0 is first and so on.
 int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
 const int NUM_LIGHTS = sizeof(LIGHT)/sizeof(LIGHT[0]);
+
+//DailyStruggleButton
+unsigned int longPressTime = 1000;
+unsigned int multiHitTime = 600;
+byte multiHitTarget = 2;
+byte testCount = 0;             // for toggling through each test function with single-press
+byte testGroupCount = 0;        // for toggling through each group of test functions with multi-press
+const byte testGroups = 5;      // number of test groups to cycle through
+byte testGroup = 0;             // current test group
+bool oldStatus = false;         // for printing once during loop()
+DailyStruggleButton switchMute;   // create instance of DSB
 
 // Functions
 
@@ -182,6 +209,164 @@ void scanI2C(void) {
   }//end serial prints
 }//end scanI2C()
 
+// test functions
+void testSwitchMute(byte switchStatus) {
+  if(testGroup != TG_SWITCH_MUTE) {
+    return;
+  }
+
+  switch (switchStatus) {
+    case onPress:
+      Serial.println("Switch pressed.");
+      break;
+
+    case onRelease:
+      Serial.println("Switch released.");
+      break;
+
+    case onLongPress:
+      Serial.println("Switch long-pressed.");
+      break;
+
+    case onMultiHit:
+      Serial.println("Switch multi-pressed.");            
+      break;
+  }
+}
+
+void testLEDs(void) {
+  byte test = testCount % 2;      // modify const int to change number of tests
+  
+  if (test == T_LED_BUILTIN) {    // Test 1
+    updateWink();
+    bool winkStatus = true;
+    if (winkStatus != oldStatus) {    // print once
+      Serial.println("Now winking built-in LED.");   
+      oldStatus = winkStatus;
+    }
+  }
+  else {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+
+  if (test == T_LIGHTS) {         // Test 2
+    for (byte i = 0; i < NUM_LIGHTS; ++i) {
+      digitalWrite(LIGHT[i], HIGH);
+    }
+    bool lightStatus = true;
+    if (lightStatus != oldStatus) {   // print once
+      Serial.println("Now driving all external LEDs.");   
+      oldStatus = lightStatus;
+    }
+  }
+  else {
+    for (byte i = 0; i < NUM_LIGHTS; ++i) {
+      digitalWrite(LIGHT[i], LOW);
+    }
+  }
+}
+
+void stopTestLEDs(void) {
+  digitalWrite(LED_BUILTIN, LOW);           // Test 1
+  for (byte i = 0; i < NUM_LIGHTS; ++i) {   // Test 2
+    digitalWrite(LIGHT[i], LOW);
+  }
+}
+
+void testBuzzer(void) {
+  byte test = testCount % 1;        // modify const int to change number of tests
+
+  switch (test) {           // Note: switch-case for potential further expansion of tests...
+    case T_BUZZER_FREQ1:
+      tone(TONE_PIN, BUZZER_TEST_FREQ);
+      bool buzzerStatus = true;
+      if (buzzerStatus != oldStatus) {    // print once
+        Serial.print("Driving Buzzer at frequency: ");
+        Serial.print(BUZZER_TEST_FREQ);
+        Serial.println(" Hz");   
+        oldStatus = buzzerStatus;
+      }
+      break;
+  }
+}
+
+void stopTestBuzzer(void) {
+  noTone(TONE_PIN);
+}
+
+void testI2C(void) {
+
+}
+
+void stopTestI2C(void) {
+
+}
+
+void testLCD(void) {
+
+}
+
+void stopTestLCD(void) {
+
+}
+
+void testGroupFunctions(void) {
+  testGroup = testGroupCount % testGroups;
+  
+  if (testGroup == TG_LEDS) {
+    testLEDs();
+  }
+  else {
+    stopTestLEDs();
+  }
+
+  if (testGroup == TG_BUZZER) {
+    testBuzzer();
+  }
+  else {
+    stopTestBuzzer();
+  }
+
+  if (testGroup == TG_I2C) {
+    testI2C();
+  }
+  else {
+    stopTestI2C();
+  }
+
+  if (testGroup == TG_LCD) {
+    testLCD();
+  }
+  else {
+    stopTestLCD();
+  }
+}
+
+void testGroupPrint(void) {   // for displaying to serial monitor
+  testGroup = testGroupCount % testGroups;
+  switch (testGroup) {
+    case TG_SWITCH_MUTE:
+      Serial.println("*** Now testing Mute Switch functionality. ***");
+      break;
+
+    case TG_LEDS:
+      Serial.println("*** Now testing LED functionality. ***");
+      break;
+
+    case TG_BUZZER:
+      Serial.println("*** Now testing Buzzer functionality. ***");
+      break;
+
+    case TG_I2C:
+      Serial.println("*** Now testing I2C functionality. ***");
+      break;
+
+    case TG_LCD:
+      Serial.println("*** Now testing LCD functionality. ***");
+      break;
+  }
+}
+
 void setup() {
   //Lets make the LED high near the start of setup for visual clue
   pinMode(LED_BUILTIN, OUTPUT);      // set the LED pin mode
@@ -204,32 +389,49 @@ void setup() {
   delay(100);
   Serial.println("Start LCD splash");
   splashLCD();
-  Serial.println("EndLCD splash");
+  Serial.println("End LCD splash");
 
   Serial.println("Set up GPIO pins");
-  pinMode(SWITCH_MUTE, INPUT_PULLUP);
+  switchMute.set(SWITCH_MUTE, switchMuteEvent, INT_PULL_UP);
+  switchMute.enableLongPress(longPressTime);
+  switchMute.enableMultiHit(multiHitTime, multiHitTarget);
   for (int i = 0; i < NUM_LIGHTS; i++) {
     Serial.println(LIGHT[i]);
     pinMode(LIGHT[i], OUTPUT);
   }
   Serial.println("end set up GPIO pins");
-
+  
+  testGroupPrint();   // print first, default test message
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 }// end of setup()
 
 void loop() {
-  updateWink(); //The builtin LED.
-
-  if (digitalRead(SWITCH_MUTE) != HIGH) {
-    tone(TONE_PIN, BUZZER_TEST_FREQ);
-    Serial.println("Button pressed.");
-    for (int i = 0; i < NUM_LIGHTS; i++) {
-      digitalWrite(LIGHT[i], HIGH);
-    }
-  } else {
-    noTone(TONE_PIN);
-    for (int i = 0; i < NUM_LIGHTS; i++) {
-      digitalWrite(LIGHT[i], LOW);
-    }
-  }
+  switchMute.poll();
+  testGroupFunctions();
 }//end loop()
+
+void switchMuteEvent(byte switchStatus) {
+  switch (switchStatus) {
+    case onPress:
+      testSwitchMute(switchStatus);
+      oldStatus = false;
+      testCount++;
+      break;
+
+    case onRelease:
+      testSwitchMute(switchStatus);
+      break;
+
+    case onLongPress:
+      testSwitchMute(switchStatus);
+      break;
+
+    case onMultiHit:
+      testSwitchMute(switchStatus);
+      testGroupCount++;
+      testGroupPrint();
+      oldStatus = false;
+      testCount = 0;          
+      break;
+  }
+}//end switchMuteEvent()
