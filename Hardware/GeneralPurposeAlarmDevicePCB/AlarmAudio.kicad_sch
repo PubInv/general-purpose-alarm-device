@@ -2,12 +2,12 @@
 
   (uuid afa1c7b7-2d71-4b83-b5de-2d55726f80a5)
 
-  (paper "A4")
+  (paper "USLetter")
 
   (title_block
     (title "GeneralPurposeAlarmDevicePCB")
-    (date "2022-06-20")
-    (rev "0.0")
+    (date "2022-11-13")
+    (rev "1.2")
     (company "PublicInvention")
     (comment 1 "GNU Affero General Public License v3.0")
     (comment 2 "DrawnBy: (Forrest) Lee Erickson")

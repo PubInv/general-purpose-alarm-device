@@ -864,7 +864,7 @@
     (property "Value" "LCD_20x4_Character-GPAD_SCH_LIB" (id 1) (at 5.08 19.05 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Display:NHD-0420H1Z" (id 2) (at 0 -22.86 0)
+    (property "Footprint" "GPAD:LCD_2004A" (id 2) (at 0 -22.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (id 3) (at 2.54 -2.54 0)
