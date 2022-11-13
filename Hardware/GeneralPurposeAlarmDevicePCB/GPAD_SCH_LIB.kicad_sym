@@ -786,11 +786,11 @@
     )
   )
   (symbol "ENCLOSURE_GPAD_VER1" (in_bom yes) (on_board no)
-    (property "Reference" "MF" (id 0) (at 0 0 0)
-      (effects (font (size 1.27 1.27)))
+    (property "Reference" "MF102" (id 0) (at -3.81 11.43 0)
+      (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "ENCLOSURE_GPAD_VER1" (id 1) (at 0 0 0)
-      (effects (font (size 1.27 1.27)))
+    (property "Value" "ENCLOSURE_GPAD_VER1" (id 1) (at -10.16 2.54 0)
+      (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "" (id 2) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -812,11 +812,6 @@
     )
     (property "ki_description" "ENCLOSURE_GPAD_VER1" (id 8) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
-    )
-    (symbol "ENCLOSURE_GPAD_VER1_0_0"
-      (text "PCB RAW" (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
     )
     (symbol "ENCLOSURE_GPAD_VER1_0_1"
       (rectangle (start -15.24 10.16) (end 15.24 -12.7)
@@ -843,6 +838,25 @@
         (pts
           (xy 0 -1.27)
           (xy 0 1.27)
+        )
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy 15.24 10.16)
+          (xy 16.51 12.7)
+        )
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type none))
+      )
+      (polyline
+        (pts
+          (xy -15.24 10.16)
+          (xy -12.7 12.7)
+          (xy 16.51 12.7)
+          (xy 16.51 -10.16)
+          (xy 15.24 -12.7)
         )
         (stroke (width 0) (type default) (color 0 0 0 0))
         (fill (type none))
