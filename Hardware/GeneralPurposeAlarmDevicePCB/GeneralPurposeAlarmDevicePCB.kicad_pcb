@@ -3380,6 +3380,11 @@
       (net 2 "GND") (pintype "passive") (tstamp 19288370-c254-49fa-ac4c-bb6954185a49))
     (pad "4" thru_hole circle locked (at 3.75 9.2 180) (size 1.524 1.524) (drill 0.9) (layers *.Cu *.Mask)
       (net 71 "Net-(C114-Pad1)") (pintype "passive") (tstamp b2dae061-cba6-42c0-b540-c12cc0fc9dc9))
+    (model "C:/Users/Public/Downloads/Lee_general-alarm-device/Hardware/GeneralPurposeAlarmDevicePCB/Parts/S04B-XASK-1/Cube.wrl"
+      (offset (xyz 6.35 0 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 180))
+    )
   )
 
   (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (layer "F.Cu")
