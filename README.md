@@ -165,7 +165,7 @@ Public Invention does not wish to become a manufacturer; but we will impartially
 
 As this is intended to be a long-term project that will evolve and potentially have many volunteers. The basic software architecture is captured in this diagram:
 
-![GPAD Architecture (1)](https://user-images.githubusercontent.com/5296671/201503823-d903de26-860f-42ce-87cf-7b90ddb3ee7b.png)
+![GPAD Architecture (2)](https://user-images.githubusercontent.com/5296671/201504069-9260b594-3c7b-4899-a1a7-5bb99ea7c8cb.png)
 
 
 # The Simplest API
