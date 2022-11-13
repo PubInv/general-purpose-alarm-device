@@ -6725,6 +6725,9 @@
     (path "/00000000-0000-0000-0000-0000633b9de5"
       (reference "#PWR0125") (unit 1) (value "+5V") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-000062b871ee/abbe0e4e-8c0a-4ce4-9fc1-c8351d1535bc"
+      (reference "#PWR0126") (unit 1) (value "GND") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-000062d74f16"
       (reference "#PWR0128") (unit 1) (value "GND") (footprint "")
     )
