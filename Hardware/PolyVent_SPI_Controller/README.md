@@ -23,11 +23,11 @@ Link to SCH
 
 # Theory of Operation
 This PCB provides two interface methods for level shifting from the 3.3V ESP32 on the PolyVent to the 5V ATmega328 on the GPAD.
-They are options acheived by populating different components in the schematic. As of 20221027 17:00 the schematic does not detail these stuffing options.
+They are options achieved by populating different components in the schematic. As of 20221027 17:00 the schematic does not detail these stuffing options.
 
 * One method of using FETs as described for example here: https://www.eeweb.com/level-shifting-techniques-in-i2c-bus-design/
 * The second method is to simply connect the signals from the ESP32 output pins (SCL, COPI, nCS) directly to the ATmega328 inputs and rely on the 3.3 Volt logic high to be sufficient for the Atmega328 CMOS inputs. Full analyses is: _TBD_  .
-The output from the ATmega328 is resistivly divided through 1K into 2K to produce 5 * 2/3 = 3.3 Volts on the CIPO signal.
+The output from the ATmega328 is resistively divided through 1K into 2K to produce 5 * 2/3 = 3.3 Volts on the CIPO signal.
 
 There is a resistor population choice of five different nCS lines of the PolyVent brought out to become the nCS signal. These are CS11-CS15 on the PolyVent connector.
 
@@ -37,7 +37,7 @@ There is a resistor population choice of five different nCS lines of the PolyVen
 
 Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
 
-Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientest by training, and an electrical engineer as well as a hobby inventor by vocation. 
+Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientist by training, and an electrical engineer as well as a hobby inventor by vocation. 
 
 ???  Joe Torreggiani of Speccollective
 

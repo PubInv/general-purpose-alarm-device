@@ -6,7 +6,7 @@
 ## See https://docs.wokwi.com/guides/libraries
 LiquidCrystal I2C
 
-Note: logic analizer added but not yet working.
+Note: logic analyzer added but not yet working.
 
 
 Direct link to Lee's Wokwi for the simulation of 20221019
