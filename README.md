@@ -161,6 +161,13 @@ Potential uses as a product (by hobbyist) include:
 
 Public Invention does not wish to become a manufacturer; but we will impartially support anyone who wants to take these designs and manufacture them so long as they abide by the licenses.
 
+# Modular Software Architecture
+
+As this is intended to be a long-term project that will evolve and potentially have many volunteers. The basic software architecture is captured in this diagram:
+
+![GPAD Architecture (1)](https://user-images.githubusercontent.com/5296671/201503823-d903de26-860f-42ce-87cf-7b90ddb3ee7b.png)
+
+
 # The Simplest API
 
 The simplest API could just be:
