@@ -1,5 +1,5 @@
-/* alarm_api.h
-  The header file for the "abstract" alarm api.
+/* robot_api.h
+  header for the "robot" (low-level hardware) api
 
   Copyright (C) 2022 Robert Read
 
@@ -18,18 +18,22 @@
 
 */
 
-#ifndef ALARM_API
-#define ALARM_API
-#include <Stream.h>
+#ifndef ROBOT_API
+#define ROBOT_API 1
+
+//Pin definitions.  Assign symbolic constant to Arduino pin numbers.
+//For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
+#define SWITCH_MUTE 2
+#define TONE_PIN 8
+#define LIGHT0 3
+#define LIGHT1 5
+#define LIGHT2 6
+#define LIGHT3 9
+#define LIGHT4 7
 
 
-enum AlarmLevel { silent, informational, problem, warning, critical, panic };
-// const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
-const int NUM_LEVELS = 6;
-
-
-
-
-int alarm(AlarmLevel level,char *str,Stream &serialport);
+void annunciateAlarmLevel();
+void clearLCD(void);
+void splashLCD(void);
 
 #endif

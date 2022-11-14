@@ -1,5 +1,5 @@
-/* GPAD_API.ino
-  The program implements the main API of the General Purpose Alarm Device.
+/* alarm_api.cpp
+  This implements the "abstract" alarm api.
 
   Copyright (C) 2022 Robert Read
 
