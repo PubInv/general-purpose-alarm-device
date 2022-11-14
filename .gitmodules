@@ -1,3 +1,0 @@
-[submodule "SPI_Controller_And_Peripheral"]
-	path = Firmware/SPI_Controller_And_Peripheral
-	url = https://github.com/ForrestErickson/SPI_Controller_And_Peripheral.git
