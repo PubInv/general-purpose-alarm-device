@@ -20,6 +20,7 @@
 
 #ifndef ROBOT_API
 #define ROBOT_API 1
+#include <stream.h>
 
 //Pin definitions.  Assign symbolic constant to Arduino pin numbers.
 //For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
@@ -36,4 +37,7 @@ void annunciateAlarmLevel();
 void clearLCD(void);
 void splashLCD(void);
 
+// This module has to be initialized and called each time through the superloop
+void robot_api_setup(Stream* serialport);
+void robot_api_loop();
 #endif

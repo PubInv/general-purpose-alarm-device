@@ -23,6 +23,9 @@
 #include "alarm_api.h"
 #include "gpad_utility.h"
 
+#include <DailyStruggleButton.h>
+DailyStruggleButton muteButton;
+
 extern const char *AlarmNames[];
 extern AlarmLevel currentLevel;
 extern bool currentlyMuted;
@@ -51,6 +54,56 @@ const unsigned long INF_DURATION = 4294967295;
 int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
 int NUM_LIGHTS = sizeof(LIGHT)/sizeof(LIGHT[0]);
 
+Stream* local_ptr_to_serial;
+
+// Have to get a serialport here
+void myCallback(byte buttonEvent){
+  switch (buttonEvent){
+    case onPress:
+      // Do something...
+      local_ptr_to_serial->println("onPress");
+      currentlyMuted = !currentlyMuted;
+      annunciateAlarmLevel();
+      printAlarmState(*local_ptr_to_serial);
+      break;
+  }
+}
+
+
+void robot_api_setup(Stream* serialport) {
+
+  local_ptr_to_serial = serialport;
+  Wire.begin();
+  lcd.init();
+  serialport->println("Clear LCD");
+  clearLCD();
+  delay(100);
+  serialport->println("Start LCD splash");
+  splashLCD();
+  serialport->println("EndLCD splash");
+
+  serialport->println("Set up GPIO pins");
+  pinMode(SWITCH_MUTE, INPUT_PULLUP);
+  for (int i = 0; i < NUM_LIGHTS; i++) {
+    serialport->println(LIGHT[i]);
+    pinMode(LIGHT[i], OUTPUT);
+  }
+
+  muteButton.set(SWITCH_MUTE, myCallback);
+  serialport->println("end set up GPIO pins");
+
+  printInstructions(*serialport);
+  AlarmMessageBuffer[0] = '\0';
+
+  digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
+}
+
+
+
+// This has to be called periodically, at a minimum to handle the mute_button
+void robot_api_loop() {
+    muteButton.poll();
+}
 
 /* Assumes LCD has been initilized
  * Turns off Back Light
@@ -118,7 +171,7 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
     for (i=0; i<(len/blen + 1) && i + msgLineStart < 4; ++i)
     {
       memcpy(buffer, msg + (i*blen), blen);
-      Serial.println(buffer);
+      local_ptr_to_serial->println(buffer);
       lcd.setCursor(0,i+msgLineStart);
       lcd.print(buffer);
     }

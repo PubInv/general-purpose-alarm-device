@@ -65,44 +65,14 @@
 #define SERIAL_TIMEOUT_MS 600000
 
 
-// here is the abstract "state" of the machine,
-// completely independent of hardware.
-// This is very simple version of what is probably needed.
-// For example, perhaps the abstract machine should know how long
-// it has been in a given alarm state. At present, this
-// is a "dumb" machine---the user of it is expected to do
-// all alarm management.
-extern const char *AlarmNames[];
-// TODO --- consider packing all this into a single struct,
-// as all are used together
-extern AlarmLevel currentLevel;
-extern bool currentlyMuted;
-extern char AlarmMessageBuffer[128];
-
-
 //Set LED wink parameters
 const int HIGH_TIME_LED_MS = 800;    //time in milliseconds
 const int LOW_TIME_LED_MS = 200;
 unsigned long lastLEDtime_ms = 0;
 unsigned long nextLEDchangee_ms = 100; //time in ms.
 
-
-//For I2C Scan
-#include <Wire.h>
-/* //For LCD */
-/* #include <LiquidCrystal_I2C.h> */
-/* LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board */
-// To Debounce our standard button
-#include <DailyStruggleButton.h>
-DailyStruggleButton muteButton;
-
-extern int LIGHT[];
-extern int NUM_LIGHTS;
-
-
-// a goal here is to remove this dependence from this file...
-#include <LiquidCrystal_I2C.h>
-extern LiquidCrystal_I2C lcd;
+// extern int LIGHT[];
+// extern int NUM_LIGHTS;
 
 // Functions
 
@@ -131,83 +101,15 @@ void setup() {
   delay(100);
   Serial.begin(BAUDRATE);
   delay(100);                         //Wait before sending the first data to terminal
-
   Serial.setTimeout(SERIAL_TIMEOUT_MS);
 
-  Wire.begin();
-
-  lcd.init();
-  Serial.println("Clear LCD");
-  clearLCD();
-  delay(100);
-  Serial.println("Start LCD splash");
-  splashLCD();
-  Serial.println("EndLCD splash");
-
-  Serial.println("Set up GPIO pins");
-  pinMode(SWITCH_MUTE, INPUT_PULLUP);
-  for (int i = 0; i < NUM_LIGHTS; i++) {
-    Serial.println(LIGHT[i]);
-    pinMode(LIGHT[i], OUTPUT);
-  }
-
-  muteButton.set(SWITCH_MUTE, myCallback);
-  Serial.println("end set up GPIO pins");
-
-  printInstructions(Serial);
-  AlarmMessageBuffer[0] = '\0';
+  robot_api_setup(&Serial);
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 }// end of setup()
 
-/* void printAlarmState() { */
-/*   Serial.print("Muted: "); */
-/*   Serial.println(currentlyMuted ? "YES" : "NO"); */
-/*   Serial.print("LVL: "); */
-/*   Serial.println(currentLevel); */
-/*   if (strlen(AlarmMessageBuffer) == 0) { */
-/*     Serial.println("No Message."); */
-/*   } else { */
-/*     Serial.print("Msg: "); */
-/*     Serial.println(AlarmMessageBuffer); */
-/*   } */
-/* } */
-
-
-
-// This operation is idempotent if there is no change in the abstract state.
-/* void annunciateAlarmLevel() { */
-/*   for(int i = 0; i < currentLevel; i++) { */
-/*     digitalWrite(LIGHT[i],HIGH); */
-/*   } */
-/*   for(int i = currentLevel; i < NUM_LIGHTS; i++) { */
-/*     digitalWrite(LIGHT[i],LOW); */
-/*   } */
-/*   if (!currentlyMuted) { */
-/*     tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION); */
-/*   } else { */
-/*     noTone(TONE_PIN); */
-/*   } */
-/*   showStatusLCD(currentLevel,currentlyMuted,AlarmMessageBuffer); */
-/* } */
-
-void myCallback(byte buttonEvent){
-  switch (buttonEvent){
-    case onPress:
-      // Do something...
-      Serial.println("onPress");
-      currentlyMuted = !currentlyMuted;
-      annunciateAlarmLevel();
-      printAlarmState(Serial);
-      break;
-  }
-}
-
-
 void loop() {
   updateWink(); //The builtin LED
-
-  muteButton.poll();
-
+  robot_api_loop();
   processSerial(Serial);
 }
