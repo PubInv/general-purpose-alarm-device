@@ -90,7 +90,8 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define T_LIGHT2        2
 #define T_LIGHT3        3
 #define T_LIGHT4        4
-#define T_BUZZER_FREQ1  0
+#define T_BUZZER_CONT   0
+#define T_BUZZER_INT    1
 
 
 //Allow indexing to LIGHT[] by symbolic name. So LIGHT0 is first and so on.
@@ -110,7 +111,9 @@ const byte testGroups = 5;      // number of test groups to cycle through
 byte testGroup = 0;             // current test group
 bool oldStatus = false;         // for printing once during loop()
 bool autoToggle = false;
-unsigned long lastTestTime_ms = 0;
+bool buzzer = false;            // driving buzzer
+unsigned long lastTestTime_ms = 0;  // for autoToggle exclusively
+unsigned long lastBuzzTime_ms = 0;
 
 // Functions
 
@@ -332,16 +335,43 @@ void stopTestLEDs(void) {
 }
 
 void testBuzzer(void) {
-  byte test = testCount % 1;        // modify const int to change number of tests
+  byte test = testCount % 2;        // total number of tests counter - modify const int to change number of tests
+  bool buzzerStatus = true;         // soley for serial printing
 
-  switch (test) {           // Note: switch-case for potential further expansion of tests...
-    case T_BUZZER_FREQ1:
+  switch (test) {
+    case T_BUZZER_CONT:  // Continuous buzzing
       tone(TONE_PIN, BUZZER_TEST_FREQ);
-      bool buzzerStatus = true;
       if (buzzerStatus != oldStatus) {    // print once
-        Serial.print("Driving Buzzer at frequency: ");
+        Serial.print("Continuously driving Buzzer at tone frequency: ");
         Serial.print(BUZZER_TEST_FREQ);
         Serial.println(" Hz");   
+        oldStatus = buzzerStatus;
+      }
+      break;
+
+    case T_BUZZER_INT:  // Intermittent buzzing
+      const unsigned long ms = millis();
+      uint16_t buzzTime_ms = 500;
+      
+      if (ms - lastBuzzTime_ms > buzzTime_ms) {
+          buzzer = !buzzer;
+          lastBuzzTime_ms = ms;
+      }
+      
+      if (buzzer) {
+        tone(TONE_PIN, BUZZER_TEST_FREQ);
+      }
+      else {
+        noTone(TONE_PIN);
+      }
+      
+      if (buzzerStatus != oldStatus) {    // print once
+        uint16_t pulseFreq = (uint16_t)(2*buzzTime_ms/1000);
+        Serial.print("Intermittently (~");
+        Serial.print(pulseFreq, DEC);
+        Serial.print(" Hz) driving Buzzer at tone frequency: ");
+        Serial.print(BUZZER_TEST_FREQ);
+        Serial.println(" Hz");  
         oldStatus = buzzerStatus;
       }
       break;
@@ -350,6 +380,7 @@ void testBuzzer(void) {
 
 void stopTestBuzzer(void) {
   noTone(TONE_PIN);
+  buzzer = false;
 }
 
 void testI2C(void) {
