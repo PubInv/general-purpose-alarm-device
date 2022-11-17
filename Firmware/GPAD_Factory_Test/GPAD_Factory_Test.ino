@@ -85,6 +85,11 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 //Indiviual Tests
 #define T_LED_BUILTIN   0
 #define T_LIGHTS        1
+#define T_LIGHT0        0
+#define T_LIGHT1        1
+#define T_LIGHT2        2
+#define T_LIGHT3        3
+#define T_LIGHT4        4
 #define T_BUZZER_FREQ1  0
 
 
@@ -239,9 +244,9 @@ void testSwitchMute(byte switchStatus) {
 }
 
 void testLEDs(void) {
-  byte test = testCount % 2;      // modify const int to change number of tests
+  byte test = testCount % (1 + (2*NUM_LIGHTS + 1));      // total number of tests counter
   
-  if (test == T_LED_BUILTIN) {    // Test 1
+  if (test == T_LED_BUILTIN) {    // Test 1 - built-in LED
     updateWink();
     bool winkStatus = true;
     if (winkStatus != oldStatus) {    // print once
@@ -253,26 +258,75 @@ void testLEDs(void) {
     digitalWrite(LED_BUILTIN, LOW);
   }
 
-  if (test == T_LIGHTS) {         // Test 2
-    for (byte i = 0; i < NUM_LIGHTS; ++i) {
-      digitalWrite(LIGHT[i], HIGH);
-    }
+  if (test >= T_LIGHTS) {         // Test 2++ - external LEDs onwards...
+    byte testEachLight = (test - 1) % NUM_LIGHTS;   // counter for iterating through lights (0 -> NUM8LIGHTS-1)
+    byte subGroupTest = (byte)(test - 1)/5 ;    // counter to iterate through grouped light tests (0 -> 2)
     bool lightStatus = true;
-    if (lightStatus != oldStatus) {   // print once
-      Serial.println("Now driving all external LEDs.");   
-      oldStatus = lightStatus;
-    }
-  }
+
+    switch (subGroupTest) {
+      case 0:   // Sequentially drive each light individually
+        for (byte i = 0; i < NUM_LIGHTS; ++i) {   // Turn off every other light 
+          if (i != testEachLight) {
+            digitalWrite(LIGHT[i], LOW);
+          }
+        }
+
+        switch (testEachLight) {   // Turn on selected light
+          case T_LIGHT0:  digitalWrite(LIGHT[T_LIGHT0], HIGH);   break;
+          case T_LIGHT1:  digitalWrite(LIGHT[T_LIGHT1], HIGH);   break;
+          case T_LIGHT2:  digitalWrite(LIGHT[T_LIGHT2], HIGH);   break;
+          case T_LIGHT3:  digitalWrite(LIGHT[T_LIGHT3], HIGH);   break;
+          case T_LIGHT4:  digitalWrite(LIGHT[T_LIGHT4], HIGH);   break;
+        }
+
+        if (lightStatus != oldStatus) {   // print once
+          Serial.print("Now individually driving LIGHT ");
+          Serial.println(testEachLight, DEC);  
+          oldStatus = lightStatus;
+        }
+        break;
+      
+      case 1:   // Sequentially drive all but one light
+        for (byte i = 0; i < NUM_LIGHTS; ++i) {   
+          if (i == testEachLight) {     // turn ON all lights apart from selected
+            digitalWrite(LIGHT[i], LOW);
+          }
+          else {
+            digitalWrite(LIGHT[i], HIGH); // selected
+          }
+        }
+
+        if (lightStatus != oldStatus) {   // print once
+          Serial.print("Now driving all but LIGHT ");
+          Serial.println(testEachLight, DEC);  
+          oldStatus = lightStatus;         
+        }
+        break;
+      
+      case 2:   // Drive ALL lights
+        for (byte i = 0; i < NUM_LIGHTS; ++i) {
+          digitalWrite(LIGHT[i], HIGH);
+        }
+
+        if (lightStatus != oldStatus) {   // print once
+          Serial.print("Now driving all ");
+          Serial.print(NUM_LIGHTS, DEC);
+          Serial.println(" Lights.");
+          oldStatus = lightStatus;
+        }
+        break;
+    } // end subGroupTest switch-case
+  } // end if (test >= T_LIGHTS)
   else {
-    for (byte i = 0; i < NUM_LIGHTS; ++i) {
+    for (byte i = 0; i < NUM_LIGHTS; ++i) {   // turn off every light if not testing
       digitalWrite(LIGHT[i], LOW);
     }
   }
-}
+} // end testLEDS()
 
 void stopTestLEDs(void) {
   digitalWrite(LED_BUILTIN, LOW);           // Test 1
-  for (byte i = 0; i < NUM_LIGHTS; ++i) {   // Test 2
+  for (byte i = 0; i < NUM_LIGHTS; ++i) {   // Test 2++
     digitalWrite(LIGHT[i], LOW);
   }
 }
