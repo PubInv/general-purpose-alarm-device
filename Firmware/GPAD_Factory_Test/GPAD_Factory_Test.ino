@@ -83,10 +83,15 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define TG_LCD         4
 
 //Indiviual Tests
-#define T_LED_BUILTIN   0
+#define T_LED_BUILTIN   0   // LEDs:
 #define T_LIGHTS        1
-#define T_BUZZER_CONT   0
+#define T_BUZZER_CONT   0   // Buzzer:
 #define T_BUZZER_INT    1
+#define T_BACKLIGHT     0   // LCD:
+#define T_DEAD_PIXELS   1
+#define T_GRID_FILL     2   // filled background
+#define T_GRID_CLEAR    3   // clear background
+#define T_ASCII_CHARS   4
 
 //I2C Scan Target Address
 #define ADDRESS_TARGET  0x38u   // primary target
@@ -103,15 +108,18 @@ byte multiHitTarget = 2;
 DailyStruggleButton switchMute;   // create instance of DSB
 
 //Testing
+byte ASCII = 33;                // for more info see: https://www.asciitable.com/
+byte charCountX = 0;            // for LCD test
+byte charCountY = 0;            
 byte testCount = 0;             // for toggling through each test function with single-press
 byte testGroupCount = 0;        // for toggling through each group of test functions with multi-press
-const byte testGroups = 5;      // number of test groups to cycle through
 byte testGroup = 0;             // current test group
+const byte testGroups = 5;      // number of test groups to cycle through
 bool oldStatus = false;         // for printing once during loop()
 bool autoToggle = false;        // to enable/disable automated toggling through tests
 bool buzzer = false;            // driving buzzer
-unsigned long lastTestTime_ms = 0;  // for autoToggle exclusively
-unsigned long lastBuzzTime_ms = 0;
+unsigned long lastToggleTime_ms = 0;  // for autoToggle exclusively
+unsigned long lastTestTime_ms = 0;    // generic - ONLY for mutually exclusive events
 
 // Functions
 
@@ -375,9 +383,9 @@ void testBuzzer(void) {
       const unsigned long ms = millis();
       uint16_t buzzTime_ms = 500;
       
-      if (ms - lastBuzzTime_ms > buzzTime_ms) {
+      if (ms - lastTestTime_ms > buzzTime_ms) {
           buzzer = !buzzer;
-          lastBuzzTime_ms = ms;
+          lastTestTime_ms = ms;
       }
       
       if (buzzer) {
@@ -417,12 +425,134 @@ void testI2C(void) {
 }// end testI2C()
 
 void testLCD(void) {
+  byte fillChar[8] {
+    0b11111,
+    0b11111,
+    0b11111,
+    0b11111,
+    0b11111,
+    0b11111,
+    0b11111,
+    0b11111
+  };
+  byte voidChar[8] {
+    0b00000,
+    0b00000,
+    0b00000,
+    0b00000,
+    0b00000,
+    0b00000,
+    0b00000,
+    0b00000
+  };
+  byte indxFill = 0;           // for custom chars
+  byte indxVoid = 1;
+  byte rows = 4;
+  byte cols = 20;
+  byte test = testCount % 5;    // total number of tests counter
+  const bool statusLCD = true;
+  const unsigned long ms = millis();
+  uint16_t displayTime = 1000;        // in ms
+  
+  // guard clauses
+  if (test != T_ASCII_CHARS) {
+    ASCII = 33;
+  }
+  if (test != T_GRID_FILL && test != T_GRID_CLEAR) {
+    charCountX = 0;
+    charCountY = 0;
+  }
+  
+  lcd.createChar(indxFill, fillChar);
+  lcd.createChar(indxVoid, voidChar);
 
-}
+  // Exclusive Tests
+  switch (test) {
+    case T_BACKLIGHT:
+      if (statusLCD != oldStatus) {    // do once
+        lcd.clear();
+        Serial.println("Now testing backlight.");
+        oldStatus = statusLCD;
+      }
+      lcd.backlight();
+      break;
+    
+    case T_DEAD_PIXELS:
+      if (statusLCD != oldStatus) {     // do once
+        for (byte i = 0; i < rows; ++i) {    // rows
+          for (byte j = 0; j < cols; ++j) {   // columns
+            lcd.setCursor(j, i);
+            lcd.write(indxFill);
+          }// end columns
+        }// end rows   
+        Serial.println("Now testing for dead pixels.");
+        oldStatus = statusLCD;
+      }
+      break;
+
+    case T_GRID_FILL:
+      if (ms - lastTestTime_ms > displayTime) {     // every so often do...
+        for (byte i = 0; i < rows; ++i) {     // rows
+          for (byte j = 0; j < cols; ++j) {    // columns
+            lcd.setCursor(j, i);
+            if (j == charCountX && i == charCountY) { lcd.write(indxVoid); }  // fill all but test char
+            else { lcd.write(indxFill); }
+          }// end columns
+        }// end rows
+        Serial.print("Now testing grid coordinate (");
+        Serial.print(charCountX);
+        Serial.print(", ");
+        Serial.print(charCountY);
+        Serial.println(") against filled background.");
+        charCountX = ++charCountX % 20;             // move to next coord..
+        if (charCountX == 0) { charCountY = ++charCountY % 4; } 
+        lastTestTime_ms = ms;
+      }
+      break;
+
+    case T_GRID_CLEAR:
+      if (ms - lastTestTime_ms > displayTime) {     // every so often do...
+        for (byte i = 0; i < rows; ++i) {     // rows
+          for (byte j = 0; j < cols; ++j) {    // columns
+            lcd.setCursor(j, i);
+            if (j == charCountX && i == charCountY) { lcd.write(indxFill); }  // fill only test char
+            else { lcd.write(indxVoid); }
+          }// end columns
+        }// end rows
+        Serial.print("Now testing grid coordinate (");
+        Serial.print(charCountX);
+        Serial.print(", ");
+        Serial.print(charCountY);
+        Serial.println(") against clear background.");
+        charCountX = ++charCountX % 20;             // move to next coord..
+        if (charCountX == 0) { charCountY = ++charCountY % 4; } 
+        lastTestTime_ms = ms;
+      }
+      break;
+
+    case T_ASCII_CHARS:
+      if (ms - lastTestTime_ms > displayTime) {   // every so often, change...
+        const char testChar = (char)ASCII;
+        for (byte i = 0; i < rows; ++i) {     // rows
+          for (byte j = 0; j < cols; ++j) {     // columns
+            lcd.setCursor(j, i);
+            lcd.print(testChar);
+          }// end columns
+        }// end rows
+        Serial.print("Now printing character '");
+        Serial.print(testChar);
+        Serial.println("'");
+        ASCII = ++ASCII % 127;              // loop ASCII        
+        if (ASCII == 0) { ASCII = 33; }     // between 33->127
+        lastTestTime_ms = ms;
+      }
+      break;
+  }
+}// end testLCD()
 
 void stopTestLCD(void) {
-
-}
+  clearLCD();
+}// end stopTestLCD()
 
 void autoToggleTest(void) {
   if (!autoToggle){
@@ -432,10 +562,10 @@ void autoToggleTest(void) {
   const unsigned long ms = millis();
   int testTime_ms = 3000;
 
-  if (ms - lastTestTime_ms > testTime_ms) {
+  if (ms - lastToggleTime_ms > testTime_ms) {
     testCount++;
     oldStatus = false;    // to enable indiviual tests to print to monitor
-    lastTestTime_ms = ms;
+    lastToggleTime_ms = ms;
   }
 }// end autoToggleTest()
 
@@ -521,6 +651,7 @@ void setup() {
   delay(100);
   Serial.println("Start LCD splash");
   splashLCD();
+  delay(3000);
   Serial.println("End LCD splash");
 
   Serial.println("Set up GPIO pins");
