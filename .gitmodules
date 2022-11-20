@@ -1,0 +1,3 @@
+[submodule "lib/reference/DailyStruggleButton"]
+	path = lib/reference/DailyStruggleButton
+	url = https://github.com/cygig/DailyStruggleButton.git
