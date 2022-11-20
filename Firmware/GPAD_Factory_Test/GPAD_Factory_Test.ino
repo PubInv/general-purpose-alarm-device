@@ -84,7 +84,8 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 
 //Indiviual Tests
 #define T_LED_BUILTIN   0   // LEDs:
-#define T_LIGHTS        1
+#define T_LIGHTS_START  1
+#define T_LIGHTS_END    11
 #define T_BUZZER_CONT   0   // Buzzer:
 #define T_BUZZER_INT    1
 #define T_BACKLIGHT     0   // LCD:
@@ -109,13 +110,13 @@ DailyStruggleButton switchMute;   // create instance of DSB
 
 //Testing
 byte ASCII = 33;                // for more info see: https://www.asciitable.com/
-byte charCountX = 0;            // for LCD test
+byte charCountX = 0;            // for LCD tests
 byte charCountY = 0;            
 byte testCount = 0;             // for toggling through each test function with single-press
 byte testGroupCount = 0;        // for toggling through each group of test functions with multi-press
 byte testGroup = 0;             // current test group
 const byte testGroups = 5;      // number of test groups to cycle through
-bool oldStatus = false;         // for printing once during loop()
+bool printStatus = false;       // for printing once during loop()
 bool autoToggle = false;        // to enable/disable automated toggling through tests
 bool buzzer = false;            // driving buzzer
 unsigned long lastToggleTime_ms = 0;  // for autoToggle exclusively
@@ -284,77 +285,75 @@ void testSwitchMute(byte switchStatus) {
 
 void testLEDs(void) {
   byte test = testCount % (1 + (2*NUM_LIGHTS + 1));      // total number of tests counter
-  
-  if (test == T_LED_BUILTIN) {    // Test 1 - built-in LED
-    updateWink();
-    bool winkStatus = true;
-    if (winkStatus != oldStatus) {    // print once
-      Serial.println("Now winking built-in LED.");   
-      oldStatus = winkStatus;
-    }
-  }
-  else {
+  byte testEachLight = (test - 1) % NUM_LIGHTS;     // counter for iterating through lights (0 -> NUM_LIGHTS-1)
+
+  // guard clauses
+  if (test != T_LED_BUILTIN) {
     digitalWrite(LED_BUILTIN, LOW);
   }
-
-  if (test >= T_LIGHTS) {         // Test 2++ - external LEDs onwards...
-    byte testEachLight = (test - 1) % NUM_LIGHTS;   // counter for iterating through lights (0 -> NUM_LIGHTS-1)
-    bool lightStatus = true;
-
-    switch (test) {
-      case 1 ... 5:   // Sequentially drive each light individually
-        for (byte i = 0; i < NUM_LIGHTS; ++i) {    
-          if (i != testEachLight) {
-            digitalWrite(LIGHT[i], LOW);    // Turn off every other light
-          }
-          else {
-            digitalWrite(LIGHT[i], HIGH);   // selected
-          }
-        }
-
-        if (lightStatus != oldStatus) {   // print once
-          Serial.print("Now individually driving LIGHT ");
-          Serial.println(testEachLight, DEC);  
-          oldStatus = lightStatus;
-        }
-        break;
-      
-      case 6 ... 10:   // Sequentially drive all but one light
-        for (byte i = 0; i < NUM_LIGHTS; ++i) {   
-          if (i == testEachLight) {     // turn ON all lights apart from selected
-            digitalWrite(LIGHT[i], LOW);
-          }
-          else {
-            digitalWrite(LIGHT[i], HIGH); // selected
-          }
-        }
-
-        if (lightStatus != oldStatus) {   // print once
-          Serial.print("Now driving all but LIGHT ");
-          Serial.println(testEachLight, DEC);  
-          oldStatus = lightStatus;         
-        }
-        break;
-      
-      case 11:   // Drive ALL lights
-        for (byte i = 0; i < NUM_LIGHTS; ++i) {
-          digitalWrite(LIGHT[i], HIGH);
-        }
-
-        if (lightStatus != oldStatus) {   // print once
-          Serial.print("Now driving all ");
-          Serial.print(NUM_LIGHTS, DEC);
-          Serial.println(" Lights.");
-          oldStatus = lightStatus;
-        }
-        break;
-    } // end test switch-case
-  } // end if (test >= T_LIGHTS)
-  else {
+  if (test <= T_LIGHTS_START || test >= T_LIGHTS_END) {
     for (byte i = 0; i < NUM_LIGHTS; ++i) {   // turn off every light if not testing
       digitalWrite(LIGHT[i], LOW);
     }
-  }// end else
+  }
+
+  // Exclusive testing
+  switch (test) {
+    case T_LED_BUILTIN:             // wink built-in LED
+      updateWink();
+      if (!printStatus) {    // print once
+        Serial.println("Now winking built-in LED.");   
+        printStatus = true;
+      }
+      break;
+    
+    case T_LIGHTS_START ... 5:      // Sequentially drive each light individually
+      for (byte i = 0; i < NUM_LIGHTS; ++i) {    
+        if (i != testEachLight) {
+          digitalWrite(LIGHT[i], LOW);    // Turn off every other light
+        }
+        else {
+          digitalWrite(LIGHT[i], HIGH);   // selected
+        }
+      }
+
+      if (!printStatus) {   // print once
+        Serial.print("Now individually driving LIGHT ");
+        Serial.println(testEachLight, DEC);  
+        printStatus = true;
+      }
+      break;
+
+    case 6 ... 10:      // Sequentially drive all but one light
+      for (byte i = 0; i < NUM_LIGHTS; ++i) {   
+        if (i == testEachLight) {     // turn ON all lights apart from selected
+          digitalWrite(LIGHT[i], LOW);
+        }
+        else {
+          digitalWrite(LIGHT[i], HIGH); // selected
+        }
+      }
+
+      if (!printStatus) {   // print once
+        Serial.print("Now driving all but LIGHT ");
+        Serial.println(testEachLight, DEC);  
+        printStatus = true;         
+      }
+      break;
+
+    case T_LIGHTS_END:   // Drive ALL lights
+      for (byte i = 0; i < NUM_LIGHTS; ++i) {
+        digitalWrite(LIGHT[i], HIGH);
+      }
+
+      if (!printStatus) {   // print once
+        Serial.print("Now driving all ");
+        Serial.print(NUM_LIGHTS, DEC);
+        Serial.println(" Lights.");
+        printStatus = true;
+      }      
+      break;
+  }// end test switch-case
 }// end testLEDS()
 
 void stopTestLEDs(void) {
@@ -366,16 +365,15 @@ void stopTestLEDs(void) {
 
 void testBuzzer(void) {
   byte test = testCount % 2;        // total number of tests counter - modify const int to change number of tests
-  bool buzzerStatus = true;         // soley for serial printing
 
   switch (test) {
     case T_BUZZER_CONT:  // Continuous buzzing
       tone(TONE_PIN, BUZZER_TEST_FREQ);
-      if (buzzerStatus != oldStatus) {    // print once
+      if (!printStatus) {    // print once
         Serial.print("Continuously driving Buzzer at tone frequency: ");
         Serial.print(BUZZER_TEST_FREQ);
         Serial.println(" Hz");   
-        oldStatus = buzzerStatus;
+        printStatus = true;
       }
       break;
 
@@ -395,14 +393,14 @@ void testBuzzer(void) {
         noTone(TONE_PIN);
       }
       
-      if (buzzerStatus != oldStatus) {    // print once
+      if (!printStatus) {    // print once
         uint16_t pulseFreq = (uint16_t)(2*buzzTime_ms/1000);
         Serial.print("Intermittently (~");
         Serial.print(pulseFreq, DEC);
         Serial.print(" Hz) driving Buzzer at tone frequency: ");
         Serial.print(BUZZER_TEST_FREQ);
         Serial.println(" Hz");  
-        oldStatus = buzzerStatus;
+        printStatus = true;
       }
       break;
   }//end <test> switch-case
@@ -414,13 +412,11 @@ void stopTestBuzzer(void) {
 }//end stopTestBuzzer()
 
 void testI2C(void) {
-  bool scanStatus = true;
-
-  if (scanStatus != oldStatus) {      // do once
+  if (!printStatus) {      // do once
     Serial.println("Start I2C scan");
     scanI2C();
     Serial.println("End I2C scan");
-    oldStatus = scanStatus;
+    printStatus = true;
   }
 }// end testI2C()
 
@@ -450,7 +446,6 @@ void testLCD(void) {
   byte rows = 4;
   byte cols = 20;
   byte test = testCount % 5;    // total number of tests counter
-  const bool statusLCD = true;
   const unsigned long ms = millis();
   uint16_t displayTime = 1000;        // in ms
   
@@ -469,16 +464,16 @@ void testLCD(void) {
   // Exclusive Tests
   switch (test) {
     case T_BACKLIGHT:
-      if (statusLCD != oldStatus) {    // do once
+      if (!printStatus) {    // do once
         lcd.clear();
         Serial.println("Now testing backlight.");
-        oldStatus = statusLCD;
+        printStatus = true;
       }
       lcd.backlight();
       break;
     
     case T_DEAD_PIXELS:
-      if (statusLCD != oldStatus) {     // do once
+      if (!printStatus) {     // do once
         for (byte i = 0; i < rows; ++i) {    // rows
           for (byte j = 0; j < cols; ++j) {   // columns
             lcd.setCursor(j, i);
@@ -486,7 +481,7 @@ void testLCD(void) {
           }// end columns
         }// end rows   
         Serial.println("Now testing for dead pixels.");
-        oldStatus = statusLCD;
+        printStatus = true;
       }
       break;
 
@@ -554,7 +549,7 @@ void stopTestLCD(void) {
   clearLCD();
 }// end stopTestLCD()
 
-void autoToggleTest(void) {
+void autoToggleTest(void) {     // to automatically toggle between individual tests
   if (!autoToggle){
     return;
   }
@@ -564,7 +559,7 @@ void autoToggleTest(void) {
 
   if (ms - lastToggleTime_ms > testTime_ms) {
     testCount++;
-    oldStatus = false;    // to enable indiviual tests to print to monitor
+    printStatus = false;    // to enable indiviual tests to print to monitor
     lastToggleTime_ms = ms;
   }
 }// end autoToggleTest()
@@ -633,7 +628,7 @@ void setup() {
   //Lets make the LED high near the start of setup for visual clue
   pinMode(LED_BUILTIN, OUTPUT);      // set the LED pin mode
   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-
+  
   //Serial setup
   delay(100);
   Serial.begin(BAUDRATE);
@@ -677,7 +672,7 @@ void switchMuteEvent(byte switchStatus) {
   switch (switchStatus) {
     case onPress:
       testSwitchMute(switchStatus);
-      oldStatus = false;
+      printStatus = false;
       testCount++;
       break;
 
@@ -696,7 +691,7 @@ void switchMuteEvent(byte switchStatus) {
       testSwitchMute(switchStatus);
       testGroupCount++;
       testGroupPrint();
-      oldStatus = false;
+      printStatus = false;
       testCount = 0;          
       break;
   }
