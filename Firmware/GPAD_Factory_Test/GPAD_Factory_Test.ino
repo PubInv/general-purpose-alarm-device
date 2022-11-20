@@ -568,29 +568,34 @@ void testGroupFunctions(void) {
   testGroup = testGroupCount % testGroups;
   autoToggleTest();
 
-  if (testGroup == TG_LEDS) {
-    testLEDs();
-  }
-  else {
+  // guard clauses
+  if (testGroup != TG_LEDS) {
     stopTestLEDs();
   }
-
-  if (testGroup == TG_BUZZER) {
-    testBuzzer();
-  }
-  else {
+  if (testGroup != TG_BUZZER) {
     stopTestBuzzer();
   }
-
-  if (testGroup == TG_I2C) {
-    testI2C();
-  }
-
-  if (testGroup == TG_LCD) {
-    testLCD();
-  }
-  else {
+  if (testGroup != TG_LCD) {
     stopTestLCD();
+  }
+
+  // exclusive test groups
+  switch (testGroup) {
+    case TG_LEDS:
+      testLEDs();
+      break;
+
+    case TG_BUZZER:
+      testBuzzer();
+      break;
+
+    case TG_I2C:
+      testI2C();
+      break;
+
+    case TG_LCD:
+      testLCD();
+      break;
   }
 }// end testGroupFunctions()
 
