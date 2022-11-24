@@ -2,6 +2,10 @@
 
 This is collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.)
 
+GPAD in Prototype Enclosure
+![https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG](https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG)
+
+The GPAD Printed Circuit Assembly
 ![IMG-3539](https://user-images.githubusercontent.com/5296671/195462489-233d7f4f-62ae-4d29-930c-db42419f31b2.JPG)
 This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
 This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition.
