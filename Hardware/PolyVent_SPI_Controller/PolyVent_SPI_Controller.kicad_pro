@@ -395,6 +395,9 @@
           "/24V{slash}12V",
           "/3.3V",
           "/5V",
+          "/I2C_Level_Shifter/I2C_VCC",
+          "/I2C_Level_Shifter/SCL_5V",
+          "/I2C_Level_Shifter/SDA_5V",
           "GND"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
