@@ -395,7 +395,12 @@
           "/24V{slash}12V",
           "/3.3V",
           "/5V",
-          "GND"
+          "/ControllerVcc",
+          "/I2C_Level_Shifter/I2C_VCC",
+          "/I2C_Level_Shifter/SCL_5V",
+          "/I2C_Level_Shifter/SDA_5V",
+          "GND",
+          "Net-(R120-Pad2)"
         ],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
@@ -416,7 +421,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "PolyVent_SPI_Controller.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
