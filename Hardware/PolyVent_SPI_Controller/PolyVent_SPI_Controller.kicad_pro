@@ -421,7 +421,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "PolyVent_SPI_Controller.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
