@@ -45,4 +45,9 @@
   (pad "2" thru_hole rect (at -19.939 8.6868) (size 3.175 3.175) (drill 1.016) (layers *.Cu *.Mask "F.SilkS") (tstamp 5cf2dd0b-2d76-4544-bc9e-32b4fc4a868a))
   (pad "3" thru_hole rect (at 19.939 -8.6868) (size 3.175 3.175) (drill 1.016) (layers *.Cu *.Mask "F.SilkS") (tstamp 1fb07a9c-6857-40c2-86a5-40b91d2d04b8))
   (pad "4" thru_hole rect (at 19.939 8.6868) (size 3.175 3.175) (drill 1.016) (layers *.Cu *.Mask "F.SilkS") (tstamp 02a02b23-d644-445e-a751-1e4cb5ee5e6a))
+  (model "${KIPRJMOD}/Parts/3DModels/YAAJ_DCDC_StepDown_LM2596_PinHeaders_cp.step"
+    (offset (xyz -19.685 8.509 0))
+    (scale (xyz 0.975 0.975 1))
+    (rotate (xyz 0 0 0))
+  )
 )
