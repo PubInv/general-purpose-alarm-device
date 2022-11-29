@@ -16,6 +16,7 @@ Assumed that the assembly has the SMT components placed by the board manufacture
 Write serial number on the PCB assembly. _Management of serial numbers is beyound the scope of this document. Each manufacturier must figure something out._
 
 ### Version 1 PCB nCS Rework Instructions
+1. Rework 1, D7 and D10 Swapp  
 The SPI nCS signal must be reworked to connect from D7 to D10 and the LIGHT4 from D10 to D7.  
 Naming convention for board side. The naming follows the KiCAD convention and additionaly the U102 Controller is on the front side. The LCD is on the back side. This document may refer to the Controller side and LCD side as that may be more obvious to the casual user.
 On front Controller side of of PCB, mark and cut trace connecting D7 to nCS as shown.  
@@ -38,17 +39,25 @@ On the front or Controller side, scrape solder resist from traces and solder a j
 Scrape solder resist from traces and solder a jumper wire to connect D10 to the trace connecting to R404 (To nCS on J401)  
 <a href="ScrapeTraces.jpg"><img src="ScrapeTraces.jpg" alt="ScrapeTraces.jpg" width="200"> Scraped and with wires.</a>  
 
-
 Apply glue (We used hot melt) to mechanicaly secure the rework wires.  
 <a href="GlueWires.jpg"><img src="GlueWires.jpg" alt="GlueWires.jpg" width="200"> Glued rework wires.</a>  
 **Important, update the configuration table below to reflect this rework to the PCB**  
 Follow the pattern for tracking this update found in Configuration Version 1 Assemblies
 
-
 Install the UNO headers at four locations. After soldering, cut the pins so that they will not intefer with the LCD display to be installed soon.  
 <a href="TrimUNOHeaders.jpg"><img src="TrimUNOHeaders.jpg" alt="TrimUNOHeaders.jpg" width="200"> Trimming header pins.</a>  
 
+2. Rework 2 for DTR to Reset.
+Reference the issues **Connect DTR on USB to Serial IC to The ATmega328 Reset Through Capacitor Like Arduino Nano Schematic #116** and **Can't upload firmware #85**
+A rework involving moving C601 to a pin on S101 (Reset switch) and using 30 AWG wire wrap wire to connect the other side of C601 to U501 Pin 4 (DTR).  
+Secure wire with hot melt glue or similar.  
+Image of Rework 2  
+![https://user-images.githubusercontent.com/5836181/201496431-63b730b5-63fb-4ad4-8e92-065de1461d64.png](https://user-images.githubusercontent.com/5836181/201496431-63b730b5-63fb-4ad4-8e92-065de1461d64.png)  
 
+Update the configuration table below to reflect these two reworks by serial number.  
+_End Rework Instructions _
+
+### An Assembly Fixture
 We made an assembly assistant / fixture by using a raw PCB with some long #6 screws and nuts to hold at the PCB mounting points. 
 ![Assembly Fixture View 1](AssemblyFixtureView1.jpg)
 
@@ -206,9 +215,9 @@ Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibra
   **[Configuration Version 1 Assemblies](#configurations)**  
   Tracking electrical and mechanical configuration of Version 1 GPAD assemblies and their locations
  <table style="background-color:#DDDDEE">
-  <tr><th>DUT Serial Number</th> <th>Rework 1</th> <th>Rework 2</th> <th>Rework 3</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location history (Person and contact information)</th></tr>
+  <tr><th>DUT Serial Number</th> <th>Rework 1 (D7 and D10 swapp)</th> <th>Rework 2 (DTR to Reset)</th> <th>Rework 3</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location history (Person and contact information)</th></tr>
   <tr><td>01</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td>  <td>???</td> <td>Lawarence, OK</td> </tr>
-  <tr><td>02</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>TBD</td> <td>TBD</td> <td>TBD</td> <td>TBD</td>  <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td></tr>
+  <tr><td>02</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>DTR to Reset Nov 2022</td> <td>TBD</td> <td>TBD</td> <td>TBD</td>  <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td></tr>
   <tr><td>03</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>04</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>05</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
