@@ -5,9 +5,11 @@
 
 
 ## Board SN5 gives error verifying upload, even though upload works.... #127
-This issue is found at: 
-https://github.com/PubInv/general-alarm-device/issues/127
+This issue is found at: #127
 
+On Lee's Window's 10 machine to get avrdude to run I had to navigate to the folder path with the exicutible in it it:
+C:\Program Files (x86)\Arduino\hardware\tools\avr\bin>
+Then I could run "avrdude" and get help and begin to experiment.
 
 The AVRdude command from the error report.
 avrdude -CC:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf -v -patmega328p -carduino -PCOM15 -b57600 -D -Uflash:w:C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:i
@@ -20,14 +22,13 @@ This syntax produced an error.
 
 
 This syntax worked. 
-avrdude -C../etc/avrdude.conf -v -patmega328p -carduino -PCOM15 -b57600 -D -Uflash:v:C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:i
+"avrdude -C../etc/avrdude.conf -v -patmega328p -carduino -PCOM15 -b57600 -D -Uflash:v:C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:i"
 
-
-avrdude -C../etc/avrdude.conf -v -patmega328p -carduino -PCOM16 -b57600 -D -Uflash:v:C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:i
+"avrdude -C../etc/avrdude.conf -v -patmega328p -carduino -PCOM16 -b57600 -D -Uflash:v:C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:i"
 
 This produced the following output:
 
-avrdude: Version 6.3-20190619
+> avrdude: Version 6.3-20190619
          Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
          Copyright (c) 2007-2014 Joerg Wunsch
 
@@ -73,35 +74,32 @@ avrdude: Version 6.3-20190619
          Varef           : 0.0 V
          Oscillator      : Off
          SCK period      : 0.1 us
+         
+         avrdude: AVR device initialized and ready to accept instructions
+         Reading | ################################################## | 100% 0.01s
+         avrdude: Device signature = 0x1e950f (probably m328p)
+         avrdude: safemode: lfuse reads as 0
+         avrdude: safemode: hfuse reads as 0
+         avrdude: safemode: efuse reads as 0
+         avrdude: verifying flash memory against C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:
+         avrdude: load data flash data from input file C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:
+         avrdude: input file C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex contains 9500 bytes
+         avrdude: reading on-chip flash data:
+         
+         Reading | ################################################## | 100% 2.49s
+         
+         avrdude: verifying ...
+         avrdude: 9500 bytes of flash verified
+         avrdude: safemode: lfuse reads as 0
+         avrdude: safemode: hfuse reads as 0
+         avrdude: safemode: efuse reads as 0
+         avrdude: safemode: Fuses OK (E:00, H:00, L:00)
+         
+         avrdude done.  Thank you.
+         
+         C:\Program Files (x86)\Arduino\hardware\tools\avr\bin>
 
-avrdude: AVR device initialized and ready to accept instructions
-
-Reading | ################################################## | 100% 0.01s
-
-avrdude: Device signature = 0x1e950f (probably m328p)
-avrdude: safemode: lfuse reads as 0
-avrdude: safemode: hfuse reads as 0
-avrdude: safemode: efuse reads as 0
-avrdude: verifying flash memory against C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:
-avrdude: load data flash data from input file C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:
-avrdude: input file C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex contains 9500 bytes
-avrdude: reading on-chip flash data:
-
-Reading | ################################################## | 100% 2.49s
-
-avrdude: verifying ...
-avrdude: 9500 bytes of flash verified
-
-avrdude: safemode: lfuse reads as 0
-avrdude: safemode: hfuse reads as 0
-avrdude: safemode: efuse reads as 0
-avrdude: safemode: Fuses OK (E:00, H:00, L:00)
-
-avrdude done.  Thank you.
-
-
-C:\Program Files (x86)\Arduino\hardware\tools\avr\bin>
-
+So testing SN5 with the command: avrdude -C../etc/avrdude.conf -v -patmega328p -carduino -PCOM15 -b57600 -D -Uflash:v:C:\Users\Admin\AppData\Local\Temp\arduino_build_502233/GPAD_API.ino.hex:i from the approprate folder might be of interest.
 
 ## Reference
 https://www.ladyada.net/learn/avr/avrdude.html
