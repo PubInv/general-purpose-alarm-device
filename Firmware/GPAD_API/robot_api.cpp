@@ -29,7 +29,7 @@ DailyStruggleButton muteButton;
 extern const char *AlarmNames[];
 extern AlarmLevel currentLevel;
 extern bool currentlyMuted;
-extern char AlarmMessageBuffer[128];
+extern char AlarmMessageBuffer[81];
 
 //For LCD
 #include <LiquidCrystal_I2C.h>
@@ -61,7 +61,7 @@ void myCallback(byte buttonEvent){
   switch (buttonEvent){
     case onPress:
       // Do something...
-      local_ptr_to_serial->println("onPress");
+      local_ptr_to_serial->println(F("onPress"));
       currentlyMuted = !currentlyMuted;
       annunciateAlarmLevel();
       printAlarmState(*local_ptr_to_serial);
@@ -75,14 +75,14 @@ void robot_api_setup(Stream* serialport) {
   local_ptr_to_serial = serialport;
   Wire.begin();
   lcd.init();
-  serialport->println("Clear LCD");
+  serialport->println(F("Clear LCD"));
   clearLCD();
   delay(100);
-  serialport->println("Start LCD splash");
+  serialport->println(F("Start LCD splash"));
   splashLCD();
-  serialport->println("EndLCD splash");
+  serialport->println(F("EndLCD splash"));
 
-  serialport->println("Set up GPIO pins");
+  serialport->println(F("Set up GPIO pins"));
   pinMode(SWITCH_MUTE, INPUT_PULLUP);
   for (int i = 0; i < NUM_LIGHTS; i++) {
     serialport->println(LIGHT[i]);
@@ -90,7 +90,7 @@ void robot_api_setup(Stream* serialport) {
   }
 
   muteButton.set(SWITCH_MUTE, myCallback);
-  serialport->println("end set up GPIO pins");
+  serialport->println(F("end set up GPIO pins"));
 
   printInstructions(*serialport);
   AlarmMessageBuffer[0] = '\0';

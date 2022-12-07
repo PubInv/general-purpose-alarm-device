@@ -25,7 +25,7 @@
 
 #define PROG_NAME "******GPAD_API******"     //Descriptive name of this software, 20 characters.
 
-#define VERSION 0.03             //Version of this software
+#define VERSION 0.06             //Version of this software
 
 void printError(Stream &serialport);
 void printInstructions(Stream &serialport);
