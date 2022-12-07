@@ -89,7 +89,7 @@ BPanL           = 1;// [0:No, 1:Yes]
 //Buttons
 BButton         = 1;
 //show pcb
-PCB_View        = 0;
+PCB_View        = 1;
 
   
 /* [Hidden] */
@@ -274,9 +274,9 @@ module ButtonSwitch(OnOff,Cx,Cy,Cdia,Ccenter=false){
 ThreadThick = 0.20;
 //ThreadWidth = 0.40;
 
-Protrusion = 0.1;
+Protrusion = 0.9;
 
-HoleWindage = 0.2;
+HoleWindage = 0.25;
 
 //------
 // Dimensions
@@ -297,7 +297,7 @@ NumSides = 8*4;
     difference() {
 	    union() {
         //retension ring
-        translate([0,0,3*Thick])
+        translate([0,0,4*Thick])
             cylinder(d=Cdia+Thick,h=Thick,$fn=NumSides);
         //dome 
 		translate([0,0,0])
@@ -308,7 +308,7 @@ NumSides = 8*4;
         
 	    }
     //retension hole
-	translate([0,0,FootHeight-Post[2]/2 + Protrusion]){
+	translate([0,0,(FootHeight-Post[2]/2) ]){
 		cube(Post + [HoleWindage,HoleWindage,Protrusion],center=true);
     }
 }
@@ -465,7 +465,7 @@ module FPanL(){
             echo(Thick+1.2);
             translate([((Width - PCBWidth)/2),0,0]-[3*Thick+2,0,0]){
         SquareHole  (1,54.61+1.2,FootHeight+PCBThick,9,5,1,Ccenter=false); //USB
-        SquareHole  (1,81.28-1.2,FootHeight+PCBThick,14,9,3,Ccenter=false); //I2C
+        SquareHole  (1,81.28-1.2,FootHeight+PCBThick,14,9,1,Ccenter=false); //I2C
         SquareHole  (1,98.425-1.3,FootHeight+PCBThick,14,13,1,Ccenter=false); //SPI
         SquareHole  (1,119.38+0.8,FootHeight+PCBThick,10,12,1,Ccenter=false); //DC barrel
             }
