@@ -22,22 +22,31 @@
   MISO 12 or ICSP-1 Input
   SCK 13 or ICSP-3 Output
   SS 10  Output
-  330 Ohm resistor and LED from pin 7 to pin 6. 
+  330 Ohm resistor and LED from pin 7 to pin 6.
   LED will be high untill the peripheral button is pressed.
-  
+
 */
 
-#include<SPI.h>                             //Library for SPI 
+#include<SPI.h>                             //Library for SPI
 #define LED_PIN 7                           //Add this LED + Resistor
 #define LED_CATHODE 6                        //A pin to sink LED current
 #define BUTTON_PIN 2                        //Button to GND, 10K Resistor to +5V.
 
+#include "SPITransfer.h"
+#include "GPAD_Alarm_API_SPI.h"
+
+SPITransfer myTransfer;
+
+const int fileSize = 21;
+char file[fileSize] = "Lorem ipsum dolor si";
+
+char fileName[] = "test.txt";
 
 void setup (void)
 {
   Serial.begin(115200);                   //Starts Serial Communication at Baud Rate 115200
   delay(500);
-  Serial.println("Starting SPI Controller.");
+  Serial.println(F("Starting SPI Controller."));
   pinMode(BUTTON_PIN, INPUT_PULLUP);               //Sets pin 2 as input
   pinMode(LED_PIN, OUTPUT);                   //Sets pin 7 as Output
 
@@ -54,36 +63,32 @@ void setup (void)
   SPI.begin();                            //Begins the SPI commnuication
 
   digitalWrite(SS, HIGH);                 // Setting PeripheralSelect as HIGH (So controller doesnt connnect with peripheral)
+
+//struct configST
+//{
+//  Stream*            debugPort    = &Serial;
+//  bool               debug        = true;
+//  const functionPtr* callbacks    = NULL;
+//  uint8_t            callbacksLen = 0;
+//  uint32_t           timeout      = __UINT32_MAX__;
+//};
+
+struct configST config;
+config.timeout = 200;
+
+  myTransfer.begin(SPI,config);
   delay(100);
+  Serial.println(F("SETUP DONE!"));
 }// end setup()
 
+int cnt = 0;
 void loop(void)
 {
-  //Local variables
-  byte controllerSend, controlleReceive;
-
-  controllerSend = digitalRead(BUTTON_PIN);
-  Serial.print("SPI Controler: Button Status: ");
-  Serial.print(controllerSend);
-
-  digitalWrite(SS, LOW);                  //Starts communication with Peripheral connected to controller
-  controlleReceive = SPI.transfer(controllerSend); //Send the controllersend value to peripheral also receives value from peripheral
-  digitalWrite(SS, HIGH);                  //End communication with Peripheral connected to controller
-
-  Serial.print(", Peripherial: ");
-  Serial.println(controlleReceive);
-
-  //  Serial.print("Peripherial LED: ");
-  if (controlleReceive == 1)                  //Logic for setting the LED output depending upon value received from peripheral
-  {
-    digitalWrite(LED_PIN, HIGH);             //Sets pin 7 HIGH
-    //  Serial.println(" ON");
-  }
-  else
-  {
-    digitalWrite(LED_PIN, LOW);              //Sets pin 7 LOW
-    //Serial.println(" OFF");
-  }
-
-  delay(100);
-}// end loop()
+  AlarmEvent event;
+  event.lvl = cnt++ % 6;
+  strcpy(event.msg,"Be True; You need noBe True; You need noBe True; You need noBe True; You need no");
+  
+  alarm_event(event,Serial);
+  Serial.println(F("Done with Datum Send!"));
+  delay(3000);
+}

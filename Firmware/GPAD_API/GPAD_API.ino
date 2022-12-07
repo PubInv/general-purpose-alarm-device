@@ -103,10 +103,21 @@
 volatile boolean isReceived_SPI;
 volatile byte peripheralReceived ;
 
+
+#include <SPITransfer.h>
+
+SPITransfer myTransfer;
+
+//const int fileSize = 200;
+//char file[fileSize];
+//char fileName[10];
+
+volatile bool procNewPacket = false;
+
 void setup_spi()
 {
-  Serial.println("Starting SPI Peripheral.");
-  Serial.print("Pin for SS: ");
+  Serial.println(F("Starting SPI Peripheral."));
+  Serial.print(F("Pin for SS: "));
   Serial.println(SS);
 
   pinMode(BUTTON_PIN, INPUT);              // Setting pin 2 as INPUT
@@ -120,49 +131,80 @@ void setup_spi()
   SPCR |= _BV(SPE);                       //Turn on SPI in Peripheral Mode
   isReceived_SPI = false;
   SPI.attachInterrupt();                  //Interuupt ON is set for SPI commnucation
+
+//  struct configST
+//  {
+//    Stream*            debugPort    = &Serial;
+//    bool               debug        = true;
+//    const functionPtr* callbacks    = NULL;
+//    uint8_t            callbacksLen = 0;
+//    uint32_t           timeout      = __UINT32_MAX__;
+//  };
+
+struct configST config;
+config.timeout = 200;
+
+  myTransfer.begin(SPI,config);
 }//end setup()
 
 //ISRs
-ISR (SPI_STC_vect)                        //Inerrrput routine function
+// This is the original...
+// ISR (SPI_STC_vect)                        //Inerrrput routine function
+// {
+//   peripheralReceived = SPDR;         // Value received from controller if store in variable peripheralReceived
+//   isReceived_SPI = true;                        //Sets isReceived_SPI as True
+// }//end ISR
+
+ISR (SPI_STC_vect)
 {
-  peripheralReceived = SPDR;         // Value received from controller if store in variable peripheralReceived
-  isReceived_SPI = true;                        //Sets isReceived_SPI as True
-}//end ISR
+  if(myTransfer.available())
+    procNewPacket = true;
+}
 
 //Functions
-void updateFromSPI() {
-  volatile byte peripheralSend;
+// This reads a message of time AlarmEvent;
+void updateFromSPI_SerialTransfer()
+{
+  if(procNewPacket)
+  {
+    procNewPacket = false;
 
-  if (isReceived_SPI)                           //Logic to SET LED ON OR OFF depending upon the value recerived from controller
-  { // Act on the received data.
-    if (peripheralReceived == 1)
-    {
-      digitalWrite(LED_PIN, HIGH);        //Sets pin 7 as HIGH LED ON
-      //          Serial.println("Peripheral LED ON");
-    } else
-    {
-      digitalWrite(LED_PIN, LOW);         //Sets pin 7 as LOW LED OFF
-      //          Serial.println("Peripheral LED OFF");
-    }
+    AlarmEvent event;
+    myTransfer.rxObj(event);
+    Serial.print(F("LVL: "));
+    Serial.println(event.lvl);
+    
+    Serial.println(event.msg);
+    Serial.println();
+  }
+}
 
-    // Send return SPI data. Lets use a button for this example.
-    peripheralSend = digitalRead(BUTTON_PIN);
-    SPDR = peripheralSend;    //SPDR register of data to be shiffted out.
-    if (DEBUG_SPI > 0) {
-      Serial.print("SPI_PERIPHERAL, isReceived_SPI: ");
-      Serial.println(peripheralReceived);
-    }
-  }// end received
-}//end function updateFromSPI
-
+//void updateFromSPI_SerialTransfer()
+//{
+//  if(procNewPacket)
+//  {
+//    procNewPacket = false;
+//    
+//    if (!myTransfer.currentPacketID())
+//    {
+//      myTransfer.rxObj(fileName);
+//      Serial.println("filename: ");
+//      Serial.println(fileName);
+//    }
+//    else if (myTransfer.currentPacketID() == 1)
+//      for(uint8_t i=2; i<myTransfer.bytesRead; i++)
+//        Serial.print((char)myTransfer.packet.rxBuff[i]);
+//    Serial.println();
+//  }
+//}
 
 // #define VERSION 0.02             //Version of this software
 #define BAUDRATE 115200
 // #define BAUDRATE 57600
 // Let's have a 10 minute time out to allow people to compose strings by hand, but not
 // to leave data our there forever
-#define SERIAL_TIMEOUT_MS 600000
-
+// #define SERIAL_TIMEOUT_MS 600000
+#define SERIAL_TIMEOUT_MS 1000
 
 //Set LED wink parameters
 const int HIGH_TIME_LED_MS = 800;    //time in milliseconds
@@ -201,19 +243,25 @@ void setup() {
   Serial.begin(BAUDRATE);
   delay(100);                         //Wait before sending the first data to terminal
   Serial.setTimeout(SERIAL_TIMEOUT_MS);
-
+  Serial.println(VERSION);
   robot_api_setup(&Serial);
 
   setup_spi();
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
+
+  Serial.println(F("Done With Setup!"));
 }// end of setup()
 
 void loop() {
   updateWink(); //The builtin LED
   robot_api_loop();
+
+  // This is causing a hang!
   processSerial(Serial);
 
   // Now try to read from the SPI Port!
-  updateFromSPI();
+  //   updateFromSPI();
+  updateFromSPI_SerialTransfer();
+
 }

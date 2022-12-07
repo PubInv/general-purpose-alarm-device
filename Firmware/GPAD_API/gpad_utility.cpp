@@ -23,7 +23,7 @@
 
 extern AlarmLevel currentLevel;
 extern bool currentlyMuted;
-extern char AlarmMessageBuffer[128];
+extern char AlarmMessageBuffer[81];
 
 
 void printError(Stream &serialport) {
@@ -34,14 +34,14 @@ void printInstructions(Stream &serialport) {
   serialport.println(F("PubInv GPAD: enter command in form CDa (C is a char, D is a digit)"));
 }
 void printAlarmState(Stream &serialport) {
-  serialport.print("Muted: ");
+  serialport.print(F("Muted: "));
   serialport.println(currentlyMuted ? "YES" : "NO");
-  serialport.print("LVL: ");
+  serialport.print(F("LVL: "));
   serialport.println(currentLevel);
   if (strlen(AlarmMessageBuffer) == 0) {
-    serialport.println("No Message.");
+    serialport.println(F("No Message."));
   } else {
-    serialport.print("Msg: ");
+    serialport.print(F("Msg: "));
     serialport.println(AlarmMessageBuffer);
   }
 }
