@@ -1,36 +1,38 @@
 # General Purpose Alarm Device
+AKA the GPAD.
 
-This is collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.)
+Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
 
-GPAD in Prototype Enclosure
+GPAD in Prototype Enclosure of Summer 2022
 ![https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG](https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG)
 
-The GPAD Printed Circuit Assembly
+The GPAD Printed Circuit Assembly Version 1
 ![IMG-3539](https://user-images.githubusercontent.com/5296671/195462489-233d7f4f-62ae-4d29-930c-db42419f31b2.JPG)
 This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
 This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition.
 * Flash bright lights
-* Make loud tones
-* Button to "mute" or suppress the alarm condition.
-* Text display for messages (20x4 characters)
-* Power from wall supply on barrel jack 2.1mm at 9-12V <= 1000mA (or from host controlling device at 5V or 12V)
+* Make (laughably not) loud tones
+* Button to, for example, "mute" or suppress the alarm buzzer.
+* Text display status and messages (up to 20x4 characters)
+* Power from wall supply on barrel jack 2.1mm at 9-12V <= 1000mA (or from host controlling device at 5V or 12V on the SPI interface)
 * RJ12 Data Cable connection for signal (and optional power) between host and GPAD.
 * An I2C output for control of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
-The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device which will assert status through the GPAD to an end user.
+The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device. The controlling host will assert status through the GPAD to an end user.
 
-# Prototype GPAD
-User view of GPAD With Enclosure.  *This image is only a place holder and does not well illustrate the design nor have mounting features.*
+# Version 1 GPAD
+CAD view of GPAD With Version 1 Enclosure.  
+<img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">  
 
-<img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
+User view of GPAD Version 1 Printed Wiring Assembly without enclosure.  
+<img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">  
 
-User view of GPAD Printed Wiring Assembly without enclosure.
-
-<img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">
-
-View of GPAD Printed Wiring Assembly component side.
-
+View of GPAD Version 1 Printed Wiring Assembly component side.  
 <img src="./Hardware/Documentation/PICS/PCB_Component_Side.jpg" width="300">
+
+# GPAD V1 Build Information
+Files we used to build the V1 assemblies. PCB with some SMT Assembly was by JCLPCB in China. Additional parts were ordered and hand solderes in the USA.
+[FILES HERE: Hardware/Manufacturing](./Hardware/Manufacturing)
 
 
 # Example Use Case, The Ventilator
@@ -56,11 +58,9 @@ We hope that by defining a clearly versioned API we can make an evolving device 
 
 # Stand-alone or Sub-assembly
 
-Our design includes a printed wiring assembly and an enclosure.
-The printed wiring assembly could be designed into a device with our enclosure. Full documentation provided.
-We believe a loosely-coupled physical device is the most repurposable.  Such a device would have its own independent power supply.
-However, there are clearly use cases when the same module should be integrated into the physical case, power system, and even printed
-circuit board of other systems. We therefore seek design flexibility that supports all of these usage modes.
+Our fully finished design includes a printed wiring assembly and an enclosure.
+All the free and open source KiCad schematic printed circuit assembly files are provided so that users could fabricate just the PCB and use in an enclosure iof their own design. 
+The enclosure is designed in the free open source SCAD and we provide the enclosure design source files. Users could fabricate this enclosure as is or develope a modifed enclosure with their own features from the files we provided.
 
 # The Arduino UNO Like Platform
 
@@ -70,23 +70,19 @@ This allows a typical Arduino serial port interface for development and debuggin
 
 # How is the alarm signal received?
 
-The wired connection from a host is an SPI controller and the GPAD is an SPI Peripheral.
+The wired RJ12(6P6C)  Data connection from a host is an SPI controller and the GPAD is an SPI Peripheral.
 
 A wireless interface may be added through a UNO shield. (Compatibility with existing wireless shields has not been checked. A custom shield with a wireless interface to some of the unused controller pins should be possible but may not be trivial.)
 
 
-# Summer 2022 Project Status
+# Summer 2022 Project Status  
 
 ### Firmware
 Demonstration of SPI controller and Peripheral for single byte transmission.
 
 ### Hardware
 1. Schematic with distributor part numbers through review. Many parts have two distributor part numbers identified.
-2. PCB design is through review.
-3. Beginning order of long lead parts.
-4. Preparing BOM to order PCBs and SMT assembly though JLCPCB.
-
-
+2. Several units assembled. As of 20221208 two reworks identified. One swaping D7 and D10. A Second connecting the DTR on U501 Pin 4 to Reset.
 
 # Possible Evolution Stages of the Project
 
@@ -107,20 +103,16 @@ from specific details of how the noise is made.
 
 Nonetheless, we can make a few comments.
 1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDs supporting 5 levels of alarm color or brightness.
-2. Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying, "She canna' take the strain, Captain!" in a Scottish accent.
 
-The physical implementation is a customer PCB and custom 3D printable enclosure.
+Summer and Fall of 2022 the physical implementation has been realized with the Version 1 PCB and Version 1 3D printable enclosure.
 
 ## Phase II
-**THESE MAY ALL HAVE BEEN REALIZED IN PHASE I**
-
+**THESE MAY ALL HAVE BEEN REALIZED IN PHASE I**  
 In Phase II, we can imagine a large number of improvements:
 1. An enclosure for the electronics which is designed to be easily mounted (for example, with flanges for zip ties.)
 2. A Printed-circuit board that integrates the simple electronics with an Arduino Nano or Micro-sized solution on a single board.
 3. Improvements in the API.
-4. A display screen which allows a short message to be displayed.
-5. One or more buttons of controls which allows the GPAD to be silenced to avoid "alarm fatigue".
-6. A simple JST connector to support an SPI interface.
+4.  Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying, "She canna' take the strain, Captain!" in a Scottish accent.
 
 ## Phase III
 
@@ -139,10 +131,9 @@ Enclosure design, component procurement for rev1, project facilitator, initial b
 
 ???  Joe Torreggiani of Speccollective
 
-Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretends to be electrical engineer and firmware developer and Novel Spelling.
+Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretends to be electrical engineer,  with experence in firmware development, Design for Manufactur, Design for Test and developer of Novel and Diverse Spelling.
 
-
-We need:
+We need volunteers:
 1. Arduino engineers who can both code and make very simple circuits.
 2. Schematic capture and PCB layout designers.  We are using KiCad.
 3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
@@ -238,28 +229,19 @@ two APIs. There might even be additional transport protocols in the future,
 such as a library that uses I2C ("I-squared C").
 
 
-
-
-
 # A Simulation with WokWi
 
 We have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them,
-that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.
+that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.  
+The other shows the use of the LCD.  
+These should be integrated together to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.  
+While the Version 1 PCBs and PCAs were on order, Lee wrote and sumulated factory test software on WokWi.  See project at: https://wokwi.com/projects/345960281987351124
+![Factory Test Simulation on Wokwi](https://user-images.githubusercontent.com/5836181/206513709-647a1ac0-0031-4747-92a4-0e64b3a6de9e.png)
 
-The other shows the use of the LCD.
 
-These should be integrated together to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.
 
-# Thoughts On An Initial Enclosure
-
-The PCB dimensions are 5.4" by 3.2"
-The enclosure will be larger and include tabs to allow mounting or hanging for example by wire ties.
-The enclosure should be designed for easy 3D fabrication. Enclosure material is TBD.
-
-# Other Product Description
-
-## White LEDs
-
+# Other Product Description  
+## White LEDs  
 We're going to use white-light LEDs to avoid color-blindness issues for the visual alarm.
 
 # Project Glossary and Organizational Overview
@@ -281,11 +263,11 @@ We're going to use white-light LEDs to avoid color-blindness issues for the visu
 
 # Building the Firmware
 
-The firmware can be built with the standard Arduino IDE.
+The firmware can be built with the standard Arduino IDE.  (Using 1.8.19 as of 20221208)
 It requires libraries:
 1. Wire.h
 1. LiquidCrystal_I2C.h
-1. DailyStruggleButton.h
+1. DailyStruggleButton.h  (Installed with library manager and found at: https://github.com/cygig/DailyStruggleButton)
 
 # License
 
