@@ -6019,7 +6019,7 @@
     (uuid 00000000-0000-0000-0000-0000634841c0)
     (property "Reference" "A101" (id 0) (at 165.1 104.14 0))
     (property "Value" "Arduino_UNO_R3_Shield" (id 1) (at 173.99 107.95 0))
-    (property "Footprint" "Module:Arduino_UNO_R3" (id 2) (at 191.77 133.35 0)
+    (property "Footprint" "GeneralPurposeAlarmDevicePCB:Arduino_UNO_R3_NoMountingHoles3D" (id 2) (at 191.77 133.35 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno" (id 3) (at 191.77 133.35 0)
@@ -6964,7 +6964,7 @@
       (reference "#PWR0608") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000634841c0"
-      (reference "A101") (unit 1) (value "Arduino_UNO_R3_Shield") (footprint "Module:Arduino_UNO_R3")
+      (reference "A101") (unit 1) (value "Arduino_UNO_R3_Shield") (footprint "GeneralPurposeAlarmDevicePCB:Arduino_UNO_R3_NoMountingHoles3D")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/5897491e-9402-49c5-a894-b7415b30b227"
       (reference "BZ601") (unit 1) (value "Buzzer_12.2mm_H6.5mm") (footprint "Buzzer_Beeper:Buzzer_TDK_PS1240P02BT_D12.2mm_H6.5mm")
