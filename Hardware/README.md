@@ -9,6 +9,8 @@ Folders for the hardware designed as GPAD (or related such as the PolyVent_SPI_C
 5. PolyVent_SPI_Controller
 
 ## Documentation
+Documentation for the fabrication of the Version 1 GPAD.
+Photos of units under assembly and a document [ManufacturingUnitTestTroubleshooting.md](ManufacturingUnitTestTroubleshooting.md)
 
 ## Enclosure
 The Version 1 enclosure is mostly designed in OPEN SCAD  
@@ -25,6 +27,7 @@ Note if using the Version #1 PCB which has front silk screen text including "Pro
 The schematic reflecting the reworks to bring the 15 GPADs build in September 2022 to revision V1.2 is here: [Schematic-GeneralPurposeAlarmDevicePCB-V120220810.pd](Schematic-GeneralPurposeAlarmDevicePCB-V120220810.pd)
 
 ## PolyVent_SPI_Controller
-Includes KiCad schematic and PCB files for an adapter PCB to fit into PolyVent and provide an SPI (and I2C) interface to other devices. The SPI interface is for the GPAD.
+Includes KiCad schematic and PCB files for an adapter PCB to fit into PolyVent Main Controller card cage and provide an SPI (and I2C) interface to other devices. The SPI interface is for the GPAD.
+KiCad Schematic, PCB and bom documentation for ordering PCBs and PWAs in found in this folder.
 
 
