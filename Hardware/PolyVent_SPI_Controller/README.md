@@ -34,8 +34,33 @@ They are options achieved by populating different components in the schematic. A
 So strictly by the specification the ESP output of even the full 3.3V does not guarentee logic high on the input of the ATmega328.  
 The output from the ATmega328 is resistively divided through 1K into 2K to produce 5 * 2/3 = 3.3 Volts on the CIPO signal.
 
-There are dip siwtches for choice of five nCS lines of the PolyVent brought out to become the nCS signal. **CAUTION:** Onle one switch should be in the closed position.
+There are dip siwtches for choice of any of the nCS lines of the PolyVent brought out to become the nCS signal. **CAUTION:** Onle one switch should be in the closed position.
 
+
+## Testing of Version 1 PWAs  
+**Reference to Schematic here:**
+
+ <a href = "SCH_PolyVent_SPI_Controller.pdf" > <img src = "SCH_PolyVent_SPI_Controller.gif" width = "200"> Press to load PDF. </a>
+ 
+**Reference the PCB layers here:**  
+
+<a href = "PCB_PolyVent_SPI_Controller.pdf" > <img src = "PCB_PolyVent_SPI_Controller.gif" width = "200"> Press to load PDF. </a>
+
+1. Unboxing and Mechanical
+First label each with a serial number.
+The first test is mechanical fit. Even before solding any connector on, slide a board in to the card cage and look for problems. Make a photograph(s) please.
+Then IIRC you have three connectors to solder on and test the fit again. Photo(s) again please.
+
+2. Electrical test.
+Prepare by identifying all of the currently used chip select lines in the PolyVent firmware or be refernce to the project documentation.
+Identify an unused chip select line. Set the dip switches so that one and only one switch selecting chip select is closed. Confirm on and only one Chip Select is selected with a multi meter.
+
+3. Light and play test.
+Load some kind of file into the ESP which will use this chip select for an SPI interface.  Send out the SPI interface something that the GPAD is known to react to.
+
+4. If you have the bandwidth to do so, put an oscilliscope on the SPI interface at the test points labled nCS, COPI, CIPO, SCK. Measure for signal high voltage, signal low voltage and time rise and time fall on each signal.  Trigger the oscilliscope on the falling edge of nCS. 
+
+Report results here
 
 
 ## Volunteer Skills and Skills Needed
