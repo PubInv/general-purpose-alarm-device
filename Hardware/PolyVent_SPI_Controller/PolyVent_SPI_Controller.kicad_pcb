@@ -1177,6 +1177,11 @@
       (net 27 "/CS_1") (pintype "passive") (tstamp f44304ca-6c19-4426-a07a-ebf63d684ba3))
     (pad "16" smd rect (at 3.0988 -4.445 180) (size 1.25 0.76) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 36 "/CS_8") (pintype "passive") (tstamp 9d86cfb7-a525-450b-aedb-144b98a7b3d4))
+    (model "${KIPRJMOD}/Parts/3DModels/SMD DIP SWITCH 8P.step"
+      (offset (xyz 0 0 0))
+      (scale (xyz 0.5 0.75 0.5))
+      (rotate (xyz 0 0 90))
+    )
   )
 
   (footprint "PubInv_PCB:SMDIP-16_L11.39_W6.7mm" (layer "F.Cu")
@@ -1255,6 +1260,11 @@
       (net 38 "/CS_10") (pintype "passive") (tstamp 75eb0aae-b981-40ac-9c6f-4b75501d61d1))
     (pad "16" smd rect (at 3.0988 -4.445 180) (size 1.25 0.76) (layers "F.Cu" "F.Paste" "F.Mask")
       (net 37 "/CS_9") (pintype "passive") (tstamp f7cfa750-04bc-4724-844a-33b4eb4187b4))
+    (model "${KIPRJMOD}/Parts/3DModels/SMD DIP SWITCH 8P.step"
+      (offset (xyz 0 0 0))
+      (scale (xyz 0.5 0.75 0.5))
+      (rotate (xyz 0 0 90))
+    )
   )
 
   (footprint "Fuse:Fuse_0603_1608Metric" (layer "F.Cu")
@@ -1511,6 +1521,11 @@
       (net 1 "GND") (pintype "passive") (tstamp c5cdd446-e3d2-4f8b-afa7-555ce7e85b89))
     (pad "4" thru_hole circle (at 3.75 9.2 270) (size 1.524 1.524) (drill 0.9) (layers *.Cu *.Mask)
       (net 10 "/I2C_Level_Shifter/SDA_5V") (pintype "passive") (tstamp 5ce20306-bfbe-48b0-91d4-c7d740d7e6cd))
+    (model "C:/Users/Public/Downloads/Arduino/PubInv/general-alarm-device/Hardware/GeneralPurposeAlarmDevicePCB/Parts/S04B-XASK-1/Cube.step"
+      (offset (xyz -6.25 -12.5 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 0))
+    )
   )
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" (layer "F.Cu")
@@ -1932,7 +1947,7 @@
       (net 11 "/ControllerVcc") (pintype "passive") (tstamp b2dc40b4-78c1-42ac-96c7-3329275efd02))
     (pad "6" thru_hole circle locked (at 6.35 2.54 90) (size 1.52 1.52) (drill 0.76) (layers *.Cu *.Mask)
       (net 2 "/CIPO") (pintype "passive") (tstamp 175b3883-38f0-4696-bc5d-5e7c2879982c))
-    (model "${KIPRJMOD}/Parts/rj11-connectors-6p-1.snapshot.1/Amphenol_54601_RT_ANGLE.step"
+    (model "C:/Users/Public/Downloads/Arduino/PubInv/general-alarm-device/Hardware/GeneralPurposeAlarmDevicePCB/Parts/rj11-connectors-6p-1.snapshot.1/Amphenol_54601_RT_ANGLE.step"
       (offset (xyz 3.175 -10.16 6.35))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 -90))
@@ -4080,6 +4095,11 @@
       (net 42 "/USB3_D+") (pinfunction "47") (pintype "passive") (solder_mask_margin 0.1016) (tstamp f39ad075-40c3-4983-a686-ebc446aaacf1))
     (pad "48" thru_hole circle locked (at -38.1 -5.08 270) (size 1.35 1.35) (drill 1) (layers *.Cu *.Mask)
       (net 43 "/RESET") (pinfunction "48") (pintype "passive") (solder_mask_margin 0.1016) (tstamp 1ffecdfe-2f53-4262-8a99-5761f9f57e9e))
+    (model "C:/Lee_PolyVent_Controler/polyvent_control_module/Boards CAD/extender_card/parts/DIN_41612_RT_MALE/DS1120-48M-R13.stp"
+      (offset (xyz 5.05 -2.55 0))
+      (scale (xyz 1 1 1))
+      (rotate (xyz 0 0 180))
+    )
   )
 
   (footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder" (layer "F.Cu")
