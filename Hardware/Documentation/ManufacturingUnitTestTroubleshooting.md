@@ -55,6 +55,24 @@ Image of Rework 2
 ![https://user-images.githubusercontent.com/5836181/201496431-63b730b5-63fb-4ad4-8e92-065de1461d64.png](https://user-images.githubusercontent.com/5836181/201496431-63b730b5-63fb-4ad4-8e92-065de1461d64.png)  
 
 Update the configuration table below to reflect these two reworks by serial number.  
+
+**Image of Rework 3 Remove and Relocate R103 and D102**
+R103 and D102 load the SPI SCK line and so R103 should be removed. 
+To better approximate the Version 2 PCB relocate these parts to become the version 2 components R112 and D106
+Screen shot schematic for relocated Resistor and LED on Version 2 PCB.
+![image](https://user-images.githubusercontent.com/5836181/208768745-eef3738f-0377-453d-96d0-24fc3e2eed67.png)
+
+**Photographs of LED relocation rework on a Version 1 PCB.**
+First remove solder mask on trace and ground  
+![image](https://user-images.githubusercontent.com/5836181/208769501-3624a118-bc5d-4f3c-a7e8-34bbaf68007d.png)  
+Then solder cathode of LED to ground, solder the resistor to the LED and to the trace to A3.  
+![image](https://user-images.githubusercontent.com/5836181/208769847-3f917e47-d7b5-47b2-a479-ae1c00981dfe.png)  
+
+
+**IMPORTANT: Afer any rework, update the configuration table below to reflect these reworks by serial number.  **
+
+
+
 _End Rework Instructions _
 
 ### An Assembly Fixture
@@ -215,13 +233,13 @@ Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibra
   **[Configuration Version 1 Assemblies](#configurations)**  
   Tracking electrical and mechanical configuration of Version 1 GPAD assemblies and their locations
  <table style="background-color:#DDDDEE">
-  <tr><th>DUT Serial Number</th> <th>Rework 1 (D7 and D10 swapp)</th> <th>Rework 2 (DTR to Reset)</th> <th>Rework 3</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location history (Person and contact information)</th></tr>
+  <tr><th>DUT Serial Number</th> <th>Rework 1 (D7 and D10 swapp)</th> <th>Rework 2 (DTR to Reset)</th> <th>Rework 3 Remove and Relocate R103 and D102</th> <th>Rework 4</th> <th>Rework 5</th> <th>Rework 6</th><th>Rework 7</th> <th>Location history (Person and contact information)</th></tr>
   <tr><td>01</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td>  <td>???</td> <td>Lawarence, OK</td> </tr>
-  <tr><td>02</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>DTR to Reset Nov 2022</td> <td>TBD</td> <td>TBD</td> <td>TBD</td>  <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td></tr>
+  <tr><td>02</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>DTR to Reset Nov 2022</td> <td>Reloacte D102 etc. 20221220</td> <td>TBD</td> <td>TBD</td>  <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td></tr>
   <tr><td>03</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>04</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>05</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
-  <tr><td>06</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
+  <tr><td>06</td> <td>SPI nCS to D10, LIGHT4 D7</td> <td>DTR to Reset 20221220</td> <td>Reloacte D102 etc. 20221220</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>202209 Lee, Maryville TN</td> </tr>
   <tr><td>07</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
   <tr><td>08</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
   <tr><td>09</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Lawarence, OK</td> </tr>
