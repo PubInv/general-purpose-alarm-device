@@ -4,9 +4,9 @@ This is a branch with code changes useful for testing the with the PolyVent.
 
 1. We discovered there is a BUILTIN LED load on the CLK line. This is a problem specific to the Arduino UNO
 architecture which we (mostly) copied. It can be solved in rework be desoldering restor R103 on the GPAD (NOT the PolyVent SPI card.
-2. The code TEST_POLYVENT_LINES is a very SIMPLE test script for transmitting a SINGLE BYTE. It can be loaded on to the PolyVent Architecture to remove all dependence on the (somewhat complicated) VentOS code and test the transmistion of SPI through the PolyVent, back plane, PolyVent SPI card, and cable to the GPAD. It has a #define at line 41 for "USE_POLYVENT_ARCH". This code should be comment out if you are using the GPAD as the cotroller, and uncommented if you are using a PolyVent/ESP32 as a controller. 
+2. The code TEST_POLYVENT_LINES is a very SIMPLE test script for transmitting a SINGLE BYTE. It can be loaded on to the PolyVent Architecture to remove all dependence on the (somewhat complicated) VentOS code and test the transmission of SPI through the PolyVent, back plane, PolyVent SPI card, and cable to the GPAD. It has a #define at line 41 for "USE_POLYVENT_ARCH". This code should be commented out if you are using the GPAD as the cotroller, and uncommented if you are using a PolyVent/ESP32 as a controller. 
 3. I may have made other changes to the GPAD controller to send SPI bytes. This is messy and needs to be cleaned up and made selectable with a compile time switch or some other mechanism.
-4. The GPAD_API code itself (the main code which drives the GPAD device) has been comment out so that it ONLY tests the SPI transmission.
+4. The GPAD_API code itself (the main code which drives the GPAD device) has been commented out so that it ONLY tests the SPI transmission.
 
 # PolyVent SPI Controller Card
 This project is a printed circuit assembly which fits in to the card rack of the Polyvent  
