@@ -96,21 +96,12 @@
 #endif
 
 #define DEBUG_SPI 0
-
+#define DEBUG 1
 
 #include<SPI.h>
 
 volatile boolean isReceived_SPI;
 volatile byte peripheralReceived ;
-
-
-#include <SPITransfer.h>
-
-SPITransfer myTransfer;
-
-//const int fileSize = 200;
-//char file[fileSize];
-//char fileName[10];
 
 volatile bool procNewPacket = false;
 
@@ -125,78 +116,42 @@ void setup_spi()
 
   //  SPI.begin();    // IMPORTANT. Do not set SPI.begin for a peripherial device.
   pinMode(SS, INPUT_PULLUP); //Sets SS as input for peripherial
-  pinMode(MOSI, OUTPUT);    //This works for Peripheral
+  // Why is this not input?
+  pinMode(MOSI, INPUT);    //This works for Peripheral
   pinMode(MISO, OUTPUT);    //try this.
   pinMode(SCK, INPUT);                  //Sets clock as input
   SPCR |= _BV(SPE);                       //Turn on SPI in Peripheral Mode
+
+  // turn on interrupts
+  SPCR |= _BV(SPIE);
   isReceived_SPI = false;
   SPI.attachInterrupt();                  //Interuupt ON is set for SPI commnucation
 
-//  struct configST
-//  {
-//    Stream*            debugPort    = &Serial;
-//    bool               debug        = true;
-//    const functionPtr* callbacks    = NULL;
-//    uint8_t            callbacksLen = 0;
-//    uint32_t           timeout      = __UINT32_MAX__;
-//  };
-
-struct configST config;
-config.timeout = 200;
-
-  myTransfer.begin(SPI,config);
 }//end setup()
 
 //ISRs
 // This is the original...
-// ISR (SPI_STC_vect)                        //Inerrrput routine function
-// {
-//   peripheralReceived = SPDR;         // Value received from controller if store in variable peripheralReceived
-//   isReceived_SPI = true;                        //Sets isReceived_SPI as True
-// }//end ISR
-
-ISR (SPI_STC_vect)
+ISR (SPI_STC_vect)                        //Inerrrput routine function
 {
-  if(myTransfer.available())
-    procNewPacket = true;
-}
+   peripheralReceived = SPDR;         // Value received from controller if store in variable peripheralReceived
+   isReceived_SPI = true;                        //Sets isReceived_SPI as True
+}//end ISR
 
-//Functions
-// This reads a message of time AlarmEvent;
-void updateFromSPI_SerialTransfer()
+
+void updateFromSPI()
 {
-  if(procNewPacket)
+  if(isReceived_SPI)
   {
-    procNewPacket = false;
 
+    isReceived_SPI = false;
     AlarmEvent event;
-    myTransfer.rxObj(event);
+    event.lvl = peripheralReceived;
     Serial.print(F("LVL: "));
     Serial.println(event.lvl);
-    
-    Serial.println(event.msg);
-    Serial.println();
+    alarm((AlarmLevel) event.lvl,"NA",Serial);
+    annunciateAlarmLevel();
   }
 }
-
-//void updateFromSPI_SerialTransfer()
-//{
-//  if(procNewPacket)
-//  {
-//    procNewPacket = false;
-//    
-//    if (!myTransfer.currentPacketID())
-//    {
-//      myTransfer.rxObj(fileName);
-//      Serial.println("filename: ");
-//      Serial.println(fileName);
-//    }
-//    else if (myTransfer.currentPacketID() == 1)
-//      for(uint8_t i=2; i<myTransfer.bytesRead; i++)
-//        Serial.print((char)myTransfer.packet.rxBuff[i]);
-//    Serial.println();
-//  }
-//}
 
 // #define VERSION 0.02             //Version of this software
 #define BAUDRATE 115200
@@ -254,14 +209,14 @@ void setup() {
 }// end of setup()
 
 void loop() {
-  updateWink(); //The builtin LED
-  robot_api_loop();
+//  updateWink(); //The builtin LED
+//  robot_api_loop();
 
   // This is causing a hang!
-  processSerial(Serial);
+ // processSerial(Serial);
 
   // Now try to read from the SPI Port!
-  //   updateFromSPI();
-  updateFromSPI_SerialTransfer();
+  updateFromSPI();
+  // updateFromSPI_SerialTransfer();
 
 }
