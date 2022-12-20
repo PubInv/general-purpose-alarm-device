@@ -10,7 +10,7 @@ Folders for the hardware designed as GPAD (or related such as the PolyVent_SPI_C
 
 ## Documentation
 Documentation for the fabrication of the Version 1 GPAD.
-Photos of units under assembly and a document [ManufacturingUnitTestTroubleshooting.md](ManufacturingUnitTestTroubleshooting.md)
+Photos of units under assembly and a document [ManufacturingUnitTestTroubleshooting.md](./Documentation/ManufacturingUnitTestTroubleshooting.md)
 
 ## Enclosure
 The Version 1 enclosure is mostly designed in OPEN SCAD  
