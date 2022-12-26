@@ -17,7 +17,7 @@ The Version 1 enclosure is mostly designed in OPEN SCAD
 Files to fabricate an enclosure are detailed in this document: [LINK](./Enclosure/README.md)
 
 ## GeneralPurposeAlarmDevicePCB
-Includes the KiCad files for schemtic and PCBs.
+Includes the KiCad files for schematic and PCBs.
 The most recent schematic is: [Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf](/Hardware/GeneralPurposeAlarmDevicePCB/PDF/Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf)
 
 ## Manufacturing
