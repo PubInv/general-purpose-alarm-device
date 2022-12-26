@@ -37,7 +37,7 @@ Files we used to build the V1 assemblies. PCB with some SMT Assembly was by JCLP
 
 # Example Use Case, The Ventilator
 
-The [Freespireco Project] (https://github.com/PubInv/freespireco) is an attempt to build a modular ecosystem of cooperating respiration devices. One thing that devices such as ventilators and oxygen concentrators need to have is to be able to alert someone to dangerous conditions. This can be as simple and gentle as, "it is time for scheduled maintenance," to a far more dangerous, "the hose connected to the patient is disconnected!"
+The [Freespireco Project](https://github.com/PubInv/freespireco) is an attempt to build a modular ecosystem of cooperating respiration devices. One thing that devices such as ventilators and oxygen concentrators need to have is to be able to alert someone to dangerous conditions. This can be as simple and gentle as, "it is time for scheduled maintenance," to a far more dangerous, "the hose connected to the patient is disconnected!"
 The purpose of the alarm is to get the attention of nurses or doctors who can fix the problem.
 
 See the PolyVent project on Gitlabs at: [https://gitlab.com/polyvent](https://gitlab.com/polyvent)  
