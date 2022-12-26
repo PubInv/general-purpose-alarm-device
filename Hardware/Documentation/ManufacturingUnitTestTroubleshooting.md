@@ -1,8 +1,8 @@
 
 # Manufacturing and Unit Test Documentation, PCB Version 1 Prototype#1, 20220726
-Setions below
+Sections below
 * Manufacturing test procedure for every unit  
-**Assenbly Notes and Tips  
+**Assembly Notes and Tips  
 ** Unit (Design) verification tests on some units  
 ** Configuration Version 1 Assemblies 
 * GPAD Theory of Operation  
@@ -13,12 +13,12 @@ Setions below
 ### Assembly Notes and Tips
 
 Assumed that the assembly has the SMT components placed by the board manufacturer. Only through hole or other non SMT components are then placed by hand.
-Write serial number on the PCB assembly. _Management of serial numbers is beyound the scope of this document. Each manufacturier must figure something out._
+Write serial number on the PCB assembly. _Management of serial numbers is beyound the scope of this document. Each manufacturer must figure something out._
 
 ### Version 1 PCB nCS Rework Instructions
 1. Rework 1, D7 and D10 Swapp  
 The SPI nCS signal must be reworked to connect from D7 to D10 and the LIGHT4 from D10 to D7.  
-Naming convention for board side. The naming follows the KiCAD convention and additionaly the U102 Controller is on the front side. The LCD is on the back side. This document may refer to the Controller side and LCD side as that may be more obvious to the casual user.
+Naming convention for board side. The naming follows the KiCAD convention and additionally the U102 Controller is on the front side. The LCD is on the back side. This document may refer to the Controller side and LCD side as that may be more obvious to the casual user.
 On front Controller side of of PCB, mark and cut trace connecting D7 to nCS as shown.  
 <a href="V1CutD7Trace.gif"><img src="V1CutD7Trace.gif" alt="V1CutD7Trace.gif" width="200"> </a>  
 
@@ -39,12 +39,12 @@ On the front or Controller side, scrape solder resist from traces and solder a j
 Scrape solder resist from traces and solder a jumper wire to connect D10 to the trace connecting to R404 (To nCS on J401)  
 <a href="ScrapeTraces.jpg"><img src="ScrapeTraces.jpg" alt="ScrapeTraces.jpg" width="200"> Scraped and with wires.</a>  
 
-Apply glue (We used hot melt) to mechanicaly secure the rework wires.  
+Apply glue (We used hot melt) to mechanically secure the rework wires.  
 <a href="GlueWires.jpg"><img src="GlueWires.jpg" alt="GlueWires.jpg" width="200"> Glued rework wires.</a>  
 **Important, update the configuration table below to reflect this rework to the PCB**  
 Follow the pattern for tracking this update found in Configuration Version 1 Assemblies
 
-Install the UNO headers at four locations. After soldering, cut the pins so that they will not intefer with the LCD display to be installed soon.  
+Install the UNO headers at four locations. After soldering, cut the pins so that they will not interfer with the LCD display to be installed soon.  
 <a href="TrimUNOHeaders.jpg"><img src="TrimUNOHeaders.jpg" alt="TrimUNOHeaders.jpg" width="200"> Trimming header pins.</a>  
 
 2. Rework 2 for DTR to Reset.
@@ -104,7 +104,7 @@ Solder the through hole LEDs at locations D201-D205 and D105 with a **TBD** spac
 
 <a href="LEDsCoPlainer.jpg"><img src="LEDsCoPlainer.jpg" alt="LEDsCoPlainer.jpg" width="200"> Till an enclosure is finalized, solder LEDs so that the lens is co plainer with the LCD bezel.</a> 
 
-**NOTE** on the Version 1 PCB, the foot print for U301 is incorrect. It is too narrow for the part. To mount the part the leads must be formed by bending downard and flattened so that the part stands "tip toe" on the PCB pads.  Apply some flux to the pads and to the leads. With a small tip soldering iron anchor diaginal pins so that the part is well centered and then solder all pins.
+**NOTE** on the Version 1 PCB, the foot print for U301 is incorrect. It is too narrow for the part. To mount the part the leads must be formed by bending downard and flattened so that the part stands "tip toe" on the PCB pads.  Apply some flux to the pads and to the leads. With a small tip soldering iron anchor diagonal pins so that the part is well centered and then solder all pins.
 See photograph of rework method of mounting.  
 <a href="U301OnStilts.jpg"><img src="U301OnStilts.jpg" alt="U301OnStilts.jpg" width="200"> U301 on tip toe, pin 16 view. </a>
 <a href="U301OnStiltsB.jpg"><img src="U301OnStiltsB.jpg" alt="U301OnStiltsB.jpg" width="200"> U301 on tip toe, pin one view. </a>
@@ -201,9 +201,9 @@ Watch the progress bar in the IDE and look for success with the message "????Don
 Connect a USB cable to the DUT. Note the COM port enumerated in Device Manager Ports(COM&LPT) drop down
   ![DeviceManager.gif](DeviceManager.gif)
 
-In the Arduino IDE, open the a new file "GPAD_Factory_Test.ino".  
+In the Arduino IDE, open the new file "GPAD_Factory_Test.ino".  
 Set the IDE for the COM port of the DUT.
-  Using the Arduino IDE, compiel and upload to the DUT the "GPAD_Factory_Test.ino"
+  Using the Arduino IDE, compile and upload to the DUT the "GPAD_Factory_Test.ino"
 ![DoneUploadingFactoryTest.gif](DoneUploadingFactoryTest.gif)
 Watch the progress bar in the IDE and look for success with the message "Done uploading" in the blue status bar. 
   
@@ -224,11 +224,11 @@ Press the reset switch on the DUT and the LCD display should display a message. 
 
 ##  Unit (Design) verification tests on some units
   On DUT SN @, Lee has modified the Factory Test Firmware to test the buzzer at 4KHz which is the frequency for which it us specified.
-Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibration) I measure over 60 db at about 12" from buzzer. Maxumum current into DUT was 110mA.  
+Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibration) I measure over 60 db at about 12" from buzzer. Maximum current into DUT was 110mA.  
   <img src="SoundMeter_Buzzer4Khz12Inches.jpg" alt="SoundMeter_Buzzer4Khz12Inches.jpg" width="320" >
   
   
-  Buzzer test with 3"x4.875" 8 Ohm speaker at 1KHz, and 130 Hz and much louder 76db and 67 dB respectivly.  Maxumum current into DUT was 220mA.
+  Buzzer test with 3"x4.875" 8 Ohm speaker at 1KHz, and 130 Hz and much louder 76db and 67 dB respectively.  Maxumum current into DUT was 220mA.
   
   **[Configuration Version 1 Assemblies](#configurations)**  
   Tracking electrical and mechanical configuration of Version 1 GPAD assemblies and their locations
@@ -255,11 +255,11 @@ Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibra
 ## GPAD Theory of Operation  
 The GPAD is based on an Arduino UNO design with a CH340 USB to Serial adapter which enumerates on a USB port as a CDC aka Windows COM port (In linux systems a port /dev/ttyUSBn where "n" is a number).
   
-The GPAD is a SPI Peripherial device and will be controlled by another computer which will be a Controller.  
+The GPAD is a SPI Peripheral device and will be controlled by another computer which will be a Controller.  
 
-The GPAD Can be configured to get power from three ways. One is a barrel jack (2.1mm center positive) at 7-12Vdc, A second through the RJ12 connector from the Controller at 7-12Vdc is with a jumper on J103 or resistor at R107, and the third for low current applications only is the USB buss by adding Jumper J102 or zero ohm resistor at R106.  
+The GPAD Can be configured to get power from three ways. One is a barrel jack (2.1mm center positive) at 7-12Vdc, A second through the RJ12 connector from the Controller at 7-12Vdc is with a jumper on J103 or resistor at R107, and the third for low current applications only is the USB bus by adding Jumper J102 or zero ohm resistor at R106.  
 
-The GPAD generaly is controlled by an SPI Controller but through the USB port debug information can be watched and some TBD control is also possible.
+The GPAD generally is controlled by an SPI Controller but through the USB port debug information can be watched and some TBD control is also possible.
 
 
 ## Troubleshooting procedures  
