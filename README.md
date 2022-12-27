@@ -110,14 +110,14 @@ Summer and Fall of 2022 the physical implementation has been realized with the V
 **THESE MAY ALL HAVE BEEN REALIZED IN PHASE I**  
 In Phase II, we can imagine a large number of improvements:
 1. An enclosure for the electronics which is designed to be easily mounted (for example, with flanges for zip ties.)
-2. A Printed-circuit board that integrates the simple electronics with an Arduino Nano or Micro-sized solution on a single board.
+2. An updated Printed-circuit board Version 2 that integrates the improvements identified in Phase 1.
 3. Improvements in the API.
 4.  Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying, "She canna' take the strain, Captain!" in a Scottish accent.
 
 ## Phase III
-
+**THESE MAY BE NESSISARY TO COMPLETE PHASE II**  
 In Phase III, we could expand the usability of the device by allowing it to be made physically versatile, which feature such as:
-1. A backup battery on board.
+1. A backup battery on board to make the unit able to operate wirelessly.
 2. Sturdiness to the level of being a "throwie" that can be deployed by tossing it across the room.
 3. WiFi, Bluetooth, or LoRa enablement.
 
