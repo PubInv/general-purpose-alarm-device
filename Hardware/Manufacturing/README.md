@@ -15,7 +15,7 @@ LCDs were ordered from Amazon and from Digikey.
 
 ### Other
 [../Documentation/ManufacturingUnitTestTroubleshooting.md](../Documentation/ManufacturingUnitTestTroubleshooting.md)  Manufacturing Instructions and Notes for Version 1 PCBA.  
-[Unit Test documentation](Manufacturing/Unit_Test.md)  20221208 This file is stale and should be deleted.
+
 
 
 
