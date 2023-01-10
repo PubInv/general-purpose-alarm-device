@@ -28,6 +28,7 @@
 */
 
 #include<SPI.h>                             //Library for SPI
+#include "alarm_api.h"
 #define LED_PIN 7                           //Add this LED + Resistor
 #define LED_CATHODE 6                        //A pin to sink LED current
 #define BUTTON_PIN 2                        //Button to GND, 10K Resistor to +5V.
@@ -134,8 +135,14 @@ void loop(void)
         
         // Send a test byte
         uint8_t v = 5;
+        AlarmEvent event;
+        event.lvl = v;
+        strcpy(event.msg,"spudboy");
         SPI.transfer(v);
-        
+          // now we want to write 128 bytes
+      for(int i = 0; i < MAX_MSG_LEN; i++) {
+        SPI.transfer(event.msg[i]);
+      }
          Serial.println(F("Done"));
         Serial.println(GPAD_CS);
         digitalWrite(GPAD_CS, HIGH);

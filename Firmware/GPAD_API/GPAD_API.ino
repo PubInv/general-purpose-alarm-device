@@ -104,6 +104,10 @@ volatile boolean isReceived_SPI;
 volatile byte peripheralReceived ;
 
 volatile bool procNewPacket = false;
+volatile byte indx = 0;
+volatile boolean process;
+
+byte received_signal_raw_bytes[MAX_BUFFER_SIZE];
 
 void setup_spi()
 {
@@ -131,25 +135,49 @@ void setup_spi()
 
 //ISRs
 // This is the original...
+// I plan to add an index to this to handle the full message that we intend to receive.
+// However, I think this also needs a timeout to handle the problem of getting out of synch.
+
 ISR (SPI_STC_vect)                        //Inerrrput routine function
 {
-   peripheralReceived = SPDR;         // Value received from controller if store in variable peripheralReceived
-   isReceived_SPI = true;                        //Sets isReceived_SPI as True
+   receive_byte(SPDR);
 }//end ISR
+
+
+void receive_byte(byte c)
+{
+  // byte c = SPDR; // read byte from SPI Data Register
+  if (indx < sizeof received_signal_raw_bytes) {
+    received_signal_raw_bytes[indx] = c; // save data in the next index in the array received_signal_raw_bytes
+    indx++;
+  }
+  if (indx >= sizeof received_signal_raw_bytes) {
+    process = true;
+  }
+}
 
 
 void updateFromSPI()
 {
-  if(isReceived_SPI)
+  if(process)
   {
-
-    isReceived_SPI = false;
     AlarmEvent event;
-    event.lvl = peripheralReceived;
-    Serial.print(F("LVL: "));
-    Serial.println(event.lvl);
-    alarm((AlarmLevel) event.lvl,"NA",Serial);
+    event.lvl = (AlarmLevel) received_signal_raw_bytes[0];
+    for(int i = 0; i < MAX_MSG_LEN; i++) {
+      event.msg[i] = (char) received_signal_raw_bytes[1+i];
+    }
+
+    if (DEBUG > 1) {
+      Serial.print(F("LVL: "));
+      Serial.println(event.lvl);
+      Serial.println(event.msg);
+    }
+    alarm((AlarmLevel) event.lvl, event.msg,Serial);
     annunciateAlarmLevel();
+  
+    indx = 0;
+    process = false;
+
   }
 }
 
@@ -208,15 +236,24 @@ void setup() {
   Serial.println(F("Done With Setup!"));
 }// end of setup()
 
+unsigned long last_ms = 0;
 void loop() {
-//  updateWink(); //The builtin LED
-//  robot_api_loop();
+  
+  updateWink(); //The builtin LED
+  robot_api_loop();
 
   // This is causing a hang!
- // processSerial(Serial);
+  processSerial(Serial);
 
   // Now try to read from the SPI Port!
   updateFromSPI();
-  // updateFromSPI_SerialTransfer();
 
+  if (DEBUG > 1) {
+    unsigned long ms = millis();
+    if ((ms - last_ms) > 3000) {
+      Serial.println("INDX :");
+      Serial.println(indx);
+      last_ms = ms;
+    }
+  }
 }

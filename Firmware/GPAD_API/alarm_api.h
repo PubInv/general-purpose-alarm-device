@@ -28,8 +28,9 @@ enum AlarmLevel { silent, informational, problem, warning, critical, panic };
 const int NUM_LEVELS = 6;
 
 const int MAX_MSG_LEN = 80;
+const int MAX_BUFFER_SIZE = MAX_MSG_LEN + 1;
 typedef struct {
-                int lvl;
+                uint8_t lvl;
                 // we will use a null-terminated string!
                 char msg[MAX_MSG_LEN+1];
                } AlarmEvent;
