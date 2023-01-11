@@ -22,14 +22,10 @@
 #ifndef GPAD_Alarm_API_SPI
 #define GPAD_Alarm_API_SPI
 
-// #include "SPITransfer.h"
 
 // This will be the "most abstract" version of this which will be shared between
 // projects.
 #include "alarm_api.h"
 
-
-
-// void send_file(SPITransfer& myTransfer,int fileSize, char *fileName, char *file);
 
 #endif

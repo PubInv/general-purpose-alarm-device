@@ -64,7 +64,7 @@ void local_setup(void) {
 //  pinMode(SS, OUTPUT);                    // Set nCS for output
   pinMode(MISO, INPUT);                   //Sets MISO as INPUT. Note MOSI must be set automaticaly
   SPI.begin();                            //Begins the SPI commnuication
-  
+
   pinMode(SS, OUTPUT);                    // Set nCS for output
   digitalWrite(SS, HIGH);                 // Setting PeripheralSelect as HIGH (So controller doesnt connnect with peripheral)
 
@@ -80,7 +80,7 @@ void local_setup(void) {
     pinMode(ESP_CS_PINS[i], OUTPUT);
     digitalWrite(ESP_CS_PINS[i], HIGH);
   }
-#endif 
+#endif
 }
 void setup (void)
 {
@@ -93,7 +93,7 @@ void setup (void)
  // pinMode(LED_CATHODE, OUTPUT);               //Sets pin 6 as Output
  // digitalWrite(LED_CATHODE, LOW);             //Sets pin 6 to sink LED current
   local_setup();
- 
+
 }// end setup()
 
 int cnt = 0;
@@ -104,7 +104,7 @@ void loop(void)
 //  AlarmEvent event;
 //  event.lvl = cnt++ % 6;
 //  strcpy(event.msg,"Be True; You need noBe True; You need noBe True; You need noBe True; You need no");
-  
+
 //  alarm_event(event,Serial);
 //  Serial.println(F("Done with Datum Send!"));
 //  delay(3000);
@@ -124,7 +124,7 @@ void loop(void)
         Serial.println(F("Writing HIGH"));
         Serial.println(GPAD_CS);
         digitalWrite(GPAD_CS, HIGH);
-        
+
       }
       toggle = (toggle + 1) % 2;
 
@@ -132,7 +132,7 @@ void loop(void)
          Serial.println(F("Writing SPI LOW"));
         Serial.println(GPAD_CS);
         digitalWrite(GPAD_CS, LOW);
-        
+
         // Send a test byte
         uint8_t v = 5;
         AlarmEvent event;

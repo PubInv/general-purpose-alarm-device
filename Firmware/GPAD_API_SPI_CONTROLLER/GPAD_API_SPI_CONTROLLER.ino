@@ -65,8 +65,9 @@ void local_setup(void) {
 
   // if you need it for debugging, you can slow the SPI clock down
   //For SPI clock rates, see https://www.arduino.cc/reference/en/language/functions/communication/spi/setclockdivider/
-  // At this speed (2MHZ), we were missing bytes.
+  // At this speed (2MHZ), we were missing bytes with a 12" cable.
   //SPI.setClockDivider(SPI_CLOCK_DIV8);    //Sets clock for SPI communication at 8 (16/8=2Mhz)
+  // At this speed, with a 12" cable, I noticed no dropped bytes.
   SPI.setClockDivider(SPI_CLOCK_DIV16);    //SPI clock at 16MHz/N (16/16=1Mhz) where N={2,4,8,16,32,64,128}
   //SPI.setClockDivider(SPI_CLOCK_DIV64);    //SPI clock at 16MHz/N (16/64=250Khz) where N={2,4,8,16,32,64,128}
   //SPI.setClockDivider(SPI_CLOCK_DIV128);    //SPI clock at 16MHz/N (16/128=125Khz) where N={2,4,8,16,32,64,128}

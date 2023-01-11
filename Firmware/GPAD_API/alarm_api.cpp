@@ -21,7 +21,6 @@
 #include "gpad_utility.h"
 
 
-
 // here is the abstract "state" of the machine,
 // completely independent of hardware.
 // This is very simple version of what is probably needed.
