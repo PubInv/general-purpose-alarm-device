@@ -1,5 +1,6 @@
-/* alarm_api.h
-  The header file for the "abstract" alarm api.
+/* GPAD_Alarm_API_SPI.h
+  GPAD_Alarm_API_SPI.h - header file to implement an Arduino SPI
+  interface the GPAD abastract alarm interface.
 
   Copyright (C) 2022 Robert Read
 
@@ -18,23 +19,13 @@
 
 */
 
-#ifndef ALARM_API
-#define ALARM_API
-#include <Stream.h>
+#ifndef GPAD_Alarm_API_SPI
+#define GPAD_Alarm_API_SPI
 
-enum AlarmLevel { silent, informational, problem, warning, critical, panic };
-// const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
-const int NUM_LEVELS = 6;
 
-const int MAX_MSG_LEN = 80;
-const int MAX_BUFFER_SIZE = MAX_MSG_LEN + 1;
-typedef struct {
-                uint8_t lvl;
-                // we will use a null-terminated string!
-                char msg[MAX_MSG_LEN+1];
-               } AlarmEvent;
+// This will be the "most abstract" version of this which will be shared between
+// projects.
+#include "alarm_api.h"
 
-int alarm_event(AlarmEvent& event,Stream &serialport);
-int alarm(AlarmLevel level,char *str,Stream &serialport);
 
 #endif
