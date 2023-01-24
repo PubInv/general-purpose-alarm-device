@@ -64,9 +64,11 @@ Screen shot schematic for relocated Resistor and LED on Version 2 PCB.
 
 **Photographs of LED relocation rework on a Version 1 PCB.**
 First remove solder mask on trace and ground  
-![image](https://user-images.githubusercontent.com/5836181/208769501-3624a118-bc5d-4f3c-a7e8-34bbaf68007d.png)  
+![https://user-images.githubusercontent.com/5836181/212679207-59a67f31-611d-4394-8cd6-ea1a63ba5d45.png](https://user-images.githubusercontent.com/5836181/212679207-59a67f31-611d-4394-8cd6-ea1a63ba5d45.png)
+
 Then solder cathode of LED to ground, solder the resistor to the LED and to the trace to A3.  
-![image](https://user-images.githubusercontent.com/5836181/208769847-3f917e47-d7b5-47b2-a479-ae1c00981dfe.png)  
+![https://user-images.githubusercontent.com/5836181/212679833-2473281e-3a44-4d71-ad07-883eef1f8742.png](https://user-images.githubusercontent.com/5836181/212679833-2473281e-3a44-4d71-ad07-883eef1f8742.png)
+
 
 
 **IMPORTANT: Afer any rework, update the configuration table below to reflect these reworks by serial number.  **
