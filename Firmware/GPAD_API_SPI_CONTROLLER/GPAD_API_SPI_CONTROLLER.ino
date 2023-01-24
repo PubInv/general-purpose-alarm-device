@@ -16,6 +16,10 @@
 //SPI COMMUNICATION BETWEEN TWO ARDUINO UNOs
 //CIRCUIT DIGEST
 
+#define PROG_NAME "SPI CONTROLLER" 
+#define VERSION 0.1
+#define BAUDRATE 115200
+
 /* Hardware Notes, Controller
    SPI Line Pin in Arduino
   MOSI 11 or ICSP-4  Output
@@ -60,6 +64,39 @@ const int GPAD_CS = ESP_CS_PINS[GPAD_CS_IDX];
 const int GPAD_CS = SS;
 #endif
 
+#define USE_LCD 1
+#ifdef USE_LCD
+//For LCD -- this is useful if you are using a GPAD as a controller, but 
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
+#endif
+
+/* Assumes LCD has been initilized
+ * Turns off Back Light
+ * Clears display
+ * Turns on back light.
+ */
+void clearLCD(void) {  
+  lcd.noBacklight();
+  lcd.clear();
+}
+
+//Splash a message so we can tell the LCD is working
+void splashLCD(void) {
+  lcd.init();                      // initialize the lcd
+  // Print a message to the LCD.
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print(PROG_NAME);
+  lcd.setCursor(3, 1);
+  lcd.print("GPAD Starting");
+  lcd.setCursor(0, 2);
+  lcd.print("by PubInv & SPEC");
+  lcd.setCursor(0, 3);
+  lcd.print("Version: ");
+  lcd.print(VERSION);
+}// end splashLCD
+
 
 void local_setup(void) {
 
@@ -75,6 +112,18 @@ void local_setup(void) {
   pinMode(MISO, INPUT);                   //Sets MISO as INPUT. Note MOSI must be set automaticaly
   SPI.begin();                            //Begins the SPI commnuication
 
+
+#ifdef USE_LCD
+  Wire.begin();
+  lcd.init();
+  Serial.println(F("Clear LCD"));
+  clearLCD();
+  delay(100);
+  Serial.println(F("Start LCD splash"));
+  splashLCD();
+  Serial.println(F("EndLCD splash"));
+#endif
+
   digitalWrite(GPAD_CS, HIGH);                 // Setting PeripheralSelect as HIGH (So controller doesnt connnect with peripheral)
   delay(100);
   Serial.println(F("SETUP DONE!"));
@@ -82,7 +131,7 @@ void local_setup(void) {
 }
 void setup (void)
 {
-  Serial.begin(115200);                   //Starts Serial Communication at Baud Rate 115200
+  Serial.begin(BAUDRATE);                   //Starts Serial Communication at Baud Rate 115200
   delay(500);
   Serial.println(F("Starting SPI Controller."));
 
@@ -159,6 +208,14 @@ void loop(void)
         digitalWrite(GPAD_CS, HIGH);
         Serial.println(F("LEVEL: "));
         Serial.println(event.lvl);
+#ifdef USE_LCD
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0,0);
+  lcd.print(F("LEVEL: "));
+  lcd.setCursor(0,1);
+  lcd.print(event.lvl);  
+#endif     
     }
   }
 }
