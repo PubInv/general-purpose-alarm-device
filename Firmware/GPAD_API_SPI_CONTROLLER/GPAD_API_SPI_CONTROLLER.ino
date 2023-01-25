@@ -36,7 +36,6 @@
 #define LED_CATHODE 6                        //A pin to sink LED current
 #define BUTTON_PIN 2                        //Button to GND, 10K Resistor to +5V.
 
-// #include "SPITransfer.h"
 #include "GPAD_Alarm_API_SPI.h"
 
 
@@ -59,9 +58,9 @@
 // this confusing thing here for to facilitate our testing on mulitple architectures.
 #define GPAD_CS_IDX (11-1)
 const uint8_t ESP_CS_PINS[11] =  {4, 5, 13, 14, 15, 16, 17, 25, 26, 32, 33};
-const int GPAD_CS = ESP_CS_PINS[GPAD_CS_IDX];
+int GPAD_CS = ESP_CS_PINS[GPAD_CS_IDX];
 #else
-const int GPAD_CS = SS;
+int GPAD_CS = SS;
 #endif
 
 #define USE_LCD 1
@@ -185,27 +184,15 @@ void loop(void)
       toggle = (toggle + 1) % 2;
 
     } else {
-         Serial.println(F("Writing SPI LOW"));
-        Serial.println(GPAD_CS);
-        digitalWrite(GPAD_CS, LOW);
-        
-        // Send a test byte
+         Serial.println(F("Writing SPI LOW"));    
         uint8_t v = cnt++ % 6;
         AlarmEvent event;
         event.lvl = v;
         strcpy(event.msg,"abcdefghijklmnopqrstuvwxy\0");
         event.msg[26] = 0;
-        digitalWrite(GPAD_CS, LOW);
-        SPI.transfer(v);
-          // now we want to write 128 bytes
-        for(int i = 0; i < MAX_MSG_LEN; i++) {
-          SPI.transfer(event.msg[i]);
-          // sadly there is a timing issue --- you can't send the bytes too fast!
-          // delay(1);
-        }
+        alarm_event(event,Serial);
         Serial.println(F("Done"));
         Serial.println(GPAD_CS);
-        digitalWrite(GPAD_CS, HIGH);
         Serial.println(F("LEVEL: "));
         Serial.println(event.lvl);
 #ifdef USE_LCD
