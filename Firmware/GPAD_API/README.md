@@ -1,17 +1,41 @@
 # GPAD_API
 Description of the GPAD API, the Application Programming Interface.
-Version 0.1
+Version 0.07
 Updated on Date: 20221104
 
 This is the description of the API from the point of view of the firmware within the General Purpose Alarm Device, aka the GPAD.
 
-As of Version 0.1, the interface is through the USB serial port only. (The SPI Peripheral is not yet implemented.)
-Serial BAUD rate is fixed at 115200
+As of Version 0.07, the interface is through the USB serial and SPI, both. 
+The serial BAUD rate is fixed at 115200
 Serial messages are terminated with a single **Line Feed**, here after LF character (aka '/n' or New Line, which is ASCII 0x0A or DEC 10).
 The GPAD recognizes a limited set of commands.
 Some commands are one character only.
 Some commands are two characters followed by the LF.
-Some commands take messages by concatenating up to _**TBD**_ (?3x20=60?) additional ASCII characters.
+Some commands take messages by concatenating a message of up to 80 additional ASCII characters.
+
+## The SPI Interface
+
+The SPI interface was added in version 0.07, and example code for it is available in the GPAD_API_SPI_CONTROLLER directory. Please see the [README](https://github.com/PubInv/general-alarm-device/tree/main/Firmware/GPAD_API_SPI_CONTROLLER) there for more information.
+
+This SPI-implemented is implemented with the single funcation ```alarm```:
+```C++
+enum AlarmLevel { silent, informational, problem, warning, critical, panic };
+// const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
+const int NUM_LEVELS = 6;
+
+const int MAX_MSG_LEN = 80;
+const int MAX_BUFFER_SIZE = MAX_MSG_LEN + 1;
+typedef struct {
+                uint8_t lvl;
+                // we will use a null-terminated string!
+                char msg[MAX_MSG_LEN+1];
+               } AlarmEvent;
+
+int alarm_event(AlarmEvent& event,Stream &serialport);
+int alarm(AlarmLevel level,char *str,Stream &serialport);
+```
+
+
 
 ## Display Description
 The LCD is organized as four rows of twenty characters.
