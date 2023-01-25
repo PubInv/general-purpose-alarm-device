@@ -17,7 +17,8 @@ Some commands take messages by concatenating a message of up to 80 additional AS
 
 The SPI interface was added in version 0.07, and example code for it is available in the GPAD_API_SPI_CONTROLLER directory. Please see the [README](https://github.com/PubInv/general-alarm-device/tree/main/Firmware/GPAD_API_SPI_CONTROLLER) there for more information.
 
-This SPI-implemented is implemented with the single funcation ```alarm```:
+This SPI-implemented is implemented with two entrypoints, the single funcation ```alarm```, and the function ```alarm_vent``` which takes and event structure. These may contain a null-terminated message string of up to
+80 characters.
 ```C++
 enum AlarmLevel { silent, informational, problem, warning, critical, panic };
 // const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
@@ -35,7 +36,7 @@ int alarm_event(AlarmEvent& event,Stream &serialport);
 int alarm(AlarmLevel level,char *str,Stream &serialport);
 ```
 
-
+It is our intention to create additional entry points in what we call the "robotic_api" which will eventually explose all of the GPAD hardware to control by SPI.
 
 ## Display Description
 The LCD is organized as four rows of twenty characters.
