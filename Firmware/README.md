@@ -8,7 +8,6 @@
 * __GPAD_Factory_Test__ is .ino file to be loaded into the GPAD for factory testing and or troubleshooting. Was developed to test Version 1 PCBs and was developed on Wokwi. (Was fun to do!)
 * __SPI_Controller_And_Peripherial__... is a ?link? to an external GitHub repository for some SPI communications proof of concept files 
 * **Python_Serial**  is a program to facilitate testing from a command line.
-* **TEST_POLYVENT_LINES**  A folder with ???.
 * **pseudoSerialVent** is a simulated ventilator made in the Processing IDE with which to test the GPAD when loaded with firmware GPAD_API
 * **toneSweep** a simple standalone program (Arduino sketch) developed for evaluation of piezo buzzers and speakers on the GPAD Peripherial. 
 
