@@ -10,7 +10,7 @@
 * **Python_Serial**  is a program to facilitate testing from a command line.
 * **TEST_POLYVENT_LINES**  A folder with ???.
 * **pseudoSerialVent** is a simulated ventilator made in the Processing IDE with which to test the GPAD when loaded with firmware GPAD_API
-* toneSweep a simple standalone program (Arduino sketch) developed for evaluation of piezo buzzers and speakers on the GPAD Peripherial. 
+* **toneSweep** a simple standalone program (Arduino sketch) developed for evaluation of piezo buzzers and speakers on the GPAD Peripherial. 
 
 ## Regression Test Documentation. 
 * __GPAD_API_Regression_Test_Plan.md__ is an overall test plan, which describes how to use some of the folder and the files inside to regression test the GPAD_API https://github.com/PubInv/general-alarm-device/blob/main/Firmware/GPAD_API_Regression_Test_Plan.md
