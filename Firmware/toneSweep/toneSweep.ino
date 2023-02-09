@@ -1,5 +1,17 @@
-/*
-  toneSweep
+/*  toneSweep
+
+  Copyright (C) 2022 Robert Read
+  This program includes free software: you can redistribute it and/or modif
+  it under the terms of the GNU Affero General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+  See the GNU Affero General Public License for more details.
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see https://www.gnu.org/licenses/.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 
   Audio Sweep for GPAD
 
@@ -31,7 +43,7 @@ bool isMuted = false;   //State Variable
 */
 int startFrequency = 400; //Hz
 int stopFrequency = 4000; //Hz
-//int sweepTime = 1000; //mS   
+//int sweepTime = 1000; //mS
 //int sweepTime = 860; //mS   This makes each 4.6 division on oscilliscope for sweep.
 int sweepTime = 660; //mS   This makes each division on oscilliscope to be 500Hz @ 100mS/div.
 int pauseTime = 500; //mS
