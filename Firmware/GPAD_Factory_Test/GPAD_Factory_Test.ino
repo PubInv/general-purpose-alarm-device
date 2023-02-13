@@ -108,7 +108,6 @@ unsigned int multiHitTime = 400;
 byte multiHitTarget = 2;
 DailyStruggleButton switchMute;   // create instance of DSB
 
-//Hello, Bryan was here.
 //Testing
 byte ASCII = 33;                // for more info see: https://www.asciitable.com/
 byte charCountX = 0;            // for LCD tests
