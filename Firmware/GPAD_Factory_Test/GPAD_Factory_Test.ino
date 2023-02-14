@@ -32,7 +32,7 @@
 */
 
 #define PROG_NAME "****FACTORY TEST****"     //Descriptive name of this software, 20 characters.
-#define VERSION 1.31                         //Version of this software
+#define VERSION 1.32                         //Version of this software
 #define BAUDRATE 115200
 
 //Set LED wink parameters
@@ -74,8 +74,7 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define NACK_DATA     3
 #define OTHER_ERROR   4
 #define TIMEOUT       5
-// #define WIRE_TIMEOUT  140
-#define WIRE_TIMEOUT  200
+#define WIRE_TIMEOUT  3000    //From the Arduino reference example
 
 //Test Groups
 #define TG_SWITCH_MUTE 0
@@ -779,7 +778,13 @@ void setup() {
   }
   Serial.println(F("End set up GPIO pins"));
   
+  Serial.println(F("\nFactory Test Instructions:"));
+  Serial.println(F("Shortpress on the Mute Button to see 'switch press' or 'switch release'."));
+  Serial.println(F("Longpress on the Mute Button to toggle the auto test."));
+  Serial.println(F("Multipress on the Mute Button to step through tests."));
+  Serial.println();
   testGroupPrint();   // print first, default test message
+
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 }// end of setup()
 
