@@ -74,7 +74,8 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define NACK_DATA     3
 #define OTHER_ERROR   4
 #define TIMEOUT       5
-#define WIRE_TIMEOUT  140
+// #define WIRE_TIMEOUT  140
+#define WIRE_TIMEOUT  200
 
 //Test Groups
 #define TG_SWITCH_MUTE 0
