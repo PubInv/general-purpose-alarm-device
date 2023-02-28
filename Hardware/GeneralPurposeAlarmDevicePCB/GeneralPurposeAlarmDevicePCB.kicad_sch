@@ -6933,6 +6933,9 @@
     (path "/00000000-0000-0000-0000-000062dd8e5f/fa5ebd36-5f6b-4b8c-867f-a63bd41bbb22"
       (reference "#PWR0508") (unit 1) (value "GND") (footprint "")
     )
+    (path "/00000000-0000-0000-0000-000062dd8e5f/81bba5a0-0b12-4600-9063-685d7a4dde98"
+      (reference "#PWR0509") (unit 1) (value "GND") (footprint "")
+    )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062dea4d9"
       (reference "#PWR0601") (unit 1) (value "+5V") (footprint "")
     )
@@ -6941,9 +6944,6 @@
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062de76bb"
       (reference "#PWR0603") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062decbdb"
-      (reference "#PWR0604") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062c8cf60"
       (reference "#PWR0605") (unit 1) (value "+5V") (footprint "")
@@ -6954,14 +6954,11 @@
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062ff8f7f"
       (reference "#PWR0607") (unit 1) (value "GND") (footprint "")
     )
-    (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-00006301310e"
-      (reference "#PWR0608") (unit 1) (value "GND") (footprint "")
-    )
     (path "/00000000-0000-0000-0000-0000634841c0"
       (reference "A101") (unit 1) (value "Arduino_UNO_R3_Shield") (footprint "GeneralPurposeAlarmDevicePCB:Arduino_UNO_R3_NoMountingHoles3D")
     )
-    (path "/00000000-0000-0000-0000-000062dd8e5f/5897491e-9402-49c5-a894-b7415b30b227"
-      (reference "BZ601") (unit 1) (value "Buzzer_12.2mm_H6.5mm") (footprint "Buzzer_Beeper:Buzzer_TDK_PS1240P02BT_D12.2mm_H6.5mm")
+    (path "/00000000-0000-0000-0000-000062dd8e5f/5de35918-83da-4d24-a310-e84995a0bf6c"
+      (reference "BZ601") (unit 1) (value "Buzzer_Adafruit_P1536A") (footprint "GeneralPurposeAlarmDevicePCB:Buzzer_12.2mm_9.7mm_7.62mm")
     )
     (path "/00000000-0000-0000-0000-000062b4bd4b"
       (reference "C101") (unit 1) (value "39pF") (footprint "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder")
@@ -7302,6 +7299,15 @@
     (path "/00000000-0000-0000-0000-000062dd8e5f/10551ca1-d6a7-406a-82bf-3bf09f7bf6ac"
       (reference "R505") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
+    (path "/00000000-0000-0000-0000-000062dd8e5f/6be36590-b1be-43b9-af8c-01b936c55343"
+      (reference "R506") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    )
+    (path "/00000000-0000-0000-0000-000062dd8e5f/6dafffc6-0c75-4649-979b-a42ccbd73d24"
+      (reference "R507") (unit 1) (value "1R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    )
+    (path "/00000000-0000-0000-0000-000062dd8e5f/48e891b9-9bc6-45b8-9fee-8df8fbaf537e"
+      (reference "R508") (unit 1) (value "1R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062dea4d3"
       (reference "R601") (unit 1) (value "1R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
@@ -7312,7 +7318,7 @@
       (reference "R603") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062c9323e"
-      (reference "R604") (unit 1) (value "1R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R604") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062de23f8"
       (reference "R605") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
