@@ -7164,11 +7164,11 @@
     (path "/00000000-0000-0000-0000-000062b871ee/00000000-0000-0000-0000-000062b90ff3"
       (reference "Q301") (unit 1) (value "BSS138") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
-    (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062d2b660"
-      (reference "Q601") (unit 1) (value "MMBT2222A-7-F") (footprint "Package_TO_SOT_SMD:SOT-23")
+    (path "/00000000-0000-0000-0000-000062dd8e5f/71f5cb47-a803-4076-9a37-4b6421416d69"
+      (reference "Q601") (unit 1) (value "BSS138") (footprint "Package_TO_SOT_SMD:SOT-23")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062de3e9b"
-      (reference "Q602") (unit 1) (value "MMBT2907ALT1G") (footprint "digikey-footprints:SOT-23-3")
+      (reference "Q602") (unit 1) (value "DNI") (footprint "digikey-footprints:SOT-23-3")
     )
     (path "/00000000-0000-0000-0000-000062bf3016"
       (reference "R101") (unit 1) (value "1R0") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
