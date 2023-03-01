@@ -306,6 +306,7 @@
   )
 
 
+
   (wire (pts (xy 189.23 102.87) (xy 198.12 102.87))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 0ca24885-0f66-414d-acbf-4b062644fea1)
@@ -800,7 +801,7 @@
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-000062b96d5b)
     (property "Reference" "R401" (id 0) (at 130.81 95.25 90))
-    (property "Value" "330" (id 1) (at 132.08 97.79 90))
+    (property "Value" "330R" (id 1) (at 132.08 97.79 90))
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (id 2) (at 132.08 98.552 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -836,7 +837,7 @@
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-000062b96d66)
     (property "Reference" "R402" (id 0) (at 140.97 101.6 90))
-    (property "Value" "330" (id 1) (at 142.24 104.14 90))
+    (property "Value" "330R" (id 1) (at 142.24 104.14 90))
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (id 2) (at 142.24 104.902 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -872,7 +873,7 @@
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-000062b96d71)
     (property "Reference" "R403" (id 0) (at 152.4 107.95 90))
-    (property "Value" "330" (id 1) (at 153.67 110.49 90))
+    (property "Value" "330R" (id 1) (at 153.67 110.49 90))
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (id 2) (at 153.67 111.252 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -908,7 +909,7 @@
     (in_bom yes) (on_board yes)
     (uuid 00000000-0000-0000-0000-000062b96d7c)
     (property "Reference" "R404" (id 0) (at 184.15 118.11 90))
-    (property "Value" "330" (id 1) (at 185.42 120.65 90))
+    (property "Value" "330R" (id 1) (at 185.42 120.65 90))
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (id 2) (at 185.42 121.412 90)
       (effects (font (size 1.27 1.27)) hide)
     )
