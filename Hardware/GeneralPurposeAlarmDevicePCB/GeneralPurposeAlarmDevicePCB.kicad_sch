@@ -1737,6 +1737,7 @@
     )
   )
 
+
   (junction (at 77.47 66.04) (diameter 0) (color 0 0 0 0)
     (uuid 00d52d44-0c76-4bd8-b2b6-29ac8ca10acc)
   )
@@ -5753,7 +5754,7 @@
     (property "Datasheet" "~" (id 3) (at 148.59 31.75 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Distributor 1" "JLCPCB" (id 4) (at 148.59 31.75 90)
+    (property "Distributor 1" "DNI" (id 4) (at 148.59 31.75 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Distributor 1 PN" "DNI" (id 5) (at 148.59 31.75 90)
@@ -5789,7 +5790,7 @@
     (property "Datasheet" "~" (id 3) (at 185.42 34.29 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Distributor 1" "JLCPCB" (id 4) (at 185.42 34.29 90)
+    (property "Distributor 1" "DNI" (id 4) (at 185.42 34.29 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Distributor 1 PN" "DNI" (id 5) (at 185.42 34.29 90)
@@ -6279,6 +6280,9 @@
     (property "Assembly Type" "HAND" (id 15) (at 247.65 59.69 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (property "Cost" "0.15" (id 16) (at 247.65 59.69 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
     (pin "1" (uuid 0d740536-08fd-4f1d-9033-4c7ed37907ae))
     (pin "2" (uuid 401abce5-9319-4425-a964-8b951b11e075))
     (pin "3" (uuid 8b45e076-542d-4863-a557-2d67959f5a4f))
@@ -6523,7 +6527,7 @@
     (property "Manufacturer" "TyoHM" (id 6) (at 120.65 130.81 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MPN" "RMC06033301%N" (id 7) (at 120.65 130.81 90)
+    (property "MPN" "RMC06031K1%N" (id 7) (at 120.65 130.81 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Description" "0.1W ±1% 1kΩ 0603 Chip Resistor - Surface Mount ROHS" (id 8) (at 120.65 130.81 0)
@@ -7273,16 +7277,16 @@
       (reference "R312") (unit 1) (value "4K7") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062b93801/00000000-0000-0000-0000-000062b96d5b"
-      (reference "R401") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R401") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062b93801/00000000-0000-0000-0000-000062b96d66"
-      (reference "R402") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R402") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062b93801/00000000-0000-0000-0000-000062b96d71"
-      (reference "R403") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R403") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062b93801/00000000-0000-0000-0000-000062b96d7c"
-      (reference "R404") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R404") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062bc4e7e/00000000-0000-0000-0000-000062be31ed"
       (reference "R501") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
@@ -7321,7 +7325,7 @@
       (reference "R604") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062de23f8"
-      (reference "R605") (unit 1) (value "330") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R605") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/7008cf90-b212-49d7-8b1b-23ef20575b82"
       (reference "RV301") (unit 1) (value "POT 0.375 10K") (footprint "GeneralPurposeAlarmDevicePCB:Potentiometer_Bourns_3386P_Vertical")
@@ -7371,8 +7375,8 @@
     (path "/00000000-0000-0000-0000-000062b3a84b"
       (reference "U102") (unit 1) (value "PI_ATMEGA328P-AU-InOrder") (footprint "Package_QFP:TQFP-32_7x7mm_P0.8mm")
     )
-    (path "/00000000-0000-0000-0000-000062b871ee/00000000-0000-0000-0000-000062b90f36"
-      (reference "U301") (unit 1) (value "PCF8574AT") (footprint "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm")
+    (path "/00000000-0000-0000-0000-000062b871ee/e051ebe0-83f1-4aa8-b0c7-b7b5af8758eb"
+      (reference "U301") (unit 1) (value "PCF8574AT_3_518") (footprint "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/2ab4402c-7d6e-4745-b7e2-2505e19e98be"
       (reference "U302") (unit 1) (value "LCD_20x4_Character-GPAD_SCH_LIB") (footprint "GeneralPurposeAlarmDevicePCB:LCD_2004A")
