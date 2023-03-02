@@ -12,6 +12,7 @@
 
 [U_Box_V104_General_Alarm_Device_button.stl](U_Box_V104_General_Alarm_Device_button.stl)
 
+[U_Box_V104_General_Alarm_Device_button.stl](U_Box_V104_General_Alarm_Device_LED_standoffs.stl)
 
 ### Folder(s)  
 **Speaker2W**  
