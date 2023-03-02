@@ -81,7 +81,7 @@ FootPosY         = 5.08;
 //Coque haut - Top shell
 TShell          = 0;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
-BShell          = 1;// [0:No, 1:Yes]
+BShell          = 0;// [0:No, 1:Yes]
 //Panneau avant - Front panel
 FPanL           = 0;// [0:No, 1:Yes]
 //Panneau arrière - Back panel  
@@ -268,10 +268,10 @@ module LedSpacer(OnOff,Cx,Cy,Cdia,Cpitch,Cheight,Ccenter=false){
   difference(){
     cylinder(d=Cdia,Cheight, $fn=50,center=Ccenter); //spacer body
     union(){
-      translate([Cpitch/2,0,-0.1])
-      cylinder(d=1,h=12, $fn=50,center=Ccenter); //leg1
+      translate([Cpitch/2,0,-0.5])
+      cylinder(d=1,h=Cheight+1, $fn=50,center=Ccenter); //leg1
       translate([-Cpitch/2,0,0])
-      cylinder(d=1,h=12, $fn=50,center=Ccenter); //leg2
+      cylinder(d=1,h=Cheight+1, $fn=50,center=Ccenter); //leg2
     }
   }
 }
@@ -406,7 +406,7 @@ module Feet(){
 
 
  
- ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 ////////////////////// <- Holes Panel Manager -> ///////////////////////
 ////////////////////////////////////////////////////////////////////////
 
@@ -502,7 +502,8 @@ module FPanL(){
 
     color(Couleur1){
         translate ([-.5,0,0])
-        rotate([90,0,90])        translate([((Width - PCBWidth)/2) ,0,0]+[-2.3,0,0]){
+        rotate([90,0,90])        
+        translate([((Width - PCBWidth)/2) ,0,0]+[-2.3,0,0]){
 //                      <- Adding text from here ->   
       //(On/Off, Xpos, Ypos, "Font", Size, "Text",_halign = "center",_valign="top")  
         LText(1,54.61,FootHeight*.9,"Arial Black",3,"USB",_halign = "center",_valign="top");
@@ -536,7 +537,7 @@ if(BShell==1){
         color(Couleur1,1){
             union(){ 
         Coque();
-        translate( [3*Thick+2,Thick+5,0])SpeakerHolder(1,PCBLength-15.24,PCBWidth-FootPosX,11,Ccenter=true); //Speaker holder
+        translate( [3*Thick+2,Thick+5,5])SpeakerHolder(0,PCBLength-15.24,PCBWidth-FootPosX,11,Ccenter=true); //Speaker holder
         // Pied support PCB - PCB feet
         if (PCBFeet==1){// Feet
             // Pieds PCB - PCB feet (x4) 
@@ -550,7 +551,7 @@ if(BShell==1){
              translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
              //(On/Off, Xpos, Ypos, Diameter)
                 SpeakerHole(1,PCBLength-15.24,15.24,11,Ccenter=true); //Buzzer
-                SpeakerHole(1,PCBLength-15.24,PCBWidth-FootPosX,11,Ccenter=true); //Speaker
+                SpeakerHole(0,PCBLength-15.24,PCBWidth-FootPosX,11,Ccenter=true); //Speaker
                 CylinderHole(1,PCBLength-27.94,15.24,5); //LED1      
                 CylinderHole(1,PCBLength-40.64,15.24,5); //LED2
                 CylinderHole(1,PCBLength-53.34,15.24,5); //LED3
@@ -583,13 +584,13 @@ if(BButton ==1){
 
 if(LED_Standoff == 1){
 //(OnOff,Cx,Cy,Cdia,Cpitch,Cheight,Ccenter=false){ 
-    translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
-                LedSpacer(1,PCBLength-27.94,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1); //LED1      
-                LedSpacer(1,PCBLength-40.64,15.24,5,2.54); //LED2
-                LedSpacer(1,PCBLength-53.34,15.24,5,2.54); //LED3
-                LedSpacer(1,PCBLength-66.04,15.24,5,2.54); //LED4
-                LedSpacer(1,PCBLength-78.74,15.24,5,2.54); //LED5
-                LedSpacer(1,PCBLength-46.99,PCBWidth-FootPosX,5); //LED6 power
+    translate( [3*Thick+2,Thick+5,5]){//([-.5,0,0]){
+                LedSpacer(1,PCBLength-27.94,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED1      
+                LedSpacer(1,PCBLength-40.64,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED2
+                LedSpacer(1,PCBLength-53.34,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED3
+                LedSpacer(1,PCBLength-66.04,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED4
+                LedSpacer(1,PCBLength-78.74,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED5
+                LedSpacer(1,PCBLength-46.99,PCBWidth-FootPosX,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED6 power
                 }
 }
 
