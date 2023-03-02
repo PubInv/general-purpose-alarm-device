@@ -6,8 +6,8 @@
 
   (title_block
     (title "GeneralPurposeAlarmDevicePCB")
-    (date "2022-11-13")
-    (rev "2.0")
+    (date "2023-03-02")
+    (rev "2.1")
     (company "PublicInvention")
     (comment 1 "GNU Affero General Public License v3.0")
     (comment 2 "DrawnBy: (Forrest) Lee Erickson")
@@ -556,7 +556,6 @@
       )
     )
   )
-
 
   (junction (at 154.94 76.2) (diameter 0) (color 0 0 0 0)
     (uuid 070c87a5-6471-4a1c-943e-20bae21b0944)

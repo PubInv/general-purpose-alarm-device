@@ -6,8 +6,8 @@
 
   (title_block
     (title "GeneralPurposeAlarmDevicePCB")
-    (date "2022-11-13")
-    (rev "2.0")
+    (date "2023-03-02")
+    (rev "2.1")
     (company "PublicInvention")
     (comment 1 "GNU Affero General Public License v3.0")
     (comment 2 "DrawnBy: (Forrest) Lee Erickson")
@@ -1560,6 +1560,34 @@
         )
       )
     )
+    (symbol "GPAD_SCH_LIB:U_Box_V104_General_Alarm_Device_LED_Standoff" (in_bom yes) (on_board yes)
+      (property "Reference" "MF" (id 0) (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "U_Box_V104_General_Alarm_Device_LED_Standoff" (id 1) (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff" (id 2) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "" (id 3) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "U_Box_V104_General_Alarm_Device_LED_Standoff_0_1"
+        (circle (center -2.54 0) (radius 1.27)
+          (stroke (width 0) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (circle (center 0 0) (radius 4.0161)
+          (stroke (width 0) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (circle (center 2.54 0) (radius 1.27)
+          (stroke (width 0) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+      )
+    )
     (symbol "Regulator_Linear:LM7805_TO220" (pin_names (offset 0.254)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (id 0) (at -3.81 3.175 0)
         (effects (font (size 1.27 1.27)))
@@ -1736,7 +1764,6 @@
       )
     )
   )
-
 
   (junction (at 77.47 66.04) (diameter 0) (color 0 0 0 0)
     (uuid 00d52d44-0c76-4bd8-b2b6-29ac8ca10acc)
@@ -6543,6 +6570,23 @@
     (pin "2" (uuid 4ac0df1f-12dd-4169-ad18-543388eabbab))
   )
 
+  (symbol (lib_id "GPAD_SCH_LIB:U_Box_V104_General_Alarm_Device_LED_Standoff") (at 115.57 50.8 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 9df02aba-ac24-40d4-aded-7ee5c2a5a8e2)
+    (property "Reference" "MF103" (id 0) (at 120.65 49.5299 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "U_Box_V104_General_Alarm_Device_LED_Standoff" (id 1) (at 120.65 52.0699 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff" (id 2) (at 115.57 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (id 3) (at 115.57 50.8 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
   (symbol (lib_id "Device:C") (at 228.6 74.93 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid a3837f11-d586-40d6-9ade-cfb9601db25c)
@@ -7114,6 +7158,9 @@
     (path "/609751d7-2460-4a48-8bd6-11c461bf85a7"
       (reference "MF102") (unit 1) (value "ENCLOSURE_GPAD_VER1") (footprint "")
     )
+    (path "/9df02aba-ac24-40d4-aded-7ee5c2a5a8e2"
+      (reference "MF103") (unit 1) (value "U_Box_V104_General_Alarm_Device_LED_Standoff") (footprint "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff")
+    )
     (path "/00000000-0000-0000-0000-000062b871ee/fbcd2f6c-e85f-48ea-bb94-218dde6e448f"
       (reference "MF401") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "NA")
     )
@@ -7149,6 +7196,21 @@
     )
     (path "/00000000-0000-0000-0000-000062b871ee/c194e1f3-50cb-4345-a0d0-1443c5fe6fe5"
       (reference "MF412") (unit 1) (value "Nut_4-40_Lock,_External-Tooth") (footprint "NA")
+    )
+    (path "/00000000-0000-0000-0000-000062b3ac2f/ea964b5b-02f6-40ab-8892-c36a3db6b068"
+      (reference "MF601") (unit 1) (value "U_Box_V104_General_Alarm_Device_LED_Standoff") (footprint "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff")
+    )
+    (path "/00000000-0000-0000-0000-000062b3ac2f/da8e7b02-3ac8-446f-b0c5-b1d9f9707be2"
+      (reference "MF602") (unit 1) (value "U_Box_V104_General_Alarm_Device_LED_Standoff") (footprint "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff")
+    )
+    (path "/00000000-0000-0000-0000-000062b3ac2f/a2b6516e-9ff6-4381-a43b-e1824330249d"
+      (reference "MF603") (unit 1) (value "U_Box_V104_General_Alarm_Device_LED_Standoff") (footprint "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff")
+    )
+    (path "/00000000-0000-0000-0000-000062b3ac2f/7e8dabd8-9dd3-4f9c-89bb-fae59fdcc0f5"
+      (reference "MF604") (unit 1) (value "U_Box_V104_General_Alarm_Device_LED_Standoff") (footprint "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff")
+    )
+    (path "/00000000-0000-0000-0000-000062b3ac2f/420e9d6e-e67c-486c-8424-10e52e74b3ba"
+      (reference "MF605") (unit 1) (value "U_Box_V104_General_Alarm_Device_LED_Standoff") (footprint "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff")
     )
     (path "/00000000-0000-0000-0000-000062b3ac2f/00000000-0000-0000-0000-000062d15bd1"
       (reference "Q201") (unit 1) (value "MMBT2222A-7-F") (footprint "Package_TO_SOT_SMD:SOT-23")
