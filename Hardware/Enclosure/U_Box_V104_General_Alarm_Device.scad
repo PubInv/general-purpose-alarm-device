@@ -79,18 +79,18 @@ FootPosY         = 5.08;
 
 /* [STL element to export] */
 //Coque haut - Top shell
-TShell          = 1;// [0:No, 1:Yes]
+TShell          = 0;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
-BShell          = 1;// [0:No, 1:Yes]
+BShell          = 0;// [0:No, 1:Yes]
 //Panneau avant - Front panel
-FPanL           = 1;// [0:No, 1:Yes]
+FPanL           = 0;// [0:No, 1:Yes]
 //Panneau arrière - Back panel  
-BPanL           = 1;// [0:No, 1:Yes]
+BPanL           = 0;// [0:No, 1:Yes]
 //Buttons
-BButton         = 1;
+BButton         = 0;
 //show pcb
-PCB_View        = 1;
-
+PCB_View        = 0;
+LED_Standoff    = 1;
   
 /* [Hidden] */
 // - Couleur coque - Shell color  
@@ -262,6 +262,30 @@ module SpeakerHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
     }
 }
 
+//LED Spacer
+module LedSpacer(OnOff,Cx,Cy,Cdia,Cpitch,Cheight,Ccenter=false){ 
+  translate([Cx,Cy,0])
+  difference(){
+    cylinder(d=Cdia,Cheight, $fn=50,center=Ccenter); //spacer body
+    union(){
+      translate([Cpitch/2,0,-0.5])
+      cylinder(d=1,h=Cheight+1, $fn=50,center=Ccenter); //leg1
+      translate([-Cpitch/2,0,0])
+      cylinder(d=1,h=Cheight+1, $fn=50,center=Ccenter); //leg2
+    }
+  }
+}
+
+//Speaker Holder
+module SpeakerHolder(OnOff,Cx,Cy,Cdia,Ccenter=false){ 
+ if(OnOff==1){
+ translate([Cx,Cy,-Thick])
+        difference(){
+        cylinder(d=Cdia+Thick,10, $fn=50,center=Ccenter);
+        cylinder(d=Cdia,10, $fn=50,center=Ccenter);
+    }
+ }
+}
 //Button
 module ButtonSwitch(OnOff,Cx,Cy,Cdia,Ccenter=false){
     //difference(){
@@ -382,7 +406,7 @@ module Feet(){
 
 
  
- ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 ////////////////////// <- Holes Panel Manager -> ///////////////////////
 ////////////////////////////////////////////////////////////////////////
 
@@ -444,7 +468,7 @@ module CText(OnOff,Tx,Ty,Font,Size,TxtRadius,Angl,Turn,Content,_valign="baseline
               rotate([0,0,i*Angle+90+Turn])
               translate([0,TxtRadius,0]) {
                 linear_extrude(height = 0.5){
-                text(Content[i], font = Font, size = Size,  , halign = _halign,valign=_valign);
+                text(Content[i], font = Font, size = Size,   halign = _halign,valign=_valign);
                     }
                 }   
              }
@@ -478,7 +502,8 @@ module FPanL(){
 
     color(Couleur1){
         translate ([-.5,0,0])
-        rotate([90,0,90])        translate([((Width - PCBWidth)/2) ,0,0]+[-2.3,0,0]){
+        rotate([90,0,90])        
+        translate([((Width - PCBWidth)/2) ,0,0]+[-2.3,0,0]){
 //                      <- Adding text from here ->   
       //(On/Off, Xpos, Ypos, "Font", Size, "Text",_halign = "center",_valign="top")  
         LText(1,54.61,FootHeight*.9,"Arial Black",3,"USB",_halign = "center",_valign="top");
@@ -512,27 +537,34 @@ if(BShell==1){
         color(Couleur1,1){
             union(){ 
         Coque();
+        translate( [3*Thick+2,Thick+5,5])SpeakerHolder(0,PCBLength-15.24,PCBWidth-FootPosX,11,Ccenter=true); //Speaker holder
         // Pied support PCB - PCB feet
         if (PCBFeet==1){// Feet
             // Pieds PCB - PCB feet (x4) 
             translate([PCBPosX,PCBPosY,0]){ 
             Feet();
             }   
+            
         }
     }}
           color( Couleur1,1){
              translate( [3*Thick+2,Thick+5,0]){//([-.5,0,0]){
              //(On/Off, Xpos, Ypos, Diameter)
-                SpeakerHole(1,PCBLength-15.24,15.24,11,Ccenter=true); //speaker
-                CylinderHole(1,PCBLength-27.94,15.24,4.5); //LED1      
-                CylinderHole(1,PCBLength-40.64,15.24,4.5); //LED2
-                CylinderHole(1,PCBLength-53.34,15.24,4.5); //LED3
-                CylinderHole(1,PCBLength-66.04,15.24,4.5); //LED4
-                CylinderHole(1,PCBLength-78.74,15.24,4.5); //LED5
-                CylinderHole(1,PCBLength-46.99,PCBWidth-FootPosX,4.5); //LED6 power
+                SpeakerHole(1,PCBLength-15.24,15.24,11,Ccenter=true); //Buzzer
+                SpeakerHole(0,PCBLength-15.24,PCBWidth-FootPosX,11,Ccenter=true); //Speaker
+                CylinderHole(1,PCBLength-27.94,15.24,5); //LED1      
+                CylinderHole(1,PCBLength-40.64,15.24,5); //LED2
+                CylinderHole(1,PCBLength-53.34,15.24,5); //LED3
+                CylinderHole(1,PCBLength-66.04,15.24,5); //LED4
+                CylinderHole(1,PCBLength-78.74,15.24,5); //LED5
+                CylinderHole(1,PCBLength-46.99,PCBWidth-FootPosX,5); //LED6 power
+                
+               
+                
+                
              //(On/Off, Xpos,Ypos,Length,Width,Filet)
                 SquareHole(1,PCBLength-50.8,71.12,26,76,0,Ccenter=true);   //Display
-                CylinderHole(1,PCBLength-15.24,68.58,1); //reset hole
+                CylinderHole(1,PCBLength-15.24,68.58,2); //reset hole
                  //(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text",_halign = "center",_valign="top") 
                 rotate([0,180,0])translate( [0,0,-(Thick+0.7)])CText(1,-(PCBLength-10),31.75,"Arial Black",4,9,110,270,"MUTE");
                 CylinderHole(1,PCBLength-10,31.75,15); //Mute Button
@@ -549,6 +581,19 @@ if(BButton ==1){
     translate( [3*Thick+2,Thick+5,0])     
     ButtonSwitch(1,PCBLength-10,31.75,15); //Mute Button
 }
+
+if(LED_Standoff == 1){
+//(OnOff,Cx,Cy,Cdia,Cpitch,Cheight,Ccenter=false){ 
+    translate( [3*Thick+2,Thick+5,5]){//([-.5,0,0]){
+                LedSpacer(1,PCBLength-27.94,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED1      
+                LedSpacer(1,PCBLength-40.64,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED2
+                LedSpacer(1,PCBLength-53.34,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED3
+                LedSpacer(1,PCBLength-66.04,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED4
+                LedSpacer(1,PCBLength-78.74,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED5
+                LedSpacer(1,PCBLength-46.99,PCBWidth-FootPosX,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED6 power
+                }
+}
+
 if(PCB_View==1){
 //////////////////// - PCB only visible in the preview mode - /////////////////////    
     translate([3*Thick+2,Thick+5,Thick+FootHeight+PCBThick/2+.1]){
