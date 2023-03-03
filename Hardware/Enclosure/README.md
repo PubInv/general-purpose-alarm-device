@@ -7,7 +7,7 @@
 3. [U_Box_V104_General_Alarm_Device_Top.stl](U_Box_V104_General_Alarm_Device_Top.stl)
 4. [U_Box_V104_General_Alarm_Device_bottom.stl](U_Box_V104_General_Alarm_Device_bottom.stl)
 5. [U_Box_V104_General_Alarm_Device_button.stl](U_Box_V104_General_Alarm_Device_button.stl)
-6. [U_Box_V104_General_Alarm_Device_LED_Standoff.stl](U_Box_V104_General_Alarm_Device_LED_Standoff.stl)
+6. [U_Box_V104_General_Alarm_Device_LED_Standoff_single.stl](U_Box_V104_General_Alarm_Device_LED_Standoff_single.stl)  Six of these for each assembly are required.
 
 ### Folder(s)  
 **Speaker2W**  
