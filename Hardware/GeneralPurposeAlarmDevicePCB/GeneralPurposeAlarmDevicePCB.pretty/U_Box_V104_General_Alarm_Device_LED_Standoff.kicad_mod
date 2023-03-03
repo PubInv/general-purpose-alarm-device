@@ -22,10 +22,8 @@
   (fp_line (start 3.77 -1.58) (end 3.77 1.58) (layer "F.Fab") (width 0.1) (tstamp c50403b5-05bd-4f7f-a36d-e75755526d9a))
   (fp_line (start -1.68 -0.01) (end -1.68 -0.01) (layer "F.Fab") (width 0.1) (tstamp f8f0e476-a37c-4362-ab43-f39c127c6cec))
   (fp_arc (start 3.77 1.58) (mid -1.687431 0) (end 3.77 -1.58) (layer "F.Fab") (width 0.1) (tstamp 15114e3d-a7fa-436f-b35d-c3e1cb8bac2d))
-  (pad "1" thru_hole rect (at 0 0) (size 2 2) (drill 1) (layers *.Cu *.Mask) (tstamp 261e5251-1853-4901-b2a8-2d8208c42196))
-  (pad "2" thru_hole circle (at 2.54 0) (size 2 2) (drill 1) (layers *.Cu *.Mask) (tstamp 556d1e95-58dc-4d94-a78d-b6de9b6e53ec))
   (model "C:/Users/Public/Downloads/Arduino/PubInv/general-alarm-device/Hardware/Enclosure/LED_Standoff_V104.step"
-    (offset (xyz -12 -22.5 -5))
+    (offset (xyz 1.25 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )
