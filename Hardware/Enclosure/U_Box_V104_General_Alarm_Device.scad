@@ -81,7 +81,7 @@ FootPosY         = 5.08;
 //Coque haut - Top shell
 TShell          = 0;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
-BShell          = 0;// [0:No, 1:Yes]
+BShell          = 1;// [0:No, 1:Yes]
 //Panneau avant - Front panel
 FPanL           = 0;// [0:No, 1:Yes]
 //Panneau arrière - Back panel  
@@ -90,7 +90,7 @@ BPanL           = 0;// [0:No, 1:Yes]
 BButton         = 0;
 //show pcb
 PCB_View        = 0;
-LED_Standoff    = 1;
+LED_Standoff    = 0;
   
 /* [Hidden] */
 // - Couleur coque - Shell color  
@@ -249,7 +249,7 @@ module SpeakerHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
         for(j = [1  : 3]){
             
             rotate(a = 360*j/3,v = [0,0,1])
-        for(i = [0 : Cdia/60 : Cdia/2]){
+        for(i = [0.8 : Cdia/60 : Cdia/2]){
             rotate(a = 1*(i/Cdia)*360,v = [0,0,1])
             translate([i,i,0])
             
@@ -264,15 +264,24 @@ module SpeakerHole(OnOff,Cx,Cy,Cdia,Ccenter=false){
 
 //LED Spacer
 module LedSpacer(OnOff,Cx,Cy,Cdia,Cpitch,Cheight,Ccenter=false){ 
+  
   translate([Cx,Cy,0])
   difference(){
     cylinder(d=Cdia,Cheight, $fn=50,center=Ccenter); //spacer body
     union(){
+    hull(){
       translate([Cpitch/2,0,-0.5])
-      cylinder(d=1,h=Cheight+1, $fn=50,center=Ccenter); //leg1
-      translate([-Cpitch/2,0,0])
-      cylinder(d=1,h=Cheight+1, $fn=50,center=Ccenter); //leg2
+      cylinder(d=1.3,h=Cheight+1, $fn=50,center=Ccenter); //leg1
+      translate([Cdia/2,0,-0.5])
+      cylinder(d=1.3,h=Cheight+1, $fn=50,center=Ccenter); //leg2
     }
+    hull(){
+      translate([-Cpitch/2,0,-0.5])
+      cylinder(d=1.3,h=Cheight+1, $fn=50,center=Ccenter); //leg1
+      translate([-Cdia/2,0,-0.5])
+      cylinder(d=1.3,h=Cheight+1, $fn=50,center=Ccenter); //leg2
+    }
+  }
   }
 }
 
