@@ -575,7 +575,7 @@ if(BShell==1){
                 SquareHole(1,PCBLength-50.8,71.12,26,76,0,Ccenter=true);   //Display
                 CylinderHole(1,PCBLength-15.24,68.58,2); //reset hole
                  //(On/Off, Xpos, Ypos, "Font", Size, Diameter, Arc(Deg), Starting Angle(Deg),"Text",_halign = "center",_valign="top") 
-                rotate([0,180,0])translate( [0,0,-(Thick+0.7)])CText(1,-(PCBLength-10),31.75,"Arial Black",4,9,110,270,"MUTE");
+                rotate([0,180,0])translate( [0,0,-(Thick+.99)])CText(1,-(PCBLength-10),31.75,"Arial Black",4,9,110,270,"MUTE");
                 CylinderHole(1,PCBLength-10,31.75,15); //Mute Button
                 CylinderSpacer(1,PCBLength-10,31.75,15+Thick+m/2); //cutout for mute button
                 // SquareHole(1,PCBLength-63.87,33.12,1,1,0,Ccenter=true);   //testing
