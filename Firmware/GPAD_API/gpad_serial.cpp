@@ -117,6 +117,8 @@ void processSerial(Stream& serialport) {
       serialport.println();
       interpretBuffer(buf,rlen,serialport);
       // Now "light and scream"appropriately...
+
+      //uncomment later
       annunciateAlarmLevel();
       printAlarmState(serialport);
      }

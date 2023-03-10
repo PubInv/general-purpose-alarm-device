@@ -33,8 +33,12 @@ extern char AlarmMessageBuffer[81];
 
 //For LCD
 #include <LiquidCrystal_I2C.h>
-LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
 
+//GPAD hardware
+//LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
+
+//test LCD
+LiquidCrystal_I2C lcd(0x27, 16, 2); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
 
 //Setup for buzzer.
 //const int BUZZER_TEST_FREQ = 130; // One below middle C3. About 67 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
@@ -86,10 +90,15 @@ void robot_api_setup(Stream* serialport) {
   pinMode(SWITCH_MUTE, INPUT_PULLUP);
   for (int i = 0; i < NUM_LIGHTS; i++) {
     serialport->println(LIGHT[i]);
-    pinMode(LIGHT[i], OUTPUT);
+
+    //uncomment later
+    //pinMode(LIGHT[i], OUTPUT);
   }
 
-  muteButton.set(SWITCH_MUTE, myCallback);
+  serialport->println(F("about to set up mute callback"));
+
+  //muteButton.set(SWITCH_MUTE, myCallback);
+
   serialport->println(F("end set up GPIO pins"));
 
   printInstructions(*serialport);
@@ -187,10 +196,15 @@ void annunciateAlarmLevel() {
   for(int i = currentLevel; i < NUM_LIGHTS; i++) {
     digitalWrite(LIGHT[i],LOW);
   }
-  if (!currentlyMuted) {
-    tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION);
-  } else {
-    noTone(TONE_PIN);
-  }
+
+
+  //you will change this
+  // if (!currentlyMuted) {
+  //   tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION);
+  // } else {
+  //   noTone(TONE_PIN);
+  // }
+
+  //uncomment later
   showStatusLCD(currentLevel,currentlyMuted,AlarmMessageBuffer);
 }

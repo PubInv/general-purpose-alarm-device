@@ -84,12 +84,21 @@
 #define GPAD_VERSION1
 
 #ifdef GPAD_VERSION1 //The Version 1 PCB.
-//#define SS 7                                // nCS aka /SS Input on GPAD Version 1 PCB.
-#define LED_PIN PD3                         // for GPAD LIGHT0
-#define BUTTON_PIN PD2                      //GPAD Button to GND,  10K Resistor to +5V.
+//#define SS 7        
+                        // nCS aka /SS Input on GPAD Version 1 PCB.
+//(Uno pin convention)                        
+//#define LED_PIN PD3                         // for GPAD LIGHT0
 
+//(Uno pin convention) 
+//#define BUTTON_PIN PD2                     //GPAD Button to GND,  10K Resistor to +5V.
+
+#define LED_PIN 15
+#define BUTTON_PIN 34
 #else //The proof of concept wiring.
+
+
 #define LED_PIN 7
+
 #define BUTTON_PIN 2                          //Button to GND, 10K Resistor to +5V.
 
 
@@ -124,12 +133,19 @@ void setup_spi()
   pinMode(MOSI, INPUT);    //This works for Peripheral
   pinMode(MISO, OUTPUT);    //try this.
   pinMode(SCK, INPUT);                  //Sets clock as input
-  SPCR |= _BV(SPE);                       //Turn on SPI in Peripheral Mode
+
+  //working on it separately for now
+  //SPCR |= _BV(SPE);                       //Turn on SPI in Peripheral Mode
 
   // turn on interrupts
-  SPCR |= _BV(SPIE);
+  
+  //working on it separately for now
+  //SPCR |= _BV(SPIE);
+
   isReceived_SPI = false;
-  SPI.attachInterrupt();                  //Interuupt ON is set for SPI commnucation
+
+  
+  //SPI.attachInterrupt();                  //Interuupt ON is set for SPI commnucation
 
 }//end setup()
 
@@ -138,10 +154,12 @@ void setup_spi()
 // I plan to add an index to this to handle the full message that we intend to receive.
 // However, I think this also needs a timeout to handle the problem of getting out of synch.
 
-ISR (SPI_STC_vect)                        //Inerrrput routine function
-{
-   receive_byte(SPDR);
-}//end ISR
+
+//commenting out because attempting to compile for esp32
+// ISR (SPI_STC_vect)                        //Inerrrput routine function
+// {
+//    receive_byte(SPDR);
+// }//end ISR
 
 
 void receive_byte(byte c)
@@ -229,7 +247,9 @@ void setup() {
   Serial.println(VERSION);
   robot_api_setup(&Serial);
 
-  setup_spi();
+
+  //uncomment later
+  //setup_spi();
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 
@@ -239,14 +259,21 @@ void setup() {
 unsigned long last_ms = 0;
 void loop() {
   
-  updateWink(); //The builtin LED
-  robot_api_loop();
+  //uncomment later
+  //updateWink(); //The builtin LED
+
+  //uncomment later
+  //robot_api_loop();
 
   // This is causing a hang!
+
+  //uncomment later
   processSerial(Serial);
 
   // Now try to read from the SPI Port!
-  updateFromSPI();
+
+  //uncomment later
+  //updateFromSPI();
 
   if (DEBUG > 1) {
     unsigned long ms = millis();

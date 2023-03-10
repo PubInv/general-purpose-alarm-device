@@ -24,6 +24,7 @@
 
 //Pin definitions.  Assign symbolic constant to Arduino pin numbers.
 //For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
+
 #define SWITCH_MUTE 2
 #define TONE_PIN 8
 #define LIGHT0 3
