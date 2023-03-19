@@ -306,7 +306,6 @@
   )
 
 
-
   (wire (pts (xy 189.23 102.87) (xy 198.12 102.87))
     (stroke (width 0) (type default) (color 0 0 0 0))
     (uuid 0ca24885-0f66-414d-acbf-4b062644fea1)
