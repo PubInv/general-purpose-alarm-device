@@ -7329,10 +7329,7 @@
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062ff8f7f"
       (reference "#PWR0607") (unit 1) (value "GND") (footprint "")
     )
-    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/005d8efd-40e7-4277-9553-a23c51efd4f8"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/04127bfb-c838-46d2-b016-5b0393fe5001"
+    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/0695ec97-9718-4c22-aecf-d944586aa2e0"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/bab23361-161f-4d2c-b2f8-f64c7f133367/45cfd373-6c0c-428f-82df-11d29f5ab383"
@@ -7345,6 +7342,9 @@
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/909557fe-79fd-47ed-8a97-4df2ebf3fe44"
+      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    )
+    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/9b5e8b69-4fd5-4bb0-80d5-648c5ca55591"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/38b69065-6ff4-4a2c-86af-59be3663a614/c0735391-0ed2-43af-af2b-eee9c95d179a"
@@ -7455,7 +7455,7 @@
     (path "/00000000-0000-0000-0000-000062bc4e7e/00000000-0000-0000-0000-000062be31fb"
       (reference "D501") (unit 1) (value "RED 0603") (footprint "LED_SMD:LED_0603_1608Metric")
     )
-    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/34444f3b-cc3a-486d-81c3-7c4ad13d559b"
+    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/f8503ff8-21be-410f-9a2e-4d69c26dcc87"
       (reference "D?") (unit 1) (value "RED 0603") (footprint "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062d8df8e"
@@ -7728,10 +7728,10 @@
     (path "/00000000-0000-0000-0000-000062dd8e5f/00000000-0000-0000-0000-000062de23f8"
       (reference "R605") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
-    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/460aaa6f-f8e9-4a6c-90b1-f35abf454608"
+    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/7bc363e7-dfaf-49e5-b460-3fda578dfdc8"
       (reference "R?") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
-    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/fea52e25-2e47-47e4-bfaa-7c48d3253b90"
+    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/8060aeae-0fea-4d55-8fea-becf1ac759da"
       (reference "R?") (unit 1) (value "330R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/7008cf90-b212-49d7-8b1b-23ef20575b82"
@@ -7791,9 +7791,6 @@
     (path "/00000000-0000-0000-0000-000062bc4e7e/00000000-0000-0000-0000-000062be3184"
       (reference "U501") (unit 1) (value "CH340E") (footprint "Package_SO:MSOP-10_3x3mm_P0.5mm")
     )
-    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/036d5086-0e53-4f85-b6a2-7e21c2eec84e"
-      (reference "U?") (unit 1) (value "ESP32-WROOM-32") (footprint "RF_Module:ESP32-WROOM-32")
-    )
     (path "/38b69065-6ff4-4a2c-86af-59be3663a614/47292164-0de3-4bf9-99b0-63979cffe80a"
       (reference "U?") (unit 1) (value "PAM8403") (footprint "PAM8403")
     )
@@ -7802,6 +7799,9 @@
     )
     (path "/9ed2bcca-6088-4ed1-8f1c-0fc0956e3b44"
       (reference "U?") (unit 1) (value "DFR0299") (footprint "MODULE_DFR0299")
+    )
+    (path "/e4ece687-a99a-419e-9d23-930e322b79e4/c3278ceb-c2b5-432a-ae4c-670ffe4d237b"
+      (reference "U?") (unit 1) (value "ESP32-WROOM-32") (footprint "RF_Module:ESP32-WROOM-32")
     )
     (path "/bab23361-161f-4d2c-b2f8-f64c7f133367/c396ea20-724a-4a97-a013-6a4ddab23e73"
       (reference "U?") (unit 1) (value "DFR0299") (footprint "MODULE_DFR0299")
