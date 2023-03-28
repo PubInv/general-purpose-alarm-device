@@ -22,6 +22,7 @@
 #include "robot_api.h"
 #include "alarm_api.h"
 #include "gpad_utility.h"
+#include "dfplayer.h"
 
 #include <DailyStruggleButton.h>
 DailyStruggleButton muteButton;
@@ -199,11 +200,13 @@ void annunciateAlarmLevel() {
 
 
   //you will change this
-  // if (!currentlyMuted) {
-  //   tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION);
-  // } else {
-  //   noTone(TONE_PIN);
-  // }
+    // tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION);
+      if(!currentlyMuted){
+        playMessage1(currentLevel);    
+      }
+      else if (currentlyMuted){
+        muting();
+      }
 
   //uncomment later
   showStatusLCD(currentLevel,currentlyMuted,AlarmMessageBuffer);

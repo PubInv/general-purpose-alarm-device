@@ -4,4 +4,5 @@
 
 void playMessage1(AlarmLevel currentLevel);
 void dfPlayer_setup();
+void muting();
 #endif

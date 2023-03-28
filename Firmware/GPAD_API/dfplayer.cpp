@@ -1,10 +1,12 @@
 #include "dfplayer.h"
 #include <DFRobotDFPlayerMini.h>
+
 DFRobotDFPlayerMini myDFPlayer;
 const char *SoundFileNames[] = { "A.wav","B.wav","C.wav","D.wav","E.wav","F.wav" };//audio files to output based on level
-
+//const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
 void dfPlayer_setup(){
 
+  
     Serial2.begin(9600);
 
     if (!myDFPlayer.begin(Serial2)) {
@@ -34,6 +36,14 @@ void dfPlayer_setup(){
 
 
 void playMessage1(AlarmLevel currentLevel){
-  myDFPlayer.previous();
-  Serial.println(SoundFileNames[currentLevel]);
+
+  //if the fileNumber matches the alarm level, play the track. 
+    
+      myDFPlayer.play((int)currentLevel + 1);
+     
+}
+
+
+void muting(){
+  myDFPlayer.stop();
 }

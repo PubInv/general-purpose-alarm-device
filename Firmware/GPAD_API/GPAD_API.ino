@@ -54,6 +54,7 @@
 #include "robot_api.h"
 #include "gpad_utility.h"
 #include "gpad_serial.h"
+#include "dfplayer.h"
 
 /* SPI_PERIPHERAL
    From: https://circuitdigest.com/microcontroller-projects/arduino-spi-communication-tutorial
@@ -250,6 +251,11 @@ void setup() {
 
   //uncomment later
   //setup_spi();
+
+  //DF Player setup
+  dfPlayer_setup();
+
+  
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 
