@@ -37,7 +37,7 @@ const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
 // assume the msg buffer will exist after this call.
 // str must be null-terminated string!
 int alarm_event(AlarmEvent& event,Stream &serialport) {
-    alarm(event.lvl,event.msg,serialport);
+    alarm((AlarmLevel)event.lvl,event.msg,serialport);
 }
 int alarm(AlarmLevel level,char *str,Stream &serialport) {
   if (!(level >= 0 && level < NUM_LEVELS)) {
