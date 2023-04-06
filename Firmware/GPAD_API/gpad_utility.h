@@ -23,9 +23,9 @@
 #include <Stream.h>
 
 
-#define PROG_NAME "******GPAD_API******"     //Descriptive name of this software, 20 characters.
+#define PROG_NAME "***GPAD_API_ESP32***"     //Descriptive name of this software, 20 characters.
 
-#define VERSION 0.07             //Version of this software
+#define VERSION 0.08             //Version of this software
 
 void printError(Stream &serialport);
 void printInstructions(Stream &serialport);
