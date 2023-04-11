@@ -81,7 +81,7 @@ FootPosY         = 5.08;
 //Coque haut - Top shell
 TShell          = 0;// [0:No, 1:Yes]
 //Coque bas- Bottom shell
-BShell          = 1;// [0:No, 1:Yes]
+BShell          = 0;// [0:No, 1:Yes]
 //Panneau avant - Front panel
 FPanL           = 0;// [0:No, 1:Yes]
 //Panneau arrière - Back panel  
@@ -91,7 +91,7 @@ BButton         = 0;
 //show pcb
 PCB_View        = 0;
 LED_Standoff    = 0;
-  
+LED_Standoff_Single    = 1; 
 /* [Hidden] */
 // - Couleur coque - Shell color  
 Couleur1        = "Orange";       
@@ -602,7 +602,11 @@ if(LED_Standoff == 1){
                 LedSpacer(1,PCBLength-46.99,PCBWidth-FootPosX,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false); //LED6 power
                 }
 }
-
+if(LED_Standoff_Single == 1){
+//(OnOff,Cx,Cy,Cdia,Cpitch,Cheight,Ccenter=false){ 
+  LedSpacer(1,PCBLength-27.94,15.24,5,2.54,Thick+FootHeight+PCBThick/2+.1-6,false);   
+                
+}
 if(PCB_View==1){
 //////////////////// - PCB only visible in the preview mode - /////////////////////    
     translate([3*Thick+2,Thick+5,Thick+FootHeight+PCBThick/2+.1]){
