@@ -56,6 +56,9 @@ LCD side components installed.</a>
 
 
 ### Electrical Tests
+Electrical tesets are in two parts. Unprogramed measurements made before programing the boot loader and other firmware and Programed measurements made after a boot loader and firmware have been placed into the microcontroler.
+
+#### Electrical Measurements before programing bootloader and firmware
 Measure and record by serial number the following electrical parameters.
 Investigate and correct abnormal measurements before applying power.  Remove J102 and J103 and retain if present. Note where they should be replaced.
 Start with no connections to the DUT (Device Under Test).
@@ -64,7 +67,7 @@ Start with no connections to the DUT (Device Under Test).
 
 **SPI Interface** Measure resistance to ground at J401 pin 5 as greater than **TBD** ohms.
 
-**VinV net** Measure resistance to ground at TP102 as greater than **TBD** ohms.
+**VinV net** Measure resistance to ground at TP102 as greater than **1 Meg** ohms.  This net is capacitive and the resistance measured will climb as the meter charges the net.
 
 **+5V net** Measure resistance to ground at TP103 +5 as greater than **TBD** ohms.
 
@@ -73,15 +76,23 @@ With a current limited supply set for 12V and maximum of **TBD** mA, apply power
 
 Check that the power LED D105 is lit and is RED.
 
-**+5V net** Measure the voltage of the +5V Net at TP105.
+**+5V net** Measure the voltage of the +5V Net at TP103.
 
 (FYI, a programmed DUT that has been powered up, and with display back light on, Hold the reset switch and measure current as about **61** mA)
+
+**Vo Intitial Set / LCD Contrast.**  
+With a volt meter, measure the voltage of the Vo pin of the LCD headder to ground. Adjust RV103 for 1.3 V.
+This is an initial guess. Later in the process will be the actual setting of the contrast.
 
 **Electrical Test Results Table**
 
 In Tennessee:
 * All resistance measured on 20Meg scale except R@5V net measured on 2K scale. Multi meter EMCO Model DMR-3800 unless noted.   
 * All current measured 200mA scale. Multi meter EMCO Model DMR-3800 unless noted.  
+
+Capture:
+DUT Serial Number, R@PowerJack, R@SPI Interface, R@Vin net, R@5V net, UnProgramCurrent, Volt@+5 TP103, FullCurrent mA, Vo Volts, Notes
+
 
 <table style="background-color:#DDDDEE">
   <tr><th>DUT Serial Number</th> <th>R@PowerJack</th> <th>R@SPI Interface</th> <th>R@Vin net</th> <th>R@5V net</th> <th>UnProgramCurrent</th> <th>Volt@+5 TP103</th><th>FullCurrent mA</th> <th>Vo Volts</th> <th>Notes</th></tr>
@@ -100,10 +111,14 @@ In Tennessee:
   <tr><td>13</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
   <tr><td>14</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>
   <tr><td>15</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> </tr>  
-</table>
+  <tr><td>16</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>???</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>17</td> <td>0.47</td> <td>Open</td> <td>3.5 Meg</td> <td>1.059K</td> <td>68.5 mA LCD ON </td> <td>5.02</td> <td>136 mA</td> <td>Vo=1.35</td><td> </td> </tr>  
+  </table>
 
 
 ### Load Firmware
+** Note: Loading firmware through the SPI interface is a manufacturing test of the SPI hardware components. **
+
 #### Load Bootloader
 Use an Arduino UNO as an ISP (Incircuit Serial Programmer) which will load the boot loader into the DUT.
 Cable Connect the ISP UNO to the DUT as follows:
@@ -139,7 +154,11 @@ Select the programmer type.
 In the Arduino IDE, select TOOLS > Burn Bootloader .  
 
 ![BurnBootLoader.gif](BurnBootLoader.gif)  
-Watch the progress bar in the IDE and look for success with the message "????Done ???" in the blue status bar.
+Watch the progress bar in the IDE and look for success with the message "Done burning bootloader." in the blue status bar.
+![DoneBurningBootloader.png](DoneBurningBootloader.png)
+
+Check that LED D102 is winking with a short on time and longer off time indicating that the boot loader has been loaded.  Untill any other sketch is loaded this is the bexpected behaviour of the unit under test.
+
 
 #### Load Factory Test Firmware.
 Connect a USB cable to the DUT. Note the COM port enumerated in Device Manager Ports(COM&LPT) drop down
@@ -155,7 +174,10 @@ Open a terminal to the COM port of the DUT and set for appropriate BAUD rate.
 Press the reset switch on the DUT and the LCD display should display a message. The terminal should display a boot message too. This example is of a RealTerminal connected to the DUT.
   
   ![DUT_TerminalBoot.gif](DUT_TerminalBoot.gif)
-  
+ 
+#### Electrical Measurements After programing bootloader and firmware
+Measure and record by serial number the following electrical parameters.
+ 
   Observe the current on the DUT. Press the Mute Switch S601 and the white LEDs D201-D205 should light. The Buzzer will make a sound. Record this full current in the table above.
    
   
