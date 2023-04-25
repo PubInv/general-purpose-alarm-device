@@ -21,6 +21,11 @@ Number 1 philips screw driver
 Diagonal or other flush cutting hand tool for lead trimming.
 Assembly fixture, detailed below.
 
+### Reference Material
+
+The most recent schematic is for Rev 2 PCB Assemblies is: [Schematic-GeneralPurposeAlarmDevicePCB-V2.2.pdf](/Hardware/GeneralPurposeAlarmDevicePCB/PDF/Schematic-GeneralPurposeAlarmDevicePCB-V2.2.pdf)
+
+
 ### Assembly Notes and Tips
 
 As received from JLCPCB.
