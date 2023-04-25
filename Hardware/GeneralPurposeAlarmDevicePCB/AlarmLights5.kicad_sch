@@ -6,8 +6,8 @@
 
   (title_block
     (title "GeneralPurposeAlarmDevicePCB")
-    (date "2023-03-02")
-    (rev "2.1")
+    (date "2023-04-25")
+    (rev "2.2")
     (company "PublicInvention")
     (comment 1 "GNU Affero General Public License v3.0")
     (comment 2 "DrawnBy: (Forrest) Lee Erickson")

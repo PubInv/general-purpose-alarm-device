@@ -6,8 +6,8 @@
 
   (title_block
     (title "GeneralPurposeAlarmDevicePCB")
-    (date "2023-03-02")
-    (rev "2.1")
+    (date "2023-04-25")
+    (rev "2.2")
     (company "PublicInvention")
     (comment 1 "GNU Affero General Public License v3.0")
     (comment 2 "DrawnBy: (Forrest) Lee Erickson")
@@ -6538,7 +6538,7 @@
     (in_bom yes) (on_board yes)
     (uuid 9db81953-12a5-4526-8251-7f652374b37b)
     (property "Reference" "R103" (id 0) (at 125.73 129.54 90))
-    (property "Value" "1K" (id 1) (at 123.19 130.81 90))
+    (property "Value" "DNI" (id 1) (at 123.19 130.81 90))
     (property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" (id 2) (at 122.428 130.81 90)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -7243,7 +7243,7 @@
       (reference "R102") (unit 1) (value "10K") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/9db81953-12a5-4526-8251-7f652374b37b"
-      (reference "R103") (unit 1) (value "1K") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+      (reference "R103") (unit 1) (value "DNI") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000062d57aa0"
       (reference "R104") (unit 1) (value "39R") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
