@@ -22,7 +22,7 @@ Files to fabricate an enclosure are detailed in this document: [LINK](./Enclosur
 ## GeneralPurposeAlarmDevicePCB
 Includes the KiCad files for schematic and PCBs.
 
-The most recent schematic is for Rev 2 PCB Assemblies is: [Schematic-GeneralPurposeAlarmDevicePCB-V2.2.pdf](//Hardware/GeneralPurposeAlarmDevicePCB/PDF/Schematic-GeneralPurposeAlarmDevicePCB-V2.2.pdf)
+The most recent schematic is for Rev 2 PCB Assemblies is: [Schematic-GeneralPurposeAlarmDevicePCB-V2.2.pdf](/Hardware/GeneralPurposeAlarmDevicePCB/PDF/Schematic-GeneralPurposeAlarmDevicePCB-V2.2.pdf)
 
 The most recent schematic is for Rev 1 PCB Assemblies is: [Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf](/Hardware/GeneralPurposeAlarmDevicePCB/PDF/Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf)
 
