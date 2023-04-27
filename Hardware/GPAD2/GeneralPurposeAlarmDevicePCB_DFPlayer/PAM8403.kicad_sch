@@ -4,6 +4,13 @@
 
   (paper "A4")
 
+  (title_block
+    (title "GeneralPurposeAlarmDevicePCB")
+    (date "2023-04-27")
+    (comment 1 "Drawn by Nguyen Vu")
+    (comment 2 "GPAD2 version")
+  )
+
   (lib_symbols
     (symbol "Device:Speaker" (pin_names (offset 0) hide) (in_bom yes) (on_board yes)
       (property "Reference" "LS" (id 0) (at 1.27 5.715 0)
@@ -231,6 +238,9 @@
   (junction (at 132.334 88.138) (diameter 0) (color 0 0 0 0)
     (uuid c3c64af0-32f6-413b-880d-97cbab455b92)
   )
+
+  (no_connect (at 161.29 96.266) (uuid 3b8e8dcb-67f8-463f-b60b-7a68867dcc17))
+  (no_connect (at 161.29 94.234) (uuid c0c332bd-df50-4965-955d-2b89f4a9ce87))
 
   (wire (pts (xy 161.29 88.392) (xy 161.544 88.392))
     (stroke (width 0) (type default) (color 0 0 0 0))
