@@ -3517,8 +3517,9 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid abd7fb74-5b31-4ae3-afce-31dcd4a8c988)
   )
-  (text "Note: Using 0603HandSolder for Rs and Cs." (at 161.29 170.18 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
+  (text "GPAD2 version (modified by hardware team)\nBryan's team: Nguyen Vu, Bryan Tran, Van Nguyen, Baraa Ahmad"
+    (at 161.29 170.18 0)
+    (effects (font (size 1.5 1.5) (thickness 0.4) bold) (justify left bottom))
     (uuid babf91dc-3dd4-4c77-bab3-076a5b702ed8)
   )
 

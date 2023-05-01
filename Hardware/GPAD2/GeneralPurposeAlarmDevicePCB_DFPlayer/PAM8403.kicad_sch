@@ -407,6 +407,12 @@
     (uuid f784d617-786f-4d3d-90e9-d454e29d646a)
   )
 
+  (text "GPAD2 version (modified by hardware team)\nBryan's team: Nguyen Vu, Bryan Tran, Van Nguyen, Baraa Ahmad"
+    (at 176.53 160.528 0)
+    (effects (font (size 1.5 1.5) (thickness 0.4) bold) (justify left bottom))
+    (uuid 09a5e255-7069-45fb-b5f5-e4fbd01bcbcd)
+  )
+
   (hierarchical_label "DacLeft" (shape input) (at 118.364 92.202 180)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid a374de6c-a9bf-4a67-93fd-35cee6c85499)

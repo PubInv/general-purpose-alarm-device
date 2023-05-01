@@ -309,6 +309,12 @@
     (uuid e14cdbb4-0640-4474-b1ab-b415089c37f8)
   )
 
+  (text "GPAD2 version (modified by hardware team)\nBryan's team: Nguyen Vu, Bryan Tran, Van Nguyen, Baraa Ahmad"
+    (at 177.038 159.766 0)
+    (effects (font (size 1.5 1.5) (thickness 0.4) bold) (justify left bottom))
+    (uuid f84035a1-7a11-44da-bdb3-c0ee170eff9d)
+  )
+
   (hierarchical_label "GPIO17" (shape input) (at 169.926 79.756 0)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 08d794ef-51e0-406d-a335-9407a67f212c)

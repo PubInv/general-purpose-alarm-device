@@ -6,11 +6,12 @@
 
   (title_block
     (title "GeneralPurposeAlarmDevicePCB")
-    (date "2022-11-13")
+    (date "2023-04-27")
     (rev "2.0")
     (company "PublicInvention")
     (comment 1 "GNU Affero General Public License v3.0")
     (comment 2 "DrawnBy: (Forrest) Lee Erickson")
+    (comment 3 "Redrawn by Nguyen Vu")
   )
 
   (lib_symbols
@@ -3811,8 +3812,9 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid abd7fb74-5b31-4ae3-afce-31dcd4a8c988)
   )
-  (text "Note: Using 0603HandSolder for Rs and Cs." (at 161.29 170.18 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
+  (text "GPAD2 version (modified by hardware team)\nBryan's team: Nguyen Vu, Bryan Tran, Van Nguyen, Baraa Ahmad"
+    (at 161.29 170.18 0)
+    (effects (font (size 1.5 1.5) (thickness 0.3) bold) (justify left bottom))
     (uuid babf91dc-3dd4-4c77-bab3-076a5b702ed8)
   )
 
@@ -6826,22 +6828,6 @@
     (pin "1" (uuid d441cd52-0e4e-45f1-953e-8a6ccac7f4eb))
   )
 
-  (symbol (lib_id "power:GND") (at 172.72 168.91 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 909557fe-79fd-47ed-8a97-4df2ebf3fe44)
-    (property "Reference" "#PWR?" (id 0) (at 172.72 175.26 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (id 1) (at 170.18 168.91 0))
-    (property "Footprint" "" (id 2) (at 172.72 168.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 172.72 168.91 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid d0edb210-b347-4ea4-b232-f77469ea4a4c))
-  )
-
   (symbol (lib_id "power:GND") (at 100.838 141.986 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 9958b0a3-b334-4366-9677-289f830373c8)
@@ -7423,9 +7409,6 @@
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/82769e0f-7c44-4d31-917b-dead4e115c95"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/909557fe-79fd-47ed-8a97-4df2ebf3fe44"
       (reference "#PWR?") (unit 1) (value "GND") (footprint "")
     )
     (path "/add1af14-d9e2-407f-bdb9-0a62583c5089"
