@@ -116,6 +116,10 @@ volatile byte peripheralReceived ;
 volatile bool procNewPacket = false;
 volatile byte indx = 0;
 volatile boolean process;
+int progressIndicator=1;
+
+int ledLevel;
+const long AUDIO_WAIT_TIME=5000;
 
 byte received_signal_raw_bytes[MAX_BUFFER_SIZE];
 
@@ -134,7 +138,7 @@ void setup_spi()
   pinMode(MOSI, INPUT);    //This works for Peripheral
   pinMode(MISO, OUTPUT);    //try this.
   pinMode(SCK, INPUT);                  //Sets clock as input
-
+       
   //working on it separately for now
   //SPCR |= _BV(SPE);                       //Turn on SPI in Peripheral Mode
 
@@ -236,6 +240,7 @@ void updateWink(void) {
 
 
 void setup() {
+  
   //Lets make the LED high near the start of setup for visual clue
   pinMode(LED_BUILTIN, OUTPUT);      // set the LED pin mode
   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
@@ -268,6 +273,7 @@ void loop() {
   //uncomment later
   //updateWink(); //The builtin LED
 
+
   //uncomment later
   //robot_api_loop();
 
@@ -280,6 +286,19 @@ void loop() {
 
   //uncomment later
   //updateFromSPI();
+    pinMode(2, OUTPUT);
+    pinMode(25, OUTPUT);
+    pinMode(24,OUTPUT);
+    pinMode(14, OUTPUT);
+    pinMode(26,OUTPUT);
+    pinMode(4, OUTPUT);
+
+    
+  
+    checkAlarmIteration(&Serial);
+    
+
+
 
   if (DEBUG > 1) {
     unsigned long ms = millis();
