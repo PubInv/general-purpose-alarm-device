@@ -17,14 +17,16 @@
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 */
-
 #ifndef ROBOT_API
 #define ROBOT_API 1
+
 #include <stream.h>
 
 //Pin definitions.  Assign symbolic constant to Arduino pin numbers.
 //For more information see: https://www.arduino.cc/en/Tutorial/Foundations/DigitalPins
-#define SWITCH_MUTE 2
+
+//#define SWITCH_MUTE 2. //uncomment later
+#define SWITCH_MUTE 16 //may need to change this. check later
 #define TONE_PIN 8
 #define LIGHT0 3
 #define LIGHT1 5
@@ -36,6 +38,7 @@
 void annunciateAlarmLevel();
 void clearLCD(void);
 void splashLCD(void);
+void checkAlarmIteration(Stream* serialport);
 
 // This module has to be initialized and called each time through the superloop
 void robot_api_setup(Stream* serialport);
