@@ -18,7 +18,10 @@ Files to fabricate an enclosure are detailed in this document: [LINK](./Enclosur
 
 ## GeneralPurposeAlarmDevicePCB
 Includes the KiCad files for schematic and PCBs.
-The most recent schematic is: [Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf](/Hardware/GeneralPurposeAlarmDevicePCB/PDF/Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf)
+A PDF of the Rev 2 schematic is: [Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf](/Hardware/GeneralPurposeAlarmDevicePCB/PDF/Schematic-GeneralPurposeAlarmDevicePCB-V1.2pdf.pdf)  
+
+Here follows a link that will open a web page views of the schematic pages and PCB files.
+[View KiCad files with on line viewer](https://github.com/PubInv/general-alarm-device/tree/main/Hardware/GeneralPurposeAlarmDevicePCB)  
 
 ## Manufacturing
 Includes the spread sheets for Bill of Materials (BOMs) to fabricate the GeneralPurposeAlarmDevicePCB.  
