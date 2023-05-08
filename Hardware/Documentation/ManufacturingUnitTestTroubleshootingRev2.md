@@ -62,7 +62,7 @@ Place the LEDs in to the PCB so that the flat cathode side coorisponds to the si
 <a href="./PICS/Rev2/fingerlift_led.png"><img src="./PICS/Rev2/fingerlift_led.png" alt="Lift LED and reflow solder" width="200"> Life LED and reflow solder for a flush fit on the PCB.</a>   
 For each LED, after soldering one lead, holding the LED from below up to the spacer and the PCB and reheat / reflow the solder for a flush fit.  
 Solder the second lead on the LED.  
-Trim the excess LED leads.
+Trim the excess leads on RV301 and the LEDs.
 
 **Rejoice! Electircal assembly is done.**  
 <a href="./PICS/Rev2/PWA_FrontView.png"><img src="./PICS/Rev2/PWA_FrontView.png" alt="PWA_FrontView.png" width="200">  
