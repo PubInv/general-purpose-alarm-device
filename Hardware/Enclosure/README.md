@@ -6,7 +6,7 @@
 2. [U_Box_V105_General_Alarm_Device_FrontPanel.stl](U_Box_V105_General_Alarm_Device_FrontPanel.stl)
 3. [U_Box_V105_General_Alarm_Device_Top.stl](U_Box_V105_General_Alarm_Device_Top.stl)
 4. [U_Box_V105_General_Alarm_Device_bottom.stl](U_Box_V105_General_Alarm_Device_bottom.stl)
-5. [U_Box_V105_General_Alarm_Device_button.stl](U_Box_V105_General_Alarm_Device_button.stl)
+5. [U_Box_V104_General_Alarm_Device_button.stl](U_Box_V104_General_Alarm_Device_button.stl)
 6. [U_Box_V105_GPAD_LED_Standoff_single.stl](U_Box_V105_GPAD_LED_Standoff_single.stl)  Six of these for each assembly are required.
 7. The file [BackPanel_Hanging-CompoundV2.stl](BackPanel_Hanging-CompoundV2.stl) is an alternate part with features to allow hanging the GPAD with tie wraps to a horizontal bar.
 
