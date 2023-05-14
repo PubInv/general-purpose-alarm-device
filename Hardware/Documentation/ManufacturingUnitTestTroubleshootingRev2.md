@@ -127,6 +127,19 @@ DUT Serial Number, R@PowerJack, R@SPI Interface, R@Vin net, R@5V net, UnProgramC
   <tr><td>15</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> </tr>  
   <tr><td>16</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
   <tr><td>17</td> <td>0.47</td> <td>Open</td> <td>3.5 Meg</td> <td>1.059K</td> <td>68.5 mA LCD ON </td> <td>5.02</td> <td>136 mA</td> <td>Vo=1.35</td><td> </td> </tr>  
+  <tr><td>18</td> <td>open</td> <td>Open</td> <td>Open</td> <td>1.059K</td> <td>62.6 mA LCD ON </td> <td>5.03</td> <td>134 mA</td> <td>Vo=1.34</td><td> </td> </tr>  
+  <tr><td>19</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>20</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>21td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>22</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>23</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>24</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>25</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>26</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>27</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>28</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>29</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
+  <tr><td>30</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
   </table>
 
 
