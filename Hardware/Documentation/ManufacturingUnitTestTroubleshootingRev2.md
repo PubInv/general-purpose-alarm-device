@@ -97,6 +97,7 @@ Check that the power LED D105 is lit and is RED.
 **Vo Intitial Set / LCD Contrast.**  
 With a volt meter, measure the voltage of the Vo pin of the LCD headder to ground. Adjust RV103 for 1.3 V.
 This is an initial guess. Later in the process will be the actual setting of the contrast.
+See records of measurements of some of the Rev 2 assemblies at this issue: https://github.com/PubInv/general-alarm-device/issues/217 #217
 
 **Electrical Test Results Table**
 
