@@ -108,7 +108,6 @@ In Tennessee:
 Capture:
 DUT Serial Number, R@PowerJack, R@SPI Interface, R@Vin net, R@5V net, UnProgramCurrent, Volt@+5 TP103, FullCurrent mA, Vo Volts, Notes
 
-
 <table style="background-color:#DDDDEE">
   <tr><th>DUT Serial Number</th> <th>R@PowerJack</th> <th>R@SPI Interface</th> <th>R@Vin net</th> <th>R@5V net</th> <th>UnProgramCurrent</th> <th>Volt@+5 TP103</th><th>FullCurrent mA</th> <th>Vo Volts</th> <th>Notes</th></tr>
   <tr><td>01</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> </tr>
@@ -143,6 +142,8 @@ DUT Serial Number, R@PowerJack, R@SPI Interface, R@Vin net, R@5V net, UnProgramC
   <tr><td>30</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
   </table>
 
+### Additional Measurements of current with in subcircuits  Issue #230
+See data from Rev2 build here:  https://github.com/PubInv/general-alarm-device/issues/230
 
 ### Load Firmware
 ** Note: Loading firmware through the SPI interface is a manufacturing test of the SPI hardware components. **
