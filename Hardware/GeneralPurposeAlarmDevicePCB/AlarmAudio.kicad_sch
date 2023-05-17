@@ -1136,7 +1136,7 @@
     (uuid fda9bea1-33fc-4152-a25c-478e51212b38)
   )
 
-  (image (at 260.35 175.26) (scale 0.75)
+  (image (at 255.27 179.07) (scale 0.75)
     (uuid e4f05a09-9bd4-4e9b-a131-93a86b5eb416)
     (data
       iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAYAAAAUg66AAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -1501,6 +1501,11 @@
     )
   )
 
+  (text "Notes on Buzzer vendors\nUnits assembled with these two parts are similar in performance but not identical.  \nAssemble SN 22, 23, 24 and 25 with Digikey number 433-WST-1210T-ND.\nAssemble SN 26, 27, 28 , 29 and 30 with Digikey number 102-CMI-1295-0585T-ND.\n\nAnd Assemble SN ?16, 17, 18 , and 19? with Adafruit part.\n"
+    (at 168.91 30.48 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 32c96388-aa00-4c99-9675-5717a6270c8f)
+  )
   (text "For external \"speaker\"." (at 195.58 59.69 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 8fcb48a6-785d-47e9-b6a1-7938f723526c)
