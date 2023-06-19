@@ -271,4 +271,4 @@ It requires libraries:
 # License
 
 * [Firmware: Affero GPL 3.0](https://www.gnu.org/licenses/agpl-3.0.en.html#license-text)
-* [Hardware CERN Open Hardware License Version 2 - Strongly Reciprocal](https://ohwr.org/cern_ohl_s_v2.txt)
+* [CERN Open Hardware Licence Version 2 - Strongly Reciprocal](https://ohwr.org/cern_ohl_s_v2.txt)
