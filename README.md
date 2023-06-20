@@ -1,4 +1,4 @@
-# General Purpose Alarm Device
+# General Purpose Alarm Device v2.0
 AKA the GPAD.
 
 Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
