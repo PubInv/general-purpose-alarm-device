@@ -21,7 +21,6 @@
 #include "gpad_utility.h"
 
 
-
 // here is the abstract "state" of the machine,
 // completely independent of hardware.
 // This is very simple version of what is probably needed.
@@ -31,15 +30,18 @@
 // all alarm management.
 AlarmLevel currentLevel = silent;
 bool currentlyMuted = false;
-char AlarmMessageBuffer[128];
+char AlarmMessageBuffer[MAX_BUFFER_SIZE];
 const char *AlarmNames[] = { "OK   ","INFO.","PROB.","WARN ","CRIT.","PANIC" };
 
 // This is the abstract alarm function. It CANNOT
 // assume the msg buffer will exist after this call.
 // str must be null-terminated string!
+int alarm_event(AlarmEvent& event,Stream &serialport) {
+    alarm(event.lvl,event.msg,serialport);
+}
 int alarm(AlarmLevel level,char *str,Stream &serialport) {
   if (!(level >= 0 && level < NUM_LEVELS)) {
-    serialport.println("Bad Level!");
+    serialport.println(F("Bad Level!"));
     printError(serialport);
     return -1;
   }

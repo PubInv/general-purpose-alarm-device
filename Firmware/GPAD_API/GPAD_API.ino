@@ -96,17 +96,23 @@
 #endif
 
 #define DEBUG_SPI 0
-
+#define DEBUG 1
 
 #include<SPI.h>
 
 volatile boolean isReceived_SPI;
 volatile byte peripheralReceived ;
 
+volatile bool procNewPacket = false;
+volatile byte indx = 0;
+volatile boolean process;
+
+byte received_signal_raw_bytes[MAX_BUFFER_SIZE];
+
 void setup_spi()
 {
-  Serial.println("Starting SPI Peripheral.");
-  Serial.print("Pin for SS: ");
+  Serial.println(F("Starting SPI Peripheral."));
+  Serial.print(F("Pin for SS: "));
   Serial.println(SS);
 
   pinMode(BUTTON_PIN, INPUT);              // Setting pin 2 as INPUT
@@ -114,55 +120,74 @@ void setup_spi()
 
   //  SPI.begin();    // IMPORTANT. Do not set SPI.begin for a peripherial device.
   pinMode(SS, INPUT_PULLUP); //Sets SS as input for peripherial
-  pinMode(MOSI, OUTPUT);    //This works for Peripheral
+  // Why is this not input?
+  pinMode(MOSI, INPUT);    //This works for Peripheral
   pinMode(MISO, OUTPUT);    //try this.
   pinMode(SCK, INPUT);                  //Sets clock as input
   SPCR |= _BV(SPE);                       //Turn on SPI in Peripheral Mode
+
+  // turn on interrupts
+  SPCR |= _BV(SPIE);
   isReceived_SPI = false;
   SPI.attachInterrupt();                  //Interuupt ON is set for SPI commnucation
+
 }//end setup()
 
 //ISRs
+// This is the original...
+// I plan to add an index to this to handle the full message that we intend to receive.
+// However, I think this also needs a timeout to handle the problem of getting out of synch.
+
 ISR (SPI_STC_vect)                        //Inerrrput routine function
 {
-  peripheralReceived = SPDR;         // Value received from controller if store in variable peripheralReceived
-  isReceived_SPI = true;                        //Sets isReceived_SPI as True
+   receive_byte(SPDR);
 }//end ISR
 
-//Functions
-void updateFromSPI() {
-  volatile byte peripheralSend;
 
-  if (isReceived_SPI)                           //Logic to SET LED ON OR OFF depending upon the value recerived from controller
-  { // Act on the received data.
-    if (peripheralReceived == 1)
-    {
-      digitalWrite(LED_PIN, HIGH);        //Sets pin 7 as HIGH LED ON
-      //          Serial.println("Peripheral LED ON");
-    } else
-    {
-      digitalWrite(LED_PIN, LOW);         //Sets pin 7 as LOW LED OFF
-      //          Serial.println("Peripheral LED OFF");
+void receive_byte(byte c)
+{
+  // byte c = SPDR; // read byte from SPI Data Register
+  if (indx < sizeof received_signal_raw_bytes) {
+    received_signal_raw_bytes[indx] = c; // save data in the next index in the array received_signal_raw_bytes
+    indx++;
+  }
+  if (indx >= sizeof received_signal_raw_bytes) {
+    process = true;
+  }
+}
+
+
+void updateFromSPI()
+{
+  if(process)
+  {
+    AlarmEvent event;
+    event.lvl = (AlarmLevel) received_signal_raw_bytes[0];
+    for(int i = 0; i < MAX_MSG_LEN; i++) {
+      event.msg[i] = (char) received_signal_raw_bytes[1+i];
     }
 
-    // Send return SPI data. Lets use a button for this example.
-    peripheralSend = digitalRead(BUTTON_PIN);
-    SPDR = peripheralSend;    //SPDR register of data to be shiffted out.
-    if (DEBUG_SPI > 0) {
-      Serial.print("SPI_PERIPHERAL, isReceived_SPI: ");
-      Serial.println(peripheralReceived);
+    if (DEBUG > 1) {
+      Serial.print(F("LVL: "));
+      Serial.println(event.lvl);
+      Serial.println(event.msg);
     }
-  }// end received
-}//end function updateFromSPI
+    alarm((AlarmLevel) event.lvl, event.msg,Serial);
+    annunciateAlarmLevel();
+  
+    indx = 0;
+    process = false;
 
+  }
+}
 
 // #define VERSION 0.02             //Version of this software
 #define BAUDRATE 115200
 // #define BAUDRATE 57600
 // Let's have a 10 minute time out to allow people to compose strings by hand, but not
 // to leave data our there forever
-#define SERIAL_TIMEOUT_MS 600000
-
+// #define SERIAL_TIMEOUT_MS 600000
+#define SERIAL_TIMEOUT_MS 1000
 
 //Set LED wink parameters
 const int HIGH_TIME_LED_MS = 800;    //time in milliseconds
@@ -201,19 +226,34 @@ void setup() {
   Serial.begin(BAUDRATE);
   delay(100);                         //Wait before sending the first data to terminal
   Serial.setTimeout(SERIAL_TIMEOUT_MS);
-
+  Serial.println(VERSION);
   robot_api_setup(&Serial);
 
   setup_spi();
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
+
+  Serial.println(F("Done With Setup!"));
 }// end of setup()
 
+unsigned long last_ms = 0;
 void loop() {
+  
   updateWink(); //The builtin LED
   robot_api_loop();
+
+  // This is causing a hang!
   processSerial(Serial);
 
   // Now try to read from the SPI Port!
   updateFromSPI();
+
+  if (DEBUG > 1) {
+    unsigned long ms = millis();
+    if ((ms - last_ms) > 3000) {
+      Serial.println("INDX :");
+      Serial.println(indx);
+      last_ms = ms;
+    }
+  }
 }

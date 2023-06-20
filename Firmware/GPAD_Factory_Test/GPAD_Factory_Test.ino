@@ -32,7 +32,7 @@
 */
 
 #define PROG_NAME "****FACTORY TEST****"     //Descriptive name of this software, 20 characters.
-#define VERSION 1.30                         //Version of this software
+#define VERSION 1.32                         //Version of this software
 #define BAUDRATE 115200
 
 //Set LED wink parameters
@@ -42,7 +42,7 @@ unsigned long lastLEDtime_ms = 0;
 unsigned long nextLEDchangee_ms = 100; //time in ms.
 
 //Setup for buzzer.
-//const int BUZZER_TEST_FREQ = 130; // One below middle C3. About 67 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
+// const int BUZZER_TEST_FREQ = 130; // One below middle C3. About 67 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
 //const int BUZZER_TEST_FREQ = 260; // Middle C4. About ?? db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
 //const int BUZZER_TEST_FREQ = 1000; //About 76 db, 3" x 4.875" 8 Ohm speakers no cabinet at 1 Meter.
 const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10 cm.  The specified frequencey for the Version 1 buzzer.
@@ -74,6 +74,7 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define NACK_DATA     3
 #define OTHER_ERROR   4
 #define TIMEOUT       5
+#define WIRE_TIMEOUT  3000    //From the Arduino reference example
 
 //Test Groups
 #define TG_SWITCH_MUTE 0
@@ -98,15 +99,16 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
 #define ADDRESS_TARGET  0x38u   // primary target
 #define NUM_I2C         1       // number of I2C devices
 
+//DailyStruggleButton
+#define LONG_PRESS_TIME     1000
+#define MULTI_HIT_TIME      600
+#define MULTI_HIT_TARGET    2
+#define DEBOUNCE_TIME       55
+DailyStruggleButton switchMute;   // create instance of DSB
+
 //Allow indexing to LIGHT[] by symbolic name. So LIGHT0 is first and so on.
 int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
 const int NUM_LIGHTS = sizeof(LIGHT)/sizeof(LIGHT[0]);
-
-//DailyStruggleButton
-unsigned int longPressTime = 1000;
-unsigned int multiHitTime = 400;
-byte multiHitTarget = 2;
-DailyStruggleButton switchMute;   // create instance of DSB
 
 //Testing
 byte ASCII = 33;                // for more info see: https://www.asciitable.com/
@@ -119,6 +121,8 @@ const byte testGroups = 5;      // number of test groups to cycle through
 bool printStatus = false;       // for printing once during loop()
 bool autoToggle = false;        // to enable/disable automated toggling through tests
 bool buzzer = false;            // driving buzzer
+bool scanI2C_flag = true;      // for continuous scan
+bool errorI2C_flag = false;      // for I2C scanning
 unsigned long lastToggleTime_ms = 0;  // for autoToggle exclusively
 unsigned long lastTestTime_ms = 0;    // generic - ONLY for mutually exclusive events
 
@@ -157,106 +161,215 @@ void splashLCD(void) {
   lcd.setCursor(0, 0);
   lcd.print(PROG_NAME);
   lcd.setCursor(3, 1);
-  lcd.print("GPAD Starting");
+  lcd.print(F("GPAD Starting"));
   lcd.setCursor(0, 2);
-  lcd.print("by PubInv & SPEC");
+  lcd.print(F("by PubInv & SPEC"));
   lcd.setCursor(0, 3);
-  lcd.print("Version: ");
+  lcd.print(F("Version: "));
   lcd.print(VERSION);
 }// end splashLCD
 
 //Portions of this copied from example i2c_scanner
 //Scan I2C
-void scanI2C(void) {
+void singleScanI2C(void) {
   Serial.println ();
-  Serial.print("Target primary address: ");
+  Serial.print(F("Target primary address: "));
   Serial.print(ADDRESS_TARGET, DEC);
-  Serial.print(" (0x");
+  Serial.print(F(" (0x"));
   Serial.print(ADDRESS_TARGET, HEX);
-  Serial.println (")");
-  Serial.print("Target number of I2C devices: ");
+  Serial.println (F(")"));
+  Serial.print(F("Target number of I2C devices: "));
   Serial.println(NUM_I2C, DEC);
-  Serial.println ("I2C scanner. Scanning ...");
+  Serial.println (F("I2C scanner. Scanning ..."));
 
   bool targetFound = false;
   const byte scanStart = 8;
   const byte scanEnd = 120;
-  const byte scanRange = scanEnd - scanStart;
   byte endCode[6] = { 0 };    // returns no. of addresses per return code (max 6 codes).
   
-  Wire.begin();
   for (byte i = scanStart; i < scanEnd; i++)  // scan fully range of addresses
   {
     Wire.beginTransmission (i);
     endCode[Wire.endTransmission()]++;  // tally up return codes
     if (Wire.endTransmission () == 0)
     {
-      Serial.print ("Found address: ");
+      Serial.print (F("Found address: "));
       Serial.print (i, DEC);
-      Serial.print (" (0x");
+      Serial.print (F(" (0x"));
       Serial.print (i, HEX);
-      Serial.print (")");
+      Serial.print (F(")"));
       if (i == ADDRESS_TARGET) { 
-        Serial.println(" [TARGET ADDRESS]"); 
+        Serial.println(F(" [TARGET ADDRESS]")); 
         targetFound = true; 
       }
       else { 
-        Serial.println(" [NON-TARGET ADDRESS]"); 
+        Serial.println(F(" [NON-TARGET ADDRESS]")); 
       }
       delay (1);  // maybe unneeded?
     } // end of good response
   } // end of for loop
-  Serial.println ("Done.");
+  Serial.println (F("Done."));
   
   if (!targetFound) {
-    Serial.println("Target primary address NOT FOUND.");
+    Serial.println(F("Target primary address NOT FOUND."));
   }
 
   if (endCode[SUCCESS] == NUM_I2C) {   // found expected number of devices.
-    Serial.print("Found ");
+    Serial.print(F("Found "));
     Serial.print(endCode[SUCCESS], DEC);
-    Serial.print(" device(s).");
-    Serial.println(" [TARGET NUMBER]");
+    Serial.print(F(" device(s)."));
+    Serial.println(F(" [TARGET NUMBER]"));
   }
-  else {   // print error codes regardless...
+  else {   // print error codes if found unexpected no. of devices...
     if (endCode[SUCCESS]) {       // found something, but not expected number
-      Serial.print("Found ");
+      Serial.print(F("Found "));
       Serial.print(endCode[SUCCESS], DEC);
-      Serial.print(" device(s).");
-      Serial.println(" [NON-TARGET NUMBER]");
+      Serial.print(F(" device(s)."));
+      Serial.println(F(" [NON-TARGET NUMBER]"));
     }
     else {                        // found nothing
-      Serial.println("NO DEVICE FOUND.");
+      Serial.println(F("NO DEVICE FOUND."));
     }
     // Print error message(s):
     if (endCode[OVERFLOW]) {   
-      Serial.println("ERROR: Data too long to fit in transmit buffer. [x");
+      Serial.print(F("ERROR: Data too long to fit in transmit buffer. [x"));
       Serial.print(endCode[OVERFLOW], DEC);
-      Serial.println(" address(es)]");
+      Serial.println(F(" address(es)]"));
     }
     if (endCode[NACK_ADDRESS]) {
-      Serial.print("ERROR: Received NACK on transmit of address. [x");
+      Serial.print(F("ERROR: Received NACK on transmit of address. [x"));
       Serial.print(endCode[NACK_ADDRESS], DEC);
-      Serial.println(" address(es)]"); 
+      Serial.println(F(" address(es)]")); 
     }
     if (endCode[NACK_DATA]) {
-      Serial.println("ERROR: Received NACK on transmit of data. [x");
+      Serial.print(F("ERROR: Received NACK on transmit of data. [x"));
       Serial.print(endCode[NACK_DATA], DEC);
-      Serial.println(" address(es)]");
+      Serial.println(F(" address(es)]"));
     }
     if (endCode[OTHER_ERROR]) {
-      Serial.println("ERROR: Other error. [x");
+      Serial.print(F("ERROR: Other error. [x"));
       Serial.print(endCode[OTHER_ERROR], DEC);
-      Serial.println(" address(es)]");
+      Serial.println(F(" address(es)]"));
     }
     if (endCode[TIMEOUT]) {
-      Serial.println("ERROR: Timeout. [x");
+      Serial.print(F("ERROR: Timeout. [x"));
       Serial.print(endCode[TIMEOUT], DEC);
-      Serial.println(" address(es)]");
+      Serial.println(F(" address(es)]"));
     }
   }//end serial prints
   Serial.println();
-}//end scanI2C()
+}//end singleScanI2C()
+
+void scanI2C(void) {
+  if (!scanI2C_flag) { return; }
+  const byte scanStart = 8;
+  const byte scanEnd = 120;
+  bool targetFound = false;
+  byte endCode[6] = { 0 };    // returns no. of addresses per return code (max 6 codes).
+
+  for (byte i = scanStart; i < scanEnd; i++)  // fully scan range of addresses
+  {
+    Wire.beginTransmission(i);
+    byte errorCode = Wire.endTransmission();
+    endCode[errorCode]++;   // tally up return codes ONCE per press
+     
+    static unsigned long lastSuccessTime = 0;
+    const unsigned long successInterval = 1000;
+    const unsigned long successTime = millis();
+    switch (errorCode) {
+    case SUCCESS:
+      if (successTime - lastSuccessTime < successInterval) { break; } // print in intervals
+      Serial.print(F("Found address: "));
+      Serial.print(i, DEC);
+      Serial.print(F(" (0x"));
+      Serial.print(i, HEX);
+      Serial.print(F(")"));
+      if (i == ADDRESS_TARGET) { 
+        Serial.println(F(" [TARGET ADDRESS]")); 
+      }
+      else { 
+        Serial.println(F(" [NON-TARGET ADDRESS]")); 
+      }
+      targetFound = true;
+      lastSuccessTime = successTime;
+      break;
+      
+    case TIMEOUT:
+      if (i == ADDRESS_TARGET) {
+        Serial.println();
+        Serial.println(F("ERROR [TARGET ADDRESS]"));
+        delay(100);
+        Wire.clearWireTimeoutFlag();
+        byte request = 1;
+        Serial.print(F("Requesting "));
+        Serial.print(request);
+        Serial.println(F(" byte from address..."));
+        byte len = Wire.requestFrom(ADDRESS_TARGET, request); // request 1 byte
+        if (!len) {
+          Serial.println(F("Error occured when reading:"));
+          if (Wire.getWireTimeoutFlag()) { Serial.println(F("TIMEOUT ERROR [TARGET ADDRESS]")); }
+        }
+        else {  // if (len)
+          Serial.println(F("Successfully read from target address!"));
+        }
+        errorI2C_flag = true;
+        scanI2C_flag = false;
+        delay(100);
+      }// end if ADDRESS_TARGET
+      break;
+    }// end switch-case
+  } // end of for loop
+  
+  if (!errorI2C_flag) { return; }
+  Serial.println();
+  Serial.println(F("Breakdown:"));
+  if (endCode[SUCCESS] == NUM_I2C) {   // found expected number of devices.
+    Serial.print(F("Found "));
+    Serial.print(endCode[SUCCESS], DEC);
+    Serial.print(F(" device(s)."));
+    Serial.println(F(" [TARGET NUMBER]"));
+  }
+  else {   // print error codes if found unexpected no. of devices...
+    if (endCode[SUCCESS]) {       // found something, but not expected number
+      Serial.print(F("Found "));
+      Serial.print(endCode[SUCCESS], DEC);
+      Serial.print(F(" device(s)."));
+      Serial.println(F(" [NON-TARGET NUMBER]"));
+    }
+    else {                        // found nothing
+      Serial.println(F("NO DEVICE FOUND."));
+    }
+    // Print error message(s):
+    if (endCode[OVERFLOW]) {   
+      Serial.print(F("ERROR: Data too long to fit in transmit buffer. [x"));
+      Serial.print(endCode[OVERFLOW], DEC);
+      Serial.println(F(" address(es)]"));
+    }
+    if (endCode[NACK_ADDRESS]) {
+      Serial.print(F("ERROR: Received NACK on transmit of address. [x"));
+      Serial.print(endCode[NACK_ADDRESS], DEC);
+      Serial.println(F(" address(es)]")); 
+    }
+    if (endCode[NACK_DATA]) {
+      Serial.print(F("ERROR: Received NACK on transmit of data. [x"));
+      Serial.print(endCode[NACK_DATA], DEC);
+      Serial.println(F(" address(es)]"));
+    }
+    if (endCode[OTHER_ERROR]) {
+      Serial.print(F("ERROR: Other error. [x"));
+      Serial.print(endCode[OTHER_ERROR], DEC);
+      Serial.println(F(" address(es)]"));
+    }
+    if (endCode[TIMEOUT]) {
+      Serial.print(F("ERROR: Timeout. [x"));
+      Serial.print(endCode[TIMEOUT], DEC);
+      Serial.println(F(" address(es)]"));
+    }
+  }// end if (endCode[])
+  Serial.println();
+  Serial.println(F("Press Mute Switch to clear error."));
+  Serial.println();
+}// end scanI2C
 
 // test functions
 void testSwitchMute(byte switchStatus) {
@@ -266,19 +379,19 @@ void testSwitchMute(byte switchStatus) {
 
   switch (switchStatus) {
     case onPress:
-      Serial.println("Switch pressed.");
+      Serial.println(F("Switch pressed."));
       break;
 
     case onRelease:
-      Serial.println("Switch released.");
+      Serial.println(F("Switch released."));
       break;
 
     case onLongPress:
-      Serial.println("Switch long-pressed.");
+      Serial.println(F("Switch long-pressed."));
       break;
 
     case onMultiHit:
-      Serial.println("Switch multi-pressed.");            
+      Serial.println(F("Switch multi-pressed."));            
       break;
   }// end <switchStatus> switch-case
 }// end testSwitchMute
@@ -302,7 +415,7 @@ void testLEDs(void) {
     case T_LED_BUILTIN:             // wink built-in LED
       updateWink();
       if (!printStatus) {    // print once
-        Serial.println("Now winking built-in LED.");   
+        Serial.println(F("Now winking built-in LED."));   
         printStatus = true;
       }
       break;
@@ -318,7 +431,7 @@ void testLEDs(void) {
       }
 
       if (!printStatus) {   // print once
-        Serial.print("Now individually driving LIGHT ");
+        Serial.print(F("Now individually driving LIGHT "));
         Serial.println(testEachLight, DEC);  
         printStatus = true;
       }
@@ -335,7 +448,7 @@ void testLEDs(void) {
       }
 
       if (!printStatus) {   // print once
-        Serial.print("Now driving all but LIGHT ");
+        Serial.print(F("Now driving all but LIGHT "));
         Serial.println(testEachLight, DEC);  
         printStatus = true;         
       }
@@ -347,9 +460,9 @@ void testLEDs(void) {
       }
 
       if (!printStatus) {   // print once
-        Serial.print("Now driving all ");
+        Serial.print(F("Now driving all "));
         Serial.print(NUM_LIGHTS, DEC);
-        Serial.println(" Lights.");
+        Serial.println(F(" Lights."));
         printStatus = true;
       }      
       break;
@@ -370,9 +483,9 @@ void testBuzzer(void) {
     case T_BUZZER_CONT:  // Continuous buzzing
       tone(TONE_PIN, BUZZER_TEST_FREQ);
       if (!printStatus) {    // print once
-        Serial.print("Continuously driving Buzzer at tone frequency: ");
+        Serial.print(F("Continuously driving Buzzer at tone frequency: "));
         Serial.print(BUZZER_TEST_FREQ);
-        Serial.println(" Hz");   
+        Serial.println(F(" Hz"));   
         printStatus = true;
       }
       break;
@@ -395,11 +508,11 @@ void testBuzzer(void) {
       
       if (!printStatus) {    // print once
         uint16_t pulseFreq = (uint16_t)(2*buzzTime_ms/1000);
-        Serial.print("Intermittently (~");
+        Serial.print(F("Intermittently (~"));
         Serial.print(pulseFreq, DEC);
-        Serial.print(" Hz) driving Buzzer at tone frequency: ");
+        Serial.print(F(" Hz) driving Buzzer at tone frequency: "));
         Serial.print(BUZZER_TEST_FREQ);
-        Serial.println(" Hz");  
+        Serial.println(F(" Hz"));  
         printStatus = true;
       }
       break;
@@ -412,16 +525,12 @@ void stopTestBuzzer(void) {
 }//end stopTestBuzzer()
 
 void testI2C(void) {
-  if (!printStatus) {      // do once
-    Serial.println("Start I2C scan");
-    scanI2C();
-    Serial.println("End I2C scan");
-    printStatus = true;
-  }
+  scanI2C();
+  // potentially more to add...
 }// end testI2C()
 
 void testLCD(void) {
-  byte fillChar[8] {
+  byte fillChar[8] PROGMEM {
     0b11111,
     0b11111,
     0b11111,
@@ -431,7 +540,7 @@ void testLCD(void) {
     0b11111,
     0b11111
   };
-  byte voidChar[8] {
+  byte voidChar[8] PROGMEM {
     0b00000,
     0b00000,
     0b00000,
@@ -466,7 +575,7 @@ void testLCD(void) {
     case T_BACKLIGHT:
       if (!printStatus) {    // do once
         lcd.clear();
-        Serial.println("Now testing backlight.");
+        Serial.println(F("Now testing backlight."));
         printStatus = true;
       }
       lcd.backlight();
@@ -480,7 +589,7 @@ void testLCD(void) {
             lcd.write(indxFill);
           }// end columns
         }// end rows   
-        Serial.println("Now testing for dead pixels.");
+        Serial.println(F("Now testing for dead pixels."));
         printStatus = true;
       }
       break;
@@ -494,11 +603,11 @@ void testLCD(void) {
             else { lcd.write(indxFill); }
           }// end columns
         }// end rows
-        Serial.print("Now testing grid coordinate (");
+        Serial.print(F("Now testing grid coordinate ("));
         Serial.print(charCountX);
-        Serial.print(", ");
+        Serial.print(F(", "));
         Serial.print(charCountY);
-        Serial.println(") against filled background.");
+        Serial.println(F(") against filled background."));
         charCountX = ++charCountX % 20;             // move to next coord..
         if (charCountX == 0) { charCountY = ++charCountY % 4; } 
         lastTestTime_ms = ms;
@@ -514,11 +623,11 @@ void testLCD(void) {
             else { lcd.write(indxVoid); }
           }// end columns
         }// end rows
-        Serial.print("Now testing grid coordinate (");
+        Serial.print(F("Now testing grid coordinate ("));
         Serial.print(charCountX);
-        Serial.print(", ");
+        Serial.print(F(", "));
         Serial.print(charCountY);
-        Serial.println(") against clear background.");
+        Serial.println(F(") against clear background."));
         charCountX = ++charCountX % 20;             // move to next coord..
         if (charCountX == 0) { charCountY = ++charCountY % 4; } 
         lastTestTime_ms = ms;
@@ -534,9 +643,9 @@ void testLCD(void) {
             lcd.print(testChar);
           }// end columns
         }// end rows
-        Serial.print("Now printing character '");
+        Serial.print(F("Now printing character '"));
         Serial.print(testChar);
-        Serial.println("'");
+        Serial.println(F("'"));
         ASCII = ++ASCII % 127;              // loop ASCII        
         if (ASCII == 0) { ASCII = 33; }     // between 33->127
         lastTestTime_ms = ms;
@@ -604,27 +713,27 @@ void testGroupPrint(void) {   // for displaying to serial monitor
   switch (testGroup) {
     case TG_SWITCH_MUTE:
       Serial.println();
-      Serial.println("*** Now testing Mute Switch functionality. ***");
+      Serial.println(F("*** Now testing Mute Switch functionality. ***"));
       break;
 
     case TG_LEDS:
       Serial.println();
-      Serial.println("*** Now testing LED functionality. ***");
+      Serial.println(F("*** Now testing LED functionality. ***"));
       break;
 
     case TG_BUZZER:
       Serial.println();
-      Serial.println("*** Now testing Buzzer functionality. ***");
+      Serial.println(F("*** Now testing Buzzer functionality. ***"));
       break;
 
     case TG_I2C:
       Serial.println();
-      Serial.println("*** Now testing I2C functionality. ***");
+      Serial.println(F("*** Now testing I2C functionality. ***"));
       break;
 
     case TG_LCD:
       Serial.println();
-      Serial.println("*** Now testing LCD functionality. ***");
+      Serial.println(F("*** Now testing LCD functionality. ***"));
       break;
   }
 }// end testGroupPrint()
@@ -639,32 +748,43 @@ void setup() {
   Serial.begin(BAUDRATE);
   delay(100);                         //Wait before sending the first data to terminal
 
-  Serial.print("FactoryTest V");
+  Serial.print(F("FactoryTest V"));
   Serial.println(VERSION);
-  Serial.println("Start I2C scan");
-  scanI2C();
-  Serial.println("End I2C scan");
+
+  Serial.println(F("Start I2C scan"));
+  Wire.begin();
+  Wire.setWireTimeout(WIRE_TIMEOUT, true);
+  singleScanI2C();
+  Serial.println(F("End I2C scan"));
   
   lcd.init();                      // initialize the lcd
-  Serial.println("Clear LCD");
+  Serial.println(F("Clear LCD"));
   clearLCD();
   delay(100);
-  Serial.println("Start LCD splash");
+  Serial.println(F("Start LCD splash"));
   splashLCD();
   delay(3000);
-  Serial.println("End LCD splash");
+  Serial.println(F("End LCD splash"));
 
-  Serial.println("Set up GPIO pins");
+  Serial.println(F("Set up GPIO pins"));  // mute switch, LEDs, 
   switchMute.set(SWITCH_MUTE, switchMuteEvent, INT_PULL_UP);
-  switchMute.enableLongPress(longPressTime);
-  switchMute.enableMultiHit(multiHitTime, multiHitTarget);
+  switchMute.enableLongPress(LONG_PRESS_TIME);
+  switchMute.enableMultiHit(MULTI_HIT_TIME, MULTI_HIT_TARGET);
+  switchMute.setDebounceTime(DEBOUNCE_TIME);
+
   for (int i = 0; i < NUM_LIGHTS; i++) {
     Serial.println(LIGHT[i]);
     pinMode(LIGHT[i], OUTPUT);
   }
-  Serial.println("End set up GPIO pins");
+  Serial.println(F("End set up GPIO pins"));
   
+  Serial.println(F("\nFactory Test Instructions:"));
+  Serial.println(F("Shortpress on the Mute Button to see 'switch press' or 'switch release'."));
+  Serial.println(F("Longpress on the Mute Button to toggle the auto test."));
+  Serial.println(F("Multipress on the Mute Button to step through tests."));
+  Serial.println();
   testGroupPrint();   // print first, default test message
+
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
 }// end of setup()
 
@@ -673,12 +793,24 @@ void loop() {
   testGroupFunctions();
 }//end loop()
 
+void toggleScanI2C() {
+  if (testGroup != TG_I2C) { return; }
+  scanI2C_flag = !scanI2C_flag;
+  if (errorI2C_flag) {   // clear error flag
+    errorI2C_flag = false;
+    Serial.println(F("Recommencing I2C scan..."));
+  }
+  if (scanI2C_flag) { Serial.println(F("--- BEGIN I2C SCAN ---")); }
+  else { Serial.println(F("--- TERMINATE I2C SCAN ---")); Serial.println(); }
+}
+
 void switchMuteEvent(byte switchStatus) {
   switch (switchStatus) {
     case onPress:
       testSwitchMute(switchStatus);
       printStatus = false;
       testCount++;
+      toggleScanI2C();
       break;
 
     case onRelease:
@@ -688,8 +820,8 @@ void switchMuteEvent(byte switchStatus) {
     case onLongPress:
       testSwitchMute(switchStatus);
       autoToggle ^= true;
-      if (autoToggle) { Serial.println("-- Auto-toggle mode enabled. --"); }
-      else { Serial.println("-- Auto-toggle mode disabled. --"); }
+      if (autoToggle) { Serial.println(F("-- Auto-toggle mode enabled. --")); }
+      else { Serial.println(F("-- Auto-toggle mode disabled. --")); }
       break;
 
     case onMultiHit:

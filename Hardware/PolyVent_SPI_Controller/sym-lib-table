@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name "blank_card-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/blank_card-eagle-import.kicad_sym")(options "")(descr ""))
+  (lib (name "PolyVent")(type "KiCad")(uri "${KIPRJMOD}/PolyVent.kicad_sym")(options "")(descr ""))
 )

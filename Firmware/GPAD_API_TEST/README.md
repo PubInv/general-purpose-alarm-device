@@ -12,7 +12,7 @@ File names and descriptions.
 * GPAD_API_TEST_2LFOnly.LF.txt Similar to GPAD_API_TEST_1 but with messages added. This file has LF end terminations.
 * GPAD_API_TEST_3LF_Only.LF.txt This file has help command and only Alarms with messages and only LF end terminations.
 * GPAD_API_TEST_ALPHANUM1.LF.txt This file has upper case, lower case and numeric test characters `~!@#$%^&*()-_=+.[]{}\|;:'",<.>/?
-* GPAD_API_TEST_LONGLINE.LF.txt This file has very long line of alphan numeric text.
+* GPAD_API_TEST_LONGLINE.LF.txt This file has very long line of alphanumeric text.
 
 ## Cases of Using RealTerm and XVII32
 RealTerm is set up for a 4000 mSecond end of line delay.
