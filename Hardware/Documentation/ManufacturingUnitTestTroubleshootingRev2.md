@@ -63,6 +63,7 @@ Place the LEDs in to the PCB so that the flat cathode side coorisponds to the si
 For each LED, after soldering one lead, holding the LED from below up to the spacer and the PCB and reheat / reflow the solder for a flush fit.  
 Solder the second lead on the LED.  
 Trim the excess leads on RV301 and the LEDs.
+> *Assembly Tip:* [Sharpie Oil-Based Paint Markers](https://www.sharpie.com/markers/chalk-paint-markers/sharpie-oil-based-paint-markers-fine-point/SAP_37371PP.html) can be used to mark polarity on LED standoffs and mark PCB's version, serial number and programming status of the microprocessor.
 
 **Rejoice! Electircal assembly is done.**  
 <a href="./PICS/Rev2/PWA_FrontView.png"><img src="./PICS/Rev2/PWA_FrontView.png" alt="PWA_FrontView.png" width="200">  
