@@ -3,6 +3,8 @@ AKA the GPAD.
 
 Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
 
+The GPAD is [Certified Open Source Hardware by OSHWA](https://certification.oshwa.org/us002352.html).
+
 GPAD in Prototype Enclosure of Summer 2022
 ![https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG](https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG)
 
