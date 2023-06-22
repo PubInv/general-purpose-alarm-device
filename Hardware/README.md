@@ -12,7 +12,7 @@ Folders for the hardware designed as GPAD (or related such as the PolyVent_SPI_C
 Documentation for the fabrication of the Version 1 GPAD.
 Photos of units under assembly and a document [ManufacturingUnitTestTroubleshooting.md](./Documentation/ManufacturingUnitTestTroubleshooting.md)
 
-[Manufacturing Documentation for Version 2 PCB](ManufacturingUnitTestTroubleshootingRev2.md)
+[Manufacturing Documentation for Version 2 PCB](./Documentation/ManufacturingUnitTestTroubleshootingRev2.md)
 Details how to assemble the Printed Wiring Assemblies as received from JLCPCB version 2 PCBs of March 2023. Includes testing and troubleshooting notes.
 
 ## Enclosure

@@ -1,12 +1,27 @@
-/* SPI_CONTROLLER
+/* GPAD_API_SPI_CONTROLLER.ino
+
+  GPAD_API_SPI_CONTROLLER.ino - Controller code for using one GPAD to control another.
+
+  Copyright (C) 2023 Forrest Lee Erickson
+
+  This program includes free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+
+  See the GNU Affero General Public License for more details.
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  
    From: https://circuitdigest.com/microcontroller-projects/arduino-spi-communication-tutorial
    Modified by Forrest Lee Erickson 20220523
    Change to Controller/Peripheral termonology
    Change variable names for start with lowercase. Constants to uper case.
    Controller Arduino Code:
-   License: Dedicated to the Public Domain
-   Warrenty: This program is designed to kill and render the earth uninhabitable,
-   however it is not guaranteed to do so.
    20220524 Get working with the SPI_PERIPHERAL sketch.
    20220525 The SCK period is about 250nS as set up.
    20220927 Change for button to have internal pull up.  Add Resistor and LED from pins 7 to 6.

@@ -1,4 +1,4 @@
-# General Purpose Alarm Device
+# General Purpose Alarm Device v2.0
 AKA the GPAD.
 
 Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
@@ -162,8 +162,7 @@ Public Invention does not wish to become a manufacturer; but we will impartially
 # Modular Software Architecture
 
 As this is intended to be a long-term project that will evolve and potentially have many volunteers. The basic software architecture is captured in this diagram:
-
-![GPAD Architecture (2)](https://user-images.githubusercontent.com/5296671/201504069-9260b594-3c7b-4899-a1a7-5bb99ea7c8cb.png)
+![GPAD Architecture (3)](https://github.com/PubInv/general-alarm-device/assets/5296671/7f6ec16f-2bee-4acb-a10e-cb6991504d04)
 
 
 # The Simplest API
@@ -271,5 +270,5 @@ It requires libraries:
 
 # License
 
-* Firmware: GLP 3
-* Hardware CERN Open Hardware License Version 2 - Strongly Reciprocal
+* [Firmware: Affero GPL 3.0](https://www.gnu.org/licenses/agpl-3.0.en.html#license-text)
+* [CERN Open Hardware Licence Version 2 - Strongly Reciprocal](https://ohwr.org/cern_ohl_s_v2.txt)
