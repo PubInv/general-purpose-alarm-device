@@ -3,6 +3,11 @@ AKA the GPAD.
 
 Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
 
+The GPAD is Certified Open Source Hardware by OSHWA. Our OSHWA UID is [US002352](https://certification.oshwa.org/us002352.html).
+
+![GPAD_OSHWA](https://github.com/PubInv/general-purpose-alarm-device/assets/5296671/29422091-91a7-4646-a39d-9bfc92c0540c)
+
+
 GPAD in Prototype Enclosure of Summer 2022
 ![https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG](https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG)
 
