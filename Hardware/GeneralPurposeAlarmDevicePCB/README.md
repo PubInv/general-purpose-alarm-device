@@ -22,7 +22,7 @@ These are Rev 2 files.
 
 ##  SPI Peripherial Pins  
 The connector is JR12 6P6C and pin 1 is on the left when the connector is held with the contact pins up and facing the observer.  
-Note the GPAD is a 5V logic level periphieral device. Level shifters must be used when controlled by a 3.3V device.  
+Note the GPAD is a 5V logic level peripheral device. Level shifters must be used when controlled by a 3.3V device.  
 | **Pin#** 	| **Signal Name** 	| **Note**                                            	|
 |----------	|-----------------	|-----------------------------------------------------	|
 | 1        	| nCS             	| Active low                                          	|
