@@ -32,12 +32,12 @@
 #define LIGHT3 9
 #define LIGHT4 7
 
-
-void annunciateAlarmLevel();
+void unchanged_anunicateAlarmLevel(Stream *serialport);
+void annunciateAlarmLevel(Stream *serialport);
 void clearLCD(void);
 void splashLCD(void);
 
 // This module has to be initialized and called each time through the superloop
-void robot_api_setup(Stream* serialport);
+void robot_api_setup(Stream *serialport);
 void robot_api_loop();
 #endif

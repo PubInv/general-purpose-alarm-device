@@ -34,7 +34,7 @@ typedef struct {
                 char msg[MAX_MSG_LEN+1];
                } AlarmEvent;
 
-int alarm_event(AlarmEvent& event,Stream &serialport);
-int alarm(AlarmLevel level,char *str,Stream &serialport);
+int alarm_event(AlarmEvent& event,Stream *serialport);
+int alarm(AlarmLevel level,char *str,Stream *serialport);
 
 #endif

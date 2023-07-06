@@ -42,7 +42,7 @@ This is a simple protocol:
 CD\n
 where C is an character, and D is a single digit.
 */
-void interpretBuffer(char *buf,int rlen,Stream& serialport) {
+void interpretBuffer(char *buf,int rlen,Stream *serialport) {
   if (rlen < 1) {
     printError(serialport);
     return; // no action
@@ -58,15 +58,15 @@ void interpretBuffer(char *buf,int rlen,Stream& serialport) {
   }
   char C = buf[0];
 
-  serialport.print(F("Command: "));
-  serialport.println(C);
+  serialport->print(F("Command: "));
+  serialport->println(C);
   switch (C) {
     case 's':
-      serialport.println(F("Muting Case!"));
+      serialport->println(F("Muting Case!"));
       currentlyMuted = true;
       break;
     case 'u':
-      serialport.println(F("UnMuting Case!"));
+      serialport->println(F("UnMuting Case!"));
       currentlyMuted = false;
       break;
     case 'h': // help
@@ -78,7 +78,7 @@ void interpretBuffer(char *buf,int rlen,Stream& serialport) {
     // Arguably when we support mulitple states this will become more complicated.
       char D = buf[1];
       int N = D - '0';
-      serialport.println(N);
+      serialport->println(N);
       char msg[61];
       msg[0] = '\0';
       strcpy(msg, buf+2);
@@ -89,35 +89,35 @@ void interpretBuffer(char *buf,int rlen,Stream& serialport) {
       break;
     }
     default:
-      serialport.println(F("Unknown Command"));
+      serialport->println(F("Unknown Command"));
       break;
   }
-  serialport.println(F("currentlyMuted : "));
-  serialport.println(currentlyMuted);
-  serialport.println(F("interpret Done"));
+  serialport->println(F("currentlyMuted : "));
+  serialport->println(currentlyMuted);
+  serialport->println(F("interpret Done"));
 }
 
-void processSerial(Stream& serialport) {
+void processSerial(Stream *serialport) {
    // Now see if we have a serial command
     int rlen;
     // TODO: This code can probably hang; it needs to have
     // timeouts added!
-    if (serialport.available() > 0) {
+    if (serialport->available() > 0) {
       // read the incoming bytes:
-      serialport.print(F("Read A"));
-      int rlen = serialport.readBytesUntil('\n', buf, COMMAND_BUFFER_SIZE);
-         serialport.print(F("Read B"));
+      serialport->print(F("Read A"));
+      int rlen = serialport->readBytesUntil('\n', buf, COMMAND_BUFFER_SIZE);
+         serialport->print(F("Read B"));
       // readBytesUntil does not terminate the string!
       buf[rlen] = '\0';
       // prints the received data
-      serialport.print(F("I received: "));
-      serialport.print(rlen);
+      serialport->print(F("I received: "));
+      serialport->print(rlen);
       for(int i = 0; i < rlen; i++)
-        serialport.print(buf[i]);
-      serialport.println();
+        serialport->print(buf[i]);
+      serialport->println();
       interpretBuffer(buf,rlen,serialport);
       // Now "light and scream"appropriately...
-      annunciateAlarmLevel();
+      annunciateAlarmLevel(serialport);
       printAlarmState(serialport);
      }
 }

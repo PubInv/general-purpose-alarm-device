@@ -22,5 +22,5 @@
 #define GPAD_SERIAL 1
 #include <Stream.h>
 
-void processSerial(Stream& serialport);
+void processSerial(Stream *serialport);
 #endif

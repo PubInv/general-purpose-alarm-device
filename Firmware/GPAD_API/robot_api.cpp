@@ -44,10 +44,31 @@ const int BUZZER_TEST_FREQ = 4000; // Buzzers, 3 V 4kHz 60dB @ 3V, 10 cm.  The s
 
 const int BUZZER_LVL_FREQ_HZ[]= {0,128,256,512,1024,2048};
 
+// This as an attempt to program recognizable "songs" for each alarm level that accomplish
+// both informativeness and urgency mapping. The is is to use an index into the buzzer 
+// level frequencies above, so we can use an unsigned char. We can break the whole
+// sequence into 100ms chunks. A 0 will make a "rest" or a silence.a length of 60 will
+// give us a 6-second repeat.
+
+const unsigned int NUM_NOTES = 20;
+const int SONGS[][NUM_NOTES] = { { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ { 1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0},
+ { 2,2,0,2,2,0,0,0,0,0,2,2,2,0,2,2,0,0,0,0},
+ { 3,3,3,0,3,3,3,3,0,3,3,3,0,3,3,3,0,0,0,0},
+ { 4,0,4,0,4,0,4,0,0,0,4,0,4,0,4,0,4,0,0,0},
+ { 4,4,2,0,4,4,2,0,4,4,2,0,4,4,2,0,4,4,2,0}};
+
+const unsigned LEN_OF_NOTE_MS = 500;
+
+unsigned long start_of_song = 0;
+ 
+
 
 // in general, we want tones to last forever, although
 // I may implement blinking later.
 const unsigned long INF_DURATION = 4294967295;
+
+
 
 
 //Allow indexing to LIGHT[] by symbolic name. So LIGHT0 is first and so on.
@@ -63,14 +84,15 @@ void myCallback(byte buttonEvent){
       // Do something...
       local_ptr_to_serial->println(F("onPress"));
       currentlyMuted = !currentlyMuted;
-      annunciateAlarmLevel();
-      printAlarmState(*local_ptr_to_serial);
+      start_of_song = millis();
+      annunciateAlarmLevel(local_ptr_to_serial);
+      printAlarmState(local_ptr_to_serial);
       break;
   }
 }
 
 
-void robot_api_setup(Stream* serialport) {
+void robot_api_setup(Stream *serialport) {
 
   local_ptr_to_serial = serialport;
   Wire.begin();
@@ -92,7 +114,7 @@ void robot_api_setup(Stream* serialport) {
   muteButton.set(SWITCH_MUTE, myCallback);
   serialport->println(F("end set up GPIO pins"));
 
-  printInstructions(*serialport);
+  printInstructions(serialport);
   AlarmMessageBuffer[0] = '\0';
 
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
@@ -180,7 +202,8 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
 
 
 // This operation is idempotent if there is no change in the abstract state.
-void annunciateAlarmLevel() {
+
+void unchanged_anunicateAlarmLevel(Stream* serialport) {
   for(int i = 0; i < currentLevel; i++) {
     digitalWrite(LIGHT[i],HIGH);
   }
@@ -188,9 +211,26 @@ void annunciateAlarmLevel() {
     digitalWrite(LIGHT[i],LOW);
   }
   if (!currentlyMuted) {
-    tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION);
+    unsigned long m = millis();
+    unsigned long time_in_song = m - start_of_song;
+    unsigned char note = time_in_song / (unsigned long) LEN_OF_NOTE_MS;
+ //   serialport->print("note: ");
+ //   serialport->println(note);
+    if (note >= NUM_NOTES) {
+      note = 0;
+      start_of_song = m;
+    }
+    unsigned char note_lvl = SONGS[currentLevel][note];
+ //   serialport->print("note lvl");
+ //   serialport->println(note_lvl);
+
+    tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[note_lvl],INF_DURATION);
   } else {
     noTone(TONE_PIN);
   }
+}
+void annunciateAlarmLevel(Stream* serialport) {
+  start_of_song = millis();
+  unchanged_anunicateAlarmLevel(serialport);
   showStatusLCD(currentLevel,currentlyMuted,AlarmMessageBuffer);
 }

@@ -27,7 +27,7 @@
 
 #define VERSION 0.07             //Version of this software
 
-void printError(Stream &serialport);
-void printInstructions(Stream &serialport);
-void printAlarmState(Stream &serialport);
+void printError(Stream *serialport);
+void printInstructions(Stream *serialport);
+void printAlarmState(Stream *serialport);
 #endif

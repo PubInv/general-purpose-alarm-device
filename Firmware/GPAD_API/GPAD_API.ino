@@ -172,8 +172,8 @@ void updateFromSPI()
       Serial.println(event.lvl);
       Serial.println(event.msg);
     }
-    alarm((AlarmLevel) event.lvl, event.msg,Serial);
-    annunciateAlarmLevel();
+    alarm((AlarmLevel) event.lvl, event.msg,&Serial);
+    annunciateAlarmLevel(&Serial);
   
     indx = 0;
     process = false;
@@ -240,10 +240,13 @@ unsigned long last_ms = 0;
 void loop() {
   
   updateWink(); //The builtin LED
+
+// because we are now using "songs", we need to call this periodically
+  unchanged_anunicateAlarmLevel(&Serial);
+  delay(20);
   robot_api_loop();
 
-  // This is causing a hang!
-  processSerial(Serial);
+  processSerial(&Serial);
 
   // Now try to read from the SPI Port!
   updateFromSPI();

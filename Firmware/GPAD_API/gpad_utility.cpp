@@ -26,22 +26,22 @@ extern bool currentlyMuted;
 extern char AlarmMessageBuffer[81];
 
 
-void printError(Stream &serialport) {
-    serialport.println(F("bad format of command!"));
+void printError(Stream *serialport) {
+    serialport->println(F("bad format of command!"));
     printInstructions(serialport);
 }
-void printInstructions(Stream &serialport) {
-  serialport.println(F("PubInv GPAD: enter command in form CDa (C is a char, D is a digit)"));
+void printInstructions(Stream *serialport) {
+  serialport->println(F("PubInv GPAD: enter command in form CDa (C is a char, D is a digit)"));
 }
-void printAlarmState(Stream &serialport) {
-  serialport.print(F("Muted: "));
-  serialport.println(currentlyMuted ? "YES" : "NO");
-  serialport.print(F("LVL: "));
-  serialport.println(currentLevel);
+void printAlarmState(Stream *serialport) {
+  serialport->print(F("Muted: "));
+  serialport->println(currentlyMuted ? "YES" : "NO");
+  serialport->print(F("LVL: "));
+  serialport->println(currentLevel);
   if (strlen(AlarmMessageBuffer) == 0) {
-    serialport.println(F("No Message."));
+    serialport->println(F("No Message."));
   } else {
-    serialport.print(F("Msg: "));
-    serialport.println(AlarmMessageBuffer);
+    serialport->print(F("Msg: "));
+    serialport->println(AlarmMessageBuffer);
   }
 }
