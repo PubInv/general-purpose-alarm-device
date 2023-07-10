@@ -53,10 +53,17 @@ const int BUZZER_LVL_FREQ_HZ[]= {0,128,256,512,1024,2048};
 const unsigned int NUM_NOTES = 20;
 const int SONGS[][NUM_NOTES] = { { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
  { 1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0},
- { 2,2,1,1,0,0,0,2,2,1,1,0,0,0,2,2,1,1,0,0},
- { 3,2,3,0,0,3,2,3,0,0,3,2,3,0,0,3,2,3,0,0},
- { 4,3,4,3,0,4,3,4,3,0,4,3,4,3,0,4,3,4,3,0},
- { 4,2,4,2,4,2,4,2,4,2,4,2,4,2,4,2,4,2,4,2}};
+ { 2,2,0,2,2,0,0,0,0,0,2,2,2,0,2,2,0,0,0,0},
+ { 3,3,3,0,3,3,3,3,0,3,3,3,0,3,3,3,0,0,0,0},
+ { 4,0,4,0,4,0,4,0,0,0,4,0,4,0,4,0,4,0,0,0},
+ { 4,4,2,0,4,4,2,0,4,4,2,0,4,4,2,0,4,4,2,0}};
+
+ const int LIGHT_LEVEL[][NUM_NOTES] = { { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ { 1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0},
+ { 2,2,0,2,2,0,0,0,0,0,2,2,2,0,2,2,0,0,0,0},
+ { 3,3,3,0,3,3,3,3,0,3,3,3,0,3,3,3,0,0,0,0},
+ { 4,4,4,0,4,4,4,0,0,0,4,4,4,0,4,4,4,0,0,0},
+ { 0,5,0,5,0,5,0,5,0,5,0,5,0,5,0,5,0,5,0,5}};
 
 const unsigned LEN_OF_NOTE_MS = 500;
 
@@ -202,25 +209,31 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
 
 
 // This operation is idempotent if there is no change in the abstract state.
-
-void unchanged_anunicateAlarmLevel(Stream* serialport) {
-  for(int i = 0; i < currentLevel; i++) {
+void set_light_level(int lvl) {
+  for(int i = 0; i < lvl; i++) {
     digitalWrite(LIGHT[i],HIGH);
   }
-  for(int i = currentLevel; i < NUM_LIGHTS; i++) {
+  for(int i = lvl; i < NUM_LIGHTS; i++) {
     digitalWrite(LIGHT[i],LOW);
   }
-  if (!currentlyMuted) {
-    unsigned long m = millis();
-    unsigned long time_in_song = m - start_of_song;
-    unsigned char note = time_in_song / (unsigned long) LEN_OF_NOTE_MS;
+}
+void unchanged_anunicateAlarmLevel(Stream* serialport) {
+
+
+  unsigned long m = millis();
+  unsigned long time_in_song = m - start_of_song;
+  unsigned char note = time_in_song / (unsigned long) LEN_OF_NOTE_MS;
  //   serialport->print("note: ");
  //   serialport->println(note);
-    if (note >= NUM_NOTES) {
-      note = 0;
-      start_of_song = m;
-    }
+  if (note >= NUM_NOTES) {
+    note = 0;
+    start_of_song = m;
+  }
+  unsigned char light_lvl = LIGHT_LEVEL[currentLevel][note];
+  set_light_level(light_lvl);
+  if (!currentlyMuted) {
     unsigned char note_lvl = SONGS[currentLevel][note];
+   
  //   serialport->print("note lvl");
  //   serialport->println(note_lvl);
 
