@@ -1,5 +1,10 @@
 # General Purpose Alarm Device v2.0
 AKA the GPAD.
+## Demonstration Video
+
+A demonstration of one use of the GPAD can be [seen here](https://youtu.be/F5cf5-Cmwu0).
+
+# Introduction
 
 Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
 
