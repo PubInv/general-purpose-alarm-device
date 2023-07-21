@@ -602,6 +602,9 @@
     (uuid f092376e-2532-4272-acc2-be15a066f970)
   )
 
+  (no_connect (at 193.04 114.3) (uuid 0dead7c8-c472-4f1f-8922-e34c74ec9601))
+  (no_connect (at 193.04 121.92) (uuid 8953cb7b-3e59-4bcc-874b-cd3ef96576a4))
+
   (wire (pts (xy 78.74 95.25) (xy 78.74 101.6))
     (stroke (width 0) (type default))
     (uuid 02e3d8a5-32da-42ac-9314-c1b130549ced)

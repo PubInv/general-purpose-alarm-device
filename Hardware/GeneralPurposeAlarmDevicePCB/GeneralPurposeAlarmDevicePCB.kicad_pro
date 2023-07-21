@@ -530,36 +530,7 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": [
-      {
-        "netclass": "5v",
-        "pattern": "+5V"
-      },
-      {
-        "netclass": "5v",
-        "pattern": "/LCD And I2C Interface/Vcc_LCD"
-      },
-      {
-        "netclass": "5v",
-        "pattern": "ControllerVcc"
-      },
-      {
-        "netclass": "5v",
-        "pattern": "VBus"
-      },
-      {
-        "netclass": "5v",
-        "pattern": "VccController"
-      },
-      {
-        "netclass": "5v",
-        "pattern": "Vin"
-      },
-      {
-        "netclass": "GND",
-        "pattern": "GND"
-      }
-    ]
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {

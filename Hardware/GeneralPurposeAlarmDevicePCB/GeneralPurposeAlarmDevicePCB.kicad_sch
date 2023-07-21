@@ -7585,14 +7585,14 @@
     )
   )
 
-  (sheet (at 293.37 43.18) (size 21.59 24.13) (fields_autoplaced)
+  (sheet (at 16.51 147.32) (size 21.59 11.43) (fields_autoplaced)
     (stroke (width 0.1524) (type solid))
     (fill (color 0 0 0 0.0000))
     (uuid 880aa288-96fd-4acd-95a0-23b730ac0bf4)
-    (property "Sheetname" "Battery Control" (at 293.37 42.4684 0)
+    (property "Sheetname" "Battery Control" (at 16.51 146.6084 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Sheetfile" "Battery_Control.kicad_sch" (at 293.37 67.8946 0)
+    (property "Sheetfile" "Battery_Control.kicad_sch" (at 16.51 159.3346 0)
       (effects (font (size 1.27 1.27)) (justify left top))
     )
     (instances
