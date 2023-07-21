@@ -38,6 +38,7 @@
 void annunciateAlarmLevel();
 void clearLCD(void);
 void splashLCD(void);
+void checkAlarmIteration(Stream* serialport);
 
 // This module has to be initialized and called each time through the superloop
 void robot_api_setup(Stream* serialport);

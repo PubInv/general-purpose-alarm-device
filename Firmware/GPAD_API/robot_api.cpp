@@ -22,6 +22,7 @@
 #include "robot_api.h"
 #include "alarm_api.h"
 #include "gpad_utility.h"
+#include "gpad_serial.h"
 #include "dfplayer.h"
 
 #include <DailyStruggleButton.h>
@@ -53,10 +54,11 @@ const int BUZZER_LVL_FREQ_HZ[]= {0,128,256,512,1024,2048};
 // in general, we want tones to last forever, although
 // I may implement blinking later.
 const unsigned long INF_DURATION = 4294967295;
-
+long msPlayBegin=0;
+const long AUDIO_WAIT_TIME=5000;
 
 //Allow indexing to LIGHT[] by symbolic name. So LIGHT0 is first and so on.
-int LIGHT[] = {LIGHT0, LIGHT1, LIGHT2, LIGHT3, LIGHT4};
+const int LIGHT[] = {2,26,25,14,15,4};
 int NUM_LIGHTS = sizeof(LIGHT)/sizeof(LIGHT[0]);
 
 Stream* local_ptr_to_serial;
@@ -73,6 +75,20 @@ void myCallback(byte buttonEvent){
       break;
   }
 }
+
+void checkAlarmIteration(Stream* serialport){
+  long msNow= millis();
+  long msSincePlay=msNow-msPlayBegin;
+
+  
+  
+  if(msSincePlay>AUDIO_WAIT_TIME){
+    serialport->println(F("Audio wait time up"));
+    annunciateAlarmLevel();
+    
+  }
+
+  }
 
 
 void robot_api_setup(Stream* serialport) {
@@ -146,7 +162,7 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
   lcd.init();
   lcd.clear();
   // Possibly we don't need the backlight if the level is zero!
-  if (level != 0) {
+  if (level >= 0) {
     lcd.backlight();
   } else {
     lcd.noBacklight();
@@ -182,6 +198,7 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
     {
       memcpy(buffer, msg + (i*blen), blen);
       local_ptr_to_serial->println(buffer);
+      
       lcd.setCursor(0,i+msgLineStart);
       lcd.print(buffer);
     }
@@ -191,17 +208,35 @@ void showStatusLCD(AlarmLevel level,bool muted,char *msg) {
 
 // This operation is idempotent if there is no change in the abstract state.
 void annunciateAlarmLevel() {
-  for(int i = 0; i < currentLevel; i++) {
-    digitalWrite(LIGHT[i],HIGH);
+
+for (int i = 0; i < 7; i++) {
+  if(currentLevel>0){
+  digitalWrite(LIGHT[(int)currentLevel - 1], HIGH);
   }
-  for(int i = currentLevel; i < NUM_LIGHTS; i++) {
-    digitalWrite(LIGHT[i],LOW);
+  if(LIGHT[i] != LIGHT[(int)currentLevel - 1]){
+    digitalWrite(LIGHT[i], LOW);
   }
+
+if((int)currentLevel ==5){
+  digitalWrite(4, HIGH);
+}
+
+
+  if((int)currentLevel == 0){
+    digitalWrite(LIGHT[i], LOW);
+    digitalWrite(4, LOW);
+    
+  }
+  
+}
+
+
 
 
   //you will change this
     // tone(TONE_PIN, BUZZER_LVL_FREQ_HZ[currentLevel],INF_DURATION);
       if(!currentlyMuted){
+        //msPlayBegin=millis();
         playMessage1(currentLevel);    
       }
       else if (currentlyMuted){
