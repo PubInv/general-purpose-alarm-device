@@ -27,8 +27,8 @@ Link to SCH
 <img src="PCB_PolyVent_SPI_Controller.gif" width="200"  >
 </a>
 
-<a href="PolyVent_SPI_Controller_PCBImage.png" >Link to 3D render screen capture
-<img src="PCB_3D.gif" width="200"  > </a>  
+<a href="PolyVent_SPI_Controller_PCBImage.png" >Link to 3D render screen capture  
+<img src="PolyVent_SPI_Controller_PCBImage.png" width="200"  > </a>  
 
 <a href="PolyVent_SPI_Controller.step" >Link to 3D step file.</a>
 
