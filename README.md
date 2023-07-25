@@ -247,7 +247,7 @@ These should be integrated together to create the initial firmware for the proje
 While the Version 1 PCBs and PCAs were on order, Lee wrote and sumulated factory test software on WokWi.  See project at: https://wokwi.com/projects/345960281987351124
 ![Factory Test Simulation on Wokwi](https://user-images.githubusercontent.com/5836181/206513709-647a1ac0-0031-4747-92a4-0e64b3a6de9e.png)
 
-Factory Test Simulation files can be found at: \simulation\FactoryTest
+Factory Test Simulation files can be found at: [./simulation/FactoryTest](./simulation/FactoryTest)
 
 # Other Product Description  
 ## White LEDs  
