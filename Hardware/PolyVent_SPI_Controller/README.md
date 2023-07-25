@@ -32,7 +32,20 @@ Link to SCH
 
 <a href="PolyVent_SPI_Controller.step" >Link to 3D step file.</a>
 
+## Face Plate
+The faceplate provides mechanical retention of the printed circuit assembly into the card cage and protection against ingress of dust and contaminations. 
 
+<img src="FacePlate_FCNative_v1_SPI_Controller_STL_Render.png" width="200">  
+   
+Render of the stl.  
+
+<a href="FacePlate_FCNative_v1_SPI_Controller.pdf" >  
+
+Link to Face Plate mechanical drawing PDF  
+</a>  
+  
+  
+<img src="FacePlate_FCNative_v1_SPI_Controller_Drawing.png" width="200">
 
 ## Theory of Operation
 This PCB provides two interface methods for level shifting from the 3.3V ESP32 on the PolyVent to the 5V ATmega328 on the GPAD.
