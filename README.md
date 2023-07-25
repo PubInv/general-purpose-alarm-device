@@ -247,28 +247,15 @@ These should be integrated together to create the initial firmware for the proje
 While the Version 1 PCBs and PCAs were on order, Lee wrote and sumulated factory test software on WokWi.  See project at: https://wokwi.com/projects/345960281987351124
 ![Factory Test Simulation on Wokwi](https://user-images.githubusercontent.com/5836181/206513709-647a1ac0-0031-4747-92a4-0e64b3a6de9e.png)
 
-
+Factory Test Simulation files can be found at: \simulation\FactoryTest
 
 # Other Product Description  
 ## White LEDs  
 We're going to use white-light LEDs to avoid color-blindness issues for the visual alarm.
 
-# Project Glossary and Organizational Overview
-
-## Issue Labels used
-| Label Name  | Short Description  | Detailed Description  |
-|---|---|---|
-| bug  | Something isn't working  |   |
-|  documentation | Improvements or additions to documentation |   |
-|  duplicate |  This issue or pull request already exists |   |
-|  enhancement |  New feature or request |   |
-| firmware  |  For issues related to software running on the microcontroller |   |
-| good first  | Good for newcomers | |
-| Hardware | Schematic and PCB and Enclosure | |
-| help wanted | Extra attention is needed | |
-| question | Further information is requested | |
-| research | Research products or ideas | |
-| wontfix | This will not be worked on | |
+# Project Glossary 
+Some of the terms we use and how we have defined issues for Github.
+[Glossary.md](Glossary.md)
 
 # Building the Firmware
 
