@@ -7167,8 +7167,8 @@
     (path "/00000000-0000-0000-0000-000062b871ee/7167b8f9-0fac-4224-b1ee-2c1a906cc8d6"
       (reference "MF402") (unit 1) (value "Spacer_0.0182x0.125 inch") (footprint "NA")
     )
-    (path "/00000000-0000-0000-0000-000062b871ee/d94dcdd4-fdb4-429b-b63e-43c138154c92"
-      (reference "MF403") (unit 1) (value "Nut_4-40_Lock,_External-Tooth") (footprint "NA")
+    (path "/00000000-0000-0000-0000-000062b871ee/05ff3bcd-4373-4330-9d15-aa3ff7c97e59"
+      (reference "MF403") (unit 1) (value "Nut_4-40_3/16") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/5f619803-b5b9-4c9f-8b28-2286ea24524c"
       (reference "MF404") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "NA")
@@ -7176,8 +7176,8 @@
     (path "/00000000-0000-0000-0000-000062b871ee/8c80fdea-d505-40d5-bb46-9c4e50f47160"
       (reference "MF405") (unit 1) (value "Spacer_0.0182x0.125 inch") (footprint "NA")
     )
-    (path "/00000000-0000-0000-0000-000062b871ee/5c807d34-d90a-4a92-81a2-4544df8398c6"
-      (reference "MF406") (unit 1) (value "Nut_4-40_Lock,_External-Tooth") (footprint "NA")
+    (path "/00000000-0000-0000-0000-000062b871ee/73186896-6312-4648-80af-a3c889fedce2"
+      (reference "MF406") (unit 1) (value "Nut_4-40_3/16") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/756a2495-fd18-4be4-9093-457c5824c477"
       (reference "MF407") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "NA")
@@ -7185,8 +7185,8 @@
     (path "/00000000-0000-0000-0000-000062b871ee/15b777e1-20ba-46ef-a9c2-0b753b1e221b"
       (reference "MF408") (unit 1) (value "Spacer_0.0182x0.125 inch") (footprint "NA")
     )
-    (path "/00000000-0000-0000-0000-000062b871ee/0779bfa9-c88a-4cc1-b0a3-4cf43fba8943"
-      (reference "MF409") (unit 1) (value "Nut_4-40_Lock,_External-Tooth") (footprint "NA")
+    (path "/00000000-0000-0000-0000-000062b871ee/691fdce0-e953-488a-858f-ea0eef160fc0"
+      (reference "MF409") (unit 1) (value "Nut_4-40_3/16") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000062b871ee/7b9a9c27-6413-41e9-91d9-b1c74b2c007e"
       (reference "MF410") (unit 1) (value "Screw_4-40_0.375_Phillips") (footprint "NA")
@@ -7194,8 +7194,8 @@
     (path "/00000000-0000-0000-0000-000062b871ee/fb9c03d7-e4fd-41b3-a331-fdc78dd34c8f"
       (reference "MF411") (unit 1) (value "Spacer_0.0182x0.125 inch") (footprint "NA")
     )
-    (path "/00000000-0000-0000-0000-000062b871ee/c194e1f3-50cb-4345-a0d0-1443c5fe6fe5"
-      (reference "MF412") (unit 1) (value "Nut_4-40_Lock,_External-Tooth") (footprint "NA")
+    (path "/00000000-0000-0000-0000-000062b871ee/7818e696-58fe-4c4b-b1bb-9bf5e995c875"
+      (reference "MF412") (unit 1) (value "Nut_4-40_3/16") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000062b3ac2f/ea964b5b-02f6-40ab-8892-c36a3db6b068"
       (reference "MF601") (unit 1) (value "U_Box_V104_General_Alarm_Device_LED_Standoff") (footprint "GeneralPurposeAlarmDevicePCB:U_Box_V104_General_Alarm_Device_LED_Standoff")
