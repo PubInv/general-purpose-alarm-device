@@ -176,23 +176,17 @@ Cable Connect the ISP UNO to the DUT as follows:
 Place a Jumper on the DUT from D10 to Reset
 <img src="D10toReset.jpg" alt="D10toReset.jpg" width="250" >  Jumper for D10 to Reset.
 
+##### Missing Jumper to D10 When Load Bootloader
+If you forget the above jumper the IDE will give an error something like this:
 
-Note: Error when 
-Arduino: 1.8.19 (Windows 10), Board: "Arduino Duemilanove or Diecimila, ATmega328P"
+>Arduino: 1.8.19 (Windows 10), Board: "Arduino Duemilanove or Diecimila, ATmega328P"
+>avrdude: Yikes!  Invalid device signature.
+>         Double check connections and try again, or use -F to override
+>         this check.
+>Error while attempting burning of bootloader with out the RJ12 connection.
+>This report would have more information with "Show verbose output during compilation" option enabled in File -> Preferences.
 
-avrdude: Yikes!  Invalid device signature.
-
-         Double check connections and try again, or use -F to override
-
-         this check.
-
-
-
-Error while attempting burning of bootloader with out the RJ12 connection.
-> This report would have more information with "Show verbose output during compilation" option enabled in File -> Preferences.
-
-
-Load into the IDE the sketch "ArduinoISP".  
+#### Load into the IDE the sketch "ArduinoISP".  
 ![ExampleArduinoISP.gif](ExampleArduinoISP.gif)
 
 To load into the UNO, Select the serial port for the UNO and compile and upload with the "ArduinoISP" by pressing **<Ctrl>U**. 
