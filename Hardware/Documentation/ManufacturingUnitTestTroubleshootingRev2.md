@@ -4,18 +4,18 @@ These notes were made during the assembly of the JLCPCB order of about March 202
 These units will be assigned serial numbers 16 through 30.  
 
 #### Sections below
-* Manufacturing test procedure for every unit  
-**Assembly Notes and Tips  
-** Unit (Design) verification tests on some units  
+* Manufacturing test procedure for every unit 
+**Assembly Notes and Tips 
+** Unit (Design) verification tests on some units 
 ** Configuration Version 1 Assemblies 
-* GPAD Theory of Operation  
-* Troubleshooting procedures  
+* GPAD Theory of Operation 
+* Troubleshooting procedures 
 
 ## Manufacturing test procedure for every unit
 
 ### Tools Required
 
-Solder station with approprate ventelation
+Solder station with appropriate ventilation
 3/16 Nut Driver 
 Number 1 philips screw driver
 Diagonal or other flush cutting hand tool for lead trimming.
@@ -31,7 +31,7 @@ The most recent schematic is for Rev 2 PCB Assemblies is: [Schematic-GeneralPurp
 As received from JLCPCB.
 Note the assembly has the SMT components placed by the board manufacturer and some but not all through hole components. 
 
-Write serial number on the PCB assembly at the location indicated. _Management of serial numbers is beyound the scope of this document. Each manufacturer must figure something out._
+Write serial number on the PCB assembly at the location indicated. _Management of serial numbers is beyond the scope of this document. Each manufacturer must figure something out._
 
 ### An Assembly Fixture
 We made an assembly assistant / fixture by using a raw PCB with some long #6 screws and nuts to hold at the PCB mounting points. 
@@ -39,50 +39,51 @@ We made an assembly assistant / fixture by using a raw PCB with some long #6 scr
 Also four 4.40 screws with washers and 4-40 nuts to make a 1/8" spacer for holding the LCD and header for soldering.
 
 ### Rework per issue #213, Remove R103
-GPAD Rev 2.0 PCB, Remove the Resistor R103 (Loads the Peripheral Select), Update Factory Test for D601. #213  
-**Problem:**  
-The assemblies built per the BOM_JLCPCB_20230228Modified.xls have R103 fitted with a 1K resistor. This resistor with the LED D102 loads the SPI_CLK signal and is incompatible with proper opperation of the GPAD as an SPI Peripherial from a 3.3V SPI Controller using the level shifting method using the common gate MOSFET.  
-![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/49fd13c8-6389-4675-8db7-66171a67e4b2)  
-**Solution:**  
+GPAD Rev 2.0 PCB, Remove the Resistor R103 (Loads the Peripheral Select), Update Factory Test for D601. #213 
+**Problem:** 
+The assemblies built per the BOM_JLCPCB_20230228Modified.xls have R103 fitted with a 1K resistor. This resistor with the LED D102 loads the SPI_CLK signal and is incompatible with proper operation of the GPAD as an SPI Peripheral from a 3.3V SPI Controller using the level shifting method using the common gate MOSFET.  
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/49fd13c8-6389-4675-8db7-66171a67e4b2) 
+**Solution:** 
 Remove R103.
 
 
-### Assembly Steps  
+### Assembly Steps 
  
 1. LCD Bezel Grounding.
-On the LCD module locate the J1 and J2 solder pads which if soldered ground the bezel.   
-<a href="LocateJ1J2.jpg"><img src="LocateJ1J2.jpg" alt="LocateJ1J2.jpg" width="200"> View of J1 and J2.</a>  
+On the LCD module locate the J1 and J2 solder pads which if soldered ground the bezel.  
+ View of J1 and J2.  
 Solder them.  
-<a href="SolderJ1J2.jpg"><img src="SolderJ1J2.jpg" alt="SolderJ1J2.jpg" width="200"> Solder on of J1 and J2.</a>  
+ Solder on of J1 and J2.  
 As soldered.  
 2. The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Four, nylon 1/8" spacers are placed at the four corners of the LCD sub module. Four 4-40 x 3/8" screws with 4-40 x 3/16" nuts go through both boards and are torqued to 3.4 - 4.8 Inch-Pounds. Solder the LCD header pins into the GPAD PCB.
 TIP: Using the assembly fixture the 16 pin header can be held flush to the LCD module to solder a center pin to start the process.  
-<a href="AssemblyFixtureView2.jpg"><img src="AssemblyFixtureView2.jpg" alt="AssemblyFixtureView2.jpg" width="200"> Assembly Fixture View 2</a>  
-<a href="HeaderToLCD.jpg"><img src="HeaderToLCD.jpg" alt="HeaderToLCD.jpg" width="200"> View of holding header to LCD.</a>  
+ Assembly Fixture View 2 
+ View of holding header to LCD.  
 3. Put Reset button, S101 into PCB from display side.
 4. Put Mute button, S401 into PCB from display side.
 5. Put Buzzer, BZ601 into PCB from display side.  Bending leads may help retain.
 6. Put Contrast pot, RV301 into PCB from display side.  Bending leads may help retain.  
-7. Through hole LEDs at locations D201-D205 and D105 with a stand off spacer.  
-<a href="./PICS/Rev2/LED_and_Spacers.png"><img src="./PICS/Rev2/LED_and_Spacers.png" alt="./PICS/Rev2/LED_and_Spacers.png" width="200"> LEDs with spacers.</a>  
-Thread the LED leads through the stand offs.  The longer LED lead is the anode. The cathod has a flat side on the plastic case.  
-Place the LEDs in to the PCB so that the flat cathode side coorisponds to the silk screen marking. Bend the leads to retain the LED into the PCB.  Placing the assembly on the fixture lets you have access to the top and the bottom of the assembly.  
-<a href="./PICS/Rev2/LEDs_for_Soldering.png"><img src="./PICS/Rev2/LEDs_for_Soldering.png" alt="LEDs ready for soldering" width="200"> Assembly Fixture View with LEDs ready for soldering.</a>
-<a href="./PICS/Rev2/fingerlift_led.png"><img src="./PICS/Rev2/fingerlift_led.png" alt="Lift LED and reflow solder" width="200"> Life LED and reflow solder for a flush fit on the PCB.</a>   
+7. Through hole LEDs at locations D201-D205 and D105 with a stand-off spacer.  
+ LEDs with spacers.  
+Thread the LED leads through the stand-offs.  The longer LED lead is the anode. The cathode has a flat side on the plastic case.  
+Place the LEDs in to the PCB so that the flat cathode side corresponds to the silk screen marking. Bend the leads to retain the LED into the PCB.  Placing the assembly on the fixture lets you have access to the top and the bottom of the assembly.  
+ Assembly Fixture View with LEDs ready for soldering.
+ Life LED and reflow solder for a flush fit on the PCB.  
 For each LED, after soldering one lead, holding the LED from below up to the spacer and the PCB and reheat / reflow the solder for a flush fit.  
 Solder the second lead on the LED.  
 Trim the excess leads on RV301 and the LEDs.
 > *Assembly Tip:* [Sharpie Oil-Based Paint Markers](https://www.sharpie.com/markers/chalk-paint-markers/sharpie-oil-based-paint-markers-fine-point/SAP_37371PP.html) can be used to mark polarity on LED standoffs and mark PCB's version, serial number and programming status of the microprocessor.
 
-**Rejoice! Electircal assembly is done.**  
-<a href="./PICS/Rev2/PWA_FrontView.png"><img src="./PICS/Rev2/PWA_FrontView.png" alt="PWA_FrontView.png" width="200">  
-LCD side components installed.</a>  
-
+**Rejoice! Electrical assembly is done.** 
+ 
+LCD side components installed. 
 
 ### Electrical Tests
-Electrical tesets are in two parts. Unprogramed measurements made before programing the boot loader and other firmware and Programed measurements made after a boot loader and firmware have been placed into the microcontroler.
+Electrical tests are in two parts. 
+1. Unprogrammed measurements made before flash programming the boot loader and other firmware and...
+2. Programmed measurements made after a boot loader and firmware have been placed into the microcontroler.
 
-#### Electrical Measurements before programing bootloader and firmware
+#### Electrical Measurements before programming boot loader and firmware
 Measure and record by serial number the following electrical parameters.
 Investigate and correct abnormal measurements before applying power.  Remove J102 and J103 and retain if present. Note where they should be replaced.
 Start with no connections to the DUT (Device Under Test).
@@ -91,11 +92,11 @@ Start with no connections to the DUT (Device Under Test).
 
 **SPI Interface** Measure resistance to ground at J401 pin 5 as greater than **TBD** ohms.
 
-**VinV net** Measure resistance to ground at TP102 as greater than **1 Meg** ohms.  This net is capacitive and the resistance measured will climb as the meter charges the net.
+**Vin net** Measure resistance to ground at TP102 as greater than **1 Meg** ohms.  This net is capacitive and the resistance measured will climb as the meter charges the net.
 
 **+5V net** Measure resistance to ground at TP103 +5 as greater than **TBD** ohms.
 
-With a current limited supply set for 12V and maximum of **TBD** mA, apply power at J101 and note and record the un programed current.
+With a current limited supply set for 12V and maximum of **TBD** mA, apply power at J101 and note and record the unprogrammed current.
 (FYI, when unprogrammed, the first time power up current is normally about **TBD** mA.)
 
 Check that the power LED D105 is lit and is RED.
@@ -104,8 +105,8 @@ Check that the power LED D105 is lit and is RED.
 
 (FYI, a programmed DUT that has been powered up, and with display back light on, Hold the reset switch and measure current as about **61** mA)
 
-**Vo Intitial Set / LCD Contrast.**  
-With a volt meter, measure the voltage of the Vo pin of the LCD headder to ground. Adjust RV103 for 1.3 V.
+**Vo Initial Set / LCD Contrast.** 
+With a volt meter, measure the voltage of the Vo pin of the LCD header to ground. Adjust RV103 for 1.3 V.
 This is an initial guess. Later in the process will be the actual setting of the contrast.
 See records of measurements of some of the Rev 2 assemblies at this issue: https://github.com/PubInv/general-alarm-device/issues/217 #217
 
@@ -211,7 +212,7 @@ In the Arduino IDE, select TOOLS > Burn Bootloader .
 Watch the progress bar in the IDE and look for success with the message "Done burning bootloader." in the blue status bar.
 ![DoneBurningBootloader.png](DoneBurningBootloader.png)
 
-Check that LED D102 is winking with a short on time and longer off time indicating that the boot loader has been loaded.  Untill any other sketch is loaded this is the bexpected behaviour of the unit under test.
+IF R103 has not been removed, Check that LED D102 is winking with a short on time and longer off time indicating that the boot loader has been loaded.  Untill any other sketch is loaded this is the bexpected behaviour of the unit under test.
 
 
 #### Load Factory Test Firmware.
@@ -225,7 +226,7 @@ Set the IDE for the COM port of the DUT.
 Watch the progress bar in the IDE and look for success with the message "Done uploading" in the blue status bar. 
   
 Open a terminal to the COM port of the DUT and set for appropriate BAUD rate. 
-Press the reset switch on the DUT and the LCD display should display a message. The terminal should display a boot message too. This example is of a RealTerminal connected to the DUT.
+Press the reset switch on the DUT and the LCD should display a message. The terminal should display a boot message too. This example is of a RealTerminal connected to the DUT.
   
   ![DUT_TerminalBoot.gif](DUT_TerminalBoot.gif)
  
@@ -234,8 +235,9 @@ Measure and record by serial number the following electrical parameters.
  
   Observe the current on the DUT. Press the Mute Switch S601 and the white LEDs D201-D205 should light. The Buzzer will make a sound. Record this full current in the table above.
    
+# End of Rev2 Tests as of March 2023
   
-# TO DO Future tests:  
+# TO DO Future Tests Enhancments:  
  * Connect the DUT to an SPI controller and test SPI interface.  
  * Connect the DUT to an I2C peripheral device and test the I2C daisy chain output.  
  * Walking One test of LEDs D201-D205.   
