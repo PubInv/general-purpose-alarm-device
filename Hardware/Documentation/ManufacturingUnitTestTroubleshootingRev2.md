@@ -38,6 +38,15 @@ We made an assembly assistant / fixture by using a raw PCB with some long #6 scr
 ![Assembly Fixture View 1](AssemblyFixtureView1.jpg)
 Also four 4.40 screws with washers and 4-40 nuts to make a 1/8" spacer for holding the LCD and header for soldering.
 
+### Rework per issue #213, Remove R103
+GPAD Rev 2.0 PCB, Remove the Resistor R103 (Loads the Peripheral Select), Update Factory Test for D601. #213  
+**Problem:**  
+The assemblies built per the BOM_JLCPCB_20230228Modified.xls have R103 fitted with a 1K resistor. This resistor with the LED D102 loads the SPI_CLK signal and is incompatible with proper opperation of the GPAD as an SPI Peripherial from a 3.3V SPI Controller using the level shifting method using the common gate MOSFET.  
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/49fd13c8-6389-4675-8db7-66171a67e4b2)  
+**Solution:**  
+Remove R103.
+
+
 ### Assembly Steps  
  
 1. LCD Bezel Grounding.
