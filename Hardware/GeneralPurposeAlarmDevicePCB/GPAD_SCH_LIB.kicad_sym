@@ -1526,11 +1526,11 @@
       )
     )
   )
-  (symbol "Nut_4-40_3/16" (in_bom yes) (on_board no)
+  (symbol "Nut_4-40_0.1875" (in_bom yes) (on_board no)
     (property "Reference" "MF" (id 0) (at 0 0 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Nut_4-40_3/16" (id 1) (at 0 0 0)
+    (property "Value" "Nut_4-40_0.1875" (id 1) (at 0 0 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "" (id 2) (at 0 0 0)
@@ -1548,13 +1548,13 @@
     (property "Cost" "$0.10000" (id 6) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "ki_keywords" "Nut_4-40_3/16" (id 7) (at 0 0 0)
+    (property "ki_keywords" "Nut_4-40_0.1875" (id 7) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "ki_description" "Nut_4-40_3/16" (id 8) (at 0 0 0)
+    (property "ki_description" "Nut_4-40_0.1875" (id 8) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (symbol "Nut_4-40_3/16_0_1"
+    (symbol "Nut_4-40_0.1875_0_1"
       (polyline
         (pts
           (xy -2.54 3.81)
