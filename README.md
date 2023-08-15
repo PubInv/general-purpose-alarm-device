@@ -12,25 +12,30 @@ The GPAD is Certified Open Source Hardware by OSHWA. Our OSHWA UID is [US002352]
 
 ![GPAD_OSHWA](https://github.com/PubInv/general-purpose-alarm-device/assets/5296671/29422091-91a7-4646-a39d-9bfc92c0540c)
 
-
-GPAD in Prototype Enclosure of Summer 2022
+GPAD in an Enclosure of Summer 2022
 ![https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG](https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG)
 
-The GPAD Printed Circuit Assembly Version 1
+The GPAD Printed Circuit Assembly (Version 1)
 ![IMG-3539](https://user-images.githubusercontent.com/5296671/195462489-233d7f4f-62ae-4d29-930c-db42419f31b2.JPG)
 This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
 This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition.
-* Flash bright lights
-* Make (laughably not) loud tones
-* Button to, for example, "mute" or suppress the alarm buzzer.
-* Text display status and messages (up to 20x4 characters)
-* Power from wall supply on barrel jack 2.1mm at 9-12V <= 1000mA (or from host controlling device at 5V or 12V on the SPI interface)
-* RJ12 Data Cable connection for signal (and optional power) between host and GPAD.
-* An I2C output for control of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
 
 The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device. The controlling host will assert status through the GPAD to an end user.
 
-# Version 1 GPAD
+# Versions History
+During the summer of 2022 Version 1 of the GPAD PCB was designed and several units fabricated. Some of these units were used for EE senior cap stone projects of students at University of Oklahoma, Nornam during the spring semester. Two groups participated, One group developed a wireless interface and batter feature and the other groups developed a voice playback feature. These features are on the ESP32 branch which as of August 2023 is not yet integrated.
+
+## Version 2 PCB Features
+As of March 2023 we have developed and built a version 2 PCB.
+Printed wiring assemblies were manufactured largerly by JLCPCB as were the enclosures. Some components not available though JLCPCB were assembled by hand.
+Details of the assembly and test procedure is found through links in the README.md at:  [https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware](https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware)
+Changes were to fix a few reworks to version 1 PCBs involving cutting traces and soldering wires. Most noticable for uses was properly connecting the USB-UART chip to the micocontroller nRESET line so that the devices program without the user having to press the reset button.
+Another change was to drive as a switch rather than as a push-pull the audio output so that an internially driven type buzzer could be used for greater volume.
+We bult with buzzers Digi-key part numbers 433-WST-1210T-ND and 102-CMI-1295-0585T-ND are both rated at 85 dB at 10cm.
+The Rev2 can also drive the **VERY **loud Floyd Bell Inc buzzer 2339-TXC-86-515-Q-ND rated at 103dB. however we have not designed an enclosure for the "off board" mounting requirements of this device.
+Additional Rev 2 features was silk screen on all of the "Arduino UNO " like pins for easy signal indentification.
+
+## Version 1 GPAD
 CAD view of GPAD With Version 1 Enclosure.  
 <img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">  
 
@@ -40,8 +45,8 @@ User view of GPAD Version 1 Printed Wiring Assembly without enclosure.
 View of GPAD Version 1 Printed Wiring Assembly component side.  
 <img src="./Hardware/Documentation/PICS/PCB_Component_Side.jpg" width="300">
 
-# GPAD V1 Build Information
-Files we used to build the V1 assemblies. PCB with some SMT Assembly was by JCLPCB in China. Additional parts were ordered and hand solderes in the USA.
+## GPAD V1 Build Information
+Files we used to build the V1 assemblies. PCB with some SMT Assembly was by JCLPCB in China. Additional parts were ordered and hand soldered in the USA.
 [FILES HERE: Hardware/Manufacturing](./Hardware/Manufacturing)
 
 
@@ -69,14 +74,15 @@ We hope that by defining a clearly versioned API we can make an evolving device 
 # Stand-alone or Sub-assembly
 
 Our fully finished design includes a printed wiring assembly and an enclosure.
-All the free and open source KiCad schematic printed circuit assembly files are provided so that users could fabricate just the PCB and use in an enclosure iof their own design. 
-The enclosure is designed in the free open source SCAD and we provide the enclosure design source files. Users could fabricate this enclosure as is or develope a modifed enclosure with their own features from the files we provided.
+All the free and open source KiCad schematic printed circuit assembly files are provided so that users could fabricate just the PCB and use in an enclosure of their own design. 
+The enclosure is designed in the free open source SCAD, and we provide the enclosure design source files. Users could fabricate this enclosure as is or develop a modified enclosure with their own features from the files we provided.
 
 # The Arduino UNO Like Platform
 
 The implementation is Arduino UNO like. A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility.
 UNO footprint for shields is provided.
 This allows a typical Arduino serial port interface for development and debugging.
+There are holes on the PDB into which the female Dupont headers can be soldered so that UNO shields could be used for feature enhancement and evaluation. Thought the enclosure is not designed for a shield. The enclosure design is open source so that interested persons could design an enclosure for their requirements.
 
 # How is the alarm signal received?
 
@@ -85,73 +91,63 @@ The wired RJ12(6P6C)  Data connection from a host is an SPI controller and the G
 A wireless interface may be added through a UNO shield. (Compatibility with existing wireless shields has not been checked. A custom shield with a wireless interface to some of the unused controller pins should be possible but may not be trivial.)
 
 
-# Summer 2022 Project Status  
+# Summer 2023 Project Status  
 
 ### Firmware
 Demonstration of SPI controller and Peripheral for single byte transmission.
 
 ### Hardware
-1. Schematic with distributor part numbers through review. Many parts have two distributor part numbers identified.
-2. Several units assembled. As of 20221208 two reworks identified. One swaping D7 and D10. A Second connecting the DTR on U501 Pin 4 to Reset.
+* PCB designed for predominantly surface mount production. We used JLCPCB. Some had assembly of parts not avaiable through JLCPCB.
+* An enclosure for the electronics which is designed to be easily mounted (for example, with flanges for zip ties.)
+* RJ12 Data Cable connection for signal (and optional power) between host and GPAD.
+* Light alert by five, 5 mm white LEDs driven at about 20 mA.
+* Acoustic alert by 5V buzzer, 85 dB at 10 cm. On board Piezo self excited buzzer or through a 0.1" two pin header for off board buzzer (103 dB).
+* Text display with back lit, 20x4 character LCD.
+* Single User Button labeled "MUTE" on enclosure.
+* Recessed reset button.
+* Power on status LED.
+* USB port for Firmware development and low power operation.
+* An I2C output for controller of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN).
+* Power from wall supply on barrel jack 2. 1mm at 9-12V <= 1000mA (or from host controlling device at 5V or 12V on the SPI interface).
+
+### A Simulation with WokWi
+Our project development benefited greatly from Kiwi.  Visit: https://wokwi.com/
+In paralle with schematic capture, PCB design a dfabrication we have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them,
+that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.  
+The other shows the use of the LCD.  
+These should be integrated together to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.  
+While the Version 1 PCBs and PCAs were on order, Lee wrote and simulated factory test software on WokWi.  See project at: https://wokwi.com/projects/345960281987351124
+![Factory Test Simulation on Wokwi](https://user-images.githubusercontent.com/5836181/206513709-647a1ac0-0031-4747-92a4-0e64b3a6de9e.png)
+
+Factory Test Simulation files can be found at: [./simulation/FactoryTest](./simulation/FactoryTest)
+Although we eventually sent a Rev 1 GPAD to Oluseyi 'Seyi' Adeniyi made enhancements to our factory test without ever having hardware.
 
 # Possible Evolution Stages of the Project
+Ideas from the cap stone projects
+1. Wifi interface and batter power
+2. Audio voice play back for messages.
 
-## Phase I aka Version 1
+In each of these phases, we imagine extensions of the API.
 
-* Light alert by five, 5mm white LEDs driven at about 20 mA.
-* Acoustic alert by buzzer driven by push-pull somewhat less than 5Vp-p.
-* Text display with back lit, 20x4 character LCD.
-* Single User Button
-* Recessed reset button.
-* Power on status LED
-* USB port for Firmware development and low power operation
-* An I2C output for controller of devices TBD. Connection by locking JST connector: S04B-XASK-1(LF)(SN)
-
-Still remaining: define a simple API.
-We imagine these hardware choices will evolve over time. We want the API to insulate the user of the GPAD
-from specific details of how the noise is made.
-
-Nonetheless, we can make a few comments.
-1. It is now possible to get very bright LEDs which are efficient. The initial version might simply use a single very bright LED, or some combination of LEDs supporting 5 levels of alarm color or brightness.
-
-Summer and Fall of 2022 the physical implementation has been realized with the Version 1 PCB and Version 1 3D printable enclosure.
-
-## Phase II
-**THESE MAY ALL HAVE BEEN REALIZED IN PHASE I**  
-In Phase II, we can imagine a large number of improvements:
-1. An enclosure for the electronics which is designed to be easily mounted (for example, with flanges for zip ties.)
-2. An updated Printed-circuit board Version 2 that integrates the improvements identified in Phase 1.
-3. Improvements in the API.
-4.  Although "buzzers" and "sirens" of various kind are available, we eventually want a loudspeaker that can make various noises to provide information about the alarm level. Someday it may even support recorded messages in a human voice speaking a natural language. Imagine the voice of Scotty saying, "She canna' take the strain, Captain!" in a Scottish accent.
-
-## Phase III
-**THESE MAY BE NESSISARY TO COMPLETE PHASE II**  
-In Phase III, we could expand the usability of the device by allowing it to be made physically versatile, which feature such as:
-1. A backup battery on board to make the unit able to operate wirelessly.
-2. Sturdiness to the level of being a "throwie" that can be deployed by tossing it across the room.
-3. WiFi, Bluetooth, or LoRa enablement.
-
-In each of these phases, we imagine the API improving substantially.
-
-# Volunteer Skills and Skilles Needed
+# Volunteer Skills (and Skills Needed)
 
 Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
 
 Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientist by training, and an electrical engineer as well as a hobby inventor by vocation.
 
-???  Joe Torreggiani of Speccollective
+Mentor and coach hardware, firmware, (Forrest) Lee Erickson, Physicist who pretends to be electrical engineer, with experience in firmware development, Design for Manufacture, Design for Test and developer of Novel and Diverse Spelling.
 
-Mentor and coach hardware, firmware, (Forrest) Lee Erickson Physicist who pretends to be electrical engineer,  with experence in firmware development, Design for Manufactur, Design for Test and developer of Novel and Diverse Spelling.
+Factory Test and API Firmware Contributor, Oluseyi 'Seyi' Adeniyi. 
 
 We need volunteers:
 1. Arduino engineers who can both code and make very simple circuits.
-2. Schematic capture and PCB layout designers.  We are using KiCad.
+2. Schematic capture and PCB layout designers.  We are using TICAD.
 3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
 4. Embedded firmware engineers who can design an effective, evolving API and the transport bindings that they require.
 5. GUI experts who can address issues such as how to effective alarm and silence.
 6. Marketers who can promote and evangelize the project.
 7. Possible a project manager who can organize volunteers and keep them enthused and motivated to move forward.
-
+   
 # The Potential for a Product
 
 Like everything done by Public Invention, this is a fully open project that will be released under fully open hardware and software licenses.
@@ -210,7 +206,7 @@ the GPAD. That is, it should be useful for hardware built by other teams
 making significantly different decisions.
 
 In this API, the message strings support only the most limited
-sort of formating: a linefeed character represents a line break.
+sort of formatting: a linefeed character represents a line break.
 Nonetheless, if linefeed characters are used, the will break lines
 but this will of course limit the number of ACTUAL characters
 that can be rendered, rather than the 60 that we can render if no
@@ -237,24 +233,8 @@ It is our intention to keep all of these mechanisms distinct from the
 two APIs. There might even be additional transport protocols in the future,
 such as a library that uses I2C ("I-squared C").
 
-
-# A Simulation with WokWi
-
-We have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them,
-that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.  
-The other shows the use of the LCD.  
-These should be integrated together to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.  
-While the Version 1 PCBs and PCAs were on order, Lee wrote and sumulated factory test software on WokWi.  See project at: https://wokwi.com/projects/345960281987351124
-![Factory Test Simulation on Wokwi](https://user-images.githubusercontent.com/5836181/206513709-647a1ac0-0031-4747-92a4-0e64b3a6de9e.png)
-
-Factory Test Simulation files can be found at: [./simulation/FactoryTest](./simulation/FactoryTest)
-
-# Other Product Description  
-## White LEDs  
-We're going to use white-light LEDs to avoid color-blindness issues for the visual alarm.
-
 # Project Glossary 
-Some of the terms we use and how we have defined issues for Github.
+Some terms we use and how we have defined issues for Github.
 [Glossary.md](Glossary.md)
 
 # Building the Firmware
@@ -264,6 +244,15 @@ It requires libraries:
 1. Wire.h
 1. LiquidCrystal_I2C.h
 1. DailyStruggleButton.h  (Installed with library manager and found at: https://github.com/cygig/DailyStruggleButton)
+
+# Credits
+The GPAD team was enabled and wishs to thank the developers and maintaines of:
+**GITHUB** the project management features, issues and project board were always useful when we used them.
+**KiCAD** for the tools of schematic capture and PCB design
+**OpenSCAD** for the tools in which the enclosure was designed.
+**FreeCAD** for additional design of the hanging feature on the enclosure
+**Wokwi** for the simulation tools for hardware and firmware.
+and the inventors and developers of the **Arduino** ecology of tools and hardware who have sparked so much good for so many.
 
 # License
 
