@@ -137,7 +137,7 @@ Enclosure design, component procurement for rev1, project facilitator, initial b
 
 Mentor and coach hardware, firmware, (Forrest) Lee Erickson, Physicist who pretends to be electrical engineer, with experience in firmware development, Design for Manufacture, Design for Test and developer of Novel and Diverse Spelling.
 
-Factory Test and API Firmware Contributor, Oluseyi 'Seyi' Adeniyi. 
+Factory Test and API Firmware Contributor, Oluseyi 'Seyi' Adeniyi, Software Engineer, committed to pursuing diverse creative endeavors.
 
 We need volunteers:
 1. Arduino engineers who can both code and make very simple circuits.
