@@ -1,12 +1,13 @@
 # General Purpose Alarm Device v2.0
-AKA the GPAD.
+We often acronymize this as  "GPAD" (prounced gee-pad).
 ## Demonstration Video
 
 A demonstration of one use of the GPAD can be [seen here](https://youtu.be/F5cf5-Cmwu0).
 
 # Introduction
 
-Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
+Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective
+(SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
 
 The GPAD is Certified Open Source Hardware by OSHWA. Our OSHWA UID is [US002352](https://certification.oshwa.org/us002352.html).
 
@@ -17,32 +18,42 @@ GPAD in an Enclosure of Summer 2022
 
 The GPAD Printed Circuit Assembly (Version 1)
 ![IMG-3539](https://user-images.githubusercontent.com/5296671/195462489-233d7f4f-62ae-4d29-930c-db42419f31b2.JPG)
-This General-Purpose- Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
-This module has an enclosure and inside is an embedded microcontroller system with the following features to alert a human of a condition.
+This General-Purpose-Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
+This module has an enclosure and inside is an embedded microcontroller system with features to alert a human of a condition.
 
-The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device. The controlling host will assert status through the GPAD to an end user.
+The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device, probably another microcontroller.
+The controlling host will assert status through the GPAD to an end user.
 
 # Versions History
-During the summer of 2022 Version 1 of the GPAD PCB was designed and several units fabricated. Some of these units were used for EE senior cap stone projects of students at University of Oklahoma, Nornam during the spring semester. Two groups participated, One group developed a wireless interface and batter feature and the other groups developed a voice playback feature. These features are on the ESP32 branch which as of August 2023 is not yet integrated.
+During the summer of 2022 Version 1 of the GPAD PCB was designed and several units fabricated.
+Some of these units were used for electrical engineeing senior capstone projects of students at
+University of Oklahoma, in Nornam Oklahoma during the spring semester.
+Two groups participated: one group developed a wireless interface and battery feature and
+the other groups developed a voice playback feature.
+These features are on the ESP32 branch which as of August 2023 is not yet integrated.
 
 ## Version 2 PCB Features
 As of March 2023 we have developed and built a version 2 PCB.
-Printed wiring assemblies were manufactured largerly by JLCPCB as were the enclosures. Some components not available though JLCPCB were assembled by hand.
+Printed wiring assemblies were manufactured largerly by JLCPCB as were the enclosures.
+Some components not available though JLCPCB were assembled by hand.
 Details of the assembly and test procedure is found through links in the README.md at:  [https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware](https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware)
-Changes were to fix a few reworks to version 1 PCBs involving cutting traces and soldering wires. Most noticable for uses was properly connecting the USB-UART chip to the micocontroller nRESET line so that the devices program without the user having to press the reset button.
-Another change was to drive as a switch rather than as a push-pull the audio output so that an internially driven type buzzer could be used for greater volume.
+Changes were made in version 2 to fix a few reworks to version 1 PCBs involving cutting traces and soldering wires.
+Most noticable for uses was properly connecting the USB-UART chip to the micocontroller nRESET line
+so that the devices program without the user having to press the reset button.
+Another change was to drive as a switch rather than as a push-pull the audio output
+so that an internially driven type buzzer could be used for greater volume.
 We bult with buzzers Digi-key part numbers 433-WST-1210T-ND and 102-CMI-1295-0585T-ND are both rated at 85 dB at 10cm.
 The Rev2 can also drive the **VERY **loud Floyd Bell Inc buzzer 2339-TXC-86-515-Q-ND rated at 103dB. however we have not designed an enclosure for the "off board" mounting requirements of this device.
 Additional Rev 2 features was silk screen on all of the "Arduino UNO " like pins for easy signal indentification.
 
 ## Version 1 GPAD
-CAD view of GPAD With Version 1 Enclosure.  
-<img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">  
+CAD view of GPAD With Version 1 Enclosure.
+<img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
 
-User view of GPAD Version 1 Printed Wiring Assembly without enclosure.  
-<img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">  
+User view of GPAD Version 1 Printed Wiring Assembly without enclosure.
+<img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">
 
-View of GPAD Version 1 Printed Wiring Assembly component side.  
+View of GPAD Version 1 Printed Wiring Assembly component side.
 <img src="./Hardware/Documentation/PICS/PCB_Component_Side.jpg" width="300">
 
 ## GPAD V1 Build Information
@@ -52,46 +63,66 @@ Files we used to build the V1 assemblies. PCB with some SMT Assembly was by JCLP
 
 # Example Use Case, The Ventilator
 
-The [Freespireco Project](https://github.com/PubInv/freespireco) is an attempt to build a modular ecosystem of cooperating respiration devices. One thing that devices such as ventilators and oxygen concentrators need to have is to be able to alert someone to dangerous conditions. This can be as simple and gentle as, "it is time for scheduled maintenance," to a far more dangerous, "the hose connected to the patient is disconnected!"
+The [Freespireco Project](https://github.com/PubInv/freespireco) is an attempt to build a
+modular ecosystem of cooperating respiration devices.
+One thing that devices such as ventilators and oxygen concentrators need to have is to be able to alert someone to dangerous conditions.
+This can be as simple and gentle as, "it is time for scheduled maintenance,"
+to a far more dangerous, "the hose connected to the patient is disconnected!"
 The purpose of the alarm is to get the attention of nurses or doctors who can fix the problem.
 
-See the PolyVent project on Gitlabs at: [https://gitlab.com/polyvent](https://gitlab.com/polyvent)  
+See the PolyVent project on Gitlabs at: [https://gitlab.com/polyvent](https://gitlab.com/polyvent)
 See the PolyVent controller at: [https://gitlab.com/polyvent/polyvent_control_module](https://gitlab.com/polyvent/polyvent_control_module)
 
 # The Abstract Application Programmers Interface
 
-GPAD offers a simple API, possibly with a JSON or byte-level interface, for commanding it to alarm.
+GPAD offers a simple API for commanding it to alarm.
 Abstractly, we can imagine a system that supports five levels of alarm severity.
-Additionally, an alarm condition normally has a short message associated with it, such as "hose disconnect", which
+Additionally, an alarm condition normally has a short
+message associated with it, such as "hose disconnect", which
 should potentially be displayed on a small screen.
 
-The initial version of this API can be extraordinarily simple: Alarm at a level between zero and five, where zero means no alarm.
-However, it is clear this API will have to evolve over time. Issues such as when one alarm level supersedes another, when it is
+The initial version of this  API is extraordinarily simple:
+Alarm at a level between zero and five, where zero means no alarm.
+However, it is clear this API will have to evolve over time.
+Issues such as when one alarm level supersedes another, when it is
 acceptable to silence an alarm and for how long, etc. actually become rather complicated quickly.
 
-We hope that by defining a clearly versioned API we can make an evolving device of great utility for a wide variety of purposes.
+We hope that by defining a clearly versioned API we can make an evolving device of great
+utility for a wide variety of purposes.
 
 # Stand-alone or Sub-assembly
 
 Our fully finished design includes a printed wiring assembly and an enclosure.
-All the free and open source KiCad schematic printed circuit assembly files are provided so that users could fabricate just the PCB and use in an enclosure of their own design. 
-The enclosure is designed in the free open source SCAD, and we provide the enclosure design source files. Users could fabricate this enclosure as is or develop a modified enclosure with their own features from the files we provided.
+All the free and open source KiCad schematic printed circuit assembly files are provided so
+that users could fabricate just the PCB and use in an enclosure of their own design.
+The enclosure is designed in the free open source program SCAD,
+and we provide the enclosure design source files.
+Users could fabricate this enclosure as is or
+develop a modified enclosure with their own features from the files we provided.
 
-# The Arduino UNO Like Platform
+# The Arduino UNO-Like Platform
 
-The implementation is Arduino UNO like. A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility.
+The implementation is Arduino UNO-like.
+A USB interface to an ATmega328 controller is provided for Arduino IDE compatibility.
 UNO footprint for shields is provided.
 This allows a typical Arduino serial port interface for development and debugging.
-There are holes on the PDB into which the female Dupont headers can be soldered so that UNO shields could be used for feature enhancement and evaluation. Thought the enclosure is not designed for a shield. The enclosure design is open source so that interested persons could design an enclosure for their requirements.
+There are holes on the PCB into which the female Dupont headers can be soldered so that
+UNO shields could be used for feature enhancement and evaluation.
+Thought the enclosure is not designed for a shield.
+The enclosure design is open source so that interested persons
+could design an enclosure for their requirements.
 
 # How is the alarm signal received?
 
-The wired RJ12(6P6C)  Data connection from a host is an SPI controller and the GPAD is an SPI Peripheral.
+The wired RJ12(6P6C)  data connection from a host is an SPI controller and the GPAD is an SPI Peripheral.
 
-A wireless interface may be added through a UNO shield. (Compatibility with existing wireless shields has not been checked. A custom shield with a wireless interface to some of the unused controller pins should be possible but may not be trivial.)
+A wireless interface may be added through a UNO shield.
+(Compatibility with existing wireless shields has not been checked.
+A custom shield with a wireless interface to some of the unused
+controller pins should be possible but may not be trivial.)
 
 
-# Summer 2023 Project Status  
+# Summer 2023 Project Status
 
 ### Firmware
 Demonstration of SPI controller and Peripheral for single byte transmission.
@@ -111,16 +142,22 @@ Demonstration of SPI controller and Peripheral for single byte transmission.
 * Power from wall supply on barrel jack 2. 1mm at 9-12V <= 1000mA (or from host controlling device at 5V or 12V on the SPI interface).
 
 ### A Simulation with WokWi
-Our project development benefited greatly from Kiwi.  Visit: https://wokwi.com/
-In paralle with schematic capture, PCB design a dfabrication we have written in the "simulation" directory both the diagram and two sketches that simulate our hardware. One of them,
-that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.  
-The other shows the use of the LCD.  
-These should be integrated together to create the initial firmware for the project.  Meanwhile, we can simulate the device successfully in WokWi.  
-While the Version 1 PCBs and PCAs were on order, Lee wrote and simulated factory test software on WokWi.  See project at: https://wokwi.com/projects/345960281987351124
+Our project development benefited greatly from Wokwi.  Visit: [https://wokwi.com/](https://wokwi.com/)
+In parallel with schematic capture, PCB design and fabrication,
+we have written in the "simulation" directory both the diagram and two sketches that simulate our hardware.
+One of them,
+that Rob wrote on Saturday, August 13th, implements [this rudimentary api](https://github.com/PubInv/general-alarm-device/tree/main/simulation/robSimulatinSat13), without supporting messages.
+The other shows the use of the LCD.
+These should be integrated together to create the initial firmware for the project.
+Meanwhile, we can simulate the device successfully in WokWi.
+While the Version 1 PCBs and PCAs were on order, Lee wrote and simulated factory test software on WokWi.
+See project at: https://wokwi.com/projects/345960281987351124
 ![Factory Test Simulation on Wokwi](https://user-images.githubusercontent.com/5836181/206513709-647a1ac0-0031-4747-92a4-0e64b3a6de9e.png)
 
 Factory Test Simulation files can be found at: [./simulation/FactoryTest](./simulation/FactoryTest)
-Although we eventually sent a Rev 1 GPAD to Oluseyi 'Seyi' Adeniyi made enhancements to our factory test without ever having hardware.
+Although we eventually sent a Rev 1 GPAD to Oluseyi 'Seyi' Adeniyi (@NULLbodyHERE) made enhancements
+to our factory test without even having hardware (we later sent him one), which he used to enahnce
+the sonic and light signalling.
 
 # Possible Evolution Stages of the Project
 Ideas from the cap stone projects
@@ -131,27 +168,33 @@ In each of these phases, we imagine extensions of the API.
 
 # Volunteer Skills (and Skills Needed)
 
-Project Lead, Product Definition, Robert L. Read, founder of Public Invention.
+## Current Volunteers:
 
-Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor, Lawrence Kincheloe of Speccollective who is a computer scientist by training, and an electrical engineer as well as a hobby inventor by vocation.
+Project Lead, Product Definition:  Robert L. Read (@RobertLRead), founder of Public Invention.
 
-Mentor and coach hardware, firmware, (Forrest) Lee Erickson, Physicist who pretends to be electrical engineer, with experience in firmware development, Design for Manufacture, Design for Test and developer of Novel and Diverse Spelling.
+Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor: Lawrence Kincheloe (@LokeMetaSmith) of Speccollective who is a computer scientist by training, and an electrical engineer as well as a hobby inventor by vocation.
 
-Factory Test and API Firmware Contributor, Oluseyi 'Seyi' Adeniyi, Software Engineer, committed to pursuing diverse creative endeavors.
+Mentor and coach hardware, firmware: (Forrest) Lee Erickson @ForrestErickson, Physicist who pretends to be electrical engineer, with experience in firmware development, Design for Manufacture, Design for Test and developer of Novel and Diverse Spelling.
 
-We need volunteers:
+Factory Test and API Firmware Contributor: Oluseyi 'Seyi' Adeniyi @NULLbodyHERE, Software Engineer, committed to pursuing diverse creative endeavors.
+
+## Needed Volunteers
+
+We need volunteer:
 1. Arduino engineers who can both code and make very simple circuits.
-2. Schematic capture and PCB layout designers.  We are using TICAD.
+2. Schematic capture and PCB layout designers.  We are using KICAD.
 3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
 4. Embedded firmware engineers who can design an effective, evolving API and the transport bindings that they require.
 5. GUI experts who can address issues such as how to effective alarm and silence.
 6. Marketers who can promote and evangelize the project.
 7. Possible a project manager who can organize volunteers and keep them enthused and motivated to move forward.
-   
+
 # The Potential for a Product
 
-Like everything done by Public Invention, this is a fully open project that will be released under fully open hardware and software licenses.
-However, unlike many of our projects which are very "researchy" this project could become a scalable product pretty easily.
+Like everything done by Public Invention, this is a fully open project that is
+released under fully open hardware and software licenses.
+However, unlike many of our projects which are very "researchy", this project could
+become a scalable product pretty easily.
 One can imagine it being sold at Sparkfun, Adafruit, or DigiKey if we do a good job.
 Because it could be used for a wide variety of purposes by makers and could be sold with an enclosure at a price of perhaps <=$100USD
 As an embedded sub assembly, the printed wiring assembly must be low cost with a material price of < $30USD
@@ -163,17 +206,19 @@ Potential uses as a product (by hobbyist) include:
 4. Overheating conditions in almost any device
 ...but the reader can probably imagine a great many more.
 
-Public Invention does not wish to become a manufacturer; but we will impartially support anyone who wants to take these designs and manufacture them so long as they abide by the licenses.
+Public Invention does not wish to become a manufacturer; but we will impartially
+support anyone who wants to take these designs and manufacture them so long as they abide by the licenses.
 
 # Modular Software Architecture
 
-As this is intended to be a long-term project that will evolve and potentially have many volunteers. The basic software architecture is captured in this diagram:
+As this is intended to be a long-term project that will evolve and potentially have many volunteers.
+The basic software architecture is captured in this diagram:
 ![GPAD Architecture (3)](https://github.com/PubInv/general-alarm-device/assets/5296671/7f6ec16f-2bee-4acb-a10e-cb6991504d04)
 
 
-# The Simplest API
+# Our Simple API (Implemented!)
 
-The simplest API could just be:
+The simplest API is:
 ```
 enum AlarmLevel { silent, informational, problem, warning, critical, panic };
 int Alarm(AlarmLevel al);
@@ -197,8 +242,6 @@ AlarmLevel getAlarm(AlarmLevel al);
 boolean isMuted();
 ```
 
-As of Nov. 11th, we are working significantly on this API, which deserves a
-a separate document, but I will place notes here.
 
 ## The Abstract API
 The Abstract API is meant to work independent of specific hardware on
@@ -233,7 +276,7 @@ It is our intention to keep all of these mechanisms distinct from the
 two APIs. There might even be additional transport protocols in the future,
 such as a library that uses I2C ("I-squared C").
 
-# Project Glossary 
+# Project Glossary
 Some terms we use and how we have defined issues for Github.
 [Glossary.md](Glossary.md)
 
@@ -247,7 +290,7 @@ It requires libraries:
 
 # Credits
 The GPAD team was enabled and wishs to thank the developers and maintaines of:
-**GITHUB** the project management features, issues and project board were always useful when we used them.
+**GitHub** the project management features, issues and project board were always useful when we used them.
 **KiCAD** for the tools of schematic capture and PCB design
 **OpenSCAD** for the tools in which the enclosure was designed.
 **FreeCAD** for additional design of the hanging feature on the enclosure
