@@ -88,16 +88,16 @@ Measure and record by serial number the following electrical parameters.
 Investigate and correct abnormal measurements before applying power.  Remove J102 and J103 and retain if present. Note where they should be replaced.
 Start with no connections to the DUT (Device Under Test).
 
-**Power Jack** Measure resistance to ground at J101 center pin as greater than **TBD** ohms.
+**Power Jack** Measure resistance to ground at J101 center pin as open or greater than 100K ohms.
 
-**SPI Interface** Measure resistance to ground at J401 pin 5 as greater than **TBD** ohms.
+**SPI Interface** Measure resistance to ground at J401 pin 5 as open or greater than 1Meg ohms.
 
-**Vin net** Measure resistance to ground at TP102 as greater than **1 Meg** ohms.  This net is capacitive and the resistance measured will climb as the meter charges the net.
+**Vin net** Measure resistance to ground at TP102 as open or greater than 75K.  This net is capacitive and the resistance measured will climb as the meter charges the net.
 
-**+5V net** Measure resistance to ground at TP103 +5 as greater than **TBD** ohms.
+**+5V net** Measure resistance to ground at 1K +/- 5% (950-1050 Ohms).
 
-With a current limited supply set for 12V and maximum of **TBD** mA, apply power at J101 and note and record the unprogrammed current.
-(FYI, when unprogrammed, the first time power up current is normally about **TBD** mA.)
+With a current limited supply set for 12V and maximum of 200 mA, apply power at J101 and note and record the unprogrammed current.
+(FYI, when unprogrammed, the first time power up current is normally about 75-80 mA.)
 
 Check that the power LED D105 is lit and is RED.
 
