@@ -38,4 +38,10 @@ LED_Standoff_Single    = 1;
 **Speaker2W**  
 A tentative moving could speaker. About 1" diameter. This is a FreeCAD drawing made by measuring principle points of of a part with calipers.  Exported to PDF with mechanical dimensions. Exported to STEP and STL files.
 
-
+### Credits
+This OpenScad enclosure design based on "The Ultimate Box Maker" from http://heartygfx.blogspot.com/  
+          -  FB Aka Heartman/Hearty 2016     -                   
+          -   http://heartygfx.blogspot.com    -                  
+          -       OpenScad Parametric Box      -                     
+          -         CC BY-NC 3.0 License    
+http://heartygfx.blogspot.com/2016/01/the-ultimate-box-maker.html
