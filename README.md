@@ -40,8 +40,8 @@ the other groups developed a voice playback feature.
 These features are on the ESP32 branch which as of August 2023 is not yet integrated.
 
 ## Version 2 PCB Features
-As of March 2023 we have developed and built a version 2 PCB.  Fifteen pwinted wiring assemblies were fabricated and five enclosures.
-Printed wiring assemblies were manufactured largerly by JLCPCB as were the enclosures. Enclousres by JLCPCB too.
+As of March 2023 we have developed and built a version 2 PCB.  Fifteen printed wiring assemblies were fabricated and five enclosures.
+Printed wiring assemblies were manufactured largely by JLCPCB as were the enclosures. Enclosures by JLCPCB too.
 Some PCB components not available though JLCPCB were assembled by hand in Maryville TN.
 Details of the assembly and test procedure is found through links in the README.md at:  [https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware](https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware)
 **FIXES in Version 2**
