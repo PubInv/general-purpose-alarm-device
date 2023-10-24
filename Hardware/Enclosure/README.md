@@ -45,3 +45,4 @@ This OpenScad enclosure design based on "The Ultimate Box Maker" from http://hea
           -       OpenScad Parametric Box      -                     
           -         CC BY-NC 3.0 License    
 http://heartygfx.blogspot.com/2016/01/the-ultimate-box-maker.html
+https://www.thingiverse.com/thing:1264391
