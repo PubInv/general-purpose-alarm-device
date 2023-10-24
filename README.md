@@ -1,10 +1,16 @@
 # General Purpose Alarm Device v2.0
 We often acronymize this as  "GPAD" (prounced gee-pad).
-## Demonstration Video
 
+## Abstract 
+The General Purpose Alarm Device (GPAD) shines lights and makes loud noises to draw the attention of a human being to a problem. It has a programmable 80 character display to provide textual info. A mute button toggles the sound on and off. Fundamentally it is designed to act as a peripheral to a controlling computer or microcontroller. The controller may communicate over a USB (COM) connection or through a 5V SPI connection via an RJ12 cable. The GPAD is intended to be as general as possible, so that it can be used to alarm many engineering, scientific, and hobby machines, instruments, and situations. The original driving use case is to provide medical alarm capability to the PolyVent [5]open-source mechanical medical ventilator. The GPAD supports 5 alarm levels above “silent” of increasing urgency in terms of light, rhythm, and frequency. It is based on the Arduino Uno Atmega328 design and potentially extensible the same way an Uno is, through headers and shields. It includes the printed wiring assembly, firmware for the GPAD peripheral, a simple documented API and a 3D printable enclosure. The repo includes instructions for using a second GPAD as a controller.
+
+The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device, probably another microcontroller.
+The controlling host will assert status through the GPAD to an end user.
+
+## Demonstration Video
 A demonstration of one use of the GPAD can be [seen here](https://youtu.be/F5cf5-Cmwu0).
 
-# Introduction
+# The Colaborative Open Development
 
 Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective
 (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
@@ -21,8 +27,6 @@ The GPAD Printed Circuit Assembly (Version 1)
 This General-Purpose-Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
 This module has an enclosure and inside is an embedded microcontroller system with features to alert a human of a condition.
 
-The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device, probably another microcontroller.
-The controlling host will assert status through the GPAD to an end user.
 
 # Versions History
 During the summer of 2022 Version 1 of the GPAD PCB was designed and several units fabricated.
@@ -46,20 +50,14 @@ We bult with buzzers Digi-key part numbers 433-WST-1210T-ND and 102-CMI-1295-058
 The Rev2 can also drive the **VERY **loud Floyd Bell Inc buzzer 2339-TXC-86-515-Q-ND rated at 103dB. however we have not designed an enclosure for the "off board" mounting requirements of this device.
 Additional Rev 2 features was silk screen on all of the "Arduino UNO " like pins for easy signal indentification.
 
-## Version 1 GPAD
-CAD view of GPAD With Version 1 Enclosure.
-<img src="./Hardware/Documentation/PICS/U_Box_V104_General_Alarm_Device.png" width="300">
+## GPAD V2 Build Information
+Files we used to build the V2 assemblies. PCB with some SMT Assembly was by JCLPCB in China. Additional parts were ordered and hand soldered in the USA.
 
-User view of GPAD Version 1 Printed Wiring Assembly without enclosure.
-<img src="./Hardware/Documentation/PICS/PCB_Display_Side.jpg" width="300">
-
-View of GPAD Version 1 Printed Wiring Assembly component side.
-<img src="./Hardware/Documentation/PICS/PCB_Component_Side.jpg" width="300">
-
-## GPAD V1 Build Information
-Files we used to build the V1 assemblies. PCB with some SMT Assembly was by JCLPCB in China. Additional parts were ordered and hand soldered in the USA.
-[FILES HERE: Hardware/Manufacturing](./Hardware/Manufacturing)
-
+[Linkes to the schematic and PCB design found here](./Hardware/GeneralPurposeAlarmDevicePCB)
+[Links to the exact Gerber files GerbersV120220804.zip](./Hardware/Manufacturing/GerbersV120220804.zip)
+[Information on the V2 build of April 2023](/Hardware/Manufacturing)
+[Manufacturing and Unit Test Documentation, PCB Version 2.0, 20230228](./Hardware/Documentation/ManufacturingUnitTestTroubleshootingRev2.md)
+Details how to assemble the Printed Wiring Assemblies as received from JLCPCB version 2 PCBs of March 2023. Includes testing and troubleshooting notes.
 
 # Example Use Case, The Ventilator
 
@@ -114,12 +112,7 @@ could design an enclosure for their requirements.
 
 # How is the alarm signal received?
 
-The wired RJ12(6P6C)  data connection from a host is an SPI controller and the GPAD is an SPI Peripheral.
-
-A wireless interface may be added through a UNO shield.
-(Compatibility with existing wireless shields has not been checked.
-A custom shield with a wireless interface to some of the unused
-controller pins should be possible but may not be trivial.)
+The SPI Peripherial is a wired RJ12(6P6C) data connection from a host is an SPI controller and the GPAD is an SPI Peripheral.  A data cable is wired pin 1 to pin 1 on the RJ12(6P6C) connectors. CAUTION: Telephone cables wire pin 1 to pin 6 and are not compatible.
 
 
 # Summer 2023 Project Status
@@ -242,7 +235,6 @@ AlarmLevel getAlarm(AlarmLevel al);
 boolean isMuted();
 ```
 
-
 ## The Abstract API
 The Abstract API is meant to work independent of specific hardware on
 the GPAD. That is, it should be useful for hardware built by other teams
@@ -296,6 +288,7 @@ The GPAD team was enabled and wishs to thank the developers and maintaines of:
 **FreeCAD** for additional design of the hanging feature on the enclosure
 **Wokwi** for the simulation tools for hardware and firmware.
 and the inventors and developers of the **Arduino** ecology of tools and hardware who have sparked so much good for so many.
+**"The Ultimate Box Maker"** from http://heartygfx.blogspot.com/2016/01/the-ultimate-box-maker.html
 
 # License
 
