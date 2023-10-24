@@ -63,6 +63,10 @@ Files we used to build the V2 assemblies. PCB with some SMT Assembly was by JCLP
 [Manufacturing and Unit Test Documentation, PCB Version 2.0, 20230228](./Hardware/Documentation/ManufacturingUnitTestTroubleshootingRev2.md)
 Details how to assemble the Printed Wiring Assemblies as received from JLCPCB version 2 PCBs of March 2023. Includes testing and troubleshooting notes.
 
+## GPAD V1 Repository Tag
+Tag to last commit before removing information of Version 1 PCB and PCBA
+https://github.com/PubInv/general-purpose-alarm-device/releases/tag/BeforeRemovingV1Files
+
 # Example Use Case, The Ventilator
 
 The [Freespireco Project](https://github.com/PubInv/freespireco) is an attempt to build a
