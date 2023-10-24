@@ -22,10 +22,13 @@ The GPAD is Certified Open Source Hardware by OSHWA. Our OSHWA UID is [US002352]
 GPAD in an Enclosure of Summer 2022
 ![https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG](https://user-images.githubusercontent.com/5296671/203407648-e5b4894c-6909-4530-9af4-f5937bfeb0b8.JPG)
 
-The GPAD Printed Circuit Assembly (Version 1)
-![IMG-3539](https://user-images.githubusercontent.com/5296671/195462489-233d7f4f-62ae-4d29-930c-db42419f31b2.JPG)
-This General-Purpose-Alarm-Device repository defines a 'General Purpose Alarm Device' aka, GPAD module.
-This module has an enclosure and inside is an embedded microcontroller system with features to alert a human of a condition.
+KiCad Simulated GPAD Printed Circuit Assembly (Version 2)
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/b7f9a16a-94d4-4ccd-a86f-526d37d9a09f)
+**Top View**
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/ea4155c0-4b1c-4f06-83ff-e278fcaf673b)
+**Bottom View.** 
+
+These images show some Artuino UNO connectors peeking out on the top view and on the bottom view not actualy used.  The GPAD was designed so that it MIGHT but a shield to an UNO but is actualy stand alone.
 
 
 # Versions History
@@ -37,10 +40,11 @@ the other groups developed a voice playback feature.
 These features are on the ESP32 branch which as of August 2023 is not yet integrated.
 
 ## Version 2 PCB Features
-As of March 2023 we have developed and built a version 2 PCB.
-Printed wiring assemblies were manufactured largerly by JLCPCB as were the enclosures.
-Some components not available though JLCPCB were assembled by hand.
+As of March 2023 we have developed and built a version 2 PCB.  Fifteen pwinted wiring assemblies were fabricated and five enclosures.
+Printed wiring assemblies were manufactured largerly by JLCPCB as were the enclosures. Enclousres by JLCPCB too.
+Some PCB components not available though JLCPCB were assembled by hand in Maryville TN.
 Details of the assembly and test procedure is found through links in the README.md at:  [https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware](https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware)
+**FIXES in Version 2**
 Changes were made in version 2 to fix a few reworks to version 1 PCBs involving cutting traces and soldering wires.
 Most noticable for uses was properly connecting the USB-UART chip to the micocontroller nRESET line
 so that the devices program without the user having to press the reset button.
