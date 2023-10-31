@@ -205,7 +205,7 @@ In the Arduino IDE, select TOOLS > Burn Bootloader .
 Watch the progress bar in the IDE and look for success with the message "Done burning bootloader." in the blue status bar.
 ![DoneBurningBootloader.png](DoneBurningBootloader.png)
 
-IF R103 has not been removed, Check that LED D102 is winking with a short on time and longer off time indicating that the boot loader has been loaded.  Untill any other sketch is loaded this is the bexpected behaviour of the unit under test.
+If R103 has not been removed, check that LED D102 is winking with a short on time and longer off time indicating that the boot loader has been loaded.  Until any other sketch is loaded, this is the expected behaviour of the unit under test.
 
 
 #### Load Factory Test Firmware.
@@ -228,7 +228,7 @@ Measure and record by serial number the following electrical parameters.
  
   Observe the current on the DUT. Press the Mute Switch S601 and the white LEDs D201-D205 should light. The Buzzer will make a sound. Record this full current in the table above.
    
-# End of Rev2 Tests as of March 2023
+That's it. End of Rev2 Tests as of March 2023
   
 # TO DO Future Tests Enhancments:  
  * Connect the DUT to an SPI controller and test SPI interface.  
@@ -248,4 +248,4 @@ The GPAD generally is controlled by an SPI Controller but through the USB port d
 
 ## Troubleshooting procedures  
 Compare and contrast operation with a normal device when ever possible.
-Check **TBD** for history of other faults and their fixes.
+Check the project issue list for history of other units with faults and their fixes.
