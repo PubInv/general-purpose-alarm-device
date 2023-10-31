@@ -35,8 +35,10 @@ Write serial number on the PCB assembly at the location indicated. _Management o
 
 ### An Assembly Fixture
 We made an assembly assistant / fixture by using a raw PCB with some long #6 screws and nuts to hold at the PCB mounting points. 
-![Assembly Fixture View 1](AssemblyFixtureView1.jpg)
-Also four 4.40 screws with washers and 4-40 nuts to make a 1/8" spacer for holding the LCD and header for soldering.
+![Assembly Fixture View 1, no LCD](AssemblyFixtureView1.jpg)  
+
+In addition four 4.40 screws with washers and 4-40 nuts to make a 1/8" spacer for holding the LCD and header for soldering.
+![Assembly Fixture View 2, With LCD](AssemblyFixtureView2.jpg)  
 
 ### Rework per issue #213, Remove R103
 GPAD Rev 2.0 PCB, Remove the Resistor R103 (Loads the Peripheral Select), Update Factory Test for D601. #213 
