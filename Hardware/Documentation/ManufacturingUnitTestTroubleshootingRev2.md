@@ -6,7 +6,6 @@ These units will be assigned serial numbers 16 through 30.
 #### Sections below
 * Manufacturing test procedure for every unit 
 **Assembly Notes and Tips 
-** Unit (Design) verification tests on some units 
 * GPAD Theory of Operation 
 * Troubleshooting procedures 
 
@@ -237,16 +236,6 @@ Measure and record by serial number the following electrical parameters.
  * Walking One test of LEDs D201-D205.   
  * Test for Amplitude Modulation of Buzzer.  
   
-
-##  Unit (Design) verification tests on some units
-  On DUT SN @, Lee has modified the Factory Test Firmware to test the buzzer at 4KHz which is the frequency for which it us specified.
-Using my Galaxy 7 phone and a free sound meter level (with absolutely no calibration) I measure over 60 db at about 12" from buzzer. Maximum current into DUT was 110mA.  
-  <img src="SoundMeter_Buzzer4Khz12Inches.jpg" alt="SoundMeter_Buzzer4Khz12Inches.jpg" width="320" >
-  
-  Buzzer test with 3"x4.875" 8 Ohm speaker at 1KHz, and 130 Hz and much louder 76db and 67 dB respectively.  Maxumum current into DUT was 220mA.
- 
-
-
 ## GPAD Theory of Operation  
 The GPAD is based on an Arduino UNO design with a CH340 USB to Serial adapter which enumerates on a USB port as a CDC aka Windows COM port (In linux systems a port /dev/ttyUSBn where "n" is a number).
   
