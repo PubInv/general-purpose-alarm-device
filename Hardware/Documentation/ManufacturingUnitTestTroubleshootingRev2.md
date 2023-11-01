@@ -83,7 +83,6 @@ LCD side components installed.
 
 **Rejoice! Electrical assembly is done.** 
 
-
 ### Electrical Tests
 Electrical tests are in two parts. 
 1. Unprogrammed measurements made before flash programming the boot loader and other firmware and...
@@ -242,6 +241,16 @@ Measure and record by serial number the following electrical parameters.
   Observe the current on the DUT. Press the Mute Switch S601 and the white LEDs D201-D205 should light. The Buzzer will make a sound. Record this full current in the table above.
    
 That's it. End of Rev2 Tests as of March 2023
+
+## Enclosure Assembly
+
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/2c5e7139-bc44-4744-b6fd-b6f47ea60f24)
+
+Use five screws to hold the printed wiring assembly (Green) to the yellow part.  
+The screws must be selected to fit to the enclosure as 3D printed. The enclosures printed of nylon worked with a sheet metal screw of thread diameter 0.14” 
+
+Use four screws to fix the tan part to the yellow part, two on each side. 
+The screws must be selected to fit to the enclosure as 3D printed. The enclosures printed of nylon worked with a sheet metal screw of thread diameter 0.087” 
   
 # TO DO Future Tests Enhancments:  
  * Connect the DUT to an SPI controller and test SPI interface.  
