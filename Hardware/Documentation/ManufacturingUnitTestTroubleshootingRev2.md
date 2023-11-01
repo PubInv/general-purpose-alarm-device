@@ -29,7 +29,10 @@ The most recent schematic is for Rev 2 PCB Assemblies is: [Schematic-GeneralPurp
 As received from JLCPCB.
 Note the assembly has the SMT components placed by the board manufacturer and some but not all through hole components. 
 
-Write serial number on the PCB assembly at the location indicated. _Management of serial numbers is beyond the scope of this document. Each manufacturer must figure something out._
+Write serial number on the PCB assembly at the location provided. 
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/177f54c9-5780-4772-89b4-81cf37c2b7d0)  
+Example of serial number written on number 23.  
+_Further Management of serial numbers is beyond the scope of this document. Each manufacturer must figure something out._
 
 ### An Assembly Fixture
 We made an assembly assistant / fixture by using a raw PCB with some long #6 screws and nuts to hold at the PCB mounting points. 
@@ -156,8 +159,15 @@ DUT Serial Number, R@PowerJack, R@SPI Interface, R@Vin net, R@5V net, UnProgramC
   <tr><td>30</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
   </table>
 
-### Additional Measurements of current with in subcircuits  Issue #230
+### Measurements of current with in subcircuits (Issue #230)
 See data from Rev2 build here:  https://github.com/PubInv/general-alarm-device/issues/230
+Test condition. Measure before firmware is loaded into device
+Capture current on circuit blocks.
+These measurements made before the DUT was programmed with any firmware. NO BOOTLOADER even.  Measure the current by measuring the voltage across the 1 Ohm decoupleing resistor from the raw power to the test points indicated. Raw power is at TP103 +5 test point. Volts in mV will be a measurement of mA.
+|  			 DUT S# 		 	|  			 VR101 (Current U102) mA 		 	|  			 VR310 (Current LCD) mA 		 	|  			 VR601 (Current Buzzer) mA 		 	|  			 Notes 		 	|
+|-----------	|----------------------------	|---------------------------	|------------------------------	|----------	|
+|  			 29 		     	|  			 2.1 		                     	|  			 49.1 		                   	|  			  			 		                         	|  			  			 		     	|
+|  			 30 		     	|  			 2.5 		                     	|  			 48.8 		                   	|  			  			 		                         	|  			  			 		     	|
 
 ### Load Firmware
 ** Note: Loading firmware through the SPI interface is a manufacturing test of the SPI hardware components. **
