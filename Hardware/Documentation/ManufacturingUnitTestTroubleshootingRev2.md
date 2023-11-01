@@ -42,7 +42,7 @@ In addition four 4.40 screws with washers and 4-40 nuts to make a 1/8" spacer fo
 GPAD Rev 2.0 PCB, Remove the Resistor R103 (Loads the Peripheral Select), Update Factory Test for D601. #213 
 **Problem:** 
 The assemblies built per the BOM_JLCPCB_20230228Modified.xls have R103 fitted with a 1K resistor. This resistor with the LED D102 loads the SPI_CLK signal and is incompatible with proper operation of the GPAD as an SPI Peripheral from a 3.3V SPI Controller using the level shifting method using the common gate MOSFET.  
-![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/49fd13c8-6389-4675-8db7-66171a67e4b2) 
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/49fd13c8-6389-4675-8db7-66171a67e4b2)   
 **Solution:** 
 Remove R103.
 
@@ -51,32 +51,35 @@ Remove R103.
  
 1. LCD Bezel Grounding.
 On the LCD module locate the J1 and J2 solder pads which if soldered ground the bezel.  
- View of J1 and J2.  
+ ![View of J1 and J2.](LocateJ1J2.jpg)  
 Solder them.  
- Solder on of J1 and J2.  
+ ![Solder on of J1 and J2.  ](SolderJ1J2.jpg)  
 As soldered.  
-2. The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Four, nylon 1/8" spacers are placed at the four corners of the LCD sub module. Four 4-40 x 3/8" screws with 4-40 x 3/16" nuts go through both boards and are torqued to 3.4 - 4.8 Inch-Pounds. Solder the LCD header pins into the GPAD PCB.
+2. The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Four, nylon 1/8" spacers are placed at the four corners of the LCD sub module. Four 4-40 x 3/8" screws with 4-40 x 3/16" nuts go through both boards and are torqued to 3.4 - 4.8 Inch-Pounds. Solder the LCD header pins into the GPAD PCB.  ![HeaderToLCD.jpg](HeaderToLCD.jpg)  
 TIP: Using the assembly fixture the 16 pin header can be held flush to the LCD module to solder a center pin to start the process.  
  Assembly Fixture View 2 
  View of holding header to LCD.  
 3. Put Reset button, S101 into PCB from display side.
 4. Put Mute button, S401 into PCB from display side.
 5. Put Buzzer, BZ601 into PCB from display side.  Bending leads may help retain.
-6. Put Contrast pot, RV301 into PCB from display side.  Bending leads may help retain.  
+6. Put Contrast pot, RV301 into PCB from display side.  Bending leads may help retain.   
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/89be9d08-b5fe-4446-990e-d2126ca31ee6)
+ 
 7. Through hole LEDs at locations D201-D205 and D105 with a stand-off spacer.  
  LEDs with spacers.  
 Thread the LED leads through the stand-offs.  The longer LED lead is the anode. The cathode has a flat side on the plastic case.  
 Place the LEDs in to the PCB so that the flat cathode side corresponds to the silk screen marking. Bend the leads to retain the LED into the PCB.  Placing the assembly on the fixture lets you have access to the top and the bottom of the assembly.  
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/3ee1a40a-40ad-43d3-b2bf-51fec04d2d6b)
  Assembly Fixture View with LEDs ready for soldering.
- Life LED and reflow solder for a flush fit on the PCB.  
+ Lift LED and reflow solder for a flush fit on the PCB.  
 For each LED, after soldering one lead, holding the LED from below up to the spacer and the PCB and reheat / reflow the solder for a flush fit.  
 Solder the second lead on the LED.  
 Trim the excess leads on RV301 and the LEDs.
 > *Assembly Tip:* [Sharpie Oil-Based Paint Markers](https://www.sharpie.com/markers/chalk-paint-markers/sharpie-oil-based-paint-markers-fine-point/SAP_37371PP.html) can be used to mark polarity on LED standoffs and mark PCB's version, serial number and programming status of the microprocessor.
+LCD side components installed.
 
 **Rejoice! Electrical assembly is done.** 
- 
-LCD side components installed. 
+
 
 ### Electrical Tests
 Electrical tests are in two parts. 
