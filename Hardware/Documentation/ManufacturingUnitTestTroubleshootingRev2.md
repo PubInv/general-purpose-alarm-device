@@ -29,7 +29,10 @@ The most recent schematic is for Rev 2 PCB Assemblies is: [Schematic-GeneralPurp
 As received from JLCPCB.
 Note the assembly has the SMT components placed by the board manufacturer and some but not all through hole components. 
 
-Write serial number on the PCB assembly at the location indicated. _Management of serial numbers is beyond the scope of this document. Each manufacturer must figure something out._
+Write serial number on the PCB assembly at the location provided. 
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/177f54c9-5780-4772-89b4-81cf37c2b7d0)  
+Example of serial number written on number 23.  
+_Further Management of serial numbers is beyond the scope of this document. Each manufacturer must figure something out._
 
 ### An Assembly Fixture
 We made an assembly assistant / fixture by using a raw PCB with some long #6 screws and nuts to hold at the PCB mounting points. 
@@ -42,7 +45,7 @@ In addition four 4.40 screws with washers and 4-40 nuts to make a 1/8" spacer fo
 GPAD Rev 2.0 PCB, Remove the Resistor R103 (Loads the Peripheral Select), Update Factory Test for D601. #213 
 **Problem:** 
 The assemblies built per the BOM_JLCPCB_20230228Modified.xls have R103 fitted with a 1K resistor. This resistor with the LED D102 loads the SPI_CLK signal and is incompatible with proper operation of the GPAD as an SPI Peripheral from a 3.3V SPI Controller using the level shifting method using the common gate MOSFET.  
-![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/49fd13c8-6389-4675-8db7-66171a67e4b2) 
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/49fd13c8-6389-4675-8db7-66171a67e4b2)   
 **Solution:** 
 Remove R103.
 
@@ -51,32 +54,34 @@ Remove R103.
  
 1. LCD Bezel Grounding.
 On the LCD module locate the J1 and J2 solder pads which if soldered ground the bezel.  
- View of J1 and J2.  
+ ![View of J1 and J2.](LocateJ1J2.jpg)  
 Solder them.  
- Solder on of J1 and J2.  
+ ![Solder on of J1 and J2.  ](SolderJ1J2.jpg)  
 As soldered.  
-2. The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Four, nylon 1/8" spacers are placed at the four corners of the LCD sub module. Four 4-40 x 3/8" screws with 4-40 x 3/16" nuts go through both boards and are torqued to 3.4 - 4.8 Inch-Pounds. Solder the LCD header pins into the GPAD PCB.
+2. The 16 pin header is fit and soldered on to the LCD sub module. Then the pins are placed through the GPAD PCB. Four, nylon 1/8" spacers are placed at the four corners of the LCD sub module. Four 4-40 x 3/8" screws with 4-40 x 3/16" nuts go through both boards and are torqued to 3.4 - 4.8 Inch-Pounds. Solder the LCD header pins into the GPAD PCB.  ![HeaderToLCD.jpg](HeaderToLCD.jpg)  
 TIP: Using the assembly fixture the 16 pin header can be held flush to the LCD module to solder a center pin to start the process.  
  Assembly Fixture View 2 
  View of holding header to LCD.  
 3. Put Reset button, S101 into PCB from display side.
 4. Put Mute button, S401 into PCB from display side.
 5. Put Buzzer, BZ601 into PCB from display side.  Bending leads may help retain.
-6. Put Contrast pot, RV301 into PCB from display side.  Bending leads may help retain.  
+6. Put Contrast pot, RV301 into PCB from display side.  Bending leads may help retain.   
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/89be9d08-b5fe-4446-990e-d2126ca31ee6)
+ 
 7. Through hole LEDs at locations D201-D205 and D105 with a stand-off spacer.  
  LEDs with spacers.  
 Thread the LED leads through the stand-offs.  The longer LED lead is the anode. The cathode has a flat side on the plastic case.  
 Place the LEDs in to the PCB so that the flat cathode side corresponds to the silk screen marking. Bend the leads to retain the LED into the PCB.  Placing the assembly on the fixture lets you have access to the top and the bottom of the assembly.  
- Assembly Fixture View with LEDs ready for soldering.
- Life LED and reflow solder for a flush fit on the PCB.  
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/7affac58-476f-4b3b-8f7f-00fd611861c8)  
+Assembly Fixture View with LEDs ready for soldering.
+Lift LED and reflow solder for a flush fit on the PCB.  
 For each LED, after soldering one lead, holding the LED from below up to the spacer and the PCB and reheat / reflow the solder for a flush fit.  
 Solder the second lead on the LED.  
 Trim the excess leads on RV301 and the LEDs.
 > *Assembly Tip:* [Sharpie Oil-Based Paint Markers](https://www.sharpie.com/markers/chalk-paint-markers/sharpie-oil-based-paint-markers-fine-point/SAP_37371PP.html) can be used to mark polarity on LED standoffs and mark PCB's version, serial number and programming status of the microprocessor.
+LCD side components installed.
 
 **Rejoice! Electrical assembly is done.** 
- 
-LCD side components installed. 
 
 ### Electrical Tests
 Electrical tests are in two parts. 
@@ -153,8 +158,15 @@ DUT Serial Number, R@PowerJack, R@SPI Interface, R@Vin net, R@5V net, UnProgramC
   <tr><td>30</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>___</td> <td>Vo=1.??</td><td> </td>  </tr>  
   </table>
 
-### Additional Measurements of current with in subcircuits  Issue #230
+### Measurements of current with in subcircuits (Issue #230)
 See data from Rev2 build here:  https://github.com/PubInv/general-alarm-device/issues/230
+Test condition. Measure before firmware is loaded into device
+Capture current on circuit blocks.
+These measurements made before the DUT was programmed with any firmware. NO BOOTLOADER even.  Measure the current by measuring the voltage across the 1 Ohm decoupleing resistor from the raw power to the test points indicated. Raw power is at TP103 +5 test point. Volts in mV will be a measurement of mA.
+|  			 DUT S# 		 	|  			 VR101 (Current U102) mA 		 	|  			 VR310 (Current LCD) mA 		 	|  			 VR601 (Current Buzzer) mA 		 	|  			 Notes 		 	|
+|-----------	|----------------------------	|---------------------------	|------------------------------	|----------	|
+|  			 29 		     	|  			 2.1 		                     	|  			 49.1 		                   	|  			  			 		                         	|  			  			 		     	|
+|  			 30 		     	|  			 2.5 		                     	|  			 48.8 		                   	|  			  			 		                         	|  			  			 		     	|
 
 ### Load Firmware
 ** Note: Loading firmware through the SPI interface is a manufacturing test of the SPI hardware components. **
@@ -229,6 +241,16 @@ Measure and record by serial number the following electrical parameters.
   Observe the current on the DUT. Press the Mute Switch S601 and the white LEDs D201-D205 should light. The Buzzer will make a sound. Record this full current in the table above.
    
 That's it. End of Rev2 Tests as of March 2023
+
+## Enclosure Assembly
+
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/2c5e7139-bc44-4744-b6fd-b6f47ea60f24)
+
+Use five screws to hold the printed wiring assembly (Green) to the yellow part.  
+The screws must be selected to fit to the enclosure as 3D printed. The enclosures printed of nylon worked with a sheet metal screw of thread diameter 0.14” 
+
+Use four screws to fix the tan part to the yellow part, two on each side. 
+The screws must be selected to fit to the enclosure as 3D printed. The enclosures printed of nylon worked with a sheet metal screw of thread diameter 0.087” 
   
 # TO DO Future Tests Enhancments:  
  * Connect the DUT to an SPI controller and test SPI interface.  
