@@ -69,9 +69,9 @@ TIP: Using the assembly fixture the 16 pin header can be held flush to the LCD m
  LEDs with spacers.  
 Thread the LED leads through the stand-offs.  The longer LED lead is the anode. The cathode has a flat side on the plastic case.  
 Place the LEDs in to the PCB so that the flat cathode side corresponds to the silk screen marking. Bend the leads to retain the LED into the PCB.  Placing the assembly on the fixture lets you have access to the top and the bottom of the assembly.  
-![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/3ee1a40a-40ad-43d3-b2bf-51fec04d2d6b)
- Assembly Fixture View with LEDs ready for soldering.
- Lift LED and reflow solder for a flush fit on the PCB.  
+![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/7affac58-476f-4b3b-8f7f-00fd611861c8)  
+Assembly Fixture View with LEDs ready for soldering.
+Lift LED and reflow solder for a flush fit on the PCB.  
 For each LED, after soldering one lead, holding the LED from below up to the spacer and the PCB and reheat / reflow the solder for a flush fit.  
 Solder the second lead on the LED.  
 Trim the excess leads on RV301 and the LEDs.
