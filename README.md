@@ -6,7 +6,7 @@ DOI: [https://zenodo.org/records/10065096](https://zenodo.org/records/10065096)
 ## Abstract 
 The General Purpose Alarm Device (GPAD) shines lights and makes loud noises to draw attention to a problem. It has a programmable 80 character display to provide textual info. A mute button toggles the sound on and off. Fundamentally, it is designed to act as a peripheral to a controlling computer or microcontroller. The controller may communicate over a USB (COM) connection or through a 5V SPI connection via an RJ12 cable. The GPAD is intended to be as general as possible, so that it can be used as an alarm for many engineering, scientific, and hobby machines or instruments. The device's original goal was to provide medical alarm capability to the PolyVent [5]open-source mechanical medical ventilator. The GPAD supports 5 alarm levels above “silent” of increasing urgency in terms of light, rhythm, and frequency. It is based on the Arduino Uno Atmega328 design and may similarly become extensible through headers and shields. It includes a printed wiring assembly, firmware for the GPAD peripheral, a simple documented API, and a 3D printable enclosure. The repo includes instructions for using a second GPAD as a controller.
 
-The GPAD does not detect the conditions that need to be alarmed. It is peripheral to a controlling host device, probably another microcontroller.
+The GPAD does not detect the conditions that need to be alarmed. It is a peripheral to a controlling host device, probably another microcontroller.
 The controlling host will assert status through the GPAD to an end user.
 
 ## Demonstration Video
