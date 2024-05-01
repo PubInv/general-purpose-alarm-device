@@ -247,7 +247,6 @@ void loop(void)
         event.lvl = v;
         strcpy(event.msg,"abcdefghijklmnopqrstuvwxy\0");
         event.msg[26] = 0;
-        // TEMP: Sadly I have to do this twice?
         alarm_event(event,Serial);
         Serial.println(F("Done"));
         Serial.println(GPAD_CS);

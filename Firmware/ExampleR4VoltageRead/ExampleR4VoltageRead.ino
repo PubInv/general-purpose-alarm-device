@@ -48,13 +48,43 @@
   https://github.com/PubInv/general-purpose-alarm-device/issues/263
 
 */
+
+#include<SPI.h> 
+#include "GPAD_Alarm_API_SPI.h"
+
+
+#define PROG_NAME "Example R4 Voltage Read" 
+#define VERSION 0.1
 #define BAUDRATE 115200
+
+int GPAD_CS = SS;
+
+void local_setup(void) {
+   pinMode(GPAD_CS, OUTPUT);                    // Set nCS for output
+  pinMode(MISO, INPUT);                   //Sets MISO as INPUT. Note MOSI must be set automaticaly
+  SPI.begin();
+
+  Serial.println(PROG_NAME);
+  Serial.println("GPAD Example R4 Voltage Read");
+  Serial.println("by PubInv & SPEC");
+  Serial.print("Version: ");
+  Serial.println(VERSION);
+  Serial.println("MISO,MOSI,GPAD_CS,SCK");
+  Serial.println(MISO);
+  Serial.println(MOSI);
+  Serial.println(GPAD_CS);
+  Serial.println(SCK); 
+}
 
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(BAUDRATE);
-  SerialUSB.begin(BAUDRATE);
+
+  while (!Serial) {
+    ; // wait for serial port to connect. Needed for native USB
+  }
+  local_setup();
 }
 
 // These will be a function of the specific potentiometer you use
@@ -87,15 +117,18 @@ void loop() {
   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   float voltage = sensorValue * (3.3 / 1023.0);
   int al = alarm_level_from_voltage(voltage);
-  Serial.print("a");
-  Serial.print(al);
-//  Serial.print(msg[al]);
-  Serial.println();
 
-  SerialUSB.print("a");
-  SerialUSB.print(al);
-//  SerialUSB.print(msg[al]);
-  SerialUSB.println();
-  delay(2000);
+  AlarmEvent event;
+  event.lvl = al;
+  strcpy(event.msg,"abcdefghijklmnopqrstuvwxy\0");
+  event.msg[26] = 0;
+
+  alarm_event(event,Serial);
+  Serial.println(F("Done"));
+  Serial.println(GPAD_CS);
+  Serial.println(F("LEVEL: "));
+  Serial.println(event.lvl);
+
+  delay(5000);
 }
 
