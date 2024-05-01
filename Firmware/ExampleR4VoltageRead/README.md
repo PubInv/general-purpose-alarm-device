@@ -1,29 +1,29 @@
 # Introduction: ExampleR4VoltageRead
 
 
-    This program exists to demonstrate using the GPAD from a simple
-  Arudion R4 via the SPI interface.
+This program exists to demonstrate using the GPAD from a simple
+Arduino R4 via the SPI interface.
 
-  It reads a voltage from an analog input pin, and assumes that
-  as the voltage increases, the situation is becoming more dangerous
-  and requires more human attention. This is embodied by a simple
-  potentiometer, which can be turned by hand to demostrate the GPAD.
+It reads a voltage from an analog input pin, and assumes that
+as the voltage increases, the situation is becoming more dangerous
+and requires more human attention. This is embodied by a simple
+potentiometer, which can be turned by hand to demostrate the GPAD.
 
-  This code is very similar to the GPAD_API_SPI_CONTROLLER code.
-  That code, however, is used by this project to test a GPAD by
-  using a GPAD itself as a controller. Since most users are not
-  going to have two GPADs, showing how to use one from a simple,
-  cheap, widely avaialabe micrcontroller, such as an Arduino R4.
+This code is very similar to the GPAD_API_SPI_CONTROLLER code.
+That code, however, is used by this project to test a GPAD by
+using a GPAD itself as a controller. Since most users are not
+going to have two GPADs, showing how to use one from a simple,
+cheap, widely avaialabe micrcontroller, such as an Arduino R4.
 
-  Note: This Arduion project copies some utility files into this
-  directory. These are:
+Note: This Arduion project copies some utility files into this
+directory. These are:
 1.   GPAD_ALARM_API_SPI.cpp
 1.    GPAD_ALARM_API_SPI.h
 1.    alarm_api.h
-  This is a code duplcation which is bad form; these should probably
-  be made into a separate repo so that these can included as a
-  separate libary. This is issue #263 in our repo,
-  [https://github.com/PubInv/general-purpose-alarm-device/issues/263](https://github.com/PubInv/general-purpose-alarm-device/issues/263)
+This is a code duplcation which is bad form; these should probably
+be made into a separate repo so that these can included as a
+separate libary. This is issue #263 in our repo,
+[https://github.com/PubInv/general-purpose-alarm-device/issues/263](https://github.com/PubInv/general-purpose-alarm-device/issues/263)
 
 # How it Works
 
