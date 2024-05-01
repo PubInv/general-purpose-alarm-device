@@ -78,12 +78,15 @@ int GPAD_CS = ESP_CS_PINS[GPAD_CS_IDX];
 int GPAD_CS = SS;
 #endif
 
-#define USE_LCD 1
+// #define USE_LCD 1
+// #define USE_LCD 0
 #ifdef USE_LCD
 //For LCD -- this is useful if you are using a GPAD as a controller, but 
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 chars and 4 line display in Wokwi, and 0x38 for the physical GPAD board
 #endif
+
+#define SETTING_CHANGE_DELAY_MS 5000
 
 /* Assumes LCD has been initilized
  * Turns off Back Light
@@ -91,12 +94,15 @@ LiquidCrystal_I2C lcd(0x38, 20, 4); // set the LCD address to 0x27 for a 20 char
  * Turns on back light.
  */
 void clearLCD(void) {  
+#ifdef USE_LCD
   lcd.noBacklight();
   lcd.clear();
+#endif
 }
 
 //Splash a message so we can tell the LCD is working
 void splashLCD(void) {
+#ifdef USE_LCD
   lcd.init();                      // initialize the lcd
   // Print a message to the LCD.
   lcd.backlight();
@@ -109,7 +115,9 @@ void splashLCD(void) {
   lcd.setCursor(0, 3);
   lcd.print("Version: ");
   lcd.print(VERSION);
+#endif
 }// end splashLCD
+
 
 
 void local_setup(void) {
@@ -119,9 +127,17 @@ void local_setup(void) {
   // At this speed (2MHZ), we were missing bytes with a 12" cable.
   //SPI.setClockDivider(SPI_CLOCK_DIV8);    //Sets clock for SPI communication at 8 (16/8=2Mhz)
   // At this speed, with a 12" cable, I noticed no dropped bytes.
-  SPI.setClockDivider(SPI_CLOCK_DIV16);    //SPI clock at 16MHz/N (16/16=1Mhz) where N={2,4,8,16,32,64,128}
+  // This is the one we recently used...
+#if defined(ARDUINO_UNOWIFIR4)
+#else
+  SPI.setClockDivider(SPI_CLOCK_DIV16);
+#endif
+    //SPI clock at 16MHz/N (16/16=1Mhz) where N={2,4,8,16,32,64,128}
   //SPI.setClockDivider(SPI_CLOCK_DIV64);    //SPI clock at 16MHz/N (16/64=250Khz) where N={2,4,8,16,32,64,128}
   //SPI.setClockDivider(SPI_CLOCK_DIV128);    //SPI clock at 16MHz/N (16/128=125Khz) where N={2,4,8,16,32,64,128}
+
+// Note: We believe the speed can be controlled by the SPISettings ojbection in
+// GPAD_ALARM_API_SPI.cpp
   pinMode(GPAD_CS, OUTPUT);                    // Set nCS for output
   pinMode(MISO, INPUT);                   //Sets MISO as INPUT. Note MOSI must be set automaticaly
   SPI.begin();                            //Begins the SPI commnuication
@@ -142,6 +158,11 @@ void local_setup(void) {
   delay(100);
   Serial.println(F("SETUP DONE!"));
 
+  Serial.println("MISO,MOSI,GPAD_CS,SCK");
+  Serial.println(MISO);
+  Serial.println(MOSI);
+  Serial.println(GPAD_CS);
+  Serial.println(SCK);
 }
 void setup (void)
 {
@@ -175,13 +196,34 @@ void desire_loop(void)
 // int cnt = 0;
 unsigned long timer;
 int toggle = 0;
+
+const int USE_WIRE_FINDING = 0;
 void loop(void)
 {
+  if (USE_WIRE_FINDING) {
+    delay(3000);
+    if (toggle == 0) {
+      digitalWrite(10,HIGH);
+      digitalWrite(11,HIGH);
+      digitalWrite(12,HIGH);
+      digitalWrite(13,HIGH);
+      Serial.println("HIGH");
+    } else {
+      digitalWrite(10,LOW);
+      digitalWrite(11,LOW);
+      digitalWrite(12,LOW);
+      digitalWrite(13,LOW);
+      Serial.println("LOW");
+    }
+    toggle = (toggle + 1) % 2;
+    return;
+  }
 
-  delay(3000);
+
+  delay(SETTING_CHANGE_DELAY_MS);
   Serial.println("SENDING SPI");
   unsigned long m = millis();
-  if (m > (5000 + timer)) {
+  if (m > (SETTING_CHANGE_DELAY_MS + timer)) {
     timer = m;
     const int USE_TOGGLE = 0;
 
@@ -205,6 +247,7 @@ void loop(void)
         event.lvl = v;
         strcpy(event.msg,"abcdefghijklmnopqrstuvwxy\0");
         event.msg[26] = 0;
+        // TEMP: Sadly I have to do this twice?
         alarm_event(event,Serial);
         Serial.println(F("Done"));
         Serial.println(GPAD_CS);

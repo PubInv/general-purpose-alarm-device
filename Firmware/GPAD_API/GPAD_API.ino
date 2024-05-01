@@ -96,7 +96,7 @@
 #endif
 
 #define DEBUG_SPI 0
-#define DEBUG 1
+#define DEBUG 0
 
 #include<SPI.h>
 
@@ -137,7 +137,8 @@ void setup_spi()
 // This is the original...
 // I plan to add an index to this to handle the full message that we intend to receive.
 // However, I think this also needs a timeout to handle the problem of getting out of synch.
-
+const int SPI_BYTE_TIMEOUT_MS = 200; // we don't get the next byte this fast, we reset.
+volatile unsigned long last_byte_ms = 0;
 ISR (SPI_STC_vect)                        //Inerrrput routine function
 {
    receive_byte(SPDR);
@@ -146,6 +147,7 @@ ISR (SPI_STC_vect)                        //Inerrrput routine function
 
 void receive_byte(byte c)
 {
+  last_byte_ms = millis();
   // byte c = SPDR; // read byte from SPI Data Register
   if (indx < sizeof received_signal_raw_bytes) {
     received_signal_raw_bytes[indx] = c; // save data in the next index in the array received_signal_raw_bytes
@@ -159,8 +161,14 @@ void receive_byte(byte c)
 
 void updateFromSPI()
 {
+   if (DEBUG > 0) {
+    if (process) {
+      Serial.println("process true!");
+    }
+  }
   if(process)
   {
+   
     AlarmEvent event;
     event.lvl = (AlarmLevel) received_signal_raw_bytes[0];
     for(int i = 0; i < MAX_MSG_LEN; i++) {
@@ -230,15 +238,12 @@ void setup() {
   robot_api_setup(&Serial);
 
   setup_spi();
-
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off at end of setup
-
   Serial.println(F("Done With Setup!"));
 }// end of setup()
 
 unsigned long last_ms = 0;
 void loop() {
-  
   updateWink(); //The builtin LED
 
 // because we are now using "songs", we need to call this periodically

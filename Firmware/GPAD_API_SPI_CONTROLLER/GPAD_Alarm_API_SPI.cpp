@@ -26,8 +26,21 @@
 
 #define DEBUG_GPAD_API_SPI 1
 
+#if defined(ARDUINO_UNOWIFIR4)
+#define USE_TRANSACTION 1
+#else
+#define USE_TRANSACTION 0
+#endif
+
 extern int GPAD_CS;
 
+// you may want to set this lower for debugging...
+#define EXPERIMENTALLY_FUNCTIONAL_SPI_HZ 800000
+
+// #define EXPERIMENTALLY_FUNCTIONAL_SPI_HZ 1000000
+// #define EXPERIMENTALLY_FUNCTIONAL_SPI_HZ 100000
+// SPISettings spi_settings(EXPERIMENTALLY_FUNCTIONAL_SPI_HZ, MSBFIRST, SPI_MODE3);
+SPISettings spi_settings(EXPERIMENTALLY_FUNCTIONAL_SPI_HZ, MSBFIRST, SPI_MODE0);
 // extern SPITransfer myTransfer;
 int alarm_event(AlarmEvent& event,Stream &serialport) {
 
@@ -37,14 +50,21 @@ int alarm_event(AlarmEvent& event,Stream &serialport) {
   //  serialport.println(event.msg);
   }
   uint8_t v = event.lvl;
+
   digitalWrite(GPAD_CS, LOW);
-  // WARNING...This is test code to just send one byte.
+  if (USE_TRANSACTION > 0) {
+     SPI.beginTransaction(spi_settings);
+  }
+    // WARNING...This is test code to just send one byte.
   SPI.transfer(v);
-  // now we want to write 128 bytes
+    // now we want to write 128 bytes
   for(int i = 0; i < MAX_MSG_LEN; i++) {
     SPI.transfer(event.msg[i]);
   }
-  digitalWrite(GPAD_CS, HIGH);
+  if (USE_TRANSACTION > 0) {
+    SPI.endTransaction();
+  }
+  digitalWrite(GPAD_CS, HIGH);  
 }
 int alarm(AlarmLevel level,char *str,Stream &serialport) {
   AlarmEvent event;
