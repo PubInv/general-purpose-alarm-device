@@ -2,7 +2,7 @@
 
   GPAD_API_SPI_CONTROLLER.ino - Controller code for using one GPAD to control another.
 
-  Copyright (C) 2023 Forrest Lee Erickson
+  Copyright (C) 2023 Forrest Lee Erickson, 2024 Robert L. Read
 
   This program includes free software: you can redistribute it and/or modify
   it under the terms of the GNU Affero General Public License as
@@ -128,11 +128,11 @@ void local_setup(void) {
   //SPI.setClockDivider(SPI_CLOCK_DIV8);    //Sets clock for SPI communication at 8 (16/8=2Mhz)
   // At this speed, with a 12" cable, I noticed no dropped bytes.
   // This is the one we recently used...
-#if defined(ARDUINO_UNOWIFIR4)
-#else
-  SPI.setClockDivider(SPI_CLOCK_DIV16);
-#endif
-    //SPI clock at 16MHz/N (16/16=1Mhz) where N={2,4,8,16,32,64,128}
+  // #if defined(ARDUINO_UNOWIFIR4)
+  // #else
+  //  SPI.setClockDivider(SPI_CLOCK_DIV16);
+  // #endif
+  //SPI clock at 16MHz/N (16/16=1Mhz) where N={2,4,8,16,32,64,128}
   //SPI.setClockDivider(SPI_CLOCK_DIV64);    //SPI clock at 16MHz/N (16/64=250Khz) where N={2,4,8,16,32,64,128}
   //SPI.setClockDivider(SPI_CLOCK_DIV128);    //SPI clock at 16MHz/N (16/128=125Khz) where N={2,4,8,16,32,64,128}
 

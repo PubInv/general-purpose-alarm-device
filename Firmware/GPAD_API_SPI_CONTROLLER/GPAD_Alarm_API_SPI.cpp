@@ -2,7 +2,7 @@
   GPAD_Alarm_API_SPI.h - header file to implement an Arduino SPI
   interface the GPAD abastract alarm interface.
 
-  Copyright (C) 2022 Robert Read
+  Copyright (C) 2024 Robert Read
 
   This program includes free software: you can redistribute it and/or modify
   it under the terms of the GNU Affero General Public License as
@@ -25,45 +25,29 @@
 #include<SPI.h>
 
 #define DEBUG_GPAD_API_SPI 1
-
-#if defined(ARDUINO_UNOWIFIR4)
-#define USE_TRANSACTION 1
-#else
-#define USE_TRANSACTION 0
-#endif
+#define EXPERIMENTALLY_FUNCTIONAL_SPI_HZ 800000
 
 extern int GPAD_CS;
 
-// you may want to set this lower for debugging...
-#define EXPERIMENTALLY_FUNCTIONAL_SPI_HZ 800000
-
-// #define EXPERIMENTALLY_FUNCTIONAL_SPI_HZ 1000000
-// #define EXPERIMENTALLY_FUNCTIONAL_SPI_HZ 100000
-// SPISettings spi_settings(EXPERIMENTALLY_FUNCTIONAL_SPI_HZ, MSBFIRST, SPI_MODE3);
 SPISettings spi_settings(EXPERIMENTALLY_FUNCTIONAL_SPI_HZ, MSBFIRST, SPI_MODE0);
-// extern SPITransfer myTransfer;
+
 int alarm_event(AlarmEvent& event,Stream &serialport) {
 
   if (DEBUG_GPAD_API_SPI > 0) {
     serialport.println(F("send lvl, msg"));
     serialport.print(event.lvl);
-  //  serialport.println(event.msg);
   }
   uint8_t v = event.lvl;
 
   digitalWrite(GPAD_CS, LOW);
-  if (USE_TRANSACTION > 0) {
-     SPI.beginTransaction(spi_settings);
-  }
-    // WARNING...This is test code to just send one byte.
+  SPI.beginTransaction(spi_settings);
+
   SPI.transfer(v);
     // now we want to write 128 bytes
   for(int i = 0; i < MAX_MSG_LEN; i++) {
     SPI.transfer(event.msg[i]);
   }
-  if (USE_TRANSACTION > 0) {
-    SPI.endTransaction();
-  }
+  SPI.endTransaction();
   digitalWrite(GPAD_CS, HIGH);  
 }
 int alarm(AlarmLevel level,char *str,Stream &serialport) {
