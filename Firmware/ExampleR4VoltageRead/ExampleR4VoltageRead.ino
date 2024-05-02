@@ -120,15 +120,16 @@ void loop() {
 
   AlarmEvent event;
   event.lvl = al;
-  strcpy(event.msg,"abcdefghijklmnopqrstuvwxy\0");
-  event.msg[26] = 0;
+
+  sprintf(event.msg, "v=%.2f %s", voltage,msg[al]);
+  int n = strlen(event.msg);
+  event.msg[n] = 0;
 
   alarm_event(event,Serial);
-  Serial.println(F("Done"));
-  Serial.println(GPAD_CS);
+  Serial.println(event.msg);
   Serial.println(F("LEVEL: "));
   Serial.println(event.lvl);
 
-  delay(5000);
+  delay(500);
 }
 
