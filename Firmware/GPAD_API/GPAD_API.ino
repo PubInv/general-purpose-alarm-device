@@ -109,6 +109,12 @@ volatile boolean process;
 
 byte received_signal_raw_bytes[MAX_BUFFER_SIZE];
 
+unsigned long last_command_ms;
+
+// We have currently defined our alam time to include 10-second "songs",
+// So we will not process a new alarm condition until we have completed one song.
+const unsigned long DELAY_BEFORE_NEW_COMMAND_ALLOWED = 10000;
+
 void setup_spi()
 {
   Serial.println(F("Starting SPI Peripheral."));
@@ -180,8 +186,12 @@ void updateFromSPI()
       Serial.println(event.lvl);
       Serial.println(event.msg);
     }
-    alarm((AlarmLevel) event.lvl, event.msg,&Serial);
-    annunciateAlarmLevel(&Serial);
+    int prevLevel = alarm((AlarmLevel) event.lvl, event.msg,&Serial);
+    if (prevLevel != event.lvl) {
+      annunciateAlarmLevel(&Serial);
+    } else {
+      unchanged_anunicateAlarmLevel(&Serial);
+    }
   
     indx = 0;
     process = false;
@@ -243,8 +253,10 @@ void setup() {
 }// end of setup()
 
 unsigned long last_ms = 0;
+
 void loop() {
   updateWink(); //The builtin LED
+
 
 // because we are now using "songs", we need to call this periodically
   unchanged_anunicateAlarmLevel(&Serial);

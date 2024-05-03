@@ -218,8 +218,6 @@ void set_light_level(int lvl) {
   }
 }
 void unchanged_anunicateAlarmLevel(Stream* serialport) {
-
-
   unsigned long m = millis();
   unsigned long time_in_song = m - start_of_song;
   unsigned char note = time_in_song / (unsigned long) LEN_OF_NOTE_MS;
