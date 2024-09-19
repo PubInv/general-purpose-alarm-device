@@ -30,8 +30,8 @@ As received from JLCPCB.
 Note the assembly has the SMT components placed by the board manufacturer and some but not all through hole components. 
 
 Write serial number on the PCB assembly at the location provided. 
-![image](https://github.com/PubInv/general-purpose-alarm-device/assets/5836181/177f54c9-5780-4772-89b4-81cf37c2b7d0)  
-Example of serial number written on number 23.  
+![image](https://github.com/user-attachments/assets/3f46fba5-a692-46b5-ab50-af8f262eb995)
+Example of serial number written on number 26.  
 _Further Management of serial numbers is beyond the scope of this document. Each manufacturer must figure something out._
 
 ### An Assembly Fixture
