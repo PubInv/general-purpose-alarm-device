@@ -1,5 +1,5 @@
 # General Purpose Alarm Device v2.0
-We often acronymize this as  "GPAD" (prounced gee-pad).
+We often acronymize this as  "GPAD" (pronounced gee-pad).
 
 DOI: [https://zenodo.org/records/10065096](https://zenodo.org/records/10065096)
 
@@ -12,7 +12,7 @@ The controlling host will assert status through the GPAD to an end user.
 ## Demonstration Video
 A demonstration of one use of the GPAD can be [seen here](https://youtu.be/F5cf5-Cmwu0).
 
-# The Colaborative Open Development
+# Collaborative Open Development
 
 Development of the GPAD is in collaboration with the [Sustainable Progress and Equality Collective
 (SPEC)](https://www.specollective.org/#:~:text=The%20Sustainable%20Progress%20and%20Equality,be%20catalysts%20for%20positive%20change.) and other individual volunteers.
@@ -39,12 +39,17 @@ Some of these units were used as electrical engineering senior capstone projects
 University of Oklahoma, located in Nornam Oklahoma, during the spring semester.
 Two groups participated: one group developed a wireless interface and battery features, and
 the other groups developed a voice playback feature.
-These features are on the ESP32 branch, which as of August 2023, is not yet integrated.
+These features are on the ESP32 branch, some of which appear in the [Krake](https://github.com/PubInv/krake) project.
+
+## GPAD V1 Repository Tag
+Tag to last commit before removing information of Version 1 PCB and PCBA
+https://github.com/PubInv/general-purpose-alarm-device/releases/tag/BeforeRemovingV1Files.
 
 ## Version 2 PCB Features
-As of March 2023, we have developed and built a version 2 PCB.  Fifteen printed wiring assemblies and five enclosures were fabricated largely by JLCPCB.
+As of March 2023, we developed and built a version 2 PCB.  Fifteen printed wiring assemblies and five enclosures were fabricated largely by JLCPCB.
 Some PCB components not available through JLCPCB were assembled by hand in Maryville, TN.
-Details of the assembly and test procedure can be found through links in the README.md at:  [https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware](https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware)
+Details of the assembly and test procedure can be found through links in the README.md at:  [https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware](https://github.com/PubInv/general-purpose-alarm-device/tree/main/Hardware).
+
 **FIXES in Version 2**
 Changes were made in version 2 to fix a few reworks to version 1 PCBs, which involved cutting traces and soldering wires.
 The most noticable change was properly connecting the USB-UART chip to the micocontroller nRESET line
@@ -62,10 +67,6 @@ Below are files we used to build the V2 assemblies. The PCB with some SMT Assemb
 [Information on the V2 build of April 2023](/Hardware/Manufacturing)
 [Manufacturing and Unit Test Documentation, PCB Version 2.0, 20230228](./Hardware/Documentation/ManufacturingUnitTestTroubleshootingRev2.md)
 Details on how to assemble the Printed Wiring Assemblies as received from the JLCPCB version 2 PCBs of March 2023. Includes testing and troubleshooting notes.
-
-## GPAD V1 Repository Tag
-Tag to last commit before removing information of Version 1 PCB and PCBA
-https://github.com/PubInv/general-purpose-alarm-device/releases/tag/BeforeRemovingV1Files
 
 # Example Use Case, The Ventilator
 
@@ -156,56 +157,6 @@ Although we eventually sent a Rev 1 GPAD to Oluseyi 'Seyi' Adeniyi (@NULLbodyHER
 to our factory test without even having hardware (we later sent him one), which he used to enhance
 the sonic and light signalling.
 
-# Possible Evolution Stages of the Project
-Ideas from the cap stone projects:
-1. Wifi interface and batter power
-2. Audio voice playback for messages.
-
-In each of these phases, we imagine extensions of the API.
-
-# Volunteer Skills (and Skills Needed)
-
-## Current Volunteers:
-
-Project Lead, Product Definition:  Robert L. Read (@RobertLRead), founder of Public Invention.
-
-Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor: Lawrence Kincheloe (@LokeMetaSmith) of Speccollective who is a computer scientist by training, and an electrical engineer as well as a hobby inventor by vocation.
-
-Mentor and coach hardware, firmware: (Forrest) Lee Erickson @ForrestErickson, Physicist who pretends to be an electrical engineer, with experience in firmware development, Design for Manufacture, Design for Test and developer of Novel and Diverse Spelling.
-
-Factory Test and API Firmware Contributor: Oluseyi 'Seyi' Adeniyi @NULLbodyHERE, Software Engineer, committed to pursuing diverse creative endeavors.
-
-## Needed Volunteers
-
-We need volunteer:
-1. Arduino engineers who can both code and make very simple circuits.
-2. Schematic capture and PCB layout designers.  We are using KICAD.
-3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
-4. Embedded firmware engineers who can design an effective, evolving API and the transport bindings that they require.
-5. GUI experts who can address issues such as how to effectively alarm and silence device.
-6. Marketers who can promote and evangelize the project.
-7. A possible project manager who can organize volunteers and keep them enthused and motivated to move forward.
-
-# The Potential for a Product
-
-Like everything done by Public Invention, this is a fully open project that is
-released under fully open hardware and software licenses.
-However, unlike many of our projects, which are very "researchy", this project could
-become a scalable product pretty easily.
-One can imagine it being sold at Sparkfun, Adafruit, or DigiKey, if we do a good job.
-Because it could be used for a wide variety of purposes by makers and could be sold with an enclosure at a price of perhaps <=$100USD
-As an embedded sub assembly, the printed wiring assembly must be low cost with a material price of < $30USD
-
-Potential uses as a product (by hobbyists) include:
-1. Alarming a cat door, bird, or squirrel at feeder
-2. Alarming when a visual signal, such as an animal moving in a game camera, is detected
-3. Announcement of life-threatening conditions in medical devices
-4. Overheating conditions in almost any device
-...but the reader can probably imagine a great many more.
-
-Public Invention does not wish to become a manufacturer; but we will impartially
-support anyone who wants to take these designs and manufacture them, so long as they abide by the licenses.
-
 # Modular Software Architecture
 
 This is intended to be a long-term project that will evolve and potentially have many volunteers.
@@ -272,10 +223,6 @@ It is our intention to keep all of these mechanisms distinct from the
 two APIs. There might even be additional transport protocols in the future,
 such as a library that uses I2C ("I-squared C").
 
-# Project Glossary
-Some terms we use and how we have defined issues for Github.
-[Glossary.md](Glossary.md)
-
 # Building the Firmware
 
 The firmware can be built with the standard Arduino IDE.  (Using 1.8.19 as of 20221208)
@@ -283,6 +230,64 @@ It requires libraries:
 1. Wire.h
 1. LiquidCrystal_I2C.h
 1. DailyStruggleButton.h  (Installed with library manager and found at: https://github.com/cygig/DailyStruggleButton)
+
+# Evolution Stages of the Project
+Ideas from the capstone projects:
+1. Wifi interface and battery power.
+2. Audio voice playback for messages.
+
+Some of these capabilities, such as Wifi enablement, have been seen to fruition in the Krake project: [https://github.com/PubInv/krake](https://github.com/PubInv/krake).
+
+In each of these phases, we imagine further extensions of the API.
+
+# Recent News and Publications
+An article about the GPAD was published in the HardwareX journal in December 2024 [https://www.hardware-x.com/article/S2468-0672(24)00084-1/fulltext](https://www.hardware-x.com/article/S2468-0672(24)00084-1/fulltext).
+
+# Volunteer Skills (and Skills Needed)
+
+## Current Volunteers:
+
+Project Lead, Product Definition:  Robert L. Read (@RobertLRead), founder of Public Invention.
+
+Enclosure design, component procurement for rev1, project facilitator, initial board bring-up, board layout design contributor: Lawrence Kincheloe (@LokeMetaSmith) of Speccollective who is a computer scientist by training, and an electrical engineer as well as a hobby inventor by vocation.
+
+Mentor and coach hardware, firmware: (Forrest) Lee Erickson @ForrestErickson, Physicist who pretends to be an electrical engineer, with experience in firmware development, Design for Manufacture, Design for Test and developer of Novel and Diverse Spelling.
+
+Factory Test and API Firmware Contributor: Oluseyi 'Seyi' Adeniyi @NULLbodyHERE, Software Engineer, committed to pursuing diverse creative endeavors.
+
+## Needed Volunteers
+
+We need volunteer:
+1. Arduino engineers who can both code and make very simple circuits.
+2. Schematic capture and PCB layout designers.  We are using KICAD.
+3. Mechanical engineers who can design sturdy enclosures that keep the system bright and loud.
+4. Embedded firmware engineers who can design an effective, evolving API and the transport bindings that they require.
+5. GUI experts who can address issues such as how to effectively alarm and silence device.
+6. Marketers who can promote and evangelize the project.
+7. A possible project manager who can organize volunteers and keep them enthused and motivated to move forward.
+
+# The GPAD Available for Sale
+
+Like everything done by Public Invention, this is a fully open project that is
+released under fully open hardware and software licenses.
+However, unlike many of our projects, which are very "researchy", this project has proved to be a scalable product with many uses.
+Because makers could use it for a wide variety of purposes, it is now sold with an enclosure at a price of $200 USD on the Public Invention website 
+[https://www.pubinv.org/product/gpad/](https://www.pubinv.org/product/gpad/).
+As an embedded sub assembly, the printed wiring assembly must be low cost with a material price of $30 USD
+
+Potential uses as a product (by hobbyists) include:
+1. Alarming a cat door, bird, or squirrel at feeder
+2. Alarming when a visual signal, such as an animal moving in a game camera, is detected
+3. Announcement of life-threatening conditions in medical devices
+4. Overheating conditions in almost any device
+...but the reader can probably imagine a great many more.
+
+Public Invention is not primarily a manufacturer, but we will impartially
+support anyone who wants to take these designs and manufacture them, so long as they abide by the licenses.
+
+# Project Glossary
+Some terms we use and how we have defined issues for Github.
+[Glossary.md](Glossary.md)
 
 # Credits
 The GPAD team was enabled by, and wishes to thank, the developers and maintainees of:
